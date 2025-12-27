@@ -1,5 +1,5 @@
 {
-  "name": "@mrs/ui-v6",
+  "name": "@mrs-uisystem/ui-v6",
   "version": "0.1.0",
   "description": "MRS Material-UI v6.5 Design System (v6.5 compatible version)",
   "main": "./dist/index.js",

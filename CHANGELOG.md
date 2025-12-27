@@ -67,7 +67,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Comprehensive README with installation guide
 
 ### Changed
-- Package name: `@mrs/ui-v6`
+- Package name: `@mrs-uisystem/ui-v6`
 - PublishConfig access: "public" (ready for npm publishing)
 - Enhanced prepublishOnly script with full quality checks
 - Removed Story UI dependencies (not needed)

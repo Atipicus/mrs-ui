@@ -158,7 +158,7 @@ All deployment preparation tasks have been completed successfully. The MRS UI v6
 ## 📦 Package Information
 
 **Package Details:**
-- **Name**: `@mrs/ui-v6`
+- **Name**: `@mrs-uisystem/ui-v6`
 - **Version**: 0.1.0
 - **Access**: Public (ready for npm)
 - **License**: UNLICENSED (proprietary)
@@ -178,7 +178,7 @@ All deployment preparation tasks have been completed successfully. The MRS UI v6
 ### npm Publishing ✅ READY
 
 **Checklist:**
-- [x] Package name available: `@mrs/ui-v6`
+- [x] Package name available: `@mrs-uisystem/ui-v6`
 - [x] Version set: 0.1.0
 - [x] publishConfig.access: "public"
 - [x] Build successful
@@ -253,10 +253,10 @@ npm publish
 ### Post-Deployment Actions
 
 1. **Verify npm Package**
-   - Visit: https://www.npmjs.com/package/@mrs/ui-v6
+   - Visit: https://www.npmjs.com/package/@mrs-uisystem/ui-v6
    - Test installation in a new project:
      ```bash
-     npm install @mrs/ui-v6
+     npm install @mrs-uisystem/ui-v6
      ```
 
 2. **Verify Storybook Deployment**

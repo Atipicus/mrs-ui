@@ -71,7 +71,7 @@ npm publish --otp=123456
 
 Visit your package page:
 ```
-https://www.npmjs.com/package/@mrs/ui-v6
+https://www.npmjs.com/package/@mrs-uisystem/ui-v6
 ```
 
 Test installation in a new directory:
@@ -79,7 +79,7 @@ Test installation in a new directory:
 mkdir test-install
 cd test-install
 npm init -y
-npm install @mrs/ui-v6
+npm install @mrs-uisystem/ui-v6
 ```
 
 ---
@@ -225,9 +225,9 @@ Visit: https://github.com/madersystem/mrs-ui-v6/releases/tag/v0.1.0
 After completing all 3 steps:
 
 ### npm Package
-- [ ] Visit https://www.npmjs.com/package/@mrs/ui-v6
+- [ ] Visit https://www.npmjs.com/package/@mrs-uisystem/ui-v6
 - [ ] Verify README displays correctly
-- [ ] Test installation: `npm install @mrs/ui-v6`
+- [ ] Test installation: `npm install @mrs-uisystem/ui-v6`
 - [ ] Verify package size and contents
 
 ### Storybook Deployment
@@ -251,7 +251,7 @@ After deployment, you can add live badges to README.md:
 
 ### npm Badge (Already added)
 ```markdown
-[![npm version](https://badge.fury.io/js/@mrs%2Fui-v6.svg)](https://www.npmjs.com/package/@mrs/ui-v6)
+[![npm version](https://badge.fury.io/js/@mrs%2Fui-v6.svg)](https://www.npmjs.com/package/@mrs-uisystem/ui-v6)
 ```
 
 ### Add Deployment Badge
@@ -341,7 +341,7 @@ After deployment, you can add live badges to README.md:
 ## Quick Reference
 
 ### Important URLs
-- **npm Package**: https://www.npmjs.com/package/@mrs/ui-v6
+- **npm Package**: https://www.npmjs.com/package/@mrs-uisystem/ui-v6
 - **GitHub Repo**: https://github.com/madersystem/mrs-ui-v6
 - **Figma Design**: https://figma.com/design/ESNP5KunFotGObfcuXZ9Op/MRS---Material-UI-v.6.5.0
 

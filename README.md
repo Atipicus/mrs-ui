@@ -1,6 +1,6 @@
 # MRS UI v6 Design System
 
-[![npm version](https://badge.fury.io/js/@mrs%2Fui-v6.svg)](https://www.npmjs.com/package/@mrs/ui-v6)
+[![npm version](https://badge.fury.io/js/@mrs-uisystem%2Fui-v6.svg)](https://www.npmjs.com/package/@mrs-uisystem/ui-v6)
 [![License](https://img.shields.io/badge/License-UNLICENSED-red.svg)](LICENSE)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/madersystem/mrs-ui-v6/ci.yml?branch=main)](https://github.com/madersystem/mrs-ui-v6/actions)
 
@@ -24,7 +24,7 @@ A comprehensive Material-UI v6.5 based design system with **33 production-ready 
 ## 📦 Installation
 
 ```bash
-npm install @mrs/ui-v6
+npm install @mrs-uisystem/ui-v6
 ```
 
 ### Peer Dependencies
@@ -58,10 +58,10 @@ Optional - Material Symbols for icon support:
 ## 🎯 Quick Start
 
 ```tsx
-import { Button, TextField, Container, Stack } from '@mrs/ui-v6';
+import { Button, TextField, Container, Stack } from '@mrs-uisystem/ui-v6';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { theme } from '@mrs/ui-v6/theme';
+import { theme } from '@mrs-uisystem/ui-v6/theme';
 
 function App() {
   return (
@@ -129,7 +129,7 @@ function App() {
 
 ```tsx
 import { createTheme, ThemeProvider } from '@mui/material';
-import { theme as baseTheme } from '@mrs/ui-v6/theme';
+import { theme as baseTheme } from '@mrs-uisystem/ui-v6/theme';
 
 // Customize the base theme
 const customTheme = createTheme({
@@ -154,7 +154,7 @@ function App() {
 ### Access Design Tokens
 
 ```tsx
-import { colors, shape, typography } from '@mrs/ui-v6/theme';
+import { colors, shape, typography } from '@mrs-uisystem/ui-v6/theme';
 
 const primary = colors.light.primary.main; // #00686f (teal)
 const borderRadius = shape.rounded; // 9999px (pill shape)
@@ -222,7 +222,7 @@ UNLICENSED - This project is proprietary software.
 
 ## 🔗 Links
 
-- [npm Package](https://www.npmjs.com/package/@mrs/ui-v6)
+- [npm Package](https://www.npmjs.com/package/@mrs-uisystem/ui-v6)
 - [GitHub Repository](https://github.com/madersystem/mrs-ui-v6)
 - [Issue Tracker](https://github.com/madersystem/mrs-ui-v6/issues)
 - [Figma Design](https://figma.com/design/ESNP5KunFotGObfcuXZ9Op/MRS---Material-UI-v.6.5.0)
@@ -247,7 +247,7 @@ See [COMPONENT_ROADMAP.md](COMPONENT_ROADMAP.md) for detailed implementation pla
 ## 📦 Package Contents
 
 ```
-@mrs/ui-v6/
+@mrs-uisystem/ui-v6/
 ├── dist/
 │   ├── index.js          # CommonJS bundle
 │   ├── index.mjs         # ES Module bundle
@@ -263,7 +263,7 @@ See [COMPONENT_ROADMAP.md](COMPONENT_ROADMAP.md) for detailed implementation pla
 Full TypeScript support with comprehensive type definitions:
 
 ```tsx
-import type { ButtonProps, StackProps, GridProps } from '@mrs/ui-v6';
+import type { ButtonProps, StackProps, GridProps } from '@mrs-uisystem/ui-v6';
 
 const MyButton: React.FC<ButtonProps> = (props) => {
   return <Button {...props} />;
@@ -286,7 +286,7 @@ const MyButton: React.FC<ButtonProps> = (props) => {
 ### Form Layout
 
 ```tsx
-import { Container, Stack, TextField, Button, FormControlLabel, Checkbox } from '@mrs/ui-v6';
+import { Container, Stack, TextField, Button, FormControlLabel, Checkbox } from '@mrs-uisystem/ui-v6';
 
 function LoginForm() {
   return (
@@ -307,7 +307,7 @@ function LoginForm() {
 ### Responsive Grid
 
 ```tsx
-import { Container, Grid, Card, CardContent, Typography } from '@mrs/ui-v6';
+import { Container, Grid, Card, CardContent, Typography } from '@mrs-uisystem/ui-v6';
 
 function Dashboard() {
   return (

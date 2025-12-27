@@ -2,7 +2,7 @@
 
 **Release Date**: December 27, 2024
 **Version**: 0.1.0 (Production-Ready Release)
-**Package**: `@mrs/ui-v6`
+**Package**: `@mrs-uisystem/ui-v6`
 **Material-UI**: v6.5.0
 
 ---
@@ -14,7 +14,7 @@ We're excited to announce the first production-ready release of **MRS UI v6** - 
 ### 📦 Installation
 
 ```bash
-npm install @mrs/ui-v6
+npm install @mrs-uisystem/ui-v6
 ```
 
 **Peer Dependencies:**
@@ -97,10 +97,10 @@ npm install @mui/material @emotion/react @emotion/styled react react-dom
 ## 📚 Quick Start
 
 ```tsx
-import { Button, TextField, Container, Stack } from '@mrs/ui-v6';
+import { Button, TextField, Container, Stack } from '@mrs-uisystem/ui-v6';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { theme } from '@mrs/ui-v6/theme';
+import { theme } from '@mrs-uisystem/ui-v6/theme';
 
 function App() {
   return (
@@ -217,7 +217,7 @@ See [COMPONENT_ROADMAP.md](COMPONENT_ROADMAP.md) for future releases:
 ## 📦 Package Contents
 
 ```
-@mrs/ui-v6/
+@mrs-uisystem/ui-v6/
 ├── dist/
 │   ├── index.js          # CommonJS bundle
 │   ├── index.mjs         # ES Module bundle
@@ -232,7 +232,7 @@ See [COMPONENT_ROADMAP.md](COMPONENT_ROADMAP.md) for future releases:
 
 ## 🔗 Links
 
-- **npm Package**: https://www.npmjs.com/package/@mrs/ui-v6
+- **npm Package**: https://www.npmjs.com/package/@mrs-uisystem/ui-v6
 - **GitHub Repository**: https://github.com/madersystem/mrs-ui-v6
 - **Issue Tracker**: https://github.com/madersystem/mrs-ui-v6/issues
 - **Figma Design**: https://figma.com/design/ESNP5KunFotGObfcuXZ9Op/MRS---Material-UI-v.6.5.0
