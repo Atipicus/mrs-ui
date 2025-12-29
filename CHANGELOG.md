@@ -7,6 +7,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2024-12-29 (Hotfix - Storybook Deployment)
+
+### Fixed
+- **Storybook Blank Screen Issue** - Resolved deployment blank screen caused by `public/index.html` override
+  - Renamed `public/` directory to `public.bak/` to prevent interference with Storybook build
+  - `public/index.html` was a React app template that was overriding Storybook's generated manager index
+  - Storybook now generates proper `index.html` with all required scripts and manager bundles
+  - Fixed: Missing Storybook manager runtime, addon bundles, and initialization scripts
+
+- **Story UI Cleanup** - Removed all Story UI dependencies and files
+  - Deleted `story-ui-docs/` directory
+  - Deleted `story-ui.config.js`
+  - Deleted `story-ui-considerations.md`
+  - Deleted `src/stories/Cheatsheet.stories.mdx`
+  - Cleaned up `.gitignore` (removed Story UI entries)
+
+### Technical Details
+**Before Fix:**
+- `public/index.html` was being copied to `storybook-static/index.html`
+- Custom index had `<div id="root"></div>` but no Storybook scripts
+- Result: Blank white screen on deployment
+
+**After Fix:**
+- Storybook generates proper index.html with:
+  - `<link>` tags for all manager bundles (modulepreload)
+  - `<script type="module">` with manager runtime imports
+  - Proper initialization of Storybook features, refs, and configuration
+- Result: Storybook loads correctly with full UI
+
+### Quality Metrics
+- ✅ All tests passing: 789/789 (100% pass rate)
+- ✅ TypeScript: 0 errors
+- ✅ ESLint: Clean
+- ✅ Build: Successful (230.05 kB gzipped)
+- ✅ Storybook: Builds and deploys correctly
+
+---
+
 ## [0.2.0] - 2024-12-28 (Phase 3 Complete - Data Display & Navigation)
 
 ### Added
