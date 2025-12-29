@@ -204,9 +204,12 @@ export const MaterialSymbol = React.forwardRef<
         aria-hidden={ariaHidden}
         role={ariaLabel && !ariaHidden ? 'img' : undefined}
         onClick={onClick}
+        style={{
+          // Use inline style for fontVariationSettings to ensure it renders properly
+          fontVariationSettings,
+        }}
         sx={{
           fontSize: typeof fontSize === 'number' ? `${fontSize}px` : fontSize,
-          fontVariationSettings,
           color: color || 'inherit',
           userSelect: 'none',
           cursor: isClickable ? 'pointer' : 'inherit',
