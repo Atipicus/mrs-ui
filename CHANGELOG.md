@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2] - 2024-12-29 (Documentation Cleanup)
+
+### Changed
+- **Documentation Structure** - Comprehensive cleanup for cleaner repository
+  - Removed 15 redundant/outdated files (7 root markdown files, 8 docs files)
+  - Removed 2 directories (`public.bak/`, `docs/release/`)
+  - Created `PACKAGE_STATUS.md` - Comprehensive package status reference
+  - Updated `docs/README.md` - Clean index with current structure
+  - Streamlined to 6 essential root documentation files
+  - Removed 3,607 lines of redundant content
+
+**Files Removed**:
+- Root Level: `DEPLOYMENT_GUIDE.md`, `DEPLOYMENT_READINESS.md`, `DEPLOYMENT_SUMMARY.md`, `NPM_PUBLISHING_SETUP.md`, `PUBLISHING_CHECKLIST.md`, `RELEASE_NOTES_v0.1.0.md`, `STORYBOOK_DEPLOYMENT_FIX.md`
+- docs/: `Implementation_Summary.md`, `guides/Migration_v6_to_v7.md`, `guides/Version_Differences.md`, `release/` directory
+- Backups: `public.bak/` directory
+
+**Documentation Structure**:
+- ✅ 6 essential root files (README, CHANGELOG, DEPLOYMENT, COMPONENT_ROADMAP, CONTRIBUTING, PACKAGE_STATUS)
+- ✅ Clean docs/ directory with useful content only
+- ✅ Easier navigation and maintenance
+
+### Quality Metrics
+- ✅ All tests passing: 789/789 (100% pass rate)
+- ✅ TypeScript: 0 errors
+- ✅ ESLint: Clean
+- ✅ Build: Successful (230.05 kB gzipped)
+- ✅ Storybook: Live at https://mgomez-ext.github.io/mrs-ui/
+
+---
+
 ## [0.2.1] - 2024-12-29 (Hotfix - Storybook Deployment)
 
 ### Fixed

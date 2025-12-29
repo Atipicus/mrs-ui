@@ -1,6 +1,6 @@
 {
   "name": "@mrs-uisystem/ui-v6",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "MRS Material-UI v6.5 Design System - 39 production-ready React components with comprehensive testing and Storybook documentation",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
