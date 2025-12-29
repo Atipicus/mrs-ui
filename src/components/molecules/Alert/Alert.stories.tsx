@@ -97,3 +97,54 @@ export const WithActionAndClose: Story = {
     />
   ),
 };
+
+export const BorderRadiusVariations: Story = {
+  render: () => (
+    <Stack spacing={3}>
+      <Box>
+        <Alert
+          severity="info"
+          variant="filled"
+          title="Default (theme.shape.md)"
+          description="Uses theme.shape.md (8px) - the design system default"
+        />
+      </Box>
+      <Box>
+        <Alert
+          severity="success"
+          variant="outlined"
+          title="Small Radius (theme.shape.sm)"
+          description="Custom sx override: borderRadius: theme.shape.sm (4px)"
+          sx={(theme) => ({ borderRadius: theme.shape.sm })}
+        />
+      </Box>
+      <Box>
+        <Alert
+          severity="warning"
+          variant="filled"
+          title="Large Radius (theme.shape.lg)"
+          description="Custom sx override: borderRadius: theme.shape.lg (12px)"
+          sx={(theme) => ({ borderRadius: theme.shape.lg })}
+        />
+      </Box>
+      <Box>
+        <Alert
+          severity="error"
+          variant="outlined"
+          title="Extra Large Radius (theme.shape.xl)"
+          description="Custom sx override: borderRadius: theme.shape.xl (24px)"
+          sx={(theme) => ({ borderRadius: theme.shape.xl })}
+        />
+      </Box>
+      <Box>
+        <Alert
+          severity="info"
+          variant="filled"
+          title="Fully Rounded (theme.shape.rounded)"
+          description="Custom sx override: borderRadius: theme.shape.rounded (pill shape)"
+          sx={(theme) => ({ borderRadius: theme.shape.rounded })}
+        />
+      </Box>
+    </Stack>
+  ),
+};

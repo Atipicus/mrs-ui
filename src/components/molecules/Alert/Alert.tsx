@@ -9,6 +9,8 @@
  * @see https://mui.com/material-ui/react-alert/
  */
 
+/// <reference path="../../../types/theme.d.ts" />
+
 import React from 'react';
 import MuiAlert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
@@ -67,6 +69,25 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const theme = useTheme();
     const tokenColors = useAlertColors(severity, variant);
 
+    // Use theme.shape.md (8px) for consistent, moderate border radius
+    // Note: theme.shape has custom tokens - sm(4), md(8), lg(12), xl(24), rounded(9999)
+    // IMPORTANT: Must use string with 'px' suffix - numbers are multiplied by spacing (8*8=64px)
+    const shapeWithTokens = theme.shape as { borderRadius: number; sm: number; md: number; lg: number; xl: number; rounded: number };
+    const alertBorderRadius = `${shapeWithTokens.md}px`; // '8px' - explicit units prevent spacing multiplication
+
+    // Debug: Log border radius in development
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[Alert] Using border radius:', alertBorderRadius, '(theme.shape.md)');
+      console.log('[Alert] Available shape tokens (raw values):', {
+        sm: shapeWithTokens.sm,
+        md: shapeWithTokens.md,
+        lg: shapeWithTokens.lg,
+        xl: shapeWithTokens.xl,
+        rounded: shapeWithTokens.rounded,
+      });
+      console.log('[Alert] Note: Values converted to px strings to prevent MUI spacing multiplication');
+    }
+
     const IconComponent =
       severityIcons[severity][variant === 'filled' ? 'filled' : 'outlined'];
 
@@ -110,7 +131,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         icon={startIcon}
         action={actionContent}
         sx={{
-          borderRadius: theme.shape.borderRadius,
+          borderRadius: alertBorderRadius,
           backgroundColor: tokenColors.background,
           color: tokenColors.foreground,
           alignItems: 'flex-justify',

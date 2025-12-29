@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- **Alert Component** - Border radius fix
+  - Fixed border-radius displaying as 64px (pill-shaped) instead of intended 8px
+  - Root cause: MUI sx prop multiplies numeric borderRadius values by spacing unit (8×8=64px)
+  - Solution: Changed to explicit pixel string `'8px'` to prevent spacing multiplication
+  - Added BorderRadiusVariations story demonstrating all shape token options (sm, md, lg, xl, rounded)
+  - Enhanced debug logging to show actual px values and prevent future issues
+  - All 58 Alert tests passing
+
 ## [0.3.0] - 2024-12-29 (Phase 4 Complete - Navigation & Layouts)
 
 ### Added
