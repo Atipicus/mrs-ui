@@ -23,6 +23,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Deleted `src/stories/Cheatsheet.stories.mdx`
   - Cleaned up `.gitignore` (removed Story UI entries)
 
+### Changed
+- **Deployment Configuration** - Simplified to GitHub Pages only
+  - Removed Vercel configuration (`vercel.json`)
+  - Removed Netlify configuration (`netlify.toml`)
+  - Created comprehensive `DEPLOYMENT.md` guide for GitHub Pages
+  - Updated README.md with live Storybook URL: https://mgomez-ext.github.io/mrs-ui/
+
 ### Technical Details
 **Before Fix:**
 - `public/index.html` was being copied to `storybook-static/index.html`
@@ -35,6 +42,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `<script type="module">` with manager runtime imports
   - Proper initialization of Storybook features, refs, and configuration
 - Result: Storybook loads correctly with full UI
+
+### Deployment
+- ✅ **GitHub Pages**: Live at https://mgomez-ext.github.io/mrs-ui/
+- ✅ Automated deployment via `gh-pages` package
+- ✅ Clean, focused deployment strategy
 
 ### Quality Metrics
 - ✅ All tests passing: 789/789 (100% pass rate)

@@ -164,10 +164,10 @@ const heading = typography.h1.fontFamily; // Nunito
 
 ## 📖 Documentation
 
-- **📘 Storybook**: Interactive component explorer (coming soon)
+- **📘 Storybook**: [https://mgomez-ext.github.io/mrs-ui/](https://mgomez-ext.github.io/mrs-ui/)
 - **📋 Component Roadmap**: [COMPONENT_ROADMAP.md](COMPONENT_ROADMAP.md)
 - **📝 Changelog**: [CHANGELOG.md](CHANGELOG.md)
-- **🚀 Deployment Guide**: [DEPLOYMENT_READINESS.md](DEPLOYMENT_READINESS.md)
+- **🚀 Deployment Guide**: [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ## 🧪 Testing
 
@@ -225,6 +225,7 @@ UNLICENSED - This project is proprietary software.
 ## 🔗 Links
 
 - [npm Package](https://www.npmjs.com/package/@mrs-uisystem/ui-v6)
+- [Storybook Documentation](https://mgomez-ext.github.io/mrs-ui/)
 - [GitHub Repository](https://github.com/madersystem/mrs-ui-v6)
 - [Issue Tracker](https://github.com/madersystem/mrs-ui-v6/issues)
 - [Figma Design](https://figma.com/design/ESNP5KunFotGObfcuXZ9Op/MRS---Material-UI-v.6.5.0)
@@ -283,9 +284,9 @@ const MyButton: React.FC<ButtonProps> = (props) => {
 - ✨ **Data Display Suite**: Comprehensive table system with 7 sub-components
 - ✨ **789 tests passing** (100% pass rate across 40 test suites)
 - ✨ **Full TypeScript support** with strict mode
-- ✨ **Storybook documentation** with interactive examples
+- ✨ **Storybook documentation** deployed at [https://mgomez-ext.github.io/mrs-ui/](https://mgomez-ext.github.io/mrs-ui/)
 - ✨ **CI/CD pipeline** with GitHub Actions
-- ✨ **Deployment ready** (Vercel, Netlify, GitHub Pages)
+- ✨ **Production ready** with GitHub Pages deployment
 
 ## 🚀 Quick Examples
 

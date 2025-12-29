@@ -29,6 +29,7 @@
     "dev": "storybook dev -p 6006",
     "build": "vite build",
     "build-storybook": "storybook build",
+    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static",
     "test": "jest",
     "test:watch": "jest --watch",
     "type-check": "tsc --noEmit",
