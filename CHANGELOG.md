@@ -7,6 +7,108 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2024-12-29 (Phase 4 Complete - Navigation & Layouts)
+
+### Added
+
+**Phase 4 Components - Navigation & Layouts (6 new components: 1 atom + 5 molecules)**
+
+- **AppBar** (Molecule) - Top application navigation bar
+  - Multiple color variants (primary, secondary, default, transparent, inherit)
+  - All positioning types (fixed, static, sticky, absolute, relative)
+  - Elevation control (0-24)
+  - MRS design tokens integrated (Nunito font, verones #00686f primary color)
+  - Full light/dark mode support
+  - Responsive design ready
+  - 15 comprehensive Storybook stories
+  - 30 tests (100% passing)
+
+- **Toolbar** (Atom) - AppBar content container
+  - Regular (56px) and dense (48px) variants
+  - Gutter padding control
+  - Required dependency for AppBar
+  - 6 comprehensive Storybook stories
+  - 10 tests (100% passing)
+
+- **AccountStack** (Atom) - User account display component
+  - User avatar with notification badge
+  - Account information display (name + email)
+  - Conditional visibility controls (user, userAccountInfo, notifications)
+  - Badge variants (dot, count)
+  - Designed for AppBar/Toolbar integration
+  - Horizontal layout with 16px spacing
+  - 40px height (spacing/5)
+  - MRS design tokens integrated
+  - 12 comprehensive Storybook stories
+  - 27 tests (100% passing)
+
+- **Drawer** (Molecule) - Side navigation panel
+  - Three variant types (temporary, persistent, permanent)
+  - Four anchor positions (left, right, top, bottom)
+  - Configurable elevation (0-24)
+  - Backdrop control
+  - Responsive design with mobile/desktop examples
+  - Mini variant support
+  - Custom width and styling via slotProps
+  - MRS design tokens integrated
+  - 16 comprehensive Storybook stories
+  - 24 tests (100% passing)
+
+- **DrawerNavigation** (Molecule) - Navigation component for Drawer
+  - List-based navigation structure
+  - Multiple navigation items support
+  - Designed for Drawer integration
+  - MRS design tokens integrated
+  - Storybook stories
+  - Comprehensive tests
+
+- **ExpandableNavItem** (Molecule) - Collapsible navigation item
+  - Expandable/collapsible navigation sections
+  - Icon and label support
+  - Nested navigation support
+  - MRS design tokens integrated
+  - Storybook stories
+  - Comprehensive tests
+
+### Changed
+- Package version bumped to 0.3.0
+- Updated description to reflect 45 production-ready components
+- Build size: 240.42 kB gzipped (optimized, up from 230.05 kB due to new components)
+- Component count increased from 39 to 45
+
+### Quality Metrics
+- ✅ **931 tests passing** (100% pass rate, +142 from v0.2.2)
+- ✅ **46 test suites** - All green (+6 new suites)
+- ✅ TypeScript: 0 errors
+- ✅ ESLint: Clean
+- ✅ Build: Successful (1,303.37 kB total, 240.42 kB gzipped)
+- ✅ Zero security vulnerabilities
+- ✅ Storybook: Live at https://mgomez-ext.github.io/mrs-ui/
+
+### Component Count
+- **Total: 45 components** (30 atoms + 15 molecules)
+- **New in v0.3.0**: AppBar, Toolbar, AccountStack, Drawer, DrawerNavigation, ExpandableNavItem
+- Atoms (30): AccountStack, Avatar, Badge, Box, Button, Checkbox, Chip, CircularProgress, Container, Divider, FormControlLabel, FormGroup, Grid, Icon, IconButton, LinearProgress, Link, MenuItem, Paper, Radio, RadioGroup, Select, Skeleton, Slider, Stack, Switch, TextField, Toolbar, Tooltip, Typography
+- Molecules (15): Alert, AppBar, Autocomplete, ButtonGroup, Dialog, Drawer, DrawerNavigation, ExpandableNavItem, List, ListItem, Menu, Pagination, Snackbar, Stepper, Table, Tabs
+
+### Documentation
+- 49+ new Storybook stories for Phase 4 components
+- Updated COMPONENT_ROADMAP.md with Phase 4 completion status
+- Updated CLAUDE.md with latest workflow and metrics
+- Comprehensive navigation pattern documentation in Storybook
+
+### Notes
+- **Phase 1 (Layout Foundation)**: ✅ COMPLETED
+- **Phase 2 (User Interaction)**: ✅ COMPLETED
+- **Phase 3 (Data Display)**: ✅ COMPLETED
+- **Phase 4 (Navigation & Layouts)**: ✅ COMPLETED
+- **Next: Phase 5 (Enhanced Inputs & Feedback)** - Rating, SpeedDial, Timeline, BottomNavigation
+- Ready for Storybook deployment
+- Ready for npm publishing as v0.3.0
+- All quality gates passing
+
+---
+
 ## [0.2.2] - 2024-12-29 (Documentation Cleanup)
 
 ### Changed

@@ -96,6 +96,15 @@ function TabPanel(props: TabPanelProps) {
  * Default Tabs with panels
  */
 export const Default: Story = {
+  args: {
+    centered: false,
+    indicatorColor: "primary",
+    textColor: "secondary",
+    variant: "fullWidth",
+    value: 4,
+    orientation: "vertical"
+  },
+
   render: () => {
     const [value, setValue] = useState(0);
 
@@ -117,7 +126,7 @@ export const Default: Story = {
         </TabPanel>
       </Box>
     );
-  },
+  }
 };
 
 /**
@@ -254,6 +263,10 @@ export const Scrollable: Story = {
  * Scrollable with forced scroll buttons
  */
 export const ScrollableForced: Story = {
+  args: {
+    value: 1
+  },
+
   render: () => {
     const [value, setValue] = useState(0);
 
@@ -275,7 +288,7 @@ export const ScrollableForced: Story = {
         </Tabs>
       </Box>
     );
-  },
+  }
 };
 
 /**
@@ -422,6 +435,11 @@ export const WrappedLabels: Story = {
  * Custom styling
  */
 export const CustomStyling: Story = {
+  args: {
+    indicatorColor: "primary",
+    variant: "scrollable"
+  },
+
   render: () => {
     const [value, setValue] = useState(0);
 
@@ -449,5 +467,5 @@ export const CustomStyling: Story = {
         </Tabs>
       </Box>
     );
-  },
+  }
 };

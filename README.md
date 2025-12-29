@@ -4,17 +4,17 @@
 [![License](https://img.shields.io/badge/License-UNLICENSED-red.svg)](LICENSE)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/madersystem/mrs-ui-v6/ci.yml?branch=main)](https://github.com/madersystem/mrs-ui-v6/actions)
 
-A comprehensive Material-UI v6.5 based design system with **39 production-ready components** built with React, TypeScript, and modern best practices.
+A comprehensive Material-UI v6.5 based design system with **45 production-ready components** built with React, TypeScript, and modern best practices.
 
-> **Version 0.2.0** - Phase 3 complete: Added data display components (Table, Pagination, Stepper) with 789 tests passing.
+> **Version 0.3.0** - Phase 4 complete: Full navigation suite (AppBar, Toolbar, AccountStack, Drawer, DrawerNavigation, ExpandableNavItem) with 931 tests passing.
 
 ## 🚀 Features
 
-- ✅ **39 Production Components** (28 atoms + 11 molecules)
+- ✅ **45 Production Components** (30 atoms + 15 molecules)
 - ✅ **TypeScript Support** - Full type safety with strict mode
 - ✅ **Material-UI v6.5** - Latest Material-UI features
 - ✅ **Tree-shakeable** - Import only what you need
-- ✅ **Comprehensive Testing** - 789 tests with 100% pass rate (40 test suites)
+- ✅ **Comprehensive Testing** - 931 tests with 100% pass rate (46 test suites)
 - ✅ **Storybook Documentation** - Interactive component explorer
 - ✅ **Dual Module Support** - ESM and CommonJS
 - ✅ **Theme Integration** - Customizable design tokens
@@ -80,9 +80,10 @@ function App() {
 }
 ```
 
-## 📚 Components (39 Total)
+## 📚 Components (45 Total)
 
-### Atoms (28)
+### Atoms (30)
+- **AccountStack** - User account display with avatar and badge (Phase 4 ✨)
 - **Avatar** - User profile pictures
 - **Badge** - Status indicators and counts
 - **Box** - Fundamental layout container with sx prop
@@ -109,21 +110,26 @@ function App() {
 - **Stack** - Flexbox layout manager for spacing
 - **Switch** - Toggle on/off
 - **TextField** - Text input with variants
+- **Toolbar** - AppBar content container (Phase 4 ✨)
 - **Tooltip** - Contextual help popups
 - **Typography** - Text with theme variants
 
-### Molecules (11)
+### Molecules (15)
 - **Alert** - Contextual feedback messages
+- **AppBar** - Top application navigation bar (Phase 4 ✨)
 - **Autocomplete** - Search with suggestions
 - **ButtonGroup** - Group of related buttons
 - **Dialog** - Modal dialogs (Phase 2)
+- **Drawer** - Side navigation panel (Phase 4 ✨)
+- **DrawerNavigation** - Navigation component for Drawer (Phase 4 ✨)
+- **ExpandableNavItem** - Collapsible navigation item (Phase 4 ✨)
 - **List** - List of items
 - **ListItem** - Individual list item
 - **Menu** - Dropdown menu (Phase 2)
-- **Pagination** - Page navigation (Phase 3 ✨)
+- **Pagination** - Page navigation (Phase 3)
 - **Snackbar** - Temporary notifications (Phase 2)
-- **Stepper** - Multi-step process indicator (Phase 3 ✨)
-- **Table** - Data table with 7 sub-components (Phase 3 ✨)
+- **Stepper** - Multi-step process indicator (Phase 3)
+- **Table** - Data table with 7 sub-components (Phase 3)
 - **Tabs** - Tabbed navigation (Phase 2)
 
 ## 🎨 Theme Customization
@@ -171,7 +177,7 @@ const heading = typography.h1.fontFamily; // Nunito
 
 ## 🧪 Testing
 
-Comprehensive test coverage with 789 tests across 40 test suites:
+Comprehensive test coverage with 931 tests across 46 test suites:
 
 ```bash
 # Run all tests

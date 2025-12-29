@@ -1,0 +1,734 @@
+/**
+ * Drawer Component Stories
+ * Demonstrates all variants and use cases of the MRS Drawer component
+ */
+
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import { Drawer } from './Drawer';
+import { List } from '../../molecules/List';
+import { ListItem } from '../../molecules/ListItem';
+import { Divider } from '../../atoms/Divider';
+import { IconButton } from '../../atoms/IconButton';
+import { Button } from '../../atoms/Button';
+import { Typography } from '../../atoms/Typography';
+import { Box } from '../../atoms/Box';
+import MenuIcon from '@mui/icons-material/Menu';
+import InboxIcon from '@mui/icons-material/Inbox';
+import MailIcon from '@mui/icons-material/Mail';
+import HomeIcon from '@mui/icons-material/Home';
+import SettingsIcon from '@mui/icons-material/Settings';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+
+const meta: Meta<typeof Drawer> = {
+  title: 'Molecules/Drawer',
+  component: Drawer,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        component:
+          'Side navigation panel component. Provides three variants (temporary, persistent, permanent) for different use cases. Temporary for mobile, persistent for toggleable desktop nav, permanent for always-visible navigation.',
+      },
+    },
+  },
+  argTypes: {
+    anchor: {
+      control: 'select',
+      options: ['left', 'right', 'top', 'bottom'],
+      description: 'Side from which the drawer appears',
+      table: {
+        defaultValue: { summary: 'left' },
+      },
+    },
+    variant: {
+      control: 'select',
+      options: ['temporary', 'persistent', 'permanent'],
+      description: 'Drawer behavior type',
+      table: {
+        defaultValue: { summary: 'temporary' },
+      },
+    },
+    open: {
+      control: 'boolean',
+      description: 'If true, the drawer is open',
+      table: {
+        defaultValue: { summary: false },
+      },
+    },
+    elevation: {
+      control: { type: 'range', min: 0, max: 24, step: 1 },
+      description: 'Shadow depth elevation',
+      table: {
+        defaultValue: { summary: 16 },
+      },
+    },
+    hideBackdrop: {
+      control: 'boolean',
+      description: 'If true, the backdrop is not rendered',
+      table: {
+        defaultValue: { summary: false },
+      },
+    },
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof Drawer>;
+
+/**
+ * Default temporary drawer from the left side
+ */
+export const Default: Story = {
+  render: () => {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+      <Box>
+        <Button variant="contained" onClick={() => setOpen(true)}>
+          Open Drawer
+        </Button>
+        <Drawer open={open} onClose={() => setOpen(false)}>
+          <Box sx={{ width: 250, p: 2 }}>
+            <Typography variant="h6" gutterBottom>
+              Drawer Menu
+            </Typography>
+            <Divider sx={{ my: 2 }} />
+            <List>
+              <ListItem>
+                <InboxIcon sx={{ mr: 2 }} />
+                Inbox
+              </ListItem>
+              <ListItem>
+                <MailIcon sx={{ mr: 2 }} />
+                Mail
+              </ListItem>
+            </List>
+          </Box>
+        </Drawer>
+      </Box>
+    );
+  },
+};
+
+/**
+ * Drawer anchored to the left (default)
+ */
+export const AnchorLeft: Story = {
+  render: () => {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+      <Box>
+        <IconButton onClick={() => setOpen(true)}>
+          <MenuIcon />
+        </IconButton>
+        <Drawer anchor="left" open={open} onClose={() => setOpen(false)}>
+          <Box sx={{ width: 250 }} role="presentation">
+            <List>
+              <ListItem>
+                <HomeIcon sx={{ mr: 2 }} />
+                Home
+              </ListItem>
+              <ListItem>
+                <InboxIcon sx={{ mr: 2 }} />
+                Inbox
+              </ListItem>
+              <ListItem>
+                <MailIcon sx={{ mr: 2 }} />
+                Mail
+              </ListItem>
+              <ListItem>
+                <SettingsIcon sx={{ mr: 2 }} />
+                Settings
+              </ListItem>
+            </List>
+          </Box>
+        </Drawer>
+      </Box>
+    );
+  },
+};
+
+/**
+ * Drawer anchored to the right
+ */
+export const AnchorRight: Story = {
+  render: () => {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+      <Box>
+        <Button variant="outlined" onClick={() => setOpen(true)}>
+          Open Right Drawer
+        </Button>
+        <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+          <Box sx={{ width: 250, p: 2 }}>
+            <Typography variant="h6">Right Side Menu</Typography>
+            <Divider sx={{ my: 2 }} />
+            <List>
+              <ListItem>Menu Item 1</ListItem>
+              <ListItem>Menu Item 2</ListItem>
+              <ListItem>Menu Item 3</ListItem>
+            </List>
+          </Box>
+        </Drawer>
+      </Box>
+    );
+  },
+};
+
+/**
+ * Drawer anchored to the top
+ */
+export const AnchorTop: Story = {
+  render: () => {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+      <Box>
+        <Button variant="contained" onClick={() => setOpen(true)}>
+          Open Top Drawer
+        </Button>
+        <Drawer anchor="top" open={open} onClose={() => setOpen(false)}>
+          <Box sx={{ height: 200, p: 3 }}>
+            <Typography variant="h5" gutterBottom>
+              Top Drawer
+            </Typography>
+            <Typography>Useful for notifications or quick access menus.</Typography>
+          </Box>
+        </Drawer>
+      </Box>
+    );
+  },
+};
+
+/**
+ * Drawer anchored to the bottom
+ */
+export const AnchorBottom: Story = {
+  render: () => {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+      <Box>
+        <Button variant="outlined" onClick={() => setOpen(true)}>
+          Open Bottom Drawer
+        </Button>
+        <Drawer anchor="bottom" open={open} onClose={() => setOpen(false)}>
+          <Box sx={{ height: 200, p: 3 }}>
+            <Typography variant="h5" gutterBottom>
+              Bottom Drawer
+            </Typography>
+            <Typography>Common for mobile action sheets or filters.</Typography>
+          </Box>
+        </Drawer>
+      </Box>
+    );
+  },
+};
+
+/**
+ * Temporary drawer (default) - mobile pattern
+ */
+export const TemporaryVariant: Story = {
+  render: () => {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+      <Box>
+        <IconButton onClick={() => setOpen(true)}>
+          <MenuIcon />
+        </IconButton>
+        <Drawer variant="temporary" open={open} onClose={() => setOpen(false)}>
+          <Box sx={{ width: 250, p: 2 }}>
+            <Typography variant="h6" gutterBottom>
+              Temporary Drawer
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              Closes when clicking outside or pressing ESC. Best for mobile.
+            </Typography>
+            <Divider sx={{ my: 2 }} />
+            <List>
+              <ListItem>Navigation Item 1</ListItem>
+              <ListItem>Navigation Item 2</ListItem>
+              <ListItem>Navigation Item 3</ListItem>
+            </List>
+          </Box>
+        </Drawer>
+      </Box>
+    );
+  },
+};
+
+/**
+ * Persistent drawer - stays open, pushes content
+ */
+export const PersistentVariant: Story = {
+  render: () => {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+      <Box sx={{ display: 'flex' }}>
+        <Drawer
+          variant="persistent"
+          anchor="left"
+          open={open}
+          sx={{
+            width: 240,
+            flexShrink: 0,
+            '& .MuiDrawer-paper': {
+              width: 240,
+              boxSizing: 'border-box',
+            },
+          }}
+        >
+          <Box sx={{ p: 2 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+              <Typography variant="h6">Persistent</Typography>
+              <IconButton onClick={() => setOpen(false)}>
+                <ChevronLeftIcon />
+              </IconButton>
+            </Box>
+            <Divider sx={{ mb: 2 }} />
+            <List>
+              <ListItem>Dashboard</ListItem>
+              <ListItem>Analytics</ListItem>
+              <ListItem>Reports</ListItem>
+              <ListItem>Settings</ListItem>
+            </List>
+          </Box>
+        </Drawer>
+        <Box sx={{ flexGrow: 1, p: 3, transition: 'margin 0.3s', ml: open ? 0 : 0 }}>
+          <IconButton onClick={() => setOpen(!open)} sx={{ mb: 2 }}>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h4" gutterBottom>
+            Main Content Area
+          </Typography>
+          <Typography paragraph>
+            Persistent drawer pushes content to the side when open. Content shifts with the drawer.
+          </Typography>
+          <Typography paragraph>
+            Click the menu icon to toggle the drawer. The drawer will stay open until explicitly closed.
+          </Typography>
+        </Box>
+      </Box>
+    );
+  },
+};
+
+/**
+ * Permanent drawer - always visible
+ */
+export const PermanentVariant: Story = {
+  render: () => (
+    <Box sx={{ display: 'flex' }}>
+      <Drawer
+        variant="permanent"
+        anchor="left"
+        sx={{
+          width: 240,
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
+            width: 240,
+            boxSizing: 'border-box',
+          },
+        }}
+      >
+        <Box sx={{ p: 2 }}>
+          <Typography variant="h6" gutterBottom>
+            Permanent Drawer
+          </Typography>
+          <Divider sx={{ my: 2 }} />
+          <List>
+            <ListItem>
+              <HomeIcon sx={{ mr: 2 }} />
+              Home
+            </ListItem>
+            <ListItem>
+              <InboxIcon sx={{ mr: 2 }} />
+              Inbox
+            </ListItem>
+            <ListItem>
+              <MailIcon sx={{ mr: 2 }} />
+              Mail
+            </ListItem>
+            <ListItem>
+              <SettingsIcon sx={{ mr: 2 }} />
+              Settings
+            </ListItem>
+          </List>
+        </Box>
+      </Drawer>
+      <Box sx={{ flexGrow: 1, p: 3 }}>
+        <Typography variant="h4" gutterBottom>
+          Main Content Area
+        </Typography>
+        <Typography paragraph>
+          Permanent drawer is always visible and cannot be closed. Best for desktop applications
+          where navigation is always needed.
+        </Typography>
+        <Typography paragraph>
+          Content is displayed alongside the drawer. The drawer is part of the page layout.
+        </Typography>
+      </Box>
+    </Box>
+  ),
+};
+
+/**
+ * Drawer with custom elevation
+ */
+export const CustomElevation: Story = {
+  render: () => {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+      <Box>
+        <Button variant="contained" onClick={() => setOpen(true)}>
+          Open Drawer (Elevation 24)
+        </Button>
+        <Drawer elevation={24} open={open} onClose={() => setOpen(false)}>
+          <Box sx={{ width: 250, p: 2 }}>
+            <Typography variant="h6" gutterBottom>
+              High Elevation
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              This drawer has maximum elevation (24) for a prominent shadow.
+            </Typography>
+          </Box>
+        </Drawer>
+      </Box>
+    );
+  },
+};
+
+/**
+ * Drawer with no elevation
+ */
+export const NoElevation: Story = {
+  render: () => {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+      <Box>
+        <Button variant="outlined" onClick={() => setOpen(true)}>
+          Open Drawer (No Shadow)
+        </Button>
+        <Drawer elevation={0} open={open} onClose={() => setOpen(false)}>
+          <Box sx={{ width: 250, p: 2 }}>
+            <Typography variant="h6" gutterBottom>
+              No Elevation
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              This drawer has no shadow (elevation: 0).
+            </Typography>
+          </Box>
+        </Drawer>
+      </Box>
+    );
+  },
+};
+
+/**
+ * Drawer without backdrop
+ */
+export const NoBackdrop: Story = {
+  render: () => {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+      <Box>
+        <Button variant="contained" onClick={() => setOpen(true)}>
+          Open Without Backdrop
+        </Button>
+        <Drawer hideBackdrop open={open} onClose={() => setOpen(false)}>
+          <Box sx={{ width: 250, p: 2 }}>
+            <Typography variant="h6" gutterBottom>
+              No Backdrop
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              No overlay behind the drawer. Content remains interactive.
+            </Typography>
+            <Button onClick={() => setOpen(false)}>Close</Button>
+          </Box>
+        </Drawer>
+        <Box sx={{ p: 3 }}>
+          <Typography>
+            You can still interact with this content while the drawer is open because there's no
+            backdrop.
+          </Typography>
+        </Box>
+      </Box>
+    );
+  },
+};
+
+/**
+ * Drawer with custom width
+ */
+export const CustomWidth: Story = {
+  render: () => {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+      <Box>
+        <Button variant="contained" onClick={() => setOpen(true)}>
+          Open Wide Drawer
+        </Button>
+        <Drawer
+          open={open}
+          onClose={() => setOpen(false)}
+          slotProps={{
+            paper: {
+              sx: { width: 400 },
+            },
+          }}
+        >
+          <Box sx={{ p: 3 }}>
+            <Typography variant="h5" gutterBottom>
+              Wide Drawer (400px)
+            </Typography>
+            <Divider sx={{ my: 2 }} />
+            <Typography paragraph>
+              This drawer is 400px wide instead of the standard 250px.
+            </Typography>
+            <Typography paragraph>
+              Width can be customized using the slotProps.paper.sx prop.
+            </Typography>
+          </Box>
+        </Drawer>
+      </Box>
+    );
+  },
+};
+
+/**
+ * Responsive drawer - temporary on mobile, permanent on desktop
+ */
+export const ResponsiveDrawer: Story = {
+  render: () => {
+    const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    const drawerContent = (
+      <Box sx={{ width: 240, p: 2 }}>
+        <Typography variant="h6" gutterBottom>
+          Responsive Navigation
+        </Typography>
+        <Divider sx={{ my: 2 }} />
+        <List>
+          <ListItem>Home</ListItem>
+          <ListItem>Products</ListItem>
+          <ListItem>About</ListItem>
+          <ListItem>Contact</ListItem>
+        </List>
+      </Box>
+    );
+
+    return (
+      <Box sx={{ display: 'flex' }}>
+        {/* Mobile drawer (temporary) */}
+        <Drawer
+          variant="temporary"
+          open={mobileOpen}
+          onClose={() => setMobileOpen(false)}
+          sx={{
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+          }}
+        >
+          {drawerContent}
+        </Drawer>
+
+        {/* Desktop drawer (permanent) */}
+        <Drawer
+          variant="permanent"
+          sx={{
+            display: { xs: 'none', sm: 'block' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+          }}
+          open
+        >
+          {drawerContent}
+        </Drawer>
+
+        <Box sx={{ flexGrow: 1, p: 3 }}>
+          <IconButton onClick={() => setMobileOpen(true)} sx={{ display: { sm: 'none' }, mb: 2 }}>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h4" gutterBottom>
+            Responsive Layout
+          </Typography>
+          <Typography paragraph>
+            On mobile (xs): Temporary drawer with hamburger menu.
+          </Typography>
+          <Typography paragraph>
+            On desktop (sm+): Permanent drawer always visible.
+          </Typography>
+          <Typography paragraph>Resize your browser to see the responsive behavior.</Typography>
+        </Box>
+      </Box>
+    );
+  },
+};
+
+/**
+ * Drawer with custom background color
+ */
+export const CustomBackground: Story = {
+  render: () => {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+      <Box>
+        <Button variant="contained" onClick={() => setOpen(true)}>
+          Open Colored Drawer
+        </Button>
+        <Drawer
+          open={open}
+          onClose={() => setOpen(false)}
+          slotProps={{
+            paper: {
+              sx: {
+                backgroundColor: 'primary.main',
+                color: 'primary.contrastText',
+              },
+            },
+          }}
+        >
+          <Box sx={{ width: 250, p: 2 }}>
+            <Typography variant="h6" gutterBottom>
+              Custom Background
+            </Typography>
+            <Divider sx={{ my: 2, borderColor: 'rgba(255,255,255,0.2)' }} />
+            <List>
+              <ListItem sx={{ color: 'inherit' }}>Menu Item 1</ListItem>
+              <ListItem sx={{ color: 'inherit' }}>Menu Item 2</ListItem>
+              <ListItem sx={{ color: 'inherit' }}>Menu Item 3</ListItem>
+            </List>
+          </Box>
+        </Drawer>
+      </Box>
+    );
+  },
+};
+
+/**
+ * Mini variant drawer (clipped)
+ */
+export const MiniVariant: Story = {
+  render: () => {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+      <Box sx={{ display: 'flex' }}>
+        <Drawer
+          variant="permanent"
+          open={open}
+          sx={{
+            width: open ? 240 : 64,
+            flexShrink: 0,
+            transition: 'width 0.3s',
+            '& .MuiDrawer-paper': {
+              width: open ? 240 : 64,
+              overflowX: 'hidden',
+              transition: 'width 0.3s',
+            },
+          }}
+        >
+          <Box sx={{ p: 2 }}>
+            <IconButton onClick={() => setOpen(!open)}>
+              <MenuIcon />
+            </IconButton>
+            {open && (
+              <Typography variant="h6" sx={{ mt: 2 }}>
+                Mini Drawer
+              </Typography>
+            )}
+            <List sx={{ mt: 2 }}>
+              <ListItem>
+                <HomeIcon sx={{ mr: open ? 2 : 0 }} />
+                {open && 'Home'}
+              </ListItem>
+              <ListItem>
+                <InboxIcon sx={{ mr: open ? 2 : 0 }} />
+                {open && 'Inbox'}
+              </ListItem>
+              <ListItem>
+                <MailIcon sx={{ mr: open ? 2 : 0 }} />
+                {open && 'Mail'}
+              </ListItem>
+            </List>
+          </Box>
+        </Drawer>
+        <Box sx={{ flexGrow: 1, p: 3 }}>
+          <Typography variant="h4" gutterBottom>
+            Mini Variant Drawer
+          </Typography>
+          <Typography paragraph>
+            Click the menu icon in the drawer to toggle between mini and expanded states.
+          </Typography>
+          <Typography paragraph>
+            When collapsed, shows only icons. When expanded, shows labels too.
+          </Typography>
+        </Box>
+      </Box>
+    );
+  },
+};
+
+/**
+ * All anchor positions comparison
+ */
+export const AllAnchors: Story = {
+  render: () => {
+    const [state, setState] = React.useState({
+      left: false,
+      right: false,
+      top: false,
+      bottom: false,
+    });
+
+    const toggleDrawer = (anchor: 'left' | 'right' | 'top' | 'bottom', open: boolean) => {
+      setState({ ...state, [anchor]: open });
+    };
+
+    return (
+      <Box sx={{ textAlign: 'center', p: 3 }}>
+        <Typography variant="h5" gutterBottom>
+          Drawer Anchor Positions
+        </Typography>
+        <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', mt: 3 }}>
+          {(['left', 'right', 'top', 'bottom'] as const).map((anchor) => (
+            <Button key={anchor} variant="outlined" onClick={() => toggleDrawer(anchor, true)}>
+              {anchor}
+            </Button>
+          ))}
+        </Box>
+
+        {(['left', 'right', 'top', 'bottom'] as const).map((anchor) => (
+          <Drawer
+            key={anchor}
+            anchor={anchor}
+            open={state[anchor]}
+            onClose={() => toggleDrawer(anchor, false)}
+          >
+            <Box
+              sx={{
+                width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250,
+                height: anchor === 'top' || anchor === 'bottom' ? 150 : 'auto',
+                p: 2,
+              }}
+            >
+              <Typography variant="h6">{anchor.toUpperCase()} Drawer</Typography>
+              <Divider sx={{ my: 2 }} />
+              <Typography>Drawer from the {anchor} edge.</Typography>
+            </Box>
+          </Drawer>
+        ))}
+      </Box>
+    );
+  },
+};

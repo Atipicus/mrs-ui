@@ -3,6 +3,7 @@
  * Basic building blocks that cannot be broken down further
  */
 
+export * from './AccountStack';
 export * from './Avatar';
 export * from './Badge';
 export * from './Box';
@@ -29,5 +30,6 @@ export * from './Slider';
 export * from './Stack';
 export * from './Switch';
 export * from './TextField';
+export * from './Toolbar';
 export * from './Tooltip';
 export * from './Typography';
