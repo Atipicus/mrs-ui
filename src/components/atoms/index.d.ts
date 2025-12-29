@@ -19,6 +19,7 @@ export * from './Icon';
 export * from './IconButton';
 export * from './LinearProgress';
 export * from './Link';
+export * from './MaterialSymbol';
 export * from './MenuItem';
 export * from './Paper';
 export * from './Radio';
