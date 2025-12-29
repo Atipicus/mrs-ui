@@ -13,6 +13,7 @@ module.exports = {
     '^@components/(.*)$': '<rootDir>/src/components/$1',
     '^@theme/(.*)$': '<rootDir>/src/theme/$1',
     '^@utils/(.*)$': '<rootDir>/src/utils/$1',
+    '\\.(css|less|scss|sass)$': '<rootDir>/tests/styleMock.js',
   },
   transform: {
     '^.+\\.tsx?$': [

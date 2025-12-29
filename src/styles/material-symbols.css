@@ -1,0 +1,185 @@
+/**
+ * Material Symbols Rounded - Global CSS Configuration
+ * MRS Design System v0.4.0
+ *
+ * Default Configuration:
+ * - Variant: Rounded
+ * - Weight: 300 (Light)
+ * - Fill: 0 (Outlined)
+ * - Grade: -25 (Lighter visual weight)
+ * - Optical Size: 24px
+ *
+ * Documentation: https://fonts.google.com/icons
+ */
+
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Default size */
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+  vertical-align: middle;
+
+  /* MRS Design System Default Configuration */
+  font-variation-settings:
+    'FILL' 0, /* Outlined (0) vs Filled (1) */
+    'wght' 300, /* Light weight - thin strokes */
+    'GRAD' -25, /* Slightly lighter visual weight */
+    'opsz' 24; /* 24px optical size */
+}
+
+/* ========================================
+   Size Variants
+   ======================================== */
+
+.material-symbols-rounded.size-inherit {
+  font-size: inherit;
+}
+
+.material-symbols-rounded.size-small {
+  font-size: 20px;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' -25,
+    'opsz' 20;
+}
+
+.material-symbols-rounded.size-medium {
+  font-size: 24px;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' -25,
+    'opsz' 24;
+}
+
+.material-symbols-rounded.size-large {
+  font-size: 36px;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' -25,
+    'opsz' 40;
+}
+
+/* ========================================
+   Fill Variants
+   ======================================== */
+
+.material-symbols-rounded.fill-0 {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' -25,
+    'opsz' 24;
+}
+
+.material-symbols-rounded.fill-1 {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 300,
+    'GRAD' -25,
+    'opsz' 24;
+}
+
+/* ========================================
+   Weight Variants
+   ======================================== */
+
+.material-symbols-rounded.weight-100 {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 100,
+    'GRAD' -25,
+    'opsz' 24;
+}
+
+.material-symbols-rounded.weight-200 {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' -25,
+    'opsz' 24;
+}
+
+.material-symbols-rounded.weight-300 {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' -25,
+    'opsz' 24;
+}
+
+.material-symbols-rounded.weight-400 {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+.material-symbols-rounded.weight-500 {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 500,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+.material-symbols-rounded.weight-600 {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 600,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+.material-symbols-rounded.weight-700 {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+/* ========================================
+   Accessibility & Utility Classes
+   ======================================== */
+
+/* Hide icon text from screen readers when using aria-label */
+.material-symbols-rounded[aria-label] {
+  speak: none;
+}
+
+/* Clickable icon button styling */
+.material-symbols-rounded.clickable {
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.material-symbols-rounded.clickable:hover {
+  opacity: 0.7;
+}
+
+.material-symbols-rounded.clickable:active {
+  opacity: 0.5;
+}
+
+/* Disabled state */
+.material-symbols-rounded.disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+  pointer-events: none;
+}
