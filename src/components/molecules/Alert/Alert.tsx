@@ -17,14 +17,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
-import ErrorRounded from '@mui/icons-material/ErrorRounded';
-import ErrorOutlineRounded from '@mui/icons-material/ErrorOutlineRounded';
-import InfoRounded from '@mui/icons-material/InfoRounded';
-import InfoOutlined from '@mui/icons-material/InfoOutlined';
-import CheckCircleRounded from '@mui/icons-material/CheckCircleRounded';
-import CheckCircleOutlineRounded from '@mui/icons-material/CheckCircleOutlineRounded';
-import CloseRounded from '@mui/icons-material/CloseRounded';
-import { Icon } from '../../atoms/Icon';
+import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import type { AlertProps, AlertSeverity, AlertVariant } from './Alert.types';
 
 type AlertColorTokens = {
@@ -33,11 +26,15 @@ type AlertColorTokens = {
   border?: string;
 };
 
-const severityIcons: Record<AlertSeverity, { filled: React.ComponentType; outlined: React.ComponentType }> = {
-  error: { filled: ErrorRounded, outlined: ErrorOutlineRounded },
-  warning: { filled: ErrorRounded, outlined: ErrorOutlineRounded },
-  info: { filled: InfoRounded, outlined: InfoOutlined },
-  success: { filled: CheckCircleRounded, outlined: CheckCircleOutlineRounded },
+/**
+ * Material Symbols icon names for each severity level
+ * Icons use the same name for filled/outlined variants - fill prop controls appearance
+ */
+const severityIcons: Record<AlertSeverity, string> = {
+  error: 'error',
+  warning: 'error', // Material Symbols uses 'error' for warnings too
+  info: 'info',
+  success: 'check_circle',
 };
 
 /**
@@ -76,6 +73,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const alertBorderRadius = `${shapeWithTokens.md}px`; // '8px' - explicit units prevent spacing multiplication
 
     // Debug: Log border radius in development
+    // eslint-disable-next-line no-undef
     if (process.env.NODE_ENV === 'development') {
       console.log('[Alert] Using border radius:', alertBorderRadius, '(theme.shape.md)');
       console.log('[Alert] Available shape tokens (raw values):', {
@@ -88,15 +86,23 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
       console.log('[Alert] Note: Values converted to px strings to prevent MUI spacing multiplication');
     }
 
-    const IconComponent =
-      severityIcons[severity][variant === 'filled' ? 'filled' : 'outlined'];
+    // Determine icon name and fill based on severity and variant
+    const iconName = severityIcons[severity];
+    const iconFill = variant === 'filled' ? 1 : 0;
 
     const startIcon =
       icon === false
         ? false
         : React.isValidElement(icon)
         ? icon
-        : IconComponent && <Icon icon={IconComponent} size="small" />;
+        : iconName && (
+            <MaterialSymbol
+              icon={iconName}
+              fill={iconFill}
+              size="small"
+              color={tokenColors.foreground}
+            />
+          );
 
     const closeButton =
       close && (
@@ -106,7 +112,11 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
           onClick={onClose}
           sx={{ color: tokenColors.foreground }}
         >
-          <CloseRounded fontSize="small" />
+          <MaterialSymbol
+            icon="close"
+            size="small"
+            color={tokenColors.foreground}
+          />
         </IconButton>
       );
 

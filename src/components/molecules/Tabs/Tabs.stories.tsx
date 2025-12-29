@@ -8,11 +8,7 @@ import React, { useState } from 'react';
 import { Tabs, Tab } from './Tabs';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import PhoneIcon from '@mui/icons-material/Phone';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import PersonPinIcon from '@mui/icons-material/PersonPin';
-import HomeIcon from '@mui/icons-material/Home';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import Badge from '@mui/material/Badge';
 
 const meta: Meta<typeof Tabs> = {
@@ -139,9 +135,9 @@ export const WithIcons: Story = {
     return (
       <Box sx={{ width: 500 }}>
         <Tabs value={value} onChange={(e, newValue) => setValue(newValue)}>
-          <Tab icon={<PhoneIcon />} label="Calls" />
-          <Tab icon={<FavoriteIcon />} label="Favorites" />
-          <Tab icon={<PersonPinIcon />} label="Contacts" />
+          <Tab icon={<MaterialSymbol icon="phone" />} label="Calls" />
+          <Tab icon={<MaterialSymbol icon="favorite" />} label="Favorites" />
+          <Tab icon={<MaterialSymbol icon="person_pin" />} label="Contacts" />
         </Tabs>
         <TabPanel value={value} index={0}>
           Recent calls
@@ -167,9 +163,9 @@ export const IconOnly: Story = {
     return (
       <Box sx={{ width: 400 }}>
         <Tabs value={value} onChange={(e, newValue) => setValue(newValue)}>
-          <Tab icon={<HomeIcon />} aria-label="home" />
-          <Tab icon={<FavoriteIcon />} aria-label="favorites" />
-          <Tab icon={<ShoppingCartIcon />} aria-label="cart" />
+          <Tab icon={<MaterialSymbol icon="home" />} aria-label="home" />
+          <Tab icon={<MaterialSymbol icon="favorite" />} aria-label="favorites" />
+          <Tab icon={<MaterialSymbol icon="shopping_cart" />} aria-label="cart" />
         </Tabs>
       </Box>
     );
@@ -402,10 +398,10 @@ export const IconPositions: Story = {
     return (
       <Box sx={{ width: 600 }}>
         <Tabs value={value} onChange={(e, newValue) => setValue(newValue)}>
-          <Tab icon={<PhoneIcon />} label="Top (default)" iconPosition="top" />
-          <Tab icon={<PhoneIcon />} label="Bottom" iconPosition="bottom" />
-          <Tab icon={<PhoneIcon />} label="Start" iconPosition="start" />
-          <Tab icon={<PhoneIcon />} label="End" iconPosition="end" />
+          <Tab icon={<MaterialSymbol icon="phone" />} label="Top (default)" iconPosition="top" />
+          <Tab icon={<MaterialSymbol icon="phone" />} label="Bottom" iconPosition="bottom" />
+          <Tab icon={<MaterialSymbol icon="phone" />} label="Start" iconPosition="start" />
+          <Tab icon={<MaterialSymbol icon="phone" />} label="End" iconPosition="end" />
         </Tabs>
       </Box>
     );

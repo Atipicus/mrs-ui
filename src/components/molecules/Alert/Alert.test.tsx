@@ -158,16 +158,18 @@ describe('Alert', () => {
       const { container } = renderWithTheme(
         <Alert severity="success" variant="filled" title="Success" />
       );
-      const icon = container.querySelector('.MuiAlert-icon svg');
+      const icon = container.querySelector('.MuiAlert-icon .material-symbols-rounded');
       expect(icon).toBeInTheDocument();
+      expect(icon?.textContent).toBe('check_circle');
     });
 
     it('renders outlined icon for outlined variant', () => {
       const { container } = renderWithTheme(
         <Alert severity="info" variant="outlined" title="Info" />
       );
-      const icon = container.querySelector('.MuiAlert-icon svg');
+      const icon = container.querySelector('.MuiAlert-icon .material-symbols-rounded');
       expect(icon).toBeInTheDocument();
+      expect(icon?.textContent).toBe('info');
     });
   });
 
@@ -197,8 +199,9 @@ describe('Alert', () => {
     it('renders close button with correct icon', () => {
       renderWithTheme(<Alert title="Alert" close />);
       const closeButton = screen.getByLabelText('close');
-      const icon = closeButton.querySelector('svg');
+      const icon = closeButton.querySelector('.material-symbols-rounded');
       expect(icon).toBeInTheDocument();
+      expect(icon?.textContent).toBe('close');
     });
   });
 

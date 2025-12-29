@@ -8,16 +8,11 @@ import React, { useState } from 'react';
 import { Menu } from './Menu';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import PersonIcon from '@mui/icons-material/Person';
-import SettingsIcon from '@mui/icons-material/Settings';
-import LogoutIcon from '@mui/icons-material/Logout';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
 import Stack from '@mui/material/Stack';
 
 const meta: Meta<typeof Menu> = {
@@ -100,20 +95,20 @@ export const WithIcons: Story = {
         <Menu open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>
           <MenuItem onClick={() => setAnchorEl(null)}>
             <ListItemIcon>
-              <PersonIcon fontSize="small" />
+              <MaterialSymbol icon="person" size="small" />
             </ListItemIcon>
             <ListItemText>Profile</ListItemText>
           </MenuItem>
           <MenuItem onClick={() => setAnchorEl(null)}>
             <ListItemIcon>
-              <SettingsIcon fontSize="small" />
+              <MaterialSymbol icon="settings" size="small" />
             </ListItemIcon>
             <ListItemText>Settings</ListItemText>
           </MenuItem>
           <Divider />
           <MenuItem onClick={() => setAnchorEl(null)}>
             <ListItemIcon>
-              <LogoutIcon fontSize="small" />
+              <MaterialSymbol icon="logout" size="small" />
             </ListItemIcon>
             <ListItemText>Logout</ListItemText>
           </MenuItem>
@@ -161,18 +156,18 @@ export const IconButtonMenu: Story = {
     return (
       <>
         <IconButton onClick={(e) => setAnchorEl(e.currentTarget)}>
-          <MoreVertIcon />
+          <MaterialSymbol icon="more_vert" />
         </IconButton>
         <Menu open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>
           <MenuItem onClick={() => setAnchorEl(null)}>
             <ListItemIcon>
-              <EditIcon fontSize="small" />
+              <MaterialSymbol icon="edit" size="small" />
             </ListItemIcon>
             <ListItemText>Edit</ListItemText>
           </MenuItem>
           <MenuItem onClick={() => setAnchorEl(null)}>
             <ListItemIcon>
-              <DeleteIcon fontSize="small" />
+              <MaterialSymbol icon="delete" size="small" />
             </ListItemIcon>
             <ListItemText>Delete</ListItemText>
           </MenuItem>

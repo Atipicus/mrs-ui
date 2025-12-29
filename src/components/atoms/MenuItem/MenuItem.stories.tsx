@@ -4,8 +4,8 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { MenuItem } from './MenuItem';
-import CheckIcon from '@mui/icons-material/Check';
 import { ListItemIcon, ListItemText } from '@mui/material';
+import { MaterialSymbol } from '../MaterialSymbol';
 
 const meta: Meta<typeof MenuItem> = {
   title: 'Atoms/MenuItem',
@@ -90,7 +90,7 @@ export const WithIcon: Story = {
   render: () => (
     <MenuItem>
       <ListItemIcon>
-        <CheckIcon fontSize="small" />
+        <MaterialSymbol icon="check" size="small" />
       </ListItemIcon>
       <ListItemText>Item with Icon</ListItemText>
     </MenuItem>

@@ -1,16 +1,12 @@
 /**
  * IconButton component stories
+ *
+ * Demonstrates IconButton with MaterialSymbol icons for better performance and flexibility.
  */
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Box, Stack, Typography as MuiTypography } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import DeleteIcon from '@mui/icons-material/Delete';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import SettingsIcon from '@mui/icons-material/Settings';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import MailIcon from '@mui/icons-material/Mail';
+import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import { IconButton } from './IconButton';
 
 const meta: Meta<typeof IconButton> = {
@@ -65,7 +61,7 @@ export const Default: Story = {
   },
   render: (args) => (
     <IconButton {...args}>
-      <AddIcon />
+      <MaterialSymbol icon="add" />
     </IconButton>
   ),
 };
@@ -81,7 +77,7 @@ export const Small: Story = {
   },
   render: (args) => (
     <IconButton {...args}>
-      <AddIcon />
+      <MaterialSymbol icon="add" />
     </IconButton>
   ),
 };
@@ -96,7 +92,7 @@ export const Medium: Story = {
   },
   render: (args) => (
     <IconButton {...args}>
-      <AddIcon />
+      <MaterialSymbol icon="add" />
     </IconButton>
   ),
 };
@@ -111,7 +107,7 @@ export const Large: Story = {
   },
   render: (args) => (
     <IconButton {...args}>
-      <AddIcon />
+      <MaterialSymbol icon="add" />
     </IconButton>
   ),
 };
@@ -127,7 +123,7 @@ export const Primary: Story = {
   },
   render: (args) => (
     <IconButton {...args}>
-      <AddIcon />
+      <MaterialSymbol icon="add" />
     </IconButton>
   ),
 };
@@ -142,7 +138,7 @@ export const Secondary: Story = {
   },
   render: (args) => (
     <IconButton {...args}>
-      <AddIcon />
+      <MaterialSymbol icon="add" />
     </IconButton>
   ),
 };
@@ -157,7 +153,7 @@ export const Error: Story = {
   },
   render: (args) => (
     <IconButton {...args}>
-      <DeleteIcon />
+      <MaterialSymbol icon="delete" />
     </IconButton>
   ),
 };
@@ -172,7 +168,7 @@ export const Disabled: Story = {
   },
   render: (args) => (
     <IconButton {...args}>
-      <AddIcon />
+      <MaterialSymbol icon="add" />
     </IconButton>
   ),
 };
@@ -191,7 +187,7 @@ export const AllSizes: Story = {
           <Stack direction="row" spacing={2}>
             <Box textAlign="center">
               <IconButton size="small" color="default" aria-label="default">
-                <AddIcon />
+                <MaterialSymbol icon="add" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Default
@@ -199,7 +195,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <IconButton size="small" color="primary" aria-label="primary">
-                <AddIcon />
+                <MaterialSymbol icon="add" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Primary
@@ -207,7 +203,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <IconButton size="small" color="secondary" aria-label="secondary">
-                <AddIcon />
+                <MaterialSymbol icon="add" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Secondary
@@ -215,7 +211,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <IconButton size="small" color="error" aria-label="error">
-                <DeleteIcon />
+                <MaterialSymbol icon="delete" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Error
@@ -223,7 +219,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <IconButton size="small" disabled aria-label="disabled">
-                <AddIcon />
+                <MaterialSymbol icon="add" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Disabled
@@ -239,7 +235,7 @@ export const AllSizes: Story = {
           <Stack direction="row" spacing={2}>
             <Box textAlign="center">
               <IconButton size="medium" color="default" aria-label="default">
-                <AddIcon />
+                <MaterialSymbol icon="add" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Default
@@ -247,7 +243,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <IconButton size="medium" color="primary" aria-label="primary">
-                <AddIcon />
+                <MaterialSymbol icon="add" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Primary
@@ -255,7 +251,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <IconButton size="medium" color="secondary" aria-label="secondary">
-                <AddIcon />
+                <MaterialSymbol icon="add" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Secondary
@@ -263,7 +259,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <IconButton size="medium" color="error" aria-label="error">
-                <DeleteIcon />
+                <MaterialSymbol icon="delete" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Error
@@ -271,7 +267,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <IconButton size="medium" disabled aria-label="disabled">
-                <AddIcon />
+                <MaterialSymbol icon="add" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Disabled
@@ -287,7 +283,7 @@ export const AllSizes: Story = {
           <Stack direction="row" spacing={2}>
             <Box textAlign="center">
               <IconButton size="large" color="default" aria-label="default">
-                <AddIcon />
+                <MaterialSymbol icon="add" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Default
@@ -295,7 +291,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <IconButton size="large" color="primary" aria-label="primary">
-                <AddIcon />
+                <MaterialSymbol icon="add" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Primary
@@ -303,7 +299,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <IconButton size="large" color="secondary" aria-label="secondary">
-                <AddIcon />
+                <MaterialSymbol icon="add" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Secondary
@@ -311,7 +307,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <IconButton size="large" color="error" aria-label="error">
-                <DeleteIcon />
+                <MaterialSymbol icon="delete" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Error
@@ -319,7 +315,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <IconButton size="large" disabled aria-label="disabled">
-                <AddIcon />
+                <MaterialSymbol icon="add" />
               </IconButton>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Disabled
@@ -348,13 +344,13 @@ export const RealWorldExamples: Story = {
           </MuiTypography>
           <Stack direction="row" spacing={1}>
             <IconButton aria-label="notifications">
-              <NotificationsIcon />
+              <MaterialSymbol icon="notifications" />
             </IconButton>
             <IconButton aria-label="mail">
-              <MailIcon />
+              <MaterialSymbol icon="mail" />
             </IconButton>
             <IconButton aria-label="settings">
-              <SettingsIcon />
+              <MaterialSymbol icon="settings" />
             </IconButton>
           </Stack>
         </Box>
@@ -365,13 +361,13 @@ export const RealWorldExamples: Story = {
           </MuiTypography>
           <Stack direction="row" spacing={1}>
             <IconButton color="primary" aria-label="add to favorites">
-              <FavoriteIcon />
+              <MaterialSymbol icon="favorite" />
             </IconButton>
             <IconButton color="primary" aria-label="share">
-              <ShareIcon />
+              <MaterialSymbol icon="share" />
             </IconButton>
             <IconButton color="error" aria-label="delete">
-              <DeleteIcon />
+              <MaterialSymbol icon="delete" />
             </IconButton>
           </Stack>
         </Box>
@@ -382,13 +378,13 @@ export const RealWorldExamples: Story = {
           </MuiTypography>
           <Stack direction="row" spacing={2} alignItems="center">
             <IconButton size="small" color="primary" aria-label="small add">
-              <AddIcon fontSize="small" />
+              <MaterialSymbol icon="add" size="small" />
             </IconButton>
             <IconButton size="medium" color="primary" aria-label="medium add">
-              <AddIcon />
+              <MaterialSymbol icon="add" />
             </IconButton>
             <IconButton size="large" color="primary" aria-label="large add">
-              <AddIcon fontSize="large" />
+              <MaterialSymbol icon="add" size="large" />
             </IconButton>
           </Stack>
         </Box>
@@ -408,11 +404,11 @@ export const RealWorldExamples: Story = {
             }}
           >
             <IconButton edge="start" aria-label="start edge">
-              <AddIcon />
+              <MaterialSymbol icon="add" />
             </IconButton>
             <MuiTypography sx={{ flex: 1, textAlign: 'center' }}>Content</MuiTypography>
             <IconButton edge="end" aria-label="end edge">
-              <SettingsIcon />
+              <MaterialSymbol icon="settings" />
             </IconButton>
           </Box>
         </Box>

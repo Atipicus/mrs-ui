@@ -4,11 +4,9 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { TextField } from './TextField';
-import SearchIcon from '@mui/icons-material/Search';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { InputAdornment, IconButton } from '@mui/material';
 import { useState } from 'react';
+import { MaterialSymbol } from '../MaterialSymbol';
 
 const meta: Meta<typeof TextField> = {
   title: 'Atoms/TextField',
@@ -250,7 +248,7 @@ export const PasswordWithToggle: Story = {
                   onClick={() => setShowPassword(!showPassword)}
                   edge="end"
                 >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                  {showPassword ? <MaterialSymbol icon="visibility_off" /> : <MaterialSymbol icon="visibility" />}
                 </IconButton>
               </InputAdornment>
             ),
@@ -272,7 +270,7 @@ export const WithStartAdornment: Story = {
       input: {
         startAdornment: (
           <InputAdornment position="start">
-            <SearchIcon />
+            <MaterialSymbol icon="search" />
           </InputAdornment>
         ),
       },

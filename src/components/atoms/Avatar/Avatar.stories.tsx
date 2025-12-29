@@ -4,9 +4,8 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Box, Stack, Typography as MuiTypography } from '@mui/material';
-import PersonIcon from '@mui/icons-material/Person';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Avatar } from './Avatar';
+import { MaterialSymbol } from '../MaterialSymbol';
 
 const meta: Meta<typeof Avatar> = {
   title: 'Atoms/Avatar',
@@ -101,7 +100,7 @@ export const Size18Icon: Story = {
   },
   render: (args) => (
     <Avatar {...args}>
-      <FavoriteIcon sx={{ fontSize: 12 }} />
+      <MaterialSymbol icon="favorite" sx={{ fontSize: 12 }} />
     </Avatar>
   ),
 };
@@ -115,7 +114,7 @@ export const Size24Icon: Story = {
   },
   render: (args) => (
     <Avatar {...args}>
-      <FavoriteIcon sx={{ fontSize: 14 }} />
+      <MaterialSymbol icon="favorite" sx={{ fontSize: 14 }} />
     </Avatar>
   ),
 };
@@ -129,7 +128,7 @@ export const Size32Icon: Story = {
   },
   render: (args) => (
     <Avatar {...args}>
-      <FavoriteIcon sx={{ fontSize: 18 }} />
+      <MaterialSymbol icon="favorite" sx={{ fontSize: 18 }} />
     </Avatar>
   ),
 };
@@ -143,7 +142,7 @@ export const Size40Icon: Story = {
   },
   render: (args) => (
     <Avatar {...args}>
-      <FavoriteIcon sx={{ fontSize: 24 }} />
+      <MaterialSymbol icon="favorite" sx={{ fontSize: 24 }} />
     </Avatar>
   ),
 };
@@ -270,7 +269,7 @@ export const AllSizes: Story = {
           <Stack direction="row" spacing={2} alignItems="center">
             <Box textAlign="center">
               <Avatar size={18}>
-                <FavoriteIcon sx={{ fontSize: 12 }} />
+                <MaterialSymbol icon="favorite" sx={{ fontSize: 12 }} />
               </Avatar>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 18px
@@ -278,7 +277,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <Avatar size={24}>
-                <FavoriteIcon sx={{ fontSize: 14 }} />
+                <MaterialSymbol icon="favorite" sx={{ fontSize: 14 }} />
               </Avatar>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 24px
@@ -286,7 +285,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <Avatar size={32}>
-                <FavoriteIcon sx={{ fontSize: 18 }} />
+                <MaterialSymbol icon="favorite" sx={{ fontSize: 18 }} />
               </Avatar>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 32px
@@ -294,7 +293,7 @@ export const AllSizes: Story = {
             </Box>
             <Box textAlign="center">
               <Avatar size={40}>
-                <FavoriteIcon sx={{ fontSize: 24 }} />
+                <MaterialSymbol icon="favorite" sx={{ fontSize: 24 }} />
               </Avatar>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 40px
@@ -364,7 +363,7 @@ export const AllVariants: Story = {
           <Stack direction="row" spacing={2}>
             <Avatar variant="circular">JD</Avatar>
             <Avatar variant="circular">
-              <PersonIcon />
+              <MaterialSymbol icon="person" />
             </Avatar>
             <Avatar variant="circular" src="https://i.pravatar.cc/150?img=5" alt="Circular" />
           </Stack>
@@ -377,7 +376,7 @@ export const AllVariants: Story = {
           <Stack direction="row" spacing={2}>
             <Avatar variant="rounded">JD</Avatar>
             <Avatar variant="rounded">
-              <PersonIcon />
+              <MaterialSymbol icon="person" />
             </Avatar>
             <Avatar variant="rounded" src="https://i.pravatar.cc/150?img=6" alt="Rounded" />
           </Stack>
@@ -390,7 +389,7 @@ export const AllVariants: Story = {
           <Stack direction="row" spacing={2}>
             <Avatar variant="square">JD</Avatar>
             <Avatar variant="square">
-              <PersonIcon />
+              <MaterialSymbol icon="person" />
             </Avatar>
             <Avatar variant="square" src="https://i.pravatar.cc/150?img=7" alt="Square" />
           </Stack>

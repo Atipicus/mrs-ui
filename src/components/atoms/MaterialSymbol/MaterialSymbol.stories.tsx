@@ -64,16 +64,12 @@ type Story = StoryObj<typeof MaterialSymbol>;
  * Default MaterialSymbol with MRS design system configuration:
  * - Weight: 300 (Light)
  * - Fill: 0 (Outlined)
- * - Grade: -25 (Lighter visual weight)
+ * - Grade: 100 (Lighter visual weight)
  * - Size: 24px (Medium)
  */
 export const Default: Story = {
   args: {
     icon: 'home',
-    size: "large",
-    weight: 700,
-    fill: 1,
-    grade: 75
   },
 };
 
@@ -83,10 +79,10 @@ export const Default: Story = {
 export const Playground: Story = {
   args: {
     icon: 'favorite',
-    size: "medium",
-    fill: 1,
+    size: "large",
+    fill: 0,
     weight: 100,
-    grade: 0,
+    grade: 125,
     color: "#701300",
     className: "add"
   },
@@ -98,7 +94,9 @@ export const Playground: Story = {
 export const AllSizes: Story = {
   args: {
     size: "large",
-    fill: 1
+    fill: 1,
+    icon: "favorite",
+    weight: 700
   },
 
   render: () => (
@@ -290,7 +288,7 @@ export const MRSDefaultStyle: Story = {
       <Typography variant="body2" color="text.secondary" paragraph>
         <strong>Weight:</strong> 300 (Light) |{' '}
         <strong>Fill:</strong> 0 (Outlined) |{' '}
-        <strong>Grade:</strong> -25 (Lighter) |{' '}
+        <strong>Grade:</strong> 100 (Lighter) |{' '}
         <strong>Variant:</strong> Rounded
       </Typography>
       <Stack direction="row" spacing={4} alignItems="center" sx={{ mt: 3 }}>
@@ -428,12 +426,12 @@ export const ConfigurationComparison: Story = {
             Light & Airy (MRS Default)
           </Typography>
           <Typography variant="caption" color="text.secondary" display="block" mb={1}>
-            weight=300, fill=0, grade=-25
+            weight=300, fill=0, grade=100
           </Typography>
           <Stack direction="row" spacing={2}>
-            <MaterialSymbol icon="home" weight={300} fill={0} grade={-25} size="large" />
-            <MaterialSymbol icon="star" weight={300} fill={0} grade={-25} size="large" />
-            <MaterialSymbol icon="favorite" weight={300} fill={0} grade={-25} size="large" />
+            <MaterialSymbol icon="home" weight={300} fill={0} grade={100} size="large" />
+            <MaterialSymbol icon="star" weight={300} fill={0} grade={100} size="large" />
+            <MaterialSymbol icon="favorite" weight={300} fill={0} grade={100} size="large" />
           </Stack>
         </Box>
         <Box>

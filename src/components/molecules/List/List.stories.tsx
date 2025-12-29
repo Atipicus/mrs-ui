@@ -4,12 +4,9 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Box, Typography, Divider, ListItemText, ListItemIcon, ListSubheader } from '@mui/material';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import InboxRoundedIcon from '@mui/icons-material/InboxRounded';
-import DraftsRoundedIcon from '@mui/icons-material/DraftsRounded';
-import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import { List } from './List';
 import { ListItem } from '../ListItem';
+import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import { Icon } from '../../atoms/Icon';
 import { IconButton } from '../../atoms/IconButton';
 import React from 'react';
@@ -142,19 +139,19 @@ export const WithIcons: Story = {
       <List>
         <ListItem>
           <ListItemIcon>
-            <Icon icon={InboxRoundedIcon} />
+            <MaterialSymbol icon="inbox" />
           </ListItemIcon>
           <ListItemText primary="Inbox" />
         </ListItem>
         <ListItem>
           <ListItemIcon>
-            <Icon icon={DraftsRoundedIcon} />
+            <MaterialSymbol icon="drafts" />
           </ListItemIcon>
           <ListItemText primary="Drafts" />
         </ListItem>
         <ListItem>
           <ListItemIcon>
-            <Icon icon={SendRoundedIcon} />
+            <MaterialSymbol icon="send" />
           </ListItemIcon>
           <ListItemText primary="Sent" />
         </ListItem>
@@ -170,24 +167,24 @@ export const WithSecondaryActions: Story = {
         <ListItem
           secondaryAction={
             <IconButton edge="end" aria-label="add">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           }
         >
           <ListItemIcon>
-            <Icon icon={InboxRoundedIcon} />
+            <MaterialSymbol icon="inbox" />
           </ListItemIcon>
           <ListItemText primary="Inbox" />
         </ListItem>
         <ListItem
           secondaryAction={
             <IconButton edge="end" aria-label="add">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           }
         >
           <ListItemIcon>
-            <Icon icon={DraftsRoundedIcon} />
+            <MaterialSymbol icon="drafts" />
           </ListItemIcon>
           <ListItemText primary="Drafts" />
         </ListItem>
@@ -240,29 +237,29 @@ export const AllVariants: Story = {
         >
           <ListItem>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="List item" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="List item" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="List item" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
         </List>
@@ -283,29 +280,29 @@ export const AllVariants: Story = {
         >
           <ListItem>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="List item" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="List item" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="List item" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
         </List>
@@ -326,29 +323,29 @@ export const AllVariants: Story = {
         >
           <ListItem>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="List item" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="List item" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="List item" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
         </List>
@@ -370,29 +367,29 @@ export const AllVariants: Story = {
         >
           <ListItem>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="List item" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="List item" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="List item" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
         </List>

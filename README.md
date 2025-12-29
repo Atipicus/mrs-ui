@@ -4,13 +4,13 @@
 [![License](https://img.shields.io/badge/License-UNLICENSED-red.svg)](LICENSE)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/madersystem/mrs-ui-v6/ci.yml?branch=main)](https://github.com/madersystem/mrs-ui-v6/actions)
 
-A comprehensive Material-UI v6.5 based design system with **45 production-ready components** built with React, TypeScript, and modern best practices.
+A comprehensive Material-UI v6.5 based design system with **46 production-ready components** built with React, TypeScript, and modern best practices.
 
 > **Version 0.3.0** - Phase 4 complete: Full navigation suite (AppBar, Toolbar, AccountStack, Drawer, DrawerNavigation, ExpandableNavItem) with 931 tests passing.
 
 ## 🚀 Features
 
-- ✅ **45 Production Components** (30 atoms + 15 molecules)
+- ✅ **46 Production Components** (31 atoms + 15 molecules)
 - ✅ **TypeScript Support** - Full type safety with strict mode
 - ✅ **Material-UI v6.5** - Latest Material-UI features
 - ✅ **Tree-shakeable** - Import only what you need
@@ -46,12 +46,14 @@ Add Nunito font (required) to your HTML `<head>`:
 />
 ```
 
-Optional - Material Symbols for icon support:
+**Material Symbols** (recommended for MaterialSymbol component):
 
 ```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
   rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
 />
 ```
 
@@ -80,9 +82,54 @@ function App() {
 }
 ```
 
-## 📚 Components (45 Total)
+### Using Material Symbols Icons
 
-### Atoms (30)
+```tsx
+import { MaterialSymbol, Button, Stack } from '@mrs-uisystem/ui-v6';
+
+function IconExample() {
+  return (
+    <Stack direction="row" spacing={2} alignItems="center">
+      {/* Basic icon */}
+      <MaterialSymbol icon="home" />
+
+      {/* Customized icon */}
+      <MaterialSymbol
+        icon="favorite"
+        size="large"
+        fill={1}
+        color="error.main"
+      />
+
+      {/* Icon with button */}
+      <Button
+        startIcon={<MaterialSymbol icon="add" size="medium" />}
+        variant="contained"
+      >
+        Add Item
+      </Button>
+
+      {/* Clickable icon */}
+      <MaterialSymbol
+        icon="settings"
+        onClick={() => console.log('Settings clicked')}
+        ariaLabel="Settings"
+      />
+    </Stack>
+  );
+}
+```
+
+**Material Symbols Features:**
+- **Variable Font Technology**: Dynamic weight (100-700), fill (0-1), grade (-50 to 200)
+- **MRS Design System Defaults**: weight=300 (Light), fill=0 (Outlined), grade=100 (Lighter), rounded variant
+- **Full Customization**: Size, color, accessibility attributes
+- **Performance**: ~50KB variable font vs ~600KB icon components
+- **Browse Icons**: [fonts.google.com/icons](https://fonts.google.com/icons)
+
+## 📚 Components (46 Total)
+
+### Atoms (31)
 - **AccountStack** - User account display with avatar and badge (Phase 4 ✨)
 - **Avatar** - User profile pictures
 - **Badge** - Status indicators and counts
@@ -100,6 +147,7 @@ function App() {
 - **IconButton** - Clickable icons
 - **LinearProgress** - Linear loading bar
 - **Link** - Accessible hyperlinks
+- **MaterialSymbol** - Google Material Symbols icons with variable font (NEW ✨)
 - **MenuItem** - Options for Select
 - **Paper** - Elevated surface container
 - **Radio** - Single selection from group

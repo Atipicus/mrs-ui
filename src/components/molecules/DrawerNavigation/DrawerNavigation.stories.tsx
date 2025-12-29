@@ -7,15 +7,7 @@ import { DrawerNavigation } from './DrawerNavigation';
 import { Drawer } from '../Drawer';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import HomeIcon from '@mui/icons-material/Home';
-import InboxIcon from '@mui/icons-material/Inbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
-import SendIcon from '@mui/icons-material/Send';
-import SettingsIcon from '@mui/icons-material/Settings';
-import PeopleIcon from '@mui/icons-material/People';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import LayersIcon from '@mui/icons-material/Layers';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import React from 'react';
 
 const meta: Meta<typeof DrawerNavigation> = {
@@ -49,9 +41,9 @@ export const Default: Story = {
     <Box sx={{ width: 256, bgcolor: 'background.paper', height: 400 }}>
       <DrawerNavigation
         items={[
-          { label: 'Dashboard', icon: <HomeIcon />, selected: true },
-          { label: 'Inbox', icon: <InboxIcon /> },
-          { label: 'Settings', icon: <SettingsIcon /> },
+          { label: 'Dashboard', icon: <MaterialSymbol icon="home" />, selected: true },
+          { label: 'Inbox', icon: <MaterialSymbol icon="inbox" /> },
+          { label: 'Settings', icon: <MaterialSymbol icon="settings" /> },
         ]}
       />
     </Box>
@@ -66,20 +58,20 @@ export const WithExpandableItems: Story = {
     <Box sx={{ width: 256, bgcolor: 'background.paper', height: 500 }}>
       <DrawerNavigation
         items={[
-          { label: 'Dashboard', icon: <HomeIcon />, selected: true },
+          { label: 'Dashboard', icon: <MaterialSymbol icon="home" />, selected: true },
           {
             label: 'Products',
-            icon: <InboxIcon />,
+            icon: <MaterialSymbol icon="inbox" />,
             expandable: true,
             defaultOpen: true,
             children: [
-              { label: 'All Products', icon: <LayersIcon /> },
+              { label: 'All Products', icon: <MaterialSymbol icon="layers" /> },
               { label: 'Categories' },
               { label: 'Tags' },
             ],
           },
-          { label: 'Customers', icon: <PeopleIcon /> },
-          { label: 'Settings', icon: <SettingsIcon /> },
+          { label: 'Customers', icon: <MaterialSymbol icon="people" /> },
+          { label: 'Settings', icon: <MaterialSymbol icon="settings" /> },
         ]}
       />
     </Box>
@@ -94,21 +86,21 @@ export const MixedItems: Story = {
     <Box sx={{ width: 256, bgcolor: 'background.paper', height: 600 }}>
       <DrawerNavigation
         items={[
-          { label: 'Dashboard', icon: <HomeIcon />, selected: true },
+          { label: 'Dashboard', icon: <MaterialSymbol icon="home" />, selected: true },
           {
             label: 'Mail',
-            icon: <InboxIcon />,
+            icon: <MaterialSymbol icon="inbox" />,
             expandable: true,
             children: [
-              { label: 'Inbox', icon: <InboxIcon /> },
-              { label: 'Sent', icon: <SendIcon /> },
-              { label: 'Drafts', icon: <DraftsIcon /> },
+              { label: 'Inbox', icon: <MaterialSymbol icon="inbox" /> },
+              { label: 'Sent', icon: <MaterialSymbol icon="send" /> },
+              { label: 'Drafts', icon: <MaterialSymbol icon="drafts" /> },
             ],
           },
-          { label: 'Analytics', icon: <BarChartIcon /> },
+          { label: 'Analytics', icon: <MaterialSymbol icon="bar_chart" /> },
           {
             label: 'E-commerce',
-            icon: <ShoppingCartIcon />,
+            icon: <MaterialSymbol icon="shopping_cart" />,
             expandable: true,
             children: [
               { label: 'Products' },
@@ -116,7 +108,7 @@ export const MixedItems: Story = {
               { label: 'Customers' },
             ],
           },
-          { label: 'Settings', icon: <SettingsIcon /> },
+          { label: 'Settings', icon: <MaterialSymbol icon="settings" /> },
         ]}
       />
     </Box>
@@ -131,10 +123,10 @@ export const WithDividers: Story = {
     <Box sx={{ width: 256, bgcolor: 'background.paper', height: 400 }}>
       <DrawerNavigation
         items={[
-          { label: 'Dashboard', icon: <HomeIcon />, divider: true },
-          { label: 'Inbox', icon: <InboxIcon /> },
-          { label: 'Customers', icon: <PeopleIcon />, divider: true },
-          { label: 'Settings', icon: <SettingsIcon /> },
+          { label: 'Dashboard', icon: <MaterialSymbol icon="home" />, divider: true },
+          { label: 'Inbox', icon: <MaterialSymbol icon="inbox" /> },
+          { label: 'Customers', icon: <MaterialSymbol icon="people" />, divider: true },
+          { label: 'Settings', icon: <MaterialSymbol icon="settings" /> },
         ]}
       />
     </Box>
@@ -153,14 +145,14 @@ export const WithDrawer: Story = {
       {
         id: 'dashboard',
         label: 'Dashboard',
-        icon: <HomeIcon />,
+        icon: <MaterialSymbol icon="home" />,
         selected: selected === 0,
         onClick: () => setSelected(0),
       },
       {
         id: 'products',
         label: 'Products',
-        icon: <InboxIcon />,
+        icon: <MaterialSymbol icon="inbox" />,
         expandable: true as const,
         defaultOpen: true,
         children: [
@@ -179,21 +171,21 @@ export const WithDrawer: Story = {
       {
         id: 'customers',
         label: 'Customers',
-        icon: <PeopleIcon />,
+        icon: <MaterialSymbol icon="people" />,
         selected: selected === 3,
         onClick: () => setSelected(3),
       },
       {
         id: 'analytics',
         label: 'Analytics',
-        icon: <BarChartIcon />,
+        icon: <MaterialSymbol icon="bar_chart" />,
         selected: selected === 4,
         onClick: () => setSelected(4),
       },
       {
         id: 'settings',
         label: 'Settings',
-        icon: <SettingsIcon />,
+        icon: <MaterialSymbol icon="settings" />,
         selected: selected === 5,
         onClick: () => setSelected(5),
       },
@@ -224,25 +216,25 @@ export const PersistentDrawer: Story = {
       {
         id: 'home',
         label: 'Home',
-        icon: <HomeIcon />,
+        icon: <MaterialSymbol icon="home" />,
         selected: selected === 0,
         onClick: () => setSelected(0),
       },
       {
         id: 'mail',
         label: 'Mail',
-        icon: <InboxIcon />,
+        icon: <MaterialSymbol icon="inbox" />,
         expandable: true as const,
         children: [
           {
             label: 'Inbox',
-            icon: <InboxIcon />,
+            icon: <MaterialSymbol icon="inbox" />,
             selected: selected === 1,
             onClick: () => setSelected(1),
           },
           {
             label: 'Sent',
-            icon: <SendIcon />,
+            icon: <MaterialSymbol icon="send" />,
             selected: selected === 2,
             onClick: () => setSelected(2),
           },
@@ -251,7 +243,7 @@ export const PersistentDrawer: Story = {
       {
         id: 'settings',
         label: 'Settings',
-        icon: <SettingsIcon />,
+        icon: <MaterialSymbol icon="settings" />,
         selected: selected === 3,
         onClick: () => setSelected(3),
       },
@@ -284,9 +276,9 @@ export const RightDrawer: Story = {
     const [open, setOpen] = React.useState(false);
 
     const items = [
-      { label: 'Profile', icon: <PeopleIcon /> },
-      { label: 'Settings', icon: <SettingsIcon /> },
-      { label: 'Help', icon: <InboxIcon /> },
+      { label: 'Profile', icon: <MaterialSymbol icon="people" /> },
+      { label: 'Settings', icon: <MaterialSymbol icon="settings" /> },
+      { label: 'Help', icon: <MaterialSymbol icon="inbox" /> },
     ];
 
     return (
@@ -313,9 +305,9 @@ export const CustomDimensions: Story = {
         paddingTop={16}
         paddingBottom={16}
         items={[
-          { label: 'Dashboard', icon: <HomeIcon /> },
-          { label: 'Inbox', icon: <InboxIcon /> },
-          { label: 'Settings', icon: <SettingsIcon /> },
+          { label: 'Dashboard', icon: <MaterialSymbol icon="home" /> },
+          { label: 'Inbox', icon: <MaterialSymbol icon="inbox" /> },
+          { label: 'Settings', icon: <MaterialSymbol icon="settings" /> },
         ]}
       />
     </Box>
@@ -359,7 +351,7 @@ export const FullApplication: Story = {
       {
         id: 'dashboard',
         label: 'Dashboard',
-        icon: <HomeIcon />,
+        icon: <MaterialSymbol icon="home" />,
         selected: selected === 'dashboard',
         onClick: () => setSelected('dashboard'),
         divider: true,
@@ -367,7 +359,7 @@ export const FullApplication: Story = {
       {
         id: 'products',
         label: 'Products',
-        icon: <ShoppingCartIcon />,
+        icon: <MaterialSymbol icon="shopping_cart" />,
         expandable: true as const,
         defaultOpen: selected.startsWith('products'),
         children: [
@@ -394,14 +386,14 @@ export const FullApplication: Story = {
       {
         id: 'customers',
         label: 'Customers',
-        icon: <PeopleIcon />,
+        icon: <MaterialSymbol icon="people" />,
         selected: selected === 'customers',
         onClick: () => setSelected('customers'),
       },
       {
         id: 'analytics',
         label: 'Analytics',
-        icon: <BarChartIcon />,
+        icon: <MaterialSymbol icon="bar_chart" />,
         selected: selected === 'analytics',
         onClick: () => setSelected('analytics'),
         divider: true,
@@ -409,7 +401,7 @@ export const FullApplication: Story = {
       {
         id: 'settings',
         label: 'Settings',
-        icon: <SettingsIcon />,
+        icon: <MaterialSymbol icon="settings" />,
         selected: selected === 'settings',
         onClick: () => setSelected('settings'),
       },

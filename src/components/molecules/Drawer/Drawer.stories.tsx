@@ -12,13 +12,8 @@ import { Divider } from '../../atoms/Divider';
 import { IconButton } from '../../atoms/IconButton';
 import { Button } from '../../atoms/Button';
 import { Typography } from '../../atoms/Typography';
+import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import { Box } from '../../atoms/Box';
-import MenuIcon from '@mui/icons-material/Menu';
-import InboxIcon from '@mui/icons-material/Inbox';
-import MailIcon from '@mui/icons-material/Mail';
-import HomeIcon from '@mui/icons-material/Home';
-import SettingsIcon from '@mui/icons-material/Settings';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
 const meta: Meta<typeof Drawer> = {
   title: 'Molecules/Drawer',
@@ -97,11 +92,11 @@ export const Default: Story = {
             <Divider sx={{ my: 2 }} />
             <List>
               <ListItem>
-                <InboxIcon sx={{ mr: 2 }} />
+                <MaterialSymbol icon="inbox" sx={{ mr: 2 }} />
                 Inbox
               </ListItem>
               <ListItem>
-                <MailIcon sx={{ mr: 2 }} />
+                <MaterialSymbol icon="mail" sx={{ mr: 2 }} />
                 Mail
               </ListItem>
             </List>
@@ -122,25 +117,25 @@ export const AnchorLeft: Story = {
     return (
       <Box>
         <IconButton onClick={() => setOpen(true)}>
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Drawer anchor="left" open={open} onClose={() => setOpen(false)}>
           <Box sx={{ width: 250 }} role="presentation">
             <List>
               <ListItem>
-                <HomeIcon sx={{ mr: 2 }} />
+                <MaterialSymbol icon="home" sx={{ mr: 2 }} />
                 Home
               </ListItem>
               <ListItem>
-                <InboxIcon sx={{ mr: 2 }} />
+                <MaterialSymbol icon="inbox" sx={{ mr: 2 }} />
                 Inbox
               </ListItem>
               <ListItem>
-                <MailIcon sx={{ mr: 2 }} />
+                <MaterialSymbol icon="mail" sx={{ mr: 2 }} />
                 Mail
               </ListItem>
               <ListItem>
-                <SettingsIcon sx={{ mr: 2 }} />
+                <MaterialSymbol icon="settings" sx={{ mr: 2 }} />
                 Settings
               </ListItem>
             </List>
@@ -239,7 +234,7 @@ export const TemporaryVariant: Story = {
     return (
       <Box>
         <IconButton onClick={() => setOpen(true)}>
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Drawer variant="temporary" open={open} onClose={() => setOpen(false)}>
           <Box sx={{ width: 250, p: 2 }}>
@@ -288,7 +283,7 @@ export const PersistentVariant: Story = {
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
               <Typography variant="h6">Persistent</Typography>
               <IconButton onClick={() => setOpen(false)}>
-                <ChevronLeftIcon />
+                <MaterialSymbol icon="chevron_left" />
               </IconButton>
             </Box>
             <Divider sx={{ mb: 2 }} />
@@ -302,7 +297,7 @@ export const PersistentVariant: Story = {
         </Drawer>
         <Box sx={{ flexGrow: 1, p: 3, transition: 'margin 0.3s', ml: open ? 0 : 0 }}>
           <IconButton onClick={() => setOpen(!open)} sx={{ mb: 2 }}>
-            <MenuIcon />
+            <MaterialSymbol icon="menu" />
           </IconButton>
           <Typography variant="h4" gutterBottom>
             Main Content Area
@@ -344,19 +339,19 @@ export const PermanentVariant: Story = {
           <Divider sx={{ my: 2 }} />
           <List>
             <ListItem>
-              <HomeIcon sx={{ mr: 2 }} />
+              <MaterialSymbol icon="home" sx={{ mr: 2 }} />
               Home
             </ListItem>
             <ListItem>
-              <InboxIcon sx={{ mr: 2 }} />
+              <MaterialSymbol icon="inbox" sx={{ mr: 2 }} />
               Inbox
             </ListItem>
             <ListItem>
-              <MailIcon sx={{ mr: 2 }} />
+              <MaterialSymbol icon="mail" sx={{ mr: 2 }} />
               Mail
             </ListItem>
             <ListItem>
-              <SettingsIcon sx={{ mr: 2 }} />
+              <MaterialSymbol icon="settings" sx={{ mr: 2 }} />
               Settings
             </ListItem>
           </List>
@@ -556,7 +551,7 @@ export const ResponsiveDrawer: Story = {
 
         <Box sx={{ flexGrow: 1, p: 3 }}>
           <IconButton onClick={() => setMobileOpen(true)} sx={{ display: { sm: 'none' }, mb: 2 }}>
-            <MenuIcon />
+            <MaterialSymbol icon="menu" />
           </IconButton>
           <Typography variant="h4" gutterBottom>
             Responsive Layout
@@ -640,7 +635,7 @@ export const MiniVariant: Story = {
         >
           <Box sx={{ p: 2 }}>
             <IconButton onClick={() => setOpen(!open)}>
-              <MenuIcon />
+              <MaterialSymbol icon="menu" />
             </IconButton>
             {open && (
               <Typography variant="h6" sx={{ mt: 2 }}>
@@ -649,15 +644,15 @@ export const MiniVariant: Story = {
             )}
             <List sx={{ mt: 2 }}>
               <ListItem>
-                <HomeIcon sx={{ mr: open ? 2 : 0 }} />
+                <MaterialSymbol icon="home" sx={{ mr: open ? 2 : 0 }} />
                 {open && 'Home'}
               </ListItem>
               <ListItem>
-                <InboxIcon sx={{ mr: open ? 2 : 0 }} />
+                <MaterialSymbol icon="inbox" sx={{ mr: open ? 2 : 0 }} />
                 {open && 'Inbox'}
               </ListItem>
               <ListItem>
-                <MailIcon sx={{ mr: open ? 2 : 0 }} />
+                <MaterialSymbol icon="mail" sx={{ mr: open ? 2 : 0 }} />
                 {open && 'Mail'}
               </ListItem>
             </List>

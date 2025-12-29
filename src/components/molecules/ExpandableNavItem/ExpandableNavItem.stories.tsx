@@ -5,10 +5,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ExpandableNavItem } from './ExpandableNavItem';
 import List from '@mui/material/List';
-import InboxIcon from '@mui/icons-material/Inbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
-import SendIcon from '@mui/icons-material/Send';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
+import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import React from 'react';
 
 const meta: Meta<typeof ExpandableNavItem> = {
@@ -34,12 +31,12 @@ export const Default: Story = {
   render: () => (
     <ExpandableNavItem
       label="Inbox"
-      icon={<InboxIcon />}
+      icon={<MaterialSymbol icon="inbox" />}
       isOpen={false}
       children={[
-        { label: 'All Mail', icon: <DraftsIcon /> },
-        { label: 'Sent', icon: <SendIcon /> },
-        { label: 'Drafts', icon: <DraftsIcon /> },
+        { label: 'All Mail', icon: <MaterialSymbol icon="drafts" /> },
+        { label: 'Sent', icon: <MaterialSymbol icon="send" /> },
+        { label: 'Drafts', icon: <MaterialSymbol icon="drafts" /> },
       ]}
     />
   ),
@@ -52,12 +49,12 @@ export const Expanded: Story = {
   render: () => (
     <ExpandableNavItem
       label="Inbox"
-      icon={<InboxIcon />}
+      icon={<MaterialSymbol icon="inbox" />}
       isOpen={true}
       children={[
-        { label: 'All Mail', icon: <DraftsIcon /> },
-        { label: 'Sent', icon: <SendIcon /> },
-        { label: 'Drafts', icon: <DraftsIcon /> },
+        { label: 'All Mail', icon: <MaterialSymbol icon="drafts" /> },
+        { label: 'Sent', icon: <MaterialSymbol icon="send" /> },
+        { label: 'Drafts', icon: <MaterialSymbol icon="drafts" /> },
       ]}
     />
   ),
@@ -83,12 +80,12 @@ export const SelectedParent: Story = {
   render: () => (
     <ExpandableNavItem
       label="Inbox"
-      icon={<InboxIcon />}
+      icon={<MaterialSymbol icon="inbox" />}
       isOpen={true}
       selected={true}
       children={[
-        { label: 'All Mail', icon: <DraftsIcon /> },
-        { label: 'Sent', icon: <SendIcon /> },
+        { label: 'All Mail', icon: <MaterialSymbol icon="drafts" /> },
+        { label: 'Sent', icon: <MaterialSymbol icon="send" /> },
       ]}
     />
   ),
@@ -101,12 +98,12 @@ export const SelectedChild: Story = {
   render: () => (
     <ExpandableNavItem
       label="Inbox"
-      icon={<InboxIcon />}
+      icon={<MaterialSymbol icon="inbox" />}
       isOpen={true}
       children={[
-        { label: 'All Mail', icon: <DraftsIcon /> },
-        { label: 'Sent', icon: <SendIcon />, selected: true },
-        { label: 'Drafts', icon: <DraftsIcon /> },
+        { label: 'All Mail', icon: <MaterialSymbol icon="drafts" /> },
+        { label: 'Sent', icon: <MaterialSymbol icon="send" />, selected: true },
+        { label: 'Drafts', icon: <MaterialSymbol icon="drafts" /> },
       ]}
     />
   ),
@@ -119,13 +116,13 @@ export const WithClickHandlers: Story = {
   render: () => (
     <ExpandableNavItem
       label="Inbox"
-      icon={<InboxIcon />}
+      icon={<MaterialSymbol icon="inbox" />}
       isOpen={false}
       onClick={() => alert('Parent clicked')}
       children={[
-        { label: 'All Mail', icon: <DraftsIcon />, onClick: () => alert('All Mail clicked') },
-        { label: 'Sent', icon: <SendIcon />, onClick: () => alert('Sent clicked') },
-        { label: 'Drafts', icon: <DraftsIcon />, onClick: () => alert('Drafts clicked') },
+        { label: 'All Mail', icon: <MaterialSymbol icon="drafts" />, onClick: () => alert('All Mail clicked') },
+        { label: 'Sent', icon: <MaterialSymbol icon="send" />, onClick: () => alert('Sent clicked') },
+        { label: 'Drafts', icon: <MaterialSymbol icon="drafts" />, onClick: () => alert('Drafts clicked') },
       ]}
     />
   ),
@@ -142,13 +139,13 @@ export const Interactive: Story = {
     return (
       <ExpandableNavItem
         label="Products"
-        icon={<InboxIcon />}
+        icon={<MaterialSymbol icon="inbox" />}
         isOpen={open}
         onToggle={() => setOpen(!open)}
         children={[
           {
             label: 'All Products',
-            icon: <StarBorderIcon />,
+            icon: <MaterialSymbol icon="star_border" />,
             selected: selectedChild === 0,
             onClick: () => setSelectedChild(0),
           },
@@ -186,17 +183,17 @@ export const MultipleItems: Story = {
       <>
         <ExpandableNavItem
           label="Inbox"
-          icon={<InboxIcon />}
+          icon={<MaterialSymbol icon="inbox" />}
           isOpen={openItems.inbox}
           onToggle={() => toggleItem('inbox')}
           children={[
-            { label: 'All Mail', icon: <DraftsIcon /> },
-            { label: 'Sent', icon: <SendIcon /> },
+            { label: 'All Mail', icon: <MaterialSymbol icon="drafts" /> },
+            { label: 'Sent', icon: <MaterialSymbol icon="send" /> },
           ]}
         />
         <ExpandableNavItem
           label="Starred"
-          icon={<StarBorderIcon />}
+          icon={<MaterialSymbol icon="star_border" />}
           isOpen={openItems.starred}
           onToggle={() => toggleItem('starred')}
           children={[{ label: 'Important' }, { label: 'Favorites' }]}
@@ -220,7 +217,7 @@ export const DeepNesting: Story = {
   render: () => (
     <ExpandableNavItem
       label="Documentation"
-      icon={<InboxIcon />}
+      icon={<MaterialSymbol icon="inbox" />}
       isOpen={true}
       children={[
         { label: 'Getting Started' },
@@ -243,7 +240,7 @@ export const LongLabels: Story = {
   render: () => (
     <ExpandableNavItem
       label="Very Long Parent Label That Might Wrap"
-      icon={<InboxIcon />}
+      icon={<MaterialSymbol icon="inbox" />}
       isOpen={true}
       children={[
         { label: 'This is a very long child item label that might wrap to multiple lines' },

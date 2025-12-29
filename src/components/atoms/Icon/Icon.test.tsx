@@ -4,9 +4,9 @@
 
 import React from 'react';
 import { renderWithTheme, screen } from '../../../../tests/test-utils';
+import { Icon } from './Icon';
 import AddIcon from '@mui/icons-material/Add';
 import HomeIcon from '@mui/icons-material/Home';
-import { Icon } from './Icon';
 
 describe('Icon - SVG', () => {
   it('renders SVG icon', () => {

@@ -4,11 +4,8 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Box, Stack, Typography as MuiTypography, IconButton } from '@mui/material';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Badge } from './Badge';
+import { MaterialSymbol } from '../MaterialSymbol';
 
 const meta: Meta<typeof Badge> = {
   title: 'Atoms/Badge',
@@ -57,7 +54,7 @@ export const Default: Story = {
   },
   render: (args) => (
     <Badge {...args}>
-      <MailIcon />
+      <MaterialSymbol icon="mail" />
     </Badge>
   ),
 };
@@ -74,7 +71,7 @@ export const StandardDefault: Story = {
   },
   render: (args) => (
     <Badge {...args}>
-      <MailIcon />
+      <MaterialSymbol icon="mail" />
     </Badge>
   ),
 };
@@ -90,7 +87,7 @@ export const StandardPrimary: Story = {
   },
   render: (args) => (
     <Badge {...args}>
-      <MailIcon />
+      <MaterialSymbol icon="mail" />
     </Badge>
   ),
 };
@@ -106,7 +103,7 @@ export const StandardSecondary: Story = {
   },
   render: (args) => (
     <Badge {...args}>
-      <MailIcon />
+      <MaterialSymbol icon="mail" />
     </Badge>
   ),
 };
@@ -122,7 +119,7 @@ export const StandardError: Story = {
   },
   render: (args) => (
     <Badge {...args}>
-      <NotificationsIcon />
+      <MaterialSymbol icon="notifications" />
     </Badge>
   ),
 };
@@ -138,7 +135,7 @@ export const DotPrimary: Story = {
   },
   render: (args) => (
     <Badge {...args}>
-      <MailIcon />
+      <MaterialSymbol icon="mail" />
     </Badge>
   ),
 };
@@ -153,7 +150,7 @@ export const DotSecondary: Story = {
   },
   render: (args) => (
     <Badge {...args}>
-      <MailIcon />
+      <MaterialSymbol icon="mail" />
     </Badge>
   ),
 };
@@ -168,7 +165,7 @@ export const DotError: Story = {
   },
   render: (args) => (
     <Badge {...args}>
-      <NotificationsIcon />
+      <MaterialSymbol icon="notifications" />
     </Badge>
   ),
 };
@@ -185,7 +182,7 @@ export const WithMax: Story = {
   },
   render: (args) => (
     <Badge {...args}>
-      <NotificationsIcon />
+      <MaterialSymbol icon="notifications" />
     </Badge>
   ),
 };
@@ -201,7 +198,7 @@ export const ShowZero: Story = {
   },
   render: (args) => (
     <Badge {...args}>
-      <MailIcon />
+      <MaterialSymbol icon="mail" />
     </Badge>
   ),
 };
@@ -217,7 +214,7 @@ export const Invisible: Story = {
   },
   render: (args) => (
     <Badge {...args}>
-      <MailIcon />
+      <MaterialSymbol icon="mail" />
     </Badge>
   ),
 };
@@ -236,7 +233,7 @@ export const AllColors: Story = {
           <Stack direction="row" spacing={4}>
             <Box textAlign="center">
               <Badge badgeContent={4} color="default">
-                <MailIcon />
+                <MaterialSymbol icon="mail" />
               </Badge>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Default
@@ -244,7 +241,7 @@ export const AllColors: Story = {
             </Box>
             <Box textAlign="center">
               <Badge badgeContent={4} color="primary">
-                <MailIcon />
+                <MaterialSymbol icon="mail" />
               </Badge>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Primary
@@ -252,7 +249,7 @@ export const AllColors: Story = {
             </Box>
             <Box textAlign="center">
               <Badge badgeContent={4} color="secondary">
-                <MailIcon />
+                <MaterialSymbol icon="mail" />
               </Badge>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Secondary
@@ -260,7 +257,7 @@ export const AllColors: Story = {
             </Box>
             <Box textAlign="center">
               <Badge badgeContent={4} color="error">
-                <NotificationsIcon />
+                <MaterialSymbol icon="notifications" />
               </Badge>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Error
@@ -268,7 +265,7 @@ export const AllColors: Story = {
             </Box>
             <Box textAlign="center">
               <Badge badgeContent={4} color="info">
-                <MailIcon />
+                <MaterialSymbol icon="mail" />
               </Badge>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Info
@@ -276,7 +273,7 @@ export const AllColors: Story = {
             </Box>
             <Box textAlign="center">
               <Badge badgeContent={4} color="success">
-                <MailIcon />
+                <MaterialSymbol icon="mail" />
               </Badge>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Success
@@ -284,7 +281,7 @@ export const AllColors: Story = {
             </Box>
             <Box textAlign="center">
               <Badge badgeContent={4} color="warning">
-                <MailIcon />
+                <MaterialSymbol icon="mail" />
               </Badge>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Warning
@@ -300,7 +297,7 @@ export const AllColors: Story = {
           <Stack direction="row" spacing={4}>
             <Box textAlign="center">
               <Badge variant="dot" color="default">
-                <MailIcon />
+                <MaterialSymbol icon="mail" />
               </Badge>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Default
@@ -308,7 +305,7 @@ export const AllColors: Story = {
             </Box>
             <Box textAlign="center">
               <Badge variant="dot" color="primary">
-                <MailIcon />
+                <MaterialSymbol icon="mail" />
               </Badge>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Primary
@@ -316,7 +313,7 @@ export const AllColors: Story = {
             </Box>
             <Box textAlign="center">
               <Badge variant="dot" color="secondary">
-                <MailIcon />
+                <MaterialSymbol icon="mail" />
               </Badge>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Secondary
@@ -324,7 +321,7 @@ export const AllColors: Story = {
             </Box>
             <Box textAlign="center">
               <Badge variant="dot" color="error">
-                <NotificationsIcon />
+                <MaterialSymbol icon="notifications" />
               </Badge>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Error
@@ -354,17 +351,17 @@ export const RealWorldExamples: Story = {
           <Stack direction="row" spacing={2}>
             <IconButton>
               <Badge badgeContent={5} color="error">
-                <NotificationsIcon />
+                <MaterialSymbol icon="notifications" />
               </Badge>
             </IconButton>
             <IconButton>
               <Badge badgeContent={12} color="primary">
-                <MailIcon />
+                <MaterialSymbol icon="mail" />
               </Badge>
             </IconButton>
             <IconButton>
               <Badge badgeContent={100} max={99} color="error">
-                <NotificationsIcon />
+                <MaterialSymbol icon="notifications" />
               </Badge>
             </IconButton>
           </Stack>
@@ -377,12 +374,12 @@ export const RealWorldExamples: Story = {
           <Stack direction="row" spacing={2}>
             <IconButton>
               <Badge badgeContent={3} color="primary">
-                <ShoppingCartIcon />
+                <MaterialSymbol icon="shopping_cart" />
               </Badge>
             </IconButton>
             <IconButton>
               <Badge badgeContent={0} showZero color="primary">
-                <ShoppingCartIcon />
+                <MaterialSymbol icon="shopping_cart" />
               </Badge>
             </IconButton>
           </Stack>
@@ -395,17 +392,17 @@ export const RealWorldExamples: Story = {
           <Stack direction="row" spacing={2}>
             <IconButton>
               <Badge variant="dot" color="success">
-                <MailIcon />
+                <MaterialSymbol icon="mail" />
               </Badge>
             </IconButton>
             <IconButton>
               <Badge variant="dot" color="error">
-                <MailIcon />
+                <MaterialSymbol icon="mail" />
               </Badge>
             </IconButton>
             <IconButton>
               <Badge variant="dot" color="warning">
-                <MailIcon />
+                <MaterialSymbol icon="mail" />
               </Badge>
             </IconButton>
           </Stack>
@@ -418,12 +415,12 @@ export const RealWorldExamples: Story = {
           <Stack direction="row" spacing={2}>
             <IconButton>
               <Badge badgeContent={23} color="error">
-                <FavoriteIcon />
+                <MaterialSymbol icon="favorite" />
               </Badge>
             </IconButton>
             <IconButton>
               <Badge variant="dot" color="error">
-                <FavoriteIcon />
+                <MaterialSymbol icon="favorite" />
               </Badge>
             </IconButton>
           </Stack>

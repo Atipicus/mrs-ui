@@ -4,11 +4,10 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Box, Stack, Typography as MuiTypography } from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
-import AddIcon from '@mui/icons-material/Add';
 import { Tooltip } from './Tooltip';
 import { Button } from '../Button';
 import { IconButton } from '../IconButton';
+import { MaterialSymbol } from '../MaterialSymbol';
 
 const meta: Meta<typeof Tooltip> = {
   title: 'Atoms/Tooltip',
@@ -269,12 +268,12 @@ export const WithIconButton: Story = {
       <Stack direction="row" spacing={2}>
         <Tooltip title="Delete">
           <IconButton aria-label="delete">
-            <DeleteIcon />
+            <MaterialSymbol icon="delete" />
           </IconButton>
         </Tooltip>
         <Tooltip title="Add">
           <IconButton aria-label="add">
-            <AddIcon />
+            <MaterialSymbol icon="add" />
           </IconButton>
         </Tooltip>
       </Stack>
@@ -354,12 +353,12 @@ export const RealWorldExamples: Story = {
           <Stack direction="row" spacing={1}>
             <Tooltip title="Save changes">
               <IconButton aria-label="save">
-                <AddIcon />
+                <MaterialSymbol icon="add" />
               </IconButton>
             </Tooltip>
             <Tooltip title="Delete item">
               <IconButton aria-label="delete" color="error">
-                <DeleteIcon />
+                <MaterialSymbol icon="delete" />
               </IconButton>
             </Tooltip>
           </Stack>
@@ -458,12 +457,12 @@ export const FullShowcase: Story = {
           <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
             <Tooltip title="Add item">
               <IconButton aria-label="add">
-                <AddIcon />
+                <MaterialSymbol icon="add" />
               </IconButton>
             </Tooltip>
             <Tooltip title="Delete item">
               <IconButton aria-label="delete" color="error">
-                <DeleteIcon />
+                <MaterialSymbol icon="delete" />
               </IconButton>
             </Tooltip>
           </Stack>

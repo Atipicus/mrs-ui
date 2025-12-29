@@ -4,12 +4,9 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Box, Typography, ListItemText, ListItemIcon, Divider as MuiDivider } from '@mui/material';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import InboxRoundedIcon from '@mui/icons-material/InboxRounded';
-import DraftsRoundedIcon from '@mui/icons-material/DraftsRounded';
-import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import { ListItem } from './ListItem';
 import { List } from '../List';
+import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import { Icon } from '../../atoms/Icon';
 import { IconButton } from '../../atoms/IconButton';
 import React from 'react';
@@ -81,7 +78,7 @@ export const WithIcon: Story = {
       <List>
         <ListItem onClick={() => console.log('Clicked')}>
           <ListItemIcon>
-            <Icon icon={InboxRoundedIcon} />
+            <MaterialSymbol icon="inbox" />
           </ListItemIcon>
           <ListItemText primary="List item with icon" />
         </ListItem>
@@ -96,7 +93,7 @@ export const WithSecondaryText: Story = {
       <List>
         <ListItem onClick={() => console.log('Clicked')}>
           <ListItemIcon>
-            <Icon icon={AddRoundedIcon} />
+            <MaterialSymbol icon="add" />
           </ListItemIcon>
           <ListItemText primary="List item" secondary="Secondary text" />
         </ListItem>
@@ -125,12 +122,12 @@ export const WithSecondaryAction: Story = {
             onClick={() => console.log('Clicked')}
             secondaryAction={
               <IconButton edge="end" aria-label="add">
-                <Icon icon={AddRoundedIcon} />
+                <MaterialSymbol icon="add" />
               </IconButton>
             }
           >
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="List item" />
           </ListItem>
@@ -164,19 +161,19 @@ export const Dense: Story = {
       <List dense>
         <ListItem dense>
           <ListItemIcon>
-            <Icon icon={AddRoundedIcon} />
+            <MaterialSymbol icon="add" />
           </ListItemIcon>
           <ListItemText primary="Dense item 1" secondary="Secondary" />
         </ListItem>
         <ListItem dense>
           <ListItemIcon>
-            <Icon icon={AddRoundedIcon} />
+            <MaterialSymbol icon="add" />
           </ListItemIcon>
           <ListItemText primary="Dense item 2" secondary="Secondary" />
         </ListItem>
         <ListItem dense>
           <ListItemIcon>
-            <Icon icon={AddRoundedIcon} />
+            <MaterialSymbol icon="add" />
           </ListItemIcon>
           <ListItemText primary="Dense item 3" secondary="Secondary" />
         </ListItem>
@@ -193,21 +190,21 @@ export const DisableGutters: Story = {
       <List>
         <ListItem disableGutters onClick={() => console.log('Clicked')}>
           <ListItemIcon>
-            <Icon icon={AddRoundedIcon} />
+            <MaterialSymbol icon="add" />
           </ListItemIcon>
           <ListItemText primary="No horizontal padding" />
           <IconButton edge="end">
-            <Icon icon={AddRoundedIcon} />
+            <MaterialSymbol icon="add" />
           </IconButton>
         </ListItem>
         <MuiDivider component="li" />
         <ListItem onClick={() => console.log('Clicked')}>
           <ListItemIcon>
-            <Icon icon={AddRoundedIcon} />
+            <MaterialSymbol icon="add" />
           </ListItemIcon>
           <ListItemText primary="With horizontal padding" />
           <IconButton edge="end">
-            <Icon icon={AddRoundedIcon} />
+            <MaterialSymbol icon="add" />
           </IconButton>
         </ListItem>
       </List>
@@ -224,19 +221,19 @@ export const InteractiveWithSelection: Story = {
         <List>
           <ListItem onClick={() => setSelectedIndex(0)} selected={selectedIndex === 0}>
             <ListItemIcon>
-              <Icon icon={InboxRoundedIcon} />
+              <MaterialSymbol icon="inbox" />
             </ListItemIcon>
             <ListItemText primary="Inbox" />
           </ListItem>
           <ListItem onClick={() => setSelectedIndex(1)} selected={selectedIndex === 1}>
             <ListItemIcon>
-              <Icon icon={DraftsRoundedIcon} />
+              <MaterialSymbol icon="drafts" />
             </ListItemIcon>
             <ListItemText primary="Drafts" />
           </ListItem>
           <ListItem onClick={() => setSelectedIndex(2)} selected={selectedIndex === 2}>
             <ListItemIcon>
-              <Icon icon={SendRoundedIcon} />
+              <MaterialSymbol icon="send" />
             </ListItemIcon>
             <ListItemText primary="Sent" />
           </ListItem>
@@ -264,11 +261,11 @@ export const States: Story = {
         <List sx={{ width: 300, bgcolor: 'background.paper' }}>
           <ListItem onClick={() => console.log('Clicked')}>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Enabled state" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
         </List>
@@ -281,11 +278,11 @@ export const States: Story = {
         <List sx={{ width: 300, bgcolor: 'background.paper' }}>
           <ListItem selected onClick={() => console.log('Clicked')}>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Selected state" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
         </List>
@@ -298,11 +295,11 @@ export const States: Story = {
         <List sx={{ width: 300, bgcolor: 'background.paper' }}>
           <ListItem disabled>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Disabled state" />
             <IconButton edge="end" disabled>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
         </List>
@@ -329,29 +326,29 @@ export const AllVariants: Story = {
         <List sx={{ width: 300, bgcolor: 'background.paper' }}>
           <ListItem button>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Enabled" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem button selected sx={{ mt: 1 }}>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Selected" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem button disabled sx={{ mt: 1 }}>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Disabled" />
             <IconButton edge="end" disabled>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
         </List>
@@ -364,29 +361,29 @@ export const AllVariants: Story = {
         <List sx={{ width: 300, bgcolor: 'background.paper' }}>
           <ListItem button disableGutters>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Enabled" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem button disableGutters selected sx={{ mt: 1 }}>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Selected" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem button disableGutters disabled sx={{ mt: 1 }}>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Disabled" />
             <IconButton edge="end" disabled>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
         </List>
@@ -399,29 +396,29 @@ export const AllVariants: Story = {
         <List dense sx={{ width: 300, bgcolor: 'background.paper' }}>
           <ListItem dense button>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Enabled" secondary="Secondary" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem dense button selected sx={{ mt: 1 }}>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Selected" secondary="Secondary" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem dense button disabled sx={{ mt: 1 }}>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Disabled" secondary="Secondary" />
             <IconButton edge="end" disabled>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
         </List>
@@ -434,29 +431,29 @@ export const AllVariants: Story = {
         <List dense sx={{ width: 300, bgcolor: 'background.paper' }}>
           <ListItem dense button disableGutters>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Enabled" secondary="Secondary" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem dense button disableGutters selected sx={{ mt: 1 }}>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Selected" secondary="Secondary" />
             <IconButton edge="end">
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
           <ListItem dense button disableGutters disabled sx={{ mt: 1 }}>
             <ListItemIcon>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </ListItemIcon>
             <ListItemText primary="Disabled" secondary="Secondary" />
             <IconButton edge="end" disabled>
-              <Icon icon={AddRoundedIcon} />
+              <MaterialSymbol icon="add" />
             </IconButton>
           </ListItem>
         </List>
@@ -486,11 +483,11 @@ export const Playground: Story = {
       <List>
         <ListItem {...args}>
           <ListItemIcon>
-            <Icon icon={AddRoundedIcon} />
+            <MaterialSymbol icon="add" />
           </ListItemIcon>
           <ListItemText primary="List item" secondary="Secondary text" />
           <IconButton edge="end">
-            <Icon icon={AddRoundedIcon} />
+            <MaterialSymbol icon="add" />
           </IconButton>
         </ListItem>
       </List>

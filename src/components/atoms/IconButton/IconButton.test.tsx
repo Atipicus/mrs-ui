@@ -4,15 +4,14 @@
 
 import React from 'react';
 import { renderWithTheme, screen, fireEvent } from '../../../../tests/test-utils';
-import AddIcon from '@mui/icons-material/Add';
-import DeleteIcon from '@mui/icons-material/Delete';
 import { IconButton } from './IconButton';
+import { MaterialSymbol } from '../MaterialSymbol/MaterialSymbol';
 
 describe('IconButton', () => {
   it('renders icon button with icon', () => {
     renderWithTheme(
       <IconButton aria-label="add">
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     expect(screen.getByRole('button', { name: 'add' })).toBeInTheDocument();
@@ -21,7 +20,7 @@ describe('IconButton', () => {
   it('renders with default color', () => {
     const { container } = renderWithTheme(
       <IconButton>
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     const button = container.querySelector('.MuiIconButton-root');
@@ -32,7 +31,7 @@ describe('IconButton', () => {
   it('renders with primary color', () => {
     const { container } = renderWithTheme(
       <IconButton color="primary">
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     const button = container.querySelector('.MuiIconButton-colorPrimary');
@@ -42,7 +41,7 @@ describe('IconButton', () => {
   it('renders with secondary color', () => {
     const { container } = renderWithTheme(
       <IconButton color="secondary">
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     const button = container.querySelector('.MuiIconButton-colorSecondary');
@@ -52,7 +51,7 @@ describe('IconButton', () => {
   it('renders with error color', () => {
     const { container } = renderWithTheme(
       <IconButton color="error">
-        <DeleteIcon />
+        <MaterialSymbol icon="delete" />
       </IconButton>
     );
     const button = container.querySelector('.MuiIconButton-colorError');
@@ -62,7 +61,7 @@ describe('IconButton', () => {
   it('renders with inherit color', () => {
     const { container } = renderWithTheme(
       <IconButton color="inherit">
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     const button = container.querySelector('.MuiIconButton-colorInherit');
@@ -72,7 +71,7 @@ describe('IconButton', () => {
   it('renders with small size', () => {
     const { container } = renderWithTheme(
       <IconButton size="small">
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     const button = container.querySelector('.MuiIconButton-sizeSmall');
@@ -82,7 +81,7 @@ describe('IconButton', () => {
   it('renders with medium size by default', () => {
     const { container } = renderWithTheme(
       <IconButton>
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     const button = container.querySelector('.MuiIconButton-sizeMedium');
@@ -92,7 +91,7 @@ describe('IconButton', () => {
   it('renders with large size', () => {
     const { container } = renderWithTheme(
       <IconButton size="large">
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     const button = container.querySelector('.MuiIconButton-sizeLarge');
@@ -103,7 +102,7 @@ describe('IconButton', () => {
     const handleClick = jest.fn();
     renderWithTheme(
       <IconButton onClick={handleClick} aria-label="test">
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     fireEvent.click(screen.getByRole('button'));
@@ -113,7 +112,7 @@ describe('IconButton', () => {
   it('can be disabled', () => {
     renderWithTheme(
       <IconButton disabled aria-label="disabled">
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     expect(screen.getByRole('button')).toBeDisabled();
@@ -122,7 +121,7 @@ describe('IconButton', () => {
   it('renders with edge start', () => {
     const { container } = renderWithTheme(
       <IconButton edge="start">
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     const button = container.querySelector('.MuiIconButton-edgeStart');
@@ -132,7 +131,7 @@ describe('IconButton', () => {
   it('renders with edge end', () => {
     const { container } = renderWithTheme(
       <IconButton edge="end">
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     const button = container.querySelector('.MuiIconButton-edgeEnd');
@@ -142,7 +141,7 @@ describe('IconButton', () => {
   it('accepts custom className', () => {
     const { container } = renderWithTheme(
       <IconButton className="custom-button">
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     const button = container.querySelector('.custom-button');
@@ -152,7 +151,7 @@ describe('IconButton', () => {
   it('accepts custom sx prop', () => {
     const { container } = renderWithTheme(
       <IconButton sx={{ backgroundColor: 'red' }}>
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     const button = container.querySelector('.MuiIconButton-root');
@@ -163,7 +162,7 @@ describe('IconButton', () => {
     const ref = React.createRef<HTMLButtonElement>();
     renderWithTheme(
       <IconButton ref={ref}>
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     expect(ref.current).toBeInstanceOf(HTMLButtonElement);
@@ -172,7 +171,7 @@ describe('IconButton', () => {
   it('can disable ripple effect', () => {
     renderWithTheme(
       <IconButton disableRipple aria-label="test">
-        <AddIcon />
+        <MaterialSymbol icon="add" />
       </IconButton>
     );
     const button = screen.getByRole('button');
@@ -183,7 +182,7 @@ describe('IconButton', () => {
   it('renders with aria-label for accessibility', () => {
     renderWithTheme(
       <IconButton aria-label="delete">
-        <DeleteIcon />
+        <MaterialSymbol icon="delete" />
       </IconButton>
     );
     expect(screen.getByRole('button', { name: 'delete' })).toBeInTheDocument();

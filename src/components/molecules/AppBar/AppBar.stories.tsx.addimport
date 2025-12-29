@@ -1,0 +1,539 @@
+/**
+ * AppBar Component Stories
+ * Demonstrates all variants and use cases of the MRS AppBar component
+ */
+
+import type { Meta, StoryObj } from '@storybook/react';
+import { AppBar } from './AppBar';
+import { Toolbar } from '../../atoms/Toolbar';
+import { IconButton } from '../../atoms/IconButton';
+import { Typography } from '../../atoms/Typography';
+import { Button } from '../../atoms/Button';
+import { TextField } from '../../atoms/TextField';
+import { Badge } from '../../atoms/Badge';
+import { Box } from '../../atoms/Box';
+import { AccountStack } from '../../atoms/AccountStack';
+
+const meta: Meta<typeof AppBar> = {
+  title: 'Molecules/AppBar',
+  component: AppBar,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        component:
+          'Top navigation bar component using MRS Design System tokens. Built on Material-UI AppBar with Nunito typography and MRS color palette (#00686f primary, #99cc00 secondary).',
+      },
+    },
+  },
+  argTypes: {
+    position: {
+      control: 'select',
+      options: ['fixed', 'absolute', 'sticky', 'static', 'relative'],
+      description: 'Positioning type of the AppBar',
+      table: {
+        defaultValue: { summary: 'fixed' },
+      },
+    },
+    color: {
+      control: 'select',
+      options: ['default', 'primary', 'secondary', 'transparent', 'inherit'],
+      description: 'Color variant using MRS palette',
+      table: {
+        defaultValue: { summary: 'default' },
+      },
+    },
+    elevation: {
+      control: { type: 'range', min: 0, max: 24, step: 1 },
+      description: 'Shadow depth elevation',
+      table: {
+        defaultValue: { summary: 4 },
+      },
+    },
+    enableColorOnDark: {
+      control: 'boolean',
+      description: 'Enable color in dark mode',
+      table: {
+        defaultValue: { summary: false },
+      },
+    },
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof AppBar>;
+
+/**
+ * Default AppBar with white background and basic title
+ */
+export const Default: Story = {
+  render: () => (
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          MRS Design System
+        </Typography>
+      </Toolbar>
+    </AppBar>
+  )
+};
+
+/**
+ * AppBar with menu icon and action button
+ */
+export const WithMenuIcon: Story = {
+  render: () => (
+    <AppBar position="static">
+      <Toolbar>
+        <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+          <MaterialSymbol icon="menu" />
+        </IconButton>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          MRS Application
+        </Typography>
+        <Button color="inherit">Login</Button>
+      </Toolbar>
+    </AppBar>
+  ),
+};
+
+/**
+ * AppBar with search functionality
+ */
+export const WithSearch: Story = {
+  render: () => (
+    <AppBar position="static">
+      <Toolbar>
+        <IconButton size="large" edge="start" color="inherit" aria-label="open drawer" sx={{ mr: 2 }}>
+          <MaterialSymbol icon="menu" />
+        </IconButton>
+        <Typography variant="h6" noWrap component="div" sx={{ display: { xs: 'none', sm: 'block' } }}>
+          MRS
+        </Typography>
+        <Box sx={{ flexGrow: 1 }} />
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+          <TextField
+            size="small"
+            placeholder="Search…"
+            sx={{
+              backgroundColor: 'rgba(255, 255, 255, 0.15)',
+              borderRadius: 1,
+              '& .MuiOutlinedInput-root': {
+                color: 'white',
+                '& fieldset': {
+                  borderColor: 'rgba(255, 255, 255, 0.3)',
+                },
+                '&:hover fieldset': {
+                  borderColor: 'rgba(255, 255, 255, 0.5)',
+                },
+              },
+            }}
+          />
+          <IconButton size="large" color="inherit">
+            <MaterialSymbol icon="search" />
+          </IconButton>
+        </Box>
+      </Toolbar>
+    </AppBar>
+  ),
+};
+
+/**
+ * AppBar with multiple action icons
+ */
+export const WithActions: Story = {
+  args: {
+    color: "secondary"
+  },
+
+  render: () => (
+    <AppBar position="static">
+      <Toolbar>
+        <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+          <MaterialSymbol icon="menu" />
+        </IconButton>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          MRS Dashboard
+        </Typography>
+        <IconButton size="large" color="inherit" aria-label="show 4 new mails">
+          <Badge badgeContent={4} color="error">
+            <MaterialSymbol icon="mail" />
+          </Badge>
+        </IconButton>
+        <IconButton size="large" color="inherit" aria-label="show 17 new notifications">
+          <Badge badgeContent={17} color="error">
+            <MaterialSymbol icon="notifications" />
+          </Badge>
+        </IconButton>
+        <IconButton size="large" edge="end" color="inherit" aria-label="account of current user">
+          <MaterialSymbol icon="account_circle" />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
+  )
+};
+
+/**
+ * AppBar with primary color (MRS verones #00686f)
+ */
+export const PrimaryColor: Story = {
+  render: () => (
+    <AppBar position="static" color="primary">
+      <Toolbar>
+        <Typography variant="h6">Primary Color (#00686f)</Typography>
+      </Toolbar>
+    </AppBar>
+  ),
+};
+
+/**
+ * AppBar with secondary color (MRS green #99cc00)
+ */
+export const SecondaryColor: Story = {
+  render: () => (
+    <AppBar position="static" color="secondary">
+      <Toolbar>
+        <Typography variant="h6" sx={{ color: 'secondary.contrastText' }}>
+          Secondary Color (#99cc00)
+        </Typography>
+      </Toolbar>
+    </AppBar>
+  ),
+};
+
+/**
+ * AppBar with transparent background
+ */
+export const Transparent: Story = {
+  render: () => (
+    <Box sx={{ position: 'relative', height: 400, bgcolor: 'grey.200' }}>
+      <AppBar position="absolute" color="transparent" elevation={0}>
+        <Toolbar>
+          <Typography variant="h6" sx={{ color: 'text.primary' }}>
+            Transparent AppBar
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Box sx={{ pt: 10, px: 3 }}>
+        <Typography>Content below the transparent AppBar</Typography>
+        <Typography paragraph sx={{ mt: 2 }}>
+          The transparent AppBar allows the background to show through, useful for hero sections or
+          overlaying content.
+        </Typography>
+      </Box>
+    </Box>
+  ),
+};
+
+/**
+ * AppBar with default color
+ */
+export const DefaultColor: Story = {
+  args: {
+    elevation: 1,
+    color: "inherit"
+  },
+
+  render: () => (
+    <AppBar position="static" color="default">
+      <Toolbar>
+        <Typography variant="h6" sx={{ color: 'text.primary' }}>
+          Default Color
+        </Typography>
+      </Toolbar>
+    </AppBar>
+  )
+};
+
+/**
+ * Dense variant with compact toolbar (48px)
+ */
+export const Dense: Story = {
+  render: () => (
+    <AppBar position="static">
+      <Toolbar variant="dense">
+        <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+          <MaterialSymbol icon="menu" />
+        </IconButton>
+        <Typography variant="h6" component="div">
+          Dense Toolbar (48px height)
+        </Typography>
+      </Toolbar>
+    </AppBar>
+  ),
+};
+
+/**
+ * Fixed position (stays at top when scrolling)
+ */
+export const FixedPosition: Story = {
+  render: () => (
+    <Box>
+      <AppBar position="fixed">
+        <Toolbar>
+          <Typography variant="h6">Fixed Position AppBar</Typography>
+        </Toolbar>
+      </AppBar>
+      <Box sx={{ mt: 8, p: 3 }}>
+        <Typography variant="h5" gutterBottom>
+          Scroll to see fixed behavior
+        </Typography>
+        <Typography paragraph>
+          This AppBar stays fixed at the top of the viewport when scrolling.
+        </Typography>
+        {Array.from({ length: 50 }, (_, i) => (
+          <Typography key={i} paragraph>
+            Content line {i + 1}. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </Typography>
+        ))}
+      </Box>
+    </Box>
+  ),
+};
+
+/**
+ * Static position (flows with content)
+ */
+export const StaticPosition: Story = {
+  render: () => (
+    <Box>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">Static Position AppBar</Typography>
+        </Toolbar>
+      </AppBar>
+      <Box sx={{ p: 3 }}>
+        <Typography>This AppBar is part of the normal document flow.</Typography>
+      </Box>
+    </Box>
+  ),
+};
+
+/**
+ * Sticky position (sticks when scrolled to)
+ */
+export const StickyPosition: Story = {
+  render: () => (
+    <Box>
+      <Box sx={{ p: 3, bgcolor: 'grey.100' }}>
+        <Typography variant="h5" gutterBottom>
+          Scroll down to see sticky behavior
+        </Typography>
+        {Array.from({ length: 10 }, (_, i) => (
+          <Typography key={i} paragraph>
+            Content before AppBar {i + 1}. Lorem ipsum dolor sit amet.
+          </Typography>
+        ))}
+      </Box>
+      <AppBar position="sticky">
+        <Toolbar>
+          <Typography variant="h6">Sticky Position AppBar</Typography>
+        </Toolbar>
+      </AppBar>
+      <Box sx={{ p: 3 }}>
+        {Array.from({ length: 30 }, (_, i) => (
+          <Typography key={i} paragraph>
+            Content after AppBar {i + 1}. The AppBar sticks to the top when you scroll.
+          </Typography>
+        ))}
+      </Box>
+    </Box>
+  ),
+};
+
+/**
+ * Different elevation levels
+ */
+export const ElevationLevels: Story = {
+  render: () => (
+    <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, p: 2 }}>
+      <Typography variant="h6" gutterBottom>
+        AppBar Elevation Levels (Shadow Depth)
+      </Typography>
+      {[0, 2, 4, 8, 12, 16, 24].map((elevation) => (
+        <AppBar key={elevation} position="static" elevation={elevation}>
+          <Toolbar>
+            <Typography variant="h6">Elevation {elevation}</Typography>
+          </Toolbar>
+        </AppBar>
+      ))}
+    </Box>
+  ),
+};
+
+/**
+ * Mobile responsive with menu drawer simulation
+ */
+export const MobileResponsive: Story = {
+  render: () => (
+    <AppBar position="static">
+      <Toolbar>
+        <IconButton
+          size="large"
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+          sx={{ mr: 2, display: { sm: 'none' } }}
+        >
+          <MaterialSymbol icon="menu" />
+        </IconButton>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          MRS
+        </Typography>
+        <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 1 }}>
+          <Button color="inherit">Home</Button>
+          <Button color="inherit">About</Button>
+          <Button color="inherit">Contact</Button>
+        </Box>
+        <IconButton size="large" edge="end" color="inherit" sx={{ display: { sm: 'none' } }}>
+          <MaterialSymbol icon="more_vert" />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
+  ),
+};
+
+/**
+ * AppBar with no gutter padding in Toolbar
+ */
+export const NoGutters: Story = {
+  render: () => (
+    <AppBar position="static">
+      <Toolbar disableGutters>
+        <Box sx={{ px: 2, display: 'flex', alignItems: 'center', width: '100%' }}>
+          <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+            <MaterialSymbol icon="menu" />
+          </IconButton>
+          <Typography variant="h6">No Gutters (Custom Padding)</Typography>
+        </Box>
+      </Toolbar>
+    </AppBar>
+  ),
+};
+
+/**
+ * Absolute positioning example
+ */
+export const AbsolutePosition: Story = {
+  render: () => (
+    <Box sx={{ position: 'relative', height: 300, bgcolor: 'grey.100' }}>
+      <AppBar position="absolute">
+        <Toolbar>
+          <Typography variant="h6">Absolute Position AppBar</Typography>
+        </Toolbar>
+      </AppBar>
+      <Box sx={{ pt: 10, px: 3 }}>
+        <Typography>
+          Positioned absolutely relative to the nearest positioned ancestor.
+        </Typography>
+      </Box>
+    </Box>
+  ),
+};
+
+/**
+ * AppBar with AccountStack component
+ */
+export const WithAccountStack: Story = {
+  render: () => (
+    <AppBar position="static">
+      <Toolbar>
+        <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+          <MaterialSymbol icon="menu" />
+        </IconButton>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          MRS Dashboard
+        </Typography>
+        <AccountStack
+          userName="John Doe"
+          userEmail="john.doe@example.com"
+          notifications
+          user
+          userAccountInfo
+        />
+      </Toolbar>
+    </AppBar>
+  ),
+};
+
+/**
+ * AppBar with AccountStack and notification count
+ */
+export const WithAccountStackNotifications: Story = {
+  render: () => (
+    <AppBar position="static">
+      <Toolbar>
+        <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+          <MaterialSymbol icon="menu" />
+        </IconButton>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          MRS Application
+        </Typography>
+        <AccountStack
+          userName="Jane Smith"
+          userEmail="jane.smith@mrs.com"
+          notifications
+          notificationCount={5}
+          avatarSrc="https://i.pravatar.cc/150?img=5"
+          user
+          userAccountInfo
+        />
+      </Toolbar>
+    </AppBar>
+  ),
+};
+
+/**
+ * AppBar with AccountStack on primary color
+ */
+export const WithAccountStackPrimary: Story = {
+  render: () => (
+    <AppBar position="static" color="primary">
+      <Toolbar>
+        <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+          <MaterialSymbol icon="menu" />
+        </IconButton>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          Admin Panel
+        </Typography>
+        <AccountStack
+          userName="Admin User"
+          userEmail="admin@mrs.com"
+          notifications
+          notificationCount={12}
+          user
+          userAccountInfo
+          sx={{ color: 'inherit' }}
+        />
+      </Toolbar>
+    </AppBar>
+  ),
+};
+
+/**
+ * AppBar with AccountStack - avatar on right side
+ */
+export const WithAccountStackAvatarRight: Story = {
+  render: () => (
+    <AppBar position="static">
+      <Toolbar>
+        <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+          <MaterialSymbol icon="menu" />
+        </IconButton>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          MRS System
+        </Typography>
+        <AccountStack
+          userName="John Doe"
+          userEmail="john.doe@example.com"
+          notifications
+          avatarPosition="right"
+          avatarSrc="https://i.pravatar.cc/150?img=1"
+          user
+          userAccountInfo
+        />
+      </Toolbar>
+    </AppBar>
+  ),
+};

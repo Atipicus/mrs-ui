@@ -4,12 +4,12 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Toolbar } from './Toolbar';
+import { MaterialSymbol } from '../MaterialSymbol';
 import { AppBar } from '../../molecules/AppBar';
 import { IconButton } from '../IconButton';
 import { Typography } from '../Typography';
 import { Button } from '../Button';
 import { AccountStack } from '../AccountStack';
-import MenuIcon from '@mui/icons-material/Menu';
 
 const meta: Meta<typeof Toolbar> = {
   title: 'Atoms/Toolbar',
@@ -67,7 +67,7 @@ export const WithMenuIcon: Story = {
     <AppBar position="static">
       <Toolbar>
         <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           MRS Application
@@ -86,7 +86,7 @@ export const Dense: Story = {
     <AppBar position="static">
       <Toolbar variant="dense">
         <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Typography variant="h6" component="div">
           Dense Toolbar (48px)
@@ -156,7 +156,7 @@ export const WithAccountStack: Story = {
     <AppBar position="static">
       <Toolbar>
         <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           MRS Dashboard
@@ -181,7 +181,7 @@ export const WithAccountStackNotifications: Story = {
     <AppBar position="static" color="primary">
       <Toolbar>
         <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           MRS Application

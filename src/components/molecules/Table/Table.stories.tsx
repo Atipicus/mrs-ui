@@ -4,6 +4,7 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react';
+import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import React, { useState } from 'react';
 import {
   Table,
@@ -18,8 +19,6 @@ import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
 import TableSortLabel from '@mui/material/TableSortLabel';
 import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
 
 const meta: Meta<typeof Table> = {
   title: 'Molecules/Table',
@@ -337,10 +336,10 @@ export const WithActions: Story = {
               <TableCell>{row.role}</TableCell>
               <TableCell align="right">
                 <IconButton size="small" color="primary">
-                  <EditIcon fontSize="small" />
+                  <MaterialSymbol icon="edit" size="small" />
                 </IconButton>
                 <IconButton size="small" color="error">
-                  <DeleteIcon fontSize="small" />
+                  <MaterialSymbol icon="delete" size="small" />
                 </IconButton>
               </TableCell>
             </TableRow>

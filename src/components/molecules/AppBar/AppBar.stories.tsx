@@ -12,13 +12,8 @@ import { Button } from '../../atoms/Button';
 import { TextField } from '../../atoms/TextField';
 import { Badge } from '../../atoms/Badge';
 import { Box } from '../../atoms/Box';
+import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import { AccountStack } from '../../atoms/AccountStack';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import MoreIcon from '@mui/icons-material/MoreVert';
 
 const meta: Meta<typeof AppBar> = {
   title: 'Molecules/AppBar',
@@ -93,7 +88,7 @@ export const WithMenuIcon: Story = {
     <AppBar position="static">
       <Toolbar>
         <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           MRS Application
@@ -112,7 +107,7 @@ export const WithSearch: Story = {
     <AppBar position="static">
       <Toolbar>
         <IconButton size="large" edge="start" color="inherit" aria-label="open drawer" sx={{ mr: 2 }}>
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Typography variant="h6" noWrap component="div" sx={{ display: { xs: 'none', sm: 'block' } }}>
           MRS
@@ -137,7 +132,7 @@ export const WithSearch: Story = {
             }}
           />
           <IconButton size="large" color="inherit">
-            <SearchIcon />
+            <MaterialSymbol icon="search" />
           </IconButton>
         </Box>
       </Toolbar>
@@ -157,23 +152,23 @@ export const WithActions: Story = {
     <AppBar position="static">
       <Toolbar>
         <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           MRS Dashboard
         </Typography>
         <IconButton size="large" color="inherit" aria-label="show 4 new mails">
           <Badge badgeContent={4} color="error">
-            <MailIcon />
+            <MaterialSymbol icon="mail" />
           </Badge>
         </IconButton>
         <IconButton size="large" color="inherit" aria-label="show 17 new notifications">
           <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
+            <MaterialSymbol icon="notifications" />
           </Badge>
         </IconButton>
         <IconButton size="large" edge="end" color="inherit" aria-label="account of current user">
-          <AccountCircle />
+          <MaterialSymbol icon="account_circle" />
         </IconButton>
       </Toolbar>
     </AppBar>
@@ -260,7 +255,7 @@ export const Dense: Story = {
     <AppBar position="static">
       <Toolbar variant="dense">
         <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Typography variant="h6" component="div">
           Dense Toolbar (48px height)
@@ -382,7 +377,7 @@ export const MobileResponsive: Story = {
           aria-label="menu"
           sx={{ mr: 2, display: { sm: 'none' } }}
         >
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           MRS
@@ -393,7 +388,7 @@ export const MobileResponsive: Story = {
           <Button color="inherit">Contact</Button>
         </Box>
         <IconButton size="large" edge="end" color="inherit" sx={{ display: { sm: 'none' } }}>
-          <MoreIcon />
+          <MaterialSymbol icon="more_vert" />
         </IconButton>
       </Toolbar>
     </AppBar>
@@ -409,7 +404,7 @@ export const NoGutters: Story = {
       <Toolbar disableGutters>
         <Box sx={{ px: 2, display: 'flex', alignItems: 'center', width: '100%' }}>
           <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-            <MenuIcon />
+            <MaterialSymbol icon="menu" />
           </IconButton>
           <Typography variant="h6">No Gutters (Custom Padding)</Typography>
         </Box>
@@ -446,7 +441,7 @@ export const WithAccountStack: Story = {
     <AppBar position="static">
       <Toolbar>
         <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           MRS Dashboard
@@ -471,7 +466,7 @@ export const WithAccountStackNotifications: Story = {
     <AppBar position="static">
       <Toolbar>
         <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           MRS Application
@@ -498,7 +493,7 @@ export const WithAccountStackPrimary: Story = {
     <AppBar position="static" color="primary">
       <Toolbar>
         <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Admin Panel
@@ -525,7 +520,7 @@ export const WithAccountStackAvatarRight: Story = {
     <AppBar position="static">
       <Toolbar>
         <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
+          <MaterialSymbol icon="menu" />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           MRS System

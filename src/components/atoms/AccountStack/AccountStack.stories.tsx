@@ -4,13 +4,13 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react';
+import { MaterialSymbol } from '../MaterialSymbol';
 import { AccountStack } from './AccountStack';
 import { AppBar } from '../../molecules/AppBar';
 import { Toolbar } from '../Toolbar';
 import { IconButton } from '../IconButton';
 import { Typography } from '../Typography';
 import { Box } from '../Box';
-import MenuIcon from '@mui/icons-material/Menu';
 
 const meta: Meta<typeof AccountStack> = {
   title: 'Atoms/AccountStack',
@@ -195,7 +195,7 @@ export const InAppBar: Story = {
       <AppBar position="static">
         <Toolbar>
           <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-            <MenuIcon />
+            <MaterialSymbol icon="menu" />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             MRS Dashboard
@@ -224,7 +224,7 @@ export const InAppBarSecondary: Story = {
       <AppBar position="static" color="secondary">
         <Toolbar>
           <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-            <MenuIcon />
+            <MaterialSymbol icon="menu" />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'secondary.contrastText' }}>
             MRS Application
@@ -328,7 +328,7 @@ export const InDenseToolbar: Story = {
       <AppBar position="static">
         <Toolbar variant="dense">
           <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-            <MenuIcon />
+            <MaterialSymbol icon="menu" />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Dense Toolbar
@@ -412,7 +412,7 @@ export const AvatarRightInAppBar: Story = {
       <AppBar position="static">
         <Toolbar>
           <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-            <MenuIcon />
+            <MaterialSymbol icon="menu" />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Avatar Right Position

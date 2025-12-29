@@ -1,0 +1,437 @@
+/**
+ * Menu Component Stories
+ * @package @mrs/ui
+ */
+
+import type { Meta, StoryObj } from '@storybook/react';
+import React, { useState } from 'react';
+import { Menu } from './Menu';
+import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
+
+const meta: Meta<typeof Menu> = {
+  title: 'Molecules/Menu',
+  component: Menu,
+  parameters: {
+    layout: 'centered',
+    docs: {
+      description: {
+        component:
+          'Menus display a list of choices on temporary surfaces. They appear when users interact with a button, action, or other control.',
+      },
+    },
+  },
+  tags: ['autodocs'],
+  argTypes: {
+    open: {
+      control: 'boolean',
+      description: 'If true, the Menu is open',
+    },
+    anchorOrigin: {
+      control: 'object',
+      description: 'The position of the Menu',
+    },
+    transformOrigin: {
+      control: 'object',
+      description: 'The position of the Menu relative to the anchor element',
+    },
+    autoFocus: {
+      control: 'boolean',
+      description: 'If true, the Menu will automatically select the first item',
+    },
+    variant: {
+      control: 'select',
+      options: ['menu', 'selectedMenu'],
+      description: 'The variant of the Menu',
+    },
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof Menu>;
+
+/**
+ * Default Menu with simple items
+ */
+export const Default: Story = {
+  render: () => {
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+
+    return (
+      <>
+        <Button variant="contained" onClick={(e) => setAnchorEl(e.currentTarget)}>
+          Open Menu
+        </Button>
+        <Menu open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>
+          <MenuItem onClick={() => setAnchorEl(null)}>Profile</MenuItem>
+          <MenuItem onClick={() => setAnchorEl(null)}>My account</MenuItem>
+          <MenuItem onClick={() => setAnchorEl(null)}>Logout</MenuItem>
+        </Menu>
+      </>
+    );
+  },
+};
+
+/**
+ * Menu with icons
+ */
+export const WithIcons: Story = {
+  render: () => {
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+
+    return (
+      <>
+        <Button variant="contained" onClick={(e) => setAnchorEl(e.currentTarget)}>
+          Account Menu
+        </Button>
+        <Menu open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>
+          <MenuItem onClick={() => setAnchorEl(null)}>
+            <ListItemIcon>
+              <PersonIcon fontSize="small" />
+            </ListItemIcon>
+            <ListItemText>Profile</ListItemText>
+          </MenuItem>
+          <MenuItem onClick={() => setAnchorEl(null)}>
+            <ListItemIcon>
+              <SettingsIcon fontSize="small" />
+            </ListItemIcon>
+            <ListItemText>Settings</ListItemText>
+          </MenuItem>
+          <Divider />
+          <MenuItem onClick={() => setAnchorEl(null)}>
+            <ListItemIcon>
+              <LogoutIcon fontSize="small" />
+            </ListItemIcon>
+            <ListItemText>Logout</ListItemText>
+          </MenuItem>
+        </Menu>
+      </>
+    );
+  },
+};
+
+/**
+ * Menu with dividers
+ */
+export const WithDividers: Story = {
+  render: () => {
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+
+    return (
+      <>
+        <Button variant="contained" onClick={(e) => setAnchorEl(e.currentTarget)}>
+          Options
+        </Button>
+        <Menu open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>
+          <MenuItem onClick={() => setAnchorEl(null)}>New</MenuItem>
+          <MenuItem onClick={() => setAnchorEl(null)}>Open</MenuItem>
+          <Divider />
+          <MenuItem onClick={() => setAnchorEl(null)}>Save</MenuItem>
+          <MenuItem onClick={() => setAnchorEl(null)}>Save As...</MenuItem>
+          <Divider />
+          <MenuItem onClick={() => setAnchorEl(null)}>Exit</MenuItem>
+        </Menu>
+      </>
+    );
+  },
+};
+
+/**
+ * Icon button menu (more common pattern)
+ */
+export const IconButtonMenu: Story = {
+  render: () => {
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+
+    return (
+      <>
+        <IconButton onClick={(e) => setAnchorEl(e.currentTarget)}>
+          <MaterialSymbol icon="more_vert" />
+        </IconButton>
+        <Menu open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>
+          <MenuItem onClick={() => setAnchorEl(null)}>
+            <ListItemIcon>
+              <MaterialSymbol icon="edit" size="small" />
+            </ListItemIcon>
+            <ListItemText>Edit</ListItemText>
+          </MenuItem>
+          <MenuItem onClick={() => setAnchorEl(null)}>
+            <ListItemIcon>
+              <MaterialSymbol icon="delete" size="small" />
+            </ListItemIcon>
+            <ListItemText>Delete</ListItemText>
+          </MenuItem>
+        </Menu>
+      </>
+    );
+  },
+};
+
+/**
+ * Different anchor positions
+ */
+export const Positions: Story = {
+  render: () => {
+    const [anchorEl1, setAnchorEl1] = useState<null | HTMLElement>(null);
+    const [anchorEl2, setAnchorEl2] = useState<null | HTMLElement>(null);
+    const [anchorEl3, setAnchorEl3] = useState<null | HTMLElement>(null);
+    const [anchorEl4, setAnchorEl4] = useState<null | HTMLElement>(null);
+
+    return (
+      <Stack spacing={2}>
+        <Button variant="outlined" onClick={(e) => setAnchorEl1(e.currentTarget)}>
+          Top Left
+        </Button>
+        <Menu
+          open={Boolean(anchorEl1)}
+          anchorEl={anchorEl1}
+          onClose={() => setAnchorEl1(null)}
+          anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+          transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+        >
+          <MenuItem onClick={() => setAnchorEl1(null)}>Item 1</MenuItem>
+          <MenuItem onClick={() => setAnchorEl1(null)}>Item 2</MenuItem>
+        </Menu>
+
+        <Button variant="outlined" onClick={(e) => setAnchorEl2(e.currentTarget)}>
+          Top Right
+        </Button>
+        <Menu
+          open={Boolean(anchorEl2)}
+          anchorEl={anchorEl2}
+          onClose={() => setAnchorEl2(null)}
+          anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+          transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        >
+          <MenuItem onClick={() => setAnchorEl2(null)}>Item 1</MenuItem>
+          <MenuItem onClick={() => setAnchorEl2(null)}>Item 2</MenuItem>
+        </Menu>
+
+        <Button variant="outlined" onClick={(e) => setAnchorEl3(e.currentTarget)}>
+          Bottom Left
+        </Button>
+        <Menu
+          open={Boolean(anchorEl3)}
+          anchorEl={anchorEl3}
+          onClose={() => setAnchorEl3(null)}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+          transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+        >
+          <MenuItem onClick={() => setAnchorEl3(null)}>Item 1</MenuItem>
+          <MenuItem onClick={() => setAnchorEl3(null)}>Item 2</MenuItem>
+        </Menu>
+
+        <Button variant="outlined" onClick={(e) => setAnchorEl4(e.currentTarget)}>
+          Bottom Right
+        </Button>
+        <Menu
+          open={Boolean(anchorEl4)}
+          anchorEl={anchorEl4}
+          onClose={() => setAnchorEl4(null)}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+          transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        >
+          <MenuItem onClick={() => setAnchorEl4(null)}>Item 1</MenuItem>
+          <MenuItem onClick={() => setAnchorEl4(null)}>Item 2</MenuItem>
+        </Menu>
+      </Stack>
+    );
+  },
+};
+
+/**
+ * Dense Menu (more compact)
+ */
+export const Dense: Story = {
+  render: () => {
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+
+    return (
+      <>
+        <Button variant="contained" onClick={(e) => setAnchorEl(e.currentTarget)}>
+          Dense Menu
+        </Button>
+        <Menu
+          open={open}
+          anchorEl={anchorEl}
+          onClose={() => setAnchorEl(null)}
+          MenuListProps={{ dense: true }}
+        >
+          <MenuItem onClick={() => setAnchorEl(null)}>Item 1</MenuItem>
+          <MenuItem onClick={() => setAnchorEl(null)}>Item 2</MenuItem>
+          <MenuItem onClick={() => setAnchorEl(null)}>Item 3</MenuItem>
+          <MenuItem onClick={() => setAnchorEl(null)}>Item 4</MenuItem>
+          <MenuItem onClick={() => setAnchorEl(null)}>Item 5</MenuItem>
+        </Menu>
+      </>
+    );
+  },
+};
+
+/**
+ * Menu with disabled items
+ */
+export const WithDisabledItems: Story = {
+  render: () => {
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+
+    return (
+      <>
+        <Button variant="contained" onClick={(e) => setAnchorEl(e.currentTarget)}>
+          Menu Options
+        </Button>
+        <Menu open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>
+          <MenuItem onClick={() => setAnchorEl(null)}>Enabled Item</MenuItem>
+          <MenuItem disabled>Disabled Item</MenuItem>
+          <MenuItem onClick={() => setAnchorEl(null)}>Another Enabled</MenuItem>
+          <MenuItem disabled>Another Disabled</MenuItem>
+        </Menu>
+      </>
+    );
+  },
+};
+
+/**
+ * Menu with selected item
+ */
+export const WithSelectedItem: Story = {
+  render: () => {
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const [selectedIndex, setSelectedIndex] = useState(1);
+    const open = Boolean(anchorEl);
+
+    const handleMenuItemClick = (index: number) => {
+      setSelectedIndex(index);
+      setAnchorEl(null);
+    };
+
+    return (
+      <>
+        <Button variant="contained" onClick={(e) => setAnchorEl(e.currentTarget)}>
+          Select Language
+        </Button>
+        <Menu open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>
+          <MenuItem
+            selected={selectedIndex === 0}
+            onClick={() => handleMenuItemClick(0)}
+          >
+            English
+          </MenuItem>
+          <MenuItem
+            selected={selectedIndex === 1}
+            onClick={() => handleMenuItemClick(1)}
+          >
+            Spanish
+          </MenuItem>
+          <MenuItem
+            selected={selectedIndex === 2}
+            onClick={() => handleMenuItemClick(2)}
+          >
+            French
+          </MenuItem>
+          <MenuItem
+            selected={selectedIndex === 3}
+            onClick={() => handleMenuItemClick(3)}
+          >
+            German
+          </MenuItem>
+        </Menu>
+      </>
+    );
+  },
+};
+
+/**
+ * Max height Menu (scrollable)
+ */
+export const MaxHeight: Story = {
+  render: () => {
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+
+    return (
+      <>
+        <Button variant="contained" onClick={(e) => setAnchorEl(e.currentTarget)}>
+          Long Menu
+        </Button>
+        <Menu
+          open={open}
+          anchorEl={anchorEl}
+          onClose={() => setAnchorEl(null)}
+          MenuListProps={{ style: { maxHeight: 200 } }}
+        >
+          {Array.from({ length: 20 }, (_, i) => (
+            <MenuItem key={i} onClick={() => setAnchorEl(null)}>
+              Item {i + 1}
+            </MenuItem>
+          ))}
+        </Menu>
+      </>
+    );
+  },
+};
+
+/**
+ * Context Menu (right-click)
+ */
+export const ContextMenu: Story = {
+  render: () => {
+    const [contextMenu, setContextMenu] = useState<{
+      mouseX: number;
+      mouseY: number;
+    } | null>(null);
+
+    const handleContextMenu = (event: React.MouseEvent) => {
+      event.preventDefault();
+      setContextMenu(
+        contextMenu === null
+          ? { mouseX: event.clientX - 2, mouseY: event.clientY - 4 }
+          : null
+      );
+    };
+
+    const handleClose = () => {
+      setContextMenu(null);
+    };
+
+    return (
+      <div
+        onContextMenu={handleContextMenu}
+        style={{
+          padding: 40,
+          border: '2px dashed #ccc',
+          borderRadius: 4,
+          cursor: 'context-menu',
+        }}
+      >
+        Right-click me to open context menu
+        <Menu
+          open={contextMenu !== null}
+          onClose={handleClose}
+          anchorReference="anchorPosition"
+          anchorPosition={
+            contextMenu !== null
+              ? { top: contextMenu.mouseY, left: contextMenu.mouseX }
+              : undefined
+          }
+        >
+          <MenuItem onClick={handleClose}>Copy</MenuItem>
+          <MenuItem onClick={handleClose}>Paste</MenuItem>
+          <Divider />
+          <MenuItem onClick={handleClose}>Delete</MenuItem>
+        </Menu>
+      </div>
+    );
+  },
+};

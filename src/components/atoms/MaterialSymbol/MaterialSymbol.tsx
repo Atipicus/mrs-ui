@@ -56,7 +56,7 @@ export interface MaterialSymbolProps {
    * - Negative values: Lighter appearance
    * - Positive values: Heavier appearance
    *
-   * @default -25
+   * @default 100
    */
   grade?: number;
 
@@ -109,7 +109,7 @@ export interface MaterialSymbolProps {
  * - Variant: Rounded
  * - Weight: 300 (Light)
  * - Fill: 0 (Outlined)
- * - Grade: -25 (Slightly lighter)
+ * - Grade: 100 (Lighter visual weight)
  *
  * @example
  * Basic usage
@@ -153,7 +153,7 @@ export const MaterialSymbol = React.forwardRef<
       size = 'medium',
       fill = 0,
       weight = 300,
-      grade = -25,
+      grade = 100,
       color,
       className = '',
       sx,

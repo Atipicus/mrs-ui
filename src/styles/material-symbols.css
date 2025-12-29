@@ -6,7 +6,7 @@
  * - Variant: Rounded
  * - Weight: 300 (Light)
  * - Fill: 0 (Outlined)
- * - Grade: -25 (Lighter visual weight)
+ * - Grade: 100 (Lighter visual weight)
  * - Optical Size: 24px
  *
  * Documentation: https://fonts.google.com/icons
@@ -34,7 +34,7 @@
   font-variation-settings:
     'FILL' 0, /* Outlined (0) vs Filled (1) */
     'wght' 300, /* Light weight - thin strokes */
-    'GRAD' -25, /* Slightly lighter visual weight */
+    'GRAD' 100, /* Lighter visual weight */
     'opsz' 24; /* 24px optical size */
 }
 

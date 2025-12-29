@@ -4,8 +4,8 @@
 
 import React from 'react';
 import { render, screen } from '../../../../tests/test-utils';
-import PersonIcon from '@mui/icons-material/Person';
 import { Avatar } from './Avatar';
+import PersonIcon from '@mui/icons-material/Person';
 
 describe('Avatar', () => {
   it('renders with initials', () => {

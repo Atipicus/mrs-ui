@@ -39,9 +39,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
 import List from '@mui/material/List';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
 import { useTheme } from '@mui/material/styles';
+import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import type { ExpandableNavItemProps, NavItem } from './ExpandableNavItem.types';
 
 /**
@@ -107,7 +106,12 @@ export const ExpandableNavItem = React.forwardRef<HTMLDivElement, ExpandableNavI
               fontWeight: selected ? 600 : 400,
             }}
           />
-          {children.length > 0 && (isOpen ? <ExpandLess /> : <ExpandMore />)}
+          {children.length > 0 && (
+            <MaterialSymbol
+              icon={isOpen ? 'expand_less' : 'expand_more'}
+              size="medium"
+            />
+          )}
         </ListItemButton>
 
         {/* Collapsible Child Items */}

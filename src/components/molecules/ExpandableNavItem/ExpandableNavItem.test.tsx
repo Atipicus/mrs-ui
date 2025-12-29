@@ -45,25 +45,27 @@ describe('ExpandableNavItem', () => {
 
   // Expand/Collapse tests
   it('shows expand icon when closed', () => {
-    renderWithTheme(
+    const { container } = renderWithTheme(
       <List>
         <ExpandableNavItem label="Parent" isOpen={false} children={[{ label: 'Child' }]} />
       </List>
     );
-    // ExpandMore icon should be present (downward arrow)
-    const expandIcon = document.querySelector('[data-testid="ExpandMoreIcon"]');
+    // MaterialSymbol with 'expand_more' should be present (downward arrow)
+    const expandIcon = container.querySelector('.material-symbols-rounded');
     expect(expandIcon).toBeInTheDocument();
+    expect(expandIcon?.textContent).toBe('expand_more');
   });
 
   it('shows collapse icon when open', () => {
-    renderWithTheme(
+    const { container } = renderWithTheme(
       <List>
         <ExpandableNavItem label="Parent" isOpen={true} children={[{ label: 'Child' }]} />
       </List>
     );
-    // ExpandLess icon should be present (upward arrow)
-    const collapseIcon = document.querySelector('[data-testid="ExpandLessIcon"]');
+    // MaterialSymbol with 'expand_less' should be present (upward arrow)
+    const collapseIcon = container.querySelector('.material-symbols-rounded');
     expect(collapseIcon).toBeInTheDocument();
+    expect(collapseIcon?.textContent).toBe('expand_less');
   });
 
   it('hides children when closed', () => {
@@ -271,26 +273,24 @@ describe('ExpandableNavItem', () => {
 
   // Edge cases
   it('renders without children array', () => {
-    renderWithTheme(
+    const { container } = renderWithTheme(
       <List>
         <ExpandableNavItem label="Parent" />
       </List>
     );
     expect(screen.getByText('Parent')).toBeInTheDocument();
     // Should not show expand/collapse icon when no children
-    expect(document.querySelector('[data-testid="ExpandMoreIcon"]')).not.toBeInTheDocument();
-    expect(document.querySelector('[data-testid="ExpandLessIcon"]')).not.toBeInTheDocument();
+    expect(container.querySelector('.material-symbols-rounded')).not.toBeInTheDocument();
   });
 
   it('renders with empty children array', () => {
-    renderWithTheme(
+    const { container } = renderWithTheme(
       <List>
         <ExpandableNavItem label="Parent" children={[]} />
       </List>
     );
     expect(screen.getByText('Parent')).toBeInTheDocument();
     // Should not show expand/collapse icon when children array is empty
-    expect(document.querySelector('[data-testid="ExpandMoreIcon"]')).not.toBeInTheDocument();
-    expect(document.querySelector('[data-testid="ExpandLessIcon"]')).not.toBeInTheDocument();
+    expect(container.querySelector('.material-symbols-rounded')).not.toBeInTheDocument();
   });
 });

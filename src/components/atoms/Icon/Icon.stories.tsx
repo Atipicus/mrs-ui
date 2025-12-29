@@ -1,15 +1,14 @@
 /**
  * Icon component stories
+ *
+ * Note: These stories demonstrate the Icon wrapper component which accepts both
+ * Material Icons (SVG) and MaterialSymbol (font) icons. For new implementations,
+ * use MaterialSymbol directly for better performance and flexibility.
  */
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { Box, Stack, Typography as MuiTypography } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import HomeIcon from '@mui/icons-material/Home';
-import SettingsIcon from '@mui/icons-material/Settings';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import DeleteIcon from '@mui/icons-material/Delete';
-import SearchIcon from '@mui/icons-material/Search';
+import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import { Icon } from './Icon';
 
 const meta: Meta<typeof Icon> = {
@@ -28,65 +27,20 @@ const meta: Meta<typeof Icon> = {
 export default meta;
 type Story = StoryObj<typeof Icon>;
 
-// SVG Icon Stories
+// Font Icon Stories using MaterialSymbol
 /**
- * Default SVG icon (Medium size)
+ * Default icon using MaterialSymbol font (Medium size)
  */
 export const Default: Story = {
   args: {
-    icon: AddIcon,
+    type: 'font',
+    iconName: 'add',
     size: 'medium',
-  },
+  } as any,
 };
 
 /**
- * Small SVG icon
- */
-export const SmallSvg: Story = {
-  args: {
-    icon: AddIcon,
-    size: 'small',
-  },
-};
-
-/**
- * Medium SVG icon
- */
-export const MediumSvg: Story = {
-  args: {
-    icon: AddIcon,
-    size: 'medium',
-  },
-};
-
-/**
- * Large SVG icon
- */
-export const LargeSvg: Story = {
-  args: {
-    icon: AddIcon,
-    size: 'large',
-  },
-};
-
-/**
- * Inherit size SVG icon
- */
-export const InheritSvg: Story = {
-  args: {
-    icon: AddIcon,
-    size: 'inherit',
-  },
-  render: (args) => (
-    <MuiTypography variant="h3">
-      Text with icon <Icon {...args} />
-    </MuiTypography>
-  ),
-};
-
-// Font Icon Stories
-/**
- * Small Font icon
+ * Small font icon
  */
 export const SmallFont: Story = {
   args: {
@@ -97,7 +51,7 @@ export const SmallFont: Story = {
 };
 
 /**
- * Medium Font icon
+ * Medium font icon
  */
 export const MediumFont: Story = {
   args: {
@@ -108,7 +62,7 @@ export const MediumFont: Story = {
 };
 
 /**
- * Large Font icon
+ * Large font icon
  */
 export const LargeFont: Story = {
   args: {
@@ -119,7 +73,7 @@ export const LargeFont: Story = {
 };
 
 /**
- * Inherit size Font icon
+ * Inherit size font icon
  */
 export const InheritFont: Story = {
   args: {
@@ -140,10 +94,16 @@ export const InheritFont: Story = {
  */
 export const PrimaryColor: Story = {
   args: {
-    icon: FavoriteIcon,
+    type: 'font',
+    iconName: 'favorite',
     size: 'medium',
-    sx: { color: 'primary.main' },
-  },
+  } as any,
+  render: (args) => (
+    <Icon
+      {...args}
+      sx={{ color: 'primary.main' }}
+    />
+  ),
 };
 
 /**
@@ -151,10 +111,16 @@ export const PrimaryColor: Story = {
  */
 export const SecondaryColor: Story = {
   args: {
-    icon: FavoriteIcon,
+    type: 'font',
+    iconName: 'favorite',
     size: 'medium',
-    sx: { color: 'secondary.main' },
-  },
+  } as any,
+  render: (args) => (
+    <Icon
+      {...args}
+      sx={{ color: 'secondary.main' }}
+    />
+  ),
 };
 
 /**
@@ -162,10 +128,16 @@ export const SecondaryColor: Story = {
  */
 export const ErrorColor: Story = {
   args: {
-    icon: DeleteIcon,
+    type: 'font',
+    iconName: 'delete',
     size: 'medium',
-    sx: { color: 'error.main' },
-  },
+  } as any,
+  render: (args) => (
+    <Icon
+      {...args}
+      sx={{ color: 'error.main' }}
+    />
+  ),
 };
 
 /**
@@ -173,53 +145,25 @@ export const ErrorColor: Story = {
  */
 export const SuccessColor: Story = {
   args: {
-    icon: FavoriteIcon,
+    type: 'font',
+    iconName: 'favorite',
     size: 'medium',
-    sx: { color: 'success.main' },
-  },
+  } as any,
+  render: (args) => (
+    <Icon
+      {...args}
+      sx={{ color: 'success.main' }}
+    />
+  ),
 };
 
 /**
- * All sizes showcase
+ * All sizes showcase with font icons
  */
 export const AllSizes: Story = {
   render: () => (
     <Box sx={{ p: 4 }}>
       <Stack spacing={4}>
-        <Box>
-          <MuiTypography variant="h6" sx={{ mb: 2 }}>
-            SVG Icons - All Sizes
-          </MuiTypography>
-          <Stack direction="row" spacing={4} alignItems="center">
-            <Box textAlign="center">
-              <Icon icon={AddIcon} size="small" />
-              <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
-                Small
-              </MuiTypography>
-            </Box>
-            <Box textAlign="center">
-              <Icon icon={AddIcon} size="medium" />
-              <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
-                Medium
-              </MuiTypography>
-            </Box>
-            <Box textAlign="center">
-              <Icon icon={AddIcon} size="large" />
-              <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
-                Large
-              </MuiTypography>
-            </Box>
-            <Box textAlign="center">
-              <MuiTypography variant="h4">
-                <Icon icon={AddIcon} size="inherit" />
-              </MuiTypography>
-              <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
-                Inherit
-              </MuiTypography>
-            </Box>
-          </Stack>
-        </Box>
-
         <Box>
           <MuiTypography variant="h6" sx={{ mb: 2 }}>
             Font Icons - All Sizes
@@ -262,13 +206,13 @@ export const AllSizes: Story = {
 };
 
 /**
- * Icon gallery showcase
+ * Icon gallery showcase with font icons
  */
 export const IconGallery: Story = {
   render: () => (
     <Box sx={{ p: 4 }}>
       <MuiTypography variant="h5" sx={{ mb: 3 }}>
-        Common Icons
+        Common Icons (Font Icons)
       </MuiTypography>
       <Stack spacing={4}>
         <Box>
@@ -277,25 +221,25 @@ export const IconGallery: Story = {
           </MuiTypography>
           <Stack direction="row" spacing={3} alignItems="center">
             <Box textAlign="center">
-              <Icon icon={AddIcon} size="medium" />
+              <Icon type="font" iconName="add" size="medium" />
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Add
               </MuiTypography>
             </Box>
             <Box textAlign="center">
-              <Icon icon={DeleteIcon} size="medium" sx={{ color: 'error.main' }} />
+              <Icon type="font" iconName="delete" size="medium" sx={{ color: 'error.main' }} />
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Delete
               </MuiTypography>
             </Box>
             <Box textAlign="center">
-              <Icon icon={SearchIcon} size="medium" />
+              <Icon type="font" iconName="search" size="medium" />
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Search
               </MuiTypography>
             </Box>
             <Box textAlign="center">
-              <Icon icon={SettingsIcon} size="medium" />
+              <Icon type="font" iconName="settings" size="medium" />
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Settings
               </MuiTypography>
@@ -309,13 +253,13 @@ export const IconGallery: Story = {
           </MuiTypography>
           <Stack direction="row" spacing={3} alignItems="center">
             <Box textAlign="center">
-              <Icon icon={HomeIcon} size="medium" />
+              <Icon type="font" iconName="home" size="medium" />
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Home
               </MuiTypography>
             </Box>
             <Box textAlign="center">
-              <Icon icon={FavoriteIcon} size="medium" sx={{ color: 'error.main' }} />
+              <Icon type="font" iconName="favorite" size="medium" sx={{ color: 'error.main' }} />
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 Favorite
               </MuiTypography>
@@ -329,16 +273,55 @@ export const IconGallery: Story = {
           </MuiTypography>
           <Stack spacing={2}>
             <MuiTypography variant="h4">
-              <Icon icon={HomeIcon} size="inherit" /> Home Page
+              <Icon type="font" iconName="home" size="inherit" /> Home Page
             </MuiTypography>
             <MuiTypography variant="body1">
-              <Icon icon={FavoriteIcon} size="inherit" sx={{ color: 'error.main' }} /> This is your
+              <Icon type="font" iconName="favorite" size="inherit" sx={{ color: 'error.main' }} /> This is your
               favorite
             </MuiTypography>
             <MuiTypography variant="caption">
-              <Icon icon={SettingsIcon} size="inherit" /> Settings
+              <Icon type="font" iconName="settings" size="inherit" /> Settings
             </MuiTypography>
           </Stack>
+        </Box>
+      </Stack>
+    </Box>
+  ),
+  parameters: {
+    layout: 'fullscreen',
+  },
+};
+
+/**
+ * Recommended: Use MaterialSymbol directly
+ */
+export const RecommendedUsage: Story = {
+  render: () => (
+    <Box sx={{ p: 4 }}>
+      <MuiTypography variant="h5" sx={{ mb: 3 }}>
+        Recommended: Use MaterialSymbol Directly
+      </MuiTypography>
+      <MuiTypography variant="body2" sx={{ mb: 3, color: 'text.secondary' }}>
+        For new implementations, use MaterialSymbol directly instead of wrapping in Icon component.
+      </MuiTypography>
+      <Stack direction="row" spacing={3} alignItems="center">
+        <Box textAlign="center">
+          <MaterialSymbol icon="add" size="small" />
+          <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
+            Small
+          </MuiTypography>
+        </Box>
+        <Box textAlign="center">
+          <MaterialSymbol icon="add" size="medium" />
+          <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
+            Medium
+          </MuiTypography>
+        </Box>
+        <Box textAlign="center">
+          <MaterialSymbol icon="add" size="large" />
+          <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
+            Large
+          </MuiTypography>
         </Box>
       </Stack>
     </Box>

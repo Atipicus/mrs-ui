@@ -4,14 +4,15 @@
 
 import React from 'react';
 import { renderWithTheme, screen } from '../../../../tests/test-utils';
-import MailIcon from '@mui/icons-material/Mail';
 import { Badge } from './Badge';
+import { MaterialSymbol } from '../MaterialSymbol/MaterialSymbol';
+import MailIcon from '@mui/icons-material/Mail';
 
 describe('Badge', () => {
   it('renders badge with content', () => {
     const { container } = renderWithTheme(
       <Badge badgeContent={4}>
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     expect(screen.getByText('4')).toBeInTheDocument();
@@ -21,7 +22,7 @@ describe('Badge', () => {
   it('renders with default color', () => {
     const { container } = renderWithTheme(
       <Badge badgeContent={1}>
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     const badge = container.querySelector('.MuiBadge-badge');
@@ -34,7 +35,7 @@ describe('Badge', () => {
   it('renders with primary color', () => {
     const { container } = renderWithTheme(
       <Badge badgeContent={1} color="primary">
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     const badge = container.querySelector('.MuiBadge-badge');
@@ -44,7 +45,7 @@ describe('Badge', () => {
   it('renders with secondary color', () => {
     const { container } = renderWithTheme(
       <Badge badgeContent={1} color="secondary">
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     const badge = container.querySelector('.MuiBadge-badge');
@@ -54,7 +55,7 @@ describe('Badge', () => {
   it('renders with error color (notification)', () => {
     const { container } = renderWithTheme(
       <Badge badgeContent={1} color="error">
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     const badge = container.querySelector('.MuiBadge-badge');
@@ -64,7 +65,7 @@ describe('Badge', () => {
   it('renders standard variant by default', () => {
     const { container } = renderWithTheme(
       <Badge badgeContent={1}>
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     const badge = container.querySelector('.MuiBadge-badge');
@@ -74,7 +75,7 @@ describe('Badge', () => {
   it('renders dot variant', () => {
     const { container } = renderWithTheme(
       <Badge variant="dot" color="primary">
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     const badge = container.querySelector('.MuiBadge-badge');
@@ -84,7 +85,7 @@ describe('Badge', () => {
   it('respects max prop', () => {
     renderWithTheme(
       <Badge badgeContent={100} max={99}>
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     expect(screen.getByText('99+')).toBeInTheDocument();
@@ -93,7 +94,7 @@ describe('Badge', () => {
   it('shows zero when showZero is true', () => {
     renderWithTheme(
       <Badge badgeContent={0} showZero>
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     expect(screen.getByText('0')).toBeInTheDocument();
@@ -102,7 +103,7 @@ describe('Badge', () => {
   it('hides badge when badgeContent is zero and showZero is false', () => {
     const { container } = renderWithTheme(
       <Badge badgeContent={0}>
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     const badge = container.querySelector('.MuiBadge-badge');
@@ -112,7 +113,7 @@ describe('Badge', () => {
   it('can be invisible', () => {
     const { container } = renderWithTheme(
       <Badge badgeContent={4} invisible>
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     const badge = container.querySelector('.MuiBadge-badge');
@@ -122,7 +123,7 @@ describe('Badge', () => {
   it('renders with different anchor positions', () => {
     const { container } = renderWithTheme(
       <Badge badgeContent={4} anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}>
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     const badge = container.querySelector('.MuiBadge-badge');
@@ -132,7 +133,7 @@ describe('Badge', () => {
   it('renders with circular overlap', () => {
     const { container } = renderWithTheme(
       <Badge badgeContent={4} overlap="circular">
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     const badge = container.querySelector('.MuiBadge-badge');
@@ -142,7 +143,7 @@ describe('Badge', () => {
   it('renders with rectangular overlap', () => {
     const { container } = renderWithTheme(
       <Badge badgeContent={4} overlap="rectangular">
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     const badge = container.querySelector('.MuiBadge-badge');
@@ -152,7 +153,7 @@ describe('Badge', () => {
   it('accepts custom className', () => {
     const { container } = renderWithTheme(
       <Badge badgeContent={4} className="custom-badge">
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     const badgeRoot = container.querySelector('.MuiBadge-root');
@@ -162,7 +163,7 @@ describe('Badge', () => {
   it('accepts custom sx prop', () => {
     const { container } = renderWithTheme(
       <Badge badgeContent={4} sx={{ '& .MuiBadge-badge': { fontSize: 20 } }}>
-        <MailIcon />
+        <MaterialSymbol icon="mail" />
       </Badge>
     );
     expect(container.querySelector('.MuiBadge-badge')).toBeInTheDocument();

@@ -31,7 +31,7 @@ import React from 'react';
 import MuiSnackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
+import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import type { SnackbarProps } from './Snackbar.types';
 
 export const Snackbar = React.forwardRef<HTMLDivElement, SnackbarProps>(
@@ -94,7 +94,7 @@ export const Snackbar = React.forwardRef<HTMLDivElement, SnackbarProps>(
         color="inherit"
         onClick={(e) => handleClose(e)}
       >
-        <CloseIcon fontSize="small" />
+        <MaterialSymbol icon="close" size="small" />
       </IconButton>
     );
 
