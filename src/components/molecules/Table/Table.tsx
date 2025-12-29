@@ -78,9 +78,9 @@ Table.displayName = 'Table';
  * TableContainer component - wrapper for Table with scroll support
  */
 export const TableContainer = React.forwardRef<HTMLDivElement, TableContainerProps>(
-  ({ children, component, ...props }, ref) => {
+  ({ children, ...props }, ref) => {
     return (
-      <MuiTableContainer ref={ref} component={component} {...props}>
+      <MuiTableContainer ref={ref} {...props}>
         {children}
       </MuiTableContainer>
     );

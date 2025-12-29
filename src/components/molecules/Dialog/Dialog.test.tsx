@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { describe, it, expect, jest } from '@jest/globals';
-import { render, screen, fireEvent, waitFor } from '../../../../tests/test-utils';
+import { render, screen } from '../../../../tests/test-utils';
 import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from './index';
 import { Button } from '../../atoms/Button';
 

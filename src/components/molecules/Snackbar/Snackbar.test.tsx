@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { renderWithTheme, screen, waitFor } from '../../../../tests/test-utils';
+import { renderWithTheme, screen } from '../../../../tests/test-utils';
 import userEvent from '@testing-library/user-event';
 import { Snackbar } from './Snackbar';
 

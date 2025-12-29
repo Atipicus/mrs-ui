@@ -1,7 +1,7 @@
 {
   "name": "@mrs-uisystem/ui-v6",
-  "version": "0.1.0",
-  "description": "MRS Material-UI v6.5 Design System (v6.5 compatible version)",
+  "version": "0.2.0",
+  "description": "MRS Material-UI v6.5 Design System - 39 production-ready React components with comprehensive testing and Storybook documentation",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -45,9 +45,17 @@
   "keywords": [
     "design-system",
     "material-ui",
+    "mui",
     "react",
     "components",
-    "ui"
+    "ui",
+    "typescript",
+    "storybook",
+    "design-tokens",
+    "accessible",
+    "responsive",
+    "ui-library",
+    "theme"
   ],
   "author": "MRS Design System Team",
   "license": "UNLICENSED",
