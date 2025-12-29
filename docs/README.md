@@ -1,17 +1,109 @@
-## Documentation Map
+# Documentation Index
 
-- **Getting started**: fonts + setup → `guides/Fonts.md`
-- **Components**: atoms & molecules with props → `components/README.md`
-- **Migration**: v6 → v7 guide → `guides/Migration_v6_to_v7.md`
-- **Version differences**: v6.5 vs v7.2 → `guides/Version_Differences.md`
-- **Release**: publish checklist → `release/Publishing.md`
-- **Setup log**: initial completion note → `release/Setup_Complete.md`
+**MRS UI v6 Design System** - Additional documentation for developers
 
-### Fast paths
+---
 
-- Install & fonts: follow `README.md` root + `guides/Fonts.md`.
-- Need a component quickly? Jump to `components/README.md` then open the component file you need.
-- Shipping a version? Use `release/Publishing.md`.
+## 📚 Main Documentation
 
-All docs are Markdown-first and scoped to this package to keep the repo easy to navigate. Updates should add links here for quick discovery.
+For primary documentation, see the root-level files:
 
+- **[README.md](../README.md)** - Main package documentation, installation, usage
+- **[CHANGELOG.md](../CHANGELOG.md)** - Version history and release notes
+- **[DEPLOYMENT.md](../DEPLOYMENT.md)** - GitHub Pages deployment guide
+- **[COMPONENT_ROADMAP.md](../COMPONENT_ROADMAP.md)** - Component development roadmap
+- **[CONTRIBUTING.md](../CONTRIBUTING.md)** - Contribution guidelines
+- **[PACKAGE_STATUS.md](../PACKAGE_STATUS.md)** - Current package status
+
+---
+
+## 📖 Additional Guides
+
+### Setup & Configuration
+
+- **[Fonts.md](guides/Fonts.md)** - Font setup and configuration guide
+  - How to add Nunito font to your project
+  - Material Symbols icon font setup
+  - Font loading optimization
+
+---
+
+## 🧩 Component Documentation
+
+The **[components/](components/)** directory contains detailed documentation for individual components:
+
+- Quick reference for component APIs
+- Usage examples and code snippets
+- Design token references
+- Props and variants
+
+**Note**: For interactive examples and full prop tables, see the [Storybook documentation](https://mgomez-ext.github.io/mrs-ui/).
+
+### Component Categories
+
+**Atoms** (28 components):
+- Avatar, Badge, Box, Button, Checkbox, Chip, CircularProgress, Container, Divider
+- FormControlLabel, FormGroup, Grid, Icon, IconButton, LinearProgress, Link
+- MenuItem, Paper, Radio, RadioGroup, Select, Skeleton, Slider, Stack
+- Switch, TextField, Tooltip, Typography
+
+**Molecules** (11 components):
+- Alert, Autocomplete, ButtonGroup, Dialog, List, ListItem
+- Menu, Pagination, Snackbar, Stepper, Table, Tabs
+
+---
+
+## 🔗 External Resources
+
+- **Storybook**: [https://mgomez-ext.github.io/mrs-ui/](https://mgomez-ext.github.io/mrs-ui/)
+- **npm Package**: [https://www.npmjs.com/package/@mrs-uisystem/ui-v6](https://www.npmjs.com/package/@mrs-uisystem/ui-v6)
+- **GitHub**: [https://github.com/madersystem/mrs-ui-v6](https://github.com/madersystem/mrs-ui-v6)
+- **Figma**: [MRS Material UI Design](https://figma.com/design/ESNP5KunFotGObfcuXZ9Op/MRS---Material-UI-v.6.5.0)
+
+---
+
+## 🚀 Quick Start Paths
+
+### New to the Package?
+1. Start with [README.md](../README.md) - Installation and basic usage
+2. Check [Fonts.md](guides/Fonts.md) - Required font setup
+3. Browse [Storybook](https://mgomez-ext.github.io/mrs-ui/) - Interactive examples
+
+### Adding a Component?
+1. Review [COMPONENT_ROADMAP.md](../COMPONENT_ROADMAP.md) - Planned components
+2. Read [CONTRIBUTING.md](../CONTRIBUTING.md) - Contribution guidelines
+3. Check [components/](components/) - Existing patterns
+
+### Deploying Updates?
+1. See [DEPLOYMENT.md](../DEPLOYMENT.md) - Deployment process
+2. Check [PACKAGE_STATUS.md](../PACKAGE_STATUS.md) - Current status
+3. Review [CHANGELOG.md](../CHANGELOG.md) - Version history
+
+---
+
+## 📦 Package Structure
+
+```
+mrs-ui-v6/
+├── README.md                   # Main documentation
+├── CHANGELOG.md                # Version history
+├── DEPLOYMENT.md               # Deployment guide
+├── COMPONENT_ROADMAP.md        # Roadmap
+├── CONTRIBUTING.md             # Contribution guide
+├── PACKAGE_STATUS.md           # Current status
+├── docs/                       # This directory
+│   ├── README.md              # You are here
+│   ├── guides/
+│   │   └── Fonts.md          # Font setup guide
+│   └── components/            # Component docs
+├── src/                        # Source code
+│   ├── components/            # All components
+│   ├── theme/                 # Theme configuration
+│   └── index.ts               # Main entry
+└── tests/                      # Test utilities
+```
+
+---
+
+**Last Updated**: December 29, 2024
+**Version**: 0.2.1
