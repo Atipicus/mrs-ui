@@ -241,6 +241,10 @@ export const InList: Story = {
  * Breadcrumb links
  */
 export const Breadcrumbs: Story = {
+  args: {
+    variant: "overline"
+  },
+
   render: () => (
     <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
       <Link href="#" color="inherit" underline="hover">Home</Link>
@@ -251,7 +255,7 @@ export const Breadcrumbs: Story = {
       <span>/</span>
       <Typography variant="body1" component="span">Current Page</Typography>
     </div>
-  ),
+  )
 };
 
 /**
