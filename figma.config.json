@@ -1,0 +1,10 @@
+{
+  "codeConnect": {
+    "parser": "react",
+    "include": ["src/components/**/*.figma.tsx"],
+    "exclude": ["node_modules/**"],
+    "documentUrlSubstitutions": {
+      "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM": "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM"
+    }
+  }
+}

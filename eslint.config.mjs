@@ -116,5 +116,36 @@ export default [
       '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports' }],
     },
   },
+  {
+    files: ['src/**/*.figma.{ts,tsx}'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: { jsx: true },
+      },
+      globals: {
+        ...globals.browser,
+        JSX: 'readonly',
+        React: 'readonly',
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+      react,
+      'react-hooks': reactHooks,
+    },
+    rules: {
+      'no-undef': 'off',
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
+      'react-hooks/rules-of-hooks': 'off',
+      'react-hooks/exhaustive-deps': 'off',
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/consistent-type-imports': 'off',
+    },
+  },
 ];
 

@@ -7,6 +7,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.0] - 2025-12-30 (Figma Code Connect Integration)
+
+### Added
+
+**Figma Code Connect Integration**
+
+- **Figma Code Connect** - Direct design-to-code linking for all 54 components
+  - Added `.figma.tsx` files for all 33 components
+  - Direct links from Figma designs to component implementations
+  - Automated code snippets in Figma UI
+  - Enhanced designer-developer collaboration
+  - Component mapping for Atoms (19 components) and Molecules (14 components)
+
+**Configuration Files**
+
+- `figma.config.json` - Figma Code Connect configuration
+- `setup-code-connect.sh` - Setup script for Code Connect
+
+### Changed
+
+- **ESLint Configuration** - Added rules for `.figma.tsx` files
+  - Disabled `no-undef` rule for Figma Code Connect files
+  - Allows JSX components without explicit imports (Figma convention)
+  - Separate configuration block for `*.figma.tsx` files
+
+- **TypeScript Configuration** - Excluded Figma files from type checking
+  - Added `**/*.figma.tsx` to exclude list
+  - Prevents type errors in Figma example code
+  - Maintains type safety for production code
+
+### Quality Metrics
+
+- ✅ **All tests passing** (100% pass rate, 1128 tests)
+- ✅ **54 test suites** - All green
+- ✅ **0 TypeScript errors** - Clean build
+- ✅ **0 ESLint warnings** - Code quality maintained
+- ✅ **Build successful** - 2.2 MB, 390 kB gzipped
+
 ## [0.6.0] - 2025-12-29 (Phase 6 Complete - Advanced Components)
 
 ### Added
