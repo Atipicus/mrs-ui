@@ -1,346 +1,300 @@
 # Deployment Guide
 
-## MRS Design System v0.2.1 - Storybook Documentation
+## MRS Design System v0.7.0 - CI/CD & Deployment
 
-This guide covers deploying the Storybook documentation to GitHub Pages.
-
----
-
-## 🚀 GitHub Pages Deployment
-
-### Live URL
-**Production**: https://mgomez-ext.github.io/mrs-ui/
-
-### Prerequisites
-- Git repository hosted on GitHub
-- `gh-pages` npm package (already installed)
-- Write access to the repository
+This guide covers the complete CI/CD pipeline and deployment workflows for the MRS Design System.
 
 ---
 
-## Deployment Methods
+## 🚀 CI/CD Architecture Overview
 
-### Method 1: Automated Script (Recommended)
+The project uses **4 GitHub Actions workflows** for automated testing, building, and deployment:
 
-Add this script to `package.json`:
+| Workflow | Trigger | Purpose |
+|----------|---------|---------|
+| `ci.yml` | Push/PR to main/develop | Validation, tests, builds |
+| `deploy-storybook.yml` | After CI success on main | Deploy Storybook to GitHub Pages |
+| `publish-npm.yml` | Release or manual | Publish to npm registry |
+| `chromatic-baseline.yml` | Manual | Update visual test baselines |
 
-```json
-{
-  "scripts": {
-    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static"
-  }
-}
+---
+
+## 📊 CI Workflow (`ci.yml`)
+
+### Pipeline Stages
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        SETUP                                 │
+│  Install dependencies & cache node_modules                   │
+└─────────────────────┬───────────────────────────────────────┘
+                      │
+        ┌─────────────┼─────────────┐
+        ▼             ▼             ▼
+┌─────────────┐ ┌─────────────┐ ┌─────────────┐
+│  VALIDATE   │ │    TEST     │ │  CHROMATIC  │
+│ Lint+Types  │ │  Jest+Cov   │ │ Visual Tests│
+└──────┬──────┘ └──────┬──────┘ └─────────────┘
+       │               │
+       └───────┬───────┘
+               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                   BUILD (parallel)                          │
+│  ┌─────────────────────┐  ┌─────────────────────┐          │
+│  │   Build Package     │  │   Build Storybook   │          │
+│  │   (dist/)           │  │   (storybook-static)│          │
+│  └─────────────────────┘  └─────────────────────┘          │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-Then deploy with:
+### Performance Optimizations
 
-```bash
-npm run deploy-storybook
-```
+1. **Shared Dependency Cache**: `node_modules` cached and shared across all jobs
+2. **Parallel Validations**: Lint, format check, and type-check run simultaneously
+3. **Path Filters**: CI only runs when relevant files change
+4. **Concurrency Control**: Cancels previous runs on new push
 
-### Method 2: Manual Deployment
-
-```bash
-# 1. Build Storybook
-npm run build-storybook
-
-# 2. Deploy to GitHub Pages
-npx gh-pages -d storybook-static -m "Deploy Storybook v0.2.1"
-```
-
----
-
-## How It Works
-
-1. **Build Phase**:
-   - Runs `npm run build-storybook`
-   - Generates static files in `storybook-static/`
-   - Includes all components, stories, and assets
-
-2. **Deploy Phase**:
-   - Creates/updates `gh-pages` branch
-   - Pushes `storybook-static/` contents to `gh-pages` branch
-   - GitHub automatically serves from `gh-pages` branch
-
-3. **Publication**:
-   - GitHub Pages detects the update
-   - Deploys to CDN (~10-30 seconds)
-   - Available at https://mgomez-ext.github.io/mrs-ui/
-
----
-
-## GitHub Pages Settings
-
-Verify settings at: `https://github.com/mgomez-ext/mrs-ui/settings/pages`
-
-**Required Settings**:
-- **Source**: Deploy from a branch
-- **Branch**: `gh-pages`
-- **Folder**: `/ (root)`
-
----
-
-## Deployment Workflow
-
-### Full Workflow
-
-```bash
-# 1. Make changes to components or stories
-# 2. Commit changes
-git add .
-git commit -m "feat: update component documentation"
-
-# 3. Push to main branch
-git push origin main
-
-# 4. Build and deploy Storybook
-npm run build-storybook
-npx gh-pages -d storybook-static -m "Deploy Storybook v0.2.1"
-
-# 5. Wait 10-30 seconds for GitHub Pages to update
-# 6. Visit https://mgomez-ext.github.io/mrs-ui/
-```
-
----
-
-## Features
-
-### ✅ Included
-- **HTTPS**: Automatic SSL/TLS
-- **CDN**: GitHub's global CDN
-- **Custom Domain**: Can be configured
-- **Zero Cost**: Completely free
-- **Version Control**: Full git history in `gh-pages` branch
-- **Rollback**: Can revert to previous commits in `gh-pages` branch
-
-### ⚠️ Limitations
-- Manual deployment required
-- No automatic PR previews
-- No build dashboard
-- Build happens locally (not in CI)
-
----
-
-## Custom Domain (Optional)
-
-To use a custom domain (e.g., `storybook.mrs-design.com`):
-
-1. **Add CNAME file** to `storybook-static/`:
-   ```bash
-   echo "storybook.mrs-design.com" > storybook-static/CNAME
-   ```
-
-2. **Configure DNS** at your domain provider:
-   ```
-   Type: CNAME
-   Name: storybook
-   Value: mgomez-ext.github.io
-   ```
-
-3. **Update GitHub Pages settings**:
-   - Go to repository Settings → Pages
-   - Enter custom domain: `storybook.mrs-design.com`
-   - Enable "Enforce HTTPS"
-
-4. **Deploy**:
-   ```bash
-   npm run build-storybook
-   npx gh-pages -d storybook-static
-   ```
-
----
-
-## Troubleshooting
-
-### Issue: 404 Page Not Found
-
-**Cause**: GitHub Pages not enabled or wrong branch selected
-
-**Solution**:
-1. Go to repository Settings → Pages
-2. Ensure source is set to `gh-pages` branch
-3. Wait a few minutes for GitHub to deploy
-
-### Issue: Blank Screen
-
-**Cause**: Incorrect base path or missing assets
-
-**Solution**:
-1. Check `storybook-static/index.html` exists
-2. Verify all assets are in `storybook-static/`
-3. Ensure no `public/index.html` interfering with build
-
-### Issue: Old Version Showing
-
-**Cause**: Browser cache or GitHub Pages cache
-
-**Solution**:
-1. Hard refresh browser (Cmd+Shift+R or Ctrl+Shift+R)
-2. Wait 1-2 minutes for GitHub Pages cache to clear
-3. Check `gh-pages` branch to verify new content
-
-### Issue: Permission Denied
-
-**Cause**: No write access to repository
-
-**Solution**:
-1. Verify you have write access to the repository
-2. Check git authentication: `git push origin main`
-3. Re-authenticate if needed: `gh auth login`
-
----
-
-## Automated Deployment (Optional)
-
-### GitHub Actions Workflow
-
-Create `.github/workflows/deploy-storybook.yml`:
+### Triggers
 
 ```yaml
-name: Deploy Storybook
-
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Storybook
-        run: npm run build-storybook
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./storybook-static
-          commit_message: 'Deploy Storybook [skip ci]'
+    branches: [main, develop]
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig.json'
+      - 'vite.config.ts'
+      - '.github/workflows/**'
+  pull_request:
+    branches: [main, develop]
 ```
-
-**Benefits**:
-- Automatic deployment on push to `main`
-- No manual build/deploy needed
-- Consistent deployment process
 
 ---
 
-## Monitoring Deployments
+## 📚 Storybook Deployment (`deploy-storybook.yml`)
 
-### Check Deployment Status
+### Automatic Deployment
+
+When CI passes on `main`, Storybook is automatically deployed to GitHub Pages:
+
+```
+CI (main) ───success───► Deploy Storybook ───► GitHub Pages
+```
+
+**Live URL**: https://madersystem.github.io/mrs-ui-v6/
+
+### Manual Deployment
+
+You can also trigger manually via GitHub Actions:
+1. Go to Actions → "Deploy Storybook"
+2. Click "Run workflow"
+3. Select branch and run
+
+### Artifact Reuse
+
+The deploy workflow **reuses build artifacts** from CI:
+- No rebuild required when deploying from CI
+- Saves ~2-3 minutes per deployment
+- Ensures exact same build is deployed
+
+---
+
+## 📦 npm Publishing (`publish-npm.yml`)
+
+### Automatic Publishing (on Release)
+
+1. Create a GitHub Release
+2. Workflow automatically publishes to npm
+3. Package available at: `npm install @mrs-uisystem/ui-v6`
+
+### Manual Publishing
+
+1. Go to Actions → "Publish to npm"
+2. Click "Run workflow"
+3. Select version type (patch/minor/major)
+4. Optional: Enable "Dry run" to test without publishing
+
+### Dry Run Mode
+
+Test the publish process without actually publishing:
+- Runs all validations
+- Creates package tarball
+- Shows what would be published
+- Does not modify npm registry
+
+---
+
+## 🎨 Visual Testing with Chromatic
+
+### Automatic Visual Tests
+
+On every PR and push to `main`, Chromatic:
+- Captures screenshots of all Storybook stories
+- Compares against baseline
+- Reports visual changes
+
+### Manual Baseline Update
+
+When you want to accept visual changes as the new baseline:
+1. Go to Actions → "Chromatic Baseline"
+2. Run with "Auto-accept all changes" enabled
+3. New baseline is set
+
+---
+
+## 🔐 Required Secrets
+
+Configure these secrets in GitHub repository settings:
+
+| Secret | Purpose | How to Get |
+|--------|---------|------------|
+| `NPM_TOKEN` | Publish to npm | [npm Access Tokens](https://docs.npmjs.com/creating-and-viewing-access-tokens) |
+| `CHROMATIC_PROJECT_TOKEN` | Visual tests | [Chromatic Setup](https://www.chromatic.com/docs/setup) |
+
+### Setting Up Secrets
+
+1. Go to repository **Settings** → **Secrets and variables** → **Actions**
+2. Click "New repository secret"
+3. Add each secret with its value
+
+---
+
+## 📈 Estimated Performance
+
+| Metric | Before | After |
+|--------|--------|-------|
+| `npm ci` executions per CI run | 5-6 | 1 (cached) |
+| Total CI time | ~8-12 min | ~4-6 min |
+| Storybook builds on deploy | 2 | 1 (artifact reuse) |
+| Unnecessary CI runs | All pushes | Only relevant changes |
+
+---
+
+## 🛠️ Local Development Commands
 
 ```bash
-# View gh-pages branch
-git checkout gh-pages
-git log --oneline -5
+# Development
+npm run dev              # Start Storybook dev server
 
-# Return to main
-git checkout main
-```
+# Quality checks
+npm run lint             # Run ESLint
+npm run format:check     # Check Prettier formatting
+npm run type-check       # TypeScript validation
+npm test                 # Run tests
 
-### GitHub Pages Build Logs
+# Builds
+npm run build            # Build package (dist/)
+npm run build-storybook  # Build Storybook (storybook-static/)
 
-1. Go to repository on GitHub
-2. Click "Actions" tab (if workflow enabled)
-3. Or check "Environments" in repository sidebar
-4. View deployment history and status
-
----
-
-## Rollback to Previous Version
-
-```bash
-# 1. Checkout gh-pages branch
-git checkout gh-pages
-
-# 2. View commit history
-git log --oneline
-
-# 3. Reset to previous commit
-git reset --hard <commit-hash>
-
-# 4. Force push
-git push origin gh-pages --force
-
-# 5. Return to main
-git checkout main
+# Publishing (local)
+npm run publish:patch    # Bump patch version and publish
+npm run publish:minor    # Bump minor version and publish
+npm run publish:major    # Bump major version and publish
 ```
 
 ---
 
-## Best Practices
+## 📋 Workflow Files
 
-### ✅ DO
-- Build locally before deploying to verify changes
-- Test Storybook locally with `npm run storybook` first
-- Use meaningful commit messages for deployments
-- Keep `storybook-static/` in `.gitignore` (don't commit to main)
-- Deploy after each significant update
+All workflow files are in `.github/workflows/`:
 
-### ❌ DON'T
-- Don't commit `storybook-static/` to main branch
-- Don't deploy without testing locally first
-- Don't force push to `gh-pages` unless rolling back
-- Don't delete `gh-pages` branch (will break deployment)
-
----
-
-## Package Scripts
-
-Add to `package.json`:
-
-```json
-{
-  "scripts": {
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static",
-    "preview-storybook": "npx http-server storybook-static -p 6007"
-  }
-}
+```
+.github/workflows/
+├── ci.yml                  # Main CI pipeline
+├── deploy-storybook.yml    # Storybook deployment
+├── publish-npm.yml         # npm publishing
+└── chromatic-baseline.yml  # Visual test baseline
 ```
 
-**Usage**:
-- `npm run storybook` - Start dev server
-- `npm run build-storybook` - Build static site
-- `npm run deploy-storybook` - Build and deploy
-- `npm run preview-storybook` - Preview built site locally
+---
+
+## 🔄 Deployment Checklist
+
+### Before Releasing
+
+- [ ] All tests passing locally (`npm test`)
+- [ ] No linting errors (`npm run lint`)
+- [ ] TypeScript compiles (`npm run type-check`)
+- [ ] Build succeeds (`npm run build`)
+- [ ] Storybook builds (`npm run build-storybook`)
+- [ ] CHANGELOG.md updated
+
+### Publishing a New Version
+
+1. **Update CHANGELOG.md** with changes
+2. **Push to main** or create PR
+3. **Wait for CI** to pass
+4. **Create GitHub Release** (triggers auto-publish)
+   - Or use manual workflow for more control
+
+### Verifying Deployment
+
+- [ ] CI workflow completed successfully
+- [ ] Storybook deployed to GitHub Pages
+- [ ] npm package published (if releasing)
+- [ ] Chromatic visual tests reviewed
 
 ---
 
-## Current Status
+## 🐛 Troubleshooting
 
-**Deployment**: ✅ Active
-**URL**: https://mgomez-ext.github.io/mrs-ui/
-**Branch**: `gh-pages`
-**Version**: v0.2.1
-**Components**: 39 production-ready components
-**Last Deploy**: December 29, 2024
+### CI Failing
+
+**Check in order:**
+1. Read the error message in Actions logs
+2. Run locally: `npm run lint && npm run type-check && npm test`
+3. Check if dependencies are up to date: `npm ci`
+
+### Storybook Not Deploying
+
+1. Verify CI passed on `main` branch
+2. Check deploy-storybook workflow logs
+3. Verify GitHub Pages is enabled in repository settings
+
+### npm Publish Failing
+
+1. Verify `NPM_TOKEN` secret is set correctly
+2. Check npm package scope and permissions
+3. Ensure version is not already published
+
+### Chromatic Not Running
+
+1. Verify `CHROMATIC_PROJECT_TOKEN` is set
+2. Check if running on correct branch/event
+3. Review Chromatic dashboard for errors
 
 ---
 
-## Next Steps
+## 📊 Monitoring
 
-1. ✅ Test live deployment at https://mgomez-ext.github.io/mrs-ui/
-2. ✅ Share URL with team
-3. ✅ Add deploy script to `package.json` (optional)
-4. ✅ Set up GitHub Actions for auto-deploy (optional)
-5. ✅ Configure custom domain (optional)
+### GitHub Actions
+
+- View all workflows: `https://github.com/madersystem/mrs-ui-v6/actions`
+- Check deployment history: Repository → Environments
+
+### Chromatic
+
+- Dashboard: `https://www.chromatic.com/builds?appId=6920db1d6ee90f1f65ee3de2`
+
+### npm
+
+- Package: `https://www.npmjs.com/package/@mrs-uisystem/ui-v6`
 
 ---
 
-**Last Updated**: December 29, 2024
-**Deployment Platform**: GitHub Pages
+## 🏷️ Current Status
+
+**CI/CD**: ✅ Active & Optimized
+**Storybook**: https://madersystem.github.io/mrs-ui-v6/
+**npm Package**: @mrs-uisystem/ui-v6
+**Version**: 0.7.0
+**Components**: 54 production-ready components
+**Last Updated**: December 2024
+
+---
+
+**Last Updated**: December 30, 2024
+**Pipeline Version**: 2.0 (Optimized)
 **Status**: Production Ready

@@ -1,0 +1,60 @@
+name: Chromatic Baseline
+
+# This workflow creates new Chromatic baselines
+# Run manually when you want to accept all visual changes as the new baseline
+
+on:
+  workflow_dispatch:
+    inputs:
+      auto-accept:
+        description: 'Auto-accept all changes as new baseline'
+        required: false
+        default: true
+        type: boolean
+
+concurrency:
+  group: chromatic-baseline
+  cancel-in-progress: false
+
+jobs:
+  chromatic-baseline:
+    name: Update Chromatic Baseline
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Cache node_modules
+        id: cache-deps
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        if: steps.cache-deps.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Create Chromatic baseline
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: storybook-static
+          autoAcceptChanges: ${{ github.event.inputs.auto-accept }}
+          zip: true
+
+      - name: Log results
+        run: |
+          echo "✅ Chromatic baseline updated"
+          echo "📊 View results at: https://www.chromatic.com/builds?appId=6920db1d6ee90f1f65ee3de2"
+
