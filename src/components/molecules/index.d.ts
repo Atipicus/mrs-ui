@@ -5,7 +5,10 @@
 export * from './Alert';
 export * from './AppBar';
 export * from './Autocomplete';
+export * from './BottomNavigation';
 export * from './ButtonGroup';
+export * from './DatePicker';
+export * from './DateTimePicker';
 export * from './Dialog';
 export * from './Drawer';
 export * from './DrawerNavigation';
@@ -14,8 +17,12 @@ export * from './List';
 export * from './ListItem';
 export * from './Menu';
 export * from './Pagination';
+export * from './Rating';
 export * from './Snackbar';
+export * from './SpeedDial';
 export * from './Stepper';
 export * from './Table';
 export * from './Tabs';
+export * from './TimePicker';
+export * from './Timeline';
 //# sourceMappingURL=index.d.ts.map

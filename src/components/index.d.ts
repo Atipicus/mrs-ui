@@ -4,4 +4,5 @@
  */
 export * from './atoms';
 export * from './molecules';
+export * from './providers';
 //# sourceMappingURL=index.d.ts.map
