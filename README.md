@@ -1,4 +1,4 @@
-# MRS UI v6 Design System
+# MRS UI Design System
 
 [![npm version](https://badge.fury.io/js/@mrs-uisystem%2Fui-v6.svg)](https://www.npmjs.com/package/@mrs-uisystem/ui-v6)
 [![License](https://img.shields.io/badge/License-UNLICENSED-red.svg)](LICENSE)
