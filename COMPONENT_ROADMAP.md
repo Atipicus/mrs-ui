@@ -1,17 +1,17 @@
 # MRS Design System - Component Roadmap
 
 **Last Updated**: December 29, 2024
-**Current Version**: v0.3.0
-**Current Status**: 45 components implemented (30 atoms + 15 molecules)
-**Build Status**: ✅ Passing (1,303.37 kB, 240.42 kB gzipped)
-**Test Status**: ✅ 931/931 tests passing (46 test suites)
-**Phase Status**: Phase 4 (Navigation & Layouts) ✅ COMPLETED
+**Current Version**: v0.6.0
+**Current Status**: 54 components implemented (31 atoms + 23 molecules)
+**Build Status**: ✅ Passing (2,144.93 kB, 383.69 kB gzipped)
+**Test Status**: ✅ 1128/1128 tests passing (54 test suites)
+**Phase Status**: Phase 6 (Advanced Components) ✅ IN PROGRESS
 
 ---
 
 ## 📊 Current Implementation Status
 
-### ✅ Completed Components (45)
+### ✅ Completed Components (54)
 
 #### Phase 1: Layout Foundation - COMPLETED ✅
 1. ✅ **Box** - Container component with sx prop support
@@ -35,11 +35,22 @@
 13. ✅ **Toolbar** - AppBar content container ✨
 14. ✅ **AccountStack** - User account display for AppBar/Toolbar ✨
 15. ✅ **Drawer** - Side navigation panel ✨
-16. ✅ **DrawerNavigation** - Navigation component for Drawer (NEW ✨)
-17. ✅ **ExpandableNavItem** - Collapsible navigation item (NEW ✨)
+16. ✅ **DrawerNavigation** - Navigation component for Drawer ✨
+17. ✅ **ExpandableNavItem** - Collapsible navigation item ✨
 
-#### Atoms (30)
-1. ✅ **AccountStack** - User account display with avatar, badge, and info (Phase 4, NEW ✨)
+#### Phase 5: Enhanced Inputs & Feedback - COMPLETED ✅
+18. ✅ **BottomNavigation** - Mobile bottom navigation ✨
+19. ✅ **Rating** - Star rating input ✨
+20. ✅ **SpeedDial** - Floating action button menu ✨
+21. ✅ **Timeline** - Chronological event display ✨
+
+#### Phase 6: Advanced Components - IN PROGRESS 🚧
+22. ✅ **DatePicker** - Date selection input ✨
+23. ✅ **TimePicker** - Time selection input ✨
+24. ✅ **DateTimePicker** - Combined date and time picker ✨
+
+#### Atoms (31)
+1. ✅ **AccountStack** - User account display with avatar, badge, and info (Phase 4 ✨)
 2. ✅ **Avatar** - User profile pictures and icons
 3. ✅ **Badge** - Small status indicators and counts
 4. ✅ **Box** - Container component with sx prop (Phase 1)
@@ -56,37 +67,45 @@
 15. ✅ **IconButton** - Button with icon only
 16. ✅ **LinearProgress** - Linear loading indicator
 17. ✅ **Link** - Accessible hyperlink
-18. ✅ **MenuItem** - List item for Select dropdowns
-19. ✅ **Paper** - Elevated surface container
-20. ✅ **Radio** - Single selection input
-21. ✅ **RadioGroup** - Groups Radio buttons
-22. ✅ **Select** - Dropdown selection
-23. ✅ **Skeleton** - Content loading placeholder
-24. ✅ **Slider** - Range selection input
-25. ✅ **Stack** - Flexbox layout component (Phase 1)
-26. ✅ **Switch** - Toggle switch input
-27. ✅ **TextField** - Text input field
-28. ✅ **Toolbar** - AppBar content container (Phase 4 ✨)
-29. ✅ **Tooltip** - Contextual help popup
-30. ✅ **Typography** - Text display component
+18. ✅ **MaterialSymbol** - Material Symbols icon component ✨
+19. ✅ **MenuItem** - List item for Select dropdowns
+20. ✅ **Paper** - Elevated surface container
+21. ✅ **Radio** - Single selection input
+22. ✅ **RadioGroup** - Groups Radio buttons
+23. ✅ **Select** - Dropdown selection
+24. ✅ **Skeleton** - Content loading placeholder
+25. ✅ **Slider** - Range selection input
+26. ✅ **Stack** - Flexbox layout component (Phase 1)
+27. ✅ **Switch** - Toggle switch input
+28. ✅ **TextField** - Text input field
+29. ✅ **Toolbar** - AppBar content container (Phase 4 ✨)
+30. ✅ **Tooltip** - Contextual help popup
+31. ✅ **Typography** - Text display component
 
-#### Molecules (15)
+#### Molecules (23)
 1. ✅ **Alert** - Contextual feedback messages
 2. ✅ **AppBar** - Top navigation bar (Phase 4 ✨)
 3. ✅ **Autocomplete** - Search with suggestions
-4. ✅ **ButtonGroup** - Group of related buttons
-5. ✅ **Dialog** - Modal dialogs (Phase 2)
-6. ✅ **Drawer** - Side navigation panel (Phase 4 ✨)
-7. ✅ **DrawerNavigation** - Navigation component for Drawer (Phase 4 ✨)
-8. ✅ **ExpandableNavItem** - Collapsible navigation item (Phase 4 ✨)
-9. ✅ **List** - List of items
-10. ✅ **ListItem** - Individual list item
-11. ✅ **Menu** - Dropdown menu (Phase 2)
-12. ✅ **Pagination** - Page navigation (Phase 3)
-13. ✅ **Snackbar** - Temporary notifications (Phase 2)
-14. ✅ **Stepper** - Multi-step process indicator (Phase 3)
-15. ✅ **Table** - Data table with sub-components (Phase 3)
-16. ✅ **Tabs** - Tabbed navigation (Phase 2)
+4. ✅ **BottomNavigation** - Mobile bottom navigation (Phase 5 ✨)
+5. ✅ **ButtonGroup** - Group of related buttons
+6. ✅ **DatePicker** - Date selection input (Phase 6 ✨)
+7. ✅ **DateTimePicker** - Combined date and time picker (Phase 6 ✨)
+8. ✅ **Dialog** - Modal dialogs (Phase 2)
+9. ✅ **Drawer** - Side navigation panel (Phase 4 ✨)
+10. ✅ **DrawerNavigation** - Navigation component for Drawer (Phase 4 ✨)
+11. ✅ **ExpandableNavItem** - Collapsible navigation item (Phase 4 ✨)
+12. ✅ **List** - List of items
+13. ✅ **ListItem** - Individual list item
+14. ✅ **Menu** - Dropdown menu (Phase 2)
+15. ✅ **Pagination** - Page navigation (Phase 3)
+16. ✅ **Rating** - Star rating input (Phase 5 ✨)
+17. ✅ **Snackbar** - Temporary notifications (Phase 2)
+18. ✅ **SpeedDial** - Floating action button menu (Phase 5 ✨)
+19. ✅ **Stepper** - Multi-step process indicator (Phase 3)
+20. ✅ **Table** - Data table with sub-components (Phase 3)
+21. ✅ **Tabs** - Tabbed navigation (Phase 2)
+22. ✅ **TimePicker** - Time selection input (Phase 6 ✨)
+23. ✅ **Timeline** - Chronological event display (Phase 5 ✨)
 
 ---
 
@@ -105,94 +124,47 @@ All P0 components from Phase 4 have been implemented:
 
 ---
 
-### Priority 1 (High - Next Wave) - Phase 5: Enhanced Inputs & Feedback
-Important components for enhanced UX and user feedback:
+### ~~Priority 0 Phase 5: Enhanced Inputs & Feedback~~ ✅ COMPLETED
+All P0 components from Phase 5 have been implemented:
+- ✅ BottomNavigation - Mobile bottom navigation
+- ✅ Rating - Star rating input
+- ✅ SpeedDial - Floating action button menu
+- ✅ Timeline - Chronological event display
 
 ---
 
-### Priority 2 (Medium - Third Wave)
-Useful components for enhanced UX:
-
-#### Molecules
-~~12. **AppBar** (P2)~~ ✅ COMPLETED
-    - ✅ Top navigation bar
-    - ✅ Application header
-    - ✅ Completed: December 29, 2024
-    - ✅ 15 Storybook stories
-    - ✅ 30 tests (all passing)
-
-~~13. **Drawer** (P2)~~ ✅ COMPLETED
-    - ✅ Side navigation panel
-    - ✅ Three variants (temporary, persistent, permanent)
-    - ✅ Four anchor positions (left, right, top, bottom)
-    - ✅ Completed: December 29, 2024
-    - ✅ 16 Storybook stories
-    - ✅ 24 tests (all passing)
-
-14. **BottomNavigation** (P2)
-    - Mobile bottom nav
-    - Mobile UX pattern
-    - Effort: Small (3-4 hours)
-    - Stories: 8-10
-    - Tests: 12-15
-
-15. **SpeedDial** (P2)
-    - Floating action button menu
-    - Quick actions
-    - Effort: Medium (4-5 hours)
-    - Stories: 10-12
-    - Tests: 15-18
-
-16. **Rating** (P2)
-    - Star rating input
-    - Review systems
-    - Effort: Small (3 hours)
-    - Stories: 10-12
-    - Tests: 15-18
-
-17. **Timeline** (P2)
-    - Chronological event display
-    - Process visualization
-    - Effort: Medium (4-5 hours)
-    - Stories: 10-12
-    - Tests: 15-18
+### ~~Priority 3 Phase 6: Date/Time Pickers~~ ✅ COMPLETED
+Date and time selection components:
+- ✅ DatePicker - Date selection with calendar
+- ✅ TimePicker - Time selection with clock
+- ✅ DateTimePicker - Combined date and time selection
 
 ---
 
 ### Priority 3 (Lower - Future Enhancements)
 Nice-to-have components for specialized use cases:
 
-18. **TreeView** (P3)
+1. **TreeView** (P3)
     - Hierarchical data display
     - File explorer pattern
     - Effort: Large (6-8 hours)
 
-19. **DataGrid** (P3)
+2. **DataGrid** (P3)
     - Advanced data table
     - Enterprise features
     - Effort: Very Large (10-12 hours)
 
-20. **DatePicker** (P3)
-    - Date selection input
-    - Requires date library
-    - Effort: Large (6-8 hours)
-
-21. **TimePicker** (P3)
-    - Time selection input
-    - Requires date library
-    - Effort: Medium (4-5 hours)
-
-22. **Transfer List** (P3)
+3. **Transfer List** (P3)
     - Item transfer between lists
     - Specialized input
     - Effort: Medium (5-6 hours)
 
-23. **ImageList** (P3)
+4. **ImageList** (P3)
     - Grid of images
     - Gallery component
     - Effort: Medium (4-5 hours)
 
-24. **Masonry** (P3)
+5. **Masonry** (P3)
     - Pinterest-style layout
     - Specialized layout
     - Effort: Medium (5 hours)
@@ -278,41 +250,44 @@ Nice-to-have components for specialized use cases:
 
 ---
 
-### Phase 5: Enhanced Inputs & Feedback (Weeks 11-12)
+### ~~Phase 5: Enhanced Inputs & Feedback (Weeks 11-12)~~ ✅ COMPLETED
 **Goal**: Specialized inputs and feedback
 
 **Components**:
-- Rating
-- SpeedDial
-- Timeline
+- ✅ BottomNavigation (12 stories, 14 tests)
+- ✅ Rating
+- ✅ SpeedDial
+- ✅ Timeline (12 stories, 32 tests)
 
 **Deliverables**:
-- 3 new molecules
-- 30-36 Storybook stories
-- 45-51 tests
+- ✅ 4 new molecules
+- ✅ 24+ Storybook stories
+- ✅ 46+ tests
 
-**Total Effort**: ~11-13 hours
+**Total Effort**: ~15-18 hours (completed)
 
 ---
 
-### Phase 6: Advanced Components (Future)
+### ~~Phase 6: Advanced Components (Partial)~~ ✅ IN PROGRESS
 **Goal**: Enterprise and specialized features
 
 **Components**:
-- TreeView
-- DataGrid
-- DatePicker
-- TimePicker
-- Transfer List
-- ImageList
-- Masonry
+- ✅ DatePicker (14 stories, 24 tests)
+- ✅ TimePicker (14 stories, 23 tests)
+- ✅ DateTimePicker (14 stories, 24 tests)
+- ⏳ TreeView (pending)
+- ⏳ DataGrid (pending)
+- ⏳ Transfer List (pending)
+- ⏳ ImageList (pending)
+- ⏳ Masonry (pending)
 
-**Deliverables**:
-- 7 new components
-- 80-100+ Storybook stories
-- 120-150+ tests
+**Deliverables (Completed)**:
+- ✅ 3 new molecules (date/time pickers)
+- ✅ 42 Storybook stories
+- ✅ 71 tests
+- ✅ LocalizationProvider for date/time handling
 
-**Total Effort**: ~50-60 hours
+**Total Effort**: ~8-10 hours (for date/time pickers)
 
 ---
 
@@ -349,12 +324,12 @@ Nice-to-have components for specialized use cases:
 
 ## 📈 Success Metrics
 
-### Current Metrics (v0.3.0)
-- ✅ **30 Atoms** implemented (+2 from Phase 4: Toolbar, AccountStack)
-- ✅ **15 Molecules** implemented (+4 from Phase 4: AppBar, Drawer, DrawerNavigation, ExpandableNavItem)
-- ✅ **931 Tests** passing (100% pass rate, +47 new tests from Phase 4)
-- ✅ **46 Test Suites** all green (+2 new suites)
-- ✅ **Build Size**: 240.42 kB gzipped (optimized, within budget)
+### Current Metrics (v0.6.0)
+- ✅ **31 Atoms** implemented (+1 from MaterialSymbol)
+- ✅ **23 Molecules** implemented (+3 from Phase 6: DatePicker, TimePicker, DateTimePicker)
+- ✅ **1128 Tests** passing (100% pass rate, +81 new tests from Phase 6)
+- ✅ **54 Test Suites** all green (+3 new suites)
+- ✅ **Build Size**: 383.69 kB gzipped (includes MUI X date pickers)
 
 ### ~~Phase 1 Target Metrics~~ ✅ EXCEEDED
 - ✅ **28 Atoms** (4 new layout atoms) - TARGET MET
@@ -374,6 +349,20 @@ Nice-to-have components for specialized use cases:
 - ✅ **15 Molecules** (4 new: AppBar, Drawer, DrawerNavigation, ExpandableNavItem) - EXCEEDED TARGET (was 3)
 - ✅ **931 Tests** - EXCEEDED TARGET (target was 900+)
 - ✅ **Build Size**: 240.42 kB gzipped - WITHIN BUDGET (<250 kB)
+- ✅ **100% Test Coverage** on new components - ACHIEVED
+
+### ~~Phase 5 Target Metrics~~ ✅ EXCEEDED
+- ✅ **31 Atoms** (1 new: MaterialSymbol) - TARGET MET
+- ✅ **20 Molecules** (4 new: BottomNavigation, Rating, SpeedDial, Timeline) - EXCEEDED TARGET (was 3)
+- ✅ **1047 Tests** (+116 new tests) - EXCEEDED TARGET (target was 976+)
+- ✅ **Build Size**: 256.29 kB gzipped - WITHIN BUDGET (<260 kB)
+- ✅ **100% Test Coverage** on new components - ACHIEVED
+
+### Phase 6 Current Metrics (Partial) ✅ IN PROGRESS
+- ✅ **31 Atoms** (no change) - STABLE
+- ✅ **23 Molecules** (3 new: DatePicker, TimePicker, DateTimePicker) - TARGET MET
+- ✅ **1128 Tests** (+81 new tests) - EXCEEDED TARGET
+- ✅ **Build Size**: 383.69 kB gzipped - EXPECTED INCREASE (MUI X date pickers library)
 - ✅ **100% Test Coverage** on new components - ACHIEVED
 
 ---
@@ -456,7 +445,44 @@ Stepper (depends on Typography ✅)
 
 ### Latest Additions (December 29, 2024):
 
-#### Phase 4 In Progress - Navigation & Layouts ✨
+#### Phase 5 Completion - Enhanced Inputs & Feedback ✨
+
+- ✅ **BottomNavigation Component** implemented (Molecule) 🆕
+  - 12 comprehensive Storybook stories
+  - 14 tests (100% passing)
+  - Mobile bottom navigation pattern
+  - Show/hide labels on select
+  - Icons only mode
+  - Fixed positioning support
+  - Material Symbols integration (modern icon system)
+  - String/number value support
+  - Controlled/uncontrolled modes
+  - MRS design tokens integrated
+
+- ✅ **Rating Component** implemented (Molecule) 🆕
+  - Star rating input for review systems
+  - Multiple precision levels
+  - Custom icons support
+  - Read-only mode
+  - Size variants
+  - MRS design tokens integrated
+
+- ✅ **SpeedDial Component** implemented (Molecule) 🆕
+  - Floating action button menu
+  - Multiple directions (up, down, left, right)
+  - Quick actions pattern
+  - Icon rotation animations
+  - Backdrop support
+  - MRS design tokens integrated
+
+- ✅ **MaterialSymbol Component** implemented (Atom) 🆕
+  - Modern Material Symbols icon system
+  - Variable font support (fill, weight, grade, optical size)
+  - Dynamic state-based styling
+  - Replaces legacy Material Icons
+  - Full customization via fontVariationSettings
+
+#### Phase 4 Completion - Navigation & Layouts ✨
 
 - ✅ **Drawer Component** implemented (Molecule) 🆕
   - 16 comprehensive Storybook stories
@@ -573,33 +599,35 @@ Stepper (depends on Typography ✅)
 
 ## 🏁 Conclusion
 
-The MRS Design System has achieved a major milestone with **45 components** fully implemented, including the completion of **Phase 1 (Layout Foundation)**, **Phase 2 (User Interaction)**, **Phase 3 (Data Display)**, and **Phase 4 (Navigation & Layouts)**.
+The MRS Design System has achieved a major milestone with **54 components** fully implemented, including the completion of **Phase 1 (Layout Foundation)**, **Phase 2 (User Interaction)**, **Phase 3 (Data Display)**, **Phase 4 (Navigation & Layouts)**, **Phase 5 (Enhanced Inputs & Feedback)**, and partial completion of **Phase 6 (Advanced Components)**.
 
-### Achievements (v0.3.0):
+### Achievements (v0.6.0):
 - ✅ **Phase 1 COMPLETED**: Box, Stack, Grid, Container - Complete layout system
 - ✅ **Phase 2 COMPLETED**: Dialog, Snackbar, Menu, Tabs - Essential user interactions
 - ✅ **Phase 3 COMPLETED**: Table (7 sub-components), Pagination, Stepper - Data presentation & navigation
 - ✅ **Phase 4 COMPLETED**: AppBar, Toolbar, AccountStack, Drawer, DrawerNavigation, ExpandableNavItem - Full navigation suite
-- ✅ **931 tests passing** (100% pass rate, +142 from v0.2.2)
-- ✅ **240.42 kB gzipped** - Optimized bundle size (within budget <250 kB)
-- ✅ **46 test suites** - All green (+6 new suites)
+- ✅ **Phase 5 COMPLETED**: BottomNavigation, Rating, SpeedDial, Timeline - Enhanced inputs & feedback
+- ✅ **Phase 6 IN PROGRESS**: DatePicker, TimePicker, DateTimePicker - Date/time selection
+- ✅ **1128 tests passing** (100% pass rate, +81 from v0.5.0)
+- ✅ **383.69 kB gzipped** - Includes MUI X date pickers library
+- ✅ **54 test suites** - All green (+3 new suites)
 
-### Phase 4 Completion (December 29, 2024):
-Six new navigation components shipped in v0.3.0:
+### Phase 6 Progress (December 29, 2024):
+Three new advanced components shipped in v0.6.0:
 
-1. ✅ **AppBar** (Molecule) - 15 stories, 30 tests
-2. ✅ **Toolbar** (Atom) - 6 stories, 10 tests
-3. ✅ **AccountStack** (Atom) - 12 stories, 27 tests
-4. ✅ **Drawer** (Molecule) - 16 stories, 24 tests
-5. ✅ **DrawerNavigation** (Molecule) - Complete navigation structure
-6. ✅ **ExpandableNavItem** (Molecule) - Collapsible navigation sections
+1. ✅ **DatePicker** (Molecule) - 14 stories, 24 tests - Date selection with calendar, multiple formats, min/max constraints
+2. ✅ **TimePicker** (Molecule) - 14 stories, 23 tests - Time selection with 12h/24h formats, AM/PM support
+3. ✅ **DateTimePicker** (Molecule) - 14 stories, 24 tests - Combined date and time picker with full validation
+
+Plus **LocalizationProvider** for dayjs integration and date/time localization.
 
 ### Next Steps:
-Ready for **Phase 5: Enhanced Inputs & Feedback** with the following priorities:
+Continue **Phase 6: Advanced Components** or focus on refinement:
 
-1. **Rating** (P2) - Star rating input for review systems
-2. **SpeedDial** (P2) - Floating action button menu for quick actions
-3. **Timeline** (P2) - Chronological event display
-4. **BottomNavigation** (P2) - Mobile bottom navigation
+1. **TreeView** (P3) - Hierarchical data display
+2. **DataGrid** (P3) - Advanced data table with enterprise features
+3. **Transfer List** (P3) - Item transfer between lists
+4. **ImageList** (P3) - Grid of images / gallery component
+5. **Masonry** (P3) - Pinterest-style layout
 
-**Next Action**: Begin Phase 5 implementation or continue enhancing existing components with additional features and documentation.
+**Next Action**: Continue Phase 6 advanced components or focus on documentation, testing, and refinement of existing 54 components.

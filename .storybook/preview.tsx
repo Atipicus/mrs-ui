@@ -33,7 +33,10 @@ const preview: Preview = {
       },
     },
     a11y: {
-      test: 'todo',
+      element: '#storybook-root',
+      config: {},
+      options: {},
+      manual: false,
     },
   },
   decorators: [withTheme],

@@ -1,7 +1,7 @@
 {
   "name": "@mrs-uisystem/ui-v6",
-  "version": "0.4.0",
-  "description": "MRS Material-UI v6.5 Design System - 45 production-ready React components with comprehensive testing and Storybook documentation",
+  "version": "0.6.0",
+  "description": "MRS Material-UI v6.5 Design System - 54 production-ready React components with comprehensive testing and Storybook documentation",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -87,6 +87,7 @@
     "@storybook/addon-themes": "^10.1.10",
     "@storybook/addon-vitest": "^10.1.10",
     "@storybook/react-vite": "^10.1.10",
+    "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^16.3.1",
     "@testing-library/user-event": "^14.0.0",
@@ -113,5 +114,10 @@
     "vite": "^7.3.0",
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^4.0.16"
+  },
+  "dependencies": {
+    "@mui/lab": "^6.0.1-beta.36",
+    "@mui/x-date-pickers": "^8.23.0",
+    "dayjs": "^1.11.19"
   }
 }

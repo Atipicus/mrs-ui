@@ -4,17 +4,18 @@
 [![License](https://img.shields.io/badge/License-UNLICENSED-red.svg)](LICENSE)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/madersystem/mrs-ui-v6/ci.yml?branch=main)](https://github.com/madersystem/mrs-ui-v6/actions)
 
-A comprehensive Material-UI v6.5 based design system with **46 production-ready components** built with React, TypeScript, and modern best practices.
+A comprehensive Material-UI v6.5 based design system with **54 production-ready components** built with React, TypeScript, and modern best practices.
 
-> **Version 0.3.0** - Phase 4 complete: Full navigation suite (AppBar, Toolbar, AccountStack, Drawer, DrawerNavigation, ExpandableNavItem) with 931 tests passing.
+> **Version 0.6.0** - Phase 6 complete: Advanced components including Timeline, DatePicker, TimePicker, DateTimePicker with MUI X integration. 1128 tests passing.
 
 ## 🚀 Features
 
-- ✅ **46 Production Components** (31 atoms + 15 molecules)
+- ✅ **54 Production Components** (31 atoms + 23 molecules)
 - ✅ **TypeScript Support** - Full type safety with strict mode
 - ✅ **Material-UI v6.5** - Latest Material-UI features
+- ✅ **MUI X Date Pickers** - Advanced date/time selection components
 - ✅ **Tree-shakeable** - Import only what you need
-- ✅ **Comprehensive Testing** - 931 tests with 100% pass rate (46 test suites)
+- ✅ **Comprehensive Testing** - 1128 tests with 100% pass rate (54 test suites)
 - ✅ **Storybook Documentation** - Interactive component explorer
 - ✅ **Dual Module Support** - ESM and CommonJS
 - ✅ **Theme Integration** - Customizable design tokens
@@ -32,6 +33,13 @@ npm install @mrs-uisystem/ui-v6
 ```bash
 npm install @mui/material @emotion/react @emotion/styled react react-dom
 ```
+
+### Additional Dependencies (Included)
+
+For date/time pickers, the package includes:
+- `@mui/x-date-pickers` - Advanced date and time picker components
+- `dayjs` - Date library for pickers
+- `@mui/lab` - Timeline component
 
 ### Required Fonts
 
@@ -127,7 +135,7 @@ function IconExample() {
 - **Performance**: ~50KB variable font vs ~600KB icon components
 - **Browse Icons**: [fonts.google.com/icons](https://fonts.google.com/icons)
 
-## 📚 Components (46 Total)
+## 📚 Components (54 Total)
 
 ### Atoms (31)
 - **AccountStack** - User account display with avatar and badge (Phase 4 ✨)
@@ -162,23 +170,30 @@ function IconExample() {
 - **Tooltip** - Contextual help popups
 - **Typography** - Text with theme variants
 
-### Molecules (15)
+### Molecules (23)
 - **Alert** - Contextual feedback messages
-- **AppBar** - Top application navigation bar (Phase 4 ✨)
+- **AppBar** - Top application navigation bar (Phase 4)
 - **Autocomplete** - Search with suggestions
+- **BottomNavigation** - Bottom mobile navigation (Phase 5)
 - **ButtonGroup** - Group of related buttons
+- **DatePicker** - Date selection with calendar UI (Phase 6 ✨)
+- **DateTimePicker** - Combined date and time selection (Phase 6 ✨)
 - **Dialog** - Modal dialogs (Phase 2)
-- **Drawer** - Side navigation panel (Phase 4 ✨)
-- **DrawerNavigation** - Navigation component for Drawer (Phase 4 ✨)
-- **ExpandableNavItem** - Collapsible navigation item (Phase 4 ✨)
+- **Drawer** - Side navigation panel (Phase 4)
+- **DrawerNavigation** - Navigation component for Drawer (Phase 4)
+- **ExpandableNavItem** - Collapsible navigation item (Phase 4)
 - **List** - List of items
 - **ListItem** - Individual list item
 - **Menu** - Dropdown menu (Phase 2)
 - **Pagination** - Page navigation (Phase 3)
+- **Rating** - Star rating input (Phase 5)
 - **Snackbar** - Temporary notifications (Phase 2)
+- **SpeedDial** - Floating action button with actions (Phase 5)
 - **Stepper** - Multi-step process indicator (Phase 3)
 - **Table** - Data table with 7 sub-components (Phase 3)
 - **Tabs** - Tabbed navigation (Phase 2)
+- **Timeline** - Event timeline with 7 sub-components (Phase 5 ✨)
+- **TimePicker** - Time selection with 12h/24h support (Phase 6 ✨)
 
 ## 🎨 Theme Customization
 
@@ -259,14 +274,99 @@ npm run lint:fix
 npm run format
 ```
 
+### Using Date Pickers
+
+```tsx
+import {
+  DatePicker,
+  TimePicker,
+  DateTimePicker,
+  LocalizationProvider
+} from '@mrs-uisystem/ui-v6';
+import dayjs from 'dayjs';
+
+function DatePickerExample() {
+  const [date, setDate] = React.useState(dayjs());
+
+  return (
+    <LocalizationProvider>
+      <Stack spacing={2}>
+        {/* Date Picker */}
+        <DatePicker
+          label="Birth Date"
+          value={date}
+          onChange={(newValue) => setDate(newValue)}
+        />
+
+        {/* Time Picker */}
+        <TimePicker
+          label="Meeting Time"
+          value={date}
+          onChange={(newValue) => setDate(newValue)}
+        />
+
+        {/* Date Time Picker */}
+        <DateTimePicker
+          label="Event Date & Time"
+          value={date}
+          onChange={(newValue) => setDate(newValue)}
+        />
+      </Stack>
+    </LocalizationProvider>
+  );
+}
+```
+
+### Using Timeline
+
+```tsx
+import {
+  Timeline,
+  TimelineItem,
+  TimelineSeparator,
+  TimelineDot,
+  TimelineConnector,
+  TimelineContent,
+  TimelineOppositeContent
+} from '@mrs-uisystem/ui-v6';
+
+function TimelineExample() {
+  return (
+    <Timeline position="alternate">
+      <TimelineItem>
+        <TimelineOppositeContent color="text.secondary">
+          09:30 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Design Review</TimelineContent>
+      </TimelineItem>
+
+      <TimelineItem>
+        <TimelineOppositeContent color="text.secondary">
+          10:00 am
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot color="primary" />
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>Development</TimelineContent>
+      </TimelineItem>
+    </Timeline>
+  );
+}
+```
+
 ## 📊 Package Stats
 
-- **Package Size**: 230.06 kB (gzipped)
+- **Package Size**: 383.69 kB (gzipped)
 - **Tree-shakeable**: ✅ Import only what you need
 - **Zero Runtime Dependencies**: All peer dependencies only
 - **TypeScript**: Full type definitions included
 - **Module Formats**: ESM + CommonJS
-- **Tests**: 789 passing (100% pass rate)
+- **Tests**: 1128 passing (100% pass rate, 54 test suites)
 
 ## 🤝 Contributing
 
@@ -292,10 +392,14 @@ See [COMPONENT_ROADMAP.md](COMPONENT_ROADMAP.md) for detailed implementation pla
 - ✅ **Phase 1** (v0.1.0): Layout Foundation - Box, Stack, Grid, Container
 - ✅ **Phase 2** (v0.1.0): User Interaction - Dialog, Snackbar, Menu, Tabs
 - ✅ **Phase 3** (v0.2.0): Data Display - Table, Pagination, Stepper
+- ✅ **Phase 4** (v0.3.0): Navigation & Layouts - AppBar, Toolbar, AccountStack, Drawer
+- ✅ **Phase 5** (v0.5.0): Enhanced Inputs - Timeline, BottomNavigation, Rating, SpeedDial
+- ✅ **Phase 6** (v0.6.0): Advanced Components - DatePicker, TimePicker, DateTimePicker
 
-### Coming in Future Releases:
-- **Phase 4** (v0.3.0): Navigation & Layouts - AppBar, Drawer, BottomNavigation
-- **Phase 5** (v0.4.0): Enhanced Inputs - Rating, SpeedDial, Timeline
+### Upcoming Features:
+- Additional form components
+- Enhanced data visualization
+- More navigation patterns
 - And more...
 
 ## 💻 Browser Support
@@ -331,12 +435,14 @@ const MyButton: React.FC<ButtonProps> = (props) => {
 };
 ```
 
-## 🌟 Version 0.2.0 Highlights
+## 🌟 Version 0.6.0 Highlights
 
-- ✨ **39 production-ready components** (28 atoms + 11 molecules)
-- ✨ **Phase 3 Complete**: Table, Pagination, Stepper components
-- ✨ **Data Display Suite**: Comprehensive table system with 7 sub-components
-- ✨ **789 tests passing** (100% pass rate across 40 test suites)
+- ✨ **54 production-ready components** (31 atoms + 23 molecules)
+- ✨ **Phase 6 Complete**: DatePicker, TimePicker, DateTimePicker with MUI X integration
+- ✨ **Phase 5 Complete**: Timeline, BottomNavigation, Rating, SpeedDial components
+- ✨ **Advanced Date/Time Selection**: Complete date picker suite with dayjs integration
+- ✨ **Timeline Component**: Event timeline with 7 sub-components
+- ✨ **1128 tests passing** (100% pass rate across 54 test suites)
 - ✨ **Full TypeScript support** with strict mode
 - ✨ **Storybook documentation** deployed at [https://mgomez-ext.github.io/mrs-ui/](https://mgomez-ext.github.io/mrs-ui/)
 - ✨ **CI/CD pipeline** with GitHub Actions

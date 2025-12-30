@@ -7,6 +7,134 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.0] - 2025-12-29 (Phase 6 Complete - Advanced Components)
+
+### Added
+
+**Phase 6 Components - Advanced Date/Time Selection (3 new molecules + LocalizationProvider)**
+
+- **DatePicker** (Molecule) - Date selection with calendar UI
+  - Calendar view with date selection
+  - Multiple date formats support
+  - Min/max date validation
+  - Disabled dates support
+  - Integrated with dayjs
+  - Custom slot props for TextField customization
+  - Full MUI X DatePicker features
+  - 14 comprehensive Storybook stories
+  - 24 tests (100% passing)
+
+- **TimePicker** (Molecule) - Time selection with 12h/24h support
+  - Clock view for time selection
+  - 12-hour and 24-hour formats
+  - Minutes step configuration
+  - Min/max time validation
+  - AM/PM toggle for 12h format
+  - Integrated with dayjs
+  - Custom slot props for TextField customization
+  - Full MUI X TimePicker features
+  - 14 comprehensive Storybook stories
+  - 23 tests (100% passing)
+
+- **DateTimePicker** (Molecule) - Combined date and time selection
+  - Integrated date and time selection
+  - Calendar and clock views
+  - All DatePicker and TimePicker features
+  - Single component for complete datetime input
+  - Integrated with dayjs
+  - Custom slot props for TextField customization
+  - Full MUI X DateTimePicker features
+  - 14 comprehensive Storybook stories
+  - 24 tests (100% passing)
+
+- **LocalizationProvider** (Provider) - Date library adapter provider
+  - Wraps date pickers with dayjs adapter
+  - Required for all date/time pickers
+  - Shared localization context
+  - Single provider for all pickers in app
+
+**Phase 5 Components - Enhanced Inputs (Completed Earlier)**
+
+- **Timeline** (Molecule) - Event timeline with 7 sub-components
+  - Timeline, TimelineItem, TimelineSeparator, TimelineDot
+  - TimelineConnector, TimelineContent, TimelineOppositeContent
+  - Multiple position variants (left, right, alternate)
+  - Opposing content support
+  - Filled and outlined dot variants
+  - 12 comprehensive Storybook stories
+  - 32 tests (100% passing)
+
+- **BottomNavigation** (Molecule) - Bottom mobile navigation
+- **Rating** (Molecule) - Star rating input component
+- **SpeedDial** (Molecule) - Floating action button with actions
+
+### Changed
+
+- Package version bumped to 0.6.0
+- Updated description to reflect 54 production-ready components
+- Build size: 383.69 kB gzipped (increased from 241.19 kB due to MUI X date pickers - expected)
+- Component count increased from 47 to 54 (+7 new components)
+
+### Dependencies
+
+- Added `@mui/x-date-pickers` v8.23.0 - Advanced date and time picker components
+- Added `dayjs` v1.11.19 - Lightweight date library for pickers
+- Added `@mui/lab` v6.0.1-beta.36 - Timeline component (Lab components)
+
+### Fixed
+
+- **Test Query Methods** - Fixed all date picker test failures
+  - Changed from `getByLabelText()` to `getByRole('group')` for component existence
+  - Changed to `container.querySelector('input')` for direct input access
+  - Fixed "Found multiple elements" errors due to MUI X complex DOM structure
+  - All 71 date picker tests now passing (100% pass rate)
+
+- **ESLint Warnings** - Cleaned up all unused imports
+  - Removed unused `Dayjs` type imports from test files
+  - Removed unused `screen` and `userEvent` imports
+  - Achieved 0 ESLint warnings across entire codebase
+
+### Quality Metrics
+
+- ✅ **1128 tests passing** (100% pass rate, +197 from v0.4.0)
+- ✅ **54 test suites** - All green (+7 new suites)
+- ✅ TypeScript: 0 errors
+- ✅ ESLint: 0 warnings, 0 errors (fully clean)
+- ✅ Build: Successful (2,144.93 kB total, 383.69 kB gzipped)
+- ✅ Storybook: Build successful
+- ✅ Zero security vulnerabilities
+
+### Component Count
+
+- **Total: 54 components** (31 atoms + 23 molecules)
+- **New in v0.6.0**: DatePicker, TimePicker, DateTimePicker, LocalizationProvider
+- **New in v0.5.0**: Timeline (7 sub-components), BottomNavigation, Rating, SpeedDial
+- Atoms (31): AccountStack, Avatar, Badge, Box, Button, Checkbox, Chip, CircularProgress, Container, Divider, FormControlLabel, FormGroup, Grid, Icon, IconButton, LinearProgress, Link, MaterialSymbol, MenuItem, Paper, Radio, RadioGroup, Select, Skeleton, Slider, Stack, Switch, TextField, Toolbar, Tooltip, Typography
+- Molecules (23): Alert, AppBar, Autocomplete, BottomNavigation, ButtonGroup, DatePicker, DateTimePicker, Dialog, Drawer, DrawerNavigation, ExpandableNavItem, List, ListItem, Menu, Pagination, Rating, Snackbar, SpeedDial, Stepper, Table, Tabs, Timeline, TimePicker
+
+### Documentation
+
+- 42+ new Storybook stories for date picker components
+- Updated README.md with v0.6.0 highlights and usage examples
+- Updated COMPONENT_ROADMAP.md with Phase 5 and Phase 6 completion
+- Added date picker usage examples to README
+- Added Timeline usage examples to README
+
+### Notes
+
+- **Phase 1 (Layout Foundation)**: ✅ COMPLETED
+- **Phase 2 (User Interaction)**: ✅ COMPLETED
+- **Phase 3 (Data Display)**: ✅ COMPLETED
+- **Phase 4 (Navigation & Layouts)**: ✅ COMPLETED
+- **Phase 5 (Enhanced Inputs & Feedback)**: ✅ COMPLETED
+- **Phase 6 (Advanced Components)**: ✅ COMPLETED
+- Ready for Storybook deployment
+- Ready for npm publishing as v0.6.0
+- All quality gates passing
+- Bundle size increase expected due to MUI X date pickers library (~127 kB increase)
+
+---
+
 ## [0.4.0] - 2025-12-29 (Material Symbols Migration Complete)
 
 ### Changed

@@ -1,0 +1,230 @@
+import { Canvas, Meta, Story } from '@storybook/blocks';
+import * as BottomNavigationStories from './BottomNavigation.stories';
+
+<Meta of={BottomNavigationStories} />
+
+# BottomNavigation
+
+Bottom navigation bars allow movement between primary destinations in an app. They are typically used for mobile applications and provide quick access to top-level views.
+
+## Overview
+
+The BottomNavigation component is part of the MRS Design System and wraps Material-UI's BottomNavigation with custom theme tokens. It consists of two components:
+
+- **BottomNavigation**: The container component that manages navigation state
+- **BottomNavigationAction**: Individual navigation items within the bar
+
+## When to Use
+
+- **Mobile Navigation**: Primary navigation method for mobile applications
+- **3-5 Destinations**: Best suited for 3-5 top-level destinations
+- **Persistent Access**: When destinations need to be accessible from anywhere in the app
+- **Equal Importance**: All destinations should have similar levels of importance
+
+## When Not to Use
+
+- **More than 5 Items**: Use a navigation drawer instead
+- **Hierarchical Navigation**: Use breadcrumbs or back buttons for hierarchical content
+- **Desktop Primary Navigation**: Consider AppBar or Drawer for desktop-first applications
+- **Sequential Tasks**: Use Stepper for multi-step processes
+
+## Basic Usage
+
+<Canvas of={BottomNavigationStories.Default} />
+
+## Variants
+
+### Without Labels
+
+Labels appear only when the navigation item is selected. This provides a more compact appearance.
+
+<Canvas of={BottomNavigationStories.WithoutLabels} />
+
+### Icons Only
+
+Navigation items can be shown with icons only, hiding labels entirely for a minimal interface.
+
+<Canvas of={BottomNavigationStories.IconsOnly} />
+
+### Four Actions
+
+The component supports multiple navigation items. For best usability, limit to 3-5 items.
+
+<Canvas of={BottomNavigationStories.FourActions} />
+
+## Material Symbols Integration
+
+The MRS Design System supports modern Material Symbols alongside traditional MUI icons.
+
+### Basic Material Symbols
+
+<Canvas of={BottomNavigationStories.WithMaterialSymbols} />
+
+### Filled Material Symbols
+
+Use the `fill` property to create filled icon variants that respond to selection state.
+
+<Canvas of={BottomNavigationStories.MaterialSymbolsFilled} />
+
+### Custom Material Symbols
+
+Customize icon weight and other properties for different visual styles.
+
+<Canvas of={BottomNavigationStories.MaterialSymbolsCustom} />
+
+## Layout Examples
+
+### Fixed at Bottom
+
+Position the BottomNavigation at the bottom of the screen for a mobile app experience.
+
+<Canvas of={BottomNavigationStories.FixedAtBottom} />
+
+### Full Width Mobile
+
+Simulate a complete mobile app layout with bottom navigation.
+
+<Canvas of={BottomNavigationStories.FullWidthMobile} />
+
+### Mobile with Material Symbols
+
+Modern mobile navigation using Material Symbols with dynamic fill states.
+
+<Canvas of={BottomNavigationStories.MobileWithMaterialSymbols} />
+
+## Value Management
+
+### Controlled Component
+
+Use state to control which navigation item is selected:
+
+```tsx
+const [value, setValue] = useState(0);
+
+<BottomNavigation
+  value={value}
+  onChange={(event, newValue) => setValue(newValue)}
+>
+  <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+  <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+</BottomNavigation>
+```
+
+### String Values
+
+Use string values instead of indices for more semantic navigation:
+
+<Canvas of={BottomNavigationStories.WithValueMapping} />
+
+### Uncontrolled Component
+
+For simple use cases, the component can manage its own state:
+
+<Canvas of={BottomNavigationStories.Uncontrolled} />
+
+## Props
+
+### BottomNavigation Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `any` | - | The value of the currently selected action |
+| `onChange` | `(event, value) => void` | - | Callback fired when the value changes |
+| `showLabels` | `boolean` | `false` | If true, all actions will show their labels |
+| `children` | `node` | - | BottomNavigationAction components |
+
+### BottomNavigationAction Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `label` | `node` | - | The label element |
+| `icon` | `node` | - | The icon to display |
+| `value` | `any` | - | Custom value (otherwise uses index) |
+| `showLabel` | `boolean` | `false` | If true, label is always shown |
+| `disabled` | `boolean` | `false` | If true, the action is disabled |
+
+## Accessibility
+
+- Uses semantic HTML with proper button roles
+- Supports keyboard navigation (Tab, Enter, Space)
+- Labels provide context for screen readers
+- Consider providing `aria-label` for icon-only actions
+
+### Best Practices
+
+```tsx
+// Good: Labels provide context
+<BottomNavigationAction
+  label="Home"
+  icon={<MaterialSymbol icon="home" ariaLabel="Home" />}
+/>
+
+// Better: Use showLabels for better accessibility
+<BottomNavigation showLabels>
+  <BottomNavigationAction label="Home" icon={<MaterialSymbol icon="home" />} />
+</BottomNavigation>
+```
+
+## Design Tokens
+
+The BottomNavigation component uses the following design tokens from the MRS theme:
+
+- **Colors**: `palette.primary.main`, `palette.text.secondary`
+- **Typography**: Inherited from theme typography
+- **Spacing**: `theme.spacing()` for internal padding
+- **Transitions**: Smooth transitions for state changes
+
+## Integration with Router
+
+For routing integration (e.g., React Router), use the `component` prop:
+
+```tsx
+import { Link } from 'react-router-dom';
+
+<BottomNavigation value={value} onChange={handleChange}>
+  <BottomNavigationAction
+    label="Home"
+    icon={<MaterialSymbol icon="home" />}
+    component={Link}
+    to="/home"
+  />
+  <BottomNavigationAction
+    label="Profile"
+    icon={<MaterialSymbol icon="person" />}
+    component={Link}
+    to="/profile"
+  />
+</BottomNavigation>
+```
+
+## Responsive Behavior
+
+- Best suited for mobile and tablet viewports
+- Consider switching to AppBar or Drawer for desktop layouts
+- Use MUI breakpoints to conditionally render navigation types
+
+```tsx
+import { useMediaQuery, useTheme } from '@mui/material';
+
+const theme = useTheme();
+const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+{isMobile ? (
+  <BottomNavigation>...</BottomNavigation>
+) : (
+  <AppBar>...</AppBar>
+)}
+```
+
+## Related Components
+
+- **AppBar**: Top navigation bar for desktop applications
+- **Drawer**: Side navigation drawer for more navigation items
+- **Tabs**: Horizontal navigation for content organization
+- **Stepper**: Step-by-step navigation for processes
+
+## Resources
+
+- [Material-UI BottomNavigation Documentation](https://mui.com/material-ui/react-bottom-navigation/)
+- [Material Design Bottom Navigation Guidelines](https://m3.material.io/components/navigation-bar)
+- [MRS Design System Documentation](/)
