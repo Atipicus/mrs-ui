@@ -3,11 +3,13 @@
  * Simple combinations of atomic components
  */
 
+export * from './Accordion';
 export * from './Alert';
 export * from './AppBar';
 export * from './Autocomplete';
 export * from './BottomNavigation';
 export * from './ButtonGroup';
+export * from './Card';
 export * from './DatePicker';
 export * from './DateTimePicker';
 export * from './Dialog';
