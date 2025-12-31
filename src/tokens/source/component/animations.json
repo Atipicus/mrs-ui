@@ -1,0 +1,228 @@
+{
+  "component": {
+    "button": {
+      "transition": {
+        "default": {
+          "$value": "all {primitives.motion.duration.fast} {primitives.motion.easing.standard}",
+          "$type": "transition",
+          "$description": "Button default transition - color, background, border"
+        },
+        "elevation": {
+          "$value": "box-shadow {primitives.motion.duration.fast} {primitives.motion.easing.standard}",
+          "$type": "transition",
+          "$description": "Button elevation transition on hover"
+        }
+      }
+    },
+    "dialog": {
+      "transition": {
+        "enter": {
+          "$value": "opacity {primitives.motion.duration.moderate} {primitives.motion.easing.decelerate}, transform {primitives.motion.duration.moderate} {primitives.motion.easing.decelerate}",
+          "$type": "transition",
+          "$description": "Dialog enter transition - fade + scale"
+        },
+        "exit": {
+          "$value": "opacity {primitives.motion.duration.base} {primitives.motion.easing.accelerate}, transform {primitives.motion.duration.base} {primitives.motion.easing.accelerate}",
+          "$type": "transition",
+          "$description": "Dialog exit transition"
+        }
+      }
+    },
+    "drawer": {
+      "transition": {
+        "enter": {
+          "$value": "transform {primitives.motion.duration.moderate} {primitives.motion.easing.decelerate}",
+          "$type": "transition",
+          "$description": "Drawer slide in transition"
+        },
+        "exit": {
+          "$value": "transform {primitives.motion.duration.moderate} {primitives.motion.easing.accelerate}",
+          "$type": "transition",
+          "$description": "Drawer slide out transition"
+        }
+      }
+    },
+    "snackbar": {
+      "transition": {
+        "enter": {
+          "$value": "transform {primitives.motion.duration.moderate} {primitives.motion.easing.emphasized}, opacity {primitives.motion.duration.base} {primitives.motion.easing.easeIn}",
+          "$type": "transition",
+          "$description": "Snackbar enter transition - slide up + fade"
+        },
+        "exit": {
+          "$value": "opacity {primitives.motion.duration.base} {primitives.motion.easing.easeOut}",
+          "$type": "transition",
+          "$description": "Snackbar exit transition - fade out"
+        }
+      }
+    },
+    "tooltip": {
+      "transition": {
+        "enter": {
+          "$value": "opacity {primitives.motion.duration.fast} {primitives.motion.easing.easeIn}",
+          "$type": "transition",
+          "$description": "Tooltip fade in"
+        },
+        "exit": {
+          "$value": "opacity {primitives.motion.duration.fast} {primitives.motion.easing.easeOut}",
+          "$type": "transition",
+          "$description": "Tooltip fade out"
+        }
+      }
+    },
+    "menu": {
+      "transition": {
+        "enter": {
+          "$value": "opacity {primitives.motion.duration.base} {primitives.motion.easing.easeIn}, transform {primitives.motion.duration.base} {primitives.motion.easing.decelerate}",
+          "$type": "transition",
+          "$description": "Menu enter transition - fade + scale"
+        },
+        "exit": {
+          "$value": "opacity {primitives.motion.duration.fast} {primitives.motion.easing.easeOut}",
+          "$type": "transition",
+          "$description": "Menu exit transition - fade"
+        }
+      }
+    },
+    "collapse": {
+      "transition": {
+        "enter": {
+          "$value": "height {primitives.motion.duration.moderate} {primitives.motion.easing.standard}",
+          "$type": "transition",
+          "$description": "Collapse expand transition"
+        },
+        "exit": {
+          "$value": "height {primitives.motion.duration.base} {primitives.motion.easing.sharp}",
+          "$type": "transition",
+          "$description": "Collapse contract transition"
+        }
+      }
+    },
+    "fab": {
+      "transition": {
+        "default": {
+          "$value": "all {primitives.motion.duration.base} {primitives.motion.easing.standard}",
+          "$type": "transition",
+          "$description": "FAB default transition"
+        },
+        "elevation": {
+          "$value": "box-shadow {primitives.motion.duration.fast} {primitives.motion.easing.standard}",
+          "$type": "transition",
+          "$description": "FAB elevation on hover"
+        }
+      }
+    },
+    "chip": {
+      "transition": {
+        "default": {
+          "$value": "all {primitives.motion.duration.fast} {primitives.motion.easing.standard}",
+          "$type": "transition",
+          "$description": "Chip hover/focus transition"
+        }
+      }
+    },
+    "switch": {
+      "transition": {
+        "thumb": {
+          "$value": "transform {primitives.motion.duration.fast} {primitives.motion.easing.sharp}",
+          "$type": "transition",
+          "$description": "Switch thumb movement"
+        },
+        "track": {
+          "$value": "background-color {primitives.motion.duration.fast} {primitives.motion.easing.standard}",
+          "$type": "transition",
+          "$description": "Switch track color change"
+        }
+      }
+    },
+    "checkbox": {
+      "transition": {
+        "default": {
+          "$value": "all {primitives.motion.duration.fast} {primitives.motion.easing.standard}",
+          "$type": "transition",
+          "$description": "Checkbox state transition"
+        }
+      }
+    },
+    "radio": {
+      "transition": {
+        "default": {
+          "$value": "all {primitives.motion.duration.fast} {primitives.motion.easing.standard}",
+          "$type": "transition",
+          "$description": "Radio button state transition"
+        }
+      }
+    },
+    "accordion": {
+      "transition": {
+        "expand": {
+          "$value": "all {primitives.motion.duration.moderate} {primitives.motion.easing.standard}",
+          "$type": "transition",
+          "$description": "Accordion panel expand"
+        },
+        "collapse": {
+          "$value": "all {primitives.motion.duration.base} {primitives.motion.easing.sharp}",
+          "$type": "transition",
+          "$description": "Accordion panel collapse"
+        }
+      }
+    },
+    "skeleton": {
+      "animation": {
+        "pulse": {
+          "duration": {
+            "$value": "1500ms",
+            "$type": "duration",
+            "$description": "Skeleton pulse animation duration"
+          },
+          "easing": {
+            "$value": "{primitives.motion.easing.easeInOut}",
+            "$type": "cubicBezier",
+            "$description": "Skeleton pulse easing"
+          }
+        },
+        "wave": {
+          "duration": {
+            "$value": "1600ms",
+            "$type": "duration",
+            "$description": "Skeleton wave animation duration"
+          },
+          "easing": {
+            "$value": "{primitives.motion.easing.linear}",
+            "$type": "cubicBezier",
+            "$description": "Skeleton wave easing"
+          }
+        }
+      }
+    },
+    "progress": {
+      "animation": {
+        "indeterminate": {
+          "duration": {
+            "$value": "2000ms",
+            "$type": "duration",
+            "$description": "Progress indeterminate animation duration"
+          },
+          "easing": {
+            "$value": "{primitives.motion.easing.linear}",
+            "$type": "cubicBezier",
+            "$description": "Progress animation easing"
+          }
+        },
+        "circular": {
+          "duration": {
+            "$value": "1400ms",
+            "$type": "duration",
+            "$description": "Circular progress rotation duration"
+          },
+          "easing": {
+            "$value": "{primitives.motion.easing.linear}",
+            "$type": "cubicBezier",
+            "$description": "Circular progress easing"
+          }
+        }
+      }
+    }
+  }
+}
+

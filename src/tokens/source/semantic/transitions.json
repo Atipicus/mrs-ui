@@ -1,0 +1,48 @@
+{
+  "semantic": {
+    "transition": {
+      "fade": {
+        "in": {
+          "$value": "opacity {primitives.motion.duration.base} {primitives.motion.easing.easeIn}",
+          "$type": "transition",
+          "$description": "Fade in transition"
+        },
+        "out": {
+          "$value": "opacity {primitives.motion.duration.base} {primitives.motion.easing.easeOut}",
+          "$type": "transition",
+          "$description": "Fade out transition"
+        }
+      },
+      "slide": {
+        "in": {
+          "$value": "transform {primitives.motion.duration.moderate} {primitives.motion.easing.decelerate}",
+          "$type": "transition",
+          "$description": "Slide in transition - elements entering"
+        },
+        "out": {
+          "$value": "transform {primitives.motion.duration.moderate} {primitives.motion.easing.accelerate}",
+          "$type": "transition",
+          "$description": "Slide out transition - elements leaving"
+        }
+      },
+      "expand": {
+        "in": {
+          "$value": "all {primitives.motion.duration.moderate} {primitives.motion.easing.standard}",
+          "$type": "transition",
+          "$description": "Expand transition - collapsible content opening"
+        },
+        "out": {
+          "$value": "all {primitives.motion.duration.base} {primitives.motion.easing.sharp}",
+          "$type": "transition",
+          "$description": "Collapse transition - collapsible content closing"
+        }
+      },
+      "elevation": {
+        "$value": "box-shadow {primitives.motion.duration.fast} {primitives.motion.easing.standard}",
+        "$type": "transition",
+        "$description": "Elevation change transition"
+      }
+    }
+  }
+}
+

@@ -1,0 +1,86 @@
+{
+  "primitives": {
+    "motion": {
+      "duration": {
+        "instant": {
+          "$value": "0ms",
+          "$type": "duration",
+          "$description": "Instant transition - no delay"
+        },
+        "fast": {
+          "$value": "100ms",
+          "$type": "duration",
+          "$description": "Fast transitions - micro-interactions, toggles, checkboxes"
+        },
+        "base": {
+          "$value": "200ms",
+          "$type": "duration",
+          "$description": "Base transition duration - most UI elements"
+        },
+        "moderate": {
+          "$value": "300ms",
+          "$type": "duration",
+          "$description": "Moderate transitions - drawers, dialogs, larger elements"
+        },
+        "slow": {
+          "$value": "400ms",
+          "$type": "duration",
+          "$description": "Slow transitions - page transitions, large content shifts"
+        },
+        "slower": {
+          "$value": "500ms",
+          "$type": "duration",
+          "$description": "Very slow transitions - complex animations"
+        }
+      },
+      "easing": {
+        "linear": {
+          "$value": "cubic-bezier(0, 0, 1, 1)",
+          "$type": "cubicBezier",
+          "$description": "Linear easing - constant speed, use sparingly"
+        },
+        "standard": {
+          "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "$type": "cubicBezier",
+          "$description": "Standard easing - most common, smooth acceleration and deceleration"
+        },
+        "emphasized": {
+          "$value": "cubic-bezier(0.2, 0, 0, 1)",
+          "$type": "cubicBezier",
+          "$description": "Emphasized easing - Material Design emphasized motion"
+        },
+        "decelerate": {
+          "$value": "cubic-bezier(0, 0, 0.2, 1)",
+          "$type": "cubicBezier",
+          "$description": "Decelerate easing - elements entering the screen"
+        },
+        "accelerate": {
+          "$value": "cubic-bezier(0.4, 0, 1, 1)",
+          "$type": "cubicBezier",
+          "$description": "Accelerate easing - elements leaving the screen"
+        },
+        "sharp": {
+          "$value": "cubic-bezier(0.4, 0, 0.6, 1)",
+          "$type": "cubicBezier",
+          "$description": "Sharp easing - quick, focused transitions"
+        },
+        "easeIn": {
+          "$value": "cubic-bezier(0.4, 0, 1, 1)",
+          "$type": "cubicBezier",
+          "$description": "Ease in - gradual acceleration"
+        },
+        "easeOut": {
+          "$value": "cubic-bezier(0, 0, 0.2, 1)",
+          "$type": "cubicBezier",
+          "$description": "Ease out - gradual deceleration"
+        },
+        "easeInOut": {
+          "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+          "$type": "cubicBezier",
+          "$description": "Ease in-out - smooth start and end"
+        }
+      }
+    }
+  }
+}
+
