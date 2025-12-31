@@ -25,7 +25,7 @@ npm install @mui/x-date-pickers dayjs
 ## Basic Usage
 
 ```tsx
-import { DateTimePicker, LocalizationProvider } from '@mrs-uisystem/ui-v6';
+import { DateTimePicker, LocalizationProvider } from '@atipicus/mrs-ui';
 import dayjs from 'dayjs';
 
 function MyComponent() {
@@ -158,7 +158,7 @@ const [error, setError] = React.useState(null);
 The DateTimePicker requires a LocalizationProvider wrapper. This can be placed at your app root or around individual components:
 
 ```tsx
-import { LocalizationProvider } from '@mrs-uisystem/ui-v6';
+import { LocalizationProvider } from '@atipicus/mrs-ui';
 
 function App() {
   return (

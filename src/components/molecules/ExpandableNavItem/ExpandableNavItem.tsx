@@ -6,7 +6,7 @@
  *
  * @example
  * ```tsx
- * import { ExpandableNavItem } from '@mrs-uisystem/ui-v6';
+ * import { ExpandableNavItem } from '@atipicus/mrs-ui';
  * import InboxIcon from '@mui/icons-material/Inbox';
  *
  * function MyNav() {

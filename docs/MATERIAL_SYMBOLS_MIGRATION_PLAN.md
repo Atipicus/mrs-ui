@@ -820,7 +820,7 @@ import HomeIcon from '@mui/icons-material/Home';
 
 **After (Material Symbols)**:
 ```typescript
-import { MaterialSymbol } from '@mrs-uisystem/ui-v6';
+import { MaterialSymbol } from '@atipicus/mrs-ui';
 
 <IconButton>
   <MaterialSymbol icon="home" />
@@ -843,7 +843,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 **After**:
 ```typescript
-import { MaterialSymbol } from '@mrs-uisystem/ui-v6';
+import { MaterialSymbol } from '@atipicus/mrs-ui';
 
 // Outlined
 <MaterialSymbol icon="favorite" fill={0} />
@@ -865,7 +865,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 **After**:
 ```typescript
-import { MaterialSymbol } from '@mrs-uisystem/ui-v6';
+import { MaterialSymbol } from '@atipicus/mrs-ui';
 
 <MaterialSymbol icon="settings" size="small" />
 <MaterialSymbol icon="settings" size="medium" />
@@ -879,7 +879,7 @@ import { MaterialSymbol } from '@mrs-uisystem/ui-v6';
 
 **After**:
 ```typescript
-import { MaterialSymbol } from '@mrs-uisystem/ui-v6';
+import { MaterialSymbol } from '@atipicus/mrs-ui';
 
 // Light (default)
 <MaterialSymbol icon="star" weight={300} />
@@ -902,7 +902,7 @@ import ErrorIcon from '@mui/icons-material/Error';
 
 **After**:
 ```typescript
-import { MaterialSymbol } from '@mrs-uisystem/ui-v6';
+import { MaterialSymbol } from '@atipicus/mrs-ui';
 
 <MaterialSymbol icon="error" color="error.main" />
 // Or use sx prop
@@ -928,7 +928,7 @@ import HomeIcon from '@mui/icons-material/Home';
 
 **After**:
 ```typescript
-import { MaterialSymbol } from '@mrs-uisystem/ui-v6';
+import { MaterialSymbol } from '@atipicus/mrs-ui';
 <MaterialSymbol icon="home" />
 ```
 
@@ -1302,13 +1302,13 @@ module.exports = function transformer(file, api) {
 
   // Add MaterialSymbol import if not present
   const hasImport = root.find(j.ImportDeclaration, {
-    source: { value: '@mrs-uisystem/ui-v6' }
+    source: { value: '@atipicus/mrs-ui' }
   }).length > 0;
 
   if (!hasImport) {
     const newImport = j.importDeclaration(
       [j.importSpecifier(j.identifier('MaterialSymbol'))],
-      j.stringLiteral('@mrs-uisystem/ui-v6')
+      j.stringLiteral('@atipicus/mrs-ui')
     );
     root.get().node.program.body.unshift(newImport);
   }

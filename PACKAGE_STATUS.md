@@ -9,9 +9,9 @@
 ## 🎯 Current State
 
 ### Package Information
-- **Name**: `@mrs-uisystem/ui-v6`
+- **Name**: `@atipicus/mrs-ui`
 - **Version**: `0.2.1`
-- **npm Status**: ✅ Published (https://www.npmjs.com/package/@mrs-uisystem/ui-v6)
+- **npm Status**: ✅ Published (https://www.npmjs.com/package/@atipicus/mrs-ui)
 - **License**: UNLICENSED (Proprietary)
 
 ### Components
@@ -251,7 +251,7 @@ storybook-static/
 ## 📞 Support & Resources
 
 ### Documentation
-- **Package**: https://www.npmjs.com/package/@mrs-uisystem/ui-v6
+- **Package**: https://www.npmjs.com/package/@atipicus/mrs-ui
 - **Storybook**: https://mgomez-ext.github.io/mrs-ui/
 - **Repository**: https://github.com/mgomez-ext/mrs-ui
 

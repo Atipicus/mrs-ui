@@ -6,7 +6,7 @@
  *
  * @example
  * ```tsx
- * import { Drawer, List, ListItem, IconButton } from '@mrs-uisystem/ui-v6';
+ * import { Drawer, List, ListItem, IconButton } from '@atipicus/mrs-ui';
  * import MenuIcon from '@mui/icons-material/Menu';
  *
  * function MyDrawer() {

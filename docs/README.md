@@ -56,7 +56,7 @@ The **[components/](components/)** directory contains detailed documentation for
 ## 🔗 External Resources
 
 - **Storybook**: [https://mgomez-ext.github.io/mrs-ui/](https://mgomez-ext.github.io/mrs-ui/)
-- **npm Package**: [https://www.npmjs.com/package/@mrs-uisystem/ui-v6](https://www.npmjs.com/package/@mrs-uisystem/ui-v6)
+- **npm Package**: [https://www.npmjs.com/package/@atipicus/mrs-ui](https://www.npmjs.com/package/@atipicus/mrs-ui)
 - **GitHub**: [https://github.com/madersystem/mrs-ui-v6](https://github.com/madersystem/mrs-ui-v6)
 - **Figma**: [MRS Material UI Design](https://figma.com/design/ESNP5KunFotGObfcuXZ9Op/MRS---Material-UI-v.6.5.0)
 

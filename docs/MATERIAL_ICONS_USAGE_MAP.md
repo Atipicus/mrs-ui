@@ -217,7 +217,7 @@ The new `MaterialSymbol` component provides:
 
 **Usage Pattern**:
 ```tsx
-import { MaterialSymbol } from '@mrs-uisystem/ui-v6';
+import { MaterialSymbol } from '@atipicus/mrs-ui';
 <MaterialSymbol icon="home" size="medium" />
 ```
 

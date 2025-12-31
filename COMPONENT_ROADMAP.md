@@ -49,7 +49,7 @@ Alert, AppBar, Autocomplete, BottomNavigation, ButtonGroup, DatePicker, DateTime
 - ✅ Material Symbols integration (variable font system)
 - ✅ 1,182 tests passing (56 test suites)
 - ✅ All quality checks green
-- ✅ Published to npm: `@mrs-uisystem/ui-v6@0.7.0`
+- ✅ Published to npm: `@atipicus/mrs-ui@0.7.0`
 
 ### v0.6.0 (December 29, 2024)
 **Phase 6 - Advanced Components**
@@ -138,14 +138,14 @@ Alert, AppBar, Autocomplete, BottomNavigation, ButtonGroup, DatePicker, DateTime
 
 ### Installation
 ```bash
-npm install @mrs-uisystem/ui-v6
+npm install @atipicus/mrs-ui
 ```
 
 ### Usage
 ```tsx
-import { Button, TextField, Stack } from '@mrs-uisystem/ui-v6';
+import { Button, TextField, Stack } from '@atipicus/mrs-ui';
 import { ThemeProvider } from '@mui/material';
-import { theme } from '@mrs-uisystem/ui-v6/theme';
+import { theme } from '@atipicus/mrs-ui/theme';
 
 function App() {
   return (
@@ -163,7 +163,7 @@ function App() {
 
 ## Resources
 
-- **📦 npm Package**: [@mrs-uisystem/ui-v6](https://www.npmjs.com/package/@mrs-uisystem/ui-v6)
+- **📦 npm Package**: [@atipicus/mrs-ui](https://www.npmjs.com/package/@atipicus/mrs-ui)
 - **📘 Storybook**: [mgomez-ext.github.io/mrs-ui](https://mgomez-ext.github.io/mrs-ui/)
 - **📋 Repository**: [github.com/madersystem/mrs-ui-v6](https://github.com/madersystem/mrs-ui-v6)
 - **🎨 Figma**: [MRS Material-UI v6.5.0 Design](https://figma.com/design/ESNP5KunFotGObfcuXZ9Op/MRS---Material-UI-v.6.5.0)

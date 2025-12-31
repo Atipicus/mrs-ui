@@ -107,7 +107,7 @@ The deploy workflow **reuses build artifacts** from CI:
 
 1. Create a GitHub Release
 2. Workflow automatically publishes to npm
-3. Package available at: `npm install @mrs-uisystem/ui-v6`
+3. Package available at: `npm install @atipicus/mrs-ui`
 
 ### Manual Publishing
 
@@ -280,7 +280,7 @@ All workflow files are in `.github/workflows/`:
 
 ### npm
 
-- Package: `https://www.npmjs.com/package/@mrs-uisystem/ui-v6`
+- Package: `https://www.npmjs.com/package/@atipicus/mrs-ui`
 
 ---
 
@@ -288,7 +288,7 @@ All workflow files are in `.github/workflows/`:
 
 **CI/CD**: ✅ Active & Optimized
 **Storybook**: https://madersystem.github.io/mrs-ui-v6/
-**npm Package**: @mrs-uisystem/ui-v6
+**npm Package**: @atipicus/mrs-ui
 **Version**: 0.7.0
 **Components**: 54 production-ready components
 **Last Updated**: December 2024

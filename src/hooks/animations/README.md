@@ -35,7 +35,7 @@ Micro-interactions are small, subtle animations that provide feedback, guide use
 Material Design ripple effect on click.
 
 ```typescript
-import { useRipple } from '@mrs-uisystem/ui-v6/hooks/animations';
+import { useRipple } from '@atipicus/mrs-ui/hooks/animations';
 
 const MyButton = () => {
   const { ripples, createRipple } = useRipple();
@@ -64,7 +64,7 @@ const MyButton = () => {
 Continuous pulsing animation for attention-grabbing elements.
 
 ```typescript
-import { usePulse } from '@mrs-uisystem/ui-v6/hooks/animations';
+import { usePulse } from '@atipicus/mrs-ui/hooks/animations';
 
 const NotificationIcon = () => {
   const pulseRef = usePulse<HTMLDivElement>({
@@ -95,7 +95,7 @@ const NotificationIcon = () => {
 Shake animation for errors and invalid inputs.
 
 ```typescript
-import { useShake } from '@mrs-uisystem/ui-v6/hooks/animations';
+import { useShake } from '@atipicus/mrs-ui/hooks/animations';
 
 const LoginForm = () => {
   const { ref, shake } = useShake<HTMLDivElement>({
@@ -135,7 +135,7 @@ const LoginForm = () => {
 Playful bounce effect for success actions.
 
 ```typescript
-import { useBounce } from '@mrs-uisystem/ui-v6/hooks/animations';
+import { useBounce } from '@atipicus/mrs-ui/hooks/animations';
 
 const LikeButton = () => {
   const { ref, bounce } = useBounce<HTMLButtonElement>({
@@ -173,7 +173,7 @@ const LikeButton = () => {
 Smooth scale transition on hover.
 
 ```typescript
-import { useHoverScale } from '@mrs-uisystem/ui-v6/hooks/animations';
+import { useHoverScale } from '@atipicus/mrs-ui/hooks/animations';
 
 const ProductCard = () => {
   const { isHovered, onMouseEnter, onMouseLeave, style } = useHoverScale({
@@ -218,7 +218,7 @@ const ProductCard = () => {
 Enhanced button with custom ripple effect.
 
 ```typescript
-import { RippleButton } from '@mrs-uisystem/ui-v6/components/effects';
+import { RippleButton } from '@atipicus/mrs-ui/components/effects';
 
 <RippleButton variant="contained" color="primary">
   Click for Ripple
@@ -237,7 +237,7 @@ import { RippleButton } from '@mrs-uisystem/ui-v6/components/effects';
 Badge with entrance animations.
 
 ```typescript
-import { AnimatedBadge } from '@mrs-uisystem/ui-v6/components/effects';
+import { AnimatedBadge } from '@atipicus/mrs-ui/components/effects';
 
 <AnimatedBadge
   badgeContent={count}
@@ -266,7 +266,7 @@ import { AnimatedBadge } from '@mrs-uisystem/ui-v6/components/effects';
 Three-dot loading animation.
 
 ```typescript
-import { LoadingDots } from '@mrs-uisystem/ui-v6/components/effects';
+import { LoadingDots } from '@atipicus/mrs-ui/components/effects';
 
 <LoadingDots color="primary" size="medium" />
 ```
@@ -517,14 +517,14 @@ import {
   useShake,
   useBounce,
   useHoverScale,
-} from '@mrs-uisystem/ui-v6/hooks/animations';
+} from '@atipicus/mrs-ui/hooks/animations';
 
 // Components
 import {
   RippleButton,
   AnimatedBadge,
   LoadingDots,
-} from '@mrs-uisystem/ui-v6/components/effects';
+} from '@atipicus/mrs-ui/components/effects';
 ```
 
 ---

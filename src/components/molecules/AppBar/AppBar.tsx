@@ -6,7 +6,7 @@
  *
  * @example
  * ```tsx
- * import { AppBar, Toolbar, IconButton, Typography, Button } from '@mrs-uisystem/ui-v6';
+ * import { AppBar, Toolbar, IconButton, Typography, Button } from '@atipicus/mrs-ui';
  * import MenuIcon from '@mui/icons-material/Menu';
  *
  * function MyAppBar() {

@@ -150,7 +150,7 @@ jobs:
           body: |
             ## 📦 Published to npm
             
-            Install: `npm install @mrs-uisystem/ui-v6@${{ env.VERSION }}`
+            Install: `npm install @atipicus/mrs-ui@${{ env.VERSION }}`
             
             See [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md) for details.
           draft: false
@@ -165,5 +165,5 @@ jobs:
     steps:
       - name: Log success
         run: |
-          echo "✅ Successfully published @mrs-uisystem/ui-v6"
-          echo "📦 npm: https://www.npmjs.com/package/@mrs-uisystem/ui-v6"
+          echo "✅ Successfully published @atipicus/mrs-ui"
+          echo "📦 npm: https://www.npmjs.com/package/@atipicus/mrs-ui"

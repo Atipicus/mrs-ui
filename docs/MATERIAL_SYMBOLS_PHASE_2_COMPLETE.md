@@ -326,7 +326,7 @@ If Phase 3 is implemented:
 
 1. ✅ **Use MaterialSymbol for all new components**
    ```typescript
-   import { MaterialSymbol } from '@mrs-uisystem/ui-v6';
+   import { MaterialSymbol } from '@atipicus/mrs-ui';
    <MaterialSymbol icon="home" />
    ```
 

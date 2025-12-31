@@ -1,6 +1,6 @@
 # MRS UI Design System
 
-[![npm version](https://badge.fury.io/js/@mrs-uisystem%2Fui-v6.svg)](https://www.npmjs.com/package/@mrs-uisystem/ui-v6)
+[![npm version](https://badge.fury.io/js/@atipicus%2Fmrs-ui.svg)](https://www.npmjs.com/package/@atipicus/mrs-ui)
 [![License](https://img.shields.io/badge/License-UNLICENSED-red.svg)](LICENSE)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/madersystem/mrs-ui-v6/ci.yml?branch=main)](https://github.com/madersystem/mrs-ui-v6/actions)
 
@@ -27,7 +27,7 @@ A comprehensive Material-UI v6.5 based design system with **54 production-ready 
 ## 📦 Installation
 
 ```bash
-npm install @mrs-uisystem/ui-v6
+npm install @atipicus/mrs-ui
 ```
 
 ### Peer Dependencies
@@ -70,10 +70,10 @@ Add Nunito font (required) to your HTML `<head>`:
 ## 🎯 Quick Start
 
 ```tsx
-import { Button, TextField, Container, Stack } from '@mrs-uisystem/ui-v6';
+import { Button, TextField, Container, Stack } from '@atipicus/mrs-ui';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { theme } from '@mrs-uisystem/ui-v6/theme';
+import { theme } from '@atipicus/mrs-ui/theme';
 
 function App() {
   return (
@@ -95,7 +95,7 @@ function App() {
 ### Using Material Symbols Icons
 
 ```tsx
-import { MaterialSymbol, Button, Stack } from '@mrs-uisystem/ui-v6';
+import { MaterialSymbol, Button, Stack } from '@atipicus/mrs-ui';
 
 function IconExample() {
   return (
@@ -201,7 +201,7 @@ function IconExample() {
 
 ```tsx
 import { createTheme, ThemeProvider } from '@mui/material';
-import { theme as baseTheme } from '@mrs-uisystem/ui-v6/theme';
+import { theme as baseTheme } from '@atipicus/mrs-ui/theme';
 
 // Customize the base theme
 const customTheme = createTheme({
@@ -226,7 +226,7 @@ function App() {
 ### Access Design Tokens
 
 ```tsx
-import { colors, shape, typography } from '@mrs-uisystem/ui-v6/theme';
+import { colors, shape, typography } from '@atipicus/mrs-ui/theme';
 
 const primary = colors.light.primary.main; // #00686f (teal)
 const borderRadius = shape.rounded; // 9999px (pill shape)
@@ -243,7 +243,7 @@ Design tokens are available in **4 formats**:
 
 #### 1️⃣ CSS Variables
 ```css
-@import '@mrs-uisystem/ui-v6/tokens/generated/css/tokens.css';
+@import '@atipicus/mrs-ui/tokens/generated/css/tokens.css';
 
 .my-button {
   background: var(--mrs-semantic-color-primary-main);
@@ -253,7 +253,7 @@ Design tokens are available in **4 formats**:
 
 #### 2️⃣ SCSS Variables
 ```scss
-@import '@mrs-uisystem/ui-v6/tokens/generated/scss/tokens';
+@import '@atipicus/mrs-ui/tokens/generated/scss/tokens';
 
 .my-button {
   background: $mrs-semantic-color-primary-main;
@@ -266,7 +266,7 @@ Design tokens are available in **4 formats**:
 import {
   SemanticColorPrimaryMain,
   ComponentButtonBorderRadius,
-} from '@mrs-uisystem/ui-v6/tokens';
+} from '@atipicus/mrs-ui/tokens';
 
 const MyButton = () => (
   <button style={{ 
@@ -281,7 +281,7 @@ const MyButton = () => (
 #### 4️⃣ JSON Exports
 ```javascript
 // For scripts, tools, or Figma sync
-import tokens from '@mrs-uisystem/ui-v6/tokens/generated/json/tokens-flat.json';
+import tokens from '@atipicus/mrs-ui/tokens/generated/json/tokens-flat.json';
 console.log(tokens['semantic-color-primary-main']); // "#00686f"
 ```
 
@@ -383,7 +383,7 @@ import {
   TimePicker,
   DateTimePicker,
   LocalizationProvider
-} from '@mrs-uisystem/ui-v6';
+} from '@atipicus/mrs-ui';
 import dayjs from 'dayjs';
 
 function DatePickerExample() {
@@ -429,7 +429,7 @@ import {
   TimelineConnector,
   TimelineContent,
   TimelineOppositeContent
-} from '@mrs-uisystem/ui-v6';
+} from '@atipicus/mrs-ui';
 
 function TimelineExample() {
   return (
@@ -479,7 +479,7 @@ UNLICENSED - This project is proprietary software.
 
 ## 🔗 Links
 
-- [npm Package](https://www.npmjs.com/package/@mrs-uisystem/ui-v6)
+- [npm Package](https://www.npmjs.com/package/@atipicus/mrs-ui)
 - [Storybook Documentation](https://mgomez-ext.github.io/mrs-ui/)
 - [GitHub Repository](https://github.com/madersystem/mrs-ui-v6)
 - [Issue Tracker](https://github.com/madersystem/mrs-ui-v6/issues)
@@ -513,7 +513,7 @@ See [COMPONENT_ROADMAP.md](COMPONENT_ROADMAP.md) for detailed implementation pla
 ## 📦 Package Contents
 
 ```
-@mrs-uisystem/ui-v6/
+@atipicus/mrs-ui/
 ├── dist/
 │   ├── index.js          # CommonJS bundle
 │   ├── index.mjs         # ES Module bundle
@@ -529,7 +529,7 @@ See [COMPONENT_ROADMAP.md](COMPONENT_ROADMAP.md) for detailed implementation pla
 Full TypeScript support with comprehensive type definitions:
 
 ```tsx
-import type { ButtonProps, StackProps, GridProps } from '@mrs-uisystem/ui-v6';
+import type { ButtonProps, StackProps, GridProps } from '@atipicus/mrs-ui';
 
 const MyButton: React.FC<ButtonProps> = (props) => {
   return <Button {...props} />;
@@ -554,7 +554,7 @@ const MyButton: React.FC<ButtonProps> = (props) => {
 ### Form Layout
 
 ```tsx
-import { Container, Stack, TextField, Button, FormControlLabel, Checkbox } from '@mrs-uisystem/ui-v6';
+import { Container, Stack, TextField, Button, FormControlLabel, Checkbox } from '@atipicus/mrs-ui';
 
 function LoginForm() {
   return (
@@ -575,7 +575,7 @@ function LoginForm() {
 ### Responsive Grid
 
 ```tsx
-import { Container, Grid, Card, CardContent, Typography } from '@mrs-uisystem/ui-v6';
+import { Container, Grid, Card, CardContent, Typography } from '@atipicus/mrs-ui';
 
 function Dashboard() {
   return (

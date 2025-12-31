@@ -9,6 +9,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.8.0] - 2025-12-31 (Design Token System & Micro-Interactions)
 
+### ⚠️ Package Migration Notice
+
+**This package has been migrated from `@mrs-uisystem/ui-v6` to `@atipicus/mrs-ui`.**
+
+**To migrate your project:**
+
+```bash
+npm uninstall @mrs-uisystem/ui-v6
+npm install @atipicus/mrs-ui
+```
+
+**Update your imports:**
+```typescript
+// Old
+import { Button } from '@mrs-uisystem/ui-v6';
+import { theme } from '@mrs-uisystem/ui-v6/theme';
+import * as tokens from '@mrs-uisystem/ui-v6/tokens';
+
+// New
+import { Button } from '@atipicus/mrs-ui';
+import { theme } from '@atipicus/mrs-ui/theme';
+import * as tokens from '@atipicus/mrs-ui/tokens';
+```
+
+The old package `@mrs-uisystem/ui-v6` has been deprecated. Please update to the new package name.
+
+**New Package:** [@atipicus/mrs-ui](https://www.npmjs.com/package/@atipicus/mrs-ui)
+
+---
+
+## [0.8.0] - 2025-12-31 (Design Token System & Micro-Interactions)
+
 ### Added
 
 **🎨 Design Token System**
@@ -144,30 +176,30 @@ None - All changes are additive and backward compatible.
 
 ```bash
 # Update package
-npm update @mrs-uisystem/ui-v6
+npm update @atipicus/mrs-ui
 
 # Import tokens (optional, for advanced usage)
 import { 
   PrimitivesMotionDurationFast,
   SemanticColorDarkPrimaryMain 
-} from '@mrs-uisystem/ui-v6/tokens';
+} from '@atipicus/mrs-ui/tokens';
 
 # Import animation hooks (optional)
 import { 
   useRipple, 
   useShake, 
   useBounce 
-} from '@mrs-uisystem/ui-v6/hooks/animations';
+} from '@atipicus/mrs-ui/hooks/animations';
 
 # Import effect components (optional)
 import { 
   RippleButton, 
   AnimatedBadge, 
   LoadingDots 
-} from '@mrs-uisystem/ui-v6/components/effects';
+} from '@atipicus/mrs-ui/components/effects';
 
 # Use dark theme
-import { darkTheme } from '@mrs-uisystem/ui-v6/theme';
+import { darkTheme } from '@atipicus/mrs-ui/theme';
 <ThemeProvider theme={darkTheme}>...</ThemeProvider>
 ```
 
@@ -762,7 +794,7 @@ import { MaterialSymbol } from '../MaterialSymbol';
 - Comprehensive README with installation guide
 
 ### Changed
-- Package name: `@mrs-uisystem/ui-v6`
+- Package name: `@atipicus/mrs-ui`
 - PublishConfig access: "public" (ready for npm publishing)
 - Enhanced prepublishOnly script with full quality checks
 - Removed Story UI dependencies (not needed)

@@ -6,7 +6,7 @@
  *
  * @example
  * ```tsx
- * import { Drawer, DrawerNavigation } from '@mrs-uisystem/ui-v6';
+ * import { Drawer, DrawerNavigation } from '@atipicus/mrs-ui';
  * import HomeIcon from '@mui/icons-material/Home';
  * import InboxIcon from '@mui/icons-material/Inbox';
  * import SettingsIcon from '@mui/icons-material/Settings';
