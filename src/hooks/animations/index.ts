@@ -9,4 +9,3 @@ export { usePulse } from './usePulse';
 export { useShake } from './useShake';
 export { useBounce } from './useBounce';
 export { useHoverScale } from './useHoverScale';
-
