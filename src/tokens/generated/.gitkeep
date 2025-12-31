@@ -1,0 +1,4 @@
+# This directory contains auto-generated files from Style Dictionary
+# The actual generated files are git-ignored
+# Run `npm run tokens:build` to generate them
+

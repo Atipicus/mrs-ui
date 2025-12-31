@@ -8,6 +8,12 @@ dist/
 build/
 storybook-static/
 
+# Generated tokens (regenerate with `npm run tokens:build`)
+src/tokens/generated/css/
+src/tokens/generated/ts/
+src/tokens/generated/docs/
+!src/tokens/generated/.gitkeep
+
 # Testing
 coverage/
 

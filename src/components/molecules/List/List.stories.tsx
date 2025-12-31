@@ -7,7 +7,6 @@ import { Box, Typography, Divider, ListItemText, ListItemIcon, ListSubheader } f
 import { List } from './List';
 import { ListItem } from '../ListItem';
 import { MaterialSymbol } from '../../atoms/MaterialSymbol';
-import { Icon } from '../../atoms/Icon';
 import { IconButton } from '../../atoms/IconButton';
 import React from 'react';
 
@@ -205,13 +204,13 @@ export const WithSubheader: Story = {
       >
         <ListItem>
           <ListItemIcon>
-            <Icon name="WifiRounded" />
+            <MaterialSymbol icon="wifi" />
           </ListItemIcon>
           <ListItemText primary="Wi-Fi" />
         </ListItem>
         <ListItem>
           <ListItemIcon>
-            <Icon name="BluetoothRounded" />
+            <MaterialSymbol icon="bluetooth" />
           </ListItemIcon>
           <ListItemText primary="Bluetooth" />
         </ListItem>

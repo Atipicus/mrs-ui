@@ -19,6 +19,11 @@
       "types": "./dist/theme/theme.d.ts",
       "import": "./dist/theme/theme.mjs",
       "require": "./dist/theme/theme.js"
+    },
+    "./tokens": {
+      "types": "./dist/tokens/index.d.ts",
+      "import": "./dist/tokens/index.mjs",
+      "require": "./dist/tokens/index.js"
     }
   },
   "files": [
@@ -27,8 +32,8 @@
   ],
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build": "vite build",
-    "build-storybook": "storybook build",
+    "build": "npm run tokens:build && vite build",
+    "build-storybook": "npm run tokens:build && storybook build",
     "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -41,7 +46,10 @@
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
     "publish:major": "npm version major && npm publish",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "tokens:build": "style-dictionary build --config src/tokens/config/style-dictionary.config.js",
+    "tokens:clean": "rm -rf src/tokens/generated/css src/tokens/generated/ts src/tokens/generated/docs",
+    "tokens:rebuild": "npm run tokens:clean && npm run tokens:build"
   },
   "keywords": [
     "design-system",
@@ -110,6 +118,7 @@
     "playwright": "^1.57.0",
     "prettier": "^3.7.4",
     "storybook": "^10.1.10",
+    "style-dictionary": "^4.4.0",
     "ts-jest": "^29.1.0",
     "typescript": "^5.3.0",
     "vite": "^7.3.0",

@@ -1,0 +1,99 @@
+{
+  "primitives": {
+    "colors": {
+      "brand": {
+        "verones": {
+          "$value": "#00686f",
+          "$type": "color",
+          "$description": "MRS Primary Brand Color - Teal"
+        },
+        "lima": {
+          "$value": "#99cc00",
+          "$type": "color",
+          "$description": "MRS Secondary Brand Color - Lime Green"
+        }
+      },
+      "neutral": {
+        "white": { "$value": "#ffffff", "$type": "color" },
+        "black": { "$value": "#000000", "$type": "color" },
+        "gray": {
+          "50": { "$value": "#fafafa", "$type": "color" },
+          "100": { "$value": "#f5f5f5", "$type": "color" },
+          "200": { "$value": "#eeeeee", "$type": "color" },
+          "300": { "$value": "#e0e0e0", "$type": "color" },
+          "400": { "$value": "#bdbdbd", "$type": "color" },
+          "500": { "$value": "#9e9e9e", "$type": "color" },
+          "600": { "$value": "#757575", "$type": "color" },
+          "700": { "$value": "#616161", "$type": "color" },
+          "800": { "$value": "#424242", "$type": "color" },
+          "900": { "$value": "#212121", "$type": "color" }
+        }
+      },
+      "status": {
+        "error": {
+          "50": { "$value": "#fdeded", "$type": "color" },
+          "100": { "$value": "#f8b8b8", "$type": "color" },
+          "500": { "$value": "#ab1a1a", "$type": "color" },
+          "600": { "$value": "#8b1515", "$type": "color" },
+          "700": { "$value": "#5f2120", "$type": "color" }
+        },
+        "warning": {
+          "50": { "$value": "#fff4e5", "$type": "color" },
+          "500": { "$value": "#dfa00a", "$type": "color" },
+          "600": { "$value": "#b88308", "$type": "color" },
+          "700": { "$value": "#3e2410", "$type": "color" }
+        },
+        "info": {
+          "50": { "$value": "#e5f6fd", "$type": "color" },
+          "100": { "$value": "#D1DAF0", "$type": "color" },
+          "500": { "$value": "#2481b8", "$type": "color" },
+          "600": { "$value": "#143996", "$type": "color" },
+          "700": { "$value": "#014361", "$type": "color" },
+          "800": { "$value": "#0C225A", "$type": "color" }
+        },
+        "success": {
+          "50": { "$value": "#edf7ed", "$type": "color" },
+          "100": { "$value": "#B3D1C7", "$type": "color" },
+          "500": { "$value": "#2e7d32", "$type": "color" },
+          "600": { "$value": "#036642", "$type": "color" },
+          "700": { "$value": "#1e4620", "$type": "color" },
+          "800": { "$value": "#023321", "$type": "color" }
+        }
+      },
+      "alpha": {
+        "black": {
+          "4": { "$value": "#0000000a", "$type": "color" },
+          "8": { "$value": "#00000014", "$type": "color" },
+          "12": { "$value": "#0000001f", "$type": "color" },
+          "23": { "$value": "#0000003b", "$type": "color" },
+          "26": { "$value": "#00000042", "$type": "color" },
+          "38": { "$value": "#00000061", "$type": "color" },
+          "42": { "$value": "#0000006b", "$type": "color" },
+          "56": { "$value": "#0000008f", "$type": "color" },
+          "60": { "$value": "#00000099", "$type": "color" },
+          "87": { "$value": "#000000de", "$type": "color" }
+        },
+        "white": {
+          "8": { "$value": "#ffffff14", "$type": "color" },
+          "12": { "$value": "#ffffff1f", "$type": "color" },
+          "26": { "$value": "#ffffff42", "$type": "color" },
+          "50": { "$value": "#ffffff80", "$type": "color" },
+          "70": { "$value": "#ffffffb3", "$type": "color" },
+          "100": { "$value": "#ffffff", "$type": "color" }
+        },
+        "primary": {
+          "8": { "$value": "#00999914", "$type": "color" },
+          "12": { "$value": "#0099991f", "$type": "color" },
+          "16": { "$value": "#00999929", "$type": "color" },
+          "25": { "$value": "#00999940", "$type": "color" },
+          "24-dark": { "$value": "#0099993d", "$type": "color" },
+          "32-dark": { "$value": "#00999952", "$type": "color" },
+          "40-dark": { "$value": "#00999966", "$type": "color" }
+        }
+      },
+      "special": {
+        "rating": { "$value": "#ffb400", "$type": "color" }
+      }
+    }
+  }
+}

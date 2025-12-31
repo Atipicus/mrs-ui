@@ -1,0 +1,38 @@
+{
+  "component": {
+    "button": {
+      "borderRadius": { "$value": "{primitives.radius.md}", "$type": "dimension" },
+      "fontWeight": { "$value": "{primitives.typography.fontWeight.semibold}", "$type": "fontWeight" },
+      "small": {
+        "fontSize": { "$value": "0.8125rem", "$type": "dimension" },
+        "height": { "$value": "30px", "$type": "dimension" }
+      },
+      "medium": {
+        "fontSize": { "$value": "{primitives.typography.fontSize.sm}", "$type": "dimension" },
+        "height": { "$value": "36px", "$type": "dimension" }
+      },
+      "large": {
+        "fontSize": { "$value": "{primitives.typography.fontSize.md}", "$type": "dimension" },
+        "height": { "$value": "42px", "$type": "dimension" }
+      }
+    },
+    "iconButton": {
+      "borderRadius": { "$value": "{primitives.radius.full}", "$type": "dimension" },
+      "small": {
+        "size": { "$value": "34px", "$type": "dimension" },
+        "iconSize": { "$value": "20px", "$type": "dimension" }
+      },
+      "medium": {
+        "size": { "$value": "40px", "$type": "dimension" },
+        "iconSize": { "$value": "24px", "$type": "dimension" }
+      },
+      "large": {
+        "size": { "$value": "48px", "$type": "dimension" },
+        "iconSize": { "$value": "28px", "$type": "dimension" }
+      }
+    },
+    "fab": {
+      "borderRadius": { "$value": "{primitives.radius.full}", "$type": "dimension" }
+    }
+  }
+}

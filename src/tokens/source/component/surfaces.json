@@ -1,0 +1,19 @@
+{
+  "component": {
+    "paper": {
+      "elevation0": { "$value": "{primitives.colors.neutral.white}", "$type": "color" },
+      "elevation1": { "$value": "{primitives.colors.neutral.white}", "$type": "color" },
+      "elevation2": { "$value": "{primitives.colors.neutral.white}", "$type": "color" }
+    },
+    "table": {
+      "border": { "$value": "{primitives.colors.neutral.gray.300}", "$type": "color" },
+      "headerBackground": { "$value": "{primitives.colors.neutral.gray.50}", "$type": "color" }
+    },
+    "card": {
+      "borderRadius": { "$value": "{primitives.radius.lg}", "$type": "dimension" }
+    },
+    "dialog": {
+      "borderRadius": { "$value": "{primitives.radius.lg}", "$type": "dimension" }
+    }
+  }
+}

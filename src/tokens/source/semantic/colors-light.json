@@ -1,0 +1,59 @@
+{
+  "semantic": {
+    "color": {
+      "primary": {
+        "main": { "$value": "{primitives.colors.brand.verones}", "$type": "color" },
+        "dark": { "$value": "#004e53", "$type": "color" },
+        "light": { "$value": "#009999", "$type": "color" },
+        "contrastText": { "$value": "{primitives.colors.neutral.white}", "$type": "color" }
+      },
+      "secondary": {
+        "main": { "$value": "{primitives.colors.brand.lima}", "$type": "color" },
+        "dark": { "$value": "#7aa300", "$type": "color" },
+        "light": { "$value": "#b3d633", "$type": "color" },
+        "contrastText": { "$value": "{primitives.colors.alpha.black.87}", "$type": "color" }
+      },
+      "error": {
+        "main": { "$value": "{primitives.colors.status.error.500}", "$type": "color" },
+        "dark": { "$value": "{primitives.colors.status.error.600}", "$type": "color" },
+        "light": { "$value": "#d32f2f", "$type": "color" },
+        "contrastText": { "$value": "{primitives.colors.neutral.white}", "$type": "color" }
+      },
+      "warning": {
+        "main": { "$value": "{primitives.colors.status.warning.500}", "$type": "color" },
+        "dark": { "$value": "{primitives.colors.status.warning.600}", "$type": "color" },
+        "light": { "$value": "#f5b642", "$type": "color" },
+        "contrastText": { "$value": "{primitives.colors.alpha.black.87}", "$type": "color" }
+      },
+      "info": {
+        "main": { "$value": "{primitives.colors.status.info.600}", "$type": "color" },
+        "dark": { "$value": "{primitives.colors.status.info.800}", "$type": "color" },
+        "light": { "$value": "{primitives.colors.status.info.100}", "$type": "color" },
+        "contrastText": { "$value": "{primitives.colors.neutral.white}", "$type": "color" }
+      },
+      "success": {
+        "main": { "$value": "{primitives.colors.status.success.600}", "$type": "color" },
+        "dark": { "$value": "{primitives.colors.status.success.800}", "$type": "color" },
+        "light": { "$value": "{primitives.colors.status.success.100}", "$type": "color" },
+        "contrastText": { "$value": "{primitives.colors.neutral.white}", "$type": "color" }
+      },
+      "background": {
+        "default": { "$value": "{primitives.colors.neutral.white}", "$type": "color" },
+        "paper": { "$value": "{primitives.colors.neutral.white}", "$type": "color" }
+      },
+      "text": {
+        "primary": { "$value": "{primitives.colors.alpha.black.87}", "$type": "color" },
+        "secondary": { "$value": "{primitives.colors.alpha.black.60}", "$type": "color" },
+        "disabled": { "$value": "{primitives.colors.alpha.black.38}", "$type": "color" }
+      },
+      "action": {
+        "active": { "$value": "{primitives.colors.alpha.black.56}", "$type": "color" },
+        "hover": { "$value": "{primitives.colors.alpha.black.8}", "$type": "color" },
+        "selected": { "$value": "{primitives.colors.alpha.black.12}", "$type": "color" },
+        "disabled": { "$value": "{primitives.colors.alpha.black.26}", "$type": "color" },
+        "disabledBackground": { "$value": "{primitives.colors.alpha.black.12}", "$type": "color" }
+      },
+      "divider": { "$value": "{primitives.colors.alpha.black.12}", "$type": "color" }
+    }
+  }
+}
