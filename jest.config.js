@@ -26,6 +26,16 @@ module.exports = {
         },
       },
     ],
+    // Transform generated token files (ES6 modules)
+    '^.+\\.js$': [
+      'ts-jest',
+      {
+        tsconfig: {
+          allowJs: true,
+          esModuleInterop: true,
+        },
+      },
+    ],
   },
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
