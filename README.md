@@ -18,7 +18,9 @@ A comprehensive Material-UI v6.5 based design system with **54 production-ready 
 - ✅ **Comprehensive Testing** - 1,182 tests with 100% pass rate (56 test suites)
 - ✅ **Storybook Documentation** - Interactive component explorer
 - ✅ **Dual Module Support** - ESM and CommonJS
-- ✅ **Theme Integration** - Customizable design tokens
+- ✅ **Design Token Hub** - Multi-format exports (CSS, SCSS, TypeScript, JSON)
+- ✅ **Figma Sync** - Automated token synchronization from Figma
+- ✅ **Theme Integration** - Customizable design tokens with DTCG format
 - ✅ **Responsive** - Mobile-first design approach
 - ✅ **Accessible** - WCAG compliant components
 
@@ -230,6 +232,105 @@ const primary = colors.light.primary.main; // #00686f (teal)
 const borderRadius = shape.rounded; // 9999px (pill shape)
 const heading = typography.h1.fontFamily; // Nunito
 ```
+
+## 🎨 Design Token Hub
+
+The MRS Design System includes a comprehensive **Token Hub** that manages design tokens and exports them to multiple formats.
+
+### Multi-Format Exports
+
+Design tokens are available in **4 formats**:
+
+#### 1️⃣ CSS Variables
+```css
+@import '@mrs-uisystem/ui-v6/tokens/generated/css/tokens.css';
+
+.my-button {
+  background: var(--mrs-semantic-color-primary-main);
+  border-radius: var(--mrs-component-button-border-radius);
+}
+```
+
+#### 2️⃣ SCSS Variables
+```scss
+@import '@mrs-uisystem/ui-v6/tokens/generated/scss/tokens';
+
+.my-button {
+  background: $mrs-semantic-color-primary-main;
+  border-radius: $mrs-component-button-border-radius;
+}
+```
+
+#### 3️⃣ TypeScript Exports
+```typescript
+import {
+  SemanticColorPrimaryMain,
+  ComponentButtonBorderRadius,
+} from '@mrs-uisystem/ui-v6/tokens';
+
+const MyButton = () => (
+  <button style={{ 
+    backgroundColor: SemanticColorPrimaryMain,
+    borderRadius: ComponentButtonBorderRadius,
+  }}>
+    Click me
+  </button>
+);
+```
+
+#### 4️⃣ JSON Exports
+```javascript
+// For scripts, tools, or Figma sync
+import tokens from '@mrs-uisystem/ui-v6/tokens/generated/json/tokens-flat.json';
+console.log(tokens['semantic-color-primary-main']); // "#00686f"
+```
+
+### Figma Synchronization
+
+The system includes **automated Figma token synchronization** via GitHub Actions:
+
+**Features**:
+- ✅ Scheduled sync (every Monday at 9 AM UTC)
+- ✅ Manual sync via GitHub Actions UI  
+- ✅ Automatic Pull Request creation
+- ✅ Token validation and diff reports
+- ✅ DTCG (Design Token Community Group) format compliant
+
+**Setup Guide**: See [`.github/FIGMA_SYNC_SETUP.md`](.github/FIGMA_SYNC_SETUP.md) for configuration instructions.
+
+### Token Structure
+
+```
+Design Tokens (DTCG Format)
+├── primitives/       → Brand colors, typography, spacing, radius
+├── semantic/         → Primary, secondary, error, warning, info, success
+└── component/        → Button, alert, input, card overrides
+         ↓
+   Style Dictionary Build
+         ↓
+   Multi-Format Exports
+   ├── CSS Variables (tokens.css)
+   ├── SCSS Variables (tokens.scss)
+   ├── TypeScript (tokens.js, tokens.d.ts)
+   └── JSON (flat, nested, figma-tokens)
+```
+
+### Token Management Commands
+
+```bash
+# Build all token formats
+npm run tokens:build
+
+# Watch mode (auto-rebuild on changes)
+npm run tokens:watch
+
+# Figma sync (requires GitHub Actions setup)
+npm run tokens:sync:pull      # Figma → Code
+npm run tokens:sync:push      # Code → Figma
+npm run tokens:sync:dry-run   # Preview changes
+```
+
+**Full Documentation**: [`src/tokens/README.md`](src/tokens/README.md)
 
 ## 📖 Documentation
 
