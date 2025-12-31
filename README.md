@@ -4,6 +4,8 @@
 [![License](https://img.shields.io/badge/License-UNLICENSED-red.svg)](LICENSE)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/madersystem/mrs-ui-v6/ci.yml?branch=main)](https://github.com/madersystem/mrs-ui-v6/actions)
 
+> **⚠️ Package Migration Notice:** This package has been migrated from `@mrs-uisystem/ui-v6` to `@atipicus/mrs-ui`. If you're using the old package, please see the [Migration Guide](./MIGRATION_GUIDE.md) for instructions.
+
 A comprehensive Material-UI v6.5 based design system with **54 production-ready components** built with React, TypeScript, and modern best practices.
 
 > **Version 0.8.0** - Complete Design Token System, Dark Mode, Animation Tokens & Micro-Interactions Library. 54 production-ready components with comprehensive theming. 1,182 tests passing (56 test suites).
