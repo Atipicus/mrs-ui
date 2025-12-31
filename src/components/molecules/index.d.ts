@@ -20,6 +20,7 @@ export * from './ListItem';
 export * from './Menu';
 export * from './Pagination';
 export * from './Rating';
+export * from './Sidenav';
 export * from './Snackbar';
 export * from './SpeedDial';
 export * from './Stepper';
