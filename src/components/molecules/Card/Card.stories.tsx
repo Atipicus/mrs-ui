@@ -101,6 +101,10 @@ export const Elevations: Story = {
  * Card variants: elevation vs outlined
  */
 export const Variants: Story = {
+  args: {
+    elevation: 22,
+  },
+
   render: () => (
     <Stack direction="row" spacing={2} flexWrap="wrap" useFlexGap>
       <Card variant="elevation" elevation={1} sx={{ maxWidth: 345 }}>

@@ -24,6 +24,8 @@ const spacing = (factor: number): number => {
   return baseUnit * factor;
 };
 
+import { lightTokens, darkTokens } from './tokens-import';
+
 /**
  * Shared component overrides
  * These apply consistent styling across all components using theme tokens
@@ -34,6 +36,7 @@ const spacing = (factor: number): number => {
  * - Consistent with MUI best practices
  */
 const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components'] => {
+  const modeTokens = mode === 'light' ? lightTokens : darkTokens;
   const palette = themeTokens.colorSchemes[mode].palette;
   const shape = themeTokens.shape;
   const typography = themeTokens.typography;
@@ -132,7 +135,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
           borderRadius: shape.sm,
         },
         notchedOutline: {
-          borderColor: palette._components.input.outlined.enabledBorder,
+          borderColor: modeTokens.components.input.outlined.enabledBorder,
         },
       },
     },
@@ -141,7 +144,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
       styleOverrides: {
         root: {
           fontFamily: typography.fontFamily,
-          backgroundColor: palette._components.input.filled.enabledFill,
+          backgroundColor: modeTokens.components.input.filled.enabledFill,
           borderRadius: `${shape.sm}px ${shape.sm}px 0 0`,
         },
       },
@@ -154,7 +157,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
         },
         underline: {
           '&:before': {
-            borderBottomColor: palette._components.input.standard.enabledBorder,
+            borderBottomColor: modeTokens.components.input.standard.enabledBorder,
           },
         },
       },
@@ -230,10 +233,10 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
           borderRadius: shape.rounded,
         },
         outlined: {
-          borderColor: palette._components.chip.defaultEnabledBorder,
+          borderColor: modeTokens.components.chip.defaultEnabledBorder,
         },
         deleteIcon: {
-          color: palette._components.chip.defaultCloseFill,
+          color: modeTokens.components.chip.defaultCloseFill,
         },
       },
     },
@@ -249,58 +252,58 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
         },
         // Filled variants
         filledError: {
-          backgroundColor: palette._components.alert.error.filled.background,
-          color: palette._components.alert.error.filled.foreground,
+          backgroundColor: modeTokens.components.alert.error.filled.background,
+          color: modeTokens.components.alert.error.filled.foreground,
         },
         filledWarning: {
-          backgroundColor: palette._components.alert.warning.filled.background,
-          color: palette._components.alert.warning.filled.foreground,
+          backgroundColor: modeTokens.components.alert.warning.filled.background,
+          color: modeTokens.components.alert.warning.filled.foreground,
         },
         filledInfo: {
-          backgroundColor: palette._components.alert.info.filled.background,
-          color: palette._components.alert.info.filled.foreground,
+          backgroundColor: modeTokens.components.alert.info.filled.background,
+          color: modeTokens.components.alert.info.filled.foreground,
         },
         filledSuccess: {
-          backgroundColor: palette._components.alert.success.filled.background,
-          color: palette._components.alert.success.filled.foreground,
+          backgroundColor: modeTokens.components.alert.success.filled.background,
+          color: modeTokens.components.alert.success.filled.foreground,
         },
         // Outlined variants
         outlinedError: {
-          backgroundColor: palette._components.alert.error.outlined.background,
-          color: palette._components.alert.error.outlined.foreground,
-          borderColor: palette._components.alert.error.outlined.border,
+          backgroundColor: modeTokens.components.alert.error.outlined.background,
+          color: modeTokens.components.alert.error.outlined.foreground,
+          borderColor: modeTokens.components.alert.error.outlined.border,
         },
         outlinedWarning: {
-          backgroundColor: palette._components.alert.warning.outlined.background,
-          color: palette._components.alert.warning.outlined.foreground,
-          borderColor: palette._components.alert.warning.outlined.border,
+          backgroundColor: modeTokens.components.alert.warning.outlined.background,
+          color: modeTokens.components.alert.warning.outlined.foreground,
+          borderColor: modeTokens.components.alert.warning.outlined.border,
         },
         outlinedInfo: {
-          backgroundColor: palette._components.alert.info.outlined.background,
-          color: palette._components.alert.info.outlined.foreground,
-          borderColor: palette._components.alert.info.outlined.border,
+          backgroundColor: modeTokens.components.alert.info.outlined.background,
+          color: modeTokens.components.alert.info.outlined.foreground,
+          borderColor: modeTokens.components.alert.info.outlined.border,
         },
         outlinedSuccess: {
-          backgroundColor: palette._components.alert.success.outlined.background,
-          color: palette._components.alert.success.outlined.foreground,
-          borderColor: palette._components.alert.success.outlined.border,
+          backgroundColor: modeTokens.components.alert.success.outlined.background,
+          color: modeTokens.components.alert.success.outlined.foreground,
+          borderColor: modeTokens.components.alert.success.outlined.border,
         },
         // Standard variants
         standardError: {
-          backgroundColor: palette._components.alert.error.standard.background,
-          color: palette._components.alert.error.standard.foreground,
+          backgroundColor: modeTokens.components.alert.error.standard.background,
+          color: modeTokens.components.alert.error.standard.foreground,
         },
         standardWarning: {
-          backgroundColor: palette._components.alert.warning.standard.background,
-          color: palette._components.alert.warning.standard.foreground,
+          backgroundColor: modeTokens.components.alert.warning.standard.background,
+          color: modeTokens.components.alert.warning.standard.foreground,
         },
         standardInfo: {
-          backgroundColor: palette._components.alert.info.standard.background,
-          color: palette._components.alert.info.standard.foreground,
+          backgroundColor: modeTokens.components.alert.info.standard.background,
+          color: modeTokens.components.alert.info.standard.foreground,
         },
         standardSuccess: {
-          backgroundColor: palette._components.alert.success.standard.background,
-          color: palette._components.alert.success.standard.foreground,
+          backgroundColor: modeTokens.components.alert.success.standard.background,
+          color: modeTokens.components.alert.success.standard.foreground,
         },
       },
     },
@@ -325,13 +328,13 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
           borderRadius: shape.md,
         },
         elevation0: {
-          backgroundColor: palette._components.paper.elevation0,
+          backgroundColor: modeTokens.components.paper.elevation0,
         },
         elevation1: {
-          backgroundColor: palette._components.paper.elevation1,
+          backgroundColor: modeTokens.components.paper.elevation1,
         },
         elevation2: {
-          backgroundColor: palette._components.paper.elevation2,
+          backgroundColor: modeTokens.components.paper.elevation2,
         },
       },
     },
@@ -598,7 +601,16 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
 export const lightTheme: Theme = createTheme({
   palette: {
     mode: 'light',
-    ...themeTokens.colorSchemes.light.palette,
+    primary: lightTokens.colors.primary,
+    secondary: lightTokens.colors.secondary,
+    error: lightTokens.colors.error,
+    warning: lightTokens.colors.warning,
+    info: lightTokens.colors.info,
+    success: lightTokens.colors.success,
+    background: lightTokens.colors.background,
+    text: lightTokens.colors.text,
+    action: lightTokens.colors.action,
+    divider: lightTokens.colors.divider,
   },
   typography: {
     ...themeTokens.typography,
@@ -616,7 +628,16 @@ export const lightTheme: Theme = createTheme({
 export const darkTheme: Theme = createTheme({
   palette: {
     mode: 'dark',
-    ...themeTokens.colorSchemes.dark.palette,
+    primary: darkTokens.colors.primary,
+    secondary: darkTokens.colors.secondary,
+    error: darkTokens.colors.error,
+    warning: darkTokens.colors.warning,
+    info: darkTokens.colors.info,
+    success: darkTokens.colors.success,
+    background: darkTokens.colors.background,
+    text: darkTokens.colors.text,
+    action: darkTokens.colors.action,
+    divider: darkTokens.colors.divider,
   },
   typography: {
     ...themeTokens.typography,

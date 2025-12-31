@@ -76,7 +76,11 @@
         "white": {
           "8": { "$value": "#ffffff14", "$type": "color" },
           "12": { "$value": "#ffffff1f", "$type": "color" },
+          "16": { "$value": "#ffffff29", "$type": "color" },
+          "23": { "$value": "#ffffff3b", "$type": "color" },
           "26": { "$value": "#ffffff42", "$type": "color" },
+          "30": { "$value": "#ffffff4d", "$type": "color" },
+          "42": { "$value": "#ffffff6b", "$type": "color" },
           "50": { "$value": "#ffffff80", "$type": "color" },
           "70": { "$value": "#ffffffb3", "$type": "color" },
           "100": { "$value": "#ffffff", "$type": "color" }
