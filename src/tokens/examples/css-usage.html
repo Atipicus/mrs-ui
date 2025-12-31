@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MRS Tokens - CSS Variables Example</title>
+  <link rel="stylesheet" href="../generated/css/tokens.css">
+  <style>
+    body {
+      font-family: var(--mrs-primitives-typography-font-family-stack);
+      margin: 0;
+      padding: var(--mrs-primitives-spacing-4);
+      background-color: var(--mrs-semantic-color-background-default);
+      color: var(--mrs-semantic-color-text-primary);
+    }
+
+    h1 {
+      font-size: var(--mrs-primitives-typography-font-size-2xl);
+      font-weight: var(--mrs-primitives-typography-font-weight-semibold);
+      color: var(--mrs-semantic-color-primary-main);
+      margin-bottom: var(--mrs-primitives-spacing-4);
+    }
+
+    .button {
+      background-color: var(--mrs-semantic-color-primary-main);
+      color: var(--mrs-semantic-color-primary-contrast-text);
+      border: none;
+      border-radius: var(--mrs-component-button-border-radius);
+      padding: var(--mrs-primitives-spacing-2) var(--mrs-primitives-spacing-3);
+      font-size: var(--mrs-component-button-medium-font-size);
+      font-weight: var(--mrs-component-button-font-weight);
+      height: var(--mrs-component-button-medium-height);
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .button:hover {
+      background-color: var(--mrs-semantic-color-primary-dark);
+    }
+
+    .button.secondary {
+      background-color: var(--mrs-semantic-color-secondary-main);
+      color: var(--mrs-semantic-color-secondary-contrast-text);
+    }
+
+    .button.secondary:hover {
+      background-color: var(--mrs-semantic-color-secondary-dark);
+    }
+
+    .alert {
+      padding: var(--mrs-primitives-spacing-2) var(--mrs-primitives-spacing-3);
+      border-radius: var(--mrs-component-alert-border-radius);
+      margin-bottom: var(--mrs-primitives-spacing-3);
+    }
+
+    .alert.error {
+      background-color: var(--mrs-component-alert-error-filled-background);
+      color: var(--mrs-component-alert-error-filled-foreground);
+    }
+
+    .alert.warning {
+      background-color: var(--mrs-component-alert-warning-filled-background);
+      color: var(--mrs-component-alert-warning-filled-foreground);
+    }
+
+    .alert.info {
+      background-color: var(--mrs-component-alert-info-filled-background);
+      color: var(--mrs-component-alert-info-filled-foreground);
+    }
+
+    .alert.success {
+      background-color: var(--mrs-component-alert-success-filled-background);
+      color: var(--mrs-component-alert-success-filled-foreground);
+    }
+
+    .card {
+      background-color: var(--mrs-component-paper-elevation-1);
+      border-radius: var(--mrs-component-card-border-radius);
+      padding: var(--mrs-primitives-spacing-4);
+      margin-bottom: var(--mrs-primitives-spacing-4);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 MRS Design System - CSS Variables Example</h1>
+
+  <div class="card">
+    <h2>Buttons</h2>
+    <button class="button">Primary Button</button>
+    <button class="button secondary">Secondary Button</button>
+  </div>
+
+  <div class="card">
+    <h2>Alerts</h2>
+    <div class="alert error">❌ Error: This is an error message</div>
+    <div class="alert warning">⚠️ Warning: This is a warning message</div>
+    <div class="alert info">ℹ️ Info: This is an info message</div>
+    <div class="alert success">✅ Success: This is a success message</div>
+  </div>
+
+  <div class="card">
+    <h2>How it works</h2>
+    <p>This page uses CSS Custom Properties (variables) generated from design tokens.</p>
+    <p>All colors, spacing, typography, and component styles come from <code>tokens.css</code>.</p>
+    <p>Open DevTools and inspect any element to see the variables!</p>
+  </div>
+</body>
+</html>
+

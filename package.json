@@ -48,8 +48,12 @@
     "publish:major": "npm version major && npm publish",
     "storybook": "storybook dev -p 6006",
     "tokens:build": "style-dictionary build --config src/tokens/config/style-dictionary.config.js",
-    "tokens:clean": "rm -rf src/tokens/generated/css src/tokens/generated/ts src/tokens/generated/docs",
-    "tokens:rebuild": "npm run tokens:clean && npm run tokens:build"
+    "tokens:clean": "rm -rf src/tokens/generated/css src/tokens/generated/scss src/tokens/generated/ts src/tokens/generated/json",
+    "tokens:rebuild": "npm run tokens:clean && npm run tokens:build",
+    "tokens:watch": "nodemon --watch src/tokens/source -e json --exec npm run tokens:build",
+    "tokens:sync:pull": "node src/tokens/scripts/sync-figma-tokens.js --direction=pull",
+    "tokens:sync:push": "node src/tokens/scripts/sync-figma-tokens.js --direction=push",
+    "tokens:sync:dry-run": "node src/tokens/scripts/sync-figma-tokens.js --direction=pull --dry-run"
   },
   "keywords": [
     "design-system",

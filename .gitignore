@@ -10,7 +10,9 @@ storybook-static/
 
 # Generated tokens (regenerate with `npm run tokens:build`)
 src/tokens/generated/css/
+src/tokens/generated/scss/
 src/tokens/generated/ts/
+src/tokens/generated/json/
 src/tokens/generated/docs/
 !src/tokens/generated/.gitkeep
 

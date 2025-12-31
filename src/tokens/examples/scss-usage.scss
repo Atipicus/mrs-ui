@@ -1,0 +1,229 @@
+// ============================================
+// MRS Design System - SCSS Variables Example
+// ============================================
+
+// Import MRS tokens
+@import '../generated/scss/tokens';
+
+// ============================================
+// Base Styles
+// ============================================
+body {
+  font-family: $mrs-primitives-typography-font-family-stack;
+  font-size: $mrs-primitives-typography-font-size-md;
+  line-height: $mrs-primitives-typography-line-height-normal;
+  color: $mrs-semantic-color-text-primary;
+  background-color: $mrs-semantic-color-background-default;
+  margin: 0;
+  padding: $mrs-primitives-spacing-4;
+}
+
+// ============================================
+// Typography
+// ============================================
+h1 {
+  font-size: $mrs-primitives-typography-font-size-2xl;
+  font-weight: $mrs-primitives-typography-font-weight-semibold;
+  line-height: $mrs-primitives-typography-line-height-tight;
+  color: $mrs-semantic-color-primary-main;
+  margin-bottom: $mrs-primitives-spacing-4;
+}
+
+h2 {
+  font-size: $mrs-primitives-typography-font-size-xl;
+  font-weight: $mrs-primitives-typography-font-weight-semibold;
+  margin-bottom: $mrs-primitives-spacing-3;
+}
+
+// ============================================
+// Button Component
+// ============================================
+.button {
+  // Base styles
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: $mrs-component-button-font-weight;
+  border-radius: $mrs-component-button-border-radius;
+  text-align: center;
+  
+  // Size variations
+  &.small {
+    font-size: $mrs-component-button-small-font-size;
+    height: $mrs-component-button-small-height;
+    padding: 0 $mrs-primitives-spacing-2;
+  }
+  
+  &.medium {
+    font-size: $mrs-component-button-medium-font-size;
+    height: $mrs-component-button-medium-height;
+    padding: 0 $mrs-primitives-spacing-3;
+  }
+  
+  &.large {
+    font-size: $mrs-component-button-large-font-size;
+    height: $mrs-component-button-large-height;
+    padding: 0 $mrs-primitives-spacing-4;
+  }
+  
+  // Color variations
+  &.primary {
+    background-color: $mrs-semantic-color-primary-main;
+    color: $mrs-semantic-color-primary-contrast-text;
+    
+    &:hover {
+      background-color: $mrs-semantic-color-primary-dark;
+    }
+    
+    &:active {
+      background-color: $mrs-semantic-color-primary-dark;
+    }
+  }
+  
+  &.secondary {
+    background-color: $mrs-semantic-color-secondary-main;
+    color: $mrs-semantic-color-secondary-contrast-text;
+    
+    &:hover {
+      background-color: $mrs-semantic-color-secondary-dark;
+    }
+  }
+  
+  &.outlined {
+    background-color: transparent;
+    border: 1px solid $mrs-semantic-color-primary-main;
+    color: $mrs-semantic-color-primary-main;
+    
+    &:hover {
+      background-color: $mrs-primitives-colors-alpha-primary-8;
+    }
+  }
+}
+
+// ============================================
+// Alert Component
+// ============================================
+.alert {
+  padding: $mrs-primitives-spacing-2 $mrs-primitives-spacing-3;
+  border-radius: $mrs-component-alert-border-radius;
+  margin-bottom: $mrs-primitives-spacing-3;
+  display: flex;
+  align-items: center;
+  gap: $mrs-primitives-spacing-2;
+  
+  // Severity variations
+  &.error {
+    background-color: $mrs-component-alert-error-filled-background;
+    color: $mrs-component-alert-error-filled-foreground;
+    
+    &.outlined {
+      background-color: $mrs-component-alert-error-outlined-background;
+      color: $mrs-component-alert-error-outlined-foreground;
+      border: 1px solid $mrs-component-alert-error-outlined-border;
+    }
+  }
+  
+  &.warning {
+    background-color: $mrs-component-alert-warning-filled-background;
+    color: $mrs-component-alert-warning-filled-foreground;
+    
+    &.outlined {
+      background-color: $mrs-component-alert-warning-outlined-background;
+      color: $mrs-component-alert-warning-outlined-foreground;
+      border: 1px solid $mrs-component-alert-warning-outlined-border;
+    }
+  }
+  
+  &.info {
+    background-color: $mrs-component-alert-info-filled-background;
+    color: $mrs-component-alert-info-filled-foreground;
+    
+    &.outlined {
+      background-color: $mrs-component-alert-info-outlined-background;
+      color: $mrs-component-alert-info-outlined-foreground;
+      border: 1px solid $mrs-component-alert-info-outlined-border;
+    }
+  }
+  
+  &.success {
+    background-color: $mrs-component-alert-success-filled-background;
+    color: $mrs-component-alert-success-filled-foreground;
+    
+    &.outlined {
+      background-color: $mrs-component-alert-success-outlined-background;
+      color: $mrs-component-alert-success-outlined-foreground;
+      border: 1px solid $mrs-component-alert-success-outlined-border;
+    }
+  }
+}
+
+// ============================================
+// Card Component
+// ============================================
+.card {
+  background-color: $mrs-component-paper-elevation-1;
+  border-radius: $mrs-component-card-border-radius;
+  padding: $mrs-primitives-spacing-4;
+  margin-bottom: $mrs-primitives-spacing-4;
+  
+  // Use Sass math with tokens
+  box-shadow: 0 2px calc(#{$mrs-primitives-spacing-1} / 2) rgba(0, 0, 0, 0.1);
+}
+
+// ============================================
+// Input Component
+// ============================================
+.input {
+  font-family: $mrs-primitives-typography-font-family-stack;
+  font-size: $mrs-component-input-value-font-size;
+  padding: $mrs-primitives-spacing-2;
+  border-radius: $mrs-component-input-border-radius;
+  border: 1px solid $mrs-component-input-outlined-enabled-border;
+  color: $mrs-semantic-color-text-primary;
+  background-color: $mrs-semantic-color-background-default;
+  
+  &:focus {
+    outline: none;
+    border-color: $mrs-semantic-color-primary-main;
+  }
+  
+  &.filled {
+    background-color: $mrs-component-input-filled-enabled-fill;
+    border: none;
+    border-bottom: 1px solid $mrs-component-input-standard-enabled-border;
+  }
+}
+
+// ============================================
+// Utility Classes
+// ============================================
+.spacing {
+  &-1 { margin: $mrs-primitives-spacing-1; }
+  &-2 { margin: $mrs-primitives-spacing-2; }
+  &-3 { margin: $mrs-primitives-spacing-3; }
+  &-4 { margin: $mrs-primitives-spacing-4; }
+}
+
+.text {
+  &-primary { color: $mrs-semantic-color-text-primary; }
+  &-secondary { color: $mrs-semantic-color-text-secondary; }
+  &-disabled { color: $mrs-semantic-color-text-disabled; }
+}
+
+// ============================================
+// Example: Using Sass Functions with Tokens
+// ============================================
+@function darken-token($color, $amount: 10%) {
+  @return darken($color, $amount);
+}
+
+.custom-button {
+  background-color: $mrs-semantic-color-primary-main;
+  
+  // Use Sass functions to modify token values
+  &:hover {
+    background-color: darken-token($mrs-semantic-color-primary-main, 5%);
+  }
+}
+
