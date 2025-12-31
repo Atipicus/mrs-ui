@@ -1,4 +1,5 @@
-import { useState, useCallback, MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
+import { useState, useCallback } from 'react';
 import { PrimitivesMotionDurationFast } from '../../tokens/generated/ts/tokens';
 
 interface Ripple {

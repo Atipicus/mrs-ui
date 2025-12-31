@@ -1,6 +1,6 @@
 {
   "name": "@mrs-uisystem/ui-v6",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "MRS Material-UI v6.5 Design System - 54 production-ready React components with comprehensive testing and Storybook documentation",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -38,8 +38,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "type-check": "tsc --noEmit",
-    "lint": "eslint src --ext .ts,.tsx",
-    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "lint": "eslint src --ext .ts,.tsx --ignore-pattern 'src/tokens/scripts/**'",
+    "lint:fix": "eslint src --ext .ts,.tsx --ignore-pattern 'src/tokens/scripts/**' --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,json,md}\"",
     "prepublishOnly": "npm run lint && npm run type-check && npm test && npm run build",

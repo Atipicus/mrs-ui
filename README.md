@@ -6,7 +6,7 @@
 
 A comprehensive Material-UI v6.5 based design system with **54 production-ready components** built with React, TypeScript, and modern best practices.
 
-> **Version 0.7.0** - Figma Code Connect integration complete. 54 production-ready components with Material Symbols support. 1,182 tests passing (56 test suites).
+> **Version 0.8.0** - Complete Design Token System, Dark Mode, Animation Tokens & Micro-Interactions Library. 54 production-ready components with comprehensive theming. 1,182 tests passing (56 test suites).
 
 ## 🚀 Features
 

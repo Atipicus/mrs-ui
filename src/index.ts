@@ -1,7 +1,7 @@
 /**
  * MRS Design System - Main Entry Point
- * @package @mrs/ui
- * @version 0.1.0
+ * @package @mrs-uisystem/ui-v6
+ * @version 0.8.0
  */
 
 // Theme exports
@@ -11,3 +11,9 @@ export * from './theme/tokens';
 
 // Component exports
 export * from './components';
+
+// Animation hooks exports
+export * from './hooks/animations';
+
+// Effect components exports
+export * from './components/effects';

@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
-import Button, { ButtonProps } from '@mui/material/Button';
+import type { ButtonProps } from '@mui/material/Button';
+import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 import { useRipple } from '../../../hooks/animations';
 import { PrimitivesMotionDurationFast } from '../../../tokens/generated/ts/tokens';

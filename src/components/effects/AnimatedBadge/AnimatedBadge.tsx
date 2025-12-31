@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Badge, { BadgeProps } from '@mui/material/Badge';
+import type { BadgeProps } from '@mui/material/Badge';
+import Badge from '@mui/material/Badge';
 import { styled, keyframes } from '@mui/material/styles';
 import { PrimitivesMotionDurationBase } from '../../../tokens/generated/ts/tokens';
 
