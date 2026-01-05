@@ -6,7 +6,7 @@
  *
  * @example
  * ```typescript
- * import * as tokens from '@mrs-uisystem/ui-v6/tokens';
+ * import * as tokens from '@atipicus/mrs-ui/tokens';
  *
  * // Access token values
  * const brandColor = tokens.PrimitivesColorsBrandVerones;
@@ -16,6 +16,3 @@
 
 // Re-export all generated token constants
 export * from './generated/ts/tokens';
-
-// Re-export the nested JSON structure for advanced usage
-export { default as tokenTree } from './generated/ts/tokens.json';

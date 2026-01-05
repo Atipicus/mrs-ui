@@ -23,7 +23,7 @@ npm install @mui/x-date-pickers dayjs
 ## Basic Usage
 
 ```tsx
-import { TimePicker, LocalizationProvider } from '@mrs-uisystem/ui-v6';
+import { TimePicker, LocalizationProvider } from '@atipicus/mrs-ui';
 import dayjs from 'dayjs';
 
 function MyComponent() {

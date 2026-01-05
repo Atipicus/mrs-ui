@@ -1,5 +1,5 @@
 {
-  "name": "@mrs-uisystem/ui-v6",
+  "name": "@atipicus/mrs-ui",
   "version": "0.8.0",
   "description": "MRS Material-UI v6.5 Design System - 54 production-ready React components with comprehensive testing and Storybook documentation",
   "main": "./dist/index.js",
@@ -42,13 +42,14 @@
     "lint:fix": "eslint src --ext .ts,.tsx --ignore-pattern 'src/tokens/scripts/**' --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,json,md}\"",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
     "prepublishOnly": "npm run lint && npm run type-check && npm test && npm run build",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
     "publish:major": "npm version major && npm publish",
-    "storybook": "storybook dev -p 6006",
     "tokens:build": "style-dictionary build --config src/tokens/config/style-dictionary.config.js",
-    "tokens:clean": "rm -rf src/tokens/generated/css src/tokens/generated/scss src/tokens/generated/ts src/tokens/generated/json",
+    "tokens:clean": "rimraf src/tokens/generated/*",
     "tokens:rebuild": "npm run tokens:clean && npm run tokens:build",
     "tokens:watch": "nodemon --watch src/tokens/source -e json --exec npm run tokens:build",
     "tokens:sync:pull": "node src/tokens/scripts/sync-figma-tokens.js --direction=pull",
@@ -74,12 +75,12 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/madersystem/mrs-ui-v6.git"
+    "url": "git+https://github.com/Atipicus/mrs-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/madersystem/mrs-ui-v6/issues"
+    "url": "https://github.com/Atipicus/mrs-ui/issues"
   },
-  "homepage": "https://github.com/madersystem/mrs-ui-v6#readme",
+  "homepage": "https://github.com/Atipicus/mrs-ui#readme",
   "peerDependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
@@ -119,8 +120,10 @@
     "gh-pages": "^6.3.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "nodemon": "^3.1.0",
     "playwright": "^1.57.0",
     "prettier": "^3.7.4",
+    "rimraf": "^6.0.1",
     "storybook": "^10.1.10",
     "style-dictionary": "^4.4.0",
     "ts-jest": "^29.1.0",

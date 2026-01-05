@@ -144,30 +144,30 @@ None - All changes are additive and backward compatible.
 
 ```bash
 # Update package
-npm update @mrs-uisystem/ui-v6
+npm update @atipicus/mrs-ui
 
 # Import tokens (optional, for advanced usage)
 import { 
   PrimitivesMotionDurationFast,
   SemanticColorDarkPrimaryMain 
-} from '@mrs-uisystem/ui-v6/tokens';
+} from '@atipicus/mrs-ui/tokens';
 
 # Import animation hooks (optional)
 import { 
   useRipple, 
   useShake, 
   useBounce 
-} from '@mrs-uisystem/ui-v6/hooks/animations';
+} from '@atipicus/mrs-ui/hooks/animations';
 
 # Import effect components (optional)
 import { 
   RippleButton, 
   AnimatedBadge, 
   LoadingDots 
-} from '@mrs-uisystem/ui-v6/components/effects';
+} from '@atipicus/mrs-ui/components/effects';
 
 # Use dark theme
-import { darkTheme } from '@mrs-uisystem/ui-v6/theme';
+import { darkTheme } from '@atipicus/mrs-ui/theme';
 <ThemeProvider theme={darkTheme}>...</ThemeProvider>
 ```
 

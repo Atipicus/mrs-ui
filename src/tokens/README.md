@@ -62,7 +62,7 @@ El Token Hub genera **4 formatos diferentes** para diferentes casos de uso:
 **Ejemplo de uso**:
 ```css
 /* Import en tu CSS global */
-@import '@/tokens/generated/css/tokens.css';
+@import '@atipicus/mrs-ui/tokens/generated/css/tokens.css';
 
 /* Usar las variables */
 .my-button {
@@ -93,7 +93,7 @@ El Token Hub genera **4 formatos diferentes** para diferentes casos de uso:
 **Ejemplo de uso**:
 ```scss
 // Import en tu .scss
-@import '@/tokens/generated/scss/tokens';
+@import '@atipicus/mrs-ui/tokens/generated/scss/tokens';
 
 // Usar las variables
 .my-button {
@@ -103,7 +103,7 @@ El Token Hub genera **4 formatos diferentes** para diferentes casos de uso:
 }
 
 // O usando el mapa
-@import '@/tokens/generated/scss/tokens-map';
+@import '@atipicus/mrs-ui/tokens/generated/scss/tokens-map';
 
 @function get-token($path) {
   @return map-get($mrs-tokens, $path);
@@ -138,7 +138,7 @@ import {
   SemanticColorPrimaryMain,
   ComponentButtonBorderRadius,
   PrimitivesSpacing2
-} from '@/tokens';
+} from '@atipicus/mrs-ui/tokens';
 
 // Usar en componentes React
 const MyButton = () => (
@@ -155,7 +155,7 @@ const MyButton = () => (
 
 // Usar en MUI theme (como lo hace theme.ts)
 import { createTheme } from '@mui/material/styles';
-import { SemanticColorPrimaryMain } from '@/tokens';
+import { SemanticColorPrimaryMain } from '@atipicus/mrs-ui/tokens';
 
 const theme = createTheme({
   palette: {
@@ -200,7 +200,7 @@ const theme = createTheme({
 }
 
 // Usar en scripts
-const tokens = require('@/tokens/generated/json/tokens-flat.json');
+const tokens = require('@atipicus/mrs-ui/tokens/generated/json/tokens-flat.json');
 console.log(tokens['semantic-color-primary-main']); // "#00686f"
 ```
 
@@ -218,7 +218,7 @@ console.log(tokens['semantic-color-primary-main']); // "#00686f"
 }
 
 // Usar en componentes de documentación
-const tokens = require('@/tokens/generated/json/tokens-nested.json');
+const tokens = require('@atipicus/mrs-ui/tokens/generated/json/tokens-nested.json');
 const primaryColor = tokens.semantic.color.primary.main;
 ```
 
@@ -324,7 +324,7 @@ npm run tokens:build
 ### 3. Usar en código
 
 ```typescript
-import { PrimitivesColorsBrandNewColor } from '@/tokens';
+import { PrimitivesColorsBrandNewColor } from '@atipicus/mrs-ui/tokens';
 ```
 
 ---

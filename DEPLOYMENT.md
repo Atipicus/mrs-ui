@@ -1,6 +1,6 @@
 # Deployment Guide
 
-## MRS Design System v0.7.0 - CI/CD & Deployment
+## MRS Design System v0.8.0 - CI/CD & Deployment
 
 This guide covers the complete CI/CD pipeline and deployment workflows for the MRS Design System.
 
@@ -83,7 +83,7 @@ When CI passes on `main`, Storybook is automatically deployed to GitHub Pages:
 CI (main) ───success───► Deploy Storybook ───► GitHub Pages
 ```
 
-**Live URL**: https://madersystem.github.io/mrs-ui-v6/
+**Live URL**: https://atipicus.github.io/mrs-ui/
 
 ### Manual Deployment
 
@@ -107,7 +107,7 @@ The deploy workflow **reuses build artifacts** from CI:
 
 1. Create a GitHub Release
 2. Workflow automatically publishes to npm
-3. Package available at: `npm install @mrs-uisystem/ui-v6`
+3. Package available at: `npm install @atipicus/mrs-ui`
 
 ### Manual Publishing
 
@@ -271,7 +271,7 @@ All workflow files are in `.github/workflows/`:
 
 ### GitHub Actions
 
-- View all workflows: `https://github.com/madersystem/mrs-ui-v6/actions`
+- View all workflows: `https://github.com/Atipicus/mrs-ui/actions`
 - Check deployment history: Repository → Environments
 
 ### Chromatic
@@ -280,21 +280,23 @@ All workflow files are in `.github/workflows/`:
 
 ### npm
 
-- Package: `https://www.npmjs.com/package/@mrs-uisystem/ui-v6`
+- Package: `https://www.npmjs.com/package/@atipicus/mrs-ui`
 
 ---
 
 ## 🏷️ Current Status
 
 **CI/CD**: ✅ Active & Optimized
-**Storybook**: https://madersystem.github.io/mrs-ui-v6/
-**npm Package**: @mrs-uisystem/ui-v6
-**Version**: 0.7.0
-**Components**: 54 production-ready components
-**Last Updated**: December 2024
+**Storybook**: https://atipicus.github.io/mrs-ui/
+**npm Package**: @atipicus/mrs-ui
+**Version**: 0.8.0
+**Components**: 54 production-ready components (31 atoms + 23 molecules)
+**Tests**: 1,182 passing (100% pass rate, 56 test suites)
+**Features**: Design Token Hub, Dark Mode, Animation System, Figma Sync
+**Last Updated**: January 5, 2026
 
 ---
 
-**Last Updated**: December 30, 2024
-**Pipeline Version**: 2.0 (Optimized)
+**Last Updated**: January 5, 2026
+**Pipeline Version**: 2.1 (Token System Integration)
 **Status**: Production Ready

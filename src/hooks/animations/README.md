@@ -35,7 +35,7 @@ Micro-interactions are small, subtle animations that provide feedback, guide use
 Material Design ripple effect on click.
 
 ```typescript
-import { useRipple } from '@mrs-uisystem/ui-v6/hooks/animations';
+import { useRipple } from '@atipicus/mrs-ui/hooks/animations';
 
 const MyButton = () => {
   const { ripples, createRipple } = useRipple();
@@ -64,7 +64,7 @@ const MyButton = () => {
 Continuous pulsing animation for attention-grabbing elements.
 
 ```typescript
-import { usePulse } from '@mrs-uisystem/ui-v6/hooks/animations';
+import { usePulse } from '@atipicus/mrs-ui/hooks/animations';
 
 const NotificationIcon = () => {
   const pulseRef = usePulse<HTMLDivElement>({
@@ -95,7 +95,7 @@ const NotificationIcon = () => {
 Shake animation for errors and invalid inputs.
 
 ```typescript
-import { useShake } from '@mrs-uisystem/ui-v6/hooks/animations';
+import { useShake } from '@atipicus/mrs-ui/hooks/animations';
 
 const LoginForm = () => {
   const { ref, shake } = useShake<HTMLDivElement>({
@@ -135,7 +135,7 @@ const LoginForm = () => {
 Playful bounce effect for success actions.
 
 ```typescript
-import { useBounce } from '@mrs-uisystem/ui-v6/hooks/animations';
+import { useBounce } from '@atipicus/mrs-ui/hooks/animations';
 
 const LikeButton = () => {
   const { ref, bounce } = useBounce<HTMLButtonElement>({
@@ -173,7 +173,7 @@ const LikeButton = () => {
 Smooth scale transition on hover.
 
 ```typescript
-import { useHoverScale } from '@mrs-uisystem/ui-v6/hooks/animations';
+import { useHoverScale } from '@atipicus/mrs-ui/hooks/animations';
 
 const ProductCard = () => {
   const { isHovered, onMouseEnter, onMouseLeave, style } = useHoverScale({
