@@ -46,14 +46,15 @@ export interface IconFontProps extends Omit<MuiIconProps, 'fontSize'> {
      */
     size?: IconSize;
     /**
-     * Icon name (Material Icons font name)
+     * Icon name (Material Symbols font name)
      * @example 'add', 'home', 'settings'
+     * @see {@link https://fonts.google.com/icons}
      */
     iconName: string;
 }
 /**
  * MRS Icon component props
- * Supports both SVG icons (@mui/icons-material) and Font icons (Material Icons)
+ * Supports both SVG icons (@mui/icons-material) and Font icons (Material Symbols)
  */
 export type IconProps = IconSvgProps | IconFontProps;
 //# sourceMappingURL=Icon.types.d.ts.map
