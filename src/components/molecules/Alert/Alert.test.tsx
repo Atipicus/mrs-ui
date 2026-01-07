@@ -7,9 +7,7 @@ import { renderWithTheme, screen } from '../../../../tests/test-utils';
 import { Alert } from './Alert';
 import { Button } from '../../atoms/Button';
 
-// TODO: Fix Alert tests - theme.palette._components structure mismatch
-// Skip temporarily to allow v0.8.0 publish (1,142 other tests passing)
-describe.skip('Alert', () => {
+describe('Alert', () => {
   describe('Rendering', () => {
     it('renders alert with title', () => {
       renderWithTheme(<Alert title="Alert title" />);

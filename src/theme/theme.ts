@@ -611,6 +611,7 @@ export const lightTheme: Theme = createTheme({
     text: lightTokens.colors.text,
     action: lightTokens.colors.action,
     divider: lightTokens.colors.divider,
+    _components: lightTokens.components,
   },
   typography: {
     ...themeTokens.typography,
@@ -638,6 +639,7 @@ export const darkTheme: Theme = createTheme({
     text: darkTokens.colors.text,
     action: darkTokens.colors.action,
     divider: darkTokens.colors.divider,
+    _components: darkTokens.components,
   },
   typography: {
     ...themeTokens.typography,
