@@ -175,10 +175,10 @@ function writeTokenFiles(tokens) {
     }
   });
 
-  // Write semantic tokens
-  const semanticPath = path.join(CONFIG.tokensSourceDir, 'semantic', 'colors-light.json');
+  // Write semantic tokens (consolidated light + dark)
+  const semanticPath = path.join(CONFIG.tokensSourceDir, 'semantic', 'colors.json');
   const semanticContent = JSON.stringify({ semantic: tokens.semantic }, null, 2);
-  
+
   if (dryRun) {
     console.log(`[DRY RUN] Would write: ${semanticPath}`);
   } else {
@@ -187,7 +187,7 @@ function writeTokenFiles(tokens) {
     console.log(`✅ Wrote ${semanticPath}`);
   }
 
-  console.log('✅ All token files written');
+  console.log('✅ All token files written (consolidated structure)');
 }
 
 function readLocalTokens() {

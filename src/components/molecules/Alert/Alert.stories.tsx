@@ -29,6 +29,7 @@ const meta: Meta<typeof Alert> = {
     title: 'Title',
     description: 'Description',
     icon: true,
+    size: '32px',
     close: true,
   },
 };
@@ -140,8 +141,8 @@ export const BorderRadiusVariations: Story = {
         <Alert
           severity="info"
           variant="filled"
-          title="Fully Rounded (theme.shape.rounded)"
-          description="Custom sx override: borderRadius: theme.shape.rounded (pill shape)"
+          title="Fully Rounded (theme.shape.xl)"
+          description="Custom sx override: borderRadius: theme.shape.xl (24px)"
           sx={(theme) => ({ borderRadius: theme.shape.rounded })}
         />
       </Box>

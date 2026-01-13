@@ -46,7 +46,7 @@
         "info": {
           "50": { "$value": "#e5f6fd", "$type": "color" },
           "100": { "$value": "#D1DAF0", "$type": "color" },
-          "500": { "$value": "#2481b8", "$type": "color" },
+          "500": { "$value": "#125C87", "$type": "color" },
           "600": { "$value": "#143996", "$type": "color" },
           "700": { "$value": "#014361", "$type": "color" },
           "800": { "$value": "#0C225A", "$type": "color" }

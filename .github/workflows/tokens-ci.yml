@@ -1,0 +1,303 @@
+name: Design Tokens CI
+
+on:
+  push:
+    paths:
+      - 'src/tokens/source/**'
+    branches:
+      - main
+  pull_request:
+    paths:
+      - 'src/tokens/source/**'
+  workflow_dispatch:
+  schedule:
+    # Sync desde Figma automáticamente cada día a las 9 AM UTC
+    - cron: '0 9 * * *'
+
+jobs:
+  # Job 1: Validar tokens
+  validate:
+    name: Validate Tokens
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate JSON syntax
+        run: |
+          echo "🔍 Validating JSON syntax in token files..."
+          find src/tokens/source -name "*.json" -print0 | while IFS= read -r -d '' file; do
+            echo "Checking $file"
+            node -e "try { require('./$file'); console.log('✅ Valid'); } catch(e) { console.error('❌ Invalid:', e.message); process.exit(1); }"
+          done
+
+      - name: Check for required token files
+        run: |
+          echo "📋 Checking for required token files..."
+          test -f src/tokens/source/primitives/colors.json || (echo "❌ Missing colors.json" && exit 1)
+          test -f src/tokens/source/primitives/typography.json || (echo "❌ Missing typography.json" && exit 1)
+          test -f src/tokens/source/primitives/spacing.json || (echo "❌ Missing spacing.json" && exit 1)
+          test -f src/tokens/source/primitives/radius.json || (echo "❌ Missing radius.json" && exit 1)
+          test -f src/tokens/source/semantic/colors.json || (echo "❌ Missing semantic colors.json" && exit 1)
+          test -f src/tokens/source/component/alert.json || (echo "❌ Missing alert.json" && exit 1)
+          test -f src/tokens/source/component/inputs.json || (echo "❌ Missing inputs.json" && exit 1)
+          test -f src/tokens/source/component/surfaces.json || (echo "❌ Missing surfaces.json" && exit 1)
+          echo "✅ All required files present"
+
+      - name: Check token structure (consolidated)
+        run: |
+          echo "🏗️ Verifying consolidated structure..."
+          # Verify semantic colors has both light and dark
+          node -e "
+            const colors = require('./src/tokens/source/semantic/colors.json');
+            if (!colors.semantic.color.light) {
+              console.error('❌ Missing light mode in semantic colors');
+              process.exit(1);
+            }
+            if (!colors.semantic.color.dark) {
+              console.error('❌ Missing dark mode in semantic colors');
+              process.exit(1);
+            }
+            console.log('✅ Semantic colors structure valid');
+          "
+          # Verify alert has both light and dark
+          node -e "
+            const alert = require('./src/tokens/source/component/alert.json');
+            if (!alert.component.alert.light) {
+              console.error('❌ Missing light mode in alert component');
+              process.exit(1);
+            }
+            if (!alert.component.alert.dark) {
+              console.error('❌ Missing dark mode in alert component');
+              process.exit(1);
+            }
+            console.log('✅ Alert component structure valid');
+          "
+
+  # Job 2: Build tokens
+  build:
+    name: Build Tokens
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build tokens with Style Dictionary
+        run: |
+          echo "🏗️ Building tokens..."
+          npm run tokens:build
+
+      - name: Check for token collisions
+        run: |
+          echo "🔍 Checking for token name collisions..."
+          if npm run tokens:build 2>&1 | grep -i "collision detected"; then
+            echo "❌ Token collisions detected!"
+            npm run tokens:build 2>&1 | grep -i "collision"
+            exit 1
+          else
+            echo "✅ No collisions found"
+          fi
+
+      - name: Verify generated files
+        run: |
+          echo "📦 Verifying generated output files..."
+          test -f src/tokens/generated/ts/tokens.js || (echo "❌ Missing tokens.js" && exit 1)
+          test -f src/tokens/generated/ts/tokens.d.ts || (echo "❌ Missing tokens.d.ts" && exit 1)
+          test -f src/tokens/generated/css/tokens.css || (echo "❌ Missing tokens.css" && exit 1)
+          test -f src/tokens/generated/scss/tokens.scss || (echo "❌ Missing tokens.scss" && exit 1)
+          test -f src/tokens/generated/json/tokens-flat.json || (echo "❌ Missing tokens-flat.json" && exit 1)
+          test -f src/tokens/generated/json/tokens-nested.json || (echo "❌ Missing tokens-nested.json" && exit 1)
+          test -f src/tokens/generated/json/figma-tokens.json || (echo "❌ Missing figma-tokens.json" && exit 1)
+          echo "✅ All output files generated"
+
+      - name: Count generated tokens
+        run: |
+          echo "📊 Token statistics:"
+          echo "CSS variables: $(grep -c '\-\-mrs-' src/tokens/generated/css/tokens.css || echo 0)"
+          echo "JS exports: $(grep -c '^export const' src/tokens/generated/ts/tokens.js || echo 0)"
+          echo "JSON tokens: $(node -e "console.log(Object.keys(require('./src/tokens/generated/json/tokens-flat.json')).length)")"
+
+      - name: Upload generated tokens as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-tokens
+          path: src/tokens/generated/
+          retention-days: 30
+
+      - name: Upload token statistics
+        run: |
+          echo "Creating token report..."
+          cat > token-report.md << EOF
+          # Token Build Report
+
+          **Build Date**: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          **Commit**: ${{ github.sha }}
+          **Branch**: ${{ github.ref_name }}
+
+          ## Generated Files
+          - ✅ tokens.js ($(wc -l < src/tokens/generated/ts/tokens.js) lines)
+          - ✅ tokens.css ($(wc -l < src/tokens/generated/css/tokens.css) lines)
+          - ✅ tokens.scss ($(wc -l < src/tokens/generated/scss/tokens.scss) lines)
+
+          ## Token Counts
+          - CSS Variables: $(grep -c '\-\-mrs-' src/tokens/generated/css/tokens.css)
+          - JS Exports: $(grep -c '^export const' src/tokens/generated/ts/tokens.js)
+          - JSON Tokens: $(node -e "console.log(Object.keys(require('./src/tokens/generated/json/tokens-flat.json')).length)")
+
+          ## Structure
+          - Primitives: colors, typography, spacing, radius, motion
+          - Semantic: colors (light + dark consolidated)
+          - Components: alert, inputs, surfaces, button, animations (consolidated)
+          EOF
+          cat token-report.md
+
+  # Job 3: Test tokens in components
+  test:
+    name: Test Tokens Integration
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build tokens
+        run: npm run tokens:build
+
+      - name: Run type checking
+        run: npm run type-check
+
+      - name: Run tests
+        run: npm test
+
+  # Job 4: Sync desde Figma (scheduled o manual)
+  sync-figma:
+    name: Sync from Figma
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync tokens from Figma
+        env:
+          FIGMA_PERSONAL_ACCESS_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FIGMA_FILE_KEY: ${{ secrets.FIGMA_FILE_KEY }}
+        run: |
+          echo "🎨 Syncing tokens from Figma..."
+          npm run tokens:sync:pull || echo "⚠️ Sync failed, but continuing..."
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet src/tokens/source/; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ No changes detected"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "✨ Changes detected in token files"
+            git diff --stat src/tokens/source/
+          fi
+
+      - name: Rebuild tokens if changes detected
+        if: steps.git-check.outputs.has_changes == 'true'
+        run: |
+          echo "🔨 Rebuilding tokens..."
+          npm run tokens:build
+
+      - name: Create Pull Request
+        if: steps.git-check.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: sync tokens from Figma'
+          committer: GitHub Actions <github-actions[bot]@users.noreply.github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          title: '🎨 Sync Design Tokens from Figma'
+          body: |
+            ## Automated Token Sync from Figma
+
+            This PR was automatically created by the scheduled token sync workflow.
+
+            ### Changes
+            Design tokens have been updated from Figma.
+
+            ### Files Changed
+            - Token source files in `src/tokens/source/`
+            - Generated files in `src/tokens/generated/`
+
+            ### Review Checklist
+            - [ ] Review token value changes
+            - [ ] Test in Storybook
+            - [ ] Verify no breaking changes
+            - [ ] Check visual regression in components
+
+            ### Next Steps
+            1. Review the changes in the Files tab
+            2. Test locally: `npm run dev`
+            3. Approve and merge if everything looks good
+
+            ---
+            🤖 This is an automated PR created by GitHub Actions
+            📅 Sync date: ${{ github.event.schedule || 'Manual trigger' }}
+          branch: automated/figma-sync-${{ github.run_number }}
+          base: main
+          labels: |
+            tokens
+            automated
+            figma-sync
+          assignees: ${{ github.actor }}
+
+  # Job 5: Notify on failure
+  notify-failure:
+    name: Notify on Failure
+    needs: [validate, build, test]
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send notification
+        run: |
+          echo "❌ Token build failed!"
+          echo "Check the workflow logs for details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

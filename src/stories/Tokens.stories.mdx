@@ -1,0 +1,460 @@
+import { Meta } from '@storybook/blocks';
+import * as tokens from '../tokens/generated/ts/tokens';
+
+<Meta title="Design Tokens/Overview" />
+
+# Design Tokens
+
+El sistema de tokens del MRS Design System proporciona una fuente única de verdad para todos los valores de diseño.
+
+## 📚 Documentación Completa
+
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', margin: '2rem 0' }}>
+  <a href="https://github.com/Atipicus/mrs-ui/blob/main/TOKENS-QUICK-START.md" target="_blank" style={{
+    padding: '1.5rem',
+    border: '2px solid #00686f',
+    borderRadius: '12px',
+    textDecoration: 'none',
+    color: 'inherit',
+    transition: 'all 0.2s',
+    display: 'block'
+  }}>
+    <h3 style={{ margin: '0 0 0.5rem 0', color: '#00686f' }}>⚡ Guía Rápida</h3>
+    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.8 }}>
+      Inicio rápido para diseñadores y desarrolladores
+    </p>
+  </a>
+
+  <a href="https://github.com/Atipicus/mrs-ui/blob/main/TOKENS-SYNC-WORKFLOW.md" target="_blank" style={{
+    padding: '1.5rem',
+    border: '2px solid #00686f',
+    borderRadius: '12px',
+    textDecoration: 'none',
+    color: 'inherit',
+    transition: 'all 0.2s',
+    display: 'block'
+  }}>
+    <h3 style={{ margin: '0 0 0.5rem 0', color: '#00686f' }}>🔄 Flujo de Sincronización</h3>
+    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.8 }}>
+      Documentación completa Figma ↔ GitHub
+    </p>
+  </a>
+
+  <a href="https://github.com/Atipicus/mrs-ui/blob/main/TOKENS-CONSOLIDATION.md" target="_blank" style={{
+    padding: '1.5rem',
+    border: '2px solid #00686f',
+    borderRadius: '12px',
+    textDecoration: 'none',
+    color: 'inherit',
+    transition: 'all 0.2s',
+    display: 'block'
+  }}>
+    <h3 style={{ margin: '0 0 0.5rem 0', color: '#00686f' }}>📁 Estructura Consolidada</h3>
+    <p style={{ margin: 0, fontSize: '0.9rem', opacity: 0.8 }}>
+      Explicación de la consolidación de archivos
+    </p>
+  </a>
+</div>
+
+---
+
+## 🏗️ Estructura de Tokens
+
+Los tokens están organizados en tres niveles jerárquicos:
+
+### 1. **Primitives** - Tokens Base
+
+Valores fundamentales sin contexto de uso específico.
+
+<div style={{
+  backgroundColor: '#f5f5f5',
+  padding: '1rem',
+  borderRadius: '8px',
+  fontFamily: 'monospace',
+  fontSize: '0.9rem',
+  marginBottom: '1rem'
+}}>
+  <div><strong>Colors:</strong> Paleta base (#00686f, #99cc00, grises, status)</div>
+  <div><strong>Typography:</strong> Fuentes, tamaños, weights</div>
+  <div><strong>Spacing:</strong> Escala de espaciado (8px, 16px, 24px...)</div>
+  <div><strong>Radius:</strong> Border radius (4px, 8px, 12px, 24px)</div>
+  <div><strong>Motion:</strong> Duraciones y easings de animaciones</div>
+</div>
+
+### 2. **Semantic** - Tokens Semánticos
+
+Tokens con significado contextual (light + dark mode).
+
+<div style={{
+  backgroundColor: '#f5f5f5',
+  padding: '1rem',
+  borderRadius: '8px',
+  fontFamily: 'monospace',
+  fontSize: '0.9rem',
+  marginBottom: '1rem'
+}}>
+  <div><strong>Colors:</strong> primary, secondary, error, warning, info, success</div>
+  <div><strong>Light Mode:</strong> Colores optimizados para fondo claro</div>
+  <div><strong>Dark Mode:</strong> Colores optimizados para fondo oscuro</div>
+</div>
+
+### 3. **Component** - Tokens de Componentes
+
+Tokens específicos para cada componente (light + dark mode).
+
+<div style={{
+  backgroundColor: '#f5f5f5',
+  padding: '1rem',
+  borderRadius: '8px',
+  fontFamily: 'monospace',
+  fontSize: '0.9rem',
+  marginBottom: '1rem'
+}}>
+  <div><strong>Alert:</strong> Tokens para variantes error, warning, info, success</div>
+  <div><strong>Button:</strong> Border radius, heights, padding</div>
+  <div><strong>Inputs:</strong> Borders, fill colors, sizing</div>
+  <div><strong>Surfaces:</strong> Paper elevations, cards, dialogs</div>
+</div>
+
+---
+
+## 📊 Estadísticas de Tokens
+
+<div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+  gap: '1rem',
+  margin: '2rem 0'
+}}>
+  <div style={{
+    padding: '1.5rem',
+    backgroundColor: '#e5f6fd',
+    borderRadius: '12px',
+    textAlign: 'center'
+  }}>
+    <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#125C87' }}>
+      {Object.keys(tokens).filter(k => k.startsWith('Primitives')).length}
+    </div>
+    <div style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>Primitives</div>
+  </div>
+
+  <div style={{
+    padding: '1.5rem',
+    backgroundColor: '#edf7ed',
+    borderRadius: '12px',
+    textAlign: 'center'
+  }}>
+    <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#2e7d32' }}>
+      {Object.keys(tokens).filter(k => k.startsWith('Semantic')).length}
+    </div>
+    <div style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>Semantic</div>
+  </div>
+
+  <div style={{
+    padding: '1.5rem',
+    backgroundColor: '#fff4e5',
+    borderRadius: '12px',
+    textAlign: 'center'
+  }}>
+    <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#dfa00a' }}>
+      {Object.keys(tokens).filter(k => k.startsWith('Component')).length}
+    </div>
+    <div style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>Component</div>
+  </div>
+
+  <div style={{
+    padding: '1.5rem',
+    backgroundColor: '#fdeded',
+    borderRadius: '12px',
+    textAlign: 'center'
+  }}>
+    <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#ab1a1a' }}>
+      {Object.keys(tokens).length}
+    </div>
+    <div style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>Total Tokens</div>
+  </div>
+</div>
+
+---
+
+## ⚡ Comandos Rápidos
+
+```bash
+# Regenerar tokens
+npm run tokens:build
+
+# Watch mode
+npm run tokens:watch
+
+# Sincronizar desde Figma
+npm run tokens:sync:pull
+
+# Previsualizar cambios
+npm run tokens:sync:dry-run
+```
+
+---
+
+## 🔄 Flujo de Sincronización
+
+<div style={{
+  backgroundColor: '#f5f5f5',
+  padding: '2rem',
+  borderRadius: '12px',
+  margin: '2rem 0'
+}}>
+  <div style={{
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    gap: '1rem',
+    flexWrap: 'wrap'
+  }}>
+    <div style={{
+      textAlign: 'center',
+      padding: '1rem',
+      backgroundColor: 'white',
+      borderRadius: '8px',
+      minWidth: '150px'
+    }}>
+      <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🎨</div>
+      <strong>FIGMA</strong>
+      <div style={{ fontSize: '0.8rem', marginTop: '0.25rem' }}>Diseño</div>
+    </div>
+
+    <div style={{ fontSize: '1.5rem', color: '#00686f' }}>↔</div>
+
+    <div style={{
+      textAlign: 'center',
+      padding: '1rem',
+      backgroundColor: 'white',
+      borderRadius: '8px',
+      minWidth: '150px'
+    }}>
+      <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>📦</div>
+      <strong>GITHUB</strong>
+      <div style={{ fontSize: '0.8rem', marginTop: '0.25rem' }}>Source of Truth</div>
+    </div>
+
+    <div style={{ fontSize: '1.5rem', color: '#00686f' }}>↔</div>
+
+    <div style={{
+      textAlign: 'center',
+      padding: '1rem',
+      backgroundColor: 'white',
+      borderRadius: '8px',
+      minWidth: '150px'
+    }}>
+      <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🚀</div>
+      <strong>BUILD</strong>
+      <div style={{ fontSize: '0.8rem', marginTop: '0.25rem' }}>Tokens Generados</div>
+    </div>
+  </div>
+</div>
+
+### Proceso de Sincronización
+
+1. **Diseñador** actualiza tokens en Figma
+2. Tokens Studio hace **push a GitHub**
+3. Desarrollador hace **pull** y ejecuta `npm run tokens:build`
+4. Los tokens se **regeneran** en múltiples formatos
+5. Componentes se **actualizan automáticamente**
+
+---
+
+## 💾 Formatos Generados
+
+Los tokens se generan en 4 formatos diferentes:
+
+<div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+  gap: '1rem',
+  margin: '2rem 0'
+}}>
+  <div style={{
+    padding: '1.5rem',
+    border: '2px solid #e0e0e0',
+    borderRadius: '12px'
+  }}>
+    <h4 style={{ margin: '0 0 0.5rem 0', color: '#00686f' }}>🎨 CSS</h4>
+    <code style={{ fontSize: '0.8rem' }}>tokens.css</code>
+    <p style={{ fontSize: '0.9rem', margin: '0.5rem 0 0 0' }}>
+      CSS Custom Properties con prefijo <code>--mrs-</code>
+    </p>
+  </div>
+
+  <div style={{
+    padding: '1.5rem',
+    border: '2px solid #e0e0e0',
+    borderRadius: '12px'
+  }}>
+    <h4 style={{ margin: '0 0 0.5rem 0', color: '#00686f' }}>💎 SCSS</h4>
+    <code style={{ fontSize: '0.8rem' }}>tokens.scss</code>
+    <p style={{ fontSize: '0.9rem', margin: '0.5rem 0 0 0' }}>
+      Variables Sass con prefijo <code>$mrs-</code>
+    </p>
+  </div>
+
+  <div style={{
+    padding: '1.5rem',
+    border: '2px solid #e0e0e0',
+    borderRadius: '12px'
+  }}>
+    <h4 style={{ margin: '0 0 0.5rem 0', color: '#00686f' }}>⚛️ TypeScript</h4>
+    <code style={{ fontSize: '0.8rem' }}>tokens.js + .d.ts</code>
+    <p style={{ fontSize: '0.9rem', margin: '0.5rem 0 0 0' }}>
+      Exports ES6 con tipos TypeScript
+    </p>
+  </div>
+
+  <div style={{
+    padding: '1.5rem',
+    border: '2px solid #e0e0e0',
+    borderRadius: '12px'
+  }}>
+    <h4 style={{ margin: '0 0 0.5rem 0', color: '#00686f' }}>📄 JSON</h4>
+    <code style={{ fontSize: '0.8rem' }}>*.json</code>
+    <p style={{ fontSize: '0.9rem', margin: '0.5rem 0 0 0' }}>
+      Flat, nested, y formato Figma Tokens
+    </p>
+  </div>
+</div>
+
+---
+
+## 📝 Ejemplos de Uso
+
+### TypeScript/React
+
+```typescript
+import {
+  SemanticColorPrimaryMain,
+  ComponentButtonBorderRadius,
+  PrimitivesSpacing2
+} from '@atipicus/mrs-ui/tokens';
+
+const MyButton = () => (
+  <button
+    style={{
+      backgroundColor: SemanticColorPrimaryMain,
+      borderRadius: ComponentButtonBorderRadius,
+      padding: PrimitivesSpacing2,
+    }}
+  >
+    Click me
+  </button>
+);
+```
+
+### CSS
+
+```css
+@import '@atipicus/mrs-ui/tokens/generated/css/tokens.css';
+
+.my-button {
+  background-color: var(--mrs-semantic-color-primary-main);
+  border-radius: var(--mrs-component-button-border-radius);
+  padding: var(--mrs-primitives-spacing-2);
+}
+```
+
+### SCSS
+
+```scss
+@import '@atipicus/mrs-ui/tokens/generated/scss/tokens';
+
+.my-button {
+  background-color: $mrs-semantic-color-primary-main;
+  border-radius: $mrs-component-button-border-radius;
+  padding: $mrs-primitives-spacing-2;
+}
+```
+
+---
+
+## 🎯 Características Principales
+
+<div style={{
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr',
+  gap: '1rem',
+  margin: '2rem 0'
+}}>
+  <div style={{ padding: '1rem', backgroundColor: '#f5f5f5', borderRadius: '8px' }}>
+    <strong>✅ Single Source of Truth</strong>
+    <p style={{ fontSize: '0.9rem', margin: '0.5rem 0 0 0' }}>
+      Todos los tokens en un lugar centralizado
+    </p>
+  </div>
+
+  <div style={{ padding: '1rem', backgroundColor: '#f5f5f5', borderRadius: '8px' }}>
+    <strong>✅ Multi-formato</strong>
+    <p style={{ fontSize: '0.9rem', margin: '0.5rem 0 0 0' }}>
+      CSS, SCSS, TypeScript, JSON
+    </p>
+  </div>
+
+  <div style={{ padding: '1rem', backgroundColor: '#f5f5f5', borderRadius: '8px' }}>
+    <strong>✅ Type Safety</strong>
+    <p style={{ fontSize: '0.9rem', margin: '0.5rem 0 0 0' }}>
+      Types TypeScript auto-generados
+    </p>
+  </div>
+
+  <div style={{ padding: '1rem', backgroundColor: '#f5f5f5', borderRadius: '8px' }}>
+    <strong>✅ Figma Sync</strong>
+    <p style={{ fontSize: '0.9rem', margin: '0.5rem 0 0 0' }}>
+      Sincronización bidireccional con Figma
+    </p>
+  </div>
+
+  <div style={{ padding: '1rem', backgroundColor: '#f5f5f5', borderRadius: '8px' }}>
+    <strong>✅ Dark Mode</strong>
+    <p style={{ fontSize: '0.9rem', margin: '0.5rem 0 0 0' }}>
+      Tokens consolidados light + dark
+    </p>
+  </div>
+
+  <div style={{ padding: '1rem', backgroundColor: '#f5f5f5', borderRadius: '8px' }}>
+    <strong>✅ CI/CD Ready</strong>
+    <p style={{ fontSize: '0.9rem', margin: '0.5rem 0 0 0' }}>
+      Build y validación automática
+    </p>
+  </div>
+</div>
+
+---
+
+## 🔗 Enlaces Útiles
+
+- [GitHub Repository](https://github.com/Atipicus/mrs-ui)
+- [Style Dictionary Docs](https://styledictionary.com/)
+- [Tokens Studio Plugin](https://tokens.studio/)
+- [DTCG Specification](https://design-tokens.github.io/community-group/format/)
+
+---
+
+## 📞 Soporte
+
+¿Necesitas ayuda con los tokens?
+
+- **Slack**: `#design-system`
+- **Issues**: [GitHub Issues](https://github.com/Atipicus/mrs-ui/issues)
+- **Docs**: Ver enlaces arriba para documentación completa
+
+---
+
+<div style={{
+  marginTop: '3rem',
+  padding: '1.5rem',
+  backgroundColor: '#e5f6fd',
+  borderRadius: '12px',
+  borderLeft: '4px solid #125C87'
+}}>
+  <strong>💡 Tip:</strong> Para empezar rápidamente, consulta la{' '}
+  <a href="https://github.com/Atipicus/mrs-ui/blob/main/TOKENS-QUICK-START.md" target="_blank">
+    Guía Rápida
+  </a>{' '}
+  que contiene ejemplos paso a paso para diseñadores y desarrolladores.
+</div>

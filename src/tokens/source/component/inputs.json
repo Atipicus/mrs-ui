@@ -1,16 +1,33 @@
 {
   "component": {
     "input": {
-      "standard": {
-        "enabledBorder": { "$value": "{primitives.colors.alpha.black.42}", "$type": "color" }
+      "light": {
+        "standard": {
+          "enabledBorder": { "$value": "{primitives.colors.alpha.black.42}", "$type": "color" }
+        },
+        "filled": {
+          "enabledFill": { "$value": "{primitives.colors.alpha.black.4}", "$type": "color" }
+        },
+        "outlined": {
+          "enabledBorder": { "$value": "{primitives.colors.alpha.black.23}", "$type": "color" }
+        },
+        "borderRadius": { "$value": "{primitives.radius.sm}", "$type": "dimension" }
       },
-      "filled": {
-        "enabledFill": { "$value": "{primitives.colors.alpha.black.4}", "$type": "color" }
-      },
-      "outlined": {
-        "enabledBorder": { "$value": "{primitives.colors.alpha.black.23}", "$type": "color" }
-      },
-      "borderRadius": { "$value": "{primitives.radius.sm}", "$type": "dimension" }
+      "dark": {
+        "borderRadius": { "$value": "8px", "$type": "dimension" },
+        "standard": {
+          "enabledBorder": { "$value": "{primitives.colors.alpha.white.42}", "$type": "color" }
+        },
+        "filled": {
+          "enabledFill": { "$value": "{primitives.colors.alpha.white.8}", "$type": "color" }
+        },
+        "outlined": {
+          "enabledBorder": { "$value": "{primitives.colors.alpha.white.23}", "$type": "color" }
+        },
+        "value": {
+          "fontSize": { "$value": "1rem", "$type": "dimension" }
+        }
+      }
     },
     "chip": {
       "defaultCloseFill": { "$value": "{primitives.colors.neutral.black}", "$type": "color" },

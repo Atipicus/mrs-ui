@@ -1,53 +1,64 @@
-# MRS Design System - Design Tokens
+# Design Tokens - MRS Design System
 
-Esta carpeta contiene el **Token Hub** del MRS Design System, que centraliza todos los tokens de diseño y los exporta a múltiples formatos.
+Este directorio contiene el sistema de tokens de diseño del MRS Design System.
 
-## 📁 Estructura de Carpetas
+## 📚 Documentación Completa
+
+- **[Guía Rápida](../../TOKENS-QUICK-START.md)** - Inicio rápido para diseñadores y desarrolladores
+- **[Flujo de Sincronización](../../TOKENS-SYNC-WORKFLOW.md)** - Documentación completa del flujo Figma ↔ GitHub
+- **[Estructura Consolidada](../../TOKENS-CONSOLIDATION.md)** - Explicación de la consolidación de archivos
+
+## 🏗️ Estructura (Consolidada)
 
 ```
 src/tokens/
-├── source/                          # ← SOURCE OF TRUTH (edit here)
-│   ├── primitives/                  # Tokens base (colors, typography, spacing, radius)
+├── source/              ← EDITAR AQUÍ (Source of Truth)
+│   ├── primitives/      Tokens base (colores, tipografía, espaciado)
 │   │   ├── colors.json
 │   │   ├── typography.json
 │   │   ├── spacing.json
-│   │   └── radius.json
-│   ├── semantic/                    # Tokens semánticos (primary, secondary, error, etc.)
-│   │   └── colors-light.json
-│   └── component/                   # Tokens específicos de componentes
-│       ├── alert.json
+│   │   ├── radius.json
+│   │   └── motion.json
+│   ├── semantic/        Tokens semánticos (light + dark consolidados)
+│   │   ├── colors.json       ← light + dark juntos
+│   │   └── transitions.json
+│   └── component/       Tokens de componentes (light + dark consolidados)
+│       ├── alert.json        ← light + dark juntos
 │       ├── button.json
-│       ├── inputs.json
-│       └── surfaces.json
+│       ├── inputs.json       ← light + dark juntos
+│       ├── surfaces.json     ← light + dark juntos
+│       └── animations.json
+├── generated/           ← NO EDITAR (Auto-generado)
+│   ├── css/            CSS Custom Properties
+│   ├── scss/           Sass Variables
+│   ├── ts/             TypeScript/JavaScript
+│   └── json/           JSON (flat, nested, figma-tokens)
 ├── config/
-│   └── style-dictionary.config.js  # Configuración de transformación
-├── generated/                       # ← AUTO-GENERATED (do not edit)
-│   ├── css/
-│   ├── scss/
-│   ├── ts/
-│   └── json/
-└── index.ts                         # Public exports
+│   └── style-dictionary.config.js  Configuración de transformación
+└── scripts/
+    └── sync-figma-tokens.js  Script de sincronización con Figma
 ```
 
 ---
 
-## 🔧 Comandos NPM
-
-### Build Tokens
+## ⚡ Comandos
 
 ```bash
+# Regenerar tokens (después de editar source files)
 npm run tokens:build
-```
 
-Genera todos los formatos exportados desde los archivos fuente.
-
-### Watch Mode
-
-```bash
+# Watch mode (auto-regenera)
 npm run tokens:watch
-```
 
-Re-genera tokens automáticamente al detectar cambios en `src/tokens/source/`.
+# Limpiar y regenerar
+npm run tokens:rebuild
+
+# Sincronizar desde Figma
+npm run tokens:sync:pull
+
+# Previsualizar sincronización (dry run)
+npm run tokens:sync:dry-run
+```
 
 ---
 
