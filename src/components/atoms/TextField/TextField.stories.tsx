@@ -248,7 +248,11 @@ export const PasswordWithToggle: Story = {
                   onClick={() => setShowPassword(!showPassword)}
                   edge="end"
                 >
-                  {showPassword ? <MaterialSymbol icon="visibility_off" /> : <MaterialSymbol icon="visibility" />}
+                  {showPassword ? (
+                    <MaterialSymbol icon="visibility_off" />
+                  ) : (
+                    <MaterialSymbol icon="visibility" />
+                  )}
                 </IconButton>
               </InputAdornment>
             ),

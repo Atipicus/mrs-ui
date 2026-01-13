@@ -47,14 +47,7 @@ import type { TextFieldProps } from './TextField.types';
  */
 export const TextField = React.forwardRef<HTMLDivElement, TextFieldProps>(
   (
-    {
-      variant = 'outlined',
-      color = 'primary',
-      size = 'medium',
-      fullWidth = false,
-      sx,
-      ...props
-    },
+    { variant = 'outlined', color = 'primary', size = 'medium', fullWidth = false, sx, ...props },
     ref
   ) => {
     return (
@@ -83,7 +76,8 @@ export const TextField = React.forwardRef<HTMLDivElement, TextFieldProps>(
             '& .MuiOutlinedInput-root': {
               '& fieldset': {
                 borderColor: (theme: Theme) =>
-                  theme.palette._components?.input?.outlined?.enabledBorder || theme.palette.divider,
+                  theme.palette._components?.input?.outlined?.enabledBorder ||
+                  theme.palette.divider,
               },
               '&:hover fieldset': {
                 borderColor: (theme: Theme) => theme.palette.text.primary,
@@ -113,7 +107,8 @@ export const TextField = React.forwardRef<HTMLDivElement, TextFieldProps>(
             '& .MuiInput-root': {
               '&:before': {
                 borderBottomColor: (theme: Theme) =>
-                  theme.palette._components?.input?.standard?.enabledBorder || theme.palette.divider,
+                  theme.palette._components?.input?.standard?.enabledBorder ||
+                  theme.palette.divider,
               },
               '&:hover:not(.Mui-disabled):before': {
                 borderBottomColor: (theme: Theme) => theme.palette.text.primary,

@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Checkbox } from "./Checkbox";
+import figma from '@figma/code-connect';
+import { Checkbox } from './Checkbox';
 
 /**
  * Code Connect mapping for Checkbox component
@@ -8,26 +8,26 @@ import { Checkbox } from "./Checkbox";
  */
 figma.connect(
   Checkbox,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11096-136369",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11096-136369',
   {
     props: {
-      color: figma.enum("color", {
-        Primary: "primary",
-        Secondary: "secondary",
-        Error: "error",
-        Warning: "warning",
-        Info: "info",
-        Success: "success",
-        Default: "default",
+      color: figma.enum('color', {
+        Primary: 'primary',
+        Secondary: 'secondary',
+        Error: 'error',
+        Warning: 'warning',
+        Info: 'info',
+        Success: 'success',
+        Default: 'default',
       }),
-      size: figma.enum("size", {
-        Small: "small",
-        Medium: "medium",
-        Large: "large",
+      size: figma.enum('size', {
+        Small: 'small',
+        Medium: 'medium',
+        Large: 'large',
       }),
-      checked: figma.boolean("checked"),
-      disabled: figma.boolean("disabled"),
-      indeterminate: figma.boolean("indeterminate"),
+      checked: figma.boolean('checked'),
+      disabled: figma.boolean('disabled'),
+      indeterminate: figma.boolean('indeterminate'),
     },
     example: (props) => (
       <Checkbox

@@ -129,21 +129,13 @@ export const LabelPlacementBottom: Story = {
 export const AllLabelPlacements: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: '32px' }}>
-      <FormControlLabel
-        control={<Checkbox defaultChecked />}
-        label="End"
-        labelPlacement="end"
-      />
+      <FormControlLabel control={<Checkbox defaultChecked />} label="End" labelPlacement="end" />
       <FormControlLabel
         control={<Checkbox defaultChecked />}
         label="Start"
         labelPlacement="start"
       />
-      <FormControlLabel
-        control={<Checkbox defaultChecked />}
-        label="Top"
-        labelPlacement="top"
-      />
+      <FormControlLabel control={<Checkbox defaultChecked />} label="Top" labelPlacement="top" />
       <FormControlLabel
         control={<Checkbox defaultChecked />}
         label="Bottom"

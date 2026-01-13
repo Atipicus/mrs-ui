@@ -7,7 +7,16 @@ import type { LinkProps as MuiLinkProps } from '@mui/material/Link';
 /**
  * Link color options
  */
-export type LinkColor = 'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success' | 'inherit' | 'textPrimary' | 'textSecondary';
+export type LinkColor =
+  | 'primary'
+  | 'secondary'
+  | 'error'
+  | 'warning'
+  | 'info'
+  | 'success'
+  | 'inherit'
+  | 'textPrimary'
+  | 'textSecondary';
 
 /**
  * Link underline options
@@ -17,7 +26,21 @@ export type LinkUnderline = 'none' | 'hover' | 'always';
 /**
  * Link variant options
  */
-export type LinkVariant = 'body1' | 'body2' | 'button' | 'caption' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'inherit' | 'overline' | 'subtitle1' | 'subtitle2';
+export type LinkVariant =
+  | 'body1'
+  | 'body2'
+  | 'button'
+  | 'caption'
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
+  | 'inherit'
+  | 'overline'
+  | 'subtitle1'
+  | 'subtitle2';
 
 /**
  * Props for the Link component

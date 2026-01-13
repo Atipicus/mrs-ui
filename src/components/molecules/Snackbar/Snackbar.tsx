@@ -52,10 +52,7 @@ export const Snackbar = React.forwardRef<HTMLDivElement, SnackbarProps>(
     },
     ref
   ) => {
-    const handleClose = (
-      event: React.SyntheticEvent | Event,
-      reason?: string
-    ) => {
+    const handleClose = (event: React.SyntheticEvent | Event, reason?: string) => {
       if (reason === 'clickaway') {
         return;
       }
@@ -87,16 +84,14 @@ export const Snackbar = React.forwardRef<HTMLDivElement, SnackbarProps>(
     }
 
     // Default action (close button) if no action provided
-    const defaultAction = action !== undefined ? action : (
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={(e) => handleClose(e)}
-      >
-        <MaterialSymbol icon="close" size="small" />
-      </IconButton>
-    );
+    const defaultAction =
+      action !== undefined ? (
+        action
+      ) : (
+        <IconButton size="small" aria-label="close" color="inherit" onClick={(e) => handleClose(e)}>
+          <MaterialSymbol icon="close" size="small" />
+        </IconButton>
+      );
 
     // Render as simple Snackbar
     return (

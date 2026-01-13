@@ -160,7 +160,7 @@ describe('AppBar', () => {
   });
 
   it('applies zero elevation', () => {
-    const { container} = renderWithTheme(
+    const { container } = renderWithTheme(
       <AppBar elevation={0}>
         <div>Content</div>
       </AppBar>

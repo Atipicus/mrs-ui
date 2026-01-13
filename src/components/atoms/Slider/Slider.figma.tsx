@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Slider } from "./Slider";
+import figma from '@figma/code-connect';
+import { Slider } from './Slider';
 
 /**
  * Code Connect mapping for Slider component
@@ -8,31 +8,31 @@ import { Slider } from "./Slider";
  */
 figma.connect(
   Slider,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11095-138546",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11095-138546',
   {
     props: {
-      color: figma.enum("color", {
-        Primary: "primary",
-        Secondary: "secondary",
-        Error: "error",
-        Warning: "warning",
-        Info: "info",
-        Success: "success",
+      color: figma.enum('color', {
+        Primary: 'primary',
+        Secondary: 'secondary',
+        Error: 'error',
+        Warning: 'warning',
+        Info: 'info',
+        Success: 'success',
       }),
-      size: figma.enum("size", {
-        Small: "small",
-        Medium: "medium",
+      size: figma.enum('size', {
+        Small: 'small',
+        Medium: 'medium',
       }),
-      disabled: figma.boolean("disabled"),
-      marks: figma.boolean("marks"),
-      valueLabelDisplay: figma.enum("valueLabelDisplay", {
-        On: "on",
-        Auto: "auto",
-        Off: "off",
+      disabled: figma.boolean('disabled'),
+      marks: figma.boolean('marks'),
+      valueLabelDisplay: figma.enum('valueLabelDisplay', {
+        On: 'on',
+        Auto: 'auto',
+        Off: 'off',
       }),
-      orientation: figma.enum("orientation", {
-        Horizontal: "horizontal",
-        Vertical: "vertical",
+      orientation: figma.enum('orientation', {
+        Horizontal: 'horizontal',
+        Vertical: 'vertical',
       }),
     },
     example: (props) => (

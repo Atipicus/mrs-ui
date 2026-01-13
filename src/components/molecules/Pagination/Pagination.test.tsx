@@ -104,9 +104,7 @@ describe('Pagination', () => {
 
   describe('Navigation Buttons', () => {
     it('shows first and last buttons when enabled', () => {
-      renderWithTheme(
-        <Pagination count={10} showFirstButton showLastButton />
-      );
+      renderWithTheme(<Pagination count={10} showFirstButton showLastButton />);
 
       expect(screen.getByRole('button', { name: /first/i })).toBeInTheDocument();
       expect(screen.getByRole('button', { name: /last/i })).toBeInTheDocument();
@@ -130,9 +128,7 @@ describe('Pagination', () => {
       const user = userEvent.setup();
       const handleChange = jest.fn();
 
-      renderWithTheme(
-        <Pagination count={10} page={1} onChange={handleChange} />
-      );
+      renderWithTheme(<Pagination count={10} page={1} onChange={handleChange} />);
 
       const buttons = screen.getAllByRole('button');
       // Find a button that's not the previous/next button and click it
@@ -147,9 +143,7 @@ describe('Pagination', () => {
       const user = userEvent.setup();
       const handleChange = jest.fn();
 
-      renderWithTheme(
-        <Pagination count={10} page={1} onChange={handleChange} />
-      );
+      renderWithTheme(<Pagination count={10} page={1} onChange={handleChange} />);
 
       const nextButton = screen.getByRole('button', { name: /next/i });
       await user.click(nextButton);
@@ -161,9 +155,7 @@ describe('Pagination', () => {
       const user = userEvent.setup();
       const handleChange = jest.fn();
 
-      renderWithTheme(
-        <Pagination count={10} page={2} onChange={handleChange} />
-      );
+      renderWithTheme(<Pagination count={10} page={2} onChange={handleChange} />);
 
       const prevButton = screen.getByRole('button', { name: /previous/i });
       await user.click(prevButton);
@@ -185,9 +177,7 @@ describe('Pagination', () => {
     it('does not call onChange when disabled', () => {
       const handleChange = jest.fn();
 
-      renderWithTheme(
-        <Pagination count={10} page={1} onChange={handleChange} disabled />
-      );
+      renderWithTheme(<Pagination count={10} page={1} onChange={handleChange} disabled />);
 
       // All buttons should be disabled
       const buttons = screen.getAllByRole('button');

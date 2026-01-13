@@ -86,9 +86,7 @@ export const WithOptionalLabel: Story = {
         <StepLabel>Step 1</StepLabel>
       </Step>
       <Step>
-        <StepLabel optional={<Typography variant="caption">Optional</Typography>}>
-          Step 2
-        </StepLabel>
+        <StepLabel optional={<Typography variant="caption">Optional</Typography>}>Step 2</StepLabel>
       </Step>
       <Step>
         <StepLabel>Step 3</StepLabel>

@@ -49,6 +49,7 @@ import {
 The main container component that holds all timeline items.
 
 **Props:**
+
 - `position` - Position where content appears: `'left'` | `'right'` | `'alternate'` | `'alternate-reverse'` (default: `'left'`)
 
 ### TimelineItem
@@ -56,6 +57,7 @@ The main container component that holds all timeline items.
 Individual timeline item that contains separator and content.
 
 **Props:**
+
 - `position` - Override position for specific item: `'left'` | `'right'`
 
 ### TimelineSeparator
@@ -67,6 +69,7 @@ Container for the dot and connector line.
 The dot indicating an event in the timeline.
 
 **Props:**
+
 - `color` - Color of the dot: `'inherit'` | `'grey'` | `'primary'` | `'secondary'` | `'error'` | `'info'` | `'success'` | `'warning'` (default: `'primary'`)
 - `variant` - Style variant: `'filled'` | `'outlined'` (default: `'filled'`)
 - `children` - Optional icon to display inside the dot
@@ -111,9 +114,7 @@ Optional content displayed opposite to the main timeline content (useful for tim
 ```tsx
 <Timeline position="alternate">
   <TimelineItem>
-    <TimelineOppositeContent color="text.secondary">
-      9:00 AM
-    </TimelineOppositeContent>
+    <TimelineOppositeContent color="text.secondary">9:00 AM</TimelineOppositeContent>
     <TimelineSeparator>
       <TimelineDot color="primary" />
       <TimelineConnector />

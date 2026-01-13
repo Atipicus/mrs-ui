@@ -25,10 +25,7 @@ interface UseBounceOptions {
  * ```
  */
 export const useBounce = <T extends HTMLElement>(options: UseBounceOptions = {}) => {
-  const {
-    duration = parseInt(PrimitivesMotionDurationModerate),
-    scale = 1.2,
-  } = options;
+  const { duration = parseInt(PrimitivesMotionDurationModerate), scale = 1.2 } = options;
   const ref = useRef<T>(null);
 
   const bounce = useCallback(() => {
@@ -51,4 +48,3 @@ export const useBounce = <T extends HTMLElement>(options: UseBounceOptions = {})
 
   return { ref, bounce };
 };
-

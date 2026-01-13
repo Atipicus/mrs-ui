@@ -19,15 +19,8 @@ import type { SpeedDialProps } from './SpeedDial.types';
  * @param props - SpeedDial component props
  * @returns SpeedDial component
  */
-export const SpeedDial = React.forwardRef<HTMLDivElement, SpeedDialProps>(
-  (props, ref) => {
-    return (
-      <MuiSpeedDial
-        ref={ref}
-        {...props}
-      />
-    );
-  }
-);
+export const SpeedDial = React.forwardRef<HTMLDivElement, SpeedDialProps>((props, ref) => {
+  return <MuiSpeedDial ref={ref} {...props} />;
+});
 
 SpeedDial.displayName = 'SpeedDial';

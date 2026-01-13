@@ -48,14 +48,7 @@ import type { SelectProps } from './Select.types';
  */
 export const Select = React.forwardRef<any, SelectProps>(
   (
-    {
-      variant = 'outlined',
-      color = 'primary',
-      size = 'medium',
-      fullWidth = false,
-      sx,
-      ...props
-    },
+    { variant = 'outlined', color = 'primary', size = 'medium', fullWidth = false, sx, ...props },
     ref
   ) => {
     return (

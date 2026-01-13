@@ -13,12 +13,7 @@ import Grid from '@mui/material/Grid';
 import { RippleButton } from '../components/effects/RippleButton';
 import { AnimatedBadge } from '../components/effects/AnimatedBadge';
 import { LoadingDots } from '../components/effects/LoadingDots';
-import {
-  useShake,
-  useBounce,
-  useHoverScale,
-  usePulse,
-} from '../hooks/animations';
+import { useShake, useBounce, useHoverScale, usePulse } from '../hooks/animations';
 
 /**
  * Micro-Interactions Library
@@ -280,11 +275,7 @@ export const AnimatedBadgeDemo: StoryObj = {
               Bounce on Change
             </Typography>
             <Stack direction="row" spacing={4} alignItems="center">
-              <AnimatedBadge
-                badgeContent={bounceCount}
-                color="error"
-                animationVariant="bounce"
-              >
+              <AnimatedBadge badgeContent={bounceCount} color="error" animationVariant="bounce">
                 <IconButton>
                   <span style={{ fontSize: 24 }}>📧</span>
                 </IconButton>
@@ -300,11 +291,7 @@ export const AnimatedBadgeDemo: StoryObj = {
               Continuous Pulse
             </Typography>
             <Stack direction="row" spacing={4} alignItems="center">
-              <AnimatedBadge
-                badgeContent={pulseCount}
-                color="error"
-                animationVariant="pulse"
-              >
+              <AnimatedBadge badgeContent={pulseCount} color="error" animationVariant="pulse">
                 <IconButton>
                   <span style={{ fontSize: 24 }}>🔔</span>
                 </IconButton>
@@ -406,4 +393,3 @@ export const AllInteractions: StoryObj = {
     );
   },
 };
-

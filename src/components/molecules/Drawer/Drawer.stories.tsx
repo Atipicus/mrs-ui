@@ -280,7 +280,9 @@ export const PersistentVariant: Story = {
           }}
         >
           <Box sx={{ p: 2 }}>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+            <Box
+              sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}
+            >
               <Typography variant="h6">Persistent</Typography>
               <IconButton onClick={() => setOpen(false)}>
                 <MaterialSymbol icon="chevron_left" />
@@ -306,7 +308,8 @@ export const PersistentVariant: Story = {
             Persistent drawer pushes content to the side when open. Content shifts with the drawer.
           </Typography>
           <Typography paragraph>
-            Click the menu icon to toggle the drawer. The drawer will stay open until explicitly closed.
+            Click the menu icon to toggle the drawer. The drawer will stay open until explicitly
+            closed.
           </Typography>
         </Box>
       </Box>
@@ -556,12 +559,8 @@ export const ResponsiveDrawer: Story = {
           <Typography variant="h4" gutterBottom>
             Responsive Layout
           </Typography>
-          <Typography paragraph>
-            On mobile (xs): Temporary drawer with hamburger menu.
-          </Typography>
-          <Typography paragraph>
-            On desktop (sm+): Permanent drawer always visible.
-          </Typography>
+          <Typography paragraph>On mobile (xs): Temporary drawer with hamburger menu.</Typography>
+          <Typography paragraph>On desktop (sm+): Permanent drawer always visible.</Typography>
           <Typography paragraph>Resize your browser to see the responsive behavior.</Typography>
         </Box>
       </Box>

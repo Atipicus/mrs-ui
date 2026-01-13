@@ -81,18 +81,7 @@ function isExpandableItem(item: DrawerNavItem): item is ExpandableNavItemType {
  * @returns DrawerNavigation component
  */
 export const DrawerNavigation = React.forwardRef<HTMLDivElement, DrawerNavigationProps>(
-  (
-    {
-      items,
-      width = 256,
-      paddingTop = 32,
-      paddingBottom = 32,
-      sx,
-      listSx,
-      onItemClick,
-    },
-    ref
-  ) => {
+  ({ items, width = 256, paddingTop = 32, paddingBottom = 32, sx, listSx, onItemClick }, ref) => {
     const theme = useTheme();
 
     // Track open state for expandable items
@@ -177,9 +166,7 @@ export const DrawerNavigation = React.forwardRef<HTMLDivElement, DrawerNavigatio
                   }}
                 >
                   {simpleItem.icon && (
-                    <ListItemIcon sx={{ minWidth: 40 }}>
-                      {simpleItem.icon}
-                    </ListItemIcon>
+                    <ListItemIcon sx={{ minWidth: 40 }}>{simpleItem.icon}</ListItemIcon>
                   )}
                   <ListItemText
                     primary={simpleItem.label}

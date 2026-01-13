@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Divider } from "./Divider";
+import figma from '@figma/code-connect';
+import { Divider } from './Divider';
 
 /**
  * Code Connect mapping for Divider component
@@ -8,20 +8,20 @@ import { Divider } from "./Divider";
  */
 figma.connect(
   Divider,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11102-137976",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11102-137976',
   {
     props: {
-      orientation: figma.enum("orientation", {
-        Horizontal: "horizontal",
-        Vertical: "vertical",
+      orientation: figma.enum('orientation', {
+        Horizontal: 'horizontal',
+        Vertical: 'vertical',
       }),
-      variant: figma.enum("variant", {
-        FullWidth: "fullWidth",
-        Inset: "inset",
-        Middle: "middle",
+      variant: figma.enum('variant', {
+        FullWidth: 'fullWidth',
+        Inset: 'inset',
+        Middle: 'middle',
       }),
-      light: figma.boolean("light"),
-      flexItem: figma.boolean("flexItem"),
+      light: figma.boolean('light'),
+      flexItem: figma.boolean('flexItem'),
     },
     example: (props) => (
       <Divider

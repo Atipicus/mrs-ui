@@ -19,15 +19,8 @@ import type { SpeedDialIconProps } from './SpeedDial.types';
  * @param props - SpeedDialIcon component props
  * @returns SpeedDialIcon component
  */
-export const SpeedDialIcon = React.forwardRef<HTMLSpanElement, SpeedDialIconProps>(
-  (props, ref) => {
-    return (
-      <MuiSpeedDialIcon
-        ref={ref}
-        {...props}
-      />
-    );
-  }
-);
+export const SpeedDialIcon = React.forwardRef<HTMLSpanElement, SpeedDialIconProps>((props, ref) => {
+  return <MuiSpeedDialIcon ref={ref} {...props} />;
+});
 
 SpeedDialIcon.displayName = 'SpeedDialIcon';

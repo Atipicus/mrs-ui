@@ -23,15 +23,13 @@ import type { GridProps } from './Grid.types';
  * </Grid>
  * ```
  */
-export const Grid = React.forwardRef<HTMLDivElement, GridProps>(
-  ({ children, ...props }, ref) => {
-    return (
-      <MuiGrid ref={ref} {...props}>
-        {children}
-      </MuiGrid>
-    );
-  }
-);
+export const Grid = React.forwardRef<HTMLDivElement, GridProps>(({ children, ...props }, ref) => {
+  return (
+    <MuiGrid ref={ref} {...props}>
+      {children}
+    </MuiGrid>
+  );
+});
 
 Grid.displayName = 'Grid';
 

@@ -63,18 +63,12 @@ export interface RatingProps extends Omit<MuiRatingProps, 'size'> {
   /**
    * Callback fired when the value changes
    */
-  onChange?: (
-    event: React.SyntheticEvent,
-    value: number | null
-  ) => void;
+  onChange?: (event: React.SyntheticEvent, value: number | null) => void;
 
   /**
    * Callback function that is fired when the hover state changes
    */
-  onChangeActive?: (
-    event: React.SyntheticEvent,
-    value: number
-  ) => void;
+  onChangeActive?: (event: React.SyntheticEvent, value: number) => void;
 
   /**
    * If true, the component is rendered with a highlight color

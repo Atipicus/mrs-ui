@@ -2,7 +2,10 @@
   "component": {
     "button": {
       "borderRadius": { "$value": "{primitives.radius.md}", "$type": "dimension" },
-      "fontWeight": { "$value": "{primitives.typography.fontWeight.semibold}", "$type": "fontWeight" },
+      "fontWeight": {
+        "$value": "{primitives.typography.fontWeight.semibold}",
+        "$type": "fontWeight"
+      },
       "small": {
         "fontSize": { "$value": "0.8125rem", "$type": "dimension" },
         "height": { "$value": "30px", "$type": "dimension" }

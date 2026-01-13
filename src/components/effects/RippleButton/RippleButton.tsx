@@ -16,29 +16,27 @@ const RippleContainer = styled('span')({
   borderRadius: 'inherit',
 });
 
-const RippleSpan = styled('span')<{ x: number; y: number; size: number }>(
-  ({ x, y, size }) => ({
-    position: 'absolute',
-    left: x,
-    top: y,
-    width: size,
-    height: size,
-    borderRadius: '50%',
-    backgroundColor: 'currentColor',
-    opacity: 0.3,
-    animation: `ripple ${parseInt(PrimitivesMotionDurationFast) * 6}ms ease-out`,
-    '@keyframes ripple': {
-      '0%': {
-        transform: 'scale(0)',
-        opacity: 0.6,
-      },
-      '100%': {
-        transform: 'scale(4)',
-        opacity: 0,
-      },
+const RippleSpan = styled('span')<{ x: number; y: number; size: number }>(({ x, y, size }) => ({
+  position: 'absolute',
+  left: x,
+  top: y,
+  width: size,
+  height: size,
+  borderRadius: '50%',
+  backgroundColor: 'currentColor',
+  opacity: 0.3,
+  animation: `ripple ${parseInt(PrimitivesMotionDurationFast) * 6}ms ease-out`,
+  '@keyframes ripple': {
+    '0%': {
+      transform: 'scale(0)',
+      opacity: 0.6,
     },
-  })
-);
+    '100%': {
+      transform: 'scale(4)',
+      opacity: 0,
+    },
+  },
+}));
 
 export interface RippleButtonProps extends ButtonProps {
   /**
@@ -87,4 +85,3 @@ export const RippleButton = forwardRef<HTMLButtonElement, RippleButtonProps>(
 );
 
 RippleButton.displayName = 'RippleButton';
-

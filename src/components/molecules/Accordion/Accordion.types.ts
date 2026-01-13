@@ -15,7 +15,10 @@ import type { AccordionActionsProps as MuiAccordionActionsProps } from '@mui/mat
  * Accordion Props
  * Extends Material-UI Accordion props
  */
-export interface AccordionProps extends Omit<MuiAccordionProps, 'TransitionComponent' | 'TransitionProps' | 'children'> {
+export interface AccordionProps extends Omit<
+  MuiAccordionProps,
+  'TransitionComponent' | 'TransitionProps' | 'children'
+> {
   /**
    * The content of the accordion.
    * Required - must include AccordionSummary and typically AccordionDetails.

@@ -94,11 +94,11 @@ function TabPanel(props: TabPanelProps) {
 export const Default: Story = {
   args: {
     centered: false,
-    indicatorColor: "primary",
-    textColor: "secondary",
-    variant: "fullWidth",
+    indicatorColor: 'primary',
+    textColor: 'secondary',
+    variant: 'fullWidth',
     value: 4,
-    orientation: "vertical"
+    orientation: 'vertical',
   },
 
   render: () => {
@@ -122,7 +122,7 @@ export const Default: Story = {
         </TabPanel>
       </Box>
     );
-  }
+  },
 };
 
 /**
@@ -181,11 +181,7 @@ export const FullWidth: Story = {
 
     return (
       <Box sx={{ width: 600 }}>
-        <Tabs
-          value={value}
-          onChange={(e, newValue) => setValue(newValue)}
-          variant="fullWidth"
-        >
+        <Tabs value={value} onChange={(e, newValue) => setValue(newValue)} variant="fullWidth">
           <Tab label="Overview" />
           <Tab label="Details" />
           <Tab label="Settings" />
@@ -213,11 +209,7 @@ export const Centered: Story = {
 
     return (
       <Box sx={{ width: 600 }}>
-        <Tabs
-          value={value}
-          onChange={(e, newValue) => setValue(newValue)}
-          centered
-        >
+        <Tabs value={value} onChange={(e, newValue) => setValue(newValue)} centered>
           <Tab label="Tab 1" />
           <Tab label="Tab 2" />
           <Tab label="Tab 3" />
@@ -260,7 +252,7 @@ export const Scrollable: Story = {
  */
 export const ScrollableForced: Story = {
   args: {
-    value: 1
+    value: 1,
   },
 
   render: () => {
@@ -284,7 +276,7 @@ export const ScrollableForced: Story = {
         </Tabs>
       </Box>
     );
-  }
+  },
 };
 
 /**
@@ -432,8 +424,8 @@ export const WrappedLabels: Story = {
  */
 export const CustomStyling: Story = {
   args: {
-    indicatorColor: "primary",
-    variant: "scrollable"
+    indicatorColor: 'primary',
+    variant: 'scrollable',
   },
 
   render: () => {
@@ -463,5 +455,5 @@ export const CustomStyling: Story = {
         </Tabs>
       </Box>
     );
-  }
+  },
 };

@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Stepper } from "./Stepper";
+import figma from '@figma/code-connect';
+import { Stepper } from './Stepper';
 
 /**
  * Code Connect mapping for Stepper component
@@ -8,15 +8,15 @@ import { Stepper } from "./Stepper";
  */
 figma.connect(
   Stepper,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11137-156041",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11137-156041',
   {
     props: {
-      orientation: figma.enum("orientation", {
-        Horizontal: "horizontal",
-        Vertical: "vertical",
+      orientation: figma.enum('orientation', {
+        Horizontal: 'horizontal',
+        Vertical: 'vertical',
       }),
-      alternativeLabel: figma.boolean("alternativeLabel"),
-      nonLinear: figma.boolean("nonLinear"),
+      alternativeLabel: figma.boolean('alternativeLabel'),
+      nonLinear: figma.boolean('nonLinear'),
     },
     example: (props) => (
       <Stepper

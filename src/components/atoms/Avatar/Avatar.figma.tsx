@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Avatar } from "./Avatar";
+import figma from '@figma/code-connect';
+import { Avatar } from './Avatar';
 
 /**
  * Code Connect mapping for Avatar component
@@ -8,29 +8,25 @@ import { Avatar } from "./Avatar";
  */
 figma.connect(
   Avatar,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11102-137411",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11102-137411',
   {
     props: {
-      variant: figma.enum("variant", {
-        Circular: "circular",
-        Rounded: "rounded",
-        Square: "square",
+      variant: figma.enum('variant', {
+        Circular: 'circular',
+        Rounded: 'rounded',
+        Square: 'square',
       }),
-      size: figma.enum("size", {
-        Small: "small",
-        Medium: "medium",
-        Large: "large",
+      size: figma.enum('size', {
+        Small: 'small',
+        Medium: 'medium',
+        Large: 'large',
       }),
-      src: figma.string("src"),
-      alt: figma.string("alt"),
-      children: figma.string("children"),
+      src: figma.string('src'),
+      alt: figma.string('alt'),
+      children: figma.string('children'),
     },
     example: (props) => (
-      <Avatar
-        variant={props.variant}
-        src={props.src}
-        alt={props.alt}
-      >
+      <Avatar variant={props.variant} src={props.src} alt={props.alt}>
         {props.children}
       </Avatar>
     ),

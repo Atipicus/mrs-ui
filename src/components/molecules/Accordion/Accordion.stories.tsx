@@ -76,8 +76,8 @@ export const BasicAccordion: Story = {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus
-            ex, sit amet blandit leo lobortis eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+            sit amet blandit leo lobortis eget.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -88,8 +88,8 @@ export const BasicAccordion: Story = {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus
-            ex, sit amet blandit leo lobortis eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+            sit amet blandit leo lobortis eget.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -100,8 +100,8 @@ export const BasicAccordion: Story = {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus
-            ex, sit amet blandit leo lobortis eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+            sit amet blandit leo lobortis eget.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -138,9 +138,7 @@ export const ControlledAccordion: Story = {
         <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
           <AccordionSummary expandIcon={<MaterialSymbol icon="expand_more" />}>
             <Typography sx={{ width: '33%', flexShrink: 0 }}>Users</Typography>
-            <Typography sx={{ color: 'text.secondary' }}>
-              You are currently not an owner
-            </Typography>
+            <Typography sx={{ color: 'text.secondary' }}>You are currently not an owner</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
@@ -209,7 +207,9 @@ export const DisabledAccordion: Story = {
           <Typography>Disabled Accordion</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>This content cannot be accessed because the accordion is disabled.</Typography>
+          <Typography>
+            This content cannot be accessed because the accordion is disabled.
+          </Typography>
         </AccordionDetails>
       </Accordion>
 

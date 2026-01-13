@@ -323,28 +323,16 @@ export const WithSelectedItem: Story = {
           Select Language
         </Button>
         <Menu open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>
-          <MenuItem
-            selected={selectedIndex === 0}
-            onClick={() => handleMenuItemClick(0)}
-          >
+          <MenuItem selected={selectedIndex === 0} onClick={() => handleMenuItemClick(0)}>
             English
           </MenuItem>
-          <MenuItem
-            selected={selectedIndex === 1}
-            onClick={() => handleMenuItemClick(1)}
-          >
+          <MenuItem selected={selectedIndex === 1} onClick={() => handleMenuItemClick(1)}>
             Spanish
           </MenuItem>
-          <MenuItem
-            selected={selectedIndex === 2}
-            onClick={() => handleMenuItemClick(2)}
-          >
+          <MenuItem selected={selectedIndex === 2} onClick={() => handleMenuItemClick(2)}>
             French
           </MenuItem>
-          <MenuItem
-            selected={selectedIndex === 3}
-            onClick={() => handleMenuItemClick(3)}
-          >
+          <MenuItem selected={selectedIndex === 3} onClick={() => handleMenuItemClick(3)}>
             German
           </MenuItem>
         </Menu>
@@ -396,9 +384,7 @@ export const ContextMenu: Story = {
     const handleContextMenu = (event: React.MouseEvent) => {
       event.preventDefault();
       setContextMenu(
-        contextMenu === null
-          ? { mouseX: event.clientX - 2, mouseY: event.clientY - 4 }
-          : null
+        contextMenu === null ? { mouseX: event.clientX - 2, mouseY: event.clientY - 4 } : null
       );
     };
 
@@ -422,9 +408,7 @@ export const ContextMenu: Story = {
           onClose={handleClose}
           anchorReference="anchorPosition"
           anchorPosition={
-            contextMenu !== null
-              ? { top: contextMenu.mouseY, left: contextMenu.mouseX }
-              : undefined
+            contextMenu !== null ? { top: contextMenu.mouseY, left: contextMenu.mouseX } : undefined
           }
         >
           <MenuItem onClick={handleClose}>Copy</MenuItem>

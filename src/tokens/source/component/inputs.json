@@ -14,7 +14,10 @@
     },
     "chip": {
       "defaultCloseFill": { "$value": "{primitives.colors.neutral.black}", "$type": "color" },
-      "defaultEnabledBorder": { "$value": "{primitives.colors.neutral.gray.400}", "$type": "color" },
+      "defaultEnabledBorder": {
+        "$value": "{primitives.colors.neutral.gray.400}",
+        "$type": "color"
+      },
       "borderRadius": { "$value": "{primitives.radius.full}", "$type": "dimension" }
     },
     "rating": {

@@ -133,25 +133,23 @@ export const AllColors: Story = {
   render: () => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-        {(['primary', 'secondary', 'error', 'warning', 'info', 'success'] as const).map(
-          (color) => (
-            <FormControl key={color}>
-              <FormLabel>{color.charAt(0).toUpperCase() + color.slice(1)}</FormLabel>
-              <RadioGroup defaultValue="option1">
-                <FormControlLabel
-                  value="option1"
-                  control={<Radio color={color} />}
-                  label="Option 1"
-                />
-                <FormControlLabel
-                  value="option2"
-                  control={<Radio color={color} />}
-                  label="Option 2"
-                />
-              </RadioGroup>
-            </FormControl>
-          )
-        )}
+        {(['primary', 'secondary', 'error', 'warning', 'info', 'success'] as const).map((color) => (
+          <FormControl key={color}>
+            <FormLabel>{color.charAt(0).toUpperCase() + color.slice(1)}</FormLabel>
+            <RadioGroup defaultValue="option1">
+              <FormControlLabel
+                value="option1"
+                control={<Radio color={color} />}
+                label="Option 1"
+              />
+              <FormControlLabel
+                value="option2"
+                control={<Radio color={color} />}
+                label="Option 2"
+              />
+            </RadioGroup>
+          </FormControl>
+        ))}
       </div>
     );
   },
@@ -168,20 +166,9 @@ export const ControlledVsUncontrolled: Story = {
       <div style={{ display: 'flex', gap: '48px' }}>
         <FormControl>
           <FormLabel>Controlled</FormLabel>
-          <RadioGroup
-            value={controlledValue}
-            onChange={(e) => setControlledValue(e.target.value)}
-          >
-            <FormControlLabel
-              value="controlled1"
-              control={<Radio />}
-              label="Controlled 1"
-            />
-            <FormControlLabel
-              value="controlled2"
-              control={<Radio />}
-              label="Controlled 2"
-            />
+          <RadioGroup value={controlledValue} onChange={(e) => setControlledValue(e.target.value)}>
+            <FormControlLabel value="controlled1" control={<Radio />} label="Controlled 1" />
+            <FormControlLabel value="controlled2" control={<Radio />} label="Controlled 2" />
           </RadioGroup>
           <FormHelperText>Value: {controlledValue}</FormHelperText>
         </FormControl>
@@ -189,16 +176,8 @@ export const ControlledVsUncontrolled: Story = {
         <FormControl>
           <FormLabel>Uncontrolled</FormLabel>
           <RadioGroup defaultValue="uncontrolled1">
-            <FormControlLabel
-              value="uncontrolled1"
-              control={<Radio />}
-              label="Uncontrolled 1"
-            />
-            <FormControlLabel
-              value="uncontrolled2"
-              control={<Radio />}
-              label="Uncontrolled 2"
-            />
+            <FormControlLabel value="uncontrolled1" control={<Radio />} label="Uncontrolled 1" />
+            <FormControlLabel value="uncontrolled2" control={<Radio />} label="Uncontrolled 2" />
           </RadioGroup>
           <FormHelperText>Uses defaultValue</FormHelperText>
         </FormControl>

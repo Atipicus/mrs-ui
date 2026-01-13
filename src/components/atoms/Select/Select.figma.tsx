@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Select } from "./Select";
+import figma from '@figma/code-connect';
+import { Select } from './Select';
 
 /**
  * Code Connect mapping for Select component
@@ -8,24 +8,24 @@ import { Select } from "./Select";
  */
 figma.connect(
   Select,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11095-137640",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11095-137640',
   {
     props: {
-      variant: figma.enum("variant", {
-        Outlined: "outlined",
-        Filled: "filled",
-        Standard: "standard",
+      variant: figma.enum('variant', {
+        Outlined: 'outlined',
+        Filled: 'filled',
+        Standard: 'standard',
       }),
-      size: figma.enum("size", {
-        Small: "small",
-        Medium: "medium",
+      size: figma.enum('size', {
+        Small: 'small',
+        Medium: 'medium',
       }),
-      disabled: figma.boolean("disabled"),
-      error: figma.boolean("error"),
-      required: figma.boolean("required"),
-      fullWidth: figma.boolean("fullWidth"),
-      multiple: figma.boolean("multiple"),
-      label: figma.string("label"),
+      disabled: figma.boolean('disabled'),
+      error: figma.boolean('error'),
+      required: figma.boolean('required'),
+      fullWidth: figma.boolean('fullWidth'),
+      multiple: figma.boolean('multiple'),
+      label: figma.string('label'),
     },
     example: (props) => (
       <Select

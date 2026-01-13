@@ -46,17 +46,44 @@ export interface GridProps extends MuiGridProps {
   /**
    * Defines the space between the type item components
    */
-  spacing?: number | string | { xs?: number | string; sm?: number | string; md?: number | string; lg?: number | string; xl?: number | string };
+  spacing?:
+    | number
+    | string
+    | {
+        xs?: number | string;
+        sm?: number | string;
+        md?: number | string;
+        lg?: number | string;
+        xl?: number | string;
+      };
 
   /**
    * Defines the column-gap
    */
-  columnSpacing?: number | string | { xs?: number | string; sm?: number | string; md?: number | string; lg?: number | string; xl?: number | string };
+  columnSpacing?:
+    | number
+    | string
+    | {
+        xs?: number | string;
+        sm?: number | string;
+        md?: number | string;
+        lg?: number | string;
+        xl?: number | string;
+      };
 
   /**
    * Defines the row-gap
    */
-  rowSpacing?: number | string | { xs?: number | string; sm?: number | string; md?: number | string; lg?: number | string; xl?: number | string };
+  rowSpacing?:
+    | number
+    | string
+    | {
+        xs?: number | string;
+        sm?: number | string;
+        md?: number | string;
+        lg?: number | string;
+        xl?: number | string;
+      };
 
   /**
    * The component used for the root node

@@ -58,11 +58,7 @@ export const Basic: Story = {
     const [age, setAge] = useState('');
 
     return (
-      <Select
-        value={age}
-        onChange={(e) => setAge(e.target.value as string)}
-        displayEmpty
-      >
+      <Select value={age} onChange={(e) => setAge(e.target.value as string)} displayEmpty>
         <MenuItem value="">
           <em>None</em>
         </MenuItem>
@@ -410,21 +406,19 @@ export const AllColors: Story = {
   render: () => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        {(['primary', 'secondary', 'error', 'warning', 'info', 'success'] as const).map(
-          (color) => (
-            <FormControl key={color}>
-              <InputLabel>{color.charAt(0).toUpperCase() + color.slice(1)}</InputLabel>
-              <Select
-                color={color}
-                value="option1"
-                label={color.charAt(0).toUpperCase() + color.slice(1)}
-              >
-                <MenuItem value="option1">Option 1</MenuItem>
-                <MenuItem value="option2">Option 2</MenuItem>
-              </Select>
-            </FormControl>
-          )
-        )}
+        {(['primary', 'secondary', 'error', 'warning', 'info', 'success'] as const).map((color) => (
+          <FormControl key={color}>
+            <InputLabel>{color.charAt(0).toUpperCase() + color.slice(1)}</InputLabel>
+            <Select
+              color={color}
+              value="option1"
+              label={color.charAt(0).toUpperCase() + color.slice(1)}
+            >
+              <MenuItem value="option1">Option 1</MenuItem>
+              <MenuItem value="option2">Option 2</MenuItem>
+            </Select>
+          </FormControl>
+        ))}
       </div>
     );
   },

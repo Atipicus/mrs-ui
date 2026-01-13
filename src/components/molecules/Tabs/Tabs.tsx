@@ -73,15 +73,7 @@ Tabs.displayName = 'Tabs';
  */
 export const Tab = React.forwardRef<HTMLDivElement, TabProps>(
   (
-    {
-      label,
-      value,
-      icon,
-      disabled = false,
-      wrapped = false,
-      iconPosition = 'top',
-      ...props
-    },
+    { label, value, icon, disabled = false, wrapped = false, iconPosition = 'top', ...props },
     ref
   ) => {
     return (

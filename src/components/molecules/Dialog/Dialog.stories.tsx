@@ -160,9 +160,7 @@ export const ConfirmationDialog: Story = {
         <>
           <DialogTitle>Confirm Action</DialogTitle>
           <DialogContent>
-            <DialogContentText>
-              Do you want to proceed with this action?
-            </DialogContentText>
+            <DialogContentText>Do you want to proceed with this action?</DialogContentText>
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose} variant="outlined">
@@ -188,9 +186,7 @@ export const ExtraSmallWidth: Story = {
         <>
           <DialogTitle>Extra Small Dialog</DialogTitle>
           <DialogContent>
-            <DialogContentText>
-              This dialog has a maximum width of 'xs' (444px).
-            </DialogContentText>
+            <DialogContentText>This dialog has a maximum width of 'xs' (444px).</DialogContentText>
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose} variant="contained">
@@ -213,9 +209,7 @@ export const SmallWidth: Story = {
         <>
           <DialogTitle>Small Dialog</DialogTitle>
           <DialogContent>
-            <DialogContentText>
-              This dialog has a maximum width of 'sm' (600px).
-            </DialogContentText>
+            <DialogContentText>This dialog has a maximum width of 'sm' (600px).</DialogContentText>
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose} variant="contained">
@@ -238,9 +232,7 @@ export const MediumWidth: Story = {
         <>
           <DialogTitle>Medium Dialog</DialogTitle>
           <DialogContent>
-            <DialogContentText>
-              This dialog has a maximum width of 'md' (900px).
-            </DialogContentText>
+            <DialogContentText>This dialog has a maximum width of 'md' (900px).</DialogContentText>
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose} variant="contained">
@@ -263,9 +255,7 @@ export const LargeWidth: Story = {
         <>
           <DialogTitle>Large Dialog</DialogTitle>
           <DialogContent>
-            <DialogContentText>
-              This dialog has a maximum width of 'lg' (1200px).
-            </DialogContentText>
+            <DialogContentText>This dialog has a maximum width of 'lg' (1200px).</DialogContentText>
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose} variant="contained">
@@ -288,9 +278,7 @@ export const ExtraLargeWidth: Story = {
         <>
           <DialogTitle>Extra Large Dialog</DialogTitle>
           <DialogContent>
-            <DialogContentText>
-              This dialog has a maximum width of 'xl' (1536px).
-            </DialogContentText>
+            <DialogContentText>This dialog has a maximum width of 'xl' (1536px).</DialogContentText>
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose} variant="contained">
@@ -439,8 +427,8 @@ export const WithDividers: Story = {
           <DialogTitle>Dialog with Dividers</DialogTitle>
           <DialogContent dividers>
             <DialogContentText>
-              This dialog has dividers above and below the content area, creating clear
-              separation between sections.
+              This dialog has dividers above and below the content area, creating clear separation
+              between sections.
             </DialogContentText>
           </DialogContent>
           <DialogActions>
@@ -508,8 +496,8 @@ export const DisabledBackdropClick: Story = {
           <DialogTitle>Cannot Close by Clicking Outside</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              This dialog cannot be closed by clicking the backdrop. You must use the Close
-              button or press ESC.
+              This dialog cannot be closed by clicking the backdrop. You must use the Close button
+              or press ESC.
             </DialogContentText>
           </DialogContent>
           <DialogActions>
@@ -534,8 +522,8 @@ export const DisabledEscapeKey: Story = {
           <DialogTitle>ESC Key Disabled</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              This dialog cannot be closed by pressing the ESC key. You must use the Close
-              button or click the backdrop.
+              This dialog cannot be closed by pressing the ESC key. You must use the Close button or
+              click the backdrop.
             </DialogContentText>
           </DialogContent>
           <DialogActions>

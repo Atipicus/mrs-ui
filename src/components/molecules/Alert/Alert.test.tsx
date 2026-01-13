@@ -20,9 +20,7 @@ describe('Alert', () => {
     });
 
     it('renders alert with title and description', () => {
-      renderWithTheme(
-        <Alert title="Warning" description="This is a warning message" />
-      );
+      renderWithTheme(<Alert title="Warning" description="This is a warning message" />);
       expect(screen.getByText('Warning')).toBeInTheDocument();
       expect(screen.getByText('This is a warning message')).toBeInTheDocument();
     });
@@ -56,33 +54,25 @@ describe('Alert', () => {
     });
 
     it('renders error severity', () => {
-      const { container } = renderWithTheme(
-        <Alert severity="error" title="Error" />
-      );
+      const { container } = renderWithTheme(<Alert severity="error" title="Error" />);
       const alert = container.querySelector('.MuiAlert-standardError');
       expect(alert).toBeInTheDocument();
     });
 
     it('renders warning severity', () => {
-      const { container } = renderWithTheme(
-        <Alert severity="warning" title="Warning" />
-      );
+      const { container } = renderWithTheme(<Alert severity="warning" title="Warning" />);
       const alert = container.querySelector('.MuiAlert-standardWarning');
       expect(alert).toBeInTheDocument();
     });
 
     it('renders info severity', () => {
-      const { container } = renderWithTheme(
-        <Alert severity="info" title="Information" />
-      );
+      const { container } = renderWithTheme(<Alert severity="info" title="Information" />);
       const alert = container.querySelector('.MuiAlert-standardInfo');
       expect(alert).toBeInTheDocument();
     });
 
     it('renders success severity', () => {
-      const { container } = renderWithTheme(
-        <Alert severity="success" title="Success" />
-      );
+      const { container } = renderWithTheme(<Alert severity="success" title="Success" />);
       const alert = container.querySelector('.MuiAlert-standardSuccess');
       expect(alert).toBeInTheDocument();
     });
@@ -122,18 +112,14 @@ describe('Alert', () => {
     });
 
     it('renders without icon when icon is false', () => {
-      const { container } = renderWithTheme(
-        <Alert title="No icon" icon={false} />
-      );
+      const { container } = renderWithTheme(<Alert title="No icon" icon={false} />);
       const icon = container.querySelector('.MuiAlert-icon');
       expect(icon).not.toBeInTheDocument();
     });
 
     it('renders custom icon when provided', () => {
       const CustomIcon = () => <span data-testid="custom-icon">★</span>;
-      renderWithTheme(
-        <Alert title="Custom icon" icon={<CustomIcon />} />
-      );
+      renderWithTheme(<Alert title="Custom icon" icon={<CustomIcon />} />);
       expect(screen.getByTestId('custom-icon')).toBeInTheDocument();
     });
 
@@ -146,9 +132,7 @@ describe('Alert', () => {
       ];
 
       severities.forEach((severity) => {
-        const { container } = renderWithTheme(
-          <Alert severity={severity} title={severity} />
-        );
+        const { container } = renderWithTheme(<Alert severity={severity} title={severity} />);
         const icon = container.querySelector('.MuiAlert-icon');
         expect(icon).toBeInTheDocument();
       });
@@ -189,10 +173,10 @@ describe('Alert', () => {
     it('calls onClose when close button is clicked', () => {
       const handleClose = jest.fn();
       renderWithTheme(<Alert title="Alert" close onClose={handleClose} />);
-      
+
       const closeButton = screen.getByLabelText('close');
       closeButton.click();
-      
+
       expect(handleClose).toHaveBeenCalledTimes(1);
     });
 
@@ -213,21 +197,17 @@ describe('Alert', () => {
     });
 
     it('renders custom action', () => {
-      renderWithTheme(
-        <Alert title="Alert" action={<Button>Action</Button>} />
-      );
+      renderWithTheme(<Alert title="Alert" action={<Button>Action</Button>} />);
       const actionButton = screen.getByRole('button', { name: 'Action' });
       expect(actionButton).toBeInTheDocument();
     });
 
     it('renders both action and close button', () => {
-      renderWithTheme(
-        <Alert title="Alert" close action={<Button>Retry</Button>} />
-      );
-      
+      renderWithTheme(<Alert title="Alert" close action={<Button>Retry</Button>} />);
+
       const retryButton = screen.getByRole('button', { name: 'Retry' });
       const closeButton = screen.getByLabelText('close');
-      
+
       expect(retryButton).toBeInTheDocument();
       expect(closeButton).toBeInTheDocument();
     });
@@ -235,15 +215,12 @@ describe('Alert', () => {
     it('handles action button click', () => {
       const handleAction = jest.fn();
       renderWithTheme(
-        <Alert
-          title="Alert"
-          action={<Button onClick={handleAction}>Retry</Button>}
-        />
+        <Alert title="Alert" action={<Button onClick={handleAction}>Retry</Button>} />
       );
-      
+
       const actionButton = screen.getByRole('button', { name: 'Retry' });
       actionButton.click();
-      
+
       expect(handleAction).toHaveBeenCalledTimes(1);
     });
   });
@@ -262,9 +239,7 @@ describe('Alert', () => {
     });
 
     it('accepts aria-describedby', () => {
-      renderWithTheme(
-        <Alert title="Alert" aria-describedby="helper-text" />
-      );
+      renderWithTheme(<Alert title="Alert" aria-describedby="helper-text" />);
       const alert = screen.getByRole('alert');
       expect(alert).toHaveAttribute('aria-describedby', 'helper-text');
     });
@@ -292,17 +267,13 @@ describe('Alert', () => {
 
   describe('Custom Styling', () => {
     it('accepts sx prop for custom styles', () => {
-      const { container } = renderWithTheme(
-        <Alert title="Alert" sx={{ margin: 2 }} />
-      );
+      const { container } = renderWithTheme(<Alert title="Alert" sx={{ margin: 2 }} />);
       const alert = container.querySelector('.MuiAlert-root');
       expect(alert).toBeInTheDocument();
     });
 
     it('accepts className prop', () => {
-      const { container } = renderWithTheme(
-        <Alert title="Alert" className="custom-alert" />
-      );
+      const { container } = renderWithTheme(<Alert title="Alert" className="custom-alert" />);
       const alert = container.querySelector('.custom-alert');
       expect(alert).toBeInTheDocument();
     });
@@ -312,7 +283,7 @@ describe('Alert', () => {
     it('renders with all props combined', () => {
       const handleClose = jest.fn();
       const handleAction = jest.fn();
-      
+
       renderWithTheme(
         <Alert
           severity="warning"
@@ -324,16 +295,16 @@ describe('Alert', () => {
           action={<Button onClick={handleAction}>Fix</Button>}
         />
       );
-      
+
       expect(screen.getByText('Warning Title')).toBeInTheDocument();
       expect(screen.getByText('This is a warning message')).toBeInTheDocument();
-      
+
       const closeButton = screen.getByLabelText('close');
       const actionButton = screen.getByRole('button', { name: 'Fix' });
-      
+
       closeButton.click();
       expect(handleClose).toHaveBeenCalledTimes(1);
-      
+
       actionButton.click();
       expect(handleAction).toHaveBeenCalledTimes(1);
     });
@@ -346,23 +317,15 @@ describe('Alert', () => {
       'info',
       'success',
     ];
-    const variants: Array<'filled' | 'outlined' | 'standard'> = [
-      'filled',
-      'outlined',
-      'standard',
-    ];
+    const variants: Array<'filled' | 'outlined' | 'standard'> = ['filled', 'outlined', 'standard'];
 
     severities.forEach((severity) => {
       variants.forEach((variant) => {
         it(`renders ${severity} severity with ${variant} variant`, () => {
           renderWithTheme(
-            <Alert
-              severity={severity}
-              variant={variant}
-              title={`${severity} ${variant}`}
-            />
+            <Alert severity={severity} variant={variant} title={`${severity} ${variant}`} />
           );
-          
+
           const alert = screen.getByRole('alert');
           expect(alert).toBeInTheDocument();
           expect(screen.getByText(`${severity} ${variant}`)).toBeInTheDocument();
@@ -385,22 +348,18 @@ describe('Alert', () => {
     });
 
     it('title appears before description', () => {
-      renderWithTheme(
-        <Alert title="Title" description="Description" />
-      );
-      
+      renderWithTheme(<Alert title="Title" description="Description" />);
+
       const title = screen.getByText('Title');
       const description = screen.getByText('Description');
-      
+
       expect(title).toBeInTheDocument();
       expect(description).toBeInTheDocument();
-      
+
       // Check ordering
       const alert = screen.getByRole('alert');
       const textContent = alert.textContent;
-      expect(textContent?.indexOf('Title')).toBeLessThan(
-        textContent?.indexOf('Description') || 0
-      );
+      expect(textContent?.indexOf('Title')).toBeLessThan(textContent?.indexOf('Description') || 0);
     });
   });
 
@@ -429,7 +388,7 @@ describe('Alert', () => {
     it('handles undefined onClose gracefully', () => {
       renderWithTheme(<Alert title="Alert" close />);
       const closeButton = screen.getByLabelText('close');
-      
+
       // Should not throw error when clicked without onClose
       expect(() => closeButton.click()).not.toThrow();
     });
@@ -438,7 +397,7 @@ describe('Alert', () => {
       renderWithTheme(<Alert title="Alert" close />);
       const closeButton = screen.getByLabelText('close');
       expect(closeButton).toBeInTheDocument();
-      
+
       closeButton.click(); // Should not throw
     });
   });

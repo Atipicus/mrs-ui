@@ -11,41 +11,29 @@ import { Snackbar } from './Snackbar';
 describe('Snackbar', () => {
   describe('Basic Rendering', () => {
     it('renders when open is true', () => {
-      renderWithTheme(
-        <Snackbar open message="Test message" />
-      );
+      renderWithTheme(<Snackbar open message="Test message" />);
       expect(screen.getByText('Test message')).toBeInTheDocument();
     });
 
     it('does not render when open is false', () => {
-      renderWithTheme(
-        <Snackbar open={false} message="Test message" />
-      );
+      renderWithTheme(<Snackbar open={false} message="Test message" />);
       expect(screen.queryByText('Test message')).not.toBeInTheDocument();
     });
 
     it('renders children instead of message when provided', () => {
-      renderWithTheme(
-        <Snackbar open>
-          Child content
-        </Snackbar>
-      );
+      renderWithTheme(<Snackbar open>Child content</Snackbar>);
       expect(screen.getByText('Child content')).toBeInTheDocument();
     });
   });
 
   describe('Simple Message Mode', () => {
     it('renders with simple message', () => {
-      renderWithTheme(
-        <Snackbar open message="Simple notification" />
-      );
+      renderWithTheme(<Snackbar open message="Simple notification" />);
       expect(screen.getByText('Simple notification')).toBeInTheDocument();
     });
 
     it('renders close button by default', () => {
-      renderWithTheme(
-        <Snackbar open message="Test" />
-      );
+      renderWithTheme(<Snackbar open message="Test" />);
       expect(screen.getByLabelText('close')).toBeInTheDocument();
     });
 
@@ -53,9 +41,7 @@ describe('Snackbar', () => {
       const user = userEvent.setup();
       const handleClose = jest.fn();
 
-      renderWithTheme(
-        <Snackbar open message="Test" onClose={handleClose} />
-      );
+      renderWithTheme(<Snackbar open message="Test" onClose={handleClose} />);
 
       const closeButton = screen.getByLabelText('close');
       await user.click(closeButton);
@@ -66,17 +52,13 @@ describe('Snackbar', () => {
     it('renders custom action', () => {
       const customAction = <button>Undo</button>;
 
-      renderWithTheme(
-        <Snackbar open message="Test" action={customAction} />
-      );
+      renderWithTheme(<Snackbar open message="Test" action={customAction} />);
 
       expect(screen.getByText('Undo')).toBeInTheDocument();
     });
 
     it('renders with action set to null (no action)', () => {
-      renderWithTheme(
-        <Snackbar open message="Test" action={null} />
-      );
+      renderWithTheme(<Snackbar open message="Test" action={null} />);
 
       expect(screen.queryByLabelText('close')).not.toBeInTheDocument();
     });
@@ -189,9 +171,7 @@ describe('Snackbar', () => {
 
   describe('Anchor Position', () => {
     it('applies default anchor origin (bottom-left)', () => {
-      const { container } = renderWithTheme(
-        <Snackbar open message="Test" />
-      );
+      const { container } = renderWithTheme(<Snackbar open message="Test" />);
 
       // MUI applies position via inline styles
       const snackbar = container.querySelector('.MuiSnackbar-root');
@@ -200,11 +180,7 @@ describe('Snackbar', () => {
 
     it('applies custom anchor origin', () => {
       const { container } = renderWithTheme(
-        <Snackbar
-          open
-          message="Test"
-          anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        />
+        <Snackbar open message="Test" anchorOrigin={{ vertical: 'top', horizontal: 'right' }} />
       );
 
       const snackbar = container.querySelector('.MuiSnackbar-anchorOriginTopRight');
@@ -216,9 +192,7 @@ describe('Snackbar', () => {
     it('does not call onClose for clickaway by default', () => {
       const handleClose = jest.fn();
 
-      renderWithTheme(
-        <Snackbar open message="Test" onClose={handleClose} />
-      );
+      renderWithTheme(<Snackbar open message="Test" onClose={handleClose} />);
 
       // Simulate clickaway (the component prevents this by default)
       // This test ensures the clickaway prevention logic exists
@@ -226,9 +200,7 @@ describe('Snackbar', () => {
     });
 
     it('respects autoHideDuration null (no auto-hide)', () => {
-      renderWithTheme(
-        <Snackbar open message="Test" autoHideDuration={null} />
-      );
+      renderWithTheme(<Snackbar open message="Test" autoHideDuration={null} />);
 
       expect(screen.getByText('Test')).toBeInTheDocument();
     });
@@ -236,9 +208,7 @@ describe('Snackbar', () => {
 
   describe('Accessibility', () => {
     it('has accessible name for close button', () => {
-      renderWithTheme(
-        <Snackbar open message="Test" />
-      );
+      renderWithTheme(<Snackbar open message="Test" />);
 
       expect(screen.getByLabelText('close')).toBeInTheDocument();
     });
@@ -257,11 +227,7 @@ describe('Snackbar', () => {
   describe('Props forwarding', () => {
     it('forwards additional props to MuiSnackbar', () => {
       const { container } = renderWithTheme(
-        <Snackbar
-          open
-          message="Test"
-          data-testid="custom-snackbar"
-        />
+        <Snackbar open message="Test" data-testid="custom-snackbar" />
       );
 
       const snackbar = container.querySelector('[data-testid="custom-snackbar"]');
@@ -271,9 +237,7 @@ describe('Snackbar', () => {
     it('forwards ref correctly', () => {
       const ref = jest.fn();
 
-      renderWithTheme(
-        <Snackbar ref={ref} open message="Test" />
-      );
+      renderWithTheme(<Snackbar ref={ref} open message="Test" />);
 
       expect(ref).toHaveBeenCalled();
     });

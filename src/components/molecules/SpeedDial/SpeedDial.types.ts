@@ -16,7 +16,6 @@ export interface SpeedDialProps extends MuiSpeedDialProps {
    * The aria-label of the button element
    */
   ariaLabel: string;
-
 }
 
 /**

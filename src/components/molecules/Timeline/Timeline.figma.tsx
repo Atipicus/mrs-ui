@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Timeline } from "./Timeline";
+import figma from '@figma/code-connect';
+import { Timeline } from './Timeline';
 
 /**
  * Code Connect mapping for Timeline component
@@ -8,14 +8,14 @@ import { Timeline } from "./Timeline";
  */
 figma.connect(
   Timeline,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11145-197766",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11145-197766',
   {
     props: {
-      position: figma.enum("position", {
-        Left: "left",
-        Right: "right",
-        Alternate: "alternate",
-        "Alternate-Reverse": "alternate-reverse",
+      position: figma.enum('position', {
+        Left: 'left',
+        Right: 'right',
+        Alternate: 'alternate',
+        'Alternate-Reverse': 'alternate-reverse',
       }),
     },
     example: (props) => (

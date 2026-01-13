@@ -65,11 +65,7 @@ const ThemeSwitcherDemo = () => {
           {/* Theme Toggle */}
           <Box display="flex" justifyContent="space-between" alignItems="center">
             <Typography variant="h4">🌙 Dark Mode Demo</Typography>
-            <Button
-              variant="contained"
-              onClick={toggleTheme}
-              startIcon={isDark ? '☀️' : '🌙'}
-            >
+            <Button variant="contained" onClick={toggleTheme} startIcon={isDark ? '☀️' : '🌙'}>
               Switch to {isDark ? 'Light' : 'Dark'} Mode
             </Button>
           </Box>
@@ -219,9 +215,7 @@ const ThemeSwitcherDemo = () => {
               <Typography variant="h2">Heading 2</Typography>
               <Typography variant="h3">Heading 3</Typography>
               <Typography variant="h4">Heading 4</Typography>
-              <Typography variant="body1">
-                Body 1 - Regular text with proper contrast
-              </Typography>
+              <Typography variant="body1">Body 1 - Regular text with proper contrast</Typography>
               <Typography variant="body2" color="text.secondary">
                 Body 2 - Secondary text color
               </Typography>
@@ -241,12 +235,10 @@ const ThemeSwitcherDemo = () => {
                 <strong>Mode:</strong> {isDark ? 'Dark' : 'Light'}
               </Typography>
               <Typography variant="body2">
-                <strong>Background Default:</strong>{' '}
-                {currentTheme.palette.background.default}
+                <strong>Background Default:</strong> {currentTheme.palette.background.default}
               </Typography>
               <Typography variant="body2">
-                <strong>Background Paper:</strong>{' '}
-                {currentTheme.palette.background.paper}
+                <strong>Background Paper:</strong> {currentTheme.palette.background.paper}
               </Typography>
               <Typography variant="body2">
                 <strong>Primary Main:</strong> {currentTheme.palette.primary.main}
@@ -303,4 +295,3 @@ export const DarkMode: StoryObj = {
     </ThemeProvider>
   ),
 };
-

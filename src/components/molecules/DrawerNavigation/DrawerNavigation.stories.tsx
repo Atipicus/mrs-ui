@@ -102,11 +102,7 @@ export const MixedItems: Story = {
             label: 'E-commerce',
             icon: <MaterialSymbol icon="shopping_cart" />,
             expandable: true,
-            children: [
-              { label: 'Products' },
-              { label: 'Orders' },
-              { label: 'Customers' },
-            ],
+            children: [{ label: 'Products' }, { label: 'Orders' }, { label: 'Customers' }],
           },
           { label: 'Settings', icon: <MaterialSymbol icon="settings" /> },
         ]}

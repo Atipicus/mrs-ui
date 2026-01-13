@@ -55,14 +55,11 @@ export const ListItem = React.forwardRef<HTMLElement, ListItemProps>(
   ) => {
     const theme = useTheme();
     const hoverColor =
-      theme.palette.primary._states?.hover ??
-      alpha(theme.palette.primary.main, 0.08);
+      theme.palette.primary._states?.hover ?? alpha(theme.palette.primary.main, 0.08);
     const focusColor =
-      theme.palette.primary._states?.focus ??
-      alpha(theme.palette.primary.main, 0.12);
+      theme.palette.primary._states?.focus ?? alpha(theme.palette.primary.main, 0.12);
     const selectedColor =
-      theme.palette.primary._states?.selected ??
-      alpha(theme.palette.primary.main, 0.12);
+      theme.palette.primary._states?.selected ?? alpha(theme.palette.primary.main, 0.12);
 
     // If button is true, use ListItemButton wrapper for interactivity
     if (button) {

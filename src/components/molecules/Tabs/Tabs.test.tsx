@@ -109,10 +109,7 @@ describe('Tabs', () => {
       await user.click(screen.getByText('Tab 2'));
 
       expect(handleChange).toHaveBeenCalledTimes(1);
-      expect(handleChange).toHaveBeenCalledWith(
-        expect.any(Object),
-        1
-      );
+      expect(handleChange).toHaveBeenCalledWith(expect.any(Object), 1);
     });
 
     it('does not call onChange when disabled tab is clicked', () => {
@@ -362,10 +359,7 @@ describe('Tabs', () => {
 
     it('forwards TabIndicatorProps', () => {
       renderWithTheme(
-        <Tabs
-          value={0}
-          TabIndicatorProps={{ 'data-testid': 'custom-indicator' }}
-        >
+        <Tabs value={0} TabIndicatorProps={{ 'data-testid': 'custom-indicator' }}>
           <Tab label="Tab 1" />
         </Tabs>
       );

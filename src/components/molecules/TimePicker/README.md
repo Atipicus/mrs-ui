@@ -31,11 +31,7 @@ function MyComponent() {
 
   return (
     <LocalizationProvider>
-      <TimePicker
-        label="Select Time"
-        value={value}
-        onChange={(newValue) => setValue(newValue)}
-      />
+      <TimePicker label="Select Time" value={value} onChange={(newValue) => setValue(newValue)} />
     </LocalizationProvider>
   );
 }
@@ -65,22 +61,13 @@ All MUI X TimePicker props are supported. See [MUI X TimePicker documentation](h
 ### 24-Hour Format
 
 ```tsx
-<TimePicker
-  label="Select Time"
-  format="HH:mm"
-  ampm={false}
-  value={dayjs()}
-/>
+<TimePicker label="Select Time" format="HH:mm" ampm={false} value={dayjs()} />
 ```
 
 ### With Minutes Step
 
 ```tsx
-<TimePicker
-  label="Select Time"
-  minutesStep={30}
-  value={dayjs()}
-/>
+<TimePicker label="Select Time" minutesStep={30} value={dayjs()} />
 ```
 
 ### Business Hours (9 AM - 5 PM)
@@ -132,7 +119,7 @@ const [error, setError] = React.useState(null);
       helperText: error,
     },
   }}
-/>
+/>;
 ```
 
 ## LocalizationProvider
@@ -143,11 +130,7 @@ The TimePicker requires a LocalizationProvider wrapper. This can be placed at yo
 import { LocalizationProvider } from '@mrs-uisystem/ui-v6';
 
 function App() {
-  return (
-    <LocalizationProvider>
-      {/* Your components using TimePicker */}
-    </LocalizationProvider>
-  );
+  return <LocalizationProvider>{/* Your components using TimePicker */}</LocalizationProvider>;
 }
 ```
 

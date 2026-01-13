@@ -26,9 +26,7 @@ type Story = StoryObj<typeof Box>;
  */
 export const Basic: Story = {
   render: () => (
-    <Box sx={{ padding: 2, backgroundColor: 'primary.main', color: 'white' }}>
-      This is a Box
-    </Box>
+    <Box sx={{ padding: 2, backgroundColor: 'primary.main', color: 'white' }}>This is a Box</Box>
   ),
 };
 
@@ -198,7 +196,9 @@ export const OverflowHandling: Story = {
           padding: 1,
         }}
       >
-        <Typography>This is a very long text that will be clipped because overflow is hidden</Typography>
+        <Typography>
+          This is a very long text that will be clipped because overflow is hidden
+        </Typography>
       </Box>
       <Box
         sx={{
@@ -210,7 +210,8 @@ export const OverflowHandling: Story = {
         }}
       >
         <Typography>
-          This is a very long text that will show scrollbars because overflow is auto. You can scroll to see all the content.
+          This is a very long text that will show scrollbars because overflow is auto. You can
+          scroll to see all the content.
         </Typography>
       </Box>
     </div>

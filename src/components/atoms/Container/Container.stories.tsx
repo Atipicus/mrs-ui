@@ -120,9 +120,7 @@ export const Fixed: Story = {
   render: () => (
     <Container fixed>
       <Paper sx={{ padding: 3 }}>
-        <Typography>
-          Fixed container - max-width matches min-width of current breakpoint
-        </Typography>
+        <Typography>Fixed container - max-width matches min-width of current breakpoint</Typography>
       </Paper>
     </Container>
   ),
@@ -139,16 +137,15 @@ export const PageLayout: Story = {
           Page Title
         </Typography>
         <Typography variant="body1" paragraph>
-          This is a typical page layout using Container component. The content is centered
-          and has a maximum width of "lg" (1200px).
+          This is a typical page layout using Container component. The content is centered and has a
+          maximum width of "lg" (1200px).
         </Typography>
         <Paper sx={{ padding: 3, marginTop: 3 }}>
           <Typography variant="h5" gutterBottom>
             Content Section
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Container provides consistent horizontal padding and centers content on larger
-            screens.
+            Container provides consistent horizontal padding and centers content on larger screens.
           </Typography>
         </Paper>
       </Box>
@@ -201,12 +198,12 @@ export const BlogLayout: Story = {
         </Typography>
         <Box sx={{ marginY: 3 }}>
           <Typography variant="body1" paragraph>
-            This is a blog post layout using Container with maxWidth="md" which provides
-            optimal reading width for text content.
+            This is a blog post layout using Container with maxWidth="md" which provides optimal
+            reading width for text content.
           </Typography>
           <Typography variant="body1" paragraph>
-            The 900px max-width ensures text doesn't stretch too wide on large screens,
-            maintaining comfortable reading line lengths.
+            The 900px max-width ensures text doesn't stretch too wide on large screens, maintaining
+            comfortable reading line lengths.
           </Typography>
         </Box>
         <Paper sx={{ padding: 3, backgroundColor: '#f5f5f5' }}>
@@ -214,8 +211,8 @@ export const BlogLayout: Story = {
             Highlighted Section
           </Typography>
           <Typography variant="body2">
-            Important information or quotes can be highlighted in a Paper component within
-            the Container.
+            Important information or quotes can be highlighted in a Paper component within the
+            Container.
           </Typography>
         </Paper>
       </Box>

@@ -107,10 +107,7 @@ export const ExpandableNavItem = React.forwardRef<HTMLDivElement, ExpandableNavI
             }}
           />
           {children.length > 0 && (
-            <MaterialSymbol
-              icon={isOpen ? 'expand_less' : 'expand_more'}
-              size="medium"
-            />
+            <MaterialSymbol icon={isOpen ? 'expand_less' : 'expand_more'} size="medium" />
           )}
         </ListItemButton>
 
@@ -130,9 +127,7 @@ export const ExpandableNavItem = React.forwardRef<HTMLDivElement, ExpandableNavI
                   }}
                   {...childListItemButtonProps}
                 >
-                  {child.icon && (
-                    <ListItemIcon sx={{ minWidth: 40 }}>{child.icon}</ListItemIcon>
-                  )}
+                  {child.icon && <ListItemIcon sx={{ minWidth: 40 }}>{child.icon}</ListItemIcon>}
                   <ListItemText
                     primary={child.label}
                     primaryTypographyProps={{

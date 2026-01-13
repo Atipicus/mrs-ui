@@ -163,11 +163,7 @@ describe('Menu', () => {
 
     it('applies MenuListProps', () => {
       renderWithTheme(
-        <Menu
-          open
-          anchorEl={mockAnchorEl}
-          MenuListProps={{ 'data-testid': 'menu-list' }}
-        >
+        <Menu open anchorEl={mockAnchorEl} MenuListProps={{ 'data-testid': 'menu-list' }}>
           <MenuItem>Item</MenuItem>
         </Menu>
       );
@@ -245,11 +241,7 @@ describe('Menu', () => {
   describe('Props forwarding', () => {
     it('forwards additional props to MuiMenu', () => {
       renderWithTheme(
-        <Menu
-          open
-          anchorEl={mockAnchorEl}
-          data-testid="custom-menu"
-        >
+        <Menu open anchorEl={mockAnchorEl} data-testid="custom-menu">
           <MenuItem>Item</MenuItem>
         </Menu>
       );

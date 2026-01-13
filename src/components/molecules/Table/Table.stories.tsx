@@ -202,9 +202,7 @@ export const Selectable: Story = {
               <TableCell padding="checkbox">
                 <Checkbox
                   checked={selected.length === rows.length}
-                  indeterminate={
-                    selected.length > 0 && selected.length < rows.length
-                  }
+                  indeterminate={selected.length > 0 && selected.length < rows.length}
                   onChange={handleSelectAll}
                 />
               </TableCell>

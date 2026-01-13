@@ -35,13 +35,7 @@ import type {
  */
 export const Timeline = React.forwardRef<HTMLUListElement, TimelineProps>(
   ({ position = 'left', ...props }, ref) => {
-    return (
-      <MuiTimeline
-        ref={ref}
-        position={position}
-        {...props}
-      />
-    );
+    return <MuiTimeline ref={ref} position={position} {...props} />;
   }
 );
 
@@ -55,16 +49,9 @@ Timeline.displayName = 'Timeline';
  * @param props - TimelineItem component props
  * @returns TimelineItem component
  */
-export const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
-  (props, ref) => {
-    return (
-      <MuiTimelineItem
-        ref={ref}
-        {...props}
-      />
-    );
-  }
-);
+export const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>((props, ref) => {
+  return <MuiTimelineItem ref={ref} {...props} />;
+});
 
 TimelineItem.displayName = 'TimelineItem';
 
@@ -78,12 +65,7 @@ TimelineItem.displayName = 'TimelineItem';
  */
 export const TimelineSeparator = React.forwardRef<HTMLDivElement, TimelineSeparatorProps>(
   (props, ref) => {
-    return (
-      <MuiTimelineSeparator
-        ref={ref}
-        {...props}
-      />
-    );
+    return <MuiTimelineSeparator ref={ref} {...props} />;
   }
 );
 
@@ -99,14 +81,7 @@ TimelineSeparator.displayName = 'TimelineSeparator';
  */
 export const TimelineDot = React.forwardRef<HTMLSpanElement, TimelineDotProps>(
   ({ variant = 'filled', color = 'primary', ...props }, ref) => {
-    return (
-      <MuiTimelineDot
-        ref={ref}
-        variant={variant}
-        color={color}
-        {...props}
-      />
-    );
+    return <MuiTimelineDot ref={ref} variant={variant} color={color} {...props} />;
   }
 );
 
@@ -122,12 +97,7 @@ TimelineDot.displayName = 'TimelineDot';
  */
 export const TimelineConnector = React.forwardRef<HTMLSpanElement, TimelineConnectorProps>(
   (props, ref) => {
-    return (
-      <MuiTimelineConnector
-        ref={ref}
-        {...props}
-      />
-    );
+    return <MuiTimelineConnector ref={ref} {...props} />;
   }
 );
 
@@ -143,12 +113,7 @@ TimelineConnector.displayName = 'TimelineConnector';
  */
 export const TimelineContent = React.forwardRef<HTMLDivElement, TimelineContentProps>(
   (props, ref) => {
-    return (
-      <MuiTimelineContent
-        ref={ref}
-        {...props}
-      />
-    );
+    return <MuiTimelineContent ref={ref} {...props} />;
   }
 );
 
@@ -162,15 +127,11 @@ TimelineContent.displayName = 'TimelineContent';
  * @param props - TimelineOppositeContent component props
  * @returns TimelineOppositeContent component
  */
-export const TimelineOppositeContent = React.forwardRef<HTMLDivElement, TimelineOppositeContentProps>(
-  (props, ref) => {
-    return (
-      <MuiTimelineOppositeContent
-        ref={ref}
-        {...props}
-      />
-    );
-  }
-);
+export const TimelineOppositeContent = React.forwardRef<
+  HTMLDivElement,
+  TimelineOppositeContentProps
+>((props, ref) => {
+  return <MuiTimelineOppositeContent ref={ref} {...props} />;
+});
 
 TimelineOppositeContent.displayName = 'TimelineOppositeContent';

@@ -69,7 +69,14 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     // Use theme.shape.md (8px) for consistent, moderate border radius
     // Note: theme.shape has custom tokens - sm(4), md(8), lg(12), xl(24), rounded(9999)
     // IMPORTANT: Must use string with 'px' suffix - numbers are multiplied by spacing (8*8=64px)
-    const shapeWithTokens = theme.shape as { borderRadius: number; sm: number; md: number; lg: number; xl: number; rounded: number };
+    const shapeWithTokens = theme.shape as {
+      borderRadius: number;
+      sm: number;
+      md: number;
+      lg: number;
+      xl: number;
+      rounded: number;
+    };
     const alertBorderRadius = `${shapeWithTokens.md}px`; // '8px' - explicit units prevent spacing multiplication
 
     // Debug: Log border radius in development
@@ -83,7 +90,9 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         xl: shapeWithTokens.xl,
         rounded: shapeWithTokens.rounded,
       });
-      console.log('[Alert] Note: Values converted to px strings to prevent MUI spacing multiplication');
+      console.log(
+        '[Alert] Note: Values converted to px strings to prevent MUI spacing multiplication'
+      );
     }
 
     // Determine icon name and fill based on severity and variant
@@ -94,31 +103,26 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
       icon === false
         ? false
         : React.isValidElement(icon)
-        ? icon
-        : iconName && (
-            <MaterialSymbol
-              icon={iconName}
-              fill={iconFill}
-              size="small"
-              color={tokenColors.foreground}
-            />
-          );
+          ? icon
+          : iconName && (
+              <MaterialSymbol
+                icon={iconName}
+                fill={iconFill}
+                size="small"
+                color={tokenColors.foreground}
+              />
+            );
 
-    const closeButton =
-      close && (
-        <IconButton
-          size="small"
-          aria-label="close"
-          onClick={onClose}
-          sx={{ color: tokenColors.foreground }}
-        >
-          <MaterialSymbol
-            icon="close"
-            size="small"
-            color={tokenColors.foreground}
-          />
-        </IconButton>
-      );
+    const closeButton = close && (
+      <IconButton
+        size="small"
+        aria-label="close"
+        onClick={onClose}
+        sx={{ color: tokenColors.foreground }}
+      >
+        <MaterialSymbol icon="close" size="small" color={tokenColors.foreground} />
+      </IconButton>
+    );
 
     const actionContent = action ? (
       closeButton ? (
@@ -194,4 +198,3 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 Alert.displayName = 'Alert';
 
 export default Alert;
-

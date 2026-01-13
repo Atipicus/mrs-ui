@@ -17,10 +17,7 @@ import type { DateTimePickerProps } from './DateTimePicker.types';
  */
 export const DateTimePicker = React.forwardRef<HTMLDivElement, DateTimePickerProps>(
   (props, ref) => {
-    const {
-      slotProps,
-      ...rest
-    } = props;
+    const { slotProps, ...rest } = props;
 
     return (
       <MuiDateTimePicker

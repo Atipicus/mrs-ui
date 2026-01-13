@@ -302,7 +302,9 @@ export const MobileVariant: Story = {
  */
 export const AllFeatures: Story = {
   render: () => {
-    const [value, setValue] = React.useState<Dayjs | null>(dayjs().add(1, 'day').hour(10).minute(0));
+    const [value, setValue] = React.useState<Dayjs | null>(
+      dayjs().add(1, 'day').hour(10).minute(0)
+    );
 
     return (
       <DateTimePicker

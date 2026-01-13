@@ -45,7 +45,7 @@ type Story = StoryObj<typeof Timeline>;
  */
 export const Default: Story = {
   args: {
-    position: "left"
+    position: 'left',
   },
 
   render: () => (
@@ -86,7 +86,7 @@ export const Default: Story = {
         </TimelineContent>
       </TimelineItem>
     </Timeline>
-  )
+  ),
 };
 
 /**
@@ -198,9 +198,7 @@ export const WithOppositeContent: Story = {
   render: () => (
     <Timeline position="alternate">
       <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
-          9:00 AM
-        </TimelineOppositeContent>
+        <TimelineOppositeContent color="text.secondary">9:00 AM</TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot color="primary" />
           <TimelineConnector />
@@ -213,9 +211,7 @@ export const WithOppositeContent: Story = {
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
-          10:00 AM
-        </TimelineOppositeContent>
+        <TimelineOppositeContent color="text.secondary">10:00 AM</TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot color="primary" />
           <TimelineConnector />
@@ -228,9 +224,7 @@ export const WithOppositeContent: Story = {
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
-          12:00 PM
-        </TimelineOppositeContent>
+        <TimelineOppositeContent color="text.secondary">12:00 PM</TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot color="primary" />
           <TimelineConnector />
@@ -243,9 +237,7 @@ export const WithOppositeContent: Story = {
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
-          5:00 PM
-        </TimelineOppositeContent>
+        <TimelineOppositeContent color="text.secondary">5:00 PM</TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot color="primary" />
         </TimelineSeparator>
@@ -467,9 +459,7 @@ export const ProcessTimeline: Story = {
   render: () => (
     <Timeline position="alternate">
       <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
-          Step 1
-        </TimelineOppositeContent>
+        <TimelineOppositeContent color="text.secondary">Step 1</TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot color="primary">
             <MaterialSymbol icon="person_add" />
@@ -484,9 +474,7 @@ export const ProcessTimeline: Story = {
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
-          Step 2
-        </TimelineOppositeContent>
+        <TimelineOppositeContent color="text.secondary">Step 2</TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot color="primary">
             <MaterialSymbol icon="mail" />
@@ -501,9 +489,7 @@ export const ProcessTimeline: Story = {
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
-          Step 3
-        </TimelineOppositeContent>
+        <TimelineOppositeContent color="text.secondary">Step 3</TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot color="primary">
             <MaterialSymbol icon="settings" />
@@ -518,9 +504,7 @@ export const ProcessTimeline: Story = {
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
-        <TimelineOppositeContent color="text.secondary">
-          Step 4
-        </TimelineOppositeContent>
+        <TimelineOppositeContent color="text.secondary">Step 4</TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineDot color="success">
             <MaterialSymbol icon="check_circle" />
@@ -542,7 +526,7 @@ export const ProcessTimeline: Story = {
  */
 export const OrderTracking: Story = {
   args: {
-    position: "left"
+    position: 'left',
   },
 
   render: () => (
@@ -617,7 +601,7 @@ export const OrderTracking: Story = {
         </TimelineItem>
       </Timeline>
     </Box>
-  )
+  ),
 };
 
 /**

@@ -98,12 +98,7 @@ export const PrimaryColor: Story = {
     iconName: 'favorite',
     size: 'medium',
   } as any,
-  render: (args) => (
-    <Icon
-      {...args}
-      sx={{ color: 'primary.main' }}
-    />
-  ),
+  render: (args) => <Icon {...args} sx={{ color: 'primary.main' }} />,
 };
 
 /**
@@ -115,12 +110,7 @@ export const SecondaryColor: Story = {
     iconName: 'favorite',
     size: 'medium',
   } as any,
-  render: (args) => (
-    <Icon
-      {...args}
-      sx={{ color: 'secondary.main' }}
-    />
-  ),
+  render: (args) => <Icon {...args} sx={{ color: 'secondary.main' }} />,
 };
 
 /**
@@ -132,12 +122,7 @@ export const ErrorColor: Story = {
     iconName: 'delete',
     size: 'medium',
   } as any,
-  render: (args) => (
-    <Icon
-      {...args}
-      sx={{ color: 'error.main' }}
-    />
-  ),
+  render: (args) => <Icon {...args} sx={{ color: 'error.main' }} />,
 };
 
 /**
@@ -149,12 +134,7 @@ export const SuccessColor: Story = {
     iconName: 'favorite',
     size: 'medium',
   } as any,
-  render: (args) => (
-    <Icon
-      {...args}
-      sx={{ color: 'success.main' }}
-    />
-  ),
+  render: (args) => <Icon {...args} sx={{ color: 'success.main' }} />,
 };
 
 /**
@@ -276,8 +256,8 @@ export const IconGallery: Story = {
               <Icon type="font" iconName="home" size="inherit" /> Home Page
             </MuiTypography>
             <MuiTypography variant="body1">
-              <Icon type="font" iconName="favorite" size="inherit" sx={{ color: 'error.main' }} /> This is your
-              favorite
+              <Icon type="font" iconName="favorite" size="inherit" sx={{ color: 'error.main' }} />{' '}
+              This is your favorite
             </MuiTypography>
             <MuiTypography variant="caption">
               <Icon type="font" iconName="settings" size="inherit" /> Settings

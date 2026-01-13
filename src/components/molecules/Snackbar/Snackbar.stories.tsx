@@ -17,7 +17,7 @@ const meta: Meta<typeof Snackbar> = {
     docs: {
       description: {
         component:
-          'Snackbars provide brief notifications. They appear temporarily, towards the bottom of the screen. They shouldn\'t interrupt the user experience, and they don\'t require user input to disappear.',
+          "Snackbars provide brief notifications. They appear temporarily, towards the bottom of the screen. They shouldn't interrupt the user experience, and they don't require user input to disappear.",
       },
     },
   },
@@ -86,9 +86,7 @@ export const Default: Story = {
  * Simple message Snackbar
  */
 export const SimpleMessage: Story = {
-  render: () => (
-    <SnackbarDemo message="Item successfully saved" autoHideDuration={3000} />
-  ),
+  render: () => <SnackbarDemo message="Item successfully saved" autoHideDuration={3000} />,
 };
 
 /**
@@ -118,9 +116,7 @@ export const Error: Story = {
  */
 export const Warning: Story = {
   render: () => (
-    <SnackbarDemo severity="warning">
-      Your session will expire in 5 minutes
-    </SnackbarDemo>
+    <SnackbarDemo severity="warning">Your session will expire in 5 minutes</SnackbarDemo>
   ),
 };
 
@@ -128,11 +124,7 @@ export const Warning: Story = {
  * Info severity
  */
 export const Info: Story = {
-  render: () => (
-    <SnackbarDemo severity="info">
-      New updates are available
-    </SnackbarDemo>
-  ),
+  render: () => <SnackbarDemo severity="info">New updates are available</SnackbarDemo>,
 };
 
 /**
@@ -270,11 +262,7 @@ export const Positions: Story = {
  */
 export const NoCloseButton: Story = {
   render: () => (
-    <SnackbarDemo
-      severity="info"
-      showCloseButton={false}
-      autoHideDuration={3000}
-    >
+    <SnackbarDemo severity="info" showCloseButton={false} autoHideDuration={3000}>
       This will auto-close in 3 seconds
     </SnackbarDemo>
   ),
@@ -315,10 +303,7 @@ export const CustomAction: Story = {
  */
 export const Persistent: Story = {
   render: () => (
-    <SnackbarDemo
-      severity="error"
-      autoHideDuration={null}
-    >
+    <SnackbarDemo severity="error" autoHideDuration={null}>
       This notification will stay until you close it
     </SnackbarDemo>
   ),
@@ -329,13 +314,10 @@ export const Persistent: Story = {
  */
 export const LongMessage: Story = {
   render: () => (
-    <SnackbarDemo
-      severity="info"
-      autoHideDuration={8000}
-    >
-      This is a very long notification message that demonstrates how the Snackbar
-      handles longer content. The width will adjust automatically to fit the content
-      while maintaining good readability.
+    <SnackbarDemo severity="info" autoHideDuration={8000}>
+      This is a very long notification message that demonstrates how the Snackbar handles longer
+      content. The width will adjust automatically to fit the content while maintaining good
+      readability.
     </SnackbarDemo>
   ),
 };

@@ -2,7 +2,11 @@
   "component": {
     "paper": {
       "dark": {
-        "elevation0": { "$value": "#121212", "$type": "color", "$description": "No elevation - matches background" },
+        "elevation0": {
+          "$value": "#121212",
+          "$type": "color",
+          "$description": "No elevation - matches background"
+        },
         "elevation1": { "$value": "#1e1e1e", "$type": "color", "$description": "1dp elevation" },
         "elevation2": { "$value": "#232323", "$type": "color", "$description": "2dp elevation" },
         "elevation4": { "$value": "#272727", "$type": "color", "$description": "4dp elevation" },
@@ -33,4 +37,3 @@
     }
   }
 }
-

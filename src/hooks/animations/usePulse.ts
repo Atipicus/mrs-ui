@@ -52,4 +52,3 @@ export const usePulse = <T extends HTMLElement>(
 
   return ref;
 };
-

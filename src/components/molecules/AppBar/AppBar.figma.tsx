@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { AppBar } from "./AppBar";
+import figma from '@figma/code-connect';
+import { AppBar } from './AppBar';
 
 /**
  * Code Connect mapping for AppBar component
@@ -8,35 +8,31 @@ import { AppBar } from "./AppBar";
  */
 figma.connect(
   AppBar,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11125-153997",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11125-153997',
   {
     props: {
-      color: figma.enum("color", {
-        Primary: "primary",
-        Secondary: "secondary",
-        Default: "default",
-        Transparent: "transparent",
-        Inherit: "inherit",
+      color: figma.enum('color', {
+        Primary: 'primary',
+        Secondary: 'secondary',
+        Default: 'default',
+        Transparent: 'transparent',
+        Inherit: 'inherit',
       }),
-      position: figma.enum("position", {
-        Fixed: "fixed",
-        Absolute: "absolute",
-        Sticky: "sticky",
-        Static: "static",
-        Relative: "relative",
+      position: figma.enum('position', {
+        Fixed: 'fixed',
+        Absolute: 'absolute',
+        Sticky: 'sticky',
+        Static: 'static',
+        Relative: 'relative',
       }),
-      elevation: figma.enum("elevation", {
-        "0": 0,
-        "4": 4,
-        "8": 8,
+      elevation: figma.enum('elevation', {
+        '0': 0,
+        '4': 4,
+        '8': 8,
       }),
     },
     example: (props) => (
-      <AppBar
-        color={props.color}
-        position={props.position}
-        elevation={props.elevation}
-      >
+      <AppBar color={props.color} position={props.position} elevation={props.elevation}>
         <Toolbar>
           <IconButton edge="start" color="inherit">
             <MenuIcon />

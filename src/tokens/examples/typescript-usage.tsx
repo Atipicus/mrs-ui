@@ -1,6 +1,6 @@
 /**
  * MRS Design System - TypeScript/React Usage Examples
- * 
+ *
  * This file demonstrates how to use design tokens in React components
  * with full TypeScript type safety.
  */
@@ -14,7 +14,7 @@ import {
   SemanticColorSecondaryMain,
   SemanticColorTextPrimary,
   SemanticColorBackgroundDefault,
-  
+
   // Component tokens
   ComponentButtonBorderRadius,
   ComponentButtonMediumHeight,
@@ -23,7 +23,7 @@ import {
   ComponentAlertErrorFilledBackground,
   ComponentAlertErrorFilledForeground,
   ComponentCardBorderRadius,
-  
+
   // Primitive tokens
   PrimitivesSpacing2,
   PrimitivesSpacing3,
@@ -43,14 +43,9 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({ 
-  children, 
-  variant = 'primary',
-  onClick 
-}) => {
-  const backgroundColor = variant === 'primary' 
-    ? SemanticColorPrimaryMain 
-    : SemanticColorSecondaryMain;
+export const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', onClick }) => {
+  const backgroundColor =
+    variant === 'primary' ? SemanticColorPrimaryMain : SemanticColorSecondaryMain;
 
   return (
     <button
@@ -182,7 +177,7 @@ export const customTheme = createTheme({
   shape: {
     borderRadius: parseInt(ComponentButtonBorderRadius),
   },
-  spacing: (factor: number) => `${parseInt(PrimitivesSpacing2) * factor / 16}rem`,
+  spacing: (factor: number) => `${(parseInt(PrimitivesSpacing2) * factor) / 16}rem`,
 });
 
 // ============================================
@@ -217,33 +212,20 @@ export const tokenStyles = {
 export const TokenDemoPage: React.FC = () => {
   return (
     <div style={tokenStyles.page}>
-      <h1 style={tokenStyles.heading}>
-        🎨 MRS Design System - TypeScript Tokens Example
-      </h1>
+      <h1 style={tokenStyles.heading}>🎨 MRS Design System - TypeScript Tokens Example</h1>
 
       <Card title="Buttons">
         <Button variant="primary" onClick={() => alert('Primary clicked!')}>
           Primary Button
-        </Button>
-        {' '}
-        <Button variant="secondary">
-          Secondary Button
-        </Button>
+        </Button>{' '}
+        <Button variant="secondary">Secondary Button</Button>
       </Card>
 
       <Card title="Alerts">
-        <Alert severity="error">
-          ❌ Error: This is an error message using tokens
-        </Alert>
-        <Alert severity="warning">
-          ⚠️ Warning: This is a warning message
-        </Alert>
-        <Alert severity="info">
-          ℹ️ Info: This is an info message
-        </Alert>
-        <Alert severity="success">
-          ✅ Success: This is a success message
-        </Alert>
+        <Alert severity="error">❌ Error: This is an error message using tokens</Alert>
+        <Alert severity="warning">⚠️ Warning: This is a warning message</Alert>
+        <Alert severity="info">ℹ️ Info: This is an info message</Alert>
+        <Alert severity="success">✅ Success: This is a success message</Alert>
       </Card>
 
       <Card title="Benefits">
@@ -265,56 +247,58 @@ export const TokenDemoPage: React.FC = () => {
 import { useMemo } from 'react';
 
 export const useTokens = () => {
-  return useMemo(() => ({
-    colors: {
-      primary: SemanticColorPrimaryMain,
-      primaryDark: SemanticColorPrimaryDark,
-      text: SemanticColorTextPrimary,
-      background: SemanticColorBackgroundDefault,
-    },
-    spacing: {
-      sm: PrimitivesSpacing2,
-      md: PrimitivesSpacing3,
-      lg: PrimitivesSpacing4,
-    },
-    typography: {
-      fontFamily: PrimitivesTypographyFontFamilyStack,
-      fontSize: {
-        md: PrimitivesTypographyFontSizeMd,
-        xl: PrimitivesTypographyFontSizeXl,
+  return useMemo(
+    () => ({
+      colors: {
+        primary: SemanticColorPrimaryMain,
+        primaryDark: SemanticColorPrimaryDark,
+        text: SemanticColorTextPrimary,
+        background: SemanticColorBackgroundDefault,
       },
-      fontWeight: {
-        semibold: PrimitivesTypographyFontWeightSemibold,
+      spacing: {
+        sm: PrimitivesSpacing2,
+        md: PrimitivesSpacing3,
+        lg: PrimitivesSpacing4,
       },
-    },
-    components: {
-      button: {
-        borderRadius: ComponentButtonBorderRadius,
-        height: ComponentButtonMediumHeight,
+      typography: {
+        fontFamily: PrimitivesTypographyFontFamilyStack,
+        fontSize: {
+          md: PrimitivesTypographyFontSizeMd,
+          xl: PrimitivesTypographyFontSizeXl,
+        },
+        fontWeight: {
+          semibold: PrimitivesTypographyFontWeightSemibold,
+        },
       },
-      alert: {
-        borderRadius: ComponentAlertBorderRadius,
+      components: {
+        button: {
+          borderRadius: ComponentButtonBorderRadius,
+          height: ComponentButtonMediumHeight,
+        },
+        alert: {
+          borderRadius: ComponentAlertBorderRadius,
+        },
+        card: {
+          borderRadius: ComponentCardBorderRadius,
+        },
       },
-      card: {
-        borderRadius: ComponentCardBorderRadius,
-      },
-    },
-  }), []);
+    }),
+    []
+  );
 };
 
 // Usage:
 export const MyComponent: React.FC = () => {
   const tokens = useTokens();
-  
+
   return (
-    <div style={{ 
-      backgroundColor: tokens.colors.background,
-      padding: tokens.spacing.lg,
-    }}>
-      <h1 style={{ color: tokens.colors.primary }}>
-        Hello from MyComponent
-      </h1>
+    <div
+      style={{
+        backgroundColor: tokens.colors.background,
+        padding: tokens.spacing.lg,
+      }}
+    >
+      <h1 style={{ color: tokens.colors.primary }}>Hello from MyComponent</h1>
     </div>
   );
 };
-
