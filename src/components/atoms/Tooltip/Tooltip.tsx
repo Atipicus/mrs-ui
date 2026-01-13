@@ -24,15 +24,18 @@ const StyledTooltip = styled(
   ))
 )(({ theme }) => {
   const mode = theme.palette.mode;
-  const tooltipBackground = mode === 'light'
-    ? tokens.ComponentTooltipLightBackground
-    : tokens.ComponentTooltipDarkBackground;
-  const tooltipForeground = mode === 'light'
-    ? tokens.ComponentTooltipLightForeground
-    : tokens.ComponentTooltipDarkForeground;
-  const tooltipBorderRadius = mode === 'light'
-    ? tokens.ComponentTooltipLightBorderRadius
-    : tokens.ComponentTooltipDarkBorderRadius;
+  const tooltipBackground =
+    mode === 'light'
+      ? tokens.ComponentTooltipLightBackground
+      : tokens.ComponentTooltipDarkBackground;
+  const tooltipForeground =
+    mode === 'light'
+      ? tokens.ComponentTooltipLightForeground
+      : tokens.ComponentTooltipDarkForeground;
+  const tooltipBorderRadius =
+    mode === 'light'
+      ? tokens.ComponentTooltipLightBorderRadius
+      : tokens.ComponentTooltipDarkBorderRadius;
 
   return {
     '& .MuiTooltip-tooltip': {

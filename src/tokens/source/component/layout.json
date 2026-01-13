@@ -10,11 +10,17 @@
           },
           "active": {
             "background": { "$value": "{semantic.color.light.primary.main}", "$type": "color" },
-            "foreground": { "$value": "{semantic.color.light.primary.contrastText}", "$type": "color" }
+            "foreground": {
+              "$value": "{semantic.color.light.primary.contrastText}",
+              "$type": "color"
+            }
           },
           "completed": {
             "background": { "$value": "{semantic.color.light.primary.main}", "$type": "color" },
-            "foreground": { "$value": "{semantic.color.light.primary.contrastText}", "$type": "color" }
+            "foreground": {
+              "$value": "{semantic.color.light.primary.contrastText}",
+              "$type": "color"
+            }
           }
         }
       },
@@ -27,11 +33,17 @@
           },
           "active": {
             "background": { "$value": "{semantic.color.dark.primary.main}", "$type": "color" },
-            "foreground": { "$value": "{semantic.color.dark.primary.contrastText}", "$type": "color" }
+            "foreground": {
+              "$value": "{semantic.color.dark.primary.contrastText}",
+              "$type": "color"
+            }
           },
           "completed": {
             "background": { "$value": "{semantic.color.dark.primary.main}", "$type": "color" },
-            "foreground": { "$value": "{semantic.color.dark.primary.contrastText}", "$type": "color" }
+            "foreground": {
+              "$value": "{semantic.color.dark.primary.contrastText}",
+              "$type": "color"
+            }
           }
         }
       }
@@ -98,7 +110,10 @@
           },
           "selected": {
             "background": { "$value": "{semantic.color.light.primary.main}", "$type": "color" },
-            "foreground": { "$value": "{semantic.color.light.primary.contrastText}", "$type": "color" }
+            "foreground": {
+              "$value": "{semantic.color.light.primary.contrastText}",
+              "$type": "color"
+            }
           }
         },
         "borderRadius": { "$value": "{primitives.radius.full}", "$type": "dimension" }
@@ -114,7 +129,10 @@
           },
           "selected": {
             "background": { "$value": "{semantic.color.dark.primary.main}", "$type": "color" },
-            "foreground": { "$value": "{semantic.color.dark.primary.contrastText}", "$type": "color" }
+            "foreground": {
+              "$value": "{semantic.color.dark.primary.contrastText}",
+              "$type": "color"
+            }
           }
         },
         "borderRadius": { "$value": "{primitives.radius.full}", "$type": "dimension" }

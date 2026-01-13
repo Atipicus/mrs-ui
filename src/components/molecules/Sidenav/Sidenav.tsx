@@ -184,9 +184,11 @@ export const Sidenav = React.forwardRef<HTMLDivElement, SidenavProps>(
     const mode = theme.palette.mode;
 
     // Determine width based on variant using tokens
-    const sidenavWidth = width ?? (variant === 'slim'
-      ? tokens.ComponentSidenavWidthCollapsed
-      : tokens.ComponentSidenavWidthExpanded);
+    const sidenavWidth =
+      width ??
+      (variant === 'slim'
+        ? tokens.ComponentSidenavWidthCollapsed
+        : tokens.ComponentSidenavWidthExpanded);
 
     const handleItemClick = (item: SidenavItem) => {
       if (item.onClick) {
@@ -205,24 +207,28 @@ export const Sidenav = React.forwardRef<HTMLDivElement, SidenavProps>(
           selected={item.selected}
           onClick={() => handleItemClick(item)}
           sx={{
-            borderRadius: mode === 'light'
-              ? tokens.ComponentSidenavLightBorderRadius
-              : tokens.ComponentSidenavDarkBorderRadius,
+            borderRadius:
+              mode === 'light'
+                ? tokens.ComponentSidenavLightBorderRadius
+                : tokens.ComponentSidenavDarkBorderRadius,
             mx: 1,
             px: variant === 'slim' ? 1.5 : 2,
             justifyContent: variant === 'slim' ? 'center' : 'flex-start',
             minHeight: 48,
             '&.Mui-selected': {
-              backgroundColor: mode === 'light'
-                ? tokens.ComponentSidenavLightItemSelectedBackground
-                : tokens.ComponentSidenavDarkItemSelectedBackground,
-              color: mode === 'light'
-                ? tokens.ComponentSidenavLightItemSelectedForeground
-                : tokens.ComponentSidenavDarkItemSelectedForeground,
+              backgroundColor:
+                mode === 'light'
+                  ? tokens.ComponentSidenavLightItemSelectedBackground
+                  : tokens.ComponentSidenavDarkItemSelectedBackground,
+              color:
+                mode === 'light'
+                  ? tokens.ComponentSidenavLightItemSelectedForeground
+                  : tokens.ComponentSidenavDarkItemSelectedForeground,
               '&:hover': {
-                backgroundColor: mode === 'light'
-                  ? tokens.ComponentSidenavLightItemHoverBackground
-                  : tokens.ComponentSidenavDarkItemHoverBackground,
+                backgroundColor:
+                  mode === 'light'
+                    ? tokens.ComponentSidenavLightItemHoverBackground
+                    : tokens.ComponentSidenavDarkItemHoverBackground,
               },
             },
           }}

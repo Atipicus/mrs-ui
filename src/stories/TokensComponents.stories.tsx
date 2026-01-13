@@ -40,34 +40,66 @@ const ButtonTokensStory = () => {
     {
       category: 'Layout',
       tokens: [
-        { name: 'Border Radius', value: tokens.ComponentButtonBorderRadius, description: 'Button corner radius' },
+        {
+          name: 'Border Radius',
+          value: tokens.ComponentButtonBorderRadius,
+          description: 'Button corner radius',
+        },
       ],
     },
     {
       category: 'Typography',
       tokens: [
-        { name: 'Font Weight', value: tokens.ComponentButtonFontWeight, description: 'Button text weight' },
+        {
+          name: 'Font Weight',
+          value: tokens.ComponentButtonFontWeight,
+          description: 'Button text weight',
+        },
       ],
     },
     {
       category: 'Size: Small',
       tokens: [
-        { name: 'Font Size', value: tokens.ComponentButtonSmallFontSize, description: 'Small button text size' },
-        { name: 'Height', value: tokens.ComponentButtonSmallHeight, description: 'Small button height' },
+        {
+          name: 'Font Size',
+          value: tokens.ComponentButtonSmallFontSize,
+          description: 'Small button text size',
+        },
+        {
+          name: 'Height',
+          value: tokens.ComponentButtonSmallHeight,
+          description: 'Small button height',
+        },
       ],
     },
     {
       category: 'Size: Medium',
       tokens: [
-        { name: 'Font Size', value: tokens.ComponentButtonMediumFontSize, description: 'Medium button text size' },
-        { name: 'Height', value: tokens.ComponentButtonMediumHeight, description: 'Medium button height' },
+        {
+          name: 'Font Size',
+          value: tokens.ComponentButtonMediumFontSize,
+          description: 'Medium button text size',
+        },
+        {
+          name: 'Height',
+          value: tokens.ComponentButtonMediumHeight,
+          description: 'Medium button height',
+        },
       ],
     },
     {
       category: 'Size: Large',
       tokens: [
-        { name: 'Font Size', value: tokens.ComponentButtonLargeFontSize, description: 'Large button text size' },
-        { name: 'Height', value: tokens.ComponentButtonLargeHeight, description: 'Large button height' },
+        {
+          name: 'Font Size',
+          value: tokens.ComponentButtonLargeFontSize,
+          description: 'Large button text size',
+        },
+        {
+          name: 'Height',
+          value: tokens.ComponentButtonLargeHeight,
+          description: 'Large button height',
+        },
       ],
     },
   ];
@@ -158,7 +190,9 @@ const NavigationTokensStory = () => {
         {
           name: 'Border',
           value:
-            mode === 'light' ? tokens.ComponentSidenavLightBorder : tokens.ComponentSidenavDarkBorder,
+            mode === 'light'
+              ? tokens.ComponentSidenavLightBorder
+              : tokens.ComponentSidenavDarkBorder,
           description: 'Sidenav border color',
         },
         {
@@ -182,13 +216,17 @@ const NavigationTokensStory = () => {
         {
           name: 'Background',
           value:
-            mode === 'light' ? tokens.ComponentAppbarLightBackground : tokens.ComponentAppbarDarkBackground,
+            mode === 'light'
+              ? tokens.ComponentAppbarLightBackground
+              : tokens.ComponentAppbarDarkBackground,
           description: 'AppBar background color',
         },
         {
           name: 'Foreground',
           value:
-            mode === 'light' ? tokens.ComponentAppbarLightForeground : tokens.ComponentAppbarDarkForeground,
+            mode === 'light'
+              ? tokens.ComponentAppbarLightForeground
+              : tokens.ComponentAppbarDarkForeground,
           description: 'AppBar text color',
         },
       ],
@@ -238,7 +276,14 @@ const NavigationTokensStory = () => {
                   borderColor: 'divider',
                 }}
               >
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    mb: 1,
+                  }}
+                >
                   <Typography variant="body2" sx={{ fontWeight: 600 }}>
                     {token.name}
                   </Typography>
@@ -275,26 +320,50 @@ const DataDisplayTokensStory = () => {
     {
       component: 'Avatar',
       tokens: [
-        { name: 'Small', value: tokens.ComponentAvatarSmall, description: 'Small avatar size (24px)' },
-        { name: 'Medium', value: tokens.ComponentAvatarMedium, description: 'Medium avatar size (40px)' },
-        { name: 'Large', value: tokens.ComponentAvatarLarge, description: 'Large avatar size (56px)' },
-        { name: 'Border Radius', value: tokens.ComponentAvatarBorderRadius, description: 'Avatar corner radius' },
+        {
+          name: 'Small',
+          value: tokens.ComponentAvatarSmall,
+          description: 'Small avatar size (24px)',
+        },
+        {
+          name: 'Medium',
+          value: tokens.ComponentAvatarMedium,
+          description: 'Medium avatar size (40px)',
+        },
+        {
+          name: 'Large',
+          value: tokens.ComponentAvatarLarge,
+          description: 'Large avatar size (56px)',
+        },
+        {
+          name: 'Border Radius',
+          value: tokens.ComponentAvatarBorderRadius,
+          description: 'Avatar corner radius',
+        },
       ],
     },
     {
       component: 'Badge',
       tokens: [
-        { name: 'Border Radius', value: tokens.ComponentBadgeBorderRadius, description: 'Badge corner radius' },
+        {
+          name: 'Border Radius',
+          value: tokens.ComponentBadgeBorderRadius,
+          description: 'Badge corner radius',
+        },
         {
           name: 'Background',
           value:
-            mode === 'light' ? tokens.ComponentBadgeLightBackground : tokens.ComponentBadgeDarkBackground,
+            mode === 'light'
+              ? tokens.ComponentBadgeLightBackground
+              : tokens.ComponentBadgeDarkBackground,
           description: 'Badge background color',
         },
         {
           name: 'Foreground',
           value:
-            mode === 'light' ? tokens.ComponentBadgeLightForeground : tokens.ComponentBadgeDarkForeground,
+            mode === 'light'
+              ? tokens.ComponentBadgeLightForeground
+              : tokens.ComponentBadgeDarkForeground,
           description: 'Badge text color',
         },
       ],
@@ -342,7 +411,9 @@ const DataDisplayTokensStory = () => {
         {
           name: 'Border',
           value:
-            mode === 'light' ? tokens.ComponentAccordionLightBorder : tokens.ComponentAccordionDarkBorder,
+            mode === 'light'
+              ? tokens.ComponentAccordionLightBorder
+              : tokens.ComponentAccordionDarkBorder,
           description: 'Accordion border color',
         },
         {
@@ -363,7 +434,8 @@ const DataDisplayTokensStory = () => {
         Data Display Tokens
       </Typography>
       <Typography variant="body1" sx={{ mb: 4, color: 'text.secondary' }}>
-        Tokens for data display components including Avatar, Badge, Tooltip, Accordion, List, and Menu.
+        Tokens for data display components including Avatar, Badge, Tooltip, Accordion, List, and
+        Menu.
       </Typography>
 
       <Grid container spacing={3}>
@@ -384,7 +456,14 @@ const DataDisplayTokensStory = () => {
               <Stack spacing={2}>
                 {group.tokens.map((token) => (
                   <Box key={token.name}>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 0.5 }}>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        mb: 0.5,
+                      }}
+                    >
                       <Typography variant="body2" sx={{ fontWeight: 500 }}>
                         {token.name}
                       </Typography>
@@ -505,7 +584,8 @@ const FeedbackTokensStory = () => {
         Feedback Tokens
       </Typography>
       <Typography variant="body1" sx={{ mb: 4, color: 'text.secondary' }}>
-        Tokens for feedback components including Snackbar, Progress indicators, and Skeleton loaders.
+        Tokens for feedback components including Snackbar, Progress indicators, and Skeleton
+        loaders.
       </Typography>
 
       {feedbackTokens.map((group) => (
@@ -524,7 +604,14 @@ const FeedbackTokensStory = () => {
                   borderColor: 'divider',
                 }}
               >
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    mb: 1,
+                  }}
+                >
                   <Typography variant="body2" sx={{ fontWeight: 600 }}>
                     {token.name}
                   </Typography>
@@ -607,8 +694,8 @@ const TokenArchitectureStory = () => {
         Token Architecture
       </Typography>
       <Typography variant="body1" sx={{ mb: 4, color: 'text.secondary' }}>
-        MRS Design System implements a three-tier token architecture for consistency, maintainability, and
-        scalability.
+        MRS Design System implements a three-tier token architecture for consistency,
+        maintainability, and scalability.
       </Typography>
 
       <Stack spacing={3}>

@@ -174,10 +174,7 @@ const BorderRadiusStory = () => {
                 justifyContent: 'center',
               }}
             >
-              <Typography
-                variant="body2"
-                sx={{ color: 'white', fontWeight: 600 }}
-              >
+              <Typography variant="body2" sx={{ color: 'white', fontWeight: 600 }}>
                 {token.value}
               </Typography>
             </Box>
@@ -201,7 +198,11 @@ export const BorderRadius: StoryObj = {
 const TypographyStory = () => {
   const fontSizes = [
     { name: 'XS', value: tokens.PrimitivesTypographyFontSizeXs, description: 'Captions, labels' },
-    { name: 'SM', value: tokens.PrimitivesTypographyFontSizeSm, description: 'Body 2, helper text' },
+    {
+      name: 'SM',
+      value: tokens.PrimitivesTypographyFontSizeSm,
+      description: 'Body 2, helper text',
+    },
     { name: 'MD', value: tokens.PrimitivesTypographyFontSizeMd, description: 'Body 1 (default)' },
     { name: 'LG', value: tokens.PrimitivesTypographyFontSizeLg, description: 'H6, subtitle' },
     { name: 'XL', value: tokens.PrimitivesTypographyFontSizeXl, description: 'H5' },
@@ -245,11 +246,7 @@ const TypographyStory = () => {
                 }}
               >
                 <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 2, mb: 1 }}>
-                  <Chip
-                    label={size.name}
-                    size="small"
-                    sx={{ fontSize: '0.7rem', height: 20 }}
-                  />
+                  <Chip label={size.name} size="small" sx={{ fontSize: '0.7rem', height: 20 }} />
                   <Typography variant="caption" sx={{ color: 'text.secondary' }}>
                     {size.value} • {size.description}
                   </Typography>
@@ -284,11 +281,7 @@ const TypographyStory = () => {
                 }}
               >
                 <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 2, mb: 1 }}>
-                  <Chip
-                    label={weight.name}
-                    size="small"
-                    sx={{ fontSize: '0.7rem', height: 20 }}
-                  />
+                  <Chip label={weight.name} size="small" sx={{ fontSize: '0.7rem', height: 20 }} />
                   <Typography variant="caption" sx={{ color: 'text.secondary' }}>
                     {weight.value}
                   </Typography>
@@ -318,19 +311,59 @@ export const TypographyTokens: StoryObj = {
 const MotionStory = () => {
   const durations = [
     { name: 'Instant', value: tokens.PrimitivesMotionDurationInstant, description: 'Sin delay' },
-    { name: 'Fast', value: tokens.PrimitivesMotionDurationFast, description: 'Micro-interacciones' },
-    { name: 'Base', value: tokens.PrimitivesMotionDurationBase, description: 'Mayoría de elementos' },
-    { name: 'Moderate', value: tokens.PrimitivesMotionDurationModerate, description: 'Drawers, dialogs' },
-    { name: 'Slow', value: tokens.PrimitivesMotionDurationSlow, description: 'Transiciones grandes' },
-    { name: 'Slower', value: tokens.PrimitivesMotionDurationSlower, description: 'Animaciones complejas' },
+    {
+      name: 'Fast',
+      value: tokens.PrimitivesMotionDurationFast,
+      description: 'Micro-interacciones',
+    },
+    {
+      name: 'Base',
+      value: tokens.PrimitivesMotionDurationBase,
+      description: 'Mayoría de elementos',
+    },
+    {
+      name: 'Moderate',
+      value: tokens.PrimitivesMotionDurationModerate,
+      description: 'Drawers, dialogs',
+    },
+    {
+      name: 'Slow',
+      value: tokens.PrimitivesMotionDurationSlow,
+      description: 'Transiciones grandes',
+    },
+    {
+      name: 'Slower',
+      value: tokens.PrimitivesMotionDurationSlower,
+      description: 'Animaciones complejas',
+    },
   ];
 
   const easings = [
-    { name: 'Linear', value: tokens.PrimitivesMotionEasingLinear, description: 'Velocidad constante' },
-    { name: 'Standard', value: tokens.PrimitivesMotionEasingStandard, description: 'Default, smooth' },
-    { name: 'Emphasized', value: tokens.PrimitivesMotionEasingEmphasized, description: 'Material Design' },
-    { name: 'Decelerate', value: tokens.PrimitivesMotionEasingDecelerate, description: 'Elementos entrando' },
-    { name: 'Accelerate', value: tokens.PrimitivesMotionEasingAccelerate, description: 'Elementos saliendo' },
+    {
+      name: 'Linear',
+      value: tokens.PrimitivesMotionEasingLinear,
+      description: 'Velocidad constante',
+    },
+    {
+      name: 'Standard',
+      value: tokens.PrimitivesMotionEasingStandard,
+      description: 'Default, smooth',
+    },
+    {
+      name: 'Emphasized',
+      value: tokens.PrimitivesMotionEasingEmphasized,
+      description: 'Material Design',
+    },
+    {
+      name: 'Decelerate',
+      value: tokens.PrimitivesMotionEasingDecelerate,
+      description: 'Elementos entrando',
+    },
+    {
+      name: 'Accelerate',
+      value: tokens.PrimitivesMotionEasingAccelerate,
+      description: 'Elementos saliendo',
+    },
   ];
 
   return (
@@ -359,7 +392,9 @@ const MotionStory = () => {
                   borderColor: 'divider',
                 }}
               >
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Box
+                  sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+                >
                   <Box>
                     <Typography variant="body2" sx={{ fontWeight: 600, mb: 0.5 }}>
                       {duration.name}
@@ -398,7 +433,10 @@ const MotionStory = () => {
                 <Typography variant="body2" sx={{ fontWeight: 600, mb: 0.5 }}>
                   {easing.name}
                 </Typography>
-                <Typography variant="caption" sx={{ color: 'text.secondary', mb: 1, display: 'block' }}>
+                <Typography
+                  variant="caption"
+                  sx={{ color: 'text.secondary', mb: 1, display: 'block' }}
+                >
                   {easing.description}
                 </Typography>
                 <Typography

@@ -88,11 +88,7 @@ const ColorSwatch: React.FC<{ color: ColorToken }> = ({ color }) => {
             .replace(/^./, (str) => str.toUpperCase())
             .trim()}
         </Typography>
-        <Chip
-          label={color.category}
-          size="small"
-          sx={{ fontSize: '0.7rem', height: 20 }}
-        />
+        <Chip label={color.category} size="small" sx={{ fontSize: '0.7rem', height: 20 }} />
       </Box>
     </Paper>
   );
@@ -122,8 +118,9 @@ const ColorGrid: React.FC<{ colors: ColorToken[]; title: string }> = ({ colors, 
 };
 
 const AllColorsStory = () => {
-  const allTokens = Object.entries(tokens).filter(([key, value]) =>
-    typeof value === 'string' && (value.startsWith('#') || value.startsWith('rgb'))
+  const allTokens = Object.entries(tokens).filter(
+    ([key, value]) =>
+      typeof value === 'string' && (value.startsWith('#') || value.startsWith('rgb'))
   );
 
   const categorizeColor = (name: string): string => {
@@ -149,8 +146,8 @@ const AllColorsStory = () => {
         Color Tokens
       </Typography>
       <Typography variant="body1" sx={{ mb: 4, color: 'text.secondary' }}>
-        Sistema completo de tokens de color organizados por categoría.
-        Total: <strong>{colorTokens.length} colores</strong>
+        Sistema completo de tokens de color organizados por categoría. Total:{' '}
+        <strong>{colorTokens.length} colores</strong>
       </Typography>
 
       <Stack spacing={4}>

@@ -37,7 +37,10 @@
             "foreground": { "$value": "{semantic.color.dark.text.primary}", "$type": "color" }
           },
           "selected": {
-            "background": { "$value": "{primitives.colors.alpha.primary.24-dark}", "$type": "color" },
+            "background": {
+              "$value": "{primitives.colors.alpha.primary.24-dark}",
+              "$type": "color"
+            },
             "foreground": { "$value": "{semantic.color.dark.primary.main}", "$type": "color" }
           }
         },

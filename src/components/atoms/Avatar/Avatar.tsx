@@ -54,7 +54,8 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
           fontSize: getFontSize(),
           fontFamily: theme.typography.fontFamily,
           fontWeight: theme.typography.fontWeightRegular,
-          borderRadius: variant === 'circular' ? tokens.ComponentAvatarBorderRadius : tokens.PrimitivesRadiusSm,
+          borderRadius:
+            variant === 'circular' ? tokens.ComponentAvatarBorderRadius : tokens.PrimitivesRadiusSm,
           ...sx,
         }}
       >
