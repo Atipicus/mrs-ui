@@ -12,6 +12,7 @@ import React from 'react';
 import MuiAvatar from '@mui/material/Avatar';
 import { useTheme } from '@mui/material/styles';
 import type { AvatarProps } from './Avatar.types';
+import * as tokens from '../../../tokens/generated/ts/tokens';
 
 /**
  * Avatar component
@@ -25,23 +26,22 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
   ({ children, size = 40, variant = 'circular', sx, ...props }, ref) => {
     const theme = useTheme();
 
-    // Map size to width/height
-    const avatarSize = `${size}px`;
+    // Map size to predefined token sizes
+    const getSizeToken = (): string => {
+      if (size === 24) return tokens.ComponentAvatarSmall;
+      if (size === 40) return tokens.ComponentAvatarMedium;
+      // Default for sizes not in predefined tokens
+      return `${size}px`;
+    };
 
     // Calculate font size based on avatar size
-    const getFontSize = () => {
-      switch (size) {
-        case 18:
-          return '0.625rem'; // 10px
-        case 24:
-          return '0.75rem'; // 12px
-        case 32:
-          return '0.75rem'; // 12px
-        case 40:
-        default:
-          return '1.25rem'; // 20px
-      }
+    const getFontSize = (): string => {
+      if (size === 18) return tokens.PrimitivesTypographyFontSizeXs;
+      if (size === 24 || size === 32) return tokens.PrimitivesTypographyFontSizeSm;
+      return tokens.PrimitivesTypographyFontSizeLg;
     };
+
+    const avatarSize = getSizeToken();
 
     return (
       <MuiAvatar
@@ -54,6 +54,7 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
           fontSize: getFontSize(),
           fontFamily: theme.typography.fontFamily,
           fontWeight: theme.typography.fontWeightRegular,
+          borderRadius: variant === 'circular' ? tokens.ComponentAvatarBorderRadius : tokens.PrimitivesRadiusSm,
           ...sx,
         }}
       >

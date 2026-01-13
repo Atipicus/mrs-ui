@@ -1,0 +1,91 @@
+{
+  "component": {
+    "accordion": {
+      "light": {
+        "background": { "$value": "{semantic.color.light.background.paper}", "$type": "color" },
+        "border": { "$value": "{semantic.color.light.divider}", "$type": "color" },
+        "borderRadius": { "$value": "{primitives.radius.md}", "$type": "dimension" }
+      },
+      "dark": {
+        "background": { "$value": "{semantic.color.dark.background.paper}", "$type": "color" },
+        "border": { "$value": "{semantic.color.dark.divider}", "$type": "color" },
+        "borderRadius": { "$value": "{primitives.radius.md}", "$type": "dimension" }
+      }
+    },
+    "list": {
+      "light": {
+        "background": { "$value": "{semantic.color.light.background.paper}", "$type": "color" },
+        "item": {
+          "default": {
+            "background": { "$value": "transparent", "$type": "color" },
+            "foreground": { "$value": "{semantic.color.light.text.primary}", "$type": "color" }
+          },
+          "hover": {
+            "background": { "$value": "{semantic.color.light.action.hover}", "$type": "color" }
+          },
+          "selected": {
+            "background": { "$value": "{semantic.color.light.action.selected}", "$type": "color" }
+          }
+        },
+        "divider": { "$value": "{semantic.color.light.divider}", "$type": "color" },
+        "borderRadius": { "$value": "{primitives.radius.md}", "$type": "dimension" }
+      },
+      "dark": {
+        "background": { "$value": "{semantic.color.dark.background.paper}", "$type": "color" },
+        "item": {
+          "default": {
+            "background": { "$value": "transparent", "$type": "color" },
+            "foreground": { "$value": "{semantic.color.dark.text.primary}", "$type": "color" }
+          },
+          "hover": {
+            "background": { "$value": "{semantic.color.dark.action.hover}", "$type": "color" }
+          },
+          "selected": {
+            "background": { "$value": "{semantic.color.dark.action.selected}", "$type": "color" }
+          }
+        },
+        "divider": { "$value": "{semantic.color.dark.divider}", "$type": "color" },
+        "borderRadius": { "$value": "{primitives.radius.md}", "$type": "dimension" }
+      }
+    },
+    "menu": {
+      "light": {
+        "background": { "$value": "{semantic.color.light.background.paper}", "$type": "color" },
+        "borderRadius": { "$value": "{primitives.radius.md}", "$type": "dimension" }
+      },
+      "dark": {
+        "background": { "$value": "{semantic.color.dark.background.paper}", "$type": "color" },
+        "borderRadius": { "$value": "{primitives.radius.md}", "$type": "dimension" }
+      }
+    },
+    "avatar": {
+      "borderRadius": { "$value": "{primitives.radius.full}", "$type": "dimension" },
+      "small": { "$value": "24px", "$type": "dimension" },
+      "medium": { "$value": "40px", "$type": "dimension" },
+      "large": { "$value": "56px", "$type": "dimension" }
+    },
+    "badge": {
+      "borderRadius": { "$value": "{primitives.radius.full}", "$type": "dimension" },
+      "light": {
+        "background": { "$value": "{semantic.color.light.error.main}", "$type": "color" },
+        "foreground": { "$value": "{semantic.color.light.error.contrastText}", "$type": "color" }
+      },
+      "dark": {
+        "background": { "$value": "{semantic.color.dark.error.main}", "$type": "color" },
+        "foreground": { "$value": "{semantic.color.dark.error.contrastText}", "$type": "color" }
+      }
+    },
+    "tooltip": {
+      "light": {
+        "background": { "$value": "{primitives.colors.alpha.black.87}", "$type": "color" },
+        "foreground": { "$value": "{primitives.colors.neutral.white}", "$type": "color" },
+        "borderRadius": { "$value": "{primitives.radius.sm}", "$type": "dimension" }
+      },
+      "dark": {
+        "background": { "$value": "{primitives.colors.neutral.gray.700}", "$type": "color" },
+        "foreground": { "$value": "{primitives.colors.neutral.white}", "$type": "color" },
+        "borderRadius": { "$value": "{primitives.radius.sm}", "$type": "dimension" }
+      }
+    }
+  }
+}

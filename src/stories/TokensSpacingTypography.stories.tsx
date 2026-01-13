@@ -10,15 +10,18 @@ import * as tokens from '../tokens/generated/ts/tokens';
 /**
  * Spacing & Typography Tokens
  *
- * Visualización de tokens de espaciado, tipografía, border radius y otros tokens de diseño.
+ * Primitive tokens for spacing, typography, border radius, and motion.
+ * These form the foundation of the design system (Tier 1).
+ *
+ * For component-specific tokens, see Design Tokens → Component Tokens.
  */
 const meta: Meta = {
-  title: 'Design Tokens/Spacing & Typography',
+  title: 'Design Tokens/Primitives',
   parameters: {
     docs: {
       description: {
         component:
-          'Sistema de tokens para espaciado, tipografía, border radius y motion. Todos definidos en src/tokens/source/',
+          'Primitive tokens (Tier 1) provide foundation-level values for spacing, typography, border radius, and motion. These are raw, context-independent values that are referenced by semantic and component tokens. Source: src/tokens/source/primitives/',
       },
     },
   },
@@ -308,7 +311,7 @@ const TypographyStory = () => {
   );
 };
 
-export const Typography: StoryObj = {
+export const TypographyTokens: StoryObj = {
   render: () => <TypographyStory />,
 };
 

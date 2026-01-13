@@ -53,6 +53,7 @@ import { Button } from '../../atoms/Button';
 import { IconButton } from '../../atoms/IconButton';
 import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import type { SidenavProps, SidenavItem, SidenavNavigationItem } from './Sidenav.types';
+import * as tokens from '../../../tokens/generated/ts/tokens';
 
 // MRS Logo SVG component
 const MRSLogo = ({ variant = 'default' }: { variant?: 'default' | 'slim' }) => {
@@ -180,9 +181,12 @@ export const Sidenav = React.forwardRef<HTMLDivElement, SidenavProps>(
     ref
   ) => {
     const theme = useTheme();
+    const mode = theme.palette.mode;
 
-    // Determine width based on variant
-    const sidenavWidth = width ?? (variant === 'slim' ? 72 : 256);
+    // Determine width based on variant using tokens
+    const sidenavWidth = width ?? (variant === 'slim'
+      ? tokens.ComponentSidenavWidthCollapsed
+      : tokens.ComponentSidenavWidthExpanded);
 
     const handleItemClick = (item: SidenavItem) => {
       if (item.onClick) {
@@ -201,15 +205,24 @@ export const Sidenav = React.forwardRef<HTMLDivElement, SidenavProps>(
           selected={item.selected}
           onClick={() => handleItemClick(item)}
           sx={{
-            borderRadius: theme.shape.borderRadius,
+            borderRadius: mode === 'light'
+              ? tokens.ComponentSidenavLightBorderRadius
+              : tokens.ComponentSidenavDarkBorderRadius,
             mx: 1,
             px: variant === 'slim' ? 1.5 : 2,
             justifyContent: variant === 'slim' ? 'center' : 'flex-start',
             minHeight: 48,
             '&.Mui-selected': {
-              backgroundColor: theme.palette.primary.main + '14', // 8% opacity
+              backgroundColor: mode === 'light'
+                ? tokens.ComponentSidenavLightItemSelectedBackground
+                : tokens.ComponentSidenavDarkItemSelectedBackground,
+              color: mode === 'light'
+                ? tokens.ComponentSidenavLightItemSelectedForeground
+                : tokens.ComponentSidenavDarkItemSelectedForeground,
               '&:hover': {
-                backgroundColor: theme.palette.primary.main + '1F', // 12% opacity
+                backgroundColor: mode === 'light'
+                  ? tokens.ComponentSidenavLightItemHoverBackground
+                  : tokens.ComponentSidenavDarkItemHoverBackground,
               },
             },
           }}

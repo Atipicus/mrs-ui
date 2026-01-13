@@ -1,0 +1,37 @@
+{
+  "component": {
+    "snackbar": {
+      "light": {
+        "background": { "$value": "{primitives.colors.neutral.gray.800}", "$type": "color" },
+        "foreground": { "$value": "{primitives.colors.neutral.white}", "$type": "color" },
+        "borderRadius": { "$value": "{primitives.radius.sm}", "$type": "dimension" }
+      },
+      "dark": {
+        "background": { "$value": "{primitives.colors.neutral.gray.200}", "$type": "color" },
+        "foreground": { "$value": "{primitives.colors.neutral.black}", "$type": "color" },
+        "borderRadius": { "$value": "{primitives.radius.sm}", "$type": "dimension" }
+      }
+    },
+    "progress": {
+      "light": {
+        "background": { "$value": "{primitives.colors.alpha.primary.16}", "$type": "color" },
+        "foreground": { "$value": "{semantic.color.light.primary.main}", "$type": "color" }
+      },
+      "dark": {
+        "background": { "$value": "{primitives.colors.alpha.primary.24-dark}", "$type": "color" },
+        "foreground": { "$value": "{semantic.color.dark.primary.main}", "$type": "color" }
+      },
+      "thickness": { "$value": "4px", "$type": "dimension" }
+    },
+    "skeleton": {
+      "light": {
+        "background": { "$value": "{primitives.colors.alpha.black.12}", "$type": "color" },
+        "borderRadius": { "$value": "{primitives.radius.sm}", "$type": "dimension" }
+      },
+      "dark": {
+        "background": { "$value": "{primitives.colors.alpha.white.12}", "$type": "color" },
+        "borderRadius": { "$value": "{primitives.radius.sm}", "$type": "dimension" }
+      }
+    }
+  }
+}
