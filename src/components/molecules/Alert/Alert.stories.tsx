@@ -38,14 +38,19 @@ export default meta;
 type Story = StoryObj<typeof Alert>;
 
 export const Playground: Story = {
-  args: {},
+  args: {
+    severity: 'info',
+    variant: 'outlined',
+    icon: false,
+  },
 };
 
 export const Variants: Story = {
   args: {
     icon: false,
     close: false,
-    severity: 'info',
+    severity: 'success',
+    variant: 'outlined',
   },
   render: () => (
     <Stack spacing={3}>

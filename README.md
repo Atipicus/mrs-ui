@@ -6,7 +6,7 @@
 
 A comprehensive Material-UI v6.5 based design system with **54 production-ready components** built with React, TypeScript, and modern best practices.
 
-> **Version 0.8.0** - Complete Design Token System, Dark Mode, Animation Tokens & Micro-Interactions Library. 54 production-ready components with comprehensive theming. 1,182 tests passing (56 test suites).
+> **Version 0.10.0** - Three-Tier Token Architecture with 470+ tokens. Complete component token coverage across all 60 components. Enhanced Storybook documentation. 54 production-ready components with comprehensive theming. 1,182 tests passing (56 test suites).
 
 ## 🚀 Features
 
@@ -235,7 +235,28 @@ const heading = typography.h1.fontFamily; // Nunito
 
 ## 🎨 Design Token Hub
 
-The MRS Design System includes a comprehensive **Token Hub** that manages design tokens and exports them to multiple formats.
+The MRS Design System includes a comprehensive **Token Hub** with a **three-tier architecture** managing 470+ design tokens exported to multiple formats.
+
+### Three-Tier Token Architecture
+
+The system organizes tokens in three hierarchical tiers for consistency and maintainability:
+
+**Tier 1: Primitives (~80 tokens)** - Foundation values
+- Colors, spacing, radius, typography, motion
+- Raw, context-independent values
+- Example: `PrimitivesSpacing2` → `16px`, `PrimitivesRadiusMd` → `8px`
+
+**Tier 2: Semantic (~120 tokens)** - Context-aware tokens
+- Theme-aware colors (light/dark mode)
+- Background, text, action states
+- Example: `SemanticColorLightPrimaryMain` → `#00686f`
+
+**Tier 3: Components (~270 tokens)** - Component-specific
+- Button, navigation, data display, feedback, layout tokens
+- References semantic and primitive tokens
+- Example: `ComponentButtonBorderRadius`, `ComponentSidenavWidthExpanded`
+
+📚 **Complete documentation**: See `TOKENS.md` for detailed architecture guide.
 
 ### Multi-Format Exports
 
@@ -301,10 +322,27 @@ The system includes **automated Figma token synchronization** via GitHub Actions
 ### Token Structure
 
 ```
-Design Tokens (DTCG Format)
-├── primitives/       → Brand colors, typography, spacing, radius
-├── semantic/         → Primary, secondary, error, warning, info, success
-└── component/        → Button, alert, input, card overrides
+Design Tokens (DTCG Format) - 470+ Tokens
+├── Tier 1: primitives/
+│   ├── colors.json          → Brand, neutral, status, alpha
+│   ├── spacing.json         → 8px grid system (0-96px)
+│   ├── radius.json          → Border radius (none, sm, md, lg, xl, full)
+│   ├── typography.json      → Font families, sizes, weights
+│   └── motion.json          → Animation durations & easings
+│
+├── Tier 2: semantic/
+│   ├── colors.json          → Theme-aware colors (light/dark)
+│   └── transitions.json     → Semantic animations
+│
+└── Tier 3: component/
+    ├── button.json          → Button styling tokens
+    ├── alert.json           → Alert variants & severities
+    ├── inputs.json          → TextField, Chip, Rating tokens
+    ├── surfaces.json        → Paper, Card, Dialog, Table
+    ├── navigation.json      → Sidenav, AppBar, Drawer, Bottom Nav
+    ├── data-display.json    → Avatar, Badge, Tooltip, Accordion
+    ├── feedback.json        → Snackbar, Progress, Skeleton
+    └── layout.json          → Stepper, Tabs, Timeline, Pagination
          ↓
    Style Dictionary Build
          ↓

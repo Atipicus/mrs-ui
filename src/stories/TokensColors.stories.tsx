@@ -46,7 +46,7 @@ const ColorSwatch: React.FC<{ color: ColorToken }> = ({ color }) => {
     return luma > 128;
   };
 
-  const textColor = color.value.startsWith('#') && isLight(color.value) ? '#000000' : '#ffffff';
+  const textColor = color.value && color.value.startsWith('#') && isLight(color.value) ? '#000000' : '#ffffff';
 
   return (
     <Paper
@@ -120,7 +120,9 @@ const ColorGrid: React.FC<{ colors: ColorToken[]; title: string }> = ({ colors, 
 const AllColorsStory = () => {
   const allTokens = Object.entries(tokens).filter(
     ([key, value]) =>
-      typeof value === 'string' && (value.startsWith('#') || value.startsWith('rgb'))
+      typeof value === 'string' &&
+      value &&
+      (value.startsWith('#') || value.startsWith('rgb') || value.startsWith('rgba'))
   );
 
   const categorizeColor = (name: string): string => {
@@ -130,11 +132,13 @@ const AllColorsStory = () => {
     return 'Other';
   };
 
-  const colorTokens: ColorToken[] = allTokens.map(([name, value]) => ({
-    name: name.replace(/^(Primitives|Semantic|Component)Colors?/, ''),
-    value: value as string,
-    category: categorizeColor(name),
-  }));
+  const colorTokens: ColorToken[] = allTokens
+    .map(([name, value]) => ({
+      name: name.replace(/^(Primitives|Semantic|Component)Colors?/, ''),
+      value: value as string,
+      category: categorizeColor(name),
+    }))
+    .filter((token) => token.value && token.value.length > 0);
 
   const primitives = colorTokens.filter((c) => c.category === 'Primitives');
   const semantic = colorTokens.filter((c) => c.category === 'Semantic');
@@ -261,32 +265,92 @@ const SemanticColorsStory = () => {
   const semanticColors: ColorToken[] = [
     {
       name: 'Primary Main',
-      value: tokens.SemanticColorPrimaryMain,
+      value: tokens.SemanticColorLightPrimaryMain,
+      category: 'Semantic',
+    },
+    {
+      name: 'Primary Dark',
+      value: tokens.SemanticColorLightPrimaryDark,
+      category: 'Semantic',
+    },
+    {
+      name: 'Primary Light',
+      value: tokens.SemanticColorLightPrimaryLight,
       category: 'Semantic',
     },
     {
       name: 'Secondary Main',
-      value: tokens.SemanticColorSecondaryMain,
+      value: tokens.SemanticColorLightSecondaryMain,
+      category: 'Semantic',
+    },
+    {
+      name: 'Secondary Dark',
+      value: tokens.SemanticColorLightSecondaryDark,
+      category: 'Semantic',
+    },
+    {
+      name: 'Secondary Light',
+      value: tokens.SemanticColorLightSecondaryLight,
       category: 'Semantic',
     },
     {
       name: 'Error Main',
-      value: tokens.SemanticColorErrorMain,
+      value: tokens.SemanticColorLightErrorMain,
+      category: 'Semantic',
+    },
+    {
+      name: 'Error Dark',
+      value: tokens.SemanticColorLightErrorDark,
+      category: 'Semantic',
+    },
+    {
+      name: 'Error Light',
+      value: tokens.SemanticColorLightErrorLight,
       category: 'Semantic',
     },
     {
       name: 'Warning Main',
-      value: tokens.SemanticColorWarningMain,
+      value: tokens.SemanticColorLightWarningMain,
+      category: 'Semantic',
+    },
+    {
+      name: 'Warning Dark',
+      value: tokens.SemanticColorLightWarningDark,
+      category: 'Semantic',
+    },
+    {
+      name: 'Warning Light',
+      value: tokens.SemanticColorLightWarningLight,
       category: 'Semantic',
     },
     {
       name: 'Info Main',
-      value: tokens.SemanticColorInfoMain,
+      value: tokens.SemanticColorLightInfoMain,
+      category: 'Semantic',
+    },
+    {
+      name: 'Info Dark',
+      value: tokens.SemanticColorLightInfoDark,
+      category: 'Semantic',
+    },
+    {
+      name: 'Info Light',
+      value: tokens.SemanticColorLightInfoLight,
       category: 'Semantic',
     },
     {
       name: 'Success Main',
-      value: tokens.SemanticColorSuccessMain,
+      value: tokens.SemanticColorLightSuccessMain,
+      category: 'Semantic',
+    },
+    {
+      name: 'Success Dark',
+      value: tokens.SemanticColorLightSuccessDark,
+      category: 'Semantic',
+    },
+    {
+      name: 'Success Light',
+      value: tokens.SemanticColorLightSuccessLight,
       category: 'Semantic',
     },
   ];

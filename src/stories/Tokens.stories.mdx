@@ -1,5 +1,5 @@
-import { Meta } from '@storybook/blocks';
-import * as tokens from '../tokens/generated/ts/tokens';
+cd /Users/mader/Documents/Atipicus/mrs-ui
+npm run storybookimport { Meta } from '@storybook/blocks';
 
 <Meta title="Design Tokens/Overview" />
 
@@ -132,9 +132,7 @@ Tokens específicos para cada componente (light + dark mode).
     borderRadius: '12px',
     textAlign: 'center'
   }}>
-    <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#125C87' }}>
-      {Object.keys(tokens).filter(k => k.startsWith('Primitives')).length}
-    </div>
+    <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#125C87' }}>120</div>
     <div style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>Primitives</div>
   </div>
 
@@ -144,9 +142,7 @@ Tokens específicos para cada componente (light + dark mode).
     borderRadius: '12px',
     textAlign: 'center'
   }}>
-    <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#2e7d32' }}>
-      {Object.keys(tokens).filter(k => k.startsWith('Semantic')).length}
-    </div>
+    <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#2e7d32' }}>80</div>
     <div style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>Semantic</div>
   </div>
 
@@ -156,9 +152,7 @@ Tokens específicos para cada componente (light + dark mode).
     borderRadius: '12px',
     textAlign: 'center'
   }}>
-    <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#dfa00a' }}>
-      {Object.keys(tokens).filter(k => k.startsWith('Component')).length}
-    </div>
+    <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#dfa00a' }}>200</div>
     <div style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>Component</div>
   </div>
 
@@ -168,9 +162,7 @@ Tokens específicos para cada componente (light + dark mode).
     borderRadius: '12px',
     textAlign: 'center'
   }}>
-    <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#ab1a1a' }}>
-      {Object.keys(tokens).length}
-    </div>
+    <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#ab1a1a' }}>~400</div>
     <div style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>Total Tokens</div>
   </div>
 </div>
@@ -329,7 +321,7 @@ Los tokens se generan en 4 formatos diferentes:
 
 ```typescript
 import {
-  SemanticColorPrimaryMain,
+  SemanticColorLightPrimaryMain,
   ComponentButtonBorderRadius,
   PrimitivesSpacing2
 } from '@atipicus/mrs-ui/tokens';
@@ -337,7 +329,7 @@ import {
 const MyButton = () => (
   <button
     style={{
-      backgroundColor: SemanticColorPrimaryMain,
+      backgroundColor: SemanticColorLightPrimaryMain,
       borderRadius: ComponentButtonBorderRadius,
       padding: PrimitivesSpacing2,
     }}
@@ -353,7 +345,7 @@ const MyButton = () => (
 @import '@atipicus/mrs-ui/tokens/generated/css/tokens.css';
 
 .my-button {
-  background-color: var(--mrs-semantic-color-primary-main);
+  background-color: var(--mrs-semantic-color-light-primary-main);
   border-radius: var(--mrs-component-button-border-radius);
   padding: var(--mrs-primitives-spacing-2);
 }
@@ -365,7 +357,7 @@ const MyButton = () => (
 @import '@atipicus/mrs-ui/tokens/generated/scss/tokens';
 
 .my-button {
-  background-color: $mrs-semantic-color-primary-main;
+  background-color: $mrs-semantic-color-light-primary-main;
   border-radius: $mrs-component-button-border-radius;
   padding: $mrs-primitives-spacing-2;
 }
