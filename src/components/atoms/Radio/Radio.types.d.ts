@@ -20,7 +20,7 @@ export interface RadioProps extends Omit<MuiRadioProps, 'size' | 'color'> {
      * The size of the component.
      * @default "medium"
      */
-    size?: 'small' | 'medium' | 'large';
+    size?: 'small' | 'medium';
     /**
      * The color of the component.
      * It supports both default and custom theme colors.
