@@ -46,7 +46,8 @@ const ColorSwatch: React.FC<{ color: ColorToken }> = ({ color }) => {
     return luma > 128;
   };
 
-  const textColor = color.value && color.value.startsWith('#') && isLight(color.value) ? '#000000' : '#ffffff';
+  const textColor =
+    color.value && color.value.startsWith('#') && isLight(color.value) ? '#000000' : '#ffffff';
 
   return (
     <Paper
