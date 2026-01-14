@@ -13,6 +13,8 @@ import MuiTooltip from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
 import type { TooltipProps } from './Tooltip.types';
 
+import * as tokens from '../../../tokens/generated/ts/tokens';
+
 /**
  * Styled Tooltip with custom theme tokens
  */
@@ -20,21 +22,37 @@ const StyledTooltip = styled(
   React.forwardRef<HTMLDivElement, TooltipProps>(({ className, ...props }, ref) => (
     <MuiTooltip ref={ref} {...props} classes={{ popper: className }} />
   ))
-)(({ theme }) => ({
-  '& .MuiTooltip-tooltip': {
-    backgroundColor: 'rgba(97, 97, 97, 0.9)',
-    color: theme.palette.common.white,
-    fontSize: '0.625rem', // 10px
-    fontWeight: theme.typography.fontWeightMedium,
-    lineHeight: '14px',
-    padding: '4px 8px',
-    borderRadius: (theme.shape as any).sm,
-    fontFamily: theme.typography.fontFamily,
-  },
-  '& .MuiTooltip-arrow': {
-    color: 'rgba(97, 97, 97, 0.9)',
-  },
-}));
+)(({ theme }) => {
+  const mode = theme.palette.mode;
+  const tooltipBackground =
+    mode === 'light'
+      ? tokens.ComponentTooltipLightBackground
+      : tokens.ComponentTooltipDarkBackground;
+  const tooltipForeground =
+    mode === 'light'
+      ? tokens.ComponentTooltipLightForeground
+      : tokens.ComponentTooltipDarkForeground;
+  const tooltipBorderRadius =
+    mode === 'light'
+      ? tokens.ComponentTooltipLightBorderRadius
+      : tokens.ComponentTooltipDarkBorderRadius;
+
+  return {
+    '& .MuiTooltip-tooltip': {
+      backgroundColor: tooltipBackground,
+      color: tooltipForeground,
+      fontSize: tokens.PrimitivesTypographyFontSizeXs,
+      fontWeight: theme.typography.fontWeightMedium,
+      lineHeight: '14px',
+      padding: `${tokens.PrimitivesSpacing05} ${tokens.PrimitivesSpacing1}`,
+      borderRadius: tooltipBorderRadius,
+      fontFamily: theme.typography.fontFamily,
+    },
+    '& .MuiTooltip-arrow': {
+      color: tooltipBackground,
+    },
+  };
+});
 
 StyledTooltip.displayName = 'StyledTooltip';
 

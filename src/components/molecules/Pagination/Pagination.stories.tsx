@@ -16,8 +16,7 @@ const meta: Meta<typeof Pagination> = {
     layout: 'centered',
     docs: {
       description: {
-        component:
-          'Pagination enables the user to select a specific page from a range of pages.',
+        component: 'Pagination enables the user to select a specific page from a range of pages.',
       },
     },
   },
@@ -66,11 +65,7 @@ export const Default: Story = {
 
     return (
       <Stack spacing={2} alignItems="center">
-        <Pagination
-          count={10}
-          page={page}
-          onChange={(e, value) => setPage(value)}
-        />
+        <Pagination count={10} page={page} onChange={(e, value) => setPage(value)} />
         <Typography>Current Page: {page}</Typography>
       </Stack>
     );
@@ -103,12 +98,7 @@ export const Rounded: Story = {
     const [page, setPage] = useState(1);
 
     return (
-      <Pagination
-        count={10}
-        page={page}
-        shape="rounded"
-        onChange={(e, value) => setPage(value)}
-      />
+      <Pagination count={10} page={page} shape="rounded" onChange={(e, value) => setPage(value)} />
     );
   },
 };
@@ -162,9 +152,7 @@ export const WithFirstLast: Story = {
  * Without prev/next buttons
  */
 export const WithoutPrevNext: Story = {
-  render: () => (
-    <Pagination count={10} hidePrevButton hideNextButton />
-  ),
+  render: () => <Pagination count={10} hidePrevButton hideNextButton />,
 };
 
 /**

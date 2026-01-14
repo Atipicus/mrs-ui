@@ -31,18 +31,6 @@ describe('Radio', () => {
     expect(radio.parentElement).toHaveClass('MuiRadio-sizeSmall');
   });
 
-  it('renders with large size', () => {
-    const { container } = render(
-      <Radio size="large" inputProps={{ 'aria-label': 'Large radio' }} />
-    );
-    const radio = screen.getByRole('radio', { name: 'Large radio' });
-    // Check that the radio is rendered and has appropriate size class or attribute
-    expect(radio).toBeInTheDocument();
-    // In MUI 7.x, large size might be handled differently, so we just verify it renders
-    const radioWrapper = container.querySelector('.MuiRadio-root');
-    expect(radioWrapper).toBeInTheDocument();
-  });
-
   it('renders with primary color', () => {
     render(<Radio color="primary" inputProps={{ 'aria-label': 'Primary radio' }} />);
     const radio = screen.getByRole('radio', { name: 'Primary radio' });
@@ -186,10 +174,6 @@ describe('Radio', () => {
     radioWrapper = container.querySelector('.MuiRadio-root');
     expect(radioWrapper).toBeInTheDocument();
     // Medium size might not have a specific class in some MUI versions
-
-    rerender(<Radio size="large" inputProps={{ 'aria-label': 'Size test' }} />);
-    radioWrapper = container.querySelector('.MuiRadio-root');
-    expect(radioWrapper).toBeInTheDocument();
   });
 
   it('renders all color variants correctly', () => {

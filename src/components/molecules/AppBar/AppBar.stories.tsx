@@ -77,7 +77,7 @@ export const Default: Story = {
         </Typography>
       </Toolbar>
     </AppBar>
-  )
+  ),
 };
 
 /**
@@ -106,10 +106,21 @@ export const WithSearch: Story = {
   render: () => (
     <AppBar position="static">
       <Toolbar>
-        <IconButton size="large" edge="start" color="inherit" aria-label="open drawer" sx={{ mr: 2 }}>
+        <IconButton
+          size="large"
+          edge="start"
+          color="inherit"
+          aria-label="open drawer"
+          sx={{ mr: 2 }}
+        >
           <MaterialSymbol icon="menu" />
         </IconButton>
-        <Typography variant="h6" noWrap component="div" sx={{ display: { xs: 'none', sm: 'block' } }}>
+        <Typography
+          variant="h6"
+          noWrap
+          component="div"
+          sx={{ display: { xs: 'none', sm: 'block' } }}
+        >
           MRS
         </Typography>
         <Box sx={{ flexGrow: 1 }} />
@@ -145,7 +156,7 @@ export const WithSearch: Story = {
  */
 export const WithActions: Story = {
   args: {
-    color: "secondary"
+    color: 'secondary',
   },
 
   render: () => (
@@ -172,7 +183,7 @@ export const WithActions: Story = {
         </IconButton>
       </Toolbar>
     </AppBar>
-  )
+  ),
 };
 
 /**
@@ -233,7 +244,7 @@ export const Transparent: Story = {
 export const DefaultColor: Story = {
   args: {
     elevation: 1,
-    color: "inherit"
+    color: 'inherit',
   },
 
   render: () => (
@@ -244,7 +255,7 @@ export const DefaultColor: Story = {
         </Typography>
       </Toolbar>
     </AppBar>
-  )
+  ),
 };
 
 /**
@@ -425,9 +436,7 @@ export const AbsolutePosition: Story = {
         </Toolbar>
       </AppBar>
       <Box sx={{ pt: 10, px: 3 }}>
-        <Typography>
-          Positioned absolutely relative to the nearest positioned ancestor.
-        </Typography>
+        <Typography>Positioned absolutely relative to the nearest positioned ancestor.</Typography>
       </Box>
     </Box>
   ),

@@ -33,7 +33,7 @@ describe('Rating', () => {
     });
 
     it('should render with no value (empty)', () => {
-      const { container} = renderWithTheme(<Rating value={null} />);
+      const { container } = renderWithTheme(<Rating value={null} />);
       const filledStars = container.querySelectorAll('.MuiRating-iconFilled');
       expect(filledStars).toHaveLength(0);
     });
@@ -61,18 +61,14 @@ describe('Rating', () => {
 
   describe('Precision', () => {
     it('should support half-star precision', () => {
-      const { container } = renderWithTheme(
-        <Rating defaultValue={2.5} precision={0.5} />
-      );
+      const { container } = renderWithTheme(<Rating defaultValue={2.5} precision={0.5} />);
       const filledStars = container.querySelectorAll('.MuiRating-iconFilled');
       // With precision 0.5, we should have 2 full stars and 1 half star
       expect(filledStars.length).toBeGreaterThanOrEqual(2);
     });
 
     it('should support quarter precision', () => {
-      const { container } = renderWithTheme(
-        <Rating defaultValue={2.75} precision={0.25} />
-      );
+      const { container } = renderWithTheme(<Rating defaultValue={2.75} precision={0.25} />);
       const rating = container.querySelector('.MuiRating-root');
       expect(rating).toBeInTheDocument();
     });
@@ -87,18 +83,14 @@ describe('Rating', () => {
 
     it('should render readOnly without errors', () => {
       const handleChange = jest.fn();
-      const { container } = renderWithTheme(
-        <Rating readOnly onChange={handleChange} />
-      );
+      const { container } = renderWithTheme(<Rating readOnly onChange={handleChange} />);
       const rating = container.querySelector('.MuiRating-root');
       expect(rating).toBeInTheDocument();
     });
 
     it('should render disabled without errors', () => {
       const handleChange = jest.fn();
-      const { container } = renderWithTheme(
-        <Rating disabled onChange={handleChange} />
-      );
+      const { container } = renderWithTheme(<Rating disabled onChange={handleChange} />);
       const rating = container.querySelector('.MuiRating-root');
       expect(rating).toBeInTheDocument();
     });
@@ -118,9 +110,7 @@ describe('Rating', () => {
     });
 
     it('should highlight selected only', () => {
-      const { container } = renderWithTheme(
-        <Rating highlightSelectedOnly defaultValue={3} />
-      );
+      const { container } = renderWithTheme(<Rating highlightSelectedOnly defaultValue={3} />);
       const rating = container.querySelector('.MuiRating-root');
       expect(rating).toBeInTheDocument();
     });

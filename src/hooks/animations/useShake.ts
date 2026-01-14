@@ -26,10 +26,7 @@ interface UseShakeOptions {
  * ```
  */
 export const useShake = <T extends HTMLElement>(options: UseShakeOptions = {}) => {
-  const {
-    duration = parseInt(PrimitivesMotionDurationBase),
-    distance = 10,
-  } = options;
+  const { duration = parseInt(PrimitivesMotionDurationBase), distance = 10 } = options;
   const ref = useRef<T>(null);
 
   const shake = useCallback(() => {
@@ -53,4 +50,3 @@ export const useShake = <T extends HTMLElement>(options: UseShakeOptions = {}) =
 
   return { ref, shake };
 };
-

@@ -67,11 +67,7 @@ export const Default: Story = {
         icon={<SpeedDialIcon />}
       >
         {actions.map((action) => (
-          <SpeedDialAction
-            key={action.name}
-            icon={action.icon}
-            tooltipTitle={action.name}
-          />
+          <SpeedDialAction key={action.name} icon={action.icon} tooltipTitle={action.name} />
         ))}
       </SpeedDial>
     </Box>
@@ -194,11 +190,7 @@ export const CustomIcon: Story = {
         icon={<FavoriteIcon />}
       >
         {actions.map((action) => (
-          <SpeedDialAction
-            key={action.name}
-            icon={action.icon}
-            tooltipTitle={action.name}
-          />
+          <SpeedDialAction key={action.name} icon={action.icon} tooltipTitle={action.name} />
         ))}
       </SpeedDial>
     </Box>
@@ -217,11 +209,7 @@ export const CustomOpenIcon: Story = {
         icon={<SpeedDialIcon icon={<AddIcon />} openIcon={<EditIcon />} />}
       >
         {actions.map((action) => (
-          <SpeedDialAction
-            key={action.name}
-            icon={action.icon}
-            tooltipTitle={action.name}
-          />
+          <SpeedDialAction key={action.name} icon={action.icon} tooltipTitle={action.name} />
         ))}
       </SpeedDial>
     </Box>
@@ -262,9 +250,7 @@ export const Hidden: Story = {
     return (
       <Box sx={{ height: 320, transform: 'translateZ(0px)', flexGrow: 1 }}>
         <Box sx={{ mb: 2 }}>
-          <button onClick={() => setHidden(!hidden)}>
-            {hidden ? 'Show' : 'Hide'} SpeedDial
-          </button>
+          <button onClick={() => setHidden(!hidden)}>{hidden ? 'Show' : 'Hide'} SpeedDial</button>
         </Box>
         <SpeedDial
           ariaLabel="SpeedDial hidden example"
@@ -273,11 +259,7 @@ export const Hidden: Story = {
           hidden={hidden}
         >
           {actions.map((action) => (
-            <SpeedDialAction
-              key={action.name}
-              icon={action.icon}
-              tooltipTitle={action.name}
-            />
+            <SpeedDialAction key={action.name} icon={action.icon} tooltipTitle={action.name} />
           ))}
         </SpeedDial>
       </Box>
@@ -334,17 +316,9 @@ export const DisabledActions: Story = {
         sx={{ position: 'absolute', bottom: 16, right: 16 }}
         icon={<SpeedDialIcon />}
       >
-        <SpeedDialAction
-          icon={<FileCopyIcon />}
-          tooltipTitle="Copy (disabled)"
-          disabled
-        />
+        <SpeedDialAction icon={<FileCopyIcon />} tooltipTitle="Copy (disabled)" disabled />
         <SpeedDialAction icon={<SaveIcon />} tooltipTitle="Save" />
-        <SpeedDialAction
-          icon={<PrintIcon />}
-          tooltipTitle="Print (disabled)"
-          disabled
-        />
+        <SpeedDialAction icon={<PrintIcon />} tooltipTitle="Print (disabled)" disabled />
         <SpeedDialAction icon={<ShareIcon />} tooltipTitle="Share" />
       </SpeedDial>
     </Box>
@@ -368,21 +342,9 @@ export const TooltipPlacements: Story = {
           tooltipTitle="Left (default)"
           tooltipPlacement="left"
         />
-        <SpeedDialAction
-          icon={<SaveIcon />}
-          tooltipTitle="Right"
-          tooltipPlacement="right"
-        />
-        <SpeedDialAction
-          icon={<PrintIcon />}
-          tooltipTitle="Top"
-          tooltipPlacement="top"
-        />
-        <SpeedDialAction
-          icon={<ShareIcon />}
-          tooltipTitle="Bottom"
-          tooltipPlacement="bottom"
-        />
+        <SpeedDialAction icon={<SaveIcon />} tooltipTitle="Right" tooltipPlacement="right" />
+        <SpeedDialAction icon={<PrintIcon />} tooltipTitle="Top" tooltipPlacement="top" />
+        <SpeedDialAction icon={<ShareIcon />} tooltipTitle="Bottom" tooltipPlacement="bottom" />
       </SpeedDial>
     </Box>
   ),

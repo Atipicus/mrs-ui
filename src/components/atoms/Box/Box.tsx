@@ -18,15 +18,13 @@ import type { BoxProps } from './Box.types';
  * </Box>
  * ```
  */
-export const Box = React.forwardRef<HTMLDivElement, BoxProps>(
-  ({ children, ...props }, ref) => {
-    return (
-      <MuiBox ref={ref} {...props}>
-        {children}
-      </MuiBox>
-    );
-  }
-);
+export const Box = React.forwardRef<HTMLDivElement, BoxProps>(({ children, ...props }, ref) => {
+  return (
+    <MuiBox ref={ref} {...props}>
+      {children}
+    </MuiBox>
+  );
+});
 
 Box.displayName = 'Box';
 

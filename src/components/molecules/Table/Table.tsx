@@ -48,24 +48,9 @@ import type {
  * Table component for displaying tabular data
  */
 export const Table = React.forwardRef<HTMLTableElement, TableProps>(
-  (
-    {
-      children,
-      size = 'medium',
-      stickyHeader = false,
-      padding = 'normal',
-      ...props
-    },
-    ref
-  ) => {
+  ({ children, size = 'medium', stickyHeader = false, padding = 'normal', ...props }, ref) => {
     return (
-      <MuiTable
-        ref={ref}
-        size={size}
-        stickyHeader={stickyHeader}
-        padding={padding}
-        {...props}
-      >
+      <MuiTable ref={ref} size={size} stickyHeader={stickyHeader} padding={padding} {...props}>
         {children}
       </MuiTable>
     );

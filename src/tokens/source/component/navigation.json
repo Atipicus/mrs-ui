@@ -1,0 +1,97 @@
+{
+  "component": {
+    "sidenav": {
+      "width": {
+        "collapsed": { "$value": "64px", "$type": "dimension" },
+        "expanded": { "$value": "240px", "$type": "dimension" }
+      },
+      "light": {
+        "background": { "$value": "{semantic.color.light.background.paper}", "$type": "color" },
+        "border": { "$value": "{semantic.color.light.divider}", "$type": "color" },
+        "item": {
+          "default": {
+            "background": { "$value": "transparent", "$type": "color" },
+            "foreground": { "$value": "{semantic.color.light.text.primary}", "$type": "color" }
+          },
+          "hover": {
+            "background": { "$value": "{semantic.color.light.action.hover}", "$type": "color" },
+            "foreground": { "$value": "{semantic.color.light.text.primary}", "$type": "color" }
+          },
+          "selected": {
+            "background": { "$value": "{primitives.colors.alpha.primary.12}", "$type": "color" },
+            "foreground": { "$value": "{semantic.color.light.primary.main}", "$type": "color" }
+          }
+        },
+        "borderRadius": { "$value": "{primitives.radius.md}", "$type": "dimension" }
+      },
+      "dark": {
+        "background": { "$value": "{semantic.color.dark.background.paper}", "$type": "color" },
+        "border": { "$value": "{semantic.color.dark.divider}", "$type": "color" },
+        "item": {
+          "default": {
+            "background": { "$value": "transparent", "$type": "color" },
+            "foreground": { "$value": "{semantic.color.dark.text.primary}", "$type": "color" }
+          },
+          "hover": {
+            "background": { "$value": "{semantic.color.dark.action.hover}", "$type": "color" },
+            "foreground": { "$value": "{semantic.color.dark.text.primary}", "$type": "color" }
+          },
+          "selected": {
+            "background": {
+              "$value": "{primitives.colors.alpha.primary.24-dark}",
+              "$type": "color"
+            },
+            "foreground": { "$value": "{semantic.color.dark.primary.main}", "$type": "color" }
+          }
+        },
+        "borderRadius": { "$value": "{primitives.radius.md}", "$type": "dimension" }
+      }
+    },
+    "appbar": {
+      "height": { "$value": "64px", "$type": "dimension" },
+      "light": {
+        "background": { "$value": "{semantic.color.light.primary.main}", "$type": "color" },
+        "foreground": { "$value": "{semantic.color.light.primary.contrastText}", "$type": "color" }
+      },
+      "dark": {
+        "background": { "$value": "{semantic.color.dark.background.paper}", "$type": "color" },
+        "foreground": { "$value": "{semantic.color.dark.text.primary}", "$type": "color" }
+      }
+    },
+    "drawer": {
+      "light": {
+        "background": { "$value": "{semantic.color.light.background.paper}", "$type": "color" },
+        "borderRadius": { "$value": "{primitives.radius.none}", "$type": "dimension" }
+      },
+      "dark": {
+        "background": { "$value": "{semantic.color.dark.background.paper}", "$type": "color" },
+        "borderRadius": { "$value": "{primitives.radius.none}", "$type": "dimension" }
+      }
+    },
+    "bottomNavigation": {
+      "height": { "$value": "56px", "$type": "dimension" },
+      "light": {
+        "background": { "$value": "{semantic.color.light.background.paper}", "$type": "color" },
+        "item": {
+          "default": {
+            "foreground": { "$value": "{semantic.color.light.text.secondary}", "$type": "color" }
+          },
+          "selected": {
+            "foreground": { "$value": "{semantic.color.light.primary.main}", "$type": "color" }
+          }
+        }
+      },
+      "dark": {
+        "background": { "$value": "{semantic.color.dark.background.paper}", "$type": "color" },
+        "item": {
+          "default": {
+            "foreground": { "$value": "{semantic.color.dark.text.secondary}", "$type": "color" }
+          },
+          "selected": {
+            "foreground": { "$value": "{semantic.color.dark.primary.main}", "$type": "color" }
+          }
+        }
+      }
+    }
+  }
+}

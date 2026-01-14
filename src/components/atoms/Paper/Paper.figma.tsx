@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Paper } from "./Paper";
+import figma from '@figma/code-connect';
+import { Paper } from './Paper';
 
 /**
  * Code Connect mapping for Paper component
@@ -8,33 +8,29 @@ import { Paper } from "./Paper";
  */
 figma.connect(
   Paper,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11125-154952",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11125-154952',
   {
     props: {
-      variant: figma.enum("variant", {
-        Elevation: "elevation",
-        Outlined: "outlined",
+      variant: figma.enum('variant', {
+        Elevation: 'elevation',
+        Outlined: 'outlined',
       }),
-      elevation: figma.enum("elevation", {
-        "0": 0,
-        "1": 1,
-        "2": 2,
-        "3": 3,
-        "4": 4,
-        "6": 6,
-        "8": 8,
-        "12": 12,
-        "16": 16,
-        "24": 24,
+      elevation: figma.enum('elevation', {
+        '0': 0,
+        '1': 1,
+        '2': 2,
+        '3': 3,
+        '4': 4,
+        '6': 6,
+        '8': 8,
+        '12': 12,
+        '16': 16,
+        '24': 24,
       }),
-      square: figma.boolean("square"),
+      square: figma.boolean('square'),
     },
     example: (props) => (
-      <Paper
-        variant={props.variant}
-        elevation={props.elevation}
-        square={props.square}
-      >
+      <Paper variant={props.variant} elevation={props.elevation} square={props.square}>
         {/* Content */}
       </Paper>
     ),

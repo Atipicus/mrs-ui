@@ -55,7 +55,7 @@ const meta: Meta<typeof Rating> = {
     docs: {
       description: {
         component:
-          'Ratings provide insight regarding others\' opinions and experiences with a product. Users can also rate products they\'ve purchased.',
+          "Ratings provide insight regarding others' opinions and experiences with a product. Users can also rate products they've purchased.",
       },
     },
   },
@@ -109,9 +109,7 @@ export const HalfStar: Story = {
   render: () => (
     <Stack spacing={2}>
       <Rating defaultValue={2.5} precision={0.5} />
-      <Typography variant="caption">
-        Precision: 0.5 (allows half-star ratings)
-      </Typography>
+      <Typography variant="caption">Precision: 0.5 (allows half-star ratings)</Typography>
     </Stack>
   ),
 };
@@ -131,9 +129,7 @@ export const Controlled: Story = {
             setValue(newValue);
           }}
         />
-        <Typography variant="body2">
-          Current value: {value !== null ? value : 'None'}
-        </Typography>
+        <Typography variant="body2">Current value: {value !== null ? value : 'None'}</Typography>
       </Stack>
     );
   },
@@ -251,9 +247,7 @@ export const WithHoverFeedback: Story = {
           getLabelText={getLabelText}
         />
         {value !== null && (
-          <Typography variant="body2">
-            {labels[hover !== -1 ? hover : value]}
-          </Typography>
+          <Typography variant="body2">{labels[hover !== -1 ? hover : value]}</Typography>
         )}
       </Stack>
     );
@@ -267,8 +261,7 @@ export const RadioGroup: Story = {
   render: () => (
     <Stack spacing={2}>
       <Typography variant="body2">
-        Rating with radio group behavior (can deselect by clicking the same
-        value)
+        Rating with radio group behavior (can deselect by clicking the same value)
       </Typography>
       <Rating name="radio-group-rating" defaultValue={3} />
     </Stack>

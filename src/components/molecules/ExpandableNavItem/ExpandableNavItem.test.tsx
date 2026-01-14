@@ -93,11 +93,7 @@ describe('ExpandableNavItem', () => {
     const onToggle = jest.fn();
     renderWithTheme(
       <List>
-        <ExpandableNavItem
-          label="Parent"
-          onToggle={onToggle}
-          children={[{ label: 'Child' }]}
-        />
+        <ExpandableNavItem label="Parent" onToggle={onToggle} children={[{ label: 'Child' }]} />
       </List>
     );
     const parent = screen.getByText('Parent');

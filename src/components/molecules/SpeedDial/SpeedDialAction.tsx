@@ -21,12 +21,7 @@ import type { SpeedDialActionProps } from './SpeedDial.types';
  */
 export const SpeedDialAction = React.forwardRef<HTMLDivElement, SpeedDialActionProps>(
   (props, ref) => {
-    return (
-      <MuiSpeedDialAction
-        ref={ref}
-        {...props}
-      />
-    );
+    return <MuiSpeedDialAction ref={ref} {...props} />;
   }
 );
 

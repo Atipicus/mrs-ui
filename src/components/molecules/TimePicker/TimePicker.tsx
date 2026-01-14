@@ -15,28 +15,23 @@ import type { TimePickerProps } from './TimePicker.types';
  * TimePicker component for selecting time
  * Wraps MUI X TimePicker with MRS design tokens and theme integration
  */
-export const TimePicker = React.forwardRef<HTMLDivElement, TimePickerProps>(
-  (props, ref) => {
-    const {
-      slotProps,
-      ...rest
-    } = props;
+export const TimePicker = React.forwardRef<HTMLDivElement, TimePickerProps>((props, ref) => {
+  const { slotProps, ...rest } = props;
 
-    return (
-      <MuiTimePicker
-        ref={ref}
-        slotProps={{
-          textField: {
-            fullWidth: true,
-            ...slotProps?.textField,
-          },
-          ...slotProps,
-        }}
-        {...rest}
-      />
-    );
-  }
-);
+  return (
+    <MuiTimePicker
+      ref={ref}
+      slotProps={{
+        textField: {
+          fullWidth: true,
+          ...slotProps?.textField,
+        },
+        ...slotProps,
+      }}
+      {...rest}
+    />
+  );
+});
 
 TimePicker.displayName = 'TimePicker';
 

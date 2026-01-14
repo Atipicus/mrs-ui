@@ -48,10 +48,7 @@ export interface LoadingDotsProps {
  * <LoadingDots color="primary" size="medium" />
  * ```
  */
-export const LoadingDots: React.FC<LoadingDotsProps> = ({
-  color = 'primary',
-  size = 'medium',
-}) => {
+export const LoadingDots: React.FC<LoadingDotsProps> = ({ color = 'primary', size = 'medium' }) => {
   const sizeMap = {
     small: 8,
     medium: 12,
@@ -96,4 +93,3 @@ export const LoadingDots: React.FC<LoadingDotsProps> = ({
     </Box>
   );
 };
-

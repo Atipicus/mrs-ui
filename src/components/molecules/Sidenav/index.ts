@@ -10,4 +10,3 @@ export type {
   SidenavNavigationItem,
 } from './Sidenav.types';
 export { isSidenavGroup } from './Sidenav.types';
-

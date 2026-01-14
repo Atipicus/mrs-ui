@@ -16,12 +16,29 @@ export interface StackProps extends MuiStackProps {
   /**
    * Defines the flex-direction style property
    */
-  direction?: StackDirection | { xs?: StackDirection; sm?: StackDirection; md?: StackDirection; lg?: StackDirection; xl?: StackDirection };
+  direction?:
+    | StackDirection
+    | {
+        xs?: StackDirection;
+        sm?: StackDirection;
+        md?: StackDirection;
+        lg?: StackDirection;
+        xl?: StackDirection;
+      };
 
   /**
    * Defines the space between immediate children
    */
-  spacing?: number | string | { xs?: number | string; sm?: number | string; md?: number | string; lg?: number | string; xl?: number | string };
+  spacing?:
+    | number
+    | string
+    | {
+        xs?: number | string;
+        sm?: number | string;
+        md?: number | string;
+        lg?: number | string;
+        xl?: number | string;
+      };
 
   /**
    * Add an element between each child

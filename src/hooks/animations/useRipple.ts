@@ -58,4 +58,3 @@ export const useRipple = () => {
 
   return { ripples, createRipple, clearRipples };
 };
-

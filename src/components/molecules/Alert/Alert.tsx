@@ -66,16 +66,23 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
     const theme = useTheme();
     const tokenColors = useAlertColors(severity, variant);
 
-    // Use theme.shape.md (8px) for consistent, moderate border radius
+    // Use 16px for consistent border radius
     // Note: theme.shape has custom tokens - sm(4), md(8), lg(12), xl(24), rounded(9999)
     // IMPORTANT: Must use string with 'px' suffix - numbers are multiplied by spacing (8*8=64px)
-    const shapeWithTokens = theme.shape as { borderRadius: number; sm: number; md: number; lg: number; xl: number; rounded: number };
-    const alertBorderRadius = `${shapeWithTokens.md}px`; // '8px' - explicit units prevent spacing multiplication
+    const shapeWithTokens = theme.shape as {
+      borderRadius: number;
+      sm: number;
+      md: number;
+      lg: number;
+      xl: number;
+      rounded: number;
+    };
+    const alertBorderRadius = '16px'; // explicit units prevent spacing multiplication
 
     // Debug: Log border radius in development
     // eslint-disable-next-line no-undef
     if (process.env.NODE_ENV === 'development') {
-      console.log('[Alert] Using border radius:', alertBorderRadius, '(theme.shape.md)');
+      console.log('[Alert] Using border radius:', alertBorderRadius, '(theme.shape.lg)');
       console.log('[Alert] Available shape tokens (raw values):', {
         sm: shapeWithTokens.sm,
         md: shapeWithTokens.md,
@@ -83,7 +90,9 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         xl: shapeWithTokens.xl,
         rounded: shapeWithTokens.rounded,
       });
-      console.log('[Alert] Note: Values converted to px strings to prevent MUI spacing multiplication');
+      console.log(
+        '[Alert] Note: Values converted to px strings to prevent MUI spacing multiplication'
+      );
     }
 
     // Determine icon name and fill based on severity and variant
@@ -94,31 +103,26 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
       icon === false
         ? false
         : React.isValidElement(icon)
-        ? icon
-        : iconName && (
-            <MaterialSymbol
-              icon={iconName}
-              fill={iconFill}
-              size="small"
-              color={tokenColors.foreground}
-            />
-          );
+          ? icon
+          : iconName && (
+              <MaterialSymbol
+                icon={iconName}
+                fill={iconFill}
+                size="medium"
+                color={tokenColors.foreground}
+              />
+            );
 
-    const closeButton =
-      close && (
-        <IconButton
-          size="small"
-          aria-label="close"
-          onClick={onClose}
-          sx={{ color: tokenColors.foreground }}
-        >
-          <MaterialSymbol
-            icon="close"
-            size="small"
-            color={tokenColors.foreground}
-          />
-        </IconButton>
-      );
+    const closeButton = close && (
+      <IconButton
+        size="medium"
+        aria-label="close"
+        onClick={onClose}
+        sx={{ color: tokenColors.foreground }}
+      >
+        <MaterialSymbol icon="close" size="medium" color={tokenColors.foreground} />
+      </IconButton>
+    );
 
     const actionContent = action ? (
       closeButton ? (
@@ -144,15 +148,15 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
           borderRadius: alertBorderRadius,
           backgroundColor: tokenColors.background,
           color: tokenColors.foreground,
-          alignItems: 'flex-justify',
-          py: 1.5,
+          alignItems: 'top',
+          py: 1.2,
           px: 2,
           ...(variant === 'outlined' && {
             border: `1px solid ${tokenColors.border}`,
           }),
           '& .MuiAlert-icon': {
             color: tokenColors.foreground,
-            padding: 1,
+            padding: 0.25,
             marginRight: theme.spacing(1),
             mt: 0.25,
           },
@@ -163,7 +167,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
           '& .MuiAlert-action': {
             padding: 0,
             marginLeft: theme.spacing(2),
-            alignItems: 'flex-justify',
+            alignItems: 'top',
           },
           ...sx,
         }}
@@ -172,15 +176,15 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         <Stack spacing={0.25}>
           {title && (
             <Typography
-              variant="body1"
+              variant="h5"
               fontWeight={theme.typography.fontWeightMedium}
-              lineHeight={1.5}
+              lineHeight={1.2}
             >
               {title}
             </Typography>
           )}
           {description && (
-            <Typography variant="body2" lineHeight={1.43}>
+            <Typography variant="body1" lineHeight={1.5}>
               {description}
             </Typography>
           )}
@@ -194,4 +198,3 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 Alert.displayName = 'Alert';
 
 export default Alert;
-

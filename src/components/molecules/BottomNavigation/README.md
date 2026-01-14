@@ -56,11 +56,7 @@ function MyNavigation() {
   const [value, setValue] = useState(0);
 
   return (
-    <BottomNavigation
-      showLabels
-      value={value}
-      onChange={(event, newValue) => setValue(newValue)}
-    >
+    <BottomNavigation showLabels value={value} onChange={(event, newValue) => setValue(newValue)}>
       <BottomNavigationAction label="Home" icon={<HomeIcon />} />
       <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
       <BottomNavigationAction label="Nearby" icon={<LocationIcon />} />
@@ -78,11 +74,7 @@ function MyNavigation() {
   const [value, setValue] = useState(0);
 
   return (
-    <BottomNavigation
-      showLabels
-      value={value}
-      onChange={(event, newValue) => setValue(newValue)}
-    >
+    <BottomNavigation showLabels value={value} onChange={(event, newValue) => setValue(newValue)}>
       <BottomNavigationAction
         label="Home"
         icon={<MaterialSymbol icon="home" fill={value === 0 ? 1 : 0} />}
@@ -170,26 +162,26 @@ npm test -- BottomNavigation
 
 Extends `MuiBottomNavigationProps`
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `value` | `any` | - | Currently selected action value |
-| `onChange` | `(event: SyntheticEvent, value: any) => void` | - | Callback when value changes |
-| `showLabels` | `boolean` | `false` | Show labels for all actions |
-| `children` | `ReactNode` | - | BottomNavigationAction components |
-| `sx` | `SxProps` | - | MUI sx prop for styling |
+| Prop         | Type                                          | Default | Description                       |
+| ------------ | --------------------------------------------- | ------- | --------------------------------- |
+| `value`      | `any`                                         | -       | Currently selected action value   |
+| `onChange`   | `(event: SyntheticEvent, value: any) => void` | -       | Callback when value changes       |
+| `showLabels` | `boolean`                                     | `false` | Show labels for all actions       |
+| `children`   | `ReactNode`                                   | -       | BottomNavigationAction components |
+| `sx`         | `SxProps`                                     | -       | MUI sx prop for styling           |
 
 ### BottomNavigationAction Props
 
 Extends `MuiBottomNavigationActionProps`
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `icon` | `ReactNode` | - | Icon element (MUI Icon or MaterialSymbol) |
-| `label` | `ReactNode` | - | Label text or element |
-| `value` | `any` | - | Custom value (defaults to index) |
-| `showLabel` | `boolean` | `false` | Always show this action's label |
-| `disabled` | `boolean` | `false` | Disable this action |
-| `sx` | `SxProps` | - | MUI sx prop for styling |
+| Prop        | Type        | Default | Description                               |
+| ----------- | ----------- | ------- | ----------------------------------------- |
+| `icon`      | `ReactNode` | -       | Icon element (MUI Icon or MaterialSymbol) |
+| `label`     | `ReactNode` | -       | Label text or element                     |
+| `value`     | `any`       | -       | Custom value (defaults to index)          |
+| `showLabel` | `boolean`   | `false` | Always show this action's label           |
+| `disabled`  | `boolean`   | `false` | Disable this action                       |
+| `sx`        | `SxProps`   | -       | MUI sx prop for styling                   |
 
 ## Design Guidelines
 
@@ -264,16 +256,13 @@ Extends `MuiBottomNavigationActionProps`
 ```tsx
 import { Paper } from '@mui/material';
 
-<Paper
-  sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}
-  elevation={3}
->
+<Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
   <BottomNavigation showLabels value={value} onChange={handleChange}>
     <BottomNavigationAction label="Home" icon={<MaterialSymbol icon="home" />} />
     <BottomNavigationAction label="Search" icon={<MaterialSymbol icon="search" />} />
     <BottomNavigationAction label="Profile" icon={<MaterialSymbol icon="person" />} />
   </BottomNavigation>
-</Paper>
+</Paper>;
 ```
 
 ### With React Router
@@ -294,7 +283,7 @@ import { Link } from 'react-router-dom';
     component={Link}
     to="/profile"
   />
-</BottomNavigation>
+</BottomNavigation>;
 ```
 
 ### Responsive Navigation
@@ -308,13 +297,9 @@ const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 return (
   <>
     {isMobile ? (
-      <BottomNavigation>
-        {/* Mobile navigation */}
-      </BottomNavigation>
+      <BottomNavigation>{/* Mobile navigation */}</BottomNavigation>
     ) : (
-      <AppBar>
-        {/* Desktop navigation */}
-      </AppBar>
+      <AppBar>{/* Desktop navigation */}</AppBar>
     )}
   </>
 );
@@ -327,11 +312,11 @@ Replace MUI icons with Material Symbols for better consistency:
 ```tsx
 // Before (MUI Icons)
 import HomeIcon from '@mui/icons-material/Home';
-<BottomNavigationAction icon={<HomeIcon />} />
+<BottomNavigationAction icon={<HomeIcon />} />;
 
 // After (Material Symbols)
 import { MaterialSymbol } from '@mrs/ui';
-<BottomNavigationAction icon={<MaterialSymbol icon="home" />} />
+<BottomNavigationAction icon={<MaterialSymbol icon="home" />} />;
 ```
 
 ## Resources

@@ -68,12 +68,7 @@ All MUI X DateTimePicker props are supported. See [MUI X DateTimePicker document
 ### 24-Hour Format
 
 ```tsx
-<DateTimePicker
-  label="Date & Time"
-  format="DD/MM/YYYY HH:mm"
-  ampm={false}
-  value={dayjs()}
-/>
+<DateTimePicker label="Date & Time" format="DD/MM/YYYY HH:mm" ampm={false} value={dayjs()} />
 ```
 
 ### With Min/Max DateTime
@@ -90,11 +85,7 @@ All MUI X DateTimePicker props are supported. See [MUI X DateTimePicker document
 ### With Minutes Step
 
 ```tsx
-<DateTimePicker
-  label="Date & Time (30 min intervals)"
-  minutesStep={30}
-  value={dayjs()}
-/>
+<DateTimePicker label="Date & Time (30 min intervals)" minutesStep={30} value={dayjs()} />
 ```
 
 ### With Disabled Dates (Weekends)
@@ -140,17 +131,13 @@ const [error, setError] = React.useState(null);
       helperText: error,
     },
   }}
-/>
+/>;
 ```
 
 ### Opening to Time View
 
 ```tsx
-<DateTimePicker
-  label="Date & Time"
-  openTo="hours"
-  value={dayjs()}
-/>
+<DateTimePicker label="Date & Time" openTo="hours" value={dayjs()} />
 ```
 
 ## LocalizationProvider
@@ -161,11 +148,7 @@ The DateTimePicker requires a LocalizationProvider wrapper. This can be placed a
 import { LocalizationProvider } from '@atipicus/mrs-ui';
 
 function App() {
-  return (
-    <LocalizationProvider>
-      {/* Your components using DateTimePicker */}
-    </LocalizationProvider>
-  );
+  return <LocalizationProvider>{/* Your components using DateTimePicker */}</LocalizationProvider>;
 }
 ```
 

@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Table } from "./Table";
+import figma from '@figma/code-connect';
+import { Table } from './Table';
 
 /**
  * Code Connect mapping for Table component
@@ -8,26 +8,22 @@ import { Table } from "./Table";
  */
 figma.connect(
   Table,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11102-138329",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11102-138329',
   {
     props: {
-      size: figma.enum("size", {
-        Small: "small",
-        Medium: "medium",
+      size: figma.enum('size', {
+        Small: 'small',
+        Medium: 'medium',
       }),
-      padding: figma.enum("padding", {
-        Normal: "normal",
-        Checkbox: "checkbox",
-        None: "none",
+      padding: figma.enum('padding', {
+        Normal: 'normal',
+        Checkbox: 'checkbox',
+        None: 'none',
       }),
-      stickyHeader: figma.boolean("stickyHeader"),
+      stickyHeader: figma.boolean('stickyHeader'),
     },
     example: (props) => (
-      <Table
-        size={props.size}
-        padding={props.padding}
-        stickyHeader={props.stickyHeader}
-      >
+      <Table size={props.size} padding={props.padding} stickyHeader={props.stickyHeader}>
         <TableHead>
           <TableRow>
             <TableCell>Column 1</TableCell>

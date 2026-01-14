@@ -384,4 +384,3 @@ export const WithClickHandlers: Story = {
     },
   },
 };
-

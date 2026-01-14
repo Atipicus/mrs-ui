@@ -10,9 +10,26 @@ import MuiStepLabel from '@mui/material/StepLabel';
 import type { StepperProps, StepProps, StepLabelProps } from './Stepper.types';
 
 export const Stepper = React.forwardRef<HTMLDivElement, StepperProps>(
-  ({ children, activeStep = 0, orientation = 'horizontal', alternativeLabel = false, nonLinear = false, ...props }, ref) => {
+  (
+    {
+      children,
+      activeStep = 0,
+      orientation = 'horizontal',
+      alternativeLabel = false,
+      nonLinear = false,
+      ...props
+    },
+    ref
+  ) => {
     return (
-      <MuiStepper ref={ref} activeStep={activeStep} orientation={orientation} alternativeLabel={alternativeLabel} nonLinear={nonLinear} {...props}>
+      <MuiStepper
+        ref={ref}
+        activeStep={activeStep}
+        orientation={orientation}
+        alternativeLabel={alternativeLabel}
+        nonLinear={nonLinear}
+        {...props}
+      >
         {children}
       </MuiStepper>
     );

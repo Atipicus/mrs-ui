@@ -9,6 +9,7 @@ The MRS Design System includes comprehensive animation and transition tokens bas
 ## 🎯 Philosophy
 
 **Motion should be**:
+
 - **Purposeful**: Every animation has a clear reason
 - **Quick**: Fast enough to not slow down the user
 - **Consistent**: Same duration and easing for similar actions
@@ -33,14 +34,14 @@ Duration tokens define how long animations and transitions last.
 
 ### Primitive Durations
 
-| Token | Value | Use Case |
-|-------|-------|----------|
-| `instant` | `0ms` | Instant changes, no animation |
-| `fast` | `100ms` | Micro-interactions (toggles, checkboxes, switches) |
-| `base` | `200ms` | Standard transitions (buttons, chips, inputs) |
-| `moderate` | `300ms` | Medium elements (drawers, dialogs, accordions) |
-| `slow` | `400ms` | Large content shifts (page transitions) |
-| `slower` | `500ms` | Complex animations (multi-step processes) |
+| Token      | Value   | Use Case                                           |
+| ---------- | ------- | -------------------------------------------------- |
+| `instant`  | `0ms`   | Instant changes, no animation                      |
+| `fast`     | `100ms` | Micro-interactions (toggles, checkboxes, switches) |
+| `base`     | `200ms` | Standard transitions (buttons, chips, inputs)      |
+| `moderate` | `300ms` | Medium elements (drawers, dialogs, accordions)     |
+| `slow`     | `400ms` | Large content shifts (page transitions)            |
+| `slower`   | `500ms` | Complex animations (multi-step processes)          |
 
 ### Usage Examples
 
@@ -76,44 +77,49 @@ Easing functions (cubic-bezier curves) control the acceleration and deceleration
 
 ### Primitive Easing Functions
 
-| Token | Value | Use Case | Curve |
-|-------|-------|----------|-------|
-| `linear` | `cubic-bezier(0, 0, 1, 1)` | Constant speed (rare) | Straight line |
-| `standard` | `cubic-bezier(0.4, 0, 0.2, 1)` | Most common transition | Smooth S-curve |
-| `emphasized` | `cubic-bezier(0.2, 0, 0, 1)` | Emphasized motion | Strong decel |
-| `decelerate` | `cubic-bezier(0, 0, 0.2, 1)` | Elements **entering** screen | Quick start, slow end |
-| `accelerate` | `cubic-bezier(0.4, 0, 1, 1)` | Elements **leaving** screen | Slow start, quick end |
-| `sharp` | `cubic-bezier(0.4, 0, 0.6, 1)` | Quick, focused transitions | Sharp curve |
-| `easeIn` | `cubic-bezier(0.4, 0, 1, 1)` | Gradual acceleration | Start slow |
-| `easeOut` | `cubic-bezier(0, 0, 0.2, 1)` | Gradual deceleration | End slow |
-| `easeInOut` | `cubic-bezier(0.4, 0, 0.2, 1)` | Smooth start and end | Balanced |
+| Token        | Value                          | Use Case                     | Curve                 |
+| ------------ | ------------------------------ | ---------------------------- | --------------------- |
+| `linear`     | `cubic-bezier(0, 0, 1, 1)`     | Constant speed (rare)        | Straight line         |
+| `standard`   | `cubic-bezier(0.4, 0, 0.2, 1)` | Most common transition       | Smooth S-curve        |
+| `emphasized` | `cubic-bezier(0.2, 0, 0, 1)`   | Emphasized motion            | Strong decel          |
+| `decelerate` | `cubic-bezier(0, 0, 0.2, 1)`   | Elements **entering** screen | Quick start, slow end |
+| `accelerate` | `cubic-bezier(0.4, 0, 1, 1)`   | Elements **leaving** screen  | Slow start, quick end |
+| `sharp`      | `cubic-bezier(0.4, 0, 0.6, 1)` | Quick, focused transitions   | Sharp curve           |
+| `easeIn`     | `cubic-bezier(0.4, 0, 1, 1)`   | Gradual acceleration         | Start slow            |
+| `easeOut`    | `cubic-bezier(0, 0, 0.2, 1)`   | Gradual deceleration         | End slow              |
+| `easeInOut`  | `cubic-bezier(0.4, 0, 0.2, 1)` | Smooth start and end         | Balanced              |
 
 ### When to Use Each Easing
 
 #### `standard` (Most Common)
+
 - General purpose transitions
 - Button hover/focus states
 - Color changes
 - Small movements
 
 #### `decelerate` (Entering)
+
 - Modals appearing
 - Drawers sliding in
 - Content expanding
 - **Elements coming INTO view**
 
 #### `accelerate` (Leaving)
+
 - Modals disappearing
 - Drawers sliding out
 - Content collapsing
 - **Elements going OUT of view**
 
 #### `emphasized` (Material Design)
+
 - Important state changes
 - User-triggered actions
 - Primary interactions
 
 #### `sharp` (Quick & Snappy)
+
 - Toggle switches
 - Radio buttons
 - Checkboxes
@@ -144,11 +150,11 @@ Pre-configured transitions combining duration + easing for common patterns.
 
 ```typescript
 // Fade In
-SemanticTransitionFadeIn
+SemanticTransitionFadeIn;
 // → "opacity 200ms cubic-bezier(0.4, 0, 1, 1)"
 
 // Fade Out
-SemanticTransitionFadeOut
+SemanticTransitionFadeOut;
 // → "opacity 200ms cubic-bezier(0, 0, 0.2, 1)"
 ```
 
@@ -158,11 +164,11 @@ SemanticTransitionFadeOut
 
 ```typescript
 // Slide In (entering)
-SemanticTransitionSlideIn
+SemanticTransitionSlideIn;
 // → "transform 300ms cubic-bezier(0, 0, 0.2, 1)"
 
 // Slide Out (leaving)
-SemanticTransitionSlideOut
+SemanticTransitionSlideOut;
 // → "transform 300ms cubic-bezier(0.4, 0, 1, 1)"
 ```
 
@@ -172,11 +178,11 @@ SemanticTransitionSlideOut
 
 ```typescript
 // Expand (opening)
-SemanticTransitionExpandIn
+SemanticTransitionExpandIn;
 // → "all 300ms cubic-bezier(0.4, 0, 0.2, 1)"
 
 // Collapse (closing)
-SemanticTransitionExpandOut
+SemanticTransitionExpandOut;
 // → "all 200ms cubic-bezier(0.4, 0, 0.6, 1)"
 ```
 
@@ -185,7 +191,7 @@ SemanticTransitionExpandOut
 ### Elevation Transitions
 
 ```typescript
-SemanticTransitionElevation
+SemanticTransitionElevation;
 // → "box-shadow 100ms cubic-bezier(0.4, 0, 0.2, 1)"
 ```
 
@@ -200,14 +206,15 @@ Each component has pre-configured animation tokens for consistent behavior.
 ### Button
 
 ```typescript
-ComponentButtonTransitionDefault
+ComponentButtonTransitionDefault;
 // → "all 100ms cubic-bezier(0.4, 0, 0.2, 1)"
 
-ComponentButtonTransitionElevation
+ComponentButtonTransitionElevation;
 // → "box-shadow 100ms cubic-bezier(0.4, 0, 0.2, 1)"
 ```
 
 **Implementation**:
+
 ```tsx
 <Button
   sx={{
@@ -222,16 +229,17 @@ ComponentButtonTransitionElevation
 ### Dialog
 
 ```typescript
-ComponentDialogTransitionEnter
-// → "opacity 300ms cubic-bezier(0, 0, 0.2, 1), 
+ComponentDialogTransitionEnter;
+// → "opacity 300ms cubic-bezier(0, 0, 0.2, 1),
 //     transform 300ms cubic-bezier(0, 0, 0.2, 1)"
 
-ComponentDialogTransitionExit
-// → "opacity 200ms cubic-bezier(0.4, 0, 1, 1), 
+ComponentDialogTransitionExit;
+// → "opacity 200ms cubic-bezier(0.4, 0, 1, 1),
 //     transform 200ms cubic-bezier(0.4, 0, 1, 1)"
 ```
 
 **Implementation**:
+
 ```tsx
 <Dialog
   TransitionProps={{
@@ -246,34 +254,35 @@ ComponentDialogTransitionExit
 ### Drawer
 
 ```typescript
-ComponentDrawerTransitionEnter
+ComponentDrawerTransitionEnter;
 // → "transform 300ms cubic-bezier(0, 0, 0.2, 1)"
 
-ComponentDrawerTransitionExit
+ComponentDrawerTransitionExit;
 // → "transform 300ms cubic-bezier(0.4, 0, 1, 1)"
 ```
 
 ### Switch
 
 ```typescript
-ComponentSwitchTransitionThumb
+ComponentSwitchTransitionThumb;
 // → "transform 100ms cubic-bezier(0.4, 0, 0.6, 1)"
 
-ComponentSwitchTransitionTrack
+ComponentSwitchTransitionTrack;
 // → "background-color 100ms cubic-bezier(0.4, 0, 0.2, 1)"
 ```
 
 **Why Different**:
+
 - Thumb uses `sharp` easing for quick, snappy movement
 - Track uses `standard` easing for smooth color change
 
 ### Skeleton (Loading Animations)
 
 ```typescript
-ComponentSkeletonAnimationPulseDuration
+ComponentSkeletonAnimationPulseDuration;
 // → "1500ms"
 
-ComponentSkeletonAnimationWaveDuration
+ComponentSkeletonAnimationWaveDuration;
 // → "1600ms"
 ```
 
@@ -282,10 +291,10 @@ ComponentSkeletonAnimationWaveDuration
 ### Progress
 
 ```typescript
-ComponentProgressAnimationIndeterminateDuration
+ComponentProgressAnimationIndeterminateDuration;
 // → "2000ms"
 
-ComponentProgressAnimationCircularDuration
+ComponentProgressAnimationCircularDuration;
 // → "1400ms"
 ```
 
@@ -303,12 +312,9 @@ Material-UI provides transition components that work with our tokens:
 import Fade from '@mui/material/Fade';
 import { PrimitivesMotionDurationBase } from '@/tokens';
 
-<Fade 
-  in={show} 
-  timeout={parseInt(PrimitivesMotionDurationBase)}
->
+<Fade in={show} timeout={parseInt(PrimitivesMotionDurationBase)}>
   <div>Content</div>
-</Fade>
+</Fade>;
 ```
 
 #### Grow
@@ -317,12 +323,9 @@ import { PrimitivesMotionDurationBase } from '@/tokens';
 import Grow from '@mui/material/Grow';
 import { PrimitivesMotionDurationModerate } from '@/tokens';
 
-<Grow 
-  in={show} 
-  timeout={parseInt(PrimitivesMotionDurationModerate)}
->
+<Grow in={show} timeout={parseInt(PrimitivesMotionDurationModerate)}>
   <div>Content</div>
-</Grow>
+</Grow>;
 ```
 
 #### Slide
@@ -331,13 +334,9 @@ import { PrimitivesMotionDurationModerate } from '@/tokens';
 import Slide from '@mui/material/Slide';
 import { ComponentDrawerTransitionEnter } from '@/tokens';
 
-<Slide 
-  in={show} 
-  direction="right"
-  timeout={300}
->
+<Slide in={show} direction="right" timeout={300}>
   <div>Content</div>
-</Slide>
+</Slide>;
 ```
 
 #### Collapse
@@ -348,7 +347,7 @@ import { ComponentCollapseTransitionEnter } from '@/tokens';
 
 <Collapse in={show} timeout={300}>
   <div>Content</div>
-</Collapse>
+</Collapse>;
 ```
 
 ### Theme Integration
@@ -366,13 +365,13 @@ import {
 const theme = createTheme({
   transitions: {
     duration: {
-      shortest: parseInt(PrimitivesMotionDurationFast),    // 100ms
-      shorter: parseInt(PrimitivesMotionDurationFast),     // 100ms
-      short: parseInt(PrimitivesMotionDurationBase),       // 200ms
-      standard: parseInt(PrimitivesMotionDurationBase),    // 200ms
+      shortest: parseInt(PrimitivesMotionDurationFast), // 100ms
+      shorter: parseInt(PrimitivesMotionDurationFast), // 100ms
+      short: parseInt(PrimitivesMotionDurationBase), // 200ms
+      standard: parseInt(PrimitivesMotionDurationBase), // 200ms
       complex: parseInt(PrimitivesMotionDurationModerate), // 300ms
       enteringScreen: parseInt(PrimitivesMotionDurationModerate), // 300ms
-      leavingScreen: parseInt(PrimitivesMotionDurationBase),      // 200ms
+      leavingScreen: parseInt(PrimitivesMotionDurationBase), // 200ms
     },
     easing: {
       easeInOut: PrimitivesMotionEasingStandard,
@@ -390,25 +389,25 @@ const theme = createTheme({
 
 ### All Duration Tokens
 
-| Token Name | Value | Common Use |
-|------------|-------|------------|
-| `PrimitivesMotionDurationInstant` | `0ms` | Instant changes |
-| `PrimitivesMotionDurationFast` | `100ms` | Toggles, switches |
-| `PrimitivesMotionDurationBase` | `200ms` | Buttons, chips |
-| `PrimitivesMotionDurationModerate` | `300ms` | Dialogs, drawers |
-| `PrimitivesMotionDurationSlow` | `400ms` | Page transitions |
-| `PrimitivesMotionDurationSlower` | `500ms` | Complex animations |
+| Token Name                         | Value   | Common Use         |
+| ---------------------------------- | ------- | ------------------ |
+| `PrimitivesMotionDurationInstant`  | `0ms`   | Instant changes    |
+| `PrimitivesMotionDurationFast`     | `100ms` | Toggles, switches  |
+| `PrimitivesMotionDurationBase`     | `200ms` | Buttons, chips     |
+| `PrimitivesMotionDurationModerate` | `300ms` | Dialogs, drawers   |
+| `PrimitivesMotionDurationSlow`     | `400ms` | Page transitions   |
+| `PrimitivesMotionDurationSlower`   | `500ms` | Complex animations |
 
 ### All Easing Tokens
 
-| Token Name | Cubic Bezier | Best For |
-|------------|--------------|----------|
-| `PrimitivesMotionEasingLinear` | `(0, 0, 1, 1)` | Progress bars (rare) |
-| `PrimitivesMotionEasingStandard` | `(0.4, 0, 0.2, 1)` | General transitions |
-| `PrimitivesMotionEasingEmphasized` | `(0.2, 0, 0, 1)` | Important actions |
-| `PrimitivesMotionEasingDecelerate` | `(0, 0, 0.2, 1)` | Entering screen |
-| `PrimitivesMotionEasingAccelerate` | `(0.4, 0, 1, 1)` | Leaving screen |
-| `PrimitivesMotionEasingSharp` | `(0.4, 0, 0.6, 1)` | Quick feedback |
+| Token Name                         | Cubic Bezier       | Best For             |
+| ---------------------------------- | ------------------ | -------------------- |
+| `PrimitivesMotionEasingLinear`     | `(0, 0, 1, 1)`     | Progress bars (rare) |
+| `PrimitivesMotionEasingStandard`   | `(0.4, 0, 0.2, 1)` | General transitions  |
+| `PrimitivesMotionEasingEmphasized` | `(0.2, 0, 0, 1)`   | Important actions    |
+| `PrimitivesMotionEasingDecelerate` | `(0, 0, 0.2, 1)`   | Entering screen      |
+| `PrimitivesMotionEasingAccelerate` | `(0.4, 0, 1, 1)`   | Leaving screen       |
+| `PrimitivesMotionEasingSharp`      | `(0.4, 0, 0.6, 1)` | Quick feedback       |
 
 ---
 
@@ -465,7 +464,7 @@ const buttonStyle = {
 
 ```typescript
 // ✅ Good: Subtle, purposeful
-<Chip 
+<Chip
   onClick={handleClick}
   sx={{ transition: ComponentChipTransitionDefault }}
 />
@@ -504,34 +503,37 @@ sx={{
 ### Issue: Animation feels sluggish
 
 **Solution**: Use faster duration
+
 ```typescript
 // Before
-transition: PrimitivesMotionDurationSlow // 400ms
+transition: PrimitivesMotionDurationSlow; // 400ms
 
 // After
-transition: PrimitivesMotionDurationBase // 200ms
+transition: PrimitivesMotionDurationBase; // 200ms
 ```
 
 ### Issue: Animation feels abrupt
 
 **Solution**: Use smoother easing
+
 ```typescript
 // Before
-easing: PrimitivesMotionEasingSharp
+easing: PrimitivesMotionEasingSharp;
 
 // After
-easing: PrimitivesMotionEasingStandard
+easing: PrimitivesMotionEasingStandard;
 ```
 
 ### Issue: Entering/exiting feels wrong
 
 **Solution**: Match easing to direction
+
 ```typescript
 // Entering: Use decelerate
-transitionEnter: ComponentDialogTransitionEnter
+transitionEnter: ComponentDialogTransitionEnter;
 
 // Exiting: Use accelerate
-transitionExit: ComponentDialogTransitionExit
+transitionExit: ComponentDialogTransitionExit;
 ```
 
 ---
@@ -573,4 +575,3 @@ easing: PrimitivesMotionEasingSharp
 **Maintained by**: MRS Design System Team  
 **Last Updated**: December 2025  
 **Version**: 1.0.0
-

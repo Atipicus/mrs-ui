@@ -31,11 +31,7 @@ function MyComponent() {
 
   return (
     <LocalizationProvider>
-      <DatePicker
-        label="Select Date"
-        value={value}
-        onChange={(newValue) => setValue(newValue)}
-      />
+      <DatePicker label="Select Date" value={value} onChange={(newValue) => setValue(newValue)} />
     </LocalizationProvider>
   );
 }
@@ -64,21 +60,13 @@ All MUI X DatePicker props are supported. See [MUI X DatePicker documentation](h
 ### With Min/Max Dates
 
 ```tsx
-<DatePicker
-  label="Select Date"
-  minDate={dayjs()}
-  maxDate={dayjs().add(30, 'day')}
-/>
+<DatePicker label="Select Date" minDate={dayjs()} maxDate={dayjs().add(30, 'day')} />
 ```
 
 ### With Custom Format
 
 ```tsx
-<DatePicker
-  label="Select Date"
-  format="YYYY-MM-DD"
-  value={dayjs()}
-/>
+<DatePicker label="Select Date" format="YYYY-MM-DD" value={dayjs()} />
 ```
 
 ### With Disabled Dates (Weekends)
@@ -116,7 +104,7 @@ const [error, setError] = React.useState(null);
       helperText: error,
     },
   }}
-/>
+/>;
 ```
 
 ## LocalizationProvider
@@ -127,11 +115,7 @@ The DatePicker requires a LocalizationProvider wrapper. This can be placed at yo
 import { LocalizationProvider } from '@atipicus/mrs-ui';
 
 function App() {
-  return (
-    <LocalizationProvider>
-      {/* Your components using DatePicker */}
-    </LocalizationProvider>
-  );
+  return <LocalizationProvider>{/* Your components using DatePicker */}</LocalizationProvider>;
 }
 ```
 

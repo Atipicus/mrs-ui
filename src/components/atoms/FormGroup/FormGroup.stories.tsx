@@ -68,9 +68,7 @@ export const WithLabel: Story = {
             label="Jason Killian"
           />
           <FormControlLabel
-            control={
-              <Checkbox checked={state.antoine} onChange={handleChange} name="antoine" />
-            }
+            control={<Checkbox checked={state.antoine} onChange={handleChange} name="antoine" />}
             label="Antoine Llorca"
           />
         </FormGroup>
@@ -106,11 +104,7 @@ export const WithDisabledOptions: Story = {
       <FormControlLabel control={<Checkbox defaultChecked />} label="Available Option 1" />
       <FormControlLabel control={<Checkbox />} label="Available Option 2" />
       <FormControlLabel control={<Checkbox />} label="Disabled Option" disabled />
-      <FormControlLabel
-        control={<Checkbox defaultChecked />}
-        label="Disabled Checked"
-        disabled
-      />
+      <FormControlLabel control={<Checkbox defaultChecked />} label="Disabled Checked" disabled />
     </FormGroup>
   ),
 };

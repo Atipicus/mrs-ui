@@ -85,4 +85,3 @@ export interface SidenavProps {
   /** Custom sx styles for the navigation list */
   listSx?: SxProps<Theme>;
 }
-

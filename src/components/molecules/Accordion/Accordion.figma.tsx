@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Accordion } from "./Accordion";
+import figma from '@figma/code-connect';
+import { Accordion } from './Accordion';
 
 /**
  * Code Connect mapping for Accordion component
@@ -8,13 +8,13 @@ import { Accordion } from "./Accordion";
  */
 figma.connect(
   Accordion,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11125-153804",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11125-153804',
   {
     props: {
-      expanded: figma.boolean("expanded"),
-      disabled: figma.boolean("disabled"),
-      disableGutters: figma.boolean("disableGutters"),
-      square: figma.boolean("square"),
+      expanded: figma.boolean('expanded'),
+      disabled: figma.boolean('disabled'),
+      disableGutters: figma.boolean('disableGutters'),
+      square: figma.boolean('square'),
     },
     example: (props) => (
       <Accordion

@@ -110,18 +110,12 @@ describe('Sidenav', () => {
       const handleItemClick = jest.fn();
 
       renderWithTheme(
-        <Sidenav
-          variant="default"
-          items={defaultItems}
-          onItemClick={handleItemClick}
-        />
+        <Sidenav variant="default" items={defaultItems} onItemClick={handleItemClick} />
       );
 
       fireEvent.click(screen.getByText('Citas'));
 
-      expect(handleItemClick).toHaveBeenCalledWith(
-        expect.objectContaining({ label: 'Citas' })
-      );
+      expect(handleItemClick).toHaveBeenCalledWith(expect.objectContaining({ label: 'Citas' }));
     });
 
     it('calls item onClick when provided', () => {
@@ -161,21 +155,17 @@ describe('Sidenav', () => {
 
   describe('Variants', () => {
     it('applies correct width for default variant', () => {
-      const { container } = renderWithTheme(
-        <Sidenav variant="default" items={defaultItems} />
-      );
+      const { container } = renderWithTheme(<Sidenav variant="default" items={defaultItems} />);
 
       const paper = container.querySelector('.MuiPaper-root');
-      expect(paper).toHaveStyle({ width: '256px' });
+      expect(paper).toHaveStyle({ width: '240px' });
     });
 
     it('applies correct width for slim variant', () => {
-      const { container } = renderWithTheme(
-        <Sidenav variant="slim" items={defaultItems} />
-      );
+      const { container } = renderWithTheme(<Sidenav variant="slim" items={defaultItems} />);
 
       const paper = container.querySelector('.MuiPaper-root');
-      expect(paper).toHaveStyle({ width: '72px' });
+      expect(paper).toHaveStyle({ width: '64px' });
     });
 
     it('applies custom width when provided', () => {
@@ -219,4 +209,3 @@ describe('Sidenav', () => {
     });
   });
 });
-

@@ -1,6 +1,6 @@
 # Documentation Index
 
-**MRS UI v6 Design System** - Additional documentation for developers
+**MRS UI v6 Design System** - Version 0.8.0 - Additional documentation for developers
 
 ---
 
@@ -55,9 +55,9 @@ The **[components/](components/)** directory contains detailed documentation for
 
 ## 🔗 External Resources
 
-- **Storybook**: [https://mgomez-ext.github.io/mrs-ui/](https://mgomez-ext.github.io/mrs-ui/)
+- **Storybook**: [https://atipicus.github.io/mrs-ui/](https://atipicus.github.io/mrs-ui/)
 - **npm Package**: [https://www.npmjs.com/package/@atipicus/mrs-ui](https://www.npmjs.com/package/@atipicus/mrs-ui)
-- **GitHub**: [https://github.com/madersystem/mrs-ui-v6](https://github.com/madersystem/mrs-ui-v6)
+- **GitHub**: [https://github.com/Atipicus/mrs-ui](https://github.com/Atipicus/mrs-ui)
 - **Figma**: [MRS Material UI Design](https://figma.com/design/ESNP5KunFotGObfcuXZ9Op/MRS---Material-UI-v.6.5.0)
 
 ---
@@ -67,7 +67,7 @@ The **[components/](components/)** directory contains detailed documentation for
 ### New to the Package?
 1. Start with [README.md](../README.md) - Installation and basic usage
 2. Check [Fonts.md](guides/Fonts.md) - Required font setup
-3. Browse [Storybook](https://mgomez-ext.github.io/mrs-ui/) - Interactive examples
+3. Browse [Storybook](https://atipicus.github.io/mrs-ui/) - Interactive examples
 
 ### Adding a Component?
 1. Review [COMPONENT_ROADMAP.md](../COMPONENT_ROADMAP.md) - Planned components
@@ -105,5 +105,5 @@ mrs-ui-v6/
 
 ---
 
-**Last Updated**: December 29, 2024
-**Version**: 0.2.1
+**Last Updated**: January 5, 2026
+**Version**: 0.8.0

@@ -126,11 +126,7 @@ const TransitionDemo = () => {
           Common transition components with our motion tokens
         </Typography>
 
-        <Button
-          variant="contained"
-          onClick={() => setChecked((prev) => !prev)}
-          sx={{ mb: 2 }}
-        >
+        <Button variant="contained" onClick={() => setChecked((prev) => !prev)} sx={{ mb: 2 }}>
           Toggle Animations
         </Button>
 
@@ -166,9 +162,7 @@ const TransitionDemo = () => {
             </Typography>
             <Slide in={checked} direction="up" timeout={300}>
               <Paper elevation={2} sx={{ p: 2, bgcolor: 'info.main', color: 'white' }}>
-                <Typography>
-                  Slide Animation ({tokens.PrimitivesMotionDurationModerate})
-                </Typography>
+                <Typography>Slide Animation ({tokens.PrimitivesMotionDurationModerate})</Typography>
               </Paper>
             </Slide>
           </Box>
@@ -210,26 +204,11 @@ const TransitionDemo = () => {
           Pre-configured transitions for common components
         </Typography>
         <Stack spacing={0}>
-          <TokenDisplay
-            label="Button default"
-            value={tokens.ComponentButtonTransitionDefault}
-          />
-          <TokenDisplay
-            label="Dialog enter"
-            value={tokens.ComponentDialogTransitionEnter}
-          />
-          <TokenDisplay
-            label="Drawer enter"
-            value={tokens.ComponentDrawerTransitionEnter}
-          />
-          <TokenDisplay
-            label="Snackbar enter"
-            value={tokens.ComponentSnackbarTransitionEnter}
-          />
-          <TokenDisplay
-            label="Tooltip enter"
-            value={tokens.ComponentTooltipTransitionEnter}
-          />
+          <TokenDisplay label="Button default" value={tokens.ComponentButtonTransitionDefault} />
+          <TokenDisplay label="Dialog enter" value={tokens.ComponentDialogTransitionEnter} />
+          <TokenDisplay label="Drawer enter" value={tokens.ComponentDrawerTransitionEnter} />
+          <TokenDisplay label="Snackbar enter" value={tokens.ComponentSnackbarTransitionEnter} />
+          <TokenDisplay label="Tooltip enter" value={tokens.ComponentTooltipTransitionEnter} />
         </Stack>
       </Paper>
 
@@ -529,4 +508,3 @@ export const EasingComparison: StoryObj = {
     );
   },
 };
-

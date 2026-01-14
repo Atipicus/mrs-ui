@@ -1,19 +1,56 @@
 {
   "component": {
     "paper": {
-      "elevation0": { "$value": "{primitives.colors.neutral.white}", "$type": "color" },
-      "elevation1": { "$value": "{primitives.colors.neutral.white}", "$type": "color" },
-      "elevation2": { "$value": "{primitives.colors.neutral.white}", "$type": "color" }
+      "light": {
+        "elevation0": { "$value": "{primitives.colors.neutral.white}", "$type": "color" },
+        "elevation1": { "$value": "{primitives.colors.neutral.white}", "$type": "color" },
+        "elevation2": { "$value": "{primitives.colors.neutral.white}", "$type": "color" }
+      },
+      "dark": {
+        "elevation0": {
+          "$value": "#121212",
+          "$type": "color",
+          "$description": "No elevation - matches background"
+        },
+        "elevation1": { "$value": "#1e1e1e", "$type": "color", "$description": "1dp elevation" },
+        "elevation2": { "$value": "#232323", "$type": "color", "$description": "2dp elevation" },
+        "elevation4": { "$value": "#272727", "$type": "color", "$description": "4dp elevation" },
+        "elevation6": { "$value": "#2c2c2c", "$type": "color", "$description": "6dp elevation" },
+        "elevation8": { "$value": "#2e2e2e", "$type": "color", "$description": "8dp elevation" },
+        "elevation12": { "$value": "#333333", "$type": "color", "$description": "12dp elevation" },
+        "elevation16": { "$value": "#353535", "$type": "color", "$description": "16dp elevation" },
+        "elevation24": { "$value": "#383838", "$type": "color", "$description": "24dp elevation" }
+      }
     },
     "table": {
-      "border": { "$value": "{primitives.colors.neutral.gray.300}", "$type": "color" },
-      "headerBackground": { "$value": "{primitives.colors.neutral.gray.50}", "$type": "color" }
+      "light": {
+        "border": { "$value": "{primitives.colors.neutral.gray.300}", "$type": "color" },
+        "header": {
+          "background": { "$value": "{primitives.colors.neutral.gray.50}", "$type": "color" }
+        }
+      },
+      "dark": {
+        "border": { "$value": "{primitives.colors.alpha.white.12}", "$type": "color" },
+        "header": {
+          "background": { "$value": "#1e1e1e", "$type": "color" }
+        }
+      }
     },
     "card": {
-      "borderRadius": { "$value": "{primitives.radius.lg}", "$type": "dimension" }
+      "light": {
+        "borderRadius": { "$value": "{primitives.radius.lg}", "$type": "dimension" }
+      },
+      "dark": {
+        "borderRadius": { "$value": "12px", "$type": "dimension" }
+      }
     },
     "dialog": {
-      "borderRadius": { "$value": "{primitives.radius.lg}", "$type": "dimension" }
+      "light": {
+        "borderRadius": { "$value": "{primitives.radius.lg}", "$type": "dimension" }
+      },
+      "dark": {
+        "borderRadius": { "$value": "12px", "$type": "dimension" }
+      }
     }
   }
 }

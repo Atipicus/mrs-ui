@@ -2,13 +2,14 @@
 
 [![npm version](https://badge.fury.io/js/@atipicus%2Fmrs-ui.svg)](https://www.npmjs.com/package/@atipicus/mrs-ui)
 [![License](https://img.shields.io/badge/License-UNLICENSED-red.svg)](LICENSE)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/madersystem/mrs-ui-v6/ci.yml?branch=main)](https://github.com/madersystem/mrs-ui-v6/actions)
-
-> **⚠️ Package Migration Notice:** This package has been migrated from `@mrs-uisystem/ui-v6` to `@atipicus/mrs-ui`. If you're using the old package, please see the [Migration Guide](./MIGRATION_GUIDE.md) for instructions.
+[![Build Status](https://img.shields.io/github/actions/workflow/status/Atipicus/mrs-ui/ci.yml?branch=main)](https://github.com/Atipicus/mrs-ui/actions)
+[![Storybook](https://img.shields.io/badge/Storybook-Live-ff4785?logo=storybook)](https://atipicus.github.io/mrs-ui/)
 
 A comprehensive Material-UI v6.5 based design system with **54 production-ready components** built with React, TypeScript, and modern best practices.
 
-> **Version 0.8.0** - Complete Design Token System, Dark Mode, Animation Tokens & Micro-Interactions Library. 54 production-ready components with comprehensive theming. 1,182 tests passing (56 test suites).
+**📚 [View Component Documentation →](https://atipicus.github.io/mrs-ui/)**
+
+> **Version 0.10.2** - Production-ready release with complete Grid v2 migration, enhanced component APIs, and comprehensive test coverage. 54 production-ready components with 1,199 tests passing (57 test suites). Zero critical issues. Three-Tier Token Architecture with 470+ tokens.
 
 ## 🚀 Features
 
@@ -17,7 +18,7 @@ A comprehensive Material-UI v6.5 based design system with **54 production-ready 
 - ✅ **Material-UI v6.5** - Latest Material-UI features
 - ✅ **MUI X Date Pickers** - Advanced date/time selection components
 - ✅ **Tree-shakeable** - Import only what you need
-- ✅ **Comprehensive Testing** - 1,182 tests with 100% pass rate (56 test suites)
+- ✅ **Comprehensive Testing** - 1,199 tests with 100% pass rate (57 test suites)
 - ✅ **Storybook Documentation** - Interactive component explorer
 - ✅ **Dual Module Support** - ESM and CommonJS
 - ✅ **Design Token Hub** - Multi-format exports (CSS, SCSS, TypeScript, JSON)
@@ -237,7 +238,28 @@ const heading = typography.h1.fontFamily; // Nunito
 
 ## 🎨 Design Token Hub
 
-The MRS Design System includes a comprehensive **Token Hub** that manages design tokens and exports them to multiple formats.
+The MRS Design System includes a comprehensive **Token Hub** with a **three-tier architecture** managing 470+ design tokens exported to multiple formats.
+
+### Three-Tier Token Architecture
+
+The system organizes tokens in three hierarchical tiers for consistency and maintainability:
+
+**Tier 1: Primitives (~80 tokens)** - Foundation values
+- Colors, spacing, radius, typography, motion
+- Raw, context-independent values
+- Example: `PrimitivesSpacing2` → `16px`, `PrimitivesRadiusMd` → `8px`
+
+**Tier 2: Semantic (~120 tokens)** - Context-aware tokens
+- Theme-aware colors (light/dark mode)
+- Background, text, action states
+- Example: `SemanticColorLightPrimaryMain` → `#00686f`
+
+**Tier 3: Components (~270 tokens)** - Component-specific
+- Button, navigation, data display, feedback, layout tokens
+- References semantic and primitive tokens
+- Example: `ComponentButtonBorderRadius`, `ComponentSidenavWidthExpanded`
+
+📚 **Complete documentation**: See `TOKENS.md` for detailed architecture guide.
 
 ### Multi-Format Exports
 
@@ -303,10 +325,27 @@ The system includes **automated Figma token synchronization** via GitHub Actions
 ### Token Structure
 
 ```
-Design Tokens (DTCG Format)
-├── primitives/       → Brand colors, typography, spacing, radius
-├── semantic/         → Primary, secondary, error, warning, info, success
-└── component/        → Button, alert, input, card overrides
+Design Tokens (DTCG Format) - 470+ Tokens
+├── Tier 1: primitives/
+│   ├── colors.json          → Brand, neutral, status, alpha
+│   ├── spacing.json         → 8px grid system (0-96px)
+│   ├── radius.json          → Border radius (none, sm, md, lg, xl, full)
+│   ├── typography.json      → Font families, sizes, weights
+│   └── motion.json          → Animation durations & easings
+│
+├── Tier 2: semantic/
+│   ├── colors.json          → Theme-aware colors (light/dark)
+│   └── transitions.json     → Semantic animations
+│
+└── Tier 3: component/
+    ├── button.json          → Button styling tokens
+    ├── alert.json           → Alert variants & severities
+    ├── inputs.json          → TextField, Chip, Rating tokens
+    ├── surfaces.json        → Paper, Card, Dialog, Table
+    ├── navigation.json      → Sidenav, AppBar, Drawer, Bottom Nav
+    ├── data-display.json    → Avatar, Badge, Tooltip, Accordion
+    ├── feedback.json        → Snackbar, Progress, Skeleton
+    └── layout.json          → Stepper, Tabs, Timeline, Pagination
          ↓
    Style Dictionary Build
          ↓
@@ -336,7 +375,7 @@ npm run tokens:sync:dry-run   # Preview changes
 
 ## 📖 Documentation
 
-- **📘 Storybook**: [https://mgomez-ext.github.io/mrs-ui/](https://mgomez-ext.github.io/mrs-ui/)
+- **📘 Storybook**: [https://atipicus.github.io/mrs-ui/](https://atipicus.github.io/mrs-ui/)
 - **📋 Component Roadmap**: [COMPONENT_ROADMAP.md](COMPONENT_ROADMAP.md)
 - **📝 Changelog**: [CHANGELOG.md](CHANGELOG.md)
 - **🚀 Deployment Guide**: [DEPLOYMENT.md](DEPLOYMENT.md)
@@ -482,9 +521,9 @@ UNLICENSED - This project is proprietary software.
 ## 🔗 Links
 
 - [npm Package](https://www.npmjs.com/package/@atipicus/mrs-ui)
-- [Storybook Documentation](https://mgomez-ext.github.io/mrs-ui/)
-- [GitHub Repository](https://github.com/madersystem/mrs-ui-v6)
-- [Issue Tracker](https://github.com/madersystem/mrs-ui-v6/issues)
+- [Storybook Documentation](https://atipicus.github.io/mrs-ui/)
+- [GitHub Repository](https://github.com/Atipicus/mrs-ui)
+- [Issue Tracker](https://github.com/Atipicus/mrs-ui/issues)
 - [Figma Design](https://figma.com/design/ESNP5KunFotGObfcuXZ9Op/MRS---Material-UI-v.6.5.0)
 
 ## 🎯 Roadmap
@@ -538,17 +577,18 @@ const MyButton: React.FC<ButtonProps> = (props) => {
 };
 ```
 
-## 🌟 Version 0.7.0 Highlights
+## 🌟 Version 0.8.0 Highlights
 
-- ✨ **Figma Code Connect Integration**: Direct component mapping between Figma and code
-- ✨ **Material Symbols Support**: Variable font icon system (~50KB vs ~600KB icon components)
+- ✨ **Complete Design Token System**: Multi-format exports (CSS, SCSS, TypeScript, JSON)
+- ✨ **Dark Mode Support**: Full Material Design 3 compliant dark theme with WCAG AA compliance
+- ✨ **Animation & Transition Tokens**: Material Motion system with 30+ component-specific transitions
+- ✨ **Micro-Interactions Library**: 5 animation hooks + 3 effect components for rich UX
+- ✨ **Figma Synchronization**: Automated bidirectional token sync with GitHub Actions
 - ✨ **54 production-ready components** (31 atoms + 23 molecules)
 - ✨ **1,182 tests passing** (100% pass rate across 56 test suites)
-- ✨ **Advanced Date/Time Selection**: Complete date picker suite with MUI X integration
-- ✨ **Timeline Component**: Event timeline with 7 sub-components
 - ✨ **Full TypeScript support** with strict mode
-- ✨ **Storybook documentation** deployed at [https://mgomez-ext.github.io/mrs-ui/](https://mgomez-ext.github.io/mrs-ui/)
-- ✨ **CI/CD pipeline** with GitHub Actions
+- ✨ **Storybook documentation** deployed at [https://atipicus.github.io/mrs-ui/](https://atipicus.github.io/mrs-ui/)
+- ✨ **CI/CD pipeline** with optimized GitHub Actions
 - ✨ **Production ready** with comprehensive testing and quality checks
 
 ## 🚀 Quick Examples
@@ -602,3 +642,4 @@ function Dashboard() {
 ---
 
 **Made with ❤️ by the MRS Design System Team**
+**Last Updated**: January 5, 2026

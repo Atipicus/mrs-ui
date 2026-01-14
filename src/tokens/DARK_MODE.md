@@ -9,6 +9,7 @@ The MRS Design System now includes complete dark mode support with dedicated des
 ## 🎨 Token Structure
 
 ### Light Mode Tokens
+
 ```
 src/tokens/source/semantic/colors-light.json      → Light color palette
 src/tokens/source/component/alert.json            → Alert variants
@@ -17,6 +18,7 @@ src/tokens/source/component/surfaces.json         → Surfaces (paper, card)
 ```
 
 ### Dark Mode Tokens
+
 ```
 src/tokens/source/semantic/colors-dark.json       → Dark color palette
 src/tokens/source/component/alert-dark.json       → Alert variants (dark)
@@ -32,17 +34,17 @@ src/tokens/source/component/surfaces-dark.json    → Surfaces (dark)
 
 Dark mode uses a **surface brightness elevation system** where surfaces become lighter as they get higher elevation:
 
-| Elevation | Color | Usage |
-|-----------|-------|-------|
-| `0dp` | `#121212` | Background default |
-| `1dp` | `#1e1e1e` | Background paper, cards |
-| `2dp` | `#232323` | App bar, bottom nav |
-| `4dp` | `#272727` | FAB, menus |
-| `6dp` | `#2c2c2c` | Snackbar |
-| `8dp` | `#2e2e2e` | Dialog |
-| `12dp` | `#333333` | Modal drawer |
-| `16dp` | `#353535` | Nav drawer |
-| `24dp` | `#383838` | Picker |
+| Elevation | Color     | Usage                   |
+| --------- | --------- | ----------------------- |
+| `0dp`     | `#121212` | Background default      |
+| `1dp`     | `#1e1e1e` | Background paper, cards |
+| `2dp`     | `#232323` | App bar, bottom nav     |
+| `4dp`     | `#272727` | FAB, menus              |
+| `6dp`     | `#2c2c2c` | Snackbar                |
+| `8dp`     | `#2e2e2e` | Dialog                  |
+| `12dp`    | `#333333` | Modal drawer            |
+| `16dp`    | `#353535` | Nav drawer              |
+| `24dp`    | `#383838` | Picker                  |
 
 **Source**: [Material Design Dark Theme](https://m3.material.io/styles/color/dark-theme/overview)
 
@@ -83,7 +85,7 @@ import { lightTokens, darkTokens } from './tokens-import';
 
 const getComponentOverrides = (mode: 'light' | 'dark') => {
   const modeTokens = mode === 'light' ? lightTokens : darkTokens;
-  
+
   return {
     MuiAlert: {
       styleOverrides: {
@@ -126,6 +128,7 @@ Dark mode tokens are also available as CSS variables:
 ```
 
 **Usage**:
+
 ```css
 .my-dark-component {
   background-color: var(--mrs-semantic-color-dark-background-default);
@@ -159,6 +162,7 @@ const MyDarkComponent = () => (
 ### Storybook Example
 
 See the complete implementation in:
+
 ```
 src/stories/ThemeSwitcher.stories.tsx
 ```
@@ -212,12 +216,12 @@ function useThemeMode() {
 
 All dark mode colors meet WCAG 2.1 Level AA contrast requirements:
 
-| Element | Foreground | Background | Ratio |
-|---------|------------|------------|-------|
-| Primary Text | `#ffffff` | `#121212` | 17.3:1 ✅ |
-| Secondary Text | `rgba(255,255,255,0.7)` | `#121212` | 12.1:1 ✅ |
-| Primary Button | `#000000` | `#66b2b2` | 7.2:1 ✅ |
-| Error Alert (filled) | `#000000` | `#f48282` | 8.5:1 ✅ |
+| Element              | Foreground              | Background | Ratio     |
+| -------------------- | ----------------------- | ---------- | --------- |
+| Primary Text         | `#ffffff`               | `#121212`  | 17.3:1 ✅ |
+| Secondary Text       | `rgba(255,255,255,0.7)` | `#121212`  | 12.1:1 ✅ |
+| Primary Button       | `#000000`               | `#66b2b2`  | 7.2:1 ✅  |
+| Error Alert (filled) | `#000000`               | `#f48282`  | 8.5:1 ✅  |
 
 **Note**: All color combinations exceed the minimum 4.5:1 ratio for normal text.
 
@@ -279,6 +283,7 @@ When adding new dark mode tokens, ensure:
 ### Issue: Dark mode colors not applying
 
 **Solution**:
+
 1. Rebuild tokens: `npm run tokens:build`
 2. Clear cache: `rm -rf node_modules/.cache`
 3. Restart Storybook
@@ -286,6 +291,7 @@ When adding new dark mode tokens, ensure:
 ### Issue: Contrast is too low
 
 **Solution**:
+
 1. Check contrast with: [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
 2. Adjust color in `colors-dark.json`
 3. Rebuild tokens
@@ -293,6 +299,7 @@ When adding new dark mode tokens, ensure:
 ### Issue: Component not using dark mode tokens
 
 **Solution**:
+
 1. Verify token exists in `src/tokens/generated/ts/tokens.d.ts`
 2. Import in `src/theme/tokens-import.ts` (darkTokens object)
 3. Use in `getComponentOverrides` with `modeTokens.components.*`
@@ -327,4 +334,3 @@ Dark Mode Tokens:
 **Maintained by**: MRS Design System Team  
 **Last Updated**: December 2025  
 **Version**: 1.0.0
-

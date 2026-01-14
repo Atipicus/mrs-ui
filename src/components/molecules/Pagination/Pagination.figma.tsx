@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Pagination } from "./Pagination";
+import figma from '@figma/code-connect';
+import { Pagination } from './Pagination';
 
 /**
  * Code Connect mapping for Pagination component
@@ -8,30 +8,30 @@ import { Pagination } from "./Pagination";
  */
 figma.connect(
   Pagination,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11137-155959",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11137-155959',
   {
     props: {
-      variant: figma.enum("variant", {
-        Text: "text",
-        Outlined: "outlined",
+      variant: figma.enum('variant', {
+        Text: 'text',
+        Outlined: 'outlined',
       }),
-      shape: figma.enum("shape", {
-        Circular: "circular",
-        Rounded: "rounded",
+      shape: figma.enum('shape', {
+        Circular: 'circular',
+        Rounded: 'rounded',
       }),
-      color: figma.enum("color", {
-        Primary: "primary",
-        Secondary: "secondary",
-        Standard: "standard",
+      color: figma.enum('color', {
+        Primary: 'primary',
+        Secondary: 'secondary',
+        Standard: 'standard',
       }),
-      size: figma.enum("size", {
-        Small: "small",
-        Medium: "medium",
-        Large: "large",
+      size: figma.enum('size', {
+        Small: 'small',
+        Medium: 'medium',
+        Large: 'large',
       }),
-      disabled: figma.boolean("disabled"),
-      showFirstButton: figma.boolean("showFirstButton"),
-      showLastButton: figma.boolean("showLastButton"),
+      disabled: figma.boolean('disabled'),
+      showFirstButton: figma.boolean('showFirstButton'),
+      showLastButton: figma.boolean('showLastButton'),
     },
     example: (props) => (
       <Pagination

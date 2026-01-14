@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { TextField } from "./TextField";
+import figma from '@figma/code-connect';
+import { TextField } from './TextField';
 
 /**
  * Code Connect mapping for TextField component
@@ -8,34 +8,34 @@ import { TextField } from "./TextField";
  */
 figma.connect(
   TextField,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11102-136338",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11102-136338',
   {
     props: {
-      variant: figma.enum("variant", {
-        Outlined: "outlined",
-        Filled: "filled",
-        Standard: "standard",
+      variant: figma.enum('variant', {
+        Outlined: 'outlined',
+        Filled: 'filled',
+        Standard: 'standard',
       }),
-      size: figma.enum("size", {
-        Small: "small",
-        Medium: "medium",
+      size: figma.enum('size', {
+        Small: 'small',
+        Medium: 'medium',
       }),
-      color: figma.enum("color", {
-        Primary: "primary",
-        Secondary: "secondary",
-        Error: "error",
-        Warning: "warning",
-        Info: "info",
-        Success: "success",
+      color: figma.enum('color', {
+        Primary: 'primary',
+        Secondary: 'secondary',
+        Error: 'error',
+        Warning: 'warning',
+        Info: 'info',
+        Success: 'success',
       }),
-      disabled: figma.boolean("disabled"),
-      error: figma.boolean("error"),
-      required: figma.boolean("required"),
-      multiline: figma.boolean("multiline"),
-      fullWidth: figma.boolean("fullWidth"),
-      label: figma.string("label"),
-      placeholder: figma.string("placeholder"),
-      helperText: figma.string("helperText"),
+      disabled: figma.boolean('disabled'),
+      error: figma.boolean('error'),
+      required: figma.boolean('required'),
+      multiline: figma.boolean('multiline'),
+      fullWidth: figma.boolean('fullWidth'),
+      label: figma.string('label'),
+      placeholder: figma.string('placeholder'),
+      helperText: figma.string('helperText'),
     },
     example: (props) => (
       <TextField

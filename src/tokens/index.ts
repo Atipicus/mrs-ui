@@ -16,7 +16,3 @@
 
 // Re-export all generated token constants
 export * from './generated/ts/tokens';
-
-// Re-export the nested JSON structure for advanced usage
-// Note: JSON files are in generated/json/ folder, not generated/ts/
-// Users can import directly: import tokens from '@atipicus/mrs-ui/tokens/generated/json/tokens-nested.json'

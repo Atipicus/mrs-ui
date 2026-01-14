@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { renderWithTheme, screen, fireEvent } from '../../../../tests/test-utils';
+import { renderWithTheme, screen, fireEvent, act } from '../../../../tests/test-utils';
 import { Slider } from './Slider';
 
 describe('Slider', () => {
@@ -102,7 +102,9 @@ describe('Slider', () => {
   });
 
   it('renders range slider with two thumbs', () => {
-    renderWithTheme(<Slider defaultValue={[20, 40]} aria-label="range-slider" />);
+    renderWithTheme(
+      <Slider defaultValue={[20, 40]} getAriaLabel={(index) => `range-slider-${index}`} />
+    );
     const sliders = screen.getAllByRole('slider');
     expect(sliders).toHaveLength(2);
   });
@@ -232,7 +234,7 @@ describe('Slider', () => {
 
   it('handles disableSwap prop for range sliders', () => {
     const { container } = renderWithTheme(
-      <Slider defaultValue={[20, 40]} disableSwap aria-label="range" />
+      <Slider defaultValue={[20, 40]} disableSwap getAriaLabel={(index) => `range-${index}`} />
     );
     const slider = container.querySelector('.MuiSlider-root');
     expect(slider).toBeInTheDocument();
@@ -249,7 +251,9 @@ describe('Slider', () => {
     renderWithTheme(<Slider aria-label="test-slider" />);
     const slider = screen.getByRole('slider');
 
-    slider.focus();
+    act(() => {
+      slider.focus();
+    });
     expect(slider).toHaveFocus();
 
     // Test keyboard navigation

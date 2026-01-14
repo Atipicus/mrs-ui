@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Dialog } from "./Dialog";
+import figma from '@figma/code-connect';
+import { Dialog } from './Dialog';
 
 /**
  * Code Connect mapping for Dialog component
@@ -8,22 +8,22 @@ import { Dialog } from "./Dialog";
  */
 figma.connect(
   Dialog,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11112-140632",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11112-140632',
   {
     props: {
-      maxWidth: figma.enum("maxWidth", {
-        Xs: "xs",
-        Sm: "sm",
-        Md: "md",
-        Lg: "lg",
-        Xl: "xl",
+      maxWidth: figma.enum('maxWidth', {
+        Xs: 'xs',
+        Sm: 'sm',
+        Md: 'md',
+        Lg: 'lg',
+        Xl: 'xl',
         False: false,
       }),
-      fullWidth: figma.boolean("fullWidth"),
-      fullScreen: figma.boolean("fullScreen"),
-      scroll: figma.enum("scroll", {
-        Paper: "paper",
-        Body: "body",
+      fullWidth: figma.boolean('fullWidth'),
+      fullScreen: figma.boolean('fullScreen'),
+      scroll: figma.enum('scroll', {
+        Paper: 'paper',
+        Body: 'body',
       }),
     },
     example: (props) => (
@@ -36,9 +36,7 @@ figma.connect(
         scroll={props.scroll}
       >
         <DialogTitle>Dialog Title</DialogTitle>
-        <DialogContent>
-          {/* Content */}
-        </DialogContent>
+        <DialogContent>{/* Content */}</DialogContent>
         <DialogActions>
           <Button onClick={() => {}}>Cancel</Button>
           <Button onClick={() => {}}>Confirm</Button>

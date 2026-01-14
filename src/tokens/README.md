@@ -1,49 +1,64 @@
-# MRS Design System - Design Tokens
+# Design Tokens - MRS Design System
 
-Esta carpeta contiene el **Token Hub** del MRS Design System, que centraliza todos los tokens de diseño y los exporta a múltiples formatos.
+Este directorio contiene el sistema de tokens de diseño del MRS Design System.
 
-## 📁 Estructura de Carpetas
+## 📚 Documentación Completa
+
+- **[Guía Rápida](../../TOKENS-QUICK-START.md)** - Inicio rápido para diseñadores y desarrolladores
+- **[Flujo de Sincronización](../../TOKENS-SYNC-WORKFLOW.md)** - Documentación completa del flujo Figma ↔ GitHub
+- **[Estructura Consolidada](../../TOKENS-CONSOLIDATION.md)** - Explicación de la consolidación de archivos
+
+## 🏗️ Estructura (Consolidada)
 
 ```
 src/tokens/
-├── source/                          # ← SOURCE OF TRUTH (edit here)
-│   ├── primitives/                  # Tokens base (colors, typography, spacing, radius)
+├── source/              ← EDITAR AQUÍ (Source of Truth)
+│   ├── primitives/      Tokens base (colores, tipografía, espaciado)
 │   │   ├── colors.json
 │   │   ├── typography.json
 │   │   ├── spacing.json
-│   │   └── radius.json
-│   ├── semantic/                    # Tokens semánticos (primary, secondary, error, etc.)
-│   │   └── colors-light.json
-│   └── component/                   # Tokens específicos de componentes
-│       ├── alert.json
+│   │   ├── radius.json
+│   │   └── motion.json
+│   ├── semantic/        Tokens semánticos (light + dark consolidados)
+│   │   ├── colors.json       ← light + dark juntos
+│   │   └── transitions.json
+│   └── component/       Tokens de componentes (light + dark consolidados)
+│       ├── alert.json        ← light + dark juntos
 │       ├── button.json
-│       ├── inputs.json
-│       └── surfaces.json
+│       ├── inputs.json       ← light + dark juntos
+│       ├── surfaces.json     ← light + dark juntos
+│       └── animations.json
+├── generated/           ← NO EDITAR (Auto-generado)
+│   ├── css/            CSS Custom Properties
+│   ├── scss/           Sass Variables
+│   ├── ts/             TypeScript/JavaScript
+│   └── json/           JSON (flat, nested, figma-tokens)
 ├── config/
-│   └── style-dictionary.config.js  # Configuración de transformación
-├── generated/                       # ← AUTO-GENERATED (do not edit)
-│   ├── css/
-│   ├── scss/
-│   ├── ts/
-│   └── json/
-└── index.ts                         # Public exports
+│   └── style-dictionary.config.js  Configuración de transformación
+└── scripts/
+    └── sync-figma-tokens.js  Script de sincronización con Figma
 ```
 
 ---
 
-## 🔧 Comandos NPM
+## ⚡ Comandos
 
-### Build Tokens
 ```bash
+# Regenerar tokens (después de editar source files)
 npm run tokens:build
-```
-Genera todos los formatos exportados desde los archivos fuente.
 
-### Watch Mode
-```bash
+# Watch mode (auto-regenera)
 npm run tokens:watch
+
+# Limpiar y regenerar
+npm run tokens:rebuild
+
+# Sincronizar desde Figma
+npm run tokens:sync:pull
+
+# Previsualizar sincronización (dry run)
+npm run tokens:sync:dry-run
 ```
-Re-genera tokens automáticamente al detectar cambios en `src/tokens/source/`.
 
 ---
 
@@ -60,9 +75,10 @@ El Token Hub genera **4 formatos diferentes** para diferentes casos de uso:
 **🎯 Uso**: Aplicaciones web, documentación, Storybook
 
 **Ejemplo de uso**:
+
 ```css
 /* Import en tu CSS global */
-@import '@/tokens/generated/css/tokens.css';
+@import '@atipicus/mrs-ui/tokens/generated/css/tokens.css';
 
 /* Usar las variables */
 .my-button {
@@ -73,6 +89,7 @@ El Token Hub genera **4 formatos diferentes** para diferentes casos de uso:
 ```
 
 **Ventajas**:
+
 - ✅ Funciona en cualquier framework (React, Vue, Angular, etc.)
 - ✅ Soporte nativo en navegadores modernos
 - ✅ Fácil de debuggear con DevTools
@@ -82,7 +99,8 @@ El Token Hub genera **4 formatos diferentes** para diferentes casos de uso:
 
 ### 2️⃣ SCSS Variables
 
-**📂 Ubicación**: 
+**📂 Ubicación**:
+
 - `src/tokens/generated/scss/tokens.scss` (variables individuales)
 - `src/tokens/generated/scss/tokens-map.scss` (mapa Sass)
 
@@ -91,9 +109,10 @@ El Token Hub genera **4 formatos diferentes** para diferentes casos de uso:
 **🎯 Uso**: Proyectos con Sass/SCSS
 
 **Ejemplo de uso**:
+
 ```scss
 // Import en tu .scss
-@import '@/tokens/generated/scss/tokens';
+@import '@atipicus/mrs-ui/tokens/generated/scss/tokens';
 
 // Usar las variables
 .my-button {
@@ -103,7 +122,7 @@ El Token Hub genera **4 formatos diferentes** para diferentes casos de uso:
 }
 
 // O usando el mapa
-@import '@/tokens/generated/scss/tokens-map';
+@import '@atipicus/mrs-ui/tokens/generated/scss/tokens-map';
 
 @function get-token($path) {
   @return map-get($mrs-tokens, $path);
@@ -115,6 +134,7 @@ El Token Hub genera **4 formatos diferentes** para diferentes casos de uso:
 ```
 
 **Ventajas**:
+
 - ✅ Integración perfecta con proyectos Sass existentes
 - ✅ Soporte para funciones y mixins
 - ✅ Permite operaciones matemáticas con tokens
@@ -123,7 +143,8 @@ El Token Hub genera **4 formatos diferentes** para diferentes casos de uso:
 
 ### 3️⃣ TypeScript/JavaScript
 
-**📂 Ubicación**: 
+**📂 Ubicación**:
+
 - `src/tokens/generated/ts/tokens.js` (exports ES6)
 - `src/tokens/generated/ts/tokens.d.ts` (TypeScript types)
 
@@ -132,13 +153,14 @@ El Token Hub genera **4 formatos diferentes** para diferentes casos de uso:
 **🎯 Uso**: Aplicaciones React, MUI theme, JavaScript apps
 
 **Ejemplo de uso**:
+
 ```typescript
 // Import named exports
 import {
   SemanticColorPrimaryMain,
   ComponentButtonBorderRadius,
   PrimitivesSpacing2
-} from '@/tokens';
+} from '@atipicus/mrs-ui/tokens';
 
 // Usar en componentes React
 const MyButton = () => (
@@ -155,7 +177,7 @@ const MyButton = () => (
 
 // Usar en MUI theme (como lo hace theme.ts)
 import { createTheme } from '@mui/material/styles';
-import { SemanticColorPrimaryMain } from '@/tokens';
+import { SemanticColorPrimaryMain } from '@atipicus/mrs-ui/tokens';
 
 const theme = createTheme({
   palette: {
@@ -167,6 +189,7 @@ const theme = createTheme({
 ```
 
 **Ventajas**:
+
 - ✅ Type safety con TypeScript
 - ✅ Autocomplete en IDE
 - ✅ Tree-shaking (solo importa lo que usas)
@@ -176,14 +199,16 @@ const theme = createTheme({
 
 ### 4️⃣ JSON Exports
 
-**📂 Ubicación**: 
+**📂 Ubicación**:
+
 - `src/tokens/generated/json/tokens-flat.json` (objeto plano)
 - `src/tokens/generated/json/tokens-nested.json` (estructura jerárquica)
 - `src/tokens/generated/json/figma-tokens.json` (formato Figma Tokens Studio)
 
 **📝 Formato**: JSON estándar
 
-**🎯 Uso**: 
+**🎯 Uso**:
+
 - **tokens-flat.json**: Scripts, APIs, herramientas externas
 - **tokens-nested.json**: Documentación, visualizaciones
 - **figma-tokens.json**: Sincronización con Figma vía Tokens Studio
@@ -191,6 +216,7 @@ const theme = createTheme({
 **Ejemplo de uso**:
 
 **a) Flat JSON (scripts/APIs)**:
+
 ```javascript
 // tokens-flat.json
 {
@@ -200,11 +226,12 @@ const theme = createTheme({
 }
 
 // Usar en scripts
-const tokens = require('@/tokens/generated/json/tokens-flat.json');
+const tokens = require('@atipicus/mrs-ui/tokens/generated/json/tokens-flat.json');
 console.log(tokens['semantic-color-primary-main']); // "#00686f"
 ```
 
 **b) Nested JSON (documentación)**:
+
 ```javascript
 // tokens-nested.json
 {
@@ -218,11 +245,12 @@ console.log(tokens['semantic-color-primary-main']); // "#00686f"
 }
 
 // Usar en componentes de documentación
-const tokens = require('@/tokens/generated/json/tokens-nested.json');
+const tokens = require('@atipicus/mrs-ui/tokens/generated/json/tokens-nested.json');
 const primaryColor = tokens.semantic.color.primary.main;
 ```
 
 **c) Figma Tokens Studio**:
+
 ```json
 // figma-tokens.json
 {
@@ -240,12 +268,14 @@ const primaryColor = tokens.semantic.color.primary.main;
 ```
 
 **Sincronización con Figma**:
+
 1. Instala el plugin [Tokens Studio](https://tokens.studio/) en Figma
 2. Configura sincronización con GitHub
 3. Apunta a `src/tokens/generated/json/figma-tokens.json`
 4. Los tokens se sincronizan automáticamente 🎨↔️💻
 
 **Ventajas**:
+
 - ✅ Universal (cualquier lenguaje/herramienta puede leer JSON)
 - ✅ Fácil de parsear y transformar
 - ✅ Sincronización bidireccional con Figma
@@ -256,6 +286,7 @@ const primaryColor = tokens.semantic.color.primary.main;
 ## 🔄 Workflow: Figma ↔️ Code
 
 ### Opción 1: Figma → Code (Manual)
+
 1. Actualiza tokens en Figma (Tokens Studio plugin)
 2. Exporta JSON desde Figma
 3. Copia a `src/tokens/source/**/*.json`
@@ -263,27 +294,28 @@ const primaryColor = tokens.semantic.color.primary.main;
 5. Los componentes se actualizan automáticamente ✅
 
 ### Opción 2: Figma ↔️ Code (Automático con GitHub Actions)
+
 ```yaml
 # .github/workflows/sync-figma-tokens.yml
 name: Sync Figma Tokens
 on:
   workflow_dispatch:
-  
+
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Fetch Figma Tokens
         run: |
           # Fetch from Figma API or Tokens Studio
           # Update src/tokens/source/**/*.json
-      
+
       - name: Build Tokens
         run: npm run tokens:build
-      
+
       - name: Commit & Push
         run: |
           git add .
@@ -324,7 +356,7 @@ npm run tokens:build
 ### 3. Usar en código
 
 ```typescript
-import { PrimitivesColorsBrandNewColor } from '@/tokens';
+import { PrimitivesColorsBrandNewColor } from '@atipicus/mrs-ui/tokens';
 ```
 
 ---
@@ -332,6 +364,7 @@ import { PrimitivesColorsBrandNewColor } from '@/tokens';
 ## 🧩 Naming Conventions
 
 ### Tokens primitivos
+
 ```
 primitives.{category}.{subcategory}.{name}
 
@@ -343,6 +376,7 @@ Ejemplos:
 ```
 
 ### Tokens semánticos
+
 ```
 semantic.{category}.{name}.{variant}
 
@@ -353,6 +387,7 @@ Ejemplos:
 ```
 
 ### Tokens de componente
+
 ```
 component.{component}.{property}.{variant}
 
@@ -367,21 +402,28 @@ Ejemplos:
 ## 🔍 Troubleshooting
 
 ### Error: "Can't find token"
+
 **Solución**: Asegúrate de ejecutar `npm run tokens:build` después de editar archivos fuente.
 
 ### Cambios no se reflejan en Storybook
+
 **Solución**: Storybook ejecuta `prestorybook` automáticamente, pero si ya está corriendo, reinícialo:
+
 ```bash
 npm run storybook
 ```
 
 ### TypeScript no reconoce los exports
+
 **Solución**: Los archivos `.d.ts` se generan automáticamente. Si tu IDE no los ve:
+
 1. Ejecuta `npm run tokens:build`
 2. Reinicia el TypeScript server en VS Code: `Cmd+Shift+P` → "TypeScript: Restart TS Server"
 
 ### Conflictos de merge en archivos generados
+
 **Solución**: Los archivos en `generated/` están en `.gitignore`. Si aparecen conflictos:
+
 ```bash
 git checkout --theirs src/tokens/generated/
 npm run tokens:build
@@ -397,7 +439,7 @@ npm run tokens:build
 ✅ **Figma Sync**: Sincronización con Tokens Studio  
 ✅ **Scalable**: Fácil agregar nuevos tokens  
 ✅ **CI/CD Ready**: Build automático en pipelines  
-✅ **Documentation**: JSON para generar docs automáticas  
+✅ **Documentation**: JSON para generar docs automáticas
 
 ---
 
@@ -412,4 +454,3 @@ npm run tokens:build
 
 **Mantenido por**: MRS Design System Team  
 **Última actualización**: Diciembre 2025
-

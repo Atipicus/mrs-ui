@@ -45,7 +45,7 @@ type Story = StoryObj<typeof Avatar>;
  */
 export const Default: Story = {
   args: {
-    children: 'JD',
+    children: 'MG',
   },
 };
 
@@ -56,7 +56,7 @@ export const Default: Story = {
 export const Size18Text: Story = {
   args: {
     size: 18,
-    children: 'P',
+    children: 'MG',
   },
 };
 
@@ -66,7 +66,7 @@ export const Size18Text: Story = {
 export const Size24Text: Story = {
   args: {
     size: 24,
-    children: 'P',
+    children: 'MG',
   },
 };
 
@@ -76,7 +76,7 @@ export const Size24Text: Story = {
 export const Size32Text: Story = {
   args: {
     size: 32,
-    children: 'P',
+    children: 'MG',
   },
 };
 
@@ -86,7 +86,7 @@ export const Size32Text: Story = {
 export const Size40Text: Story = {
   args: {
     size: 40,
-    children: 'P',
+    children: 'MG',
   },
 };
 
@@ -199,7 +199,7 @@ export const Size40Image: Story = {
 export const Circular: Story = {
   args: {
     variant: 'circular',
-    children: 'JD',
+    children: 'MG',
   },
 };
 
@@ -209,7 +209,7 @@ export const Circular: Story = {
 export const Rounded: Story = {
   args: {
     variant: 'rounded',
-    children: 'JD',
+    children: 'MG',
   },
 };
 
@@ -219,7 +219,7 @@ export const Rounded: Story = {
 export const Square: Story = {
   args: {
     variant: 'square',
-    children: 'JD',
+    children: 'MG',
   },
 };
 
@@ -236,25 +236,25 @@ export const AllSizes: Story = {
           </MuiTypography>
           <Stack direction="row" spacing={2} alignItems="center">
             <Box textAlign="center">
-              <Avatar size={18}>P</Avatar>
+              <Avatar size={18}>MG</Avatar>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 18px
               </MuiTypography>
             </Box>
             <Box textAlign="center">
-              <Avatar size={24}>P</Avatar>
+              <Avatar size={24}>MG</Avatar>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 24px
               </MuiTypography>
             </Box>
             <Box textAlign="center">
-              <Avatar size={32}>P</Avatar>
+              <Avatar size={32}>MG</Avatar>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 32px
               </MuiTypography>
             </Box>
             <Box textAlign="center">
-              <Avatar size={40}>P</Avatar>
+              <Avatar size={40}>MG</Avatar>
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 40px
               </MuiTypography>
@@ -361,7 +361,7 @@ export const AllVariants: Story = {
             Circular (Default)
           </MuiTypography>
           <Stack direction="row" spacing={2}>
-            <Avatar variant="circular">JD</Avatar>
+            <Avatar variant="circular">MG</Avatar>
             <Avatar variant="circular">
               <MaterialSymbol icon="person" />
             </Avatar>
@@ -374,7 +374,7 @@ export const AllVariants: Story = {
             Rounded
           </MuiTypography>
           <Stack direction="row" spacing={2}>
-            <Avatar variant="rounded">JD</Avatar>
+            <Avatar variant="rounded">MG</Avatar>
             <Avatar variant="rounded">
               <MaterialSymbol icon="person" />
             </Avatar>
@@ -387,7 +387,7 @@ export const AllVariants: Story = {
             Square
           </MuiTypography>
           <Stack direction="row" spacing={2}>
-            <Avatar variant="square">JD</Avatar>
+            <Avatar variant="square">MG</Avatar>
             <Avatar variant="square">
               <MaterialSymbol icon="person" />
             </Avatar>
@@ -420,9 +420,9 @@ export const RealWorldExamples: Story = {
           </MuiTypography>
           <Stack spacing={2}>
             {[
-              { name: 'John Doe', initials: 'JD', img: 'https://i.pravatar.cc/150?img=10' },
-              { name: 'Jane Smith', initials: 'JS', img: 'https://i.pravatar.cc/150?img=11' },
-              { name: 'Bob Johnson', initials: 'BJ', img: 'https://i.pravatar.cc/150?img=12' },
+              { name: 'Martin Gómez', initials: 'MG', img: 'https://i.pravatar.cc/150?img=10' },
+              { name: 'Camila Muñoz', initials: 'CM', img: 'https://i.pravatar.cc/150?img=11' },
+              { name: 'Felipe Taborda', initials: 'FP', img: 'https://i.pravatar.cc/150?img=12' },
             ].map((user, index) => (
               <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                 <Avatar src={user.img} alt={user.name}>
@@ -440,9 +440,9 @@ export const RealWorldExamples: Story = {
           </MuiTypography>
           <Stack spacing={2}>
             {[
-              { initials: 'AB', comment: 'Great work on this!' },
-              { initials: 'CD', comment: 'Thanks for the feedback!' },
-              { initials: 'EF', comment: 'Looking forward to the next iteration.' },
+              { initials: 'MG', comment: 'Gran trabajo!' },
+              { initials: 'CM', comment: 'Gracias por el feedback!' },
+              { initials: 'FP', comment: 'Estoy ansioso por la próxima iteración.' },
             ].map((item, index) => (
               <Box key={index} sx={{ display: 'flex', gap: 2 }}>
                 <Avatar size={32}>{item.initials}</Avatar>
@@ -459,7 +459,7 @@ export const RealWorldExamples: Story = {
             Team Members (Small)
           </MuiTypography>
           <Stack direction="row" spacing={1}>
-            {['AM', 'BP', 'CQ', 'DR', 'ES'].map((initials, index) => (
+            {['MG', 'CM', 'FP', 'FT', 'JF'].map((initials, index) => (
               <Avatar key={index} size={24}>
                 {initials}
               </Avatar>

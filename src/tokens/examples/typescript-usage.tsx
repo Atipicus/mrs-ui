@@ -1,29 +1,29 @@
 /**
  * MRS Design System - TypeScript/React Usage Examples
- * 
+ *
  * This file demonstrates how to use design tokens in React components
  * with full TypeScript type safety.
  */
 
 import React from 'react';
 import {
-  // Semantic tokens
-  SemanticColorPrimaryMain,
-  SemanticColorPrimaryDark,
-  SemanticColorPrimaryContrastText,
-  SemanticColorSecondaryMain,
-  SemanticColorTextPrimary,
-  SemanticColorBackgroundDefault,
-  
-  // Component tokens
+  // Semantic tokens (Light mode)
+  SemanticColorLightPrimaryMain,
+  SemanticColorLightPrimaryDark,
+  SemanticColorLightPrimaryContrastText,
+  SemanticColorLightSecondaryMain,
+  SemanticColorLightTextPrimary,
+  SemanticColorLightBackgroundDefault,
+
+  // Component tokens (Light mode)
   ComponentButtonBorderRadius,
   ComponentButtonMediumHeight,
   ComponentButtonFontWeight,
-  ComponentAlertBorderRadius,
-  ComponentAlertErrorFilledBackground,
-  ComponentAlertErrorFilledForeground,
-  ComponentCardBorderRadius,
-  
+  ComponentAlertLightBorderRadius,
+  ComponentAlertLightErrorFilledBackground,
+  ComponentAlertLightErrorFilledForeground,
+  ComponentCardLightBorderRadius,
+
   // Primitive tokens
   PrimitivesSpacing2,
   PrimitivesSpacing3,
@@ -43,21 +43,16 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({ 
-  children, 
-  variant = 'primary',
-  onClick 
-}) => {
-  const backgroundColor = variant === 'primary' 
-    ? SemanticColorPrimaryMain 
-    : SemanticColorSecondaryMain;
+export const Button: React.FC<ButtonProps> = ({ children, variant = 'primary', onClick }) => {
+  const backgroundColor =
+    variant === 'primary' ? SemanticColorLightPrimaryMain : SemanticColorLightSecondaryMain;
 
   return (
     <button
       onClick={onClick}
       style={{
         backgroundColor,
-        color: SemanticColorPrimaryContrastText,
+        color: SemanticColorLightPrimaryContrastText,
         border: 'none',
         borderRadius: ComponentButtonBorderRadius,
         height: ComponentButtonMediumHeight,
@@ -67,7 +62,7 @@ export const Button: React.FC<ButtonProps> = ({
         transition: 'all 0.2s ease',
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = SemanticColorPrimaryDark;
+        e.currentTarget.style.backgroundColor = SemanticColorLightPrimaryDark;
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.backgroundColor = backgroundColor;
@@ -90,8 +85,8 @@ export const Alert: React.FC<AlertProps> = ({ children, severity }) => {
   // Map severity to token values
   const styles = {
     error: {
-      background: ComponentAlertErrorFilledBackground,
-      foreground: ComponentAlertErrorFilledForeground,
+      background: ComponentAlertLightErrorFilledBackground,
+      foreground: ComponentAlertLightErrorFilledForeground,
     },
     warning: {
       background: '#dfa00a', // You can still use raw values if needed
@@ -113,7 +108,7 @@ export const Alert: React.FC<AlertProps> = ({ children, severity }) => {
         backgroundColor: styles[severity].background,
         color: styles[severity].foreground,
         padding: `${PrimitivesSpacing2} ${PrimitivesSpacing3}`,
-        borderRadius: ComponentAlertBorderRadius,
+        borderRadius: ComponentAlertLightBorderRadius,
         marginBottom: PrimitivesSpacing3,
         display: 'flex',
         alignItems: 'center',
@@ -138,7 +133,7 @@ export const Card: React.FC<CardProps> = ({ children, title }) => {
     <div
       style={{
         backgroundColor: '#ffffff',
-        borderRadius: ComponentCardBorderRadius,
+        borderRadius: ComponentCardLightBorderRadius,
         padding: PrimitivesSpacing4,
         marginBottom: PrimitivesSpacing4,
         boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
@@ -151,7 +146,7 @@ export const Card: React.FC<CardProps> = ({ children, title }) => {
             fontWeight: PrimitivesTypographyFontWeightSemibold,
             marginTop: 0,
             marginBottom: PrimitivesSpacing3,
-            color: SemanticColorTextPrimary,
+            color: SemanticColorLightTextPrimary,
           }}
         >
           {title}
@@ -170,9 +165,9 @@ import { createTheme } from '@mui/material/styles';
 export const customTheme = createTheme({
   palette: {
     primary: {
-      main: SemanticColorPrimaryMain,
-      dark: SemanticColorPrimaryDark,
-      contrastText: SemanticColorPrimaryContrastText,
+      main: SemanticColorLightPrimaryMain,
+      dark: SemanticColorLightPrimaryDark,
+      contrastText: SemanticColorLightPrimaryContrastText,
     },
   },
   typography: {
@@ -182,7 +177,7 @@ export const customTheme = createTheme({
   shape: {
     borderRadius: parseInt(ComponentButtonBorderRadius),
   },
-  spacing: (factor: number) => `${parseInt(PrimitivesSpacing2) * factor / 16}rem`,
+  spacing: (factor: number) => `${(parseInt(PrimitivesSpacing2) * factor) / 16}rem`,
 });
 
 // ============================================
@@ -191,20 +186,20 @@ export const customTheme = createTheme({
 export const tokenStyles = {
   page: {
     fontFamily: PrimitivesTypographyFontFamilyStack,
-    color: SemanticColorTextPrimary,
-    backgroundColor: SemanticColorBackgroundDefault,
+    color: SemanticColorLightTextPrimary,
+    backgroundColor: SemanticColorLightBackgroundDefault,
     padding: PrimitivesSpacing4,
   },
   heading: {
     fontSize: PrimitivesTypographyFontSizeXl,
     fontWeight: PrimitivesTypographyFontWeightSemibold,
-    color: SemanticColorPrimaryMain,
+    color: SemanticColorLightPrimaryMain,
     marginBottom: PrimitivesSpacing3,
   },
   button: {
     primary: {
-      backgroundColor: SemanticColorPrimaryMain,
-      color: SemanticColorPrimaryContrastText,
+      backgroundColor: SemanticColorLightPrimaryMain,
+      color: SemanticColorLightPrimaryContrastText,
       borderRadius: ComponentButtonBorderRadius,
       padding: `0 ${PrimitivesSpacing3}`,
     },
@@ -217,33 +212,20 @@ export const tokenStyles = {
 export const TokenDemoPage: React.FC = () => {
   return (
     <div style={tokenStyles.page}>
-      <h1 style={tokenStyles.heading}>
-        🎨 MRS Design System - TypeScript Tokens Example
-      </h1>
+      <h1 style={tokenStyles.heading}>🎨 MRS Design System - TypeScript Tokens Example</h1>
 
       <Card title="Buttons">
         <Button variant="primary" onClick={() => alert('Primary clicked!')}>
           Primary Button
-        </Button>
-        {' '}
-        <Button variant="secondary">
-          Secondary Button
-        </Button>
+        </Button>{' '}
+        <Button variant="secondary">Secondary Button</Button>
       </Card>
 
       <Card title="Alerts">
-        <Alert severity="error">
-          ❌ Error: This is an error message using tokens
-        </Alert>
-        <Alert severity="warning">
-          ⚠️ Warning: This is a warning message
-        </Alert>
-        <Alert severity="info">
-          ℹ️ Info: This is an info message
-        </Alert>
-        <Alert severity="success">
-          ✅ Success: This is a success message
-        </Alert>
+        <Alert severity="error">❌ Error: This is an error message using tokens</Alert>
+        <Alert severity="warning">⚠️ Warning: This is a warning message</Alert>
+        <Alert severity="info">ℹ️ Info: This is an info message</Alert>
+        <Alert severity="success">✅ Success: This is a success message</Alert>
       </Card>
 
       <Card title="Benefits">
@@ -265,56 +247,58 @@ export const TokenDemoPage: React.FC = () => {
 import { useMemo } from 'react';
 
 export const useTokens = () => {
-  return useMemo(() => ({
-    colors: {
-      primary: SemanticColorPrimaryMain,
-      primaryDark: SemanticColorPrimaryDark,
-      text: SemanticColorTextPrimary,
-      background: SemanticColorBackgroundDefault,
-    },
-    spacing: {
-      sm: PrimitivesSpacing2,
-      md: PrimitivesSpacing3,
-      lg: PrimitivesSpacing4,
-    },
-    typography: {
-      fontFamily: PrimitivesTypographyFontFamilyStack,
-      fontSize: {
-        md: PrimitivesTypographyFontSizeMd,
-        xl: PrimitivesTypographyFontSizeXl,
+  return useMemo(
+    () => ({
+      colors: {
+        primary: SemanticColorLightPrimaryMain,
+        primaryDark: SemanticColorLightPrimaryDark,
+        text: SemanticColorLightTextPrimary,
+        background: SemanticColorLightBackgroundDefault,
       },
-      fontWeight: {
-        semibold: PrimitivesTypographyFontWeightSemibold,
+      spacing: {
+        sm: PrimitivesSpacing2,
+        md: PrimitivesSpacing3,
+        lg: PrimitivesSpacing4,
       },
-    },
-    components: {
-      button: {
-        borderRadius: ComponentButtonBorderRadius,
-        height: ComponentButtonMediumHeight,
+      typography: {
+        fontFamily: PrimitivesTypographyFontFamilyStack,
+        fontSize: {
+          md: PrimitivesTypographyFontSizeMd,
+          xl: PrimitivesTypographyFontSizeXl,
+        },
+        fontWeight: {
+          semibold: PrimitivesTypographyFontWeightSemibold,
+        },
       },
-      alert: {
-        borderRadius: ComponentAlertBorderRadius,
+      components: {
+        button: {
+          borderRadius: ComponentButtonBorderRadius,
+          height: ComponentButtonMediumHeight,
+        },
+        alert: {
+          borderRadius: ComponentAlertLightBorderRadius,
+        },
+        card: {
+          borderRadius: ComponentCardLightBorderRadius,
+        },
       },
-      card: {
-        borderRadius: ComponentCardBorderRadius,
-      },
-    },
-  }), []);
+    }),
+    []
+  );
 };
 
 // Usage:
 export const MyComponent: React.FC = () => {
   const tokens = useTokens();
-  
+
   return (
-    <div style={{ 
-      backgroundColor: tokens.colors.background,
-      padding: tokens.spacing.lg,
-    }}>
-      <h1 style={{ color: tokens.colors.primary }}>
-        Hello from MyComponent
-      </h1>
+    <div
+      style={{
+        backgroundColor: tokens.colors.background,
+        padding: tokens.spacing.lg,
+      }}
+    >
+      <h1 style={{ color: tokens.colors.primary }}>Hello from MyComponent</h1>
     </div>
   );
 };
-

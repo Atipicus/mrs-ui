@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Alert } from "./Alert";
+import figma from '@figma/code-connect';
+import { Alert } from './Alert';
 
 /**
  * Code Connect mapping for Alert component
@@ -8,24 +8,24 @@ import { Alert } from "./Alert";
  */
 figma.connect(
   Alert,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11112-140597",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11112-140597',
   {
     props: {
-      severity: figma.enum("severity", {
-        Error: "error",
-        Warning: "warning",
-        Info: "info",
-        Success: "success",
+      severity: figma.enum('severity', {
+        Error: 'error',
+        Warning: 'warning',
+        Info: 'info',
+        Success: 'success',
       }),
-      variant: figma.enum("variant", {
-        Standard: "standard",
-        Filled: "filled",
-        Outlined: "outlined",
+      variant: figma.enum('variant', {
+        Standard: 'standard',
+        Filled: 'filled',
+        Outlined: 'outlined',
       }),
-      icon: figma.boolean("icon"),
-      action: figma.boolean("action"),
-      onClose: figma.boolean("closable"),
-      children: figma.string("description"),
+      icon: figma.boolean('icon'),
+      action: figma.boolean('action'),
+      onClose: figma.boolean('closable'),
+      children: figma.string('description'),
     },
     example: (props) => (
       <Alert

@@ -79,12 +79,12 @@ export const Default: Story = {
 export const Playground: Story = {
   args: {
     icon: 'favorite',
-    size: "large",
+    size: 'large',
     fill: 0,
     weight: 100,
     grade: 125,
-    color: "#701300",
-    className: "add"
+    color: '#701300',
+    className: 'add',
   },
 };
 
@@ -93,10 +93,10 @@ export const Playground: Story = {
  */
 export const AllSizes: Story = {
   args: {
-    size: "large",
+    size: 'large',
     fill: 1,
-    icon: "favorite",
-    weight: 700
+    icon: 'favorite',
+    weight: 700,
   },
 
   render: () => (
@@ -126,7 +126,7 @@ export const AllSizes: Story = {
         </Typography>
       </Box>
     </Stack>
-  )
+  ),
 };
 
 /**
@@ -206,11 +206,7 @@ export const CommonIcons: Story = {
       </Typography>
       <Typography variant="body2" color="text.secondary" paragraph>
         Browse all icons at{' '}
-        <a
-          href="https://fonts.google.com/icons"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://fonts.google.com/icons" target="_blank" rel="noopener noreferrer">
           fonts.google.com/icons
         </a>
       </Typography>
@@ -286,10 +282,8 @@ export const MRSDefaultStyle: Story = {
         MRS Design System Default Configuration
       </Typography>
       <Typography variant="body2" color="text.secondary" paragraph>
-        <strong>Weight:</strong> 300 (Light) |{' '}
-        <strong>Fill:</strong> 0 (Outlined) |{' '}
-        <strong>Grade:</strong> 100 (Lighter) |{' '}
-        <strong>Variant:</strong> Rounded
+        <strong>Weight:</strong> 300 (Light) | <strong>Fill:</strong> 0 (Outlined) |{' '}
+        <strong>Grade:</strong> 100 (Lighter) | <strong>Variant:</strong> Rounded
       </Typography>
       <Stack direction="row" spacing={4} alignItems="center" sx={{ mt: 3 }}>
         <MaterialSymbol icon="check" size="large" />

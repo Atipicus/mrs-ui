@@ -127,15 +127,11 @@ describe('DrawerNavigation', () => {
 
   it('calls onItemClick callback', () => {
     const onItemClick = jest.fn();
-    renderWithTheme(
-      <DrawerNavigation items={[{ label: 'Home' }]} onItemClick={onItemClick} />
-    );
+    renderWithTheme(<DrawerNavigation items={[{ label: 'Home' }]} onItemClick={onItemClick} />);
     const item = screen.getByText('Home');
     fireEvent.click(item);
     expect(onItemClick).toHaveBeenCalledTimes(1);
-    expect(onItemClick).toHaveBeenCalledWith(
-      expect.objectContaining({ label: 'Home' })
-    );
+    expect(onItemClick).toHaveBeenCalledWith(expect.objectContaining({ label: 'Home' }));
   });
 
   it('calls both onClick and onItemClick', () => {
@@ -206,12 +202,7 @@ describe('DrawerNavigation', () => {
   // Divider tests
   it('renders dividers when specified', () => {
     renderWithTheme(
-      <DrawerNavigation
-        items={[
-          { label: 'Home', divider: true },
-          { label: 'Inbox' },
-        ]}
-      />
+      <DrawerNavigation items={[{ label: 'Home', divider: true }, { label: 'Inbox' }]} />
     );
     const dividers = document.querySelectorAll('.MuiDivider-root');
     expect(dividers.length).toBeGreaterThan(0);
@@ -316,14 +307,7 @@ describe('DrawerNavigation', () => {
   });
 
   it('handles items without id (uses index)', () => {
-    renderWithTheme(
-      <DrawerNavigation
-        items={[
-          { label: 'Item 1' },
-          { label: 'Item 2' },
-        ]}
-      />
-    );
+    renderWithTheme(<DrawerNavigation items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />);
     expect(screen.getByText('Item 1')).toBeInTheDocument();
     expect(screen.getByText('Item 2')).toBeInTheDocument();
   });

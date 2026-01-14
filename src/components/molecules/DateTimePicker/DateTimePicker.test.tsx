@@ -236,7 +236,11 @@ describe('DateTimePicker', () => {
       const maxDateTime = dayjs('2024-12-31T17:00:00');
       render(
         <TestWrapper>
-          <DateTimePicker label="Test DateTime" minDateTime={minDateTime} maxDateTime={maxDateTime} />
+          <DateTimePicker
+            label="Test DateTime"
+            minDateTime={minDateTime}
+            maxDateTime={maxDateTime}
+          />
         </TestWrapper>
       );
       expect(screen.getByRole('group')).toBeInTheDocument();
@@ -288,7 +292,10 @@ describe('DateTimePicker', () => {
     it('accepts custom views prop', () => {
       render(
         <TestWrapper>
-          <DateTimePicker label="Test DateTime" views={['year', 'month', 'day', 'hours', 'minutes']} />
+          <DateTimePicker
+            label="Test DateTime"
+            views={['year', 'month', 'day', 'hours', 'minutes']}
+          />
         </TestWrapper>
       );
       expect(screen.getByRole('group')).toBeInTheDocument();

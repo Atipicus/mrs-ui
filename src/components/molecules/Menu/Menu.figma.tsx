@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Menu } from "./Menu";
+import figma from '@figma/code-connect';
+import { Menu } from './Menu';
 
 /**
  * Code Connect mapping for Menu component
@@ -8,14 +8,14 @@ import { Menu } from "./Menu";
  */
 figma.connect(
   Menu,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11137-155711",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11137-155711',
   {
     props: {
-      variant: figma.enum("variant", {
-        Menu: "menu",
-        SelectedMenu: "selectedMenu",
+      variant: figma.enum('variant', {
+        Menu: 'menu',
+        SelectedMenu: 'selectedMenu',
       }),
-      dense: figma.boolean("dense"),
+      dense: figma.boolean('dense'),
     },
     example: (props) => (
       <Menu

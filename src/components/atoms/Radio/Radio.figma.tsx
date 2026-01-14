@@ -1,5 +1,5 @@
-import figma from "@figma/code-connect";
-import { Radio } from "./Radio";
+import figma from '@figma/code-connect';
+import { Radio } from './Radio';
 
 /**
  * Code Connect mapping for Radio component
@@ -8,25 +8,25 @@ import { Radio } from "./Radio";
  */
 figma.connect(
   Radio,
-  "https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11084-152582",
+  'https://www.figma.com/design/pWR8HIewAt87ZioeOSMoWM/MRS---Material-UI?node-id=11084-152582',
   {
     props: {
-      color: figma.enum("color", {
-        Primary: "primary",
-        Secondary: "secondary",
-        Error: "error",
-        Warning: "warning",
-        Info: "info",
-        Success: "success",
-        Default: "default",
+      color: figma.enum('color', {
+        Primary: 'primary',
+        Secondary: 'secondary',
+        Error: 'error',
+        Warning: 'warning',
+        Info: 'info',
+        Success: 'success',
+        Default: 'default',
       }),
-      size: figma.enum("size", {
-        Small: "small",
-        Medium: "medium",
-        Large: "large",
+      size: figma.enum('size', {
+        Small: 'small',
+        Medium: 'medium',
+        Large: 'large',
       }),
-      checked: figma.boolean("checked"),
-      disabled: figma.boolean("disabled"),
+      checked: figma.boolean('checked'),
+      disabled: figma.boolean('disabled'),
     },
     example: (props) => (
       <Radio

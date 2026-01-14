@@ -11,7 +11,7 @@ describe('Grid', () => {
     it('renders grid with children', () => {
       renderWithTheme(
         <Grid container>
-          <Grid xs={12}>Content</Grid>
+          <Grid size={12}>Content</Grid>
         </Grid>
       );
       expect(screen.getByText('Content')).toBeInTheDocument();
@@ -20,8 +20,8 @@ describe('Grid', () => {
     it('renders multiple grid items', () => {
       renderWithTheme(
         <Grid container>
-          <Grid xs={6}>Item 1</Grid>
-          <Grid xs={6}>Item 2</Grid>
+          <Grid size={6}>Item 1</Grid>
+          <Grid size={6}>Item 2</Grid>
         </Grid>
       );
       expect(screen.getByText('Item 1')).toBeInTheDocument();
@@ -33,7 +33,7 @@ describe('Grid', () => {
     it('renders as container', () => {
       const { container } = renderWithTheme(
         <Grid container>
-          <Grid xs={12}>Content</Grid>
+          <Grid size={12}>Content</Grid>
         </Grid>
       );
       const grid = container.querySelector('.MuiGrid2-container');
@@ -42,10 +42,10 @@ describe('Grid', () => {
   });
 
   describe('Grid Sizes', () => {
-    it('renders with xs size', () => {
+    it('renders with size prop', () => {
       renderWithTheme(
         <Grid container>
-          <Grid xs={12}>Full width</Grid>
+          <Grid size={12}>Full width</Grid>
         </Grid>
       );
       expect(screen.getByText('Full width')).toBeInTheDocument();
@@ -54,9 +54,7 @@ describe('Grid', () => {
     it('renders with responsive sizes', () => {
       renderWithTheme(
         <Grid container>
-          <Grid xs={12} sm={6} md={4}>
-            Responsive
-          </Grid>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>Responsive</Grid>
         </Grid>
       );
       expect(screen.getByText('Responsive')).toBeInTheDocument();
@@ -65,7 +63,7 @@ describe('Grid', () => {
     it('renders with auto size', () => {
       renderWithTheme(
         <Grid container>
-          <Grid xs="auto">Auto width</Grid>
+          <Grid size="auto">Auto width</Grid>
         </Grid>
       );
       expect(screen.getByText('Auto width')).toBeInTheDocument();
@@ -76,8 +74,8 @@ describe('Grid', () => {
     it('renders with spacing', () => {
       renderWithTheme(
         <Grid container spacing={2}>
-          <Grid xs={6}>Item 1</Grid>
-          <Grid xs={6}>Item 2</Grid>
+          <Grid size={6}>Item 1</Grid>
+          <Grid size={6}>Item 2</Grid>
         </Grid>
       );
       expect(screen.getByText('Item 1')).toBeInTheDocument();
@@ -86,8 +84,8 @@ describe('Grid', () => {
     it('renders with column and row spacing', () => {
       renderWithTheme(
         <Grid container columnSpacing={2} rowSpacing={1}>
-          <Grid xs={6}>Item 1</Grid>
-          <Grid xs={6}>Item 2</Grid>
+          <Grid size={6}>Item 1</Grid>
+          <Grid size={6}>Item 2</Grid>
         </Grid>
       );
       expect(screen.getByText('Item 1')).toBeInTheDocument();
@@ -98,9 +96,9 @@ describe('Grid', () => {
     it('renders nested grid containers', () => {
       renderWithTheme(
         <Grid container>
-          <Grid xs={12}>
+          <Grid size={12}>
             <Grid container>
-              <Grid xs={6}>Nested Item</Grid>
+              <Grid size={6}>Nested Item</Grid>
             </Grid>
           </Grid>
         </Grid>
@@ -113,7 +111,7 @@ describe('Grid', () => {
     it('renders as div by default', () => {
       const { container } = renderWithTheme(
         <Grid container>
-          <Grid xs={12}>Content</Grid>
+          <Grid size={12}>Content</Grid>
         </Grid>
       );
       const grid = container.firstChild;
@@ -123,7 +121,7 @@ describe('Grid', () => {
     it('renders as section when component="section"', () => {
       const { container } = renderWithTheme(
         <Grid component="section" container>
-          <Grid xs={12}>Content</Grid>
+          <Grid size={12}>Content</Grid>
         </Grid>
       );
       const grid = container.firstChild;
@@ -136,7 +134,7 @@ describe('Grid', () => {
       const ref = React.createRef<HTMLDivElement>();
       renderWithTheme(
         <Grid ref={ref} container>
-          <Grid xs={12}>Content</Grid>
+          <Grid size={12}>Content</Grid>
         </Grid>
       );
       expect(ref.current).toBeTruthy();

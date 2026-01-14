@@ -21,6 +21,7 @@ Micro-interactions are small, subtle animations that provide feedback, guide use
 ### Philosophy
 
 **Good micro-interactions should be**:
+
 - **Fast**: Complete in 100-300ms
 - **Purposeful**: Every animation has a clear reason
 - **Subtle**: Enhance, don't distract
@@ -52,6 +53,7 @@ const MyButton = () => {
 ```
 
 **Use Cases**:
+
 - Button clicks
 - Card taps
 - Interactive elements
@@ -78,12 +80,14 @@ const NotificationIcon = () => {
 ```
 
 **Use Cases**:
+
 - Notification indicators
 - Call-to-action buttons
 - Unread badges
 - "New" labels
 
 **Options**:
+
 - `duration`: Animation cycle duration (ms)
 - `scale`: Scale factor (1.0 = no scale)
 - `enabled`: Toggle animation on/off
@@ -119,12 +123,14 @@ const LoginForm = () => {
 ```
 
 **Use Cases**:
+
 - Form validation errors
 - Invalid password attempts
 - Incorrect inputs
 - Failed actions
 
 **Options**:
+
 - `duration`: Shake duration (default: 200ms)
 - `distance`: Shake distance in pixels (default: 10px)
 
@@ -157,12 +163,14 @@ const LikeButton = () => {
 ```
 
 **Use Cases**:
+
 - Like/favorite actions
 - Success confirmations
 - Achievement unlocks
 - Positive feedback
 
 **Options**:
+
 - `duration`: Bounce duration (default: 300ms)
 - `scale`: Peak scale factor (default: 1.2)
 
@@ -193,17 +201,20 @@ const ProductCard = () => {
 ```
 
 **Use Cases**:
+
 - Card hover effects
 - Image galleries
 - Product listings
 - Interactive previews
 
 **Options**:
+
 - `scale`: Scale factor on hover (default: 1.05)
 - `duration`: Transition duration (from tokens)
 - `easing`: Easing function (from tokens)
 
 **Returns**:
+
 - `isHovered`: Boolean hover state
 - `onMouseEnter`: Mouse enter handler
 - `onMouseLeave`: Mouse leave handler
@@ -218,7 +229,7 @@ const ProductCard = () => {
 Enhanced button with custom ripple effect.
 
 ```typescript
-import { RippleButton } from '@atipicus/mrs-ui/components/effects';
+import { RippleButton } from '@mrs-uisystem/ui-v6/components/effects';
 
 <RippleButton variant="contained" color="primary">
   Click for Ripple
@@ -228,6 +239,7 @@ import { RippleButton } from '@atipicus/mrs-ui/components/effects';
 **Props**: Extends `ButtonProps` from Material-UI
 
 **Additional Props**:
+
 - `disableRipple`: Disable ripple effect (default: false)
 
 ---
@@ -237,7 +249,7 @@ import { RippleButton } from '@atipicus/mrs-ui/components/effects';
 Badge with entrance animations.
 
 ```typescript
-import { AnimatedBadge } from '@atipicus/mrs-ui/components/effects';
+import { AnimatedBadge } from '@mrs-uisystem/ui-v6/components/effects';
 
 <AnimatedBadge
   badgeContent={count}
@@ -251,10 +263,12 @@ import { AnimatedBadge } from '@atipicus/mrs-ui/components/effects';
 **Props**: Extends `BadgeProps` from Material-UI
 
 **Additional Props**:
+
 - `animationVariant`: `'bounce' | 'pulse' | 'none'` (default: 'bounce')
 - `animateOnChange`: Animate when count changes (default: true)
 
 **Variants**:
+
 - **bounce**: One-time bounce when badge appears/changes
 - **pulse**: Continuous pulsing animation
 - **none**: No animation
@@ -266,12 +280,13 @@ import { AnimatedBadge } from '@atipicus/mrs-ui/components/effects';
 Three-dot loading animation.
 
 ```typescript
-import { LoadingDots } from '@atipicus/mrs-ui/components/effects';
+import { LoadingDots } from '@mrs-uisystem/ui-v6/components/effects';
 
 <LoadingDots color="primary" size="medium" />
 ```
 
 **Props**:
+
 - `color`: `'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success'`
 - `size`: `'small' | 'medium' | 'large'`
 
@@ -435,9 +450,7 @@ useEffect(() => {
 
 ```typescript
 // ✅ Good: Respect prefers-reduced-motion
-const prefersReducedMotion = window.matchMedia(
-  '(prefers-reduced-motion: reduce)'
-).matches;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const pulseRef = usePulse({
   enabled: !prefersReducedMotion,
@@ -517,14 +530,10 @@ import {
   useShake,
   useBounce,
   useHoverScale,
-} from '@atipicus/mrs-ui/hooks/animations';
+} from '@mrs-uisystem/ui-v6/hooks/animations';
 
 // Components
-import {
-  RippleButton,
-  AnimatedBadge,
-  LoadingDots,
-} from '@atipicus/mrs-ui/components/effects';
+import { RippleButton, AnimatedBadge, LoadingDots } from '@mrs-uisystem/ui-v6/components/effects';
 ```
 
 ---
@@ -532,4 +541,3 @@ import {
 **Maintained by**: MRS Design System Team  
 **Last Updated**: December 2025  
 **Version**: 1.0.0
-

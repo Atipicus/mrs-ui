@@ -21,12 +21,7 @@ import type { BottomNavigationProps } from './BottomNavigation.types';
  */
 export const BottomNavigation = React.forwardRef<HTMLDivElement, BottomNavigationProps>(
   (props, ref) => {
-    return (
-      <MuiBottomNavigation
-        ref={ref}
-        {...props}
-      />
-    );
+    return <MuiBottomNavigation ref={ref} {...props} />;
   }
 );
 

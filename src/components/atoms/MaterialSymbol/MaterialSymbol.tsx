@@ -143,10 +143,7 @@ export interface MaterialSymbolProps {
  * />
  * ```
  */
-export const MaterialSymbol = React.forwardRef<
-  HTMLSpanElement,
-  MaterialSymbolProps
->(
+export const MaterialSymbol = React.forwardRef<HTMLSpanElement, MaterialSymbolProps>(
   (
     {
       icon,
@@ -188,9 +185,7 @@ export const MaterialSymbol = React.forwardRef<
     const fontVariationSettings = `'FILL' ${fill}, 'wght' ${weight}, 'GRAD' ${grade}, 'opsz' ${opticalSize}`;
 
     // Build class names
-    const classNames = ['material-symbols-rounded', className]
-      .filter(Boolean)
-      .join(' ');
+    const classNames = ['material-symbols-rounded', className].filter(Boolean).join(' ');
 
     // Determine if icon is clickable
     const isClickable = Boolean(onClick);

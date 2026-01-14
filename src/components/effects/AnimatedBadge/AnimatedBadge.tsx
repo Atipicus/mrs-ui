@@ -93,9 +93,12 @@ export const AnimatedBadge: React.FC<AnimatedBadgeProps> = ({
     setShouldAnimate(true);
     setPrevBadgeContent(badgeContent);
 
-    const timer = setTimeout(() => {
-      setShouldAnimate(false);
-    }, parseInt(PrimitivesMotionDurationBase) * 3);
+    const timer = setTimeout(
+      () => {
+        setShouldAnimate(false);
+      },
+      parseInt(PrimitivesMotionDurationBase) * 3
+    );
 
     return () => clearTimeout(timer);
   }, [badgeContent, prevBadgeContent, animateOnChange]);
@@ -114,4 +117,3 @@ export const AnimatedBadge: React.FC<AnimatedBadgeProps> = ({
     </AnimatedBadgeRoot>
   );
 };
-

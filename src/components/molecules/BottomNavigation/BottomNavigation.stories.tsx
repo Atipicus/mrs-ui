@@ -99,10 +99,7 @@ export const FixedAtBottom: Story = {
           <p>Content area</p>
           <p>Scroll down to see the bottom navigation</p>
         </Box>
-        <Paper
-          sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}
-          elevation={3}
-        >
+        <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
           <BottomNavigation
             showLabels
             value={value}
@@ -162,21 +159,9 @@ export const WithValueMapping: Story = {
             setValue(newValue);
           }}
         >
-          <BottomNavigationAction
-            label="Recents"
-            value="recents"
-            icon={<RestoreIcon />}
-          />
-          <BottomNavigationAction
-            label="Favorites"
-            value="favorites"
-            icon={<FavoriteIcon />}
-          />
-          <BottomNavigationAction
-            label="Nearby"
-            value="nearby"
-            icon={<LocationOnIcon />}
-          />
+          <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon />} />
+          <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
+          <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />
         </BottomNavigation>
         <Box sx={{ mt: 2, p: 2, bgcolor: 'grey.100', borderRadius: 1 }}>
           Current value: <strong>{value}</strong>
@@ -282,18 +267,9 @@ export const WithMaterialSymbols: Story = {
             setValue(newValue);
           }}
         >
-          <BottomNavigationAction
-            label="Home"
-            icon={<MaterialSymbol icon="home" />}
-          />
-          <BottomNavigationAction
-            label="Favorites"
-            icon={<MaterialSymbol icon="favorite" />}
-          />
-          <BottomNavigationAction
-            label="Location"
-            icon={<MaterialSymbol icon="location_on" />}
-          />
+          <BottomNavigationAction label="Home" icon={<MaterialSymbol icon="home" />} />
+          <BottomNavigationAction label="Favorites" icon={<MaterialSymbol icon="favorite" />} />
+          <BottomNavigationAction label="Location" icon={<MaterialSymbol icon="location_on" />} />
         </BottomNavigation>
       </Box>
     );

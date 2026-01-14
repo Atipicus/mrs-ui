@@ -1,5 +1,8 @@
 import { useState, useCallback } from 'react';
-import { PrimitivesMotionDurationFast, PrimitivesMotionEasingStandard } from '../../tokens/generated/ts/tokens';
+import {
+  PrimitivesMotionDurationFast,
+  PrimitivesMotionEasingStandard,
+} from '../../tokens/generated/ts/tokens';
 
 interface UseHoverScaleOptions {
   scale?: number;
@@ -57,4 +60,3 @@ export const useHoverScale = (options: UseHoverScaleOptions = {}) => {
     style,
   };
 };
-

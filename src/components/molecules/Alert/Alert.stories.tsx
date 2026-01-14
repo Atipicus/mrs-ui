@@ -29,6 +29,7 @@ const meta: Meta<typeof Alert> = {
     title: 'Title',
     description: 'Description',
     icon: true,
+    size: '32px',
     close: true,
   },
 };
@@ -37,14 +38,19 @@ export default meta;
 type Story = StoryObj<typeof Alert>;
 
 export const Playground: Story = {
-  args: {},
+  args: {
+    severity: 'info',
+    variant: 'outlined',
+    icon: false,
+  },
 };
 
 export const Variants: Story = {
   args: {
     icon: false,
     close: false,
-    severity: 'info',
+    severity: 'success',
+    variant: 'outlined',
   },
   render: () => (
     <Stack spacing={3}>
@@ -140,8 +146,8 @@ export const BorderRadiusVariations: Story = {
         <Alert
           severity="info"
           variant="filled"
-          title="Fully Rounded (theme.shape.rounded)"
-          description="Custom sx override: borderRadius: theme.shape.rounded (pill shape)"
+          title="Fully Rounded (theme.shape.xl)"
+          description="Custom sx override: borderRadius: theme.shape.xl (24px)"
           sx={(theme) => ({ borderRadius: theme.shape.rounded })}
         />
       </Box>

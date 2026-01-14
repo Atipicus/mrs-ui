@@ -151,19 +151,14 @@ describe('MaterialSymbol', () => {
     });
 
     it('applies sx prop', () => {
-      const { container } = render(
-        <MaterialSymbol icon="home" sx={{ opacity: 0.5 }} />
-      );
+      const { container } = render(<MaterialSymbol icon="home" sx={{ opacity: 0.5 }} />);
       const icon = container.querySelector('.material-symbols-rounded');
       expect(icon).toHaveStyle({ opacity: '0.5' });
     });
 
     it('merges sx with default styles', () => {
       const { container } = render(
-        <MaterialSymbol
-          icon="settings"
-          sx={{ color: 'blue', fontSize: '32px' }}
-        />
+        <MaterialSymbol icon="settings" sx={{ color: 'blue', fontSize: '32px' }} />
       );
       const icon = container.querySelector('.material-symbols-rounded');
       expect(icon).toHaveStyle({

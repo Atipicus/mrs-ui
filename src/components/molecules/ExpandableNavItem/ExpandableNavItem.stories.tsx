@@ -120,9 +120,21 @@ export const WithClickHandlers: Story = {
       isOpen={false}
       onClick={() => alert('Parent clicked')}
       children={[
-        { label: 'All Mail', icon: <MaterialSymbol icon="drafts" />, onClick: () => alert('All Mail clicked') },
-        { label: 'Sent', icon: <MaterialSymbol icon="send" />, onClick: () => alert('Sent clicked') },
-        { label: 'Drafts', icon: <MaterialSymbol icon="drafts" />, onClick: () => alert('Drafts clicked') },
+        {
+          label: 'All Mail',
+          icon: <MaterialSymbol icon="drafts" />,
+          onClick: () => alert('All Mail clicked'),
+        },
+        {
+          label: 'Sent',
+          icon: <MaterialSymbol icon="send" />,
+          onClick: () => alert('Sent clicked'),
+        },
+        {
+          label: 'Drafts',
+          icon: <MaterialSymbol icon="drafts" />,
+          onClick: () => alert('Drafts clicked'),
+        },
       ]}
     />
   ),
