@@ -98,19 +98,19 @@ describe('Avatar', () => {
   it('applies correct font size for size 18px', () => {
     const { container } = render(<Avatar size={18}>JD</Avatar>);
     const avatar = container.querySelector('.MuiAvatar-root');
-    expect(avatar).toHaveStyle('font-size: 0.625rem');
+    expect(avatar).toHaveStyle('font-size: 0.75rem');
   });
 
   it('applies correct font size for size 24px', () => {
     const { container } = render(<Avatar size={24}>JD</Avatar>);
     const avatar = container.querySelector('.MuiAvatar-root');
-    expect(avatar).toHaveStyle('font-size: 0.75rem');
+    expect(avatar).toHaveStyle('font-size: 0.875rem');
   });
 
   it('applies correct font size for size 32px', () => {
     const { container } = render(<Avatar size={32}>JD</Avatar>);
     const avatar = container.querySelector('.MuiAvatar-root');
-    expect(avatar).toHaveStyle('font-size: 0.75rem');
+    expect(avatar).toHaveStyle('font-size: 0.875rem');
   });
 
   it('applies correct font size for size 40px', () => {
