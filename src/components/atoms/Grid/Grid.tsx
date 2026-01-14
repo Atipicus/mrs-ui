@@ -14,10 +14,10 @@ import type { GridProps } from './Grid.types';
  * @example
  * ```tsx
  * <Grid container spacing={2}>
- *   <Grid xs={12} md={6}>
+ *   <Grid size={{ xs: 12, md: 6 }}>
  *     <Item>1</Item>
  *   </Grid>
- *   <Grid xs={12} md={6}>
+ *   <Grid size={{ xs: 12, md: 6 }}>
  *     <Item>2</Item>
  *   </Grid>
  * </Grid>

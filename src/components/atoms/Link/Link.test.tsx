@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { renderWithTheme, screen } from '../../../../tests/test-utils';
+import { renderWithTheme, screen, act } from '../../../../tests/test-utils';
 import { Link } from './Link';
 import userEvent from '@testing-library/user-event';
 
@@ -206,7 +206,9 @@ describe('Link', () => {
       );
 
       const link = screen.getByText('Keyboard Link');
-      link.focus();
+      act(() => {
+        link.focus();
+      });
       expect(link).toHaveFocus();
     });
   });

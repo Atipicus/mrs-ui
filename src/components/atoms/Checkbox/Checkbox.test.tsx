@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { renderWithTheme, screen, fireEvent } from '../../../../tests/test-utils';
+import { renderWithTheme, screen, fireEvent, act } from '../../../../tests/test-utils';
 import { Checkbox } from './Checkbox';
 
 describe('Checkbox', () => {
@@ -173,7 +173,9 @@ describe('Checkbox', () => {
     renderWithTheme(<Checkbox />);
     const checkbox = screen.getByRole('checkbox');
 
-    checkbox.focus();
+    act(() => {
+      checkbox.focus();
+    });
     expect(checkbox).toHaveFocus();
   });
 
@@ -182,7 +184,9 @@ describe('Checkbox', () => {
     renderWithTheme(<Checkbox onChange={handleChange} />);
     const checkbox = screen.getByRole('checkbox');
 
-    checkbox.focus();
+    act(() => {
+      checkbox.focus();
+    });
     fireEvent.keyDown(checkbox, { key: 'Enter', code: 'Enter' });
 
     // Note: Enter key behavior may vary based on MUI implementation

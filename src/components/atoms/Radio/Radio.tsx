@@ -44,7 +44,7 @@ export const Radio = React.forwardRef<HTMLButtonElement, RadioProps>(
       <MuiRadio
         ref={ref}
         checked={checked}
-        size={size as 'small' | 'medium'}
+        size={size}
         color={color}
         disabled={disabled}
         disableRipple={disableRipple}
