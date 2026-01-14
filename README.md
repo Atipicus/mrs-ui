@@ -3,8 +3,11 @@
 [![npm version](https://badge.fury.io/js/@atipicus%2Fmrs-ui.svg)](https://www.npmjs.com/package/@atipicus/mrs-ui)
 [![License](https://img.shields.io/badge/License-UNLICENSED-red.svg)](LICENSE)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/Atipicus/mrs-ui/ci.yml?branch=main)](https://github.com/Atipicus/mrs-ui/actions)
+[![Storybook](https://img.shields.io/badge/Storybook-Live-ff4785?logo=storybook)](https://atipicus.github.io/mrs-ui/)
 
 A comprehensive Material-UI v6.5 based design system with **54 production-ready components** built with React, TypeScript, and modern best practices.
+
+**📚 [View Component Documentation →](https://atipicus.github.io/mrs-ui/)**
 
 > **Version 0.10.2** - Production-ready release with complete Grid v2 migration, enhanced component APIs, and comprehensive test coverage. 54 production-ready components with 1,199 tests passing (57 test suites). Zero critical issues. Three-Tier Token Architecture with 470+ tokens.
 
