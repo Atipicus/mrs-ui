@@ -155,12 +155,15 @@ describe('Chip', () => {
       sizes.flatMap((size) =>
         colors.flatMap((color) => variants.map((variant) => ({ size, color, variant })))
       )
-    )('renders correctly for size=$size, color=$color, variant=$variant', ({ size, color, variant }) => {
-      const label = `${size}-${color}-${variant}`;
-      render(<Chip label={label} size={size} color={color} variant={variant} />);
-      const chipElement = screen.getByText(label);
-      expect(chipElement).toBeInTheDocument();
-    });
+    )(
+      'renders correctly for size=$size, color=$color, variant=$variant',
+      ({ size, color, variant }) => {
+        const label = `${size}-${color}-${variant}`;
+        render(<Chip label={label} size={size} color={color} variant={variant} />);
+        const chipElement = screen.getByText(label);
+        expect(chipElement).toBeInTheDocument();
+      }
+    );
   });
 
   it('renders with avatar and delete icon together', () => {
