@@ -101,7 +101,7 @@ describe('Chip', () => {
     expect(deleteIcon).toBeInTheDocument();
   });
 
-  it('calls onDelete when delete icon is clicked', () => {
+  it('calls onDelete when delete icon is clicked', async () => {
     const handleDelete = jest.fn();
     render(<Chip label="Deletable Chip" onDelete={handleDelete} />);
     const deleteIcon = screen.getByTestId('CancelIcon'); // MUI's default delete icon has this test id
