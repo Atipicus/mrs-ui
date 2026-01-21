@@ -10,7 +10,6 @@
 
 import React from 'react';
 import MuiChip from '@mui/material/Chip';
-import { useTheme } from '@mui/material/styles';
 import type { ChipProps } from './Chip.types';
 
 /**
