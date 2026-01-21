@@ -76,6 +76,10 @@ type Story = StoryObj<typeof Drawer>;
  * Default temporary drawer from the left side
  */
 export const Default: Story = {
+  args: {
+    elevation: 12,
+  },
+
   render: () => {
     const [open, setOpen] = React.useState(false);
 
