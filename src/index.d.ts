@@ -1,6 +1,6 @@
 /**
  * MRS Design System - Main Entry Point
- * @package @mrs-uisystem/ui-v6
+ * @package @atipicus/mrs-ui
  * @version 0.8.0
  */
 export { theme, lightTheme, darkTheme } from './theme/theme';
