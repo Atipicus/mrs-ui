@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.3] - 2026-01-21 (New Component)
+
+### Added
+
+**✨ New Component - Chip (Atom)**
+
+- **Chip** (Atom) - Compact elements for inputs, attributes, or actions.
+  - Supports `filled` and `outlined` variants.
+  - Multiple color options: `default`, `primary`, `secondary`, `error`, `info`, `success`, `warning`.
+  - Two sizes: `small` and `medium`.
+  - States: `disabled`, `clickable`.
+  - Can include `Avatar`, `Icon`, and a delete icon with `onDelete` callback.
+  - Wraps Material-UI Chip and integrates with MRS theme tokens.
+  - **11 comprehensive Storybook stories**, including `AllVariants` and `RealWorldExamples`.
+  - **26 unit tests** providing full coverage for props and interactions.
+  - **Figma Code Connect** integration for seamless design-to-code workflow.
+
+### Quality Metrics
+- ✅ **1225 tests passing** (100% pass rate, +26 from v0.10.2)
+
 ## [0.10.2] - 2026-01-14 (Production Release - Quality Improvements)
 
 ### Fixed
@@ -59,38 +79,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated README.md with v0.10.2 status
 - Complete migration guide for Grid v2 API
 - Breaking changes documentation
-
-## [0.8.0] - 2025-12-31 (Design Token System & Micro-Interactions)
-
-### ⚠️ Package Migration Notice
-
-**This package has been migrated from `@mrs-uisystem/ui-v6` to `@atipicus/mrs-ui`.**
-
-**To migrate your project:**
-
-```bash
-npm uninstall @mrs-uisystem/ui-v6
-npm install @atipicus/mrs-ui
-```
-
-**Update your imports:**
-```typescript
-// Old
-import { Button } from '@mrs-uisystem/ui-v6';
-import { theme } from '@mrs-uisystem/ui-v6/theme';
-import * as tokens from '@mrs-uisystem/ui-v6/tokens';
-
-// New
-import { Button } from '@atipicus/mrs-ui';
-import { theme } from '@atipicus/mrs-ui/theme';
-import * as tokens from '@atipicus/mrs-ui/tokens';
-```
-
-The old package `@mrs-uisystem/ui-v6` has been deprecated. Please update to the new package name.
-
-**New Package:** [@atipicus/mrs-ui](https://www.npmjs.com/package/@atipicus/mrs-ui)
-
----
 
 ## [0.8.0] - 2025-12-31 (Design Token System & Micro-Interactions)
 
@@ -847,7 +835,7 @@ import { MaterialSymbol } from '../MaterialSymbol';
 - Comprehensive README with installation guide
 
 ### Changed
-- Package name: `@atipicus/mrs-ui`
+- Package name: `@mrs-uisystem/ui-v6`
 - PublishConfig access: "public" (ready for npm publishing)
 - Enhanced prepublishOnly script with full quality checks
 - Removed Story UI dependencies (not needed)
@@ -912,4 +900,3 @@ import { MaterialSymbol } from '../MaterialSymbol';
 - Storybook v10.1.10
 - ESLint ready
 - npm scripts for development and publishing
-

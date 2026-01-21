@@ -10,6 +10,7 @@
 
 import React from 'react';
 import MuiChip from '@mui/material/Chip';
+import { useTheme } from '@mui/material/styles';
 import type { ChipProps } from './Chip.types';
 
 /**
@@ -53,19 +54,7 @@ export const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
         onDelete={onDelete}
         deleteIcon={deleteIcon}
         onClick={onClick}
-        sx={{
-          // Medium size is default (32px height)
-          // Small size is 24px height
-          ...(size === 'small' && {
-            height: 24,
-            fontSize: '0.8125rem', // 13px
-          }),
-          ...(size === 'medium' && {
-            height: 32,
-            fontSize: '0.8125rem', // 13px
-          }),
-          ...sx,
-        }}
+        sx={sx}
         {...props}
       />
     );

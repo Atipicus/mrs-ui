@@ -62,14 +62,14 @@ export default meta;
 type Story = StoryObj<typeof Chip>;
 
 /**
- * Default chip
+ * The default Chip component.
  */
 export const Default: Story = {
   args: {},
 };
 
 /**
- * Chip sizes
+ * Chips can be `small` or `medium`. The default is `medium`.
  */
 export const Sizes: Story = {
   render: () => (
@@ -81,7 +81,7 @@ export const Sizes: Story = {
 };
 
 /**
- * Chip colors - Filled variant
+ * Chips support various colors in the `filled` variant.
  */
 export const ColorsFilled: Story = {
   render: () => (
@@ -100,7 +100,7 @@ export const ColorsFilled: Story = {
 };
 
 /**
- * Chip colors - Outlined variant
+ * Chips support various colors in the `outlined` variant.
  */
 export const ColorsOutlined: Story = {
   render: () => (
@@ -119,7 +119,7 @@ export const ColorsOutlined: Story = {
 };
 
 /**
- * Disabled chips
+ * A chip can be disabled, preventing user interaction.
  */
 export const Disabled: Story = {
   render: () => (
@@ -135,7 +135,7 @@ export const Disabled: Story = {
 };
 
 /**
- * Clickable chips
+ * A chip can be clickable, which applies hover and focus effects.
  */
 export const Clickable: Story = {
   render: () => (
@@ -153,7 +153,7 @@ export const Clickable: Story = {
 };
 
 /**
- * Chips with avatar
+ * A chip can display an `Avatar` element.
  */
 export const WithAvatar: Story = {
   render: () => (
@@ -169,7 +169,7 @@ export const WithAvatar: Story = {
 };
 
 /**
- * Deletable chips
+ * A chip can be deletable by providing an `onDelete` callback.
  */
 export const Deletable: Story = {
   render: () => (
@@ -185,7 +185,7 @@ export const Deletable: Story = {
 };
 
 /**
- * Chips with avatar and delete
+ * A chip can include both an `Avatar` and a delete icon.
  */
 export const WithAvatarAndDelete: Story = {
   render: () => (
@@ -220,7 +220,7 @@ export const WithAvatarAndDelete: Story = {
 };
 
 /**
- * All variants showcase
+ * A comprehensive showcase of all chip variants, sizes, colors, and states. This is useful for visual regression testing.
  */
 export const AllVariants: Story = {
   render: () => (
@@ -398,7 +398,7 @@ export const AllVariants: Story = {
 };
 
 /**
- * Real-world examples
+ * Demonstrates common real-world use cases for the Chip component.
  */
 export const RealWorldExamples: Story = {
   render: () => (

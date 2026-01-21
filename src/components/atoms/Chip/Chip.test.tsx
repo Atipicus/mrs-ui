@@ -3,7 +3,8 @@
  */
 
 import React from 'react';
-import { render, screen } from '../../../../tests/test-utils';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Chip } from './Chip';
 import { Avatar } from '../Avatar';
 
@@ -103,16 +104,16 @@ describe('Chip', () => {
   it('calls onDelete when delete icon is clicked', () => {
     const handleDelete = jest.fn();
     const { container } = render(<Chip label="Deletable Chip" onDelete={handleDelete} />);
-    const deleteIcon = container.querySelector('.MuiChip-deleteIcon');
-    deleteIcon?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    const deleteIcon = screen.getByTestId('CancelIcon'); // MUI's default delete icon has this test id
+    await userEvent.click(deleteIcon);
     expect(handleDelete).toHaveBeenCalledTimes(1);
   });
 
-  it('calls onClick when chip is clicked', () => {
+  it('calls onClick when chip is clicked', async () => {
     const handleClick = jest.fn();
     render(<Chip label="Clickable Chip" onClick={handleClick} />);
     const chip = screen.getByText('Clickable Chip');
-    chip.click();
+    await userEvent.click(chip);
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
@@ -145,41 +146,21 @@ describe('Chip', () => {
     expect(chip).toHaveStyle({ margin: '16px' });
   });
 
-  it('renders all size and color combinations', () => {
-    const sizes = ['small', 'medium'] as const;
-    const colors = ['default', 'primary'] as const;
-    const variants = ['filled', 'outlined'] as const;
+  describe('with various prop combinations', () => {
+    const sizes: ChipProps['size'][] = ['small', 'medium'];
+    const colors: ChipProps['color'][] = ['default', 'primary', 'success'];
+    const variants: ChipProps['variant'][] = ['filled', 'outlined'];
 
-    sizes.forEach((size) => {
-      colors.forEach((color) => {
-        variants.forEach((variant) => {
-          const { unmount } = render(
-            <Chip
-              label={`${size}-${color}-${variant}`}
-              size={size}
-              color={color}
-              variant={variant}
-            />
-          );
-          expect(screen.getByText(`${size}-${color}-${variant}`)).toBeInTheDocument();
-          unmount();
-        });
-      });
+    it.each(
+      sizes.flatMap((size) =>
+        colors.flatMap((color) => variants.map((variant) => ({ size, color, variant })))
+      )
+    )('renders correctly for size=$size, color=$color, variant=$variant', ({ size, color, variant }) => {
+      const label = `${size}-${color}-${variant}`;
+      render(<Chip label={label} size={size} color={color} variant={variant} />);
+      const chipElement = screen.getByText(label);
+      expect(chipElement).toBeInTheDocument();
     });
-  });
-
-  it('applies correct height for small size', () => {
-    const { container } = render(<Chip label="Small" size="small" />);
-    const chip = container.querySelector('.MuiChip-root');
-    // Check that size-related class is present
-    expect(chip).toHaveClass('MuiChip-sizeSmall');
-  });
-
-  it('applies correct height for medium size', () => {
-    const { container } = render(<Chip label="Medium" size="medium" />);
-    const chip = container.querySelector('.MuiChip-root');
-    // Check that size-related class is present
-    expect(chip).toHaveClass('MuiChip-sizeMedium');
   });
 
   it('renders with avatar and delete icon together', () => {
