@@ -147,5 +147,15 @@ declare module '@mui/material/styles' {
   }
 }
 
+declare module '@mui/material/Button' {
+  interface ButtonPropsVariantOverrides {
+    primary: true;
+    secondary: true;
+    textCustom: true;
+    textTransparent: true;
+    alternativePrimary: true;
+  }
+}
+
 // Make this file a module
 export {};

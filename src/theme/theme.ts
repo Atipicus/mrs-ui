@@ -84,6 +84,220 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
           padding: '8px 22px',
         },
       },
+      variants: [
+        // Primary variant - Main action button
+        {
+          props: { variant: 'primary' },
+          style: {
+            color: '#FFFFFF',
+            borderRadius: '100px',
+            background: '#00828A',
+            fontWeight: '600',
+            maxHeight: '48px',
+            '&:hover': {
+              background: '#004D4D',
+              color: '#FFFFFF',
+            },
+            '&:focus': {
+              background: '#006B6B',
+              color: '#FFFFFF',
+              boxShadow: 'inset 0 0 0 2px #00828A',
+            },
+            '&:active': {
+              background: '#008A8A',
+              color: '#FFFFFF',
+              boxShadow: 'inset 0 0 0 2px #008A8A',
+            },
+            '&:disabled': {
+              backgroundColor: '#D5D5D5',
+              color: '#9E9E9E',
+              border: '2px solid #BABAB9',
+            },
+          },
+        },
+        {
+          props: { variant: 'primary', size: 'medium' },
+          style: {
+            maxHeight: '40px',
+            fontSize: 18,
+          },
+        },
+        {
+          props: { variant: 'primary', size: 'small' },
+          style: {
+            maxHeight: '24px',
+            fontSize: 12,
+          },
+        },
+        // Secondary variant - Secondary action button
+        {
+          props: { variant: 'secondary' },
+          style: {
+            borderRadius: '100px',
+            background: '#FFFFFF',
+            color: '#006B6B',
+            fontWeight: '600',
+            maxHeight: '48px',
+            border: '2px solid #1AA3A3',
+            '&:hover': {
+              background: '#CCE680',
+            },
+            '&:focus': {
+              background: '#008A8A',
+              color: '#FFFFFF',
+              border: '2px solid #99CC00',
+            },
+            '&:active': {
+              background: '#B3E0E0',
+              color: '#004D4D',
+              border: '2px solid #1AA3A3',
+            },
+            '&:disabled': {
+              background: '#F1F1F1',
+              color: '#9E9E9D',
+              border: '2px solid #BABAB9',
+            },
+          },
+        },
+        {
+          props: { variant: 'secondary', size: 'medium' },
+          style: {
+            maxHeight: '40px',
+            fontSize: 18,
+          },
+        },
+        {
+          props: { variant: 'secondary', size: 'small' },
+          style: {
+            maxHeight: '24px',
+            fontSize: 12,
+          },
+        },
+        // TextCustom variant - Text button with white background
+        {
+          props: { variant: 'textCustom' },
+          style: {
+            borderRadius: '100px',
+            background: '#FFFFFF',
+            color: '#0F0F0F',
+            maxHeight: '32px',
+            '&:hover': {
+              color: '#006B6B',
+              background: '#FFFFFF',
+            },
+            '&:focus': {
+              boxShadow: 'inset 0 0 0 1px #99CC00',
+            },
+            '&:active': {
+              background: '#CCE680',
+              color: '#006B6B',
+            },
+            '&:disabled': {
+              color: '#9E9E9D',
+            },
+          },
+        },
+        {
+          props: { variant: 'textCustom', size: 'medium' },
+          style: {
+            maxHeight: '40px',
+            fontSize: 18,
+          },
+        },
+        {
+          props: { variant: 'textCustom', size: 'small' },
+          style: {
+            maxHeight: '24px',
+            fontSize: 12,
+          },
+        },
+        // TextTransparent variant - Transparent text button
+        {
+          props: { variant: 'textTransparent' },
+          style: {
+            borderRadius: '100px',
+            background: 'transparent',
+            color: '#0F0F0F',
+            maxHeight: '32px',
+            '&:hover': {
+              color: '#006B6B',
+              background: '#F6F6F6',
+            },
+            '&:focus': {
+              boxShadow: 'inset 0 0 0 1px #99CC00',
+            },
+            '&:active': {
+              background: '#CCE680',
+              color: '#006B6B',
+            },
+            '&:disabled': {
+              color: '#9E9E9D',
+            },
+          },
+        },
+        {
+          props: { variant: 'textTransparent', size: 'medium' },
+          style: {
+            maxHeight: '40px',
+            fontSize: 18,
+          },
+        },
+        {
+          props: { variant: 'textTransparent', size: 'small' },
+          style: {
+            maxHeight: '24px',
+            fontSize: 12,
+          },
+        },
+        // AlternativePrimary variant - Alternative primary button with green background
+        {
+          props: { variant: 'alternativePrimary' },
+          style: {
+            color: '#000000',
+            borderRadius: '100px',
+            background: '#99CC00',
+            fontWeight: '600',
+            maxHeight: '48px',
+            paddingLeft: '24px',
+            paddingRight: '24px',
+            marginTop: '12px',
+            marginBottom: '12px',
+            '&:hover': {
+              background: '#8AB800',
+              color: '#000000',
+            },
+            '&:focus': {
+              background: '#99CC00',
+              color: '#000000',
+              boxShadow: 'inset 0 0 0 2px #99CC00',
+            },
+            '&:active': {
+              background: '#7AA300',
+              color: '#000000',
+              boxShadow: 'inset 0 0 0 2px #99CC00',
+            },
+            '&:disabled': {
+              backgroundColor: '#99CC00',
+              color: '#000000',
+              opacity: 0.5,
+            },
+          },
+        },
+        {
+          props: { variant: 'alternativePrimary', size: 'medium' },
+          style: {
+            maxHeight: '40px',
+            fontSize: 18,
+          },
+        },
+        {
+          props: { variant: 'alternativePrimary', size: 'small' },
+          style: {
+            maxHeight: '24px',
+            fontSize: 12,
+          },
+        },
+      ],
     },
 
     MuiIconButton: {

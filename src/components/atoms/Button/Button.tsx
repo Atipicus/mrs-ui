@@ -20,17 +20,30 @@ import type { ButtonProps } from './Button.types';
  * @returns Button component
  */
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, sx, ...props }, ref) => {
+  ({ children, sx, variant, ...props }, ref) => {
     const theme = useTheme();
+
+    // Custom variants use borderRadius: '100px' (defined in theme variants)
+    // Standard variants use theme shape tokens
+    const isCustomVariant = variant === 'primary' || 
+                           variant === 'secondary' || 
+                           variant === 'textCustom' || 
+                           variant === 'textTransparent' || 
+                           variant === 'alternativePrimary';
 
     return (
       <MuiButton
         ref={ref}
+        variant={variant}
         {...props}
         sx={{
           // Use theme tokens for consistent styling
           textTransform: 'none', // Override MUI default uppercase
-          borderRadius: (theme.shape as any).rounded, // Use rounded shape token
+          // Custom variants already have borderRadius in theme variants
+          // Standard variants use rounded shape token
+          ...(!isCustomVariant && {
+            borderRadius: (theme.shape as any).rounded,
+          }),
           fontWeight: theme.typography.fontWeightSemiBold,
           // Allow custom sx to override defaults
           ...sx,
