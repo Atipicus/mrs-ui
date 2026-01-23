@@ -12,6 +12,7 @@ import React from 'react';
 import MuiButton from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import type { ButtonProps } from './Button.types';
+import { getThemeShape } from '../../../types/theme-helpers';
 
 /**
  * Button component
@@ -22,6 +23,7 @@ import type { ButtonProps } from './Button.types';
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, sx, ...props }, ref) => {
     const theme = useTheme();
+    const shape = getThemeShape(theme);
 
     return (
       <MuiButton
@@ -30,7 +32,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         sx={{
           // Use theme tokens for consistent styling
           textTransform: 'none', // Override MUI default uppercase
-          borderRadius: (theme.shape as any).rounded, // Use rounded shape token
+          borderRadius: shape.rounded, // Use rounded shape token (9999 for pill shape)
           fontWeight: theme.typography.fontWeightSemiBold,
           // Allow custom sx to override defaults
           ...sx,

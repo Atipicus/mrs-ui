@@ -15,6 +15,7 @@ import MuiListItem from '@mui/material/ListItem';
 import MuiListItemButton from '@mui/material/ListItemButton';
 import { alpha, useTheme } from '@mui/material/styles';
 import type { ListItemProps } from './ListItem.types';
+import { getThemeShape } from '../../../types/theme-helpers';
 
 /**
  * ListItem component
@@ -54,6 +55,7 @@ export const ListItem = React.forwardRef<HTMLElement, ListItemProps>(
     ref
   ) => {
     const theme = useTheme();
+    const shape = getThemeShape(theme);
     const hoverColor =
       theme.palette.primary._states?.hover ?? alpha(theme.palette.primary.main, 0.08);
     const focusColor =
@@ -65,7 +67,7 @@ export const ListItem = React.forwardRef<HTMLElement, ListItemProps>(
     if (button) {
       return (
         <MuiListItem
-          ref={ref as any}
+          ref={ref as React.Ref<HTMLLIElement>}
           dense={dense}
           disableGutters={disableGutters}
           divider={divider}
@@ -92,7 +94,7 @@ export const ListItem = React.forwardRef<HTMLElement, ListItemProps>(
               '&.Mui-focusVisible': {
                 outline: `3px solid ${focusColor}`,
                 outlineOffset: 0,
-                borderRadius: (theme.shape as any).sm,
+                borderRadius: shape.sm, // Use type-safe helper (4px)
               },
               // Selected state: Apply SemiBold weight and primary.dark color to text
               '&.Mui-selected': {
@@ -119,7 +121,7 @@ export const ListItem = React.forwardRef<HTMLElement, ListItemProps>(
     // Otherwise, use standard ListItem (static, non-interactive)
     return (
       <MuiListItem
-        ref={ref as any}
+        ref={ref as React.Ref<HTMLLIElement>}
         dense={dense}
         disableGutters={disableGutters}
         divider={divider}

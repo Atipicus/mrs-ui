@@ -1,8 +1,11 @@
 /**
  * MRS Design System - Main Entry Point
  * @package @atipicus/mrs-ui
- * @version 0.8.0
+ * @version 0.12.0
  */
+
+// Import type augmentations (must be before any MUI imports)
+import './types/theme.d.ts';
 
 // Theme exports
 export { theme, lightTheme, darkTheme } from './theme/theme';

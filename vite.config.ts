@@ -14,6 +14,9 @@ import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { playwright } from '@vitest/browser-playwright';
 const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
+// Bundle analyzer (optional - install with: npm i -D rollup-plugin-visualizer)
+// import { visualizer } from 'rollup-plugin-visualizer';
+
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   plugins: [react({
@@ -33,10 +36,13 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: {
+        index: resolve(__dirname, 'src/index.ts'),
+        lazy: resolve(__dirname, 'src/lazy.ts'),
+      },
       name: 'MRSUI',
       formats: ['es', 'cjs'],
-      fileName: format => `index.${format === 'es' ? 'mjs' : 'js'}`
+      fileName: (format, entryName) => `${entryName}.${format === 'es' ? 'mjs' : 'js'}`
     },
     copyPublicDir: false,
     rollupOptions: {
@@ -50,8 +56,30 @@ export default defineConfig({
           '@emotion/styled': 'EmotionStyled'
         },
         preserveModules: false,
-        exports: 'named'
-      }
+        exports: 'named',
+        // Code splitting for better performance
+        manualChunks(id) {
+          // Separate heavy components into their own chunks
+          if (id.includes('DatePicker') || id.includes('TimePicker') || id.includes('DateTimePicker')) {
+            return 'date-pickers';
+          }
+          if (id.includes('Table') || id.includes('Timeline')) {
+            return 'data-display';
+          }
+          if (id.includes('Drawer') || id.includes('Dialog')) {
+            return 'overlays';
+          }
+        }
+      },
+      // Enable bundle analysis (uncomment if visualizer installed)
+      // plugins: [
+      //   visualizer({
+      //     filename: './dist/stats.html',
+      //     open: true,
+      //     gzipSize: true,
+      //     brotliSize: true,
+      //   })
+      // ]
     },
     sourcemap: true,
     minify: false

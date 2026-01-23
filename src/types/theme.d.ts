@@ -1,9 +1,12 @@
 /**
  * Global type augmentation for MRS Design System
  * Extends Material-UI theme with custom tokens
+ * 
+ * This file extends the default Material-UI theme interface
+ * to include our custom design tokens.
  */
 
-import type {} from '@mui/material/styles';
+import '@mui/material/styles';
 
 declare module '@mui/material/styles' {
   interface Palette {

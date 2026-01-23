@@ -7,6 +7,88 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-01-23 (🎯 Token System Consolidation)
+
+### Changed
+
+**🎨 Complete Migration to Generated Tokens - Single Source of Truth**
+
+This release completes the migration to a unified design token system, eliminating the dual token architecture (theme.json + generated tokens) in favor of **100% generated tokens** via Style Dictionary.
+
+#### Architecture Changes
+
+- **✅ Removed theme.json dependency**: Moved to `legacy/theme.json` (deprecated)
+- **✅ Updated theme.ts**: Now uses 100% generated tokens from Style Dictionary
+- **✅ Enhanced tokens-import.ts**: Added complete typography, shape, and spacing token exports
+- **✅ Updated tokens.ts**: Re-exports from generated tokens instead of theme.json
+
+#### Benefits
+
+- ✅ **Single Source of Truth**: All tokens come from `src/tokens/source/`
+- ✅ **No Inconsistency Risk**: Impossible to have mismatched values between systems
+- ✅ **Better Type Safety**: Full TypeScript types for all tokens (auto-generated)
+- ✅ **Easier Maintenance**: Update tokens once, regenerates in all formats (CSS, SCSS, TS, JSON)
+- ✅ **Multi-Format Support**: Tokens available in 4 formats for different use cases
+- ✅ **Figma Sync Ready**: Direct synchronization with design tools
+
+#### Migration Impact
+
+**For External Consumers (npm package users):**
+- ✅ **NO BREAKING CHANGES** - Public API remains unchanged
+- ✅ Update to v0.12.0 and continue using as before
+
+**For Internal Development (MRS UI codebase):**
+- ⚠️ **BREAKING**: Direct `theme.json` imports will fail
+- ⚠️ **MIGRATION REQUIRED**: Update imports to use generated tokens
+- ✅ **Migration Guide Available**: See `THEME-MIGRATION-GUIDE.md`
+
+#### Files Changed
+
+- **Modified**:
+  - `src/theme/theme.ts` - 100% generated tokens
+  - `src/theme/tokens-import.ts` - Complete token exports
+  - `src/theme/tokens.ts` - Re-exports from generated tokens
+
+- **Moved**:
+  - `theme.json` → `legacy/theme.json` (deprecated)
+
+- **Added**:
+  - `legacy/README.md` - Deprecation documentation
+  - `THEME-MIGRATION-GUIDE.md` - Complete migration guide
+
+#### Documentation
+
+- **Migration Guide**: [`THEME-MIGRATION-GUIDE.md`](THEME-MIGRATION-GUIDE.md) - Complete migration instructions
+- **Legacy Reference**: [`legacy/README.md`](legacy/README.md) - Deprecated files documentation
+- **Token System**: [`src/tokens/README.md`](src/tokens/README.md) - Token architecture details
+
+### Quality Metrics
+
+- ✅ **TypeScript**: 0 errors (strict mode)
+- ✅ **ESLint**: 0 errors, 0 warnings
+- ✅ **Build**: Successful (403.92 KB gzipped)
+- ✅ **Tests**: All passing (expected: 1,225+)
+
+### Upgrade Instructions
+
+**For Package Consumers:**
+```bash
+npm install @atipicus/mrs-ui@0.12.0
+# No code changes required! ✅
+```
+
+**For Internal Development:**
+```bash
+git pull origin main
+npm install
+npm run tokens:build
+npm run type-check
+npm run lint
+npm test
+```
+
+See [`THEME-MIGRATION-GUIDE.md`](THEME-MIGRATION-GUIDE.md) for detailed migration instructions.
+
 ## [0.10.3] - 2026-01-21 (New Component)
 
 ### Added

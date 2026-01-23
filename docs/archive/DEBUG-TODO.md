@@ -99,7 +99,7 @@ Node.js warning about module type not specified for style-dictionary config file
 
 **Warning Message:**
 ```
-Warning: Module type of file:///Users/mader/Documents/Atipicus/mrs-ui/src/tokens/config/style-dictionary.config.js
+Warning: Module type of file:///[PROJECT_ROOT]/src/tokens/config/style-dictionary.config.js
 is not specified and it doesn't parse as CommonJS.
 ```
 

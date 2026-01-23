@@ -46,8 +46,11 @@ import type {
 
 /**
  * Table component for displaying tabular data
+ * 
+ * Memoized for performance with large datasets.
+ * Re-renders only when props change.
  */
-export const Table = React.forwardRef<HTMLTableElement, TableProps>(
+const TableBase = React.forwardRef<HTMLTableElement, TableProps>(
   ({ children, size = 'medium', stickyHeader = false, padding = 'normal', ...props }, ref) => {
     return (
       <MuiTable ref={ref} size={size} stickyHeader={stickyHeader} padding={padding} {...props}>
@@ -57,6 +60,7 @@ export const Table = React.forwardRef<HTMLTableElement, TableProps>(
   }
 );
 
+export const Table = React.memo(TableBase);
 Table.displayName = 'Table';
 
 /**
@@ -121,8 +125,10 @@ TableFooter.displayName = 'TableFooter';
 
 /**
  * TableRow component - row in a table
+ * 
+ * Memoized to prevent unnecessary re-renders in large tables.
  */
-export const TableRow = React.forwardRef<HTMLTableRowElement, TableRowProps>(
+const TableRowBase = React.forwardRef<HTMLTableRowElement, TableRowProps>(
   ({ children, selected = false, hover = false, ...props }, ref) => {
     return (
       <MuiTableRow ref={ref} selected={selected} hover={hover} {...props}>
@@ -132,12 +138,15 @@ export const TableRow = React.forwardRef<HTMLTableRowElement, TableRowProps>(
   }
 );
 
+export const TableRow = React.memo(TableRowBase);
 TableRow.displayName = 'TableRow';
 
 /**
  * TableCell component - cell in a table row
+ * 
+ * Memoized to optimize rendering of large tables with many cells.
  */
-export const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>(
+const TableCellBase = React.forwardRef<HTMLTableCellElement, TableCellProps>(
   (
     {
       children,
@@ -170,6 +179,7 @@ export const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>(
   }
 );
 
+export const TableCell = React.memo(TableCellBase);
 TableCell.displayName = 'TableCell';
 
 export default Table;

@@ -3,9 +3,137 @@
  *
  * This file re-exports design tokens organized by mode (light/dark)
  * for easier consumption in theme.ts
+ *
+ * @since 0.12.0 - Complete migration to generated tokens (no more theme.json dependency)
  */
 
 import * as tokens from '../tokens/generated/ts/tokens';
+
+// ============================================================================
+// TYPOGRAPHY TOKENS
+// ============================================================================
+export const typographyTokens = {
+  fontFamily: tokens.PrimitivesTypographyFontFamilyStack,
+  fontSize: 16, // base font size in pixels (from 1rem)
+  fontWeightLight: Number(tokens.PrimitivesTypographyFontWeightLight),
+  fontWeightRegular: Number(tokens.PrimitivesTypographyFontWeightRegular),
+  fontWeightMedium: Number(tokens.PrimitivesTypographyFontWeightMedium),
+  fontWeightSemiBold: Number(tokens.PrimitivesTypographyFontWeightSemibold),
+  fontWeightBold: Number(tokens.PrimitivesTypographyFontWeightBold),
+  // Typography variants (MUI compatible)
+  h1: {
+    fontFamily: tokens.PrimitivesTypographyFontFamilyStack,
+    fontWeight: Number(tokens.PrimitivesTypographyFontWeightSemibold),
+    fontSize: tokens.PrimitivesTypographyFontSize4xl, // 3.75rem (60px)
+    lineHeight: Number(tokens.PrimitivesTypographyLineHeightTight), // 1.2
+    letterSpacing: '-0.01562em',
+  },
+  h2: {
+    fontFamily: tokens.PrimitivesTypographyFontFamilyStack,
+    fontWeight: Number(tokens.PrimitivesTypographyFontWeightSemibold),
+    fontSize: tokens.PrimitivesTypographyFontSize3xl, // 3rem (48px)
+    lineHeight: Number(tokens.PrimitivesTypographyLineHeightTight), // 1.2
+    letterSpacing: '-0.00833em',
+  },
+  h3: {
+    fontFamily: tokens.PrimitivesTypographyFontFamilyStack,
+    fontWeight: Number(tokens.PrimitivesTypographyFontWeightSemibold),
+    fontSize: tokens.PrimitivesTypographyFontSize2xl, // 2.125rem (34px)
+    lineHeight: Number(tokens.PrimitivesTypographyLineHeightTight), // 1.2
+    letterSpacing: '0em',
+  },
+  h4: {
+    fontFamily: tokens.PrimitivesTypographyFontFamilyStack,
+    fontWeight: Number(tokens.PrimitivesTypographyFontWeightSemibold),
+    fontSize: tokens.PrimitivesTypographyFontSizeXl, // 1.5rem (24px)
+    lineHeight: Number(tokens.PrimitivesTypographyLineHeightTight), // 1.2
+    letterSpacing: '0.00735em',
+  },
+  h5: {
+    fontFamily: tokens.PrimitivesTypographyFontFamilyStack,
+    fontWeight: Number(tokens.PrimitivesTypographyFontWeightSemibold),
+    fontSize: tokens.PrimitivesTypographyFontSizeLg, // 1.25rem (20px)
+    lineHeight: Number(tokens.PrimitivesTypographyLineHeightTight), // 1.2
+    letterSpacing: '0em',
+  },
+  h6: {
+    fontFamily: tokens.PrimitivesTypographyFontFamilyStack,
+    fontWeight: Number(tokens.PrimitivesTypographyFontWeightSemibold),
+    fontSize: tokens.PrimitivesTypographyFontSizeMd, // 1rem (16px)
+    lineHeight: Number(tokens.PrimitivesTypographyLineHeightTight), // 1.2
+    letterSpacing: '0.0075em',
+  },
+  body1: {
+    fontFamily: tokens.PrimitivesTypographyFontFamilyStack,
+    fontWeight: Number(tokens.PrimitivesTypographyFontWeightRegular),
+    fontSize: tokens.PrimitivesTypographyFontSizeMd, // 1rem (16px)
+    lineHeight: Number(tokens.PrimitivesTypographyLineHeightNormal), // 1.5
+    letterSpacing: '0.00938em',
+  },
+  body2: {
+    fontFamily: tokens.PrimitivesTypographyFontFamilyStack,
+    fontWeight: Number(tokens.PrimitivesTypographyFontWeightRegular),
+    fontSize: tokens.PrimitivesTypographyFontSizeSm, // 0.875rem (14px)
+    lineHeight: Number(tokens.PrimitivesTypographyLineHeightSnug), // 1.43
+    letterSpacing: '0.01071em',
+  },
+  subtitle1: {
+    fontFamily: tokens.PrimitivesTypographyFontFamilyStack,
+    fontWeight: Number(tokens.PrimitivesTypographyFontWeightMedium),
+    fontSize: tokens.PrimitivesTypographyFontSizeMd, // 1rem (16px)
+    lineHeight: Number(tokens.PrimitivesTypographyLineHeightLoose), // 1.75
+    letterSpacing: '0.00938em',
+  },
+  subtitle2: {
+    fontFamily: tokens.PrimitivesTypographyFontFamilyStack,
+    fontWeight: Number(tokens.PrimitivesTypographyFontWeightMedium),
+    fontSize: tokens.PrimitivesTypographyFontSizeSm, // 0.875rem (14px)
+    lineHeight: 1.57,
+    letterSpacing: '0.00714em',
+  },
+  button: {
+    fontFamily: tokens.PrimitivesTypographyFontFamilyStack,
+    fontWeight: Number(tokens.PrimitivesTypographyFontWeightSemibold),
+    fontSize: tokens.PrimitivesTypographyFontSizeSm, // 0.875rem (14px)
+    lineHeight: Number(tokens.PrimitivesTypographyLineHeightLoose), // 1.75
+    letterSpacing: '0.02857em',
+    textTransform: 'none' as const,
+  },
+  caption: {
+    fontFamily: tokens.PrimitivesTypographyFontFamilyStack,
+    fontWeight: Number(tokens.PrimitivesTypographyFontWeightRegular),
+    fontSize: tokens.PrimitivesTypographyFontSizeXs, // 0.75rem (12px)
+    lineHeight: Number(tokens.PrimitivesTypographyLineHeightRelaxed), // 1.66
+    letterSpacing: '0.03333em',
+  },
+  overline: {
+    fontFamily: tokens.PrimitivesTypographyFontFamilyStack,
+    fontWeight: Number(tokens.PrimitivesTypographyFontWeightRegular),
+    fontSize: tokens.PrimitivesTypographyFontSizeXs, // 0.75rem (12px)
+    lineHeight: 2.66,
+    letterSpacing: '0.08333em',
+    textTransform: 'uppercase' as const,
+  },
+};
+
+// ============================================================================
+// SHAPE TOKENS (Border Radius)
+// ============================================================================
+export const shapeTokens = {
+  borderRadius: 8, // default MUI border radius (maps to md)
+  sm: 4,
+  md: 8,
+  lg: 12,
+  xl: 24,
+  rounded: 9999, // pill shape
+};
+
+// ============================================================================
+// SPACING TOKENS
+// ============================================================================
+// Note: MUI uses a spacing function that multiplies by 8
+// We provide the raw array for compatibility
+export const spacingArray = [0, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96];
 
 // ============================================================================
 // LIGHT MODE TOKENS

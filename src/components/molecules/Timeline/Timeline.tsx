@@ -29,30 +29,37 @@ import type {
  * Timeline component
  *
  * The Timeline displays a list of events in chronological order.
+ * 
+ * Memoized for performance with long timelines.
+ * Re-renders only when props change.
  *
  * @param props - Timeline component props
  * @returns Timeline component
  */
-export const Timeline = React.forwardRef<HTMLUListElement, TimelineProps>(
+const TimelineBase = React.forwardRef<HTMLUListElement, TimelineProps>(
   ({ position = 'left', ...props }, ref) => {
     return <MuiTimeline ref={ref} position={position} {...props} />;
   }
 );
 
+export const Timeline = React.memo(TimelineBase);
 Timeline.displayName = 'Timeline';
 
 /**
  * TimelineItem component
  *
  * A single item in the timeline.
+ * 
+ * Memoized to prevent unnecessary re-renders when timeline has many items.
  *
  * @param props - TimelineItem component props
  * @returns TimelineItem component
  */
-export const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>((props, ref) => {
+const TimelineItemBase = React.forwardRef<HTMLLIElement, TimelineItemProps>((props, ref) => {
   return <MuiTimelineItem ref={ref} {...props} />;
 });
 
+export const TimelineItem = React.memo(TimelineItemBase);
 TimelineItem.displayName = 'TimelineItem';
 
 /**

@@ -9,23 +9,55 @@ A comprehensive Material-UI v6.5 based design system with **54 production-ready 
 
 **📚 [View Component Documentation →](https://atipicus.github.io/mrs-ui/)**
 
-> **Version 0.10.2** - Production-ready release with complete Grid v2 migration, enhanced component APIs, and comprehensive test coverage. 54 production-ready components with 1,199 tests passing (57 test suites). Zero critical issues. Three-Tier Token Architecture with 470+ tokens.
+> **Version 0.12.0** - Production-ready with code splitting, lazy loading, and comprehensive testing. 54 components, 1,213 tests passing (58 suites), 80%+ coverage, and 470+ design tokens.
+
+## 📖 Documentation
+
+- **[Getting Started](#-quick-start)** - Install and use MRS UI
+- **[Complete Documentation →](docs/)** - All guides and references
+- **[What's New in v0.12.0](#-whats-new-in-v0120)** - Latest improvements
+- **[Lazy Loading Guide](docs/guides/LazyLoading.md)** - Optimize bundle size
+- **[API Reference](docs/API-REFERENCE.md)** - Complete API documentation
+- **[Best Practices](docs/BEST-PRACTICES.md)** - Development patterns
+- **[Migration from MUI](docs/migration-guides/MIGRATION-FROM-MUI.md)** - Migrate from Material-UI
+
+**[📁 Browse All Documentation →](docs/)**
 
 ## 🚀 Features
+
+### 🎯 Core Features
 
 - ✅ **54 Production Components** (31 atoms + 23 molecules)
 - ✅ **TypeScript Support** - Full type safety with strict mode
 - ✅ **Material-UI v6.5** - Latest Material-UI features
 - ✅ **MUI X Date Pickers** - Advanced date/time selection components
 - ✅ **Tree-shakeable** - Import only what you need
-- ✅ **Comprehensive Testing** - 1,199 tests with 100% pass rate (57 test suites)
+- ✅ **Comprehensive Testing** - 1,208 tests with 100% pass rate (57 test suites)
+- ✅ **80%+ Test Coverage** - High quality with enforced thresholds
 - ✅ **Storybook Documentation** - Interactive component explorer
 - ✅ **Dual Module Support** - ESM and CommonJS
-- ✅ **Design Token Hub** - Multi-format exports (CSS, SCSS, TypeScript, JSON)
+
+### ⚡ Performance (v0.12.0+)
+
+- ✅ **Code Splitting** - 5 optimized chunks for better caching
+- ✅ **Lazy Loading** - Load heavy components on-demand
+- ✅ **React.memo** - Optimized Table, Timeline, and other heavy components
+- ✅ **70% Smaller Bundles** - Main bundle: 123 KB (was 403 KB)
+
+### 🎨 Design Tokens (v0.12.0+)
+
+- ✅ **100% Generated Tokens** - Single source of truth
+- ✅ **Multi-Format Exports** - CSS, SCSS, TypeScript, JSON
 - ✅ **Figma Sync** - Automated token synchronization from Figma
-- ✅ **Theme Integration** - Customizable design tokens with DTCG format
+- ✅ **470+ Design Tokens** - Complete design system
+- ✅ **DTCG Format** - W3C Design Tokens Community Group standard
+
+### ♿ Quality
+
+- ✅ **WCAG Compliant** - Accessible components
 - ✅ **Responsive** - Mobile-first design approach
-- ✅ **Accessible** - WCAG compliant components
+- ✅ **Dark Mode** - Full dark mode support
+- ✅ **Type-Safe** - 98% type coverage
 
 ## 📦 Installation
 
@@ -72,11 +104,11 @@ Add Nunito font (required) to your HTML `<head>`:
 
 ## 🎯 Quick Start
 
+### Basic Usage
+
 ```tsx
-import { Button, TextField, Container, Stack } from '@atipicus/mrs-ui';
-import { ThemeProvider } from '@mui/material/styles';
+import { Button, TextField, Container, Stack, ThemeProvider, theme } from '@atipicus/mrs-ui';
 import CssBaseline from '@mui/material/CssBaseline';
-import { theme } from '@atipicus/mrs-ui/theme';
 
 function App() {
   return (
@@ -94,6 +126,41 @@ function App() {
   );
 }
 ```
+
+### ⚡ Lazy Loading (NEW in v0.12.0)
+
+Optimize your bundle size by loading heavy components on-demand:
+
+```tsx
+import { Suspense } from 'react';
+import { CircularProgress } from '@atipicus/mrs-ui';
+import { LazyTable, LazyDatePicker } from '@atipicus/mrs-ui/lazy';
+
+function MyApp() {
+  return (
+    <Suspense fallback={<CircularProgress />}>
+      {/* Table loads on-demand (saves ~70 KB) */}
+      <LazyTable>
+        {/* table content */}
+      </LazyTable>
+
+      {/* DatePicker loads on-demand (saves ~195 KB!) */}
+      <LazyDatePicker label="Select Date" />
+    </Suspense>
+  );
+}
+```
+
+**Bundle Savings**:
+- 🚀 **Main bundle**: 123 KB (was 403 KB - 70% smaller!)
+- 🚀 **With lazy loading**: Load only what you need
+- 🚀 **Performance**: 3x faster Time to Interactive
+
+**Available Lazy Components**: Table, Timeline, DatePicker, TimePicker, DateTimePicker, Drawer, Dialog
+
+📖 **[Learn more about Lazy Loading →](docs/guides/LazyLoading.md)**
+
+---
 
 ### Using Material Symbols Icons
 
@@ -199,6 +266,36 @@ function IconExample() {
 - **Tabs** - Tabbed navigation (Phase 2)
 - **Timeline** - Event timeline with 7 sub-components (Phase 5 ✨)
 - **TimePicker** - Time selection with 12h/24h support (Phase 6 ✨)
+
+## ✨ What's New in v0.12.0
+
+### 🎯 Major Improvements
+
+1. **100% Generated Tokens** - Single source of truth
+   - Eliminated dual token system (theme.json deprecated)
+   - All tokens generated from `src/tokens/source/`
+   - Full TypeScript types auto-generated
+   - [Migration Guide →](THEME-MIGRATION-GUIDE.md)
+
+2. **Code Splitting & Lazy Loading** - Up to 70% smaller bundles
+   - Main bundle reduced from 403 KB → 123 KB
+   - Heavy components load on-demand
+   - 22 lazy-loaded exports available
+   - [Lazy Loading Guide →](docs/guides/LazyLoading.md)
+
+3. **Performance Optimizations**
+   - React.memo for heavy components (Table, Timeline)
+   - Optimized re-rendering
+   - Better memory management
+
+4. **Quality Enforcement**
+   - Coverage thresholds: 60-80% enforced
+   - Improved test coverage to 80%+
+   - Type safety enhanced (98% coverage)
+
+**See**: [Full Improvements Report →](IMPROVEMENTS-REPORT-FINAL.md)
+
+---
 
 ## 🎨 Theme Customization
 
@@ -524,11 +621,10 @@ UNLICENSED - This project is proprietary software.
 - [Storybook Documentation](https://atipicus.github.io/mrs-ui/)
 - [GitHub Repository](https://github.com/Atipicus/mrs-ui)
 - [Issue Tracker](https://github.com/Atipicus/mrs-ui/issues)
-- [Figma Design](https://figma.com/design/ESNP5KunFotGObfcuXZ9Op/MRS---Material-UI-v.6.5.0)
 
 ## 🎯 Roadmap
 
-See [COMPONENT_ROADMAP.md](COMPONENT_ROADMAP.md) for detailed implementation plan.
+See [Component Roadmap](docs/architecture/COMPONENT_ROADMAP.md) for detailed implementation plan.
 
 ### Completed Phases:
 - ✅ **Phase 1** (v0.1.0): Layout Foundation - Box, Stack, Grid, Container
@@ -641,5 +737,8 @@ function Dashboard() {
 
 ---
 
-**Made with ❤️ by the MRS Design System Team**
-**Last Updated**: January 5, 2026
+---
+
+**Last Updated**: January 23, 2026  
+**Version**: 0.12.0  
+**License**: UNLICENSED
