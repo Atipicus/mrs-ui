@@ -46,7 +46,13 @@ export default defineConfig({
     },
     copyPublicDir: false,
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime', '@mui/material', '@mui/icons-material', '@emotion/react', '@emotion/styled'],
+      external: [
+        'react', 
+        'react-dom', 
+        'react/jsx-runtime',
+        /^@mui\/.*/,
+        /^@emotion\/.*/,
+      ],
       output: {
         globals: {
           react: 'React',
@@ -57,19 +63,6 @@ export default defineConfig({
         },
         preserveModules: false,
         exports: 'named',
-        // Code splitting for better performance
-        manualChunks(id) {
-          // Separate heavy components into their own chunks
-          if (id.includes('DatePicker') || id.includes('TimePicker') || id.includes('DateTimePicker')) {
-            return 'date-pickers';
-          }
-          if (id.includes('Table') || id.includes('Timeline')) {
-            return 'data-display';
-          }
-          if (id.includes('Drawer') || id.includes('Dialog')) {
-            return 'overlays';
-          }
-        }
       },
       // Enable bundle analysis (uncomment if visualizer installed)
       // plugins: [
