@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **CSS Export for Material Symbols** - Consumers can now import the Material Symbols CSS directly:
+  ```javascript
+  import '@atipicus/mrs-ui/styles.css'
+  ```
+  This provides the `.material-symbols-rounded` class with MRS default settings (weight: 300, fill: 0, grade: 100).
+
 ## [0.12.0] - 2026-01-23 (🎯 Token System Consolidation)
 
 ### Changed
