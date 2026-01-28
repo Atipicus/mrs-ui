@@ -10,7 +10,7 @@
  * @example
  * ```tsx
  * import { Suspense } from 'react';
- * import { LazyTable, LazyTimeline } from '@atipicus/mrs-ui/lazy';
+ * import { LazyTable } from '@atipicus/mrs-ui/lazy';
  * import { CircularProgress } from '@atipicus/mrs-ui';
  *
  * function MyApp() {
@@ -114,46 +114,6 @@ export declare const LazyTableBody: import('../node_modules/react').LazyExoticCo
 export declare const LazyTableFooter: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TableFooterProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLTableSectionElement>>>;
 export declare const LazyTableRow: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').MemoExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TableRowProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLTableRowElement>>>>;
 export declare const LazyTableCell: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').MemoExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TableCellProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLTableCellElement>>>>;
-/**
- * Lazy-loaded Timeline component
- *
- * Part of the data-display chunk (~70 KB gzipped).
- *
- * Includes: Timeline, TimelineItem, TimelineSeparator, TimelineDot,
- *           TimelineConnector, TimelineContent, TimelineOppositeContent
- *
- * @example
- * ```tsx
- * import { Suspense } from 'react';
- * import {
- *   LazyTimeline,
- *   LazyTimelineItem,
- *   LazyTimelineSeparator,
- *   LazyTimelineDot,
- *   LazyTimelineConnector,
- *   LazyTimelineContent
- * } from '@atipicus/mrs-ui/lazy';
- *
- * <Suspense fallback={<CircularProgress />}>
- *   <LazyTimeline>
- *     <LazyTimelineItem>
- *       <LazyTimelineSeparator>
- *         <LazyTimelineDot />
- *         <LazyTimelineConnector />
- *       </LazyTimelineSeparator>
- *       <LazyTimelineContent>Event 1</LazyTimelineContent>
- *     </LazyTimelineItem>
- *   </LazyTimeline>
- * </Suspense>
- * ```
- */
-export declare const LazyTimeline: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').MemoExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TimelineProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLUListElement>>>>;
-export declare const LazyTimelineItem: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').MemoExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TimelineItemProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLLIElement>>>>;
-export declare const LazyTimelineSeparator: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TimelineSeparatorProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLDivElement>>>;
-export declare const LazyTimelineDot: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TimelineDotProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLSpanElement>>>;
-export declare const LazyTimelineConnector: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TimelineConnectorProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLSpanElement>>>;
-export declare const LazyTimelineContent: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TimelineContentProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLDivElement>>>;
-export declare const LazyTimelineOppositeContent: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TimelineOppositeContentProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLDivElement>>>;
 /**
  * Lazy-loaded Drawer component
  *
