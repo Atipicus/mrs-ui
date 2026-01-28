@@ -1,6 +1,6 @@
 {
   "name": "@atipicus/mrs-ui",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A cromprehensive design system Based on Material UI, with 53 production ready React components and TypeScript support...",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
