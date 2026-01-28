@@ -1,7 +1,7 @@
 {
   "name": "@atipicus/mrs-ui",
   "version": "1.0.2",
-  "description": "Material-UI v6.5 based design system with 54 production-ready React components, TypeScript support, and comprehensive testing",
+  "description": "A cromprehensive design system Based on Material UI, with 53 production ready React components and TypeScript support...",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

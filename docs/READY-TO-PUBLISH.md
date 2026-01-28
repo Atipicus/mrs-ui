@@ -119,7 +119,7 @@ npm run publish:minor
 
 - **Name**: @atipicus/mrs-ui
 - **Version**: 0.12.0
-- **Description**: "Material-UI v6.5 based design system with 54 production-ready React components, TypeScript support, and comprehensive testing"
+- **Description**: "A cromprehensive design system Based on Material UI, with 53 production ready React components and TypeScript support..."
 - **README**: Current README.md (cleaned)
 - **Links**: GitHub, Issues, Homepage
 

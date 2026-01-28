@@ -7,13 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
+### Changed
 
-- **CSS Export for Material Symbols** - Consumers can now import the Material Symbols CSS directly:
-  ```javascript
-  import '@atipicus/mrs-ui/styles.css'
-  ```
-  This provides the `.material-symbols-rounded` class with MRS default settings (weight: 300, fill: 0, grade: 100).
+- **Package description** updated to reflect 53 components.
+- **Docs** updated to remove Timeline and Figma Code Connect references.
+
+### Removed
+
+- **Figma Code Connect** integration and all `*.figma.tsx` files.
+- **Timeline component** and its lazy exports.
+- **@mui/lab** dependency (previously used only for Timeline).
+
+### Breaking Changes
+
+- **Timeline API removed**: `Timeline`, subcomponents, and `LazyTimeline*` exports no longer exist.
 
 ## [0.12.0] - 2026-01-23 (🎯 Token System Consolidation)
 

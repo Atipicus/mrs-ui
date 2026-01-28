@@ -61,12 +61,12 @@ docs/
 
 **Before**:
 ```json
-"description": "MRS Material-UI v6.5 Design System - 54 production-ready React components with 100% generated tokens, comprehensive testing and Storybook documentation"
+"description": "A cromprehensive design system Based on Material UI, with 53 production ready React components and TypeScript support..."
 ```
 
 **After**:
 ```json
-"description": "Material-UI v6.5 based design system with 54 production-ready React components, TypeScript support, and comprehensive testing"
+"description": "A cromprehensive design system Based on Material UI, with 53 production ready React components and TypeScript support..."
 ```
 
 **Changes**: Simplified to essential public information ✅

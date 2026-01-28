@@ -1,6 +1,6 @@
 # MRS UI Design System
 
-A comprehensive Material-UI v6.5 based design system with 53 production-ready components built with React, TypeScript, and modern best practices.
+A cromprehensive design system Based on Material UI, with 53 production ready React components and TypeScript support...
 
 **📚 [View Component Documentation →](https://atipicus.github.io/mrs-ui/)**
 

@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/@atipicus%2Fmrs-ui.svg)](https://www.npmjs.com/package/@atipicus/mrs-ui)
 
-Material-UI v6.5 based design system with 54 production-ready React components, TypeScript support, and comprehensive testing.
+A cromprehensive design system Based on Material UI, with 53 production ready React components and TypeScript support...
 
 ## 📖 Documentation
 
