@@ -116,7 +116,7 @@ export interface TextFieldProps extends Omit<MuiTextFieldProps, 'color' | 'varia
   /**
    * The helper text content
    */
-  helperText?: string;
+  helperText?: React.ReactNode;
 
   /**
    * The default value. Use when the component is not controlled
