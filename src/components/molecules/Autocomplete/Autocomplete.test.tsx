@@ -204,7 +204,7 @@ describe('Autocomplete', () => {
     );
 
     const autocomplete = container.querySelector('.MuiAutocomplete-root');
-    expect(autocomplete).toHaveStyle({ backgroundColor: 'red' });
+    expect(autocomplete).toHaveStyle({ backgroundColor: 'rgb(255, 0, 0)' });
   });
 
   it('calls onChange when selection changes', async () => {

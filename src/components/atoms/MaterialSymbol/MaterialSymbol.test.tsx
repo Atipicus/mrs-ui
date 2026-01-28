@@ -74,7 +74,7 @@ describe('MaterialSymbol', () => {
     it('applies custom color', () => {
       const { container } = render(<MaterialSymbol icon="error" color="red" />);
       const icon = container.querySelector('.material-symbols-rounded');
-      expect(icon).toHaveStyle({ color: 'red' });
+      expect(icon).toHaveStyle({ color: 'rgb(255, 0, 0)' });
     });
 
     it('applies hex color', () => {
@@ -162,7 +162,7 @@ describe('MaterialSymbol', () => {
       );
       const icon = container.querySelector('.material-symbols-rounded');
       expect(icon).toHaveStyle({
-        color: 'blue',
+        color: 'rgb(0, 0, 255)',
         fontSize: '32px',
       });
     });
@@ -204,7 +204,7 @@ describe('MaterialSymbol', () => {
       expect(icon).toHaveClass('custom-star');
       expect(icon).toHaveStyle({
         fontSize: '36px',
-        color: 'gold',
+        color: 'rgb(255, 215, 0)',
         cursor: 'pointer',
       });
       expect(screen.getByLabelText('Gold star')).toBeInTheDocument();

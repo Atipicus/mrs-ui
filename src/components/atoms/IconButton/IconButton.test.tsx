@@ -155,7 +155,7 @@ describe('IconButton', () => {
       </IconButton>
     );
     const button = container.querySelector('.MuiIconButton-root');
-    expect(button).toHaveStyle('background-color: red');
+    expect(button).toHaveStyle('background-color: rgb(255, 0, 0)');
   });
 
   it('forwards ref correctly', () => {

@@ -86,7 +86,7 @@ describe('Avatar', () => {
   it('renders with custom sx prop', () => {
     const { container } = render(<Avatar sx={{ backgroundColor: 'red' }}>JD</Avatar>);
     const avatar = container.querySelector('.MuiAvatar-root');
-    expect(avatar).toHaveStyle('background-color: red');
+    expect(avatar).toHaveStyle('background-color: rgb(255, 0, 0)');
   });
 
   it('forwards ref correctly', () => {

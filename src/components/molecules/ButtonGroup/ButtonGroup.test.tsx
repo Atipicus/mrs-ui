@@ -246,7 +246,7 @@ describe('ButtonGroup', () => {
     );
 
     const buttonGroup = container.querySelector('.MuiButtonGroup-root');
-    expect(buttonGroup).toHaveStyle({ backgroundColor: 'red' });
+    expect(buttonGroup).toHaveStyle({ backgroundColor: 'rgb(255, 0, 0)' });
   });
 
   it('renders all variant and color combinations', () => {

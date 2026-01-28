@@ -112,7 +112,7 @@ describe('Radio', () => {
   it('applies custom sx prop', () => {
     render(<Radio sx={{ color: 'red' }} inputProps={{ 'aria-label': 'Custom styled radio' }} />);
     const radio = screen.getByRole('radio', { name: 'Custom styled radio' });
-    expect(radio.parentElement).toHaveStyle('color: red');
+    expect(radio.parentElement).toHaveStyle('color: rgb(255, 0, 0)');
   });
 
   it('applies custom inputProps', () => {

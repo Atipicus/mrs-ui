@@ -110,7 +110,7 @@ describe('Checkbox', () => {
   it('applies custom sx prop', () => {
     const { container } = renderWithTheme(<Checkbox sx={{ color: 'red' }} />);
     const checkbox = container.querySelector('.MuiCheckbox-root');
-    expect(checkbox).toHaveStyle({ color: 'red' });
+    expect(checkbox).toHaveStyle({ color: 'rgb(255, 0, 0)' });
   });
 
   it('renders with custom id', () => {

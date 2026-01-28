@@ -71,7 +71,7 @@ describe('Switch', () => {
   it('applies custom sx prop', () => {
     const { container } = renderWithTheme(<Switch sx={{ color: 'red' }} />);
     const root = container.querySelector('.MuiSwitch-root');
-    expect(root).toHaveStyle({ color: 'red' });
+    expect(root).toHaveStyle({ color: 'rgb(255, 0, 0)' });
   });
 
   it('renders with custom id', () => {

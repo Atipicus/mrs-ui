@@ -234,7 +234,7 @@ describe('DrawerNavigation', () => {
       <DrawerNavigation items={[]} sx={{ backgroundColor: 'red' }} />
     );
     const box = container.firstChild as HTMLElement;
-    expect(box).toHaveStyle({ backgroundColor: 'red' });
+    expect(box).toHaveStyle({ backgroundColor: 'rgb(255, 0, 0)' });
   });
 
   it('applies custom listSx styles to List', () => {
