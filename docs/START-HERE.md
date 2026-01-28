@@ -130,8 +130,7 @@ MRS UI v0.12.0 Documentation
 │
 ├── 🔧 Technical Guides
 │   ├── THEME-MIGRATION-GUIDE.md
-│   ├── PERFORMANCE-OPTIMIZATIONS-v0.12.0.md
-│   └── FIGMA-CODE-CONNECT-STATUS.md
+│   └── PERFORMANCE-OPTIMIZATIONS-v0.12.0.md
 │
 └── 📊 Implementation Reports
     ├── PHASE-2-COMPLETE.md
@@ -169,7 +168,7 @@ npm run publish:minor
 
 - 👨‍💼 **Executive/Product**: Read [EXECUTIVE-SUMMARY](EXECUTIVE-SUMMARY-v0.12.0.md)
 - 👨‍💻 **Developer**: Read [README.md](README.md) + [API Reference](docs/API-REFERENCE.md)
-- 🎨 **Designer**: Read [Figma Status](FIGMA-CODE-CONNECT-STATUS.md)
+- 🎨 **Designer**: Read [TOKENS-SYNC-WORKFLOW](TOKENS-SYNC-WORKFLOW.md)
 - 🔧 **DevOps**: Read [PHASE-2-COMPLETE](PHASE-2-COMPLETE.md)
 
 ---

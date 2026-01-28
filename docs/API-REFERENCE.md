@@ -29,7 +29,6 @@ import {
   LazyDatePicker,
   LazyDrawer,
   LazyDialog,
-  LazyTimeline,
 } from '@atipicus/mrs-ui/lazy';
 ```
 
@@ -170,7 +169,7 @@ interface TextFieldProps {
   required?: boolean;
   disabled?: boolean;
   error?: boolean;
-  helperText?: string;
+  helperText?: React.ReactNode;
   fullWidth?: boolean;
   multiline?: boolean;
   rows?: number;

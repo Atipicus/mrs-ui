@@ -1,12 +1,12 @@
 # MRS UI Design System
 
-A comprehensive Material-UI v6.5 based design system with 54 production-ready components built with React, TypeScript, and modern best practices.
+A comprehensive Material-UI v6.5 based design system with 53 production-ready components built with React, TypeScript, and modern best practices.
 
 **📚 [View Component Documentation →](https://atipicus.github.io/mrs-ui/)**
 
 ## 🚀 Features
 
-- ✅ **54 Production Components** (31 atoms + 23 molecules)
+- ✅ **53 Production Components** (31 atoms + 22 molecules)
 - ✅ **TypeScript Support** - Full type safety with strict mode
 - ✅ **Material-UI v6.5** - Latest Material-UI features
 - ✅ **Tree-shakeable** - Import only what you need
@@ -87,8 +87,8 @@ import { LazyTable, LazyDatePicker } from '@atipicus/mrs-ui/lazy';
 ### Atoms (31 components)
 Avatar, Badge, Box, Button, Checkbox, Chip, CircularProgress, Container, Divider, FormControlLabel, FormGroup, Grid, Icon, IconButton, LinearProgress, Link, MaterialSymbol, MenuItem, Paper, Radio, RadioGroup, Select, Skeleton, Slider, Stack, Switch, TextField, Toolbar, Tooltip, Typography, and more.
 
-### Molecules (23 components)
-Accordion, Alert, AppBar, Autocomplete, BottomNavigation, ButtonGroup, Card, DatePicker, DateTimePicker, Dialog, Drawer, List, ListItem, Menu, Pagination, Rating, Snackbar, SpeedDial, Stepper, Table, Tabs, Timeline, TimePicker.
+### Molecules (22 components)
+Accordion, Alert, AppBar, Autocomplete, BottomNavigation, ButtonGroup, Card, DatePicker, DateTimePicker, Dialog, Drawer, List, ListItem, Menu, Pagination, Rating, Snackbar, SpeedDial, Stepper, Table, Tabs, TimePicker.
 
 ## 🎨 Design Tokens
 

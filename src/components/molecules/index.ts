@@ -28,4 +28,3 @@ export * from './Stepper';
 export * from './Table';
 export * from './Tabs';
 export * from './TimePicker';
-export * from './Timeline';

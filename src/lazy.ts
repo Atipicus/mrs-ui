@@ -10,7 +10,7 @@
  * @example
  * ```tsx
  * import { Suspense } from 'react';
- * import { LazyTable, LazyTimeline } from '@atipicus/mrs-ui/lazy';
+ * import { LazyTable } from '@atipicus/mrs-ui/lazy';
  * import { CircularProgress } from '@atipicus/mrs-ui';
  * 
  * function MyApp() {
@@ -153,69 +153,6 @@ export const LazyTableRow = lazy(() =>
 
 export const LazyTableCell = lazy(() =>
   import('./components/molecules/Table').then((mod) => ({ default: mod.TableCell }))
-);
-
-/**
- * Lazy-loaded Timeline component
- * 
- * Part of the data-display chunk (~70 KB gzipped).
- * 
- * Includes: Timeline, TimelineItem, TimelineSeparator, TimelineDot, 
- *           TimelineConnector, TimelineContent, TimelineOppositeContent
- * 
- * @example
- * ```tsx
- * import { Suspense } from 'react';
- * import { 
- *   LazyTimeline,
- *   LazyTimelineItem,
- *   LazyTimelineSeparator,
- *   LazyTimelineDot,
- *   LazyTimelineConnector,
- *   LazyTimelineContent
- * } from '@atipicus/mrs-ui/lazy';
- * 
- * <Suspense fallback={<CircularProgress />}>
- *   <LazyTimeline>
- *     <LazyTimelineItem>
- *       <LazyTimelineSeparator>
- *         <LazyTimelineDot />
- *         <LazyTimelineConnector />
- *       </LazyTimelineSeparator>
- *       <LazyTimelineContent>Event 1</LazyTimelineContent>
- *     </LazyTimelineItem>
- *   </LazyTimeline>
- * </Suspense>
- * ```
- */
-export const LazyTimeline = lazy(() =>
-  import('./components/molecules/Timeline').then((mod) => ({ default: mod.Timeline }))
-);
-
-export const LazyTimelineItem = lazy(() =>
-  import('./components/molecules/Timeline').then((mod) => ({ default: mod.TimelineItem }))
-);
-
-export const LazyTimelineSeparator = lazy(() =>
-  import('./components/molecules/Timeline').then((mod) => ({ default: mod.TimelineSeparator }))
-);
-
-export const LazyTimelineDot = lazy(() =>
-  import('./components/molecules/Timeline').then((mod) => ({ default: mod.TimelineDot }))
-);
-
-export const LazyTimelineConnector = lazy(() =>
-  import('./components/molecules/Timeline').then((mod) => ({ default: mod.TimelineConnector }))
-);
-
-export const LazyTimelineContent = lazy(() =>
-  import('./components/molecules/Timeline').then((mod) => ({ default: mod.TimelineContent }))
-);
-
-export const LazyTimelineOppositeContent = lazy(() =>
-  import('./components/molecules/Timeline').then((mod) => ({
-    default: mod.TimelineOppositeContent,
-  }))
 );
 
 // ============================================================================

@@ -3,7 +3,6 @@
  */
 
 module.exports = {
-  preset: 'ts-jest',
   testEnvironment: 'jsdom',
   roots: ['<rootDir>/src', '<rootDir>/tests'],
   testMatch: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(spec|test).ts?(x)'],
@@ -16,23 +15,22 @@ module.exports = {
     '\\.(css|less|scss|sass)$': '<rootDir>/tests/styleMock.js',
   },
   transform: {
-    '^.+\\.tsx?$': [
-      'ts-jest',
+    '^.+\\.(t|j)sx?$': [
+      '@swc/jest',
       {
-        tsconfig: {
-          jsx: 'react-jsx',
-          esModuleInterop: true,
-          allowSyntheticDefaultImports: true,
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+            tsx: true,
+          },
+          transform: {
+            react: {
+              runtime: 'automatic',
+            },
+          },
         },
-      },
-    ],
-    // Transform generated token files (ES6 modules)
-    '^.+\\.js$': [
-      'ts-jest',
-      {
-        tsconfig: {
-          allowJs: true,
-          esModuleInterop: true,
+        module: {
+          type: 'commonjs',
         },
       },
     ],

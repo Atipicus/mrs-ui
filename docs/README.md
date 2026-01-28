@@ -59,7 +59,6 @@ docs/
 │   ├── TOKENS-QUICK-START.md       Quick start with tokens
 │   ├── TOKENS-CONSOLIDATION.md     Token consolidation
 │   ├── TOKEN_IMPLEMENTATION_SUMMARY.md  Token implementation
-│   ├── FIGMA-CODE-CONNECT-STATUS.md     Figma Code Connect status
 │   ├── DESIGN_SYSTEM_AUDIT.md      Design system audit
 │   ├── ARCHITECTURE-DIAGRAMS.md    Architecture diagrams
 │   ├── MATERIAL_ICONS_USAGE_MAP.md Material icons usage
@@ -114,9 +113,8 @@ docs/
 
 ### For Designers
 
-1. [architecture/FIGMA-CODE-CONNECT-STATUS.md](architecture/FIGMA-CODE-CONNECT-STATUS.md) - Figma integration
-2. [architecture/TOKENS-SYNC-WORKFLOW.md](architecture/TOKENS-SYNC-WORKFLOW.md) - Token sync process
-3. [architecture/DESIGN_SYSTEM_AUDIT.md](architecture/DESIGN_SYSTEM_AUDIT.md) - Design system audit
+1. [architecture/TOKENS-SYNC-WORKFLOW.md](architecture/TOKENS-SYNC-WORKFLOW.md) - Token sync process
+2. [architecture/DESIGN_SYSTEM_AUDIT.md](architecture/DESIGN_SYSTEM_AUDIT.md) - Design system audit
 
 ### For DevOps / Release Managers
 

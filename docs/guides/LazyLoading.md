@@ -15,7 +15,7 @@ With code splitting enabled (v0.12.0+), components are automatically split into 
 |-------|----------------|------------|
 | **Main** | 123 KB | Core components (Button, TextField, etc.) |
 | **Date Pickers** | 195 KB | DatePicker, TimePicker, DateTimePicker |
-| **Data Display** | 70 KB | Table, Timeline |
+| **Data Display** | 70 KB | Table |
 | **Overlays** | 14 KB | Drawer, Dialog |
 
 **Total Bundle Size**: ~402 KB (but now splittable!)
@@ -33,7 +33,6 @@ With code splitting enabled (v0.12.0+), components are automatically split into 
 
 2. **Large Components**
    - Tables with many rows
-   - Timelines with many events
    - Date pickers (heavy dayjs dependency)
 
 3. **Conditional Features**
@@ -153,36 +152,6 @@ import {
 ```
 
 **Bundle Savings**: **-70 KB** (17% of total bundle!)
-
----
-
-### Timeline Components (~70 KB)
-
-```tsx
-import {
-  LazyTimeline,
-  LazyTimelineItem,
-  LazyTimelineSeparator,
-  LazyTimelineDot,
-  LazyTimelineConnector,
-  LazyTimelineContent,
-  LazyTimelineOppositeContent,
-} from '@atipicus/mrs-ui/lazy';
-
-<Suspense fallback={<CircularProgress />}>
-  <LazyTimeline>
-    <LazyTimelineItem>
-      <LazyTimelineSeparator>
-        <LazyTimelineDot />
-        <LazyTimelineConnector />
-      </LazyTimelineSeparator>
-      <LazyTimelineContent>Event 1</LazyTimelineContent>
-    </LazyTimelineItem>
-  </LazyTimeline>
-</Suspense>
-```
-
-**Bundle Savings**: **-70 KB** (same chunk as Table)
 
 ---
 
