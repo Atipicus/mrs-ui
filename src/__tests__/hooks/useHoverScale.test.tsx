@@ -3,13 +3,7 @@ import { render, fireEvent, waitFor } from '@testing-library/react';
 import { useHoverScale } from '../../hooks/animations/useHoverScale';
 
 describe('useHoverScale', () => {
-  const HoverCard = ({
-    scale,
-    duration,
-  }: {
-    scale?: number;
-    duration?: string;
-  }) => {
+  const HoverCard = ({ scale, duration }: { scale?: number; duration?: string }) => {
     const { onMouseEnter, onMouseLeave, style } = useHoverScale({
       scale,
       duration,

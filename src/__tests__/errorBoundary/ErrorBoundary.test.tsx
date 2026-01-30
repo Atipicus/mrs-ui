@@ -14,7 +14,8 @@
  */
 
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import React, { useState, ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import React, { useState } from 'react';
 import '@testing-library/jest-dom';
 
 /**
@@ -104,16 +105,12 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
           role="alert"
           data-testid="error-fallback"
         >
-          <h2 style={{ color: '#856404', marginTop: 0 }}>
-            ⚠️ Something went wrong
-          </h2>
+          <h2 style={{ color: '#856404', marginTop: 0 }}>⚠️ Something went wrong</h2>
           <details style={{ whiteSpace: 'pre-wrap', color: '#856404' }}>
             {this.state.error && (
               <>
                 <summary>{this.state.error.toString()}</summary>
-                {this.state.errorInfo && (
-                  <p>{this.state.errorInfo.componentStack}</p>
-                )}
+                {this.state.errorInfo && <p>{this.state.errorInfo.componentStack}</p>}
               </>
             )}
           </details>
@@ -180,9 +177,7 @@ describe('ErrorBoundary - Basic Error Catching', () => {
      * Normal component should render
      */
     expect(getByTestId('no-error')).toBeInTheDocument();
-    expect(getByTestId('no-error')).toHaveTextContent(
-      'Component rendered successfully'
-    );
+    expect(getByTestId('no-error')).toHaveTextContent('Component rendered successfully');
   });
 
   it('should catch error and show fallback UI', () => {
@@ -196,9 +191,7 @@ describe('ErrorBoundary - Basic Error Catching', () => {
      * Fallback UI should be displayed
      */
     expect(getByTestId('error-fallback')).toBeInTheDocument();
-    expect(getByTestId('error-fallback')).toHaveTextContent(
-      'Something went wrong'
-    );
+    expect(getByTestId('error-fallback')).toHaveTextContent('Something went wrong');
   });
 
   it('should display error message in fallback UI', () => {

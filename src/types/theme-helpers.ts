@@ -1,6 +1,6 @@
 /**
  * Theme Helper Types
- * 
+ *
  * Helper types and functions for working with the extended MUI theme.
  * Provides type-safe access to custom theme properties.
  */
@@ -21,10 +21,10 @@ export interface ExtendedShape {
 
 /**
  * Get typed shape object from theme
- * 
+ *
  * @param theme - MUI theme object
  * @returns Shape object with custom border radius values
- * 
+ *
  * @example
  * ```tsx
  * const theme = useTheme();
@@ -54,10 +54,10 @@ export interface ExtendedPaletteColor {
 
 /**
  * Get typed palette color with states
- * 
+ *
  * @param color - Palette color object
  * @returns Color object with state tokens
- * 
+ *
  * @example
  * ```tsx
  * const theme = useTheme();

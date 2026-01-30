@@ -91,11 +91,11 @@ type Story = StoryObj<typeof AccountStack>;
  */
 export const Default: Story = {
   args: {
-    user: true,
-    userAccountInfo: true,
-    notifications: true,
-    userName: 'John Doe',
-    userEmail: 'john.doe@example.com',
+    user: false,
+    userAccountInfo: false,
+    notifications: false,
+    userName: 'Martín Gómez',
+    userEmail: 'mgomez@atipic.us',
   },
 };
 
@@ -107,9 +107,10 @@ export const CustomUserData: Story = {
     user: true,
     userAccountInfo: true,
     notifications: true,
-    userName: 'Jane Smith',
-    userEmail: 'jane.smith@mrs.com',
-    avatarSrc: 'https://i.pravatar.cc/150?img=1',
+    userName: 'Martín Gómez',
+    userEmail: 'mgomez@atipic.us',
+    avatarSrc:
+      'https://lh3.googleusercontent.com/a/ACg8ocKjndHOZWlcmHmS902xQ2e-x7bZ_f5j0ToopFrKRhDobnkSv6o=s576-c-no',
   },
 };
 
@@ -135,8 +136,8 @@ export const WithNotificationCount: Story = {
     userAccountInfo: true,
     notifications: true,
     notificationCount: 5,
-    userName: 'John Doe',
-    userEmail: 'john.doe@example.com',
+    userName: 'Martín Gómez',
+    userEmail: 'mgomez@atipic.us',
   },
 };
 
@@ -148,8 +149,8 @@ export const WithoutNotifications: Story = {
     user: true,
     userAccountInfo: true,
     notifications: false,
-    userName: 'John Doe',
-    userEmail: 'john.doe@example.com',
+    userName: 'Martín Gómez',
+    userEmail: 'mgomez@atipic.us',
   },
 };
 
@@ -161,8 +162,8 @@ export const AvatarOnly: Story = {
     user: true,
     userAccountInfo: false,
     notifications: true,
-    userName: 'John Doe',
-    userEmail: 'john.doe@example.com',
+    userName: 'Martín Gómez',
+    userEmail: 'mgomez@atipic.us',
   },
 };
 
@@ -174,8 +175,8 @@ export const TextOnly: Story = {
     user: false,
     userAccountInfo: true,
     notifications: false,
-    userName: 'John Doe',
-    userEmail: 'john.doe@example.com',
+    userName: 'Martín Gómez',
+    userEmail: 'mgomez@atipic.us',
   },
 };
 
@@ -185,10 +186,10 @@ export const TextOnly: Story = {
 export const InAppBar: Story = {
   args: {
     user: true,
-    userAccountInfo: true,
-    notifications: true,
-    userName: 'John Doe',
-    userEmail: 'john.doe@example.com',
+    userAccountInfo: false,
+    notifications: false,
+    userName: 'Martín Gómez',
+    userEmail: 'mgomez@atipic.us',
   },
   render: (args) => (
     <Box sx={{ width: '100%', minWidth: 600 }}>
@@ -215,9 +216,10 @@ export const InAppBarSecondary: Story = {
     user: true,
     userAccountInfo: true,
     notifications: true,
-    userName: 'Jane Smith',
-    userEmail: 'jane.smith@mrs.com',
-    avatarSrc: 'https://i.pravatar.cc/150?img=5',
+    userName: 'Martín Gómez',
+    userEmail: 'mgomez@atipic.us',
+    avatarSrc:
+      'https://lh3.googleusercontent.com/a/ACg8ocKjndHOZWlcmHmS902xQ2e-x7bZ_f5j0ToopFrKRhDobnkSv6o=s576-c-no',
   },
   render: (args) => (
     <Box sx={{ width: '100%', minWidth: 600 }}>
@@ -254,8 +256,8 @@ export const AllVariants: Story = {
           user={true}
           userAccountInfo={true}
           notifications={true}
-          userName="John Doe"
-          userEmail="john.doe@example.com"
+          userName="Martín Gómez"
+          userEmail="mgomez@atipic.us"
         />
       </Box>
 
@@ -268,9 +270,9 @@ export const AllVariants: Story = {
           userAccountInfo={true}
           notifications={true}
           notificationCount={12}
-          userName="Jane Smith"
-          userEmail="jane.smith@mrs.com"
-          avatarSrc="https://i.pravatar.cc/150?img=5"
+          userName="Martín Gómez"
+          userEmail="mgomez@atipic.us"
+          avatarSrc="https://lh3.googleusercontent.com/a/ACg8ocKjndHOZWlcmHmS902xQ2e-x7bZ_f5j0ToopFrKRhDobnkSv6o=s576-c-no"
         />
       </Box>
 
@@ -282,8 +284,8 @@ export const AllVariants: Story = {
           user={true}
           userAccountInfo={true}
           notifications={false}
-          userName="Mike Johnson"
-          userEmail="mike.j@example.com"
+          userName="Martín Gómez"
+          userEmail="mgomez@atipic.us"
         />
       </Box>
 
@@ -295,8 +297,8 @@ export const AllVariants: Story = {
           user={true}
           userAccountInfo={false}
           notifications={true}
-          userName="Sarah Lee"
-          avatarSrc="https://i.pravatar.cc/150?img=10"
+          userName="Martín Gómez"
+          avatarSrc="https://lh3.googleusercontent.com/a/ACg8ocKjndHOZWlcmHmS902xQ2e-x7bZ_f5j0ToopFrKRhDobnkSv6o=s576-c-no"
         />
       </Box>
 
@@ -308,8 +310,8 @@ export const AllVariants: Story = {
           user={false}
           userAccountInfo={true}
           notifications={false}
-          userName="David Chen"
-          userEmail="david.chen@mrs.com"
+          userName="Martín Gómez"
+          userEmail="mgomez@atipic.us"
         />
       </Box>
     </Box>
@@ -324,8 +326,8 @@ export const InDenseToolbar: Story = {
     user: true,
     userAccountInfo: true,
     notifications: true,
-    userName: 'John Doe',
-    userEmail: 'john.doe@example.com',
+    userName: 'Martín Gómez',
+    userEmail: 'mgomez@atipic.us',
   },
   render: (args) => (
     <Box sx={{ width: '100%', minWidth: 600 }}>
@@ -352,8 +354,8 @@ export const AvatarRight: Story = {
     user: true,
     userAccountInfo: true,
     notifications: true,
-    userName: 'John Doe',
-    userEmail: 'john.doe@example.com',
+    userName: 'Martín Gómez',
+    userEmail: 'mgomez@atipic.us',
     avatarPosition: 'right',
   },
 };
@@ -372,10 +374,10 @@ export const AvatarPositionComparison: Story = {
           user={true}
           userAccountInfo={true}
           notifications={true}
-          userName="Jane Smith"
-          userEmail="jane.smith@mrs.com"
+          userName="Martín Gómez"
+          userEmail="mgomez@atipic.us"
           avatarPosition="left"
-          avatarSrc="https://i.pravatar.cc/150?img=5"
+          avatarSrc="https://lh3.googleusercontent.com/a/ACg8ocKjndHOZWlcmHmS902xQ2e-x7bZ_f5j0ToopFrKRhDobnkSv6o=s576-c-no"
         />
       </Box>
 
@@ -387,10 +389,10 @@ export const AvatarPositionComparison: Story = {
           user={true}
           userAccountInfo={true}
           notifications={true}
-          userName="Jane Smith"
-          userEmail="jane.smith@mrs.com"
+          userName="Martín Gómez"
+          userEmail="mgomez@atipic.us"
           avatarPosition="right"
-          avatarSrc="https://i.pravatar.cc/150?img=5"
+          avatarSrc="https://lh3.googleusercontent.com/a/ACg8ocKjndHOZWlcmHmS902xQ2e-x7bZ_f5j0ToopFrKRhDobnkSv6o=s576-c-no"
         />
       </Box>
     </Box>
@@ -406,10 +408,11 @@ export const AvatarRightInAppBar: Story = {
     userAccountInfo: true,
     notifications: true,
     notificationCount: 3,
-    userName: 'Jane Smith',
-    userEmail: 'jane.smith@mrs.com',
+    userName: 'Martín Gómez',
+    userEmail: 'mgomez@atipic.us',
     avatarPosition: 'right',
-    avatarSrc: 'https://i.pravatar.cc/150?img=5',
+    avatarSrc:
+      'https://lh3.googleusercontent.com/a/ACg8ocKjndHOZWlcmHmS902xQ2e-x7bZ_f5j0ToopFrKRhDobnkSv6o=s576-c-no',
   },
   render: (args) => (
     <Box sx={{ width: '100%', minWidth: 600 }}>

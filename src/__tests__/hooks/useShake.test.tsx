@@ -13,13 +13,7 @@ describe('useShake', () => {
     jest.restoreAllMocks();
   });
 
-  const ShakeButton = ({
-    duration,
-    distance,
-  }: {
-    duration?: number;
-    distance?: number;
-  }) => {
+  const ShakeButton = ({ duration, distance }: { duration?: number; distance?: number }) => {
     const { ref, shake } = useShake<HTMLButtonElement>({ duration, distance });
     return (
       <button ref={ref} onClick={shake} data-testid="shake-btn">
@@ -59,9 +53,7 @@ describe('useShake', () => {
     });
     expect(typeof options.duration).toBe('number');
     expect(options.duration).toBeGreaterThan(0);
-    expect(keyframes).toEqual(
-      expect.arrayContaining([{ transform: 'translateX(0)' }])
-    );
+    expect(keyframes).toEqual(expect.arrayContaining([{ transform: 'translateX(0)' }]));
     expect(
       keyframes.some(
         (frame) =>

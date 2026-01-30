@@ -46,7 +46,7 @@ import type {
 
 /**
  * Table component for displaying tabular data
- * 
+ *
  * Memoized for performance with large datasets.
  * Re-renders only when props change.
  */
@@ -125,7 +125,7 @@ TableFooter.displayName = 'TableFooter';
 
 /**
  * TableRow component - row in a table
- * 
+ *
  * Memoized to prevent unnecessary re-renders in large tables.
  */
 const TableRowBase = React.forwardRef<HTMLTableRowElement, TableRowProps>(
@@ -143,7 +143,7 @@ TableRow.displayName = 'TableRow';
 
 /**
  * TableCell component - cell in a table row
- * 
+ *
  * Memoized to optimize rendering of large tables with many cells.
  */
 const TableCellBase = React.forwardRef<HTMLTableCellElement, TableCellProps>(

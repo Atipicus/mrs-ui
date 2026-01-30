@@ -37,11 +37,7 @@ const DialogContent = React.forwardRef<
     }}
     role="document"
   >
-    {title && (
-      <h2 style={{ marginTop: 0, marginBottom: '16px', fontSize: '20px' }}>
-        {title}
-      </h2>
-    )}
+    {title && <h2 style={{ marginTop: 0, marginBottom: '16px', fontSize: '20px' }}>{title}</h2>}
     {children}
   </div>
 ));
@@ -108,9 +104,14 @@ const Dialog = React.forwardRef<
           left: '50%',
           transform: 'translate(-50%, -50%)',
           zIndex: 1301,
-          maxWidth: maxWidth === 'xs' ? '300px' :
-                     maxWidth === 'sm' ? '500px' :
-                     maxWidth === 'md' ? '700px' : '900px',
+          maxWidth:
+            maxWidth === 'xs'
+              ? '300px'
+              : maxWidth === 'sm'
+                ? '500px'
+                : maxWidth === 'md'
+                  ? '700px'
+                  : '900px',
         }}
         role="dialog"
         aria-modal="true"
@@ -158,9 +159,7 @@ describe('Dialog + DialogContent + DialogActions - Basic Rendering', () => {
   it('should render dialog when open is true', () => {
     const { getByRole, getByTestId } = render(
       <Dialog open={true} onClose={jest.fn()} data-testid="basic-dialog">
-        <DialogContent title="Confirm Action">
-          Are you sure?
-        </DialogContent>
+        <DialogContent title="Confirm Action">Are you sure?</DialogContent>
       </Dialog>
     );
 
@@ -200,9 +199,7 @@ describe('Dialog + DialogContent + DialogActions - Basic Rendering', () => {
   it('should render DialogContent with title', () => {
     const { getByRole, getByText } = render(
       <Dialog open={true} onClose={jest.fn()}>
-        <DialogContent title="Delete Item">
-          This action cannot be undone.
-        </DialogContent>
+        <DialogContent title="Delete Item">This action cannot be undone.</DialogContent>
       </Dialog>
     );
 

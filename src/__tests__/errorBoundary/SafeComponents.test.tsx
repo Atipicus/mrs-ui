@@ -14,7 +14,8 @@
  */
 
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import React, { ReactNode, useState } from 'react';
+import type { ReactNode } from 'react';
+import React, { useState } from 'react';
 import '@testing-library/jest-dom';
 
 /**
@@ -189,7 +190,13 @@ const SafeDialog: React.FC<{
     fallback={(error, reset) => (
       <div data-testid="dialog-error">
         <p>Dialog error: {error.message}</p>
-        <button onClick={() => { reset(); props.onClose(); }} data-testid="dialog-error-close">
+        <button
+          onClick={() => {
+            reset();
+            props.onClose();
+          }}
+          data-testid="dialog-error-close"
+        >
           Close
         </button>
       </div>
@@ -225,9 +232,7 @@ describe('SafeDatePicker - Error Recovery', () => {
      * Error fallback should be visible
      */
     expect(getByTestId('date-picker-error')).toBeInTheDocument();
-    expect(getByTestId('date-picker-error')).toHaveTextContent(
-      'Date picker unavailable'
-    );
+    expect(getByTestId('date-picker-error')).toHaveTextContent('Date picker unavailable');
   });
 
   it('should recover from error when reset button clicked', async () => {
@@ -288,11 +293,7 @@ describe('SafeTable - Error Recovery', () => {
   });
 
   it('should render table normally with data', () => {
-    const data = [
-      { name: 'Alice' },
-      { name: 'Bob' },
-      { name: 'Charlie' },
-    ];
+    const data = [{ name: 'Alice' }, { name: 'Bob' }, { name: 'Charlie' }];
 
     const { getByTestId } = render(<SafeTable data={data} />);
 
@@ -473,11 +474,7 @@ describe('SafeComponents - Multiple Components Integration', () => {
         <div>
           <SafeDatePicker shouldError={true} />
           <SafeTable data={[]} shouldError={true} />
-          <SafeDialog
-            open={dialogOpen}
-            onClose={() => setDialogOpen(false)}
-            shouldError={true}
-          >
+          <SafeDialog open={dialogOpen} onClose={() => setDialogOpen(false)} shouldError={true}>
             Content
           </SafeDialog>
         </div>
@@ -574,9 +571,7 @@ describe('SafeComponents - Graceful Degradation', () => {
   });
 
   it('should show helpful error messages', () => {
-    const { getByTestId } = render(
-      <SafeDatePicker shouldError={true} />
-    );
+    const { getByTestId } = render(<SafeDatePicker shouldError={true} />);
 
     /**
      * Error message should be helpful

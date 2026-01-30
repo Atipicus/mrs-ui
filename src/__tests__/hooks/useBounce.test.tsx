@@ -13,13 +13,7 @@ describe('useBounce', () => {
     jest.restoreAllMocks();
   });
 
-  const BounceButton = ({
-    duration,
-    scale,
-  }: {
-    duration?: number;
-    scale?: number;
-  }) => {
+  const BounceButton = ({ duration, scale }: { duration?: number; scale?: number }) => {
     const { ref, bounce } = useBounce<HTMLButtonElement>({ duration, scale });
     return (
       <button ref={ref} onClick={bounce} data-testid="bounce-btn">
@@ -59,13 +53,11 @@ describe('useBounce', () => {
     });
     expect(typeof options.duration).toBe('number');
     expect(options.duration).toBeGreaterThan(0);
-    expect(keyframes).toEqual(
-      expect.arrayContaining([
-        { transform: 'scale(1)' },
-      ])
-    );
+    expect(keyframes).toEqual(expect.arrayContaining([{ transform: 'scale(1)' }]));
     expect(
-      keyframes.some((frame) => typeof frame.transform === 'string' && frame.transform.startsWith('scale('))
+      keyframes.some(
+        (frame) => typeof frame.transform === 'string' && frame.transform.startsWith('scale(')
+      )
     ).toBe(true);
   });
 });

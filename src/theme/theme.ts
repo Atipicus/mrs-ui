@@ -141,7 +141,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
       styleOverrides: {
         root: {
           fontFamily: typography.fontFamily,
-          borderRadius: shape.sm,
+          borderRadius: shape.md,
         },
         notchedOutline: {
           borderColor: modeTokens.components.input.outlined.enabledBorder,
@@ -154,7 +154,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
         root: {
           fontFamily: typography.fontFamily,
           backgroundColor: modeTokens.components.input.filled.enabledFill,
-          borderRadius: `${shape.sm}px ${shape.sm}px 0 0`,
+          borderRadius: `${shape.md}px ${shape.md}px 0 0`,
         },
       },
     },

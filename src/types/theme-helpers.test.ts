@@ -28,7 +28,7 @@ describe('theme-helpers', () => {
       expect(shape.sm).toBe(4);
       expect(shape.md).toBe(8);
       expect(shape.lg).toBe(12);
-      expect(shape.xl).toBe(24);
+      expect(shape.xl).toBe(20);
       expect(shape.rounded).toBe(9999);
     });
 

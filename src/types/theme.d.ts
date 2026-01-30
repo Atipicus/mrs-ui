@@ -1,7 +1,7 @@
 /**
  * Global type augmentation for MRS Design System
  * Extends Material-UI theme with custom tokens
- * 
+ *
  * This file extends the default Material-UI theme interface
  * to include our custom design tokens.
  */

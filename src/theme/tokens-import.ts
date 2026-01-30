@@ -124,7 +124,7 @@ export const shapeTokens = {
   sm: 4,
   md: 8,
   lg: 12,
-  xl: 24,
+  xl: 20,
   rounded: 9999, // pill shape
 };
 

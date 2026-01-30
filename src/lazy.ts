@@ -1,18 +1,18 @@
 /**
  * Lazy Loaded Components
- * 
+ *
  * This file provides lazy-loaded versions of heavy components
  * to optimize initial bundle size and improve application performance.
- * 
+ *
  * Use these exports when you want to load components on-demand
  * with React.lazy() and Suspense.
- * 
+ *
  * @example
  * ```tsx
  * import { Suspense } from 'react';
  * import { LazyTable } from '@atipicus/mrs-ui/lazy';
  * import { CircularProgress } from '@atipicus/mrs-ui';
- * 
+ *
  * function MyApp() {
  *   return (
  *     <Suspense fallback={<CircularProgress />}>
@@ -23,7 +23,7 @@
  *   );
  * }
  * ```
- * 
+ *
  * @package @atipicus/mrs-ui
  * @version 0.12.0
  */
@@ -36,14 +36,14 @@ import { lazy } from 'react';
 
 /**
  * Lazy-loaded DatePicker component
- * 
+ *
  * Saves ~196 KB from initial bundle if date pickers are not immediately needed.
- * 
+ *
  * @example
  * ```tsx
  * import { Suspense } from 'react';
  * import { LazyDatePicker } from '@atipicus/mrs-ui/lazy';
- * 
+ *
  * <Suspense fallback={<CircularProgress />}>
  *   <LazyDatePicker label="Select Date" />
  * </Suspense>
@@ -55,14 +55,14 @@ export const LazyDatePicker = lazy(() =>
 
 /**
  * Lazy-loaded TimePicker component
- * 
+ *
  * Part of the date-pickers chunk (~196 KB gzipped).
- * 
+ *
  * @example
  * ```tsx
  * import { Suspense } from 'react';
  * import { LazyTimePicker } from '@atipicus/mrs-ui/lazy';
- * 
+ *
  * <Suspense fallback={<CircularProgress />}>
  *   <LazyTimePicker label="Select Time" />
  * </Suspense>
@@ -74,14 +74,14 @@ export const LazyTimePicker = lazy(() =>
 
 /**
  * Lazy-loaded DateTimePicker component
- * 
+ *
  * Part of the date-pickers chunk (~196 KB gzipped).
- * 
+ *
  * @example
  * ```tsx
  * import { Suspense } from 'react';
  * import { LazyDateTimePicker } from '@atipicus/mrs-ui/lazy';
- * 
+ *
  * <Suspense fallback={<CircularProgress />}>
  *   <LazyDateTimePicker label="Select Date & Time" />
  * </Suspense>
@@ -97,23 +97,23 @@ export const LazyDateTimePicker = lazy(() =>
 
 /**
  * Lazy-loaded Table component
- * 
+ *
  * Saves ~70 KB from initial bundle. Use for tables that are not immediately visible.
- * 
+ *
  * Includes: Table, TableContainer, TableHead, TableBody, TableFooter, TableRow, TableCell
- * 
+ *
  * @example
  * ```tsx
  * import { Suspense } from 'react';
- * import { 
- *   LazyTable, 
+ * import {
+ *   LazyTable,
  *   LazyTableContainer,
  *   LazyTableHead,
  *   LazyTableBody,
  *   LazyTableRow,
  *   LazyTableCell
  * } from '@atipicus/mrs-ui/lazy';
- * 
+ *
  * <Suspense fallback={<CircularProgress />}>
  *   <LazyTableContainer>
  *     <LazyTable>
@@ -161,22 +161,22 @@ export const LazyTableCell = lazy(() =>
 
 /**
  * Lazy-loaded Drawer component
- * 
+ *
  * Saves ~14 KB from initial bundle. Use for drawers that are conditionally rendered.
- * 
+ *
  * @example
  * ```tsx
  * import { Suspense, useState } from 'react';
  * import { LazyDrawer } from '@atipicus/mrs-ui/lazy';
  * import { Button } from '@atipicus/mrs-ui';
- * 
+ *
  * function MyApp() {
  *   const [open, setOpen] = useState(false);
- *   
+ *
  *   return (
  *     <>
  *       <Button onClick={() => setOpen(true)}>Open Drawer</Button>
- *       
+ *
  *       {open && (
  *         <Suspense fallback={null}>
  *           <LazyDrawer open={open} onClose={() => setOpen(false)}>
@@ -195,29 +195,29 @@ export const LazyDrawer = lazy(() =>
 
 /**
  * Lazy-loaded Dialog component
- * 
+ *
  * Part of the overlays chunk (~14 KB gzipped).
- * 
+ *
  * Includes: Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions
- * 
+ *
  * @example
  * ```tsx
  * import { Suspense, useState } from 'react';
- * import { 
+ * import {
  *   LazyDialog,
  *   LazyDialogTitle,
  *   LazyDialogContent,
  *   LazyDialogActions
  * } from '@atipicus/mrs-ui/lazy';
  * import { Button } from '@atipicus/mrs-ui';
- * 
+ *
  * function MyApp() {
  *   const [open, setOpen] = useState(false);
- *   
+ *
  *   return (
  *     <>
  *       <Button onClick={() => setOpen(true)}>Open Dialog</Button>
- *       
+ *
  *       {open && (
  *         <Suspense fallback={null}>
  *           <LazyDialog open={open} onClose={() => setOpen(false)}>
@@ -260,11 +260,11 @@ export const LazyDialogActions = lazy(() =>
 
 /**
  * Helper type for lazy-loaded components with proper typing
- * 
+ *
  * @example
  * ```tsx
  * import type { LazyComponent } from '@atipicus/mrs-ui/lazy';
- * 
+ *
  * const MyLazyComponent: LazyComponent<typeof MyComponent> = lazy(() =>
  *   import('./MyComponent').then(mod => ({ default: mod.MyComponent }))
  * );
@@ -274,11 +274,11 @@ export type LazyComponent<T extends React.ComponentType<any>> = React.LazyExotic
 
 /**
  * Pre-configured Suspense component with fallback
- * 
+ *
  * @example
  * ```tsx
  * import { LazySuspense, LazyTable } from '@atipicus/mrs-ui/lazy';
- * 
+ *
  * <LazySuspense>
  *   <LazyTable>
  *     // table content

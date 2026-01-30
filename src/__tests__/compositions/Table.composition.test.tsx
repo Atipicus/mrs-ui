@@ -269,9 +269,7 @@ describe('Table + TableRow + TableCell - Data Representation', () => {
               <button>Action</button>
             </TableCell>
             <TableCell data-testid="cell-with-badge">
-              <span style={{ backgroundColor: '#ff0000', color: 'white' }}>
-                Active
-              </span>
+              <span style={{ backgroundColor: '#ff0000', color: 'white' }}>Active</span>
             </TableCell>
           </TableRow>
         </tbody>
@@ -298,18 +296,10 @@ describe('Table + TableRow + TableCell - Row Selection', () => {
       return (
         <Table>
           <tbody>
-            <TableRow
-              selected={selected === 0}
-              onClick={() => setSelected(0)}
-              data-testid="row-0"
-            >
+            <TableRow selected={selected === 0} onClick={() => setSelected(0)} data-testid="row-0">
               <TableCell>Row 1</TableCell>
             </TableRow>
-            <TableRow
-              selected={selected === 1}
-              onClick={() => setSelected(1)}
-              data-testid="row-1"
-            >
+            <TableRow selected={selected === 1} onClick={() => setSelected(1)} data-testid="row-1">
               <TableCell>Row 2</TableCell>
             </TableRow>
           </tbody>

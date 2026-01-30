@@ -36,11 +36,7 @@ const Button = React.forwardRef<
     style={{
       padding: size === 'small' ? '8px 16px' : size === 'large' ? '16px 32px' : '12px 24px',
       backgroundColor:
-        variant === 'primary'
-          ? '#0066ff'
-          : variant === 'secondary'
-            ? '#f0f0f0'
-            : 'transparent',
+        variant === 'primary' ? '#0066ff' : variant === 'secondary' ? '#f0f0f0' : 'transparent',
       border: variant === 'outlined' ? '1px solid #0066ff' : 'none',
       borderRadius: '4px',
       cursor: props.disabled ? 'not-allowed' : 'pointer',
@@ -62,30 +58,42 @@ const ButtonGroup = React.forwardRef<
     variant?: 'primary' | 'secondary' | 'outlined';
     'data-testid'?: string;
   }
->(({ children, exclusive = false, orientation = 'horizontal', size = 'medium', variant = 'primary', ...props }, ref) => (
-  <div
-    ref={ref}
-    style={{
-      display: 'flex',
-      flexDirection: orientation === 'vertical' ? 'column' : 'row',
-      gap: '4px',
-    }}
-    role="group"
-    data-testid={props['data-testid'] ?? 'button-group'}
-    {...props}
-  >
-    {React.Children.map(children, (child) => {
-      if (React.isValidElement(child)) {
-        return React.cloneElement(child, {
-          size,
-          variant,
-          ...child.props,
-        } as any);
-      }
-      return child;
-    })}
-  </div>
-));
+>(
+  (
+    {
+      children,
+      exclusive = false,
+      orientation = 'horizontal',
+      size = 'medium',
+      variant = 'primary',
+      ...props
+    },
+    ref
+  ) => (
+    <div
+      ref={ref}
+      style={{
+        display: 'flex',
+        flexDirection: orientation === 'vertical' ? 'column' : 'row',
+        gap: '4px',
+      }}
+      role="group"
+      data-testid={props['data-testid'] ?? 'button-group'}
+      {...props}
+    >
+      {React.Children.map(children, (child) => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, {
+            size,
+            variant,
+            ...child.props,
+          } as any);
+        }
+        return child;
+      })}
+    </div>
+  )
+);
 
 /**
  * Test Suite 1: Basic Composition
@@ -501,11 +509,7 @@ describe('ButtonGroup + Button - Props Composition', () => {
 
     const { getByRole } = render(
       <ButtonGroup>
-        <Button
-          onClick={handleCustomClick}
-          data-testid="custom"
-          aria-label="Save changes"
-        >
+        <Button onClick={handleCustomClick} data-testid="custom" aria-label="Save changes">
           Save
         </Button>
       </ButtonGroup>

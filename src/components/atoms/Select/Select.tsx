@@ -60,8 +60,12 @@ export const Select = React.forwardRef<any, SelectProps>(
         fullWidth={fullWidth}
         sx={{
           fontFamily: (theme: Theme) => theme.typography.fontFamily,
+          borderRadius: (theme: Theme) => theme.shape.lg,
           // Outlined variant specific styles
           ...(variant === 'outlined' && {
+            '& .MuiOutlinedInput-root': {
+              borderRadius: (theme: Theme) => theme.shape.lg,
+            },
             '& .MuiOutlinedInput-notchedOutline': {
               borderColor: (theme: Theme) =>
                 theme.palette._components?.input?.outlined?.enabledBorder || theme.palette.divider,
