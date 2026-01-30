@@ -91,11 +91,13 @@ type Story = StoryObj<typeof AccountStack>;
  */
 export const Default: Story = {
   args: {
-    user: false,
-    userAccountInfo: false,
-    notifications: false,
+    user: true,
+    userAccountInfo: true,
+    notifications: true,
     userName: 'Martín Gómez',
     userEmail: 'mgomez@atipic.us',
+    avatarSrc:
+      'https://lh3.googleusercontent.com/a/ACg8ocKjndHOZWlcmHmS902xQ2e-x7bZ_f5j0ToopFrKRhDobnkSv6o=s576-c-no',
   },
 };
 
