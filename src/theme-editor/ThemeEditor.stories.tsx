@@ -87,7 +87,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     showSync: true,
-    defaultTab: 0,
+    defaultTab: 3,
   },
 };
 
@@ -96,7 +96,7 @@ export const Default: Story = {
  */
 export const PreviewOnly: Story = {
   args: {
-    showSync: false,
+    showSync: true,
     defaultTab: 0,
   },
 };
