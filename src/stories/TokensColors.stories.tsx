@@ -223,13 +223,13 @@ const StatusColorsStory = () => {
       category: 'Status',
     },
     {
-      name: 'Info 500',
-      value: tokens.PrimitivesColorsStatusInfo500,
+      name: 'Info 600',
+      value: tokens.PrimitivesColorsStatusInfo600,
       category: 'Status',
     },
     {
-      name: 'Success 500',
-      value: tokens.PrimitivesColorsStatusSuccess500,
+      name: 'Success 600',
+      value: tokens.PrimitivesColorsStatusSuccess600,
       category: 'Status',
     },
   ];
