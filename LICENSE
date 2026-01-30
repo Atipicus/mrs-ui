@@ -1,6 +1,66 @@
 UNLICENSED
 
-This package is provided for internal MRS use only. Redistribution and use
-are prohibited unless express written permission is granted by the MRS Design
-System Team.
+Copyright (c) 2024-2026 Atipicus
+All rights reserved.
 
+DESCRIPTION
+This package (@atipicus/mrs-ui) is a proprietary design system and component library.
+
+PERMITTED USE
+This package is provided for internal use by:
+- The MRS Design System Team at Atipicus
+- Authorized projects within Atipicus
+- Red Salud Healthcare Network and authorized partners
+
+RESTRICTIONS
+Redistribution, modification, and public distribution of this package are expressly
+prohibited unless explicit written permission is granted by the MRS Design System Team.
+
+You may NOT:
+- Redistribute this package or derivative works
+- Use this package in commercial applications outside of Atipicus authorization
+- Sublicense, sell, or lease this package
+- Remove or alter any proprietary notices or labels
+- Reverse engineer, decompile, or disassemble this package
+- Use this package in competing healthcare solutions without explicit authorization
+
+SPECIAL PERMISSIONS
+For requests to use this package outside of the authorized scope, including:
+- Integration with external systems
+- Commercial licensing
+- Special partnerships
+- Research and academic use
+
+Please contact: martin.gomez.ext@redsalud.cl
+
+DISCLAIMER
+This package is provided "AS IS" without warranty of any kind, express or implied,
+including but not limited to warranties of merchantability, fitness for a particular
+purpose, or non-infringement.
+
+In no event shall Atipicus or its representatives be liable for any damages,
+including indirect, incidental, special, consequential, or punitive damages
+arising from the use or inability to use this package.
+
+NO LIABILITY FOR EXTERNAL USE
+Atipicus assumes no liability for the use of this package by unauthorized parties
+or outside of approved use cases.
+
+TERMINATION
+Use of this package may be terminated at any time by Atipicus. Upon termination,
+you must cease all use and destroy all copies in your possession.
+
+UPDATES AND SUPPORT
+Updates to this package are provided at the discretion of Atipicus and may include
+breaking changes. Support is provided only to authorized users.
+
+GITHUB PUBLIC ACCESS
+While this package is publicly listed on npm and GitHub, the public access is
+provided for review and authorized download purposes only. The proprietary license
+restrictions apply regardless of public availability.
+
+---
+
+Last Updated: January 30, 2026
+Version: 2.0
+Contact: martin.gomez.ext@redsalud.cl

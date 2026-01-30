@@ -1,0 +1,63 @@
+version: 2
+updates:
+  # npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Santiago"
+    open-pull-requests-limit: 5
+    rebase-strategy: "auto"
+
+    # Group dependencies
+    groups:
+      # Critical production security updates
+      production-critical:
+        dependency-type: "production"
+        update-types: ["patch"]
+        patterns:
+          - "undici"
+          - "lodash"
+          - "test-exclude"
+
+      # Regular production updates
+      production-regular:
+        dependency-type: "production"
+        update-types: ["minor", "patch"]
+
+      # Development dependencies - minor & patch updates
+      development:
+        dependency-type: "development"
+        update-types: ["minor", "patch"]
+
+    # PR settings
+    pull-request-branch-name:
+      separator: "/"
+
+    # Ignore patterns
+    ignore:
+      # Ignore major versions - require manual review
+      - dependency-name: "@mui/material"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+
+    # Reviewers and assignees
+    reviewers:
+      - "Atipicus/mrs-ui-maintainers"
+
+    assignees:
+      - "Atipicus/mrs-ui-maintainers"
+
+    # Commit and PR settings
+    commit-message:
+      prefix: "chore(deps)"
+      prefix-scope: "deps"
+      include: "scope"
+
+    # Allow empty commit
+    allow-multiple-entries: true
