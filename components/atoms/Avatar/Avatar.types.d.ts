@@ -35,7 +35,7 @@ export interface AvatarProps extends Omit<MuiAvatarProps, 'variant'> {
      * The size of the avatar (in pixels)
      * @default 40
      */
-    size?: 18 | 24 | 32 | 40;
+    size?: 18 | 24 | 32 | 40 | 48 | 56;
     /**
      * The variant of the avatar
      * Note: Only 'circular' is supported in the design system

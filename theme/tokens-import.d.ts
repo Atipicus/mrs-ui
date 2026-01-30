@@ -447,4 +447,22 @@ export declare const darkTokens: {
         };
     };
 };
+export declare const sidenavTokens: {
+    light: {
+        borderRadius: number;
+        itemBackground: string;
+        itemSelectedBackground: string;
+        itemHoverBackground: string;
+        itemIconColor: string;
+        itemTextColor: string;
+    };
+    dark: {
+        borderRadius: number;
+        itemBackground: string;
+        itemSelectedBackground: string;
+        itemHoverBackground: string;
+        itemIconColor: string;
+        itemTextColor: string;
+    };
+};
 //# sourceMappingURL=tokens-import.d.ts.map

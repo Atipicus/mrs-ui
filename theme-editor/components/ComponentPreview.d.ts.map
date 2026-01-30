@@ -1,0 +1,1 @@
+{"version":3,"file":"ComponentPreview.d.ts","sourceRoot":"","sources":["../../../src/theme-editor/components/ComponentPreview.tsx"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,OAAO,KAAK,MAAM,OAAO,CAAC;AA0B1B,UAAU,qBAAqB;IAC7B,UAAU,CAAC,EAAE,OAAO,CAAC;IACrB,aAAa,CAAC,EAAE,MAAM,IAAI,CAAC;CAC5B;AAED,eAAO,MAAM,gBAAgB,EAAE,KAAK,CAAC,EAAE,CAAC,qBAAqB,CAyN5D,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"UndoButton.d.ts","sourceRoot":"","sources":["../../../src/theme-editor/components/UndoButton.tsx"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,OAAO,KAA8B,MAAM,OAAO,CAAC;AAInD,UAAU,eAAe;IACvB,OAAO,EAAE,OAAO,CAAC;IACjB,MAAM,EAAE,MAAM,OAAO,CAAC,IAAI,CAAC,CAAC;IAC5B,aAAa,EAAE,MAAM,CAAC;CACvB;AAED,eAAO,MAAM,UAAU,EAAE,KAAK,CAAC,EAAE,CAAC,eAAe,CAqEhD,CAAC"}
