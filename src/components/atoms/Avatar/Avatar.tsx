@@ -30,6 +30,7 @@ export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
     const getSizeToken = (): string => {
       if (size === 24) return tokens.ComponentAvatarSmall;
       if (size === 40) return tokens.ComponentAvatarMedium;
+      if (size === 56) return tokens.ComponentAvatarLarge;
       // Default for sizes not in predefined tokens
       return `${size}px`;
     };

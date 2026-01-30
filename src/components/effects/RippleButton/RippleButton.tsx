@@ -13,7 +13,7 @@ const RippleContainer = styled('span')({
   bottom: 0,
   overflow: 'hidden',
   pointerEvents: 'none',
-  borderRadius: '50%',
+  borderRadius: 'inherit',
 });
 
 const RippleSpan = styled('span')<{ x: number; y: number; size: number }>(({ x, y, size }) => ({

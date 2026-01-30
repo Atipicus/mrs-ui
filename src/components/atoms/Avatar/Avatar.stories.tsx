@@ -263,6 +263,18 @@ export const AllSizes: Story = {
                 40px
               </MuiTypography>
             </Box>
+            <Box textAlign="center">
+              <Avatar size={48}>MG</Avatar>
+              <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
+                48px
+              </MuiTypography>
+            </Box>
+            <Box textAlign="center">
+              <Avatar size={56}>MG</Avatar>
+              <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
+                56px
+              </MuiTypography>
+            </Box>
           </Stack>
         </Box>
 
@@ -303,6 +315,22 @@ export const AllSizes: Story = {
                 40px
               </MuiTypography>
             </Box>
+            <Box textAlign="center">
+              <Avatar size={48}>
+                <MaterialSymbol icon="favorite" sx={{ fontSize: 28 }} />
+              </Avatar>
+              <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
+                48px
+              </MuiTypography>
+            </Box>
+            <Box textAlign="center">
+              <Avatar size={56}>
+                <MaterialSymbol icon="favorite" sx={{ fontSize: 32 }} />
+              </Avatar>
+              <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
+                56px
+              </MuiTypography>
+            </Box>
           </Stack>
         </Box>
 
@@ -333,6 +361,18 @@ export const AllSizes: Story = {
               <Avatar size={40} src="https://i.pravatar.cc/150?img=4" alt="Avatar 4" />
               <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
                 40px
+              </MuiTypography>
+            </Box>
+            <Box textAlign="center">
+              <Avatar size={48} src="https://i.pravatar.cc/150?img=5" alt="Avatar 5" />
+              <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
+                48px
+              </MuiTypography>
+            </Box>
+            <Box textAlign="center">
+              <Avatar size={56} src="https://i.pravatar.cc/150?img=6" alt="Avatar 6" />
+              <MuiTypography variant="caption" display="block" sx={{ mt: 1 }}>
+                56px
               </MuiTypography>
             </Box>
           </Stack>

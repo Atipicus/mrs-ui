@@ -59,6 +59,18 @@ describe('Avatar', () => {
     expect(avatar).toHaveStyle({ width: '40px', height: '40px' });
   });
 
+  it('renders with size 48px', () => {
+    const { container } = render(<Avatar size={48}>JD</Avatar>);
+    const avatar = container.querySelector('.MuiAvatar-root');
+    expect(avatar).toHaveStyle({ width: '48px', height: '48px' });
+  });
+
+  it('renders with size 56px', () => {
+    const { container } = render(<Avatar size={56}>JD</Avatar>);
+    const avatar = container.querySelector('.MuiAvatar-root');
+    expect(avatar).toHaveStyle({ width: '56px', height: '56px' });
+  });
+
   it('renders with circular variant (default)', () => {
     const { container } = render(<Avatar>JD</Avatar>);
     const avatar = container.querySelector('.MuiAvatar-circular');
@@ -115,6 +127,18 @@ describe('Avatar', () => {
 
   it('applies correct font size for size 40px', () => {
     const { container } = render(<Avatar size={40}>JD</Avatar>);
+    const avatar = container.querySelector('.MuiAvatar-root');
+    expect(avatar).toHaveStyle('font-size: 1.25rem');
+  });
+
+  it('applies correct font size for size 48px', () => {
+    const { container } = render(<Avatar size={48}>JD</Avatar>);
+    const avatar = container.querySelector('.MuiAvatar-root');
+    expect(avatar).toHaveStyle('font-size: 1.25rem');
+  });
+
+  it('applies correct font size for size 56px', () => {
+    const { container } = render(<Avatar size={56}>JD</Avatar>);
     const avatar = container.querySelector('.MuiAvatar-root');
     expect(avatar).toHaveStyle('font-size: 1.25rem');
   });
