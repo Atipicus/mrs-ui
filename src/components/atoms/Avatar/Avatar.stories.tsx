@@ -45,7 +45,11 @@ type Story = StoryObj<typeof Avatar>;
  */
 export const Default: Story = {
   args: {
-    children: 'MG',
+    children: 'M',
+    src: 'https://lh3.googleusercontent.com/a/ACg8ocKjndHOZWlcmHmS902xQ2e-x7bZ_f5j0ToopFrKRhDobnkSv6o=s576-c-no',
+    size: 40,
+    variant: 'circular',
+    alt: 'Martín Gómez',
   },
 };
 
