@@ -432,11 +432,51 @@ npm run publish:minor
 npm run publish:major
 ```
 
+## 📚 Documentation Guidelines
+
+### Where to Add Documentation
+
+- **How-to guides & tutorials:** `docs/guides/[category]/`
+- **Architecture & design decisions:** `docs/architecture/`
+- **API reference & technical docs:** `docs/api/`
+- **Component documentation:** Storybook via JSDoc/ArgTypes (not markdown)
+- **Release notes:** `CHANGELOG.md` (not separate files)
+
+### What NOT to Keep
+
+- ❌ Status reports (delete after release)
+- ❌ Completion announcements (git history is sufficient)
+- ❌ Duplicate documentation (maintain single source of truth)
+- ❌ Version-specific guides (consolidate into main guides)
+
+### Best Practices
+
+1. Keep `docs/README.md` as the main navigation hub
+2. Update relevant `README.md` files in subdirectories when adding new docs
+3. Use relative links (`./file.md` not `/docs/file.md`)
+4. Component API docs belong in Storybook, not markdown files
+5. Link to Storybook for interactive component documentation
+
+### Documentation Structure
+
+```
+docs/
+├── README.md                 (navigation hub)
+├── START-HERE.md            (new user guide)
+├── guides/                  (how-to guides)
+│   ├── migrations/          (migration guides)
+│   ├── setup/              (installation & deployment)
+│   └── theme-editor/       (theme customization)
+├── architecture/            (design decisions)
+└── api/                    (technical reference)
+```
+
 ## 📞 Getting Help
 
 - Open an issue for bugs or feature requests
 - Contact the MRS Design System Team
-- Check existing documentation and Storybook
+- Check [docs/](docs/README.md) for documentation
+- View Storybook for interactive component examples
 
 ## 📄 License
 
