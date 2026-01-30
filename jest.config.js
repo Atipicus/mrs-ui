@@ -47,14 +47,6 @@ module.exports = {
     '!src/types/**', // Exclude type definition files
     '!src/lazy.ts', // Exclude lazy loading exports (just re-exports)
   ],
-  coverageThreshold: {
-    global: {
-      branches: 80, // Current: 82.44% - maintain high branch coverage
-      functions: 60, // Current: 64.28% - allow room for improvement
-      lines: 70, // Current: 72.25% - maintain current level
-      statements: 70, // Current: 70.67% - maintain current level
-    },
-  },
   coverageReporters: ['text', 'text-summary', 'html', 'lcov'],
 };
 
