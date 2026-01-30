@@ -14,7 +14,7 @@ const meta: Meta<typeof Avatar> = {
   argTypes: {
     size: {
       control: 'select',
-      options: [18, 24, 32, 40],
+      options: [18, 24, 32, 40, 48, 56],
       description: 'The size of the avatar in pixels',
     },
     variant: {
@@ -94,6 +94,26 @@ export const Size40Text: Story = {
   },
 };
 
+/**
+ * 48px avatar with text
+ */
+export const Size48Text: Story = {
+  args: {
+    size: 48,
+    children: 'MG',
+  },
+};
+
+/**
+ * 56px avatar with text
+ */
+export const Size56Text: Story = {
+  args: {
+    size: 56,
+    children: 'MG',
+  },
+};
+
 // Size Stories - Icon
 /**
  * 18px avatar with icon
@@ -151,6 +171,34 @@ export const Size40Icon: Story = {
   ),
 };
 
+/**
+ * 48px avatar with icon
+ */
+export const Size48Icon: Story = {
+  args: {
+    size: 48,
+  },
+  render: (args) => (
+    <Avatar {...args}>
+      <MaterialSymbol icon="favorite" sx={{ fontSize: 28 }} />
+    </Avatar>
+  ),
+};
+
+/**
+ * 56px avatar with icon
+ */
+export const Size56Icon: Story = {
+  args: {
+    size: 56,
+  },
+  render: (args) => (
+    <Avatar {...args}>
+      <MaterialSymbol icon="favorite" sx={{ fontSize: 32 }} />
+    </Avatar>
+  ),
+};
+
 // Size Stories - Image
 /**
  * 18px avatar with image
@@ -192,6 +240,28 @@ export const Size40Image: Story = {
   args: {
     size: 40,
     src: 'https://i.pravatar.cc/150?img=4',
+    alt: 'Avatar',
+  },
+};
+
+/**
+ * 48px avatar with image
+ */
+export const Size48Image: Story = {
+  args: {
+    size: 48,
+    src: 'https://i.pravatar.cc/150?img=5',
+    alt: 'Avatar',
+  },
+};
+
+/**
+ * 56px avatar with image
+ */
+export const Size56Image: Story = {
+  args: {
+    size: 56,
+    src: 'https://i.pravatar.cc/150?img=6',
     alt: 'Avatar',
   },
 };
