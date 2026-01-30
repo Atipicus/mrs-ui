@@ -1,0 +1,1 @@
+import{c7 as o,c8 as s,c9 as c,ca as a,cb as t}from"./iframe-BLPmWLdH.js";const e={light:s.colors,dark:o.colors},p=c,r=a,l=t;s.components,o.components;s.colors,s.components,o.colors,o.components;export{l as a,e as c,r as s,p as t};
