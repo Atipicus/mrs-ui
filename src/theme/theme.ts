@@ -16,6 +16,7 @@ import type { Theme, ThemeOptions } from '@mui/material/styles';
 import { createTheme } from '@mui/material/styles';
 
 import { lightTokens, darkTokens, typographyTokens, shapeTokens } from './tokens-import';
+import { styleCompositions } from './styleCompositions';
 
 /**
  * Spacing function for MUI
@@ -48,7 +49,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          fontFamily: typography.fontFamily,
         },
         // Apply Nunito font globally
         '*': {
@@ -66,30 +66,18 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
       },
       styleOverrides: {
         root: {
-          borderRadius: shape.md,
+          ...styleCompositions.button.base(),
           textTransform: 'none' as const,
-          fontWeight: typography.fontWeightSemiBold,
-          fontFamily: typography.fontFamily,
         },
-        sizeSmall: {
-          fontSize: '0.8125rem',
-          padding: '4px 10px',
-        },
-        sizeMedium: {
-          fontSize: '0.875rem',
-          padding: '6px 16px',
-        },
-        sizeLarge: {
-          fontSize: '1rem',
-          padding: '8px 22px',
-        },
+        sizeSmall: styleCompositions.button.sizes.small,
+        sizeMedium: styleCompositions.button.sizes.medium,
+        sizeLarge: styleCompositions.button.sizes.large,
       },
     },
 
     MuiIconButton: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -97,7 +85,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiToggleButton: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
           textTransform: 'none' as const,
         },
       },
@@ -132,7 +119,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
       },
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -140,7 +126,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
           borderRadius: shape.md,
         },
         notchedOutline: {
@@ -152,7 +137,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiFilledInput: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
           backgroundColor: modeTokens.components.input.filled.enabledFill,
           borderRadius: `${shape.md}px ${shape.md}px 0 0`,
         },
@@ -162,7 +146,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiInput: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
         underline: {
           '&:before': {
@@ -175,7 +158,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiInputLabel: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -183,7 +165,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiSelect: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -191,7 +172,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiAutocomplete: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -238,8 +218,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiChip: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
-          borderRadius: shape.rounded,
+          ...styleCompositions.chip.base(),
         },
         outlined: {
           borderColor: modeTokens.components.chip.defaultEnabledBorder,
@@ -256,7 +235,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiAlert: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
           borderRadius: `${shape.md}px`,
         },
         // Filled variants
@@ -320,7 +298,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiSnackbar: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -331,7 +308,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiPaper: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
         rounded: {
           borderRadius: shape.md,
@@ -352,7 +328,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
       styleOverrides: {
         root: {
           borderRadius: shape.lg,
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -361,7 +336,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
       styleOverrides: {
         paper: {
           borderRadius: shape.lg,
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -369,7 +343,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiDrawer: {
       styleOverrides: {
         paper: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -377,7 +350,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiAppBar: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -388,7 +360,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiTable: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -396,7 +367,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiTableCell: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
           borderBottomColor: modeTokens.components.table.border,
         },
         head: {
@@ -411,7 +381,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiList: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -419,7 +388,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiListItem: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -427,12 +395,15 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiListItemButton: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
-          borderRadius: shape.sm,
+          ...styleCompositions.listItem.base(),
           '&.Mui-selected': {
             backgroundColor: modeTokens.colors.action.selected,
+            fontWeight: typography.fontWeightSemiBold,
           },
           '&.Mui-selected:hover': {
+            backgroundColor: modeTokens.colors.action.hover,
+          },
+          '&:hover': {
             backgroundColor: modeTokens.colors.action.hover,
           },
         },
@@ -442,10 +413,8 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiListItemText: {
       styleOverrides: {
         primary: {
-          fontFamily: typography.fontFamily,
         },
         secondary: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -461,7 +430,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiMenuItem: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -472,7 +440,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiTabs: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -480,7 +447,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiTab: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
           textTransform: 'none' as const,
         },
       },
@@ -489,7 +455,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiBreadcrumbs: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -497,7 +462,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiPagination: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -505,7 +469,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiStepper: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -516,7 +479,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiTypography: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -524,7 +486,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiLink: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -535,7 +496,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiAvatar: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -543,7 +503,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiBadge: {
       styleOverrides: {
         badge: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -551,7 +510,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -570,7 +528,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiFormControlLabel: {
       styleOverrides: {
         label: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -578,7 +535,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiFormHelperText: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -586,7 +542,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     MuiFormLabel: {
       styleOverrides: {
         root: {
-          fontFamily: typography.fontFamily,
         },
       },
     },
@@ -601,6 +556,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
         },
       },
     },
+
   };
 };
 

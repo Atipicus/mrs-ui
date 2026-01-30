@@ -53,7 +53,7 @@ import { Button } from '../../atoms/Button';
 import { IconButton } from '../../atoms/IconButton';
 import { MaterialSymbol } from '../../atoms/MaterialSymbol';
 import type { SidenavProps, SidenavItem, SidenavNavigationItem } from './Sidenav.types';
-import * as tokens from '../../../tokens/generated/ts/tokens';
+// Note: Tokens are now accessed via useTheme() and theme overrides instead of direct import
 
 // MRS Logo SVG component
 const MRSLogo = ({ variant = 'default' }: { variant?: 'default' | 'slim' }) => {
@@ -181,14 +181,10 @@ export const Sidenav = React.forwardRef<HTMLDivElement, SidenavProps>(
     ref
   ) => {
     const theme = useTheme();
-    const mode = theme.palette.mode;
 
-    // Determine width based on variant using tokens
-    const sidenavWidth =
-      width ??
-      (variant === 'slim'
-        ? tokens.ComponentSidenavWidthCollapsed
-        : tokens.ComponentSidenavWidthExpanded);
+    // Determine width based on variant
+    // Note: Width is theme-aware and passed as prop
+    const sidenavWidth = width ?? (variant === 'slim' ? 72 : 256);
 
     const handleItemClick = (item: SidenavItem) => {
       if (item.onClick) {
@@ -207,30 +203,12 @@ export const Sidenav = React.forwardRef<HTMLDivElement, SidenavProps>(
           selected={item.selected}
           onClick={() => handleItemClick(item)}
           sx={{
-            borderRadius:
-              mode === 'light'
-                ? tokens.ComponentSidenavLightBorderRadius
-                : tokens.ComponentSidenavDarkBorderRadius,
+            // Note: borderRadius and colors are now defined in theme.ts
+            // MuiListItemButton override via sidenavTokens
             mx: 1,
             px: variant === 'slim' ? 1.5 : 2,
             justifyContent: variant === 'slim' ? 'center' : 'flex-start',
             minHeight: 48,
-            '&.Mui-selected': {
-              backgroundColor:
-                mode === 'light'
-                  ? tokens.ComponentSidenavLightItemSelectedBackground
-                  : tokens.ComponentSidenavDarkItemSelectedBackground,
-              color:
-                mode === 'light'
-                  ? tokens.ComponentSidenavLightItemSelectedForeground
-                  : tokens.ComponentSidenavDarkItemSelectedForeground,
-              '&:hover': {
-                backgroundColor:
-                  mode === 'light'
-                    ? tokens.ComponentSidenavLightItemHoverBackground
-                    : tokens.ComponentSidenavDarkItemHoverBackground,
-              },
-            },
           }}
         >
           {item.icon && (

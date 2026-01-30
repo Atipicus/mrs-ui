@@ -472,3 +472,25 @@ export const darkTokens = {
     },
   },
 };
+
+// ============================================================================
+// SIDENAV COMPONENT TOKENS (Custom Component Tokens)
+// ============================================================================
+export const sidenavTokens = {
+  light: {
+    borderRadius: 8, // Using md shape token
+    itemBackground: 'transparent',
+    itemSelectedBackground: '#E3F2FD', // Light blue
+    itemHoverBackground: '#F5F5F5', // Light gray
+    itemIconColor: '#666666',
+    itemTextColor: '#212121',
+  },
+  dark: {
+    borderRadius: 8, // Using md shape token
+    itemBackground: 'transparent',
+    itemSelectedBackground: '#1A237E', // Dark blue
+    itemHoverBackground: '#303030', // Dark gray
+    itemIconColor: '#BDBDBD',
+    itemTextColor: '#FFFFFF',
+  },
+};
