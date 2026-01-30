@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Changed
+### Changed - Token System
 
 - **Package description** updated to reflect 53 components.
 - **Docs** updated to remove Timeline and Figma Code Connect references.
