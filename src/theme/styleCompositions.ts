@@ -23,7 +23,7 @@
  * ```
  */
 
-import type { SxProps, Theme } from '@mui/material/styles';
+import type { CSSObject, SxProps, Theme } from '@mui/material/styles';
 import { typographyTokens, shapeTokens } from './tokens-import';
 
 /**
@@ -38,7 +38,7 @@ export const styleCompositions = {
     /**
      * Base button styles
      */
-    base: (): SxProps<Theme> => ({
+    base: (): CSSObject => ({
       fontWeight: typographyTokens.fontWeightSemiBold,
       textTransform: 'none',
       borderRadius: shapeTokens.md,
@@ -67,7 +67,7 @@ export const styleCompositions = {
      * Button state styles
      */
     states: {
-      disabled: (theme: Theme): SxProps<Theme> => ({
+      disabled: (): SxProps<Theme> => ({
         opacity: 0.5,
         cursor: 'not-allowed',
         pointerEvents: 'none',
@@ -83,7 +83,7 @@ export const styleCompositions = {
     /**
      * Base input styles
      */
-    base: (): SxProps<Theme> => ({
+    base: (): CSSObject => ({
       borderRadius: shapeTokens.md,
       transition: 'all 0.2s ease',
     }),
@@ -158,7 +158,7 @@ export const styleCompositions = {
     /**
      * Base list item styles
      */
-    base: (): SxProps<Theme> => ({
+    base: (): CSSObject => ({
       borderRadius: shapeTokens.sm,
       transition: 'all 0.2s ease',
     }),
@@ -174,7 +174,7 @@ export const styleCompositions = {
       hover: (theme: Theme): SxProps<Theme> => ({
         backgroundColor: theme.palette.action.hover,
       }),
-      disabled: (theme: Theme): SxProps<Theme> => ({
+      disabled: (): SxProps<Theme> => ({
         opacity: 0.5,
         cursor: 'not-allowed',
         pointerEvents: 'none',
@@ -190,7 +190,7 @@ export const styleCompositions = {
     /**
      * Base chip styles
      */
-    base: (): SxProps<Theme> => ({
+    base: (): CSSObject => ({
       borderRadius: shapeTokens.rounded,
       fontWeight: typographyTokens.fontWeightMedium,
       transition: 'all 0.2s ease',
@@ -214,7 +214,7 @@ export const styleCompositions = {
      * Chip state styles
      */
     states: {
-      disabled: (theme: Theme): SxProps<Theme> => ({
+      disabled: (): SxProps<Theme> => ({
         opacity: 0.5,
         cursor: 'not-allowed',
       }),
@@ -290,7 +290,7 @@ export const styleCompositions = {
     /**
      * Disabled state - applies consistent disabled styling
      */
-    disabled: (theme: Theme): SxProps<Theme> => ({
+    disabled: (): SxProps<Theme> => ({
       opacity: 0.5,
       cursor: 'not-allowed',
       pointerEvents: 'none',

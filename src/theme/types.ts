@@ -103,7 +103,7 @@ declare module '@mui/material/styles' {
         elevation2: string;
       };
     };
-    primitives: {
+    primitives?: {
       brand: {
         veronesMain: string;
         lima: string;
@@ -194,7 +194,7 @@ declare module '@mui/material/styles' {
         rating: string;
       };
     };
-    semantic: {
+    semantic?: {
       primary: {
         main: string;
         dark: string;
