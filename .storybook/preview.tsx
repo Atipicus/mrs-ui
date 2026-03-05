@@ -33,7 +33,7 @@ const preview: Preview = {
       },
     },
     a11y: {
-      element: '#storybook-root',
+      context: '#storybook-root',
       config: {},
       options: {},
       manual: false,

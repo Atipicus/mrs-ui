@@ -113,10 +113,13 @@ jobs:
         run: npm run build
 
       - name: Bump version (if workflow_dispatch)
+        id: bump-version
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false'
         run: |
           npm version ${{ github.event.inputs.version }} -m "chore(release): v%s"
-          echo "VERSION=$(node -p 'require(\"./package.json\").version')" >> $GITHUB_ENV
+          VERSION=$(node -p 'require("./package.json").version')
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Get version (if release)
         if: github.event_name == 'release'
@@ -145,12 +148,12 @@ jobs:
         if: github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false'
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v${{ env.VERSION }}
-          name: Release v${{ env.VERSION }}
+          tag_name: v${{ steps.bump-version.outputs.version }}
+          name: Release v${{ steps.bump-version.outputs.version }}
           body: |
             ## 📦 Published to npm
             
-            Install: `npm install @atipicus/mrs-ui@${{ env.VERSION }}`
+            Install: `npm install @atipicus/mrs-ui@${{ steps.bump-version.outputs.version }}`
             
             See [CHANGELOG.md](https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md) for details.
           draft: false
