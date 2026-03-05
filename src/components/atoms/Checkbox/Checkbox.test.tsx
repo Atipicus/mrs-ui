@@ -72,7 +72,7 @@ describe('Checkbox', () => {
 
   it('handles onChange event', () => {
     const handleChange = jest.fn();
-    renderWithTheme(<Checkbox onChange={handleChange} data-testid="checkbox" />);
+    renderWithTheme(<Checkbox onChange={handleChange} data-testid="checkbox" disableRipple />);
     const checkbox = screen.getByRole('checkbox');
 
     fireEvent.click(checkbox);
@@ -82,7 +82,9 @@ describe('Checkbox', () => {
 
   it('handles onChange event when checked', () => {
     const handleChange = jest.fn();
-    renderWithTheme(<Checkbox checked onChange={handleChange} data-testid="checkbox" />);
+    renderWithTheme(
+      <Checkbox checked onChange={handleChange} data-testid="checkbox" disableRipple />
+    );
     const checkbox = screen.getByRole('checkbox');
 
     fireEvent.click(checkbox);
@@ -181,7 +183,7 @@ describe('Checkbox', () => {
 
   it('handles keyboard interaction (enter key)', () => {
     const handleChange = jest.fn();
-    renderWithTheme(<Checkbox onChange={handleChange} />);
+    renderWithTheme(<Checkbox onChange={handleChange} disableRipple />);
     const checkbox = screen.getByRole('checkbox');
 
     act(() => {
@@ -233,8 +235,8 @@ describe('Checkbox', () => {
 
     renderWithTheme(
       <>
-        <Checkbox data-testid="checkbox-1" onChange={handleChange1} />
-        <Checkbox data-testid="checkbox-2" onChange={handleChange2} />
+        <Checkbox data-testid="checkbox-1" onChange={handleChange1} disableRipple />
+        <Checkbox data-testid="checkbox-2" onChange={handleChange2} disableRipple />
       </>
     );
 
