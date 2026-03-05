@@ -23,7 +23,6 @@ mrs-ui/
 ├── jest.config.js               ← Test configuration
 ├── eslint.config.mjs            ← Linter configuration
 ├── .prettierrc.json
-├── chromatic.config.json
 ├── figma.config.json
 ├── typedoc.json
 │
@@ -243,7 +242,6 @@ import { PrimaryMain, ... } from '@atipicus/mrs-ui/tokens';
 | `jest.config.js` | Jest test runner configuration |
 | `eslint.config.mjs` | ESLint linter configuration |
 | `.prettierrc.json` | Prettier formatter configuration |
-| `chromatic.config.json` | Visual regression testing |
 | `figma.config.json` | Figma Code Connect configuration |
 | `typedoc.json` | API documentation generator |
 

@@ -386,7 +386,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'chore: sync tokens from Figma'
-          title: '🎨 Sync Design Tokens from Figma'
+          title: '🎨 Sync Design Tokens'
           body: |
             Automated sync of design tokens from Figma.
 

@@ -393,7 +393,6 @@ Use this checklist for each release:
 ### Release
 - [ ] Create GitHub release
 - [ ] Publish to NPM
-- [ ] Deploy Storybook
 - [ ] Verify package installation
 - [ ] Test in consumer project
 

@@ -1,6 +1,6 @@
 # Figma Token Sync - Setup Guide
 
-This guide explains how to configure and use the automated Figma token synchronization workflows.
+This guide explains how to configure and use the automated Figma token synchronization workflow.
 
 ---
 
@@ -27,7 +27,7 @@ The Figma Token Sync automation provides:
 
 ### Workflows
 
-1. **`sync-figma-tokens.yml`**: Syncs tokens from Figma
+1. **`tokens-ci.yml`**: Syncs tokens from Figma and builds outputs
 2. **`validate-tokens.yml`**: Validates token changes in PRs
 
 ---
@@ -102,9 +102,9 @@ Value: <your-file-key>
 ### Step 3: Test the Workflow
 
 1. Go to **Actions** tab
-2. Select **Sync Design Tokens from Figma**
+2. Select **Design Tokens CI**
 3. Click **Run workflow**
-4. Check **Dry run** (to preview without creating a PR)
+4. Use **Dry run** to preview without creating a PR
 5. Click **Run workflow** button
 
 If successful, you'll see:
@@ -117,7 +117,7 @@ If successful, you'll see:
 
 ### Manual Sync (Recommended First Time)
 
-1. Go to **Actions** → **Sync Design Tokens from Figma**
+1. Go to **Actions** → **Design Tokens CI**
 2. Click **Run workflow**
 3. Choose options:
    - **Dry run**: ☐ No (uncheck to create PR)
@@ -135,12 +135,12 @@ If successful, you'll see:
 
 ### Scheduled Sync (Automatic)
 
-The workflow runs automatically **every Monday at 9 AM UTC**.
+The workflow runs automatically **every day at 9 AM UTC**.
 
-**Schedule**: `0 9 * * 1` (cron format)
+**Schedule**: `0 9 * * *` (cron format)
 
 To change the schedule:
-1. Edit `.github/workflows/sync-figma-tokens.yml`
+1. Edit `.github/workflows/tokens-ci.yml`
 2. Modify the `cron` value under `schedule:`
 3. Commit and push
 
@@ -179,13 +179,13 @@ Runs automatically on every Pull Request that modifies token files.
 
 ## 📊 Workflows Explained
 
-### 1. Sync Figma Tokens (`sync-figma-tokens.yml`)
+### 1. Design Tokens CI (`tokens-ci.yml`)
 
 **Purpose**: Pull design tokens from Figma and create a PR with changes.
 
 **Triggers**:
 - Manual (`workflow_dispatch`)
-- Scheduled (cron: Monday 9 AM UTC)
+- Scheduled (cron: daily at 9 AM UTC)
 
 **Steps**:
 1. Checkout repository
@@ -353,7 +353,7 @@ If everything looks good:
 
 ### Change Sync Schedule
 
-Edit `.github/workflows/sync-figma-tokens.yml`:
+Edit `.github/workflows/tokens-ci.yml`:
 
 ```yaml
 schedule:
@@ -422,7 +422,7 @@ Add a step at the end of the workflow:
 ### 2. Review Process
 - ✅ Always review token sync PRs before merging
 - ✅ Test changes in Storybook
-- ✅ Run visual regression tests (Chromatic)
+- ✅ Run visual regression tests (if configured)
 - ✅ Check for breaking changes
 
 ### 3. Sync Frequency

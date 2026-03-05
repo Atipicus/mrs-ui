@@ -296,8 +296,8 @@ const primaryColor = tokens.semantic.color.primary.main;
 ### Opción 2: Figma ↔️ Code (Automático con GitHub Actions)
 
 ```yaml
-# .github/workflows/sync-figma-tokens.yml
-name: Sync Figma Tokens
+# .github/workflows/tokens-ci.yml
+name: Design Tokens CI
 on:
   workflow_dispatch:
 

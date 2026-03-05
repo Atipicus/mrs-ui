@@ -258,8 +258,8 @@ See [`THEME-MIGRATION-GUIDE.md`](THEME-MIGRATION-GUIDE.md) for detailed migratio
   - Concurrency control to cancel in-progress runs
   - Path filters to trigger runs only on relevant changes
   - Consolidated validation job (lint, type-check, test in parallel)
-  - Chromatic visual regression tests integration
-  - Artifact reuse between workflows (Storybook deployment)
+  - Visual regression tests integration
+  - Artifact reuse between jobs for Storybook builds
 
 ### Changed
 

@@ -134,7 +134,7 @@ jobs:
           echo "📊 Token statistics:"
           echo "CSS variables: $(grep -c '\-\-mrs-' src/tokens/generated/css/tokens.css || echo 0)"
           echo "JS exports: $(grep -c '^export const' src/tokens/generated/ts/tokens.js || echo 0)"
-          echo "JSON tokens: $(node -e "console.log(Object.keys(require('./src/tokens/generated/json/tokens-flat.json')).length)")"
+          echo "JSON tokens: $(node -e 'console.log(Object.keys(require(\"./src/tokens/generated/json/tokens-flat.json\")).length)')"
 
       - name: Upload generated tokens as artifact
         uses: actions/upload-artifact@v4
@@ -255,7 +255,7 @@ jobs:
           commit-message: 'chore: sync tokens from Figma'
           committer: GitHub Actions <github-actions[bot]@users.noreply.github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-          title: '🎨 Sync Design Tokens from Figma'
+          title: '🎨 Sync Design Tokens'
           body: |
             ## Automated Token Sync from Figma
 

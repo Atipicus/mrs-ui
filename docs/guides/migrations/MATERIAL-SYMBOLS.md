@@ -1029,7 +1029,7 @@ describe('MaterialSymbol', () => {
 
 **Storybook Visual Tests**:
 1. Capture baseline screenshots of all icon variants
-2. Run Chromatic visual regression tests
+2. Run visual regression tests (if configured)
 3. Review icon rendering across browsers
 
 ### Performance Testing

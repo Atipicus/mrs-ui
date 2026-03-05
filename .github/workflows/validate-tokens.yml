@@ -260,7 +260,7 @@ jobs:
             ### 🚀 Next Steps
             1. Review token changes in the Files tab
             2. Test changes locally with \`npm run storybook\`
-            3. Run visual regression tests (Chromatic)
+            3. Run visual regression tests (if configured)
             4. Merge when ready
             
             ---
