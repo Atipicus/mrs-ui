@@ -142,6 +142,7 @@
     "vitest": "^4.0.16"
   },
   "overrides": {
+    "minimatch": "^10.2.3",
     "undici": "^6.23.0",
     "lodash": "^4.17.21",
     "test-exclude": "^7.0.1"
