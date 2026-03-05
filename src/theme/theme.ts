@@ -48,8 +48,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     // =========================================================================
     MuiCssBaseline: {
       styleOverrides: {
-        body: {
-        },
+        body: {},
         // Apply Nunito font globally
         '*': {
           fontFamily: 'inherit',
@@ -77,8 +76,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
 
     MuiIconButton: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
@@ -118,8 +116,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
         variant: 'outlined',
       },
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
@@ -145,8 +142,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
 
     MuiInput: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
         underline: {
           '&:before': {
             borderBottomColor: modeTokens.components.input.standard.enabledBorder,
@@ -157,22 +153,19 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
 
     MuiInputLabel: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
     MuiSelect: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
     MuiAutocomplete: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
@@ -297,8 +290,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
 
     MuiSnackbar: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
@@ -307,8 +299,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     // =========================================================================
     MuiPaper: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
         rounded: {
           borderRadius: shape.md,
         },
@@ -342,15 +333,13 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
 
     MuiDrawer: {
       styleOverrides: {
-        paper: {
-        },
+        paper: {},
       },
     },
 
     MuiAppBar: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
@@ -359,8 +348,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     // =========================================================================
     MuiTable: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
@@ -380,15 +368,13 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     // =========================================================================
     MuiList: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
     MuiListItem: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
@@ -412,10 +398,8 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
 
     MuiListItemText: {
       styleOverrides: {
-        primary: {
-        },
-        secondary: {
-        },
+        primary: {},
+        secondary: {},
       },
     },
 
@@ -429,8 +413,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
 
     MuiMenuItem: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
@@ -439,8 +422,7 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     // =========================================================================
     MuiTabs: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
@@ -454,22 +436,19 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
 
     MuiBreadcrumbs: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
     MuiPagination: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
     MuiStepper: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
@@ -478,15 +457,13 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     // =========================================================================
     MuiTypography: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
     MuiLink: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
@@ -495,22 +472,19 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     // =========================================================================
     MuiAvatar: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
     MuiBadge: {
       styleOverrides: {
-        badge: {
-        },
+        badge: {},
       },
     },
 
     MuiTooltip: {
       styleOverrides: {
-        tooltip: {
-        },
+        tooltip: {},
       },
     },
 
@@ -527,22 +501,19 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
     // =========================================================================
     MuiFormControlLabel: {
       styleOverrides: {
-        label: {
-        },
+        label: {},
       },
     },
 
     MuiFormHelperText: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
     MuiFormLabel: {
       styleOverrides: {
-        root: {
-        },
+        root: {},
       },
     },
 
@@ -556,7 +527,6 @@ const getComponentOverrides = (mode: 'light' | 'dark'): ThemeOptions['components
         },
       },
     },
-
   };
 };
 
@@ -577,6 +547,8 @@ export const lightTheme: Theme = createTheme({
     text: lightTokens.colors.text,
     action: lightTokens.colors.action,
     divider: lightTokens.colors.divider,
+    primitives: lightTokens.colors.primitives,
+    semantic: lightTokens.colors.semantic,
     _components: lightTokens.components,
   },
   typography: {
