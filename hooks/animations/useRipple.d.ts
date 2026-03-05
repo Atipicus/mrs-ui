@@ -1,4 +1,4 @@
-import { MouseEvent } from '../../../node_modules/react';
+import { MouseEvent } from 'react';
 interface Ripple {
     x: number;
     y: number;

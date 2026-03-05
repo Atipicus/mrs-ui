@@ -21,7 +21,7 @@ interface UseBounceOptions {
  * ```
  */
 export declare const useBounce: <T extends HTMLElement>(options?: UseBounceOptions) => {
-    ref: import('../../../node_modules/react').RefObject<T>;
+    ref: import('react').RefObject<T>;
     bounce: () => void;
 };
 export {};

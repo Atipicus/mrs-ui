@@ -52,7 +52,7 @@ export declare function useThemeParser(): {
         mode: "light" | "dark";
     };
     mode: "light" | "dark";
-    setMode: import('../../../node_modules/react').Dispatch<import('../../../node_modules/react').SetStateAction<"light" | "dark">>;
+    setMode: import('react').Dispatch<import('react').SetStateAction<"light" | "dark">>;
     edits: Partial<ThemeParsed>;
     updateColor: (colorKey: string, newValue: string) => void;
     updateTypography: (variant: string, property: string, value: any) => void;

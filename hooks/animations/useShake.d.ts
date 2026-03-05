@@ -22,7 +22,7 @@ interface UseShakeOptions {
  * ```
  */
 export declare const useShake: <T extends HTMLElement>(options?: UseShakeOptions) => {
-    ref: import('../../../node_modules/react').RefObject<T>;
+    ref: import('react').RefObject<T>;
     shake: () => void;
 };
 export {};

@@ -1,4 +1,4 @@
-import { default as React } from '../../../node_modules/react';
+import { default as React } from 'react';
 interface ColorEditorProps {
     onColorChange?: (colorKey: string, newValue: string) => void;
 }

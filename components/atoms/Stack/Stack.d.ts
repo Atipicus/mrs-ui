@@ -1,4 +1,4 @@
-import { default as React } from '../../../../node_modules/react';
+import { default as React } from 'react';
 import { StackProps } from './Stack.types';
 /**
  * Stack component - manages layout of immediate children along vertical or horizontal axis

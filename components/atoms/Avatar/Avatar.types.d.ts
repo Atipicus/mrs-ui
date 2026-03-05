@@ -1,5 +1,5 @@
 import { AvatarProps as MuiAvatarProps } from '@mui/material/Avatar';
-import { ReactNode } from '../../../../node_modules/react';
+import { ReactNode } from 'react';
 /**
  * MRS Avatar component props
  * Extends Material-UI AvatarProps

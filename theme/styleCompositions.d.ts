@@ -1,4 +1,4 @@
-import { SxProps, Theme } from '@mui/material/styles';
+import { CSSObject, SxProps, Theme } from '@mui/material/styles';
 /**
  * Style composition factory for creating reusable patterns
  */
@@ -11,7 +11,7 @@ export declare const styleCompositions: {
         /**
          * Base button styles
          */
-        base: () => SxProps<Theme>;
+        base: () => CSSObject;
         /**
          * Button size variants
          */
@@ -33,7 +33,7 @@ export declare const styleCompositions: {
          * Button state styles
          */
         states: {
-            disabled: (theme: Theme) => SxProps<Theme>;
+            disabled: () => SxProps<Theme>;
         };
     };
     /**
@@ -44,7 +44,7 @@ export declare const styleCompositions: {
         /**
          * Base input styles
          */
-        base: () => SxProps<Theme>;
+        base: () => CSSObject;
         /**
          * Input size variants
          */
@@ -106,14 +106,14 @@ export declare const styleCompositions: {
         /**
          * Base list item styles
          */
-        base: () => SxProps<Theme>;
+        base: () => CSSObject;
         /**
          * List item state styles
          */
         states: {
             selected: (theme: Theme) => SxProps<Theme>;
             hover: (theme: Theme) => SxProps<Theme>;
-            disabled: (theme: Theme) => SxProps<Theme>;
+            disabled: () => SxProps<Theme>;
         };
     };
     /**
@@ -124,7 +124,7 @@ export declare const styleCompositions: {
         /**
          * Base chip styles
          */
-        base: () => SxProps<Theme>;
+        base: () => CSSObject;
         /**
          * Chip size variants
          */
@@ -142,7 +142,7 @@ export declare const styleCompositions: {
          * Chip state styles
          */
         states: {
-            disabled: (theme: Theme) => SxProps<Theme>;
+            disabled: () => SxProps<Theme>;
         };
     };
     /**
@@ -184,7 +184,7 @@ export declare const styleCompositions: {
         /**
          * Disabled state - applies consistent disabled styling
          */
-        disabled: (theme: Theme) => SxProps<Theme>;
+        disabled: () => SxProps<Theme>;
         /**
          * Loading state - subtle opacity reduction
          */

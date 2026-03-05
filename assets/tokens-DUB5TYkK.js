@@ -1,0 +1,1 @@
+import{c8 as o,c9 as s,s as a,ca as c,cb as t}from"./iframe-DQx8_g_V.js";const e={light:s.colors,dark:o.colors},p=t,r=a,l=c;s.components,o.components;s.colors,s.components,o.colors,o.components;export{l as a,e as c,r as s,p as t};

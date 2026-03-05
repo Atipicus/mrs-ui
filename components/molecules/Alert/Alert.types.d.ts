@@ -1,5 +1,5 @@
 import { AlertProps as MuiAlertProps } from '@mui/material/Alert';
-import { ReactNode } from '../../../../node_modules/react';
+import { ReactNode } from 'react';
 /**
  * Severity levels supported by the MRS Alert component.
  */
