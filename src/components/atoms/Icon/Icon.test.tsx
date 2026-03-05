@@ -100,4 +100,54 @@ describe('Icon - Font', () => {
     const icon = container.querySelector('.MuiIcon-root');
     expect(icon).toBeInTheDocument();
   });
+
+  describe('SVG icon branches', () => {
+    it('renders SVG icon when type is svg', () => {
+      const AddIcon = require('@mui/icons-material/Add').default;
+      renderWithTheme(<Icon type="svg" icon={AddIcon} />);
+      // SVG icons render as svg elements
+      expect(document.querySelector('svg')).toBeInTheDocument();
+    });
+
+    it('renders SVG icon when type is omitted (defaults to svg)', () => {
+      const HomeIcon = require('@mui/icons-material/Home').default;
+      renderWithTheme(<Icon icon={HomeIcon} />);
+      expect(document.querySelector('svg')).toBeInTheDocument();
+    });
+
+    it('SVG icon with small size', () => {
+      const AddIcon = require('@mui/icons-material/Add').default;
+      renderWithTheme(<Icon type="svg" icon={AddIcon} size="small" />);
+      expect(document.querySelector('svg')).toBeInTheDocument();
+    });
+
+    it('SVG icon with large size', () => {
+      const AddIcon = require('@mui/icons-material/Add').default;
+      renderWithTheme(<Icon type="svg" icon={AddIcon} size="large" />);
+      expect(document.querySelector('svg')).toBeInTheDocument();
+    });
+
+    it('SVG icon with inherit size', () => {
+      const AddIcon = require('@mui/icons-material/Add').default;
+      renderWithTheme(<Icon type="svg" icon={AddIcon} size="inherit" />);
+      expect(document.querySelector('svg')).toBeInTheDocument();
+    });
+
+    it('SVG icon accepts sx prop', () => {
+      const AddIcon = require('@mui/icons-material/Add').default;
+      renderWithTheme(<Icon type="svg" icon={AddIcon} sx={{ color: 'primary.main' }} />);
+      expect(document.querySelector('svg')).toBeInTheDocument();
+    });
+  });
+
+  describe('returns null for unknown type', () => {
+    it('renders null when type is not svg or font', () => {
+      const { container } = renderWithTheme(
+        <Icon type={'unknown' as any} iconName="add" />
+      );
+      // No icon element should be rendered
+      expect(container.querySelector('.MuiIcon-root')).not.toBeInTheDocument();
+      expect(container.querySelector('svg')).not.toBeInTheDocument();
+    });
+  });
 });

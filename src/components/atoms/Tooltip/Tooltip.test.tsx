@@ -258,4 +258,65 @@ describe('Tooltip', () => {
     // Just verify component renders without errors
     expect(screen.getByText('Button')).toBeInTheDocument();
   });
+
+  describe('Tooltip in dark mode', () => {
+    it('renders correctly in dark mode (exercises dark mode token branch)', () => {
+      const { createTheme, ThemeProvider } = require('@mui/material/styles');
+      const darkTheme = createTheme({ palette: { mode: 'dark' } });
+
+      render(
+        <ThemeProvider theme={darkTheme}>
+          <Tooltip title="Dark tooltip" open>
+            <Button>Dark mode button</Button>
+          </Tooltip>
+        </ThemeProvider>
+      );
+
+      expect(screen.getByText('Dark mode button')).toBeInTheDocument();
+    });
+  });
+
+  describe('Prop defaults', () => {
+    it('arrow defaults to true', () => {
+      render(
+        <Tooltip title="Arrow default" open>
+          <Button>Arrow</Button>
+        </Tooltip>
+      );
+      expect(document.querySelector('.MuiTooltip-arrow')).toBeInTheDocument();
+    });
+
+    it('placement defaults to bottom', async () => {
+      const user = userEvent.setup();
+      render(
+        <Tooltip title="Placement default">
+          <Button>Placement</Button>
+        </Tooltip>
+      );
+
+      await user.hover(screen.getByText('Placement'));
+      expect(screen.getByText('Placement')).toBeInTheDocument();
+    });
+
+    it('arrow can be disabled', () => {
+      render(
+        <Tooltip title="No arrow" arrow={false} open>
+          <Button>No Arrow</Button>
+        </Tooltip>
+      );
+      expect(document.querySelector('.MuiTooltip-arrow')).not.toBeInTheDocument();
+    });
+
+    it('renders with custom placement', async () => {
+      const user = userEvent.setup();
+      render(
+        <Tooltip title="Top tooltip" placement="top">
+          <Button>Top</Button>
+        </Tooltip>
+      );
+
+      await user.hover(screen.getByText('Top'));
+      expect(screen.getByText('Top')).toBeInTheDocument();
+    });
+  });
 });

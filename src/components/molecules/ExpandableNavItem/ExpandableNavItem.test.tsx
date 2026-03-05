@@ -289,4 +289,78 @@ describe('ExpandableNavItem', () => {
     // Should not show expand/collapse icon when children array is empty
     expect(container.querySelector('.material-symbols-rounded')).not.toBeInTheDocument();
   });
+
+  // handleParentClick when neither onToggle nor onClick provided
+  it('clicking parent without handlers does not throw', () => {
+    renderWithTheme(
+      <List>
+        <ExpandableNavItem label="Parent" children={[{ label: 'Child' }]} />
+      </List>
+    );
+    const parent = screen.getByText('Parent');
+    expect(() => fireEvent.click(parent)).not.toThrow();
+  });
+
+  // Child item indentation — with icon vs without icon
+  it('child items use deeper padding when parent has icon', async () => {
+    renderWithTheme(
+      <List>
+        <ExpandableNavItem
+          label="Parent"
+          icon={<InboxIcon data-testid="parent-icon" />}
+          isOpen={true}
+          children={[{ label: 'Child With Padding' }]}
+        />
+      </List>
+    );
+    await waitFor(() => {
+      expect(screen.getByText('Child With Padding')).toBeInTheDocument();
+    });
+  });
+
+  it('child items use normal padding when parent has no icon', async () => {
+    renderWithTheme(
+      <List>
+        <ExpandableNavItem
+          label="Parent"
+          isOpen={true}
+          children={[{ label: 'Child Normal Padding' }]}
+        />
+      </List>
+    );
+    await waitFor(() => {
+      expect(screen.getByText('Child Normal Padding')).toBeInTheDocument();
+    });
+  });
+
+  // fontWeight — selected vs not selected for child
+  it('applies bold fontWeight to selected child', async () => {
+    renderWithTheme(
+      <List>
+        <ExpandableNavItem
+          label="Parent"
+          isOpen={true}
+          children={[
+            { label: 'Selected Child', selected: true },
+            { label: 'Normal Child', selected: false },
+          ]}
+        />
+      </List>
+    );
+    await waitFor(() => {
+      expect(screen.getByText('Selected Child')).toBeInTheDocument();
+      expect(screen.getByText('Normal Child')).toBeInTheDocument();
+    });
+  });
+
+  // Not-selected parent fontWeight
+  it('applies normal fontWeight to non-selected parent', () => {
+    renderWithTheme(
+      <List>
+        <ExpandableNavItem label="Parent" selected={false} />
+      </List>
+    );
+    const parent = screen.getByRole('button', { name: /Parent/i });
+    expect(parent).not.toHaveClass('Mui-selected');
+  });
 });

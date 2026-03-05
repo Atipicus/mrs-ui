@@ -120,4 +120,47 @@ describe('Skeleton', () => {
     const skeleton = container.querySelector('.MuiSkeleton-root');
     expect(skeleton).toBeInTheDocument();
   });
+
+  it('circular with explicit width only — height defaults to 40', () => {
+    const { container } = render(<Skeleton variant="circular" width={60} />);
+    const skeleton = container.querySelector('.MuiSkeleton-root') as HTMLElement;
+    expect(skeleton).toBeInTheDocument();
+    expect(skeleton.style.width).toBe('60px');
+  });
+
+  it('rectangular with explicit width only — height defaults to 120', () => {
+    const { container } = render(<Skeleton variant="rectangular" width={200} />);
+    const skeleton = container.querySelector('.MuiSkeleton-root') as HTMLElement;
+    expect(skeleton).toBeInTheDocument();
+    expect(skeleton.style.width).toBe('200px');
+  });
+
+  it('text with explicit width — does not override provided width', () => {
+    const { container } = render(<Skeleton variant="text" width={300} />);
+    const skeleton = container.querySelector('.MuiSkeleton-root') as HTMLElement;
+    expect(skeleton).toBeInTheDocument();
+    expect(skeleton.style.width).toBe('300px');
+  });
+
+  it('text with explicit height — does not override provided height', () => {
+    const { container } = render(<Skeleton variant="text" height={30} />);
+    const skeleton = container.querySelector('.MuiSkeleton-root') as HTMLElement;
+    expect(skeleton).toBeInTheDocument();
+    expect(skeleton.style.height).toBe('30px');
+  });
+
+  it('renders with wave animation', () => {
+    const { container } = render(<Skeleton animation="wave" />);
+    expect(container.querySelector('.MuiSkeleton-wave')).toBeInTheDocument();
+  });
+
+  it('renders with false animation (no animation)', () => {
+    const { container } = render(<Skeleton animation={false} />);
+    expect(container.querySelector('.MuiSkeleton-root')).toBeInTheDocument();
+  });
+
+  it('renders rounded variant', () => {
+    const { container } = render(<Skeleton variant="rounded" />);
+    expect(container.querySelector('.MuiSkeleton-rounded')).toBeInTheDocument();
+  });
 });

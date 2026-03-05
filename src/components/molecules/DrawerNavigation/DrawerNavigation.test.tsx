@@ -326,4 +326,147 @@ describe('DrawerNavigation', () => {
     );
     expect(screen.getByText('Empty Parent')).toBeInTheDocument();
   });
+
+  // isExpandableItem type guard coverage
+  it('distinguishes simple from expandable items correctly', async () => {
+    renderWithTheme(
+      <DrawerNavigation
+        items={[
+          { label: 'Simple' },
+          {
+            label: 'Expandable',
+            expandable: true,
+            defaultOpen: true,
+            children: [{ label: 'Child' }],
+          },
+        ]}
+      />
+    );
+    expect(screen.getByText('Simple')).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText('Child')).toBeInTheDocument();
+    });
+  });
+
+  // handleToggle coverage — expand and collapse via ExpandableNavItem
+  it('handleToggle opens and closes expandable items', async () => {
+    renderWithTheme(
+      <DrawerNavigation
+        items={[
+          {
+            id: 'nav-1',
+            label: 'Nav Item',
+            expandable: true,
+            defaultOpen: false,
+            children: [{ label: 'Sub Item' }],
+          },
+        ]}
+      />
+    );
+
+    expect(screen.queryByText('Sub Item')).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByText('Nav Item'));
+    await waitFor(() => {
+      expect(screen.getByText('Sub Item')).toBeInTheDocument();
+    });
+
+    fireEvent.click(screen.getByText('Nav Item'));
+    await waitFor(() => {
+      expect(screen.queryByText('Sub Item')).not.toBeInTheDocument();
+    });
+  });
+
+  // handleItemClick — expandable item with onClick
+  it('calls onClick and onItemClick for expandable items', async () => {
+    const onClick = jest.fn();
+    const onItemClick = jest.fn();
+
+    renderWithTheme(
+      <DrawerNavigation
+        items={[
+          {
+            label: 'Expandable',
+            expandable: true,
+            onClick,
+            children: [],
+          },
+        ]}
+        onItemClick={onItemClick}
+      />
+    );
+
+    fireEvent.click(screen.getByText('Expandable'));
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(onItemClick).toHaveBeenCalledTimes(1);
+  });
+
+  // handleItemClick — item without onClick but with onItemClick
+  it('calls only onItemClick when item has no onClick', () => {
+    const onItemClick = jest.fn();
+
+    renderWithTheme(
+      <DrawerNavigation
+        items={[{ label: 'Home' }]}
+        onItemClick={onItemClick}
+      />
+    );
+
+    fireEvent.click(screen.getByText('Home'));
+    expect(onItemClick).toHaveBeenCalledTimes(1);
+  });
+
+  // Divider rendering for expandable items
+  it('renders divider after expandable item when divider=true', () => {
+    renderWithTheme(
+      <DrawerNavigation
+        items={[
+          {
+            label: 'Expandable',
+            expandable: true,
+            divider: true,
+            children: [],
+          },
+          { label: 'After' },
+        ]}
+      />
+    );
+    const dividers = document.querySelectorAll('.MuiDivider-root');
+    expect(dividers.length).toBeGreaterThan(0);
+  });
+
+  // Divider when next item has divider=true
+  it('renders divider when the next item has divider=true', () => {
+    renderWithTheme(
+      <DrawerNavigation
+        items={[
+          { label: 'First' },
+          { label: 'Second', divider: true },
+          { label: 'Third' },
+        ]}
+      />
+    );
+    const dividers = document.querySelectorAll('.MuiDivider-root');
+    expect(dividers.length).toBeGreaterThan(0);
+  });
+
+  // Initial open state for expandable items with defaultOpen: true
+  it('initializes openItems from defaultOpen on expandable items', async () => {
+    renderWithTheme(
+      <DrawerNavigation
+        items={[
+          {
+            id: 'prod',
+            label: 'Products',
+            expandable: true,
+            defaultOpen: true,
+            children: [{ label: 'All Products' }],
+          },
+        ]}
+      />
+    );
+    await waitFor(() => {
+      expect(screen.getByText('All Products')).toBeInTheDocument();
+    });
+  });
 });

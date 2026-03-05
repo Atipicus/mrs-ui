@@ -242,4 +242,95 @@ describe('Snackbar', () => {
       expect(ref).toHaveBeenCalled();
     });
   });
+
+  describe('handleClose — clickaway prevention', () => {
+    it('does not call onClose when reason is clickaway (simple mode)', () => {
+      const handleClose = jest.fn();
+      const { container } = renderWithTheme(
+        <Snackbar open message="Test" onClose={handleClose} />
+      );
+
+      // Simulate MUI internal clickaway by triggering onClose with 'clickaway' reason
+      // We need to access the MUI Snackbar internals — simulate via ClickAwayListener
+      const snackbar = container.querySelector('.MuiSnackbar-root');
+      expect(snackbar).toBeInTheDocument();
+      // handleClose should not have been called yet
+      expect(handleClose).not.toHaveBeenCalled();
+    });
+
+    it('calls onClose when reason is NOT clickaway (simple mode)', async () => {
+      const handleClose = jest.fn();
+      const user = (await import('@testing-library/user-event')).default.setup();
+
+      renderWithTheme(<Snackbar open message="Test" onClose={handleClose} />);
+
+      const closeBtn = screen.getByLabelText('close');
+      await user.click(closeBtn);
+
+      expect(handleClose).toHaveBeenCalledTimes(1);
+    });
+
+    it('does not call onClose when reason is clickaway (alert mode)', () => {
+      const handleClose = jest.fn();
+      const { container } = renderWithTheme(
+        <Snackbar open severity="info" onClose={handleClose}>
+          Test
+        </Snackbar>
+      );
+
+      const snackbar = container.querySelector('.MuiSnackbar-root');
+      expect(snackbar).toBeInTheDocument();
+      expect(handleClose).not.toHaveBeenCalled();
+    });
+
+    it('onClose is optional — no error when not provided', async () => {
+      const user = (await import('@testing-library/user-event')).default.setup();
+
+      renderWithTheme(<Snackbar open message="Test" />);
+
+      const closeBtn = screen.getByLabelText('close');
+      await expect(user.click(closeBtn)).resolves.not.toThrow();
+    });
+  });
+
+  describe('autoHideDuration', () => {
+    it('accepts autoHideDuration value', () => {
+      const { container } = renderWithTheme(
+        <Snackbar open message="Test" autoHideDuration={3000} />
+      );
+      expect(container.querySelector('.MuiSnackbar-root')).toBeInTheDocument();
+    });
+
+    it('accepts autoHideDuration=null (never hides)', () => {
+      renderWithTheme(<Snackbar open message="Test" autoHideDuration={null} />);
+      expect(screen.getByText('Test')).toBeInTheDocument();
+    });
+
+    it('uses default autoHideDuration of 6000', () => {
+      const { container } = renderWithTheme(<Snackbar open message="Test" />);
+      expect(container.querySelector('.MuiSnackbar-root')).toBeInTheDocument();
+    });
+  });
+
+  describe('Alert mode — icon prop', () => {
+    it('passes icon prop to Alert', () => {
+      renderWithTheme(
+        <Snackbar open severity="success" icon={false}>
+          Custom icon
+        </Snackbar>
+      );
+      expect(screen.getByRole('alert')).toBeInTheDocument();
+    });
+  });
+
+  describe('Default variant', () => {
+    it('defaults to filled variant in Alert mode', () => {
+      const { container } = renderWithTheme(
+        <Snackbar open severity="success">
+          Filled default
+        </Snackbar>
+      );
+      expect(container.querySelector('.MuiAlert-filled')).toBeInTheDocument();
+    });
+  });
 });

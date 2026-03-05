@@ -228,4 +228,48 @@ describe('TextField', () => {
       expect(ref.current).toBeInstanceOf(HTMLDivElement);
     });
   });
+
+  describe('Variant branches', () => {
+    it('renders with filled variant', () => {
+      const { container } = renderWithTheme(<TextField variant="filled" label="Filled" />);
+      expect(container.querySelector('.MuiFilledInput-root')).toBeInTheDocument();
+    });
+
+    it('renders with standard variant', () => {
+      const { container } = renderWithTheme(<TextField variant="standard" label="Standard" />);
+      expect(container.querySelector('.MuiInput-root')).toBeInTheDocument();
+    });
+
+    it('renders with outlined variant (default)', () => {
+      const { container } = renderWithTheme(<TextField label="Outlined" />);
+      expect(container.querySelector('.MuiOutlinedInput-root')).toBeInTheDocument();
+    });
+
+    it('renders small size', () => {
+      const { container } = renderWithTheme(<TextField size="small" label="Small" />);
+      expect(container.querySelector('.MuiInputBase-sizeSmall')).toBeInTheDocument();
+    });
+
+    it('renders fullWidth', () => {
+      const { container } = renderWithTheme(<TextField fullWidth label="Full Width" />);
+      expect(container.querySelector('.MuiFormControl-fullWidth')).toBeInTheDocument();
+    });
+
+    it('renders with secondary color', () => {
+      const { container } = renderWithTheme(<TextField color="secondary" label="Secondary" />);
+      expect(container.querySelector('.MuiTextField-root')).toBeInTheDocument();
+    });
+
+    it('renders with error state', () => {
+      const { container } = renderWithTheme(
+        <TextField error label="Error" helperText="Error message" />
+      );
+      expect(container.querySelector('.Mui-error')).toBeInTheDocument();
+    });
+
+    it('renders with disabled state', () => {
+      const { container } = renderWithTheme(<TextField disabled label="Disabled" />);
+      expect(container.querySelector('.Mui-disabled')).toBeInTheDocument();
+    });
+  });
 });

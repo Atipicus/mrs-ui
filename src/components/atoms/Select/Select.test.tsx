@@ -234,4 +234,60 @@ describe('Select', () => {
       expect(ref.current).toBeTruthy();
     });
   });
+
+  describe('Variant branches', () => {
+    it('renders with filled variant', () => {
+      const { container } = renderWithTheme(
+        <Select variant="filled" value="a">
+          <MenuItem value="a">A</MenuItem>
+        </Select>
+      );
+      expect(container.querySelector('.MuiSelect-filled')).toBeInTheDocument();
+    });
+
+    it('renders with standard variant', () => {
+      const { container } = renderWithTheme(
+        <Select variant="standard" value="a">
+          <MenuItem value="a">A</MenuItem>
+        </Select>
+      );
+      expect(container.querySelector('.MuiSelect-standard')).toBeInTheDocument();
+    });
+
+    it('renders with outlined variant (default)', () => {
+      const { container } = renderWithTheme(
+        <Select value="a">
+          <MenuItem value="a">A</MenuItem>
+        </Select>
+      );
+      expect(container.querySelector('.MuiSelect-outlined')).toBeInTheDocument();
+    });
+
+    it('renders with small size', () => {
+      const { container } = renderWithTheme(
+        <Select size="small" value="a">
+          <MenuItem value="a">A</MenuItem>
+        </Select>
+      );
+      expect(container.querySelector('.MuiInputBase-sizeSmall')).toBeInTheDocument();
+    });
+
+    it('renders with fullWidth', () => {
+      const { container } = renderWithTheme(
+        <Select fullWidth value="a">
+          <MenuItem value="a">A</MenuItem>
+        </Select>
+      );
+      expect(container.querySelector('.MuiInputBase-fullWidth')).toBeInTheDocument();
+    });
+
+    it('renders disabled state', () => {
+      const { container } = renderWithTheme(
+        <Select disabled value="a">
+          <MenuItem value="a">A</MenuItem>
+        </Select>
+      );
+      expect(container.querySelector('.Mui-disabled')).toBeInTheDocument();
+    });
+  });
 });
