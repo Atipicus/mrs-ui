@@ -547,6 +547,8 @@ export const lightTheme: Theme = createTheme({
     text: lightTokens.colors.text,
     action: lightTokens.colors.action,
     divider: lightTokens.colors.divider,
+    primitives: lightTokens.colors.primitives,
+    semantic: lightTokens.colors.semantic,
     _components: lightTokens.components,
   },
   typography: {
