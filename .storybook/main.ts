@@ -4,13 +4,9 @@ const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-a11y',
+    '@storybook/addon-docs',
     '@storybook/addon-themes',
     '@storybook/addon-vitest',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-    '@storybook/addon-links',
-    '@storybook/addon-viewport',
-    '@storybook/addon-backgrounds',
   ],
   framework: '@storybook/react-vite',
 };
