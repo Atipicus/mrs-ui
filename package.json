@@ -44,7 +44,7 @@
     "test": "jest",
     "test:clean": "jest --clearCache && jest",
     "test:watch": "jest --watch",
-    "type-check": "tsc --noEmit",
+    "type-check": "npm run tokens:build && tsc --noEmit",
     "lint": "eslint src --ext .ts,.tsx --ignore-pattern 'src/tokens/scripts/**' --ignore-pattern '**/*.mdx'",
     "lint:fix": "eslint src --ext .ts,.tsx --ignore-pattern 'src/tokens/scripts/**' --ignore-pattern '**/*.mdx' --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,md}\"",
