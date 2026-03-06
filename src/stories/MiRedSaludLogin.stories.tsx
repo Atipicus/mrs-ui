@@ -6,7 +6,7 @@ import PersonRounded from '@mui/icons-material/PersonRounded';
 import VisibilityOffRounded from '@mui/icons-material/VisibilityOffRounded';
 import { Box } from '../components/atoms/Box';
 import { Stack } from '../components/atoms/Stack';
-import { Typography } from '../components/Typography/Typography';
+import { Typography } from '../components/atoms/Typography/Typography';
 import { Button } from '../components/atoms/Button';
 import { Link } from '../components/atoms/Link';
 import { TextField } from '../components/atoms/TextField';
@@ -17,7 +17,8 @@ import { MaterialSymbol } from '../components/atoms/MaterialSymbol';
 import { CardHeader } from '../components/molecules/Card/CardHeader';
 
 const imgAppStoreBadge = 'https://www.figma.com/api/mcp/asset/162ebbf1-7456-446f-bb7e-c8db6a634177';
-const imgGooglePlayBadge = 'https://www.figma.com/api/mcp/asset/2c309202-fe65-4908-9036-a1e2e5079972';
+const imgGooglePlayBadge =
+  'https://www.figma.com/api/mcp/asset/2c309202-fe65-4908-9036-a1e2e5079972';
 const imgQrCode = 'https://www.figma.com/api/mcp/asset/7d2d8d28-3a7c-4e06-91e9-d2d5c83f34f7';
 const imgUnion = 'https://www.figma.com/api/mcp/asset/6647050f-f251-4a40-b7d3-8bb9233cbea8';
 const imgIPhoneFrame = 'https://www.figma.com/api/mcp/asset/b154fbe6-02c1-4c70-93fc-fad5fecbdb05';
@@ -204,7 +205,13 @@ const MiRedSaludLoginTemplate = () => {
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
               <Stack direction="row" spacing={1} alignItems="center">
-                <Box component="img" src={imgLogoIcon} alt="" aria-hidden="true" sx={{ height: 18 }} />
+                <Box
+                  component="img"
+                  src={imgLogoIcon}
+                  alt=""
+                  aria-hidden="true"
+                  sx={{ height: 18 }}
+                />
                 <Box component="img" src={imgLogoWord} alt="MiRedSalud" sx={{ height: 22 }} />
               </Stack>
             </Box>
@@ -241,10 +248,7 @@ const MiRedSaludLoginTemplate = () => {
                   ),
                 }}
               />
-              <FormControlLabel
-                control={<Checkbox color="primary" />}
-                label="Recordar mis datos"
-              />
+              <FormControlLabel control={<Checkbox color="primary" />} label="Recordar mis datos" />
             </Stack>
             <Button
               variant="contained"

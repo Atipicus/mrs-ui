@@ -87,7 +87,12 @@ export default defineConfig({
       })],
       test: {
         name: 'storybook',
-        environment: 'jsdom',
+        browser: {
+          enabled: true,
+          headless: true,
+          provider: 'playwright',
+          instances: [{ browser: 'chromium' }],
+        },
         setupFiles: ['.storybook/vitest.setup.ts']
       }
     }]
