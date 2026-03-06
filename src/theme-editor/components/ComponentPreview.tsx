@@ -34,9 +34,7 @@ interface ComponentPreviewProps {
   onDialogClose?: () => void;
 }
 
-export const ComponentPreview: React.FC<ComponentPreviewProps> = ({
-  dialogOpen = false,
-}) => {
+export const ComponentPreview: React.FC<ComponentPreviewProps> = ({ dialogOpen = false }) => {
   const { mode } = useThemeParser();
   const [selectedTab, setSelectedTab] = React.useState(0);
   const [openDialog, setOpenDialog] = React.useState(dialogOpen);
@@ -112,12 +110,7 @@ export const ComponentPreview: React.FC<ComponentPreviewProps> = ({
                 <TextField label="Outlined" variant="outlined" />
                 <TextField label="Filled" variant="filled" />
                 <TextField label="Disabled" disabled variant="outlined" />
-                <TextField
-                  label="Error"
-                  error
-                  helperText="Error message"
-                  variant="outlined"
-                />
+                <TextField label="Error" error helperText="Error message" variant="outlined" />
               </Stack>
             </CardContent>
           </Card>
@@ -176,10 +169,7 @@ export const ComponentPreview: React.FC<ComponentPreviewProps> = ({
               </Typography>
 
               <Stack spacing={1}>
-                <FormControlLabel
-                  control={<Checkbox defaultChecked />}
-                  label="Checkbox"
-                />
+                <FormControlLabel control={<Checkbox defaultChecked />} label="Checkbox" />
                 <FormControlLabel control={<Radio defaultChecked />} label="Radio" />
                 <FormControlLabel control={<Switch defaultChecked />} label="Switch" />
               </Stack>
@@ -238,8 +228,8 @@ export const ComponentPreview: React.FC<ComponentPreviewProps> = ({
         <DialogTitle>Theme Editor Preview</DialogTitle>
         <DialogContent>
           <Typography sx={{ mt: 2 }}>
-            This dialog demonstrates how the current theme is applied to dialogs.
-            All styling is inherited from your theme configuration.
+            This dialog demonstrates how the current theme is applied to dialogs. All styling is
+            inherited from your theme configuration.
           </Typography>
         </DialogContent>
         <DialogActions>

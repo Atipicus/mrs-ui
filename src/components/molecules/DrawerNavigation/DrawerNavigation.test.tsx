@@ -405,12 +405,7 @@ describe('DrawerNavigation', () => {
   it('calls only onItemClick when item has no onClick', () => {
     const onItemClick = jest.fn();
 
-    renderWithTheme(
-      <DrawerNavigation
-        items={[{ label: 'Home' }]}
-        onItemClick={onItemClick}
-      />
-    );
+    renderWithTheme(<DrawerNavigation items={[{ label: 'Home' }]} onItemClick={onItemClick} />);
 
     fireEvent.click(screen.getByText('Home'));
     expect(onItemClick).toHaveBeenCalledTimes(1);
@@ -439,11 +434,7 @@ describe('DrawerNavigation', () => {
   it('renders divider when the next item has divider=true', () => {
     renderWithTheme(
       <DrawerNavigation
-        items={[
-          { label: 'First' },
-          { label: 'Second', divider: true },
-          { label: 'Third' },
-        ]}
+        items={[{ label: 'First' }, { label: 'Second', divider: true }, { label: 'Third' }]}
       />
     );
     const dividers = document.querySelectorAll('.MuiDivider-root');

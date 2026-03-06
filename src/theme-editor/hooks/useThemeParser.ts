@@ -120,10 +120,19 @@ const extractTypography = (theme: any): TypographyToken[] => {
   if (!typography) return [];
 
   const variants = [
-    'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-    'body1', 'body2',
-    'subtitle1', 'subtitle2',
-    'button', 'caption', 'overline'
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
+    'body1',
+    'body2',
+    'subtitle1',
+    'subtitle2',
+    'button',
+    'caption',
+    'overline',
   ];
 
   return variants.map((variant) => {
@@ -147,9 +156,7 @@ const extractSpacing = (theme: any): SpacingToken[] => {
   const spacingValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   return spacingValues.map((factor) => {
-    const value = typeof theme.spacing === 'function'
-      ? theme.spacing(factor)
-      : factor * 8; // Default 8px base unit
+    const value = typeof theme.spacing === 'function' ? theme.spacing(factor) : factor * 8; // Default 8px base unit
 
     return {
       name: `spacing(${factor})`,
@@ -193,71 +200,83 @@ export function useThemeParser() {
   }, [mode]);
 
   // Update color value
-  const updateColor = useCallback((colorKey: string, newValue: string) => {
-    setEdits((prev) => {
-      const prevColors = prev.colors || { light: {}, dark: {} };
-      return {
-        ...prev,
-        colors: {
-          ...prevColors,
-          [mode]: {
-            ...(prevColors[mode] || {}),
-            [colorKey]: newValue,
+  const updateColor = useCallback(
+    (colorKey: string, newValue: string) => {
+      setEdits((prev) => {
+        const prevColors = prev.colors || { light: {}, dark: {} };
+        return {
+          ...prev,
+          colors: {
+            ...prevColors,
+            [mode]: {
+              ...(prevColors[mode] || {}),
+              [colorKey]: newValue,
+            },
           },
-        },
-      };
-    });
-  }, [mode]);
+        };
+      });
+    },
+    [mode]
+  );
 
   // Update typography value
-  const updateTypography = useCallback((variant: string, property: string, value: any) => {
-    setEdits((prev) => ({
-      ...prev,
-      typography: (prev.typography || parsedTheme.typography).map((typo) =>
-        typo.variant === variant
-          ? { ...typo, [property]: value }
-          : typo
-      ),
-    }));
-  }, [parsedTheme.typography]);
+  const updateTypography = useCallback(
+    (variant: string, property: string, value: any) => {
+      setEdits((prev) => ({
+        ...prev,
+        typography: (prev.typography || parsedTheme.typography).map((typo) =>
+          typo.variant === variant ? { ...typo, [property]: value } : typo
+        ),
+      }));
+    },
+    [parsedTheme.typography]
+  );
 
   // Update spacing value
-  const updateSpacing = useCallback((spacingName: string, newValue: number) => {
-    setEdits((prev) => ({
-      ...prev,
-      spacing: (prev.spacing || parsedTheme.spacing).map((space) =>
-        space.name === spacingName
-          ? { ...space, value: newValue }
-          : space
-      ),
-    }));
-  }, [parsedTheme.spacing]);
+  const updateSpacing = useCallback(
+    (spacingName: string, newValue: number) => {
+      setEdits((prev) => ({
+        ...prev,
+        spacing: (prev.spacing || parsedTheme.spacing).map((space) =>
+          space.name === spacingName ? { ...space, value: newValue } : space
+        ),
+      }));
+    },
+    [parsedTheme.spacing]
+  );
 
   // Update shape value
-  const updateShape = useCallback((shapeName: string, newValue: number) => {
-    setEdits((prev) => ({
-      ...prev,
-      shape: (prev.shape || parsedTheme.shape).map((s) =>
-        s.name === shapeName
-          ? { ...s, value: newValue }
-          : s
-      ),
-    }));
-  }, [parsedTheme.shape]);
+  const updateShape = useCallback(
+    (shapeName: string, newValue: number) => {
+      setEdits((prev) => ({
+        ...prev,
+        shape: (prev.shape || parsedTheme.shape).map((s) =>
+          s.name === shapeName ? { ...s, value: newValue } : s
+        ),
+      }));
+    },
+    [parsedTheme.shape]
+  );
 
   // Get current edited value or fallback to parsed
-  const getColorValue = useCallback((colorKey: string): string => {
-    return edits.colors?.[mode]?.[colorKey] ?? parsedTheme.colors[mode][colorKey] ?? '#000000';
-  }, [edits, mode, parsedTheme]);
+  const getColorValue = useCallback(
+    (colorKey: string): string => {
+      return edits.colors?.[mode]?.[colorKey] ?? parsedTheme.colors[mode][colorKey] ?? '#000000';
+    },
+    [edits, mode, parsedTheme]
+  );
 
-  const getTypographyValue = useCallback((variant: string, property: string): any => {
-    const edited = edits.typography?.find((t) => t.variant === variant);
-    if (edited && property in edited) {
-      return (edited as any)[property];
-    }
-    const original = parsedTheme.typography.find((t) => t.variant === variant);
-    return (original as any)?.[property];
-  }, [edits.typography, parsedTheme.typography]);
+  const getTypographyValue = useCallback(
+    (variant: string, property: string): any => {
+      const edited = edits.typography?.find((t) => t.variant === variant);
+      if (edited && property in edited) {
+        return (edited as any)[property];
+      }
+      const original = parsedTheme.typography.find((t) => t.variant === variant);
+      return (original as any)?.[property];
+    },
+    [edits.typography, parsedTheme.typography]
+  );
 
   return {
     // Data

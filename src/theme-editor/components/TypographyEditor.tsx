@@ -83,10 +83,13 @@ function TypographyFieldEditor({
       size="small"
       fullWidth
       helperText={
-        property === 'fontSize' ? 'e.g., 16 (px)' :
-        property === 'fontWeight' ? 'e.g., 400, 600' :
-        property === 'lineHeight' ? 'e.g., 1.5' :
-        'e.g., 0.5'
+        property === 'fontSize'
+          ? 'e.g., 16 (px)'
+          : property === 'fontWeight'
+            ? 'e.g., 400, 600'
+            : property === 'lineHeight'
+              ? 'e.g., 1.5'
+              : 'e.g., 0.5'
       }
     />
   );
@@ -132,8 +135,7 @@ export const TypographyEditor: React.FC<TypographyEditorProps> = ({ onTypography
             {/* Property editors */}
             <Grid container spacing={2}>
               {['fontSize', 'fontWeight', 'lineHeight', 'letterSpacing'].map((property) => {
-                const value =
-                  (typo as any)[property];
+                const value = (typo as any)[property];
 
                 if (value === undefined) return null;
 

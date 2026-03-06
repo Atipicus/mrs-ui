@@ -19,9 +19,11 @@ index.ts (export public API)
 ## Files Overview
 
 ### 1. `tokens-import.ts` (475 lines)
+
 **Purpose**: Import and organize generated tokens from Style Dictionary
 
 Contains:
+
 - `typographyTokens` - Font family, sizes, weights, variants
 - `shapeTokens` - Border radius values
 - `spacingArray` - Spacing scale (8px base)
@@ -30,6 +32,7 @@ Contains:
 - `sidenavTokens` - Custom component tokens
 
 **Usage**:
+
 ```tsx
 import { lightTokens, darkTokens, typographyTokens } from './tokens-import';
 
@@ -37,9 +40,11 @@ const color = mode === 'light' ? lightTokens.colors.primary.main : darkTokens.co
 ```
 
 ### 2. `styleCompositions.ts` (NEW - 400+ lines)
+
 **Purpose**: Provide reusable style patterns to reduce duplication
 
 Contains compositions for:
+
 - `button` - Base styles, sizes, states
 - `input` - Base styles, sizes, states
 - `surface` - Base styles, elevations
@@ -50,6 +55,7 @@ Contains compositions for:
 - `layout` - Flex and container patterns
 
 **Usage**:
+
 ```tsx
 // In theme.ts
 MuiButton: {
@@ -63,9 +69,11 @@ MuiButton: {
 ```
 
 ### 3. `theme.ts` (560 lines)
+
 **Purpose**: Central theme configuration with 40+ component overrides
 
 Key sections:
+
 - Global baseline (MuiCssBaseline)
 - Buttons (MuiButton, MuiIconButton, MuiFab, etc.)
 - Inputs (MuiTextField, MuiOutlinedInput, etc.)
@@ -79,23 +87,27 @@ Key sections:
 - Typography & Data Display
 
 **Two theme exports**:
+
 - `lightTheme` - Light mode with light tokens
 - `darkTheme` - Dark mode with dark tokens
 
 **Usage**:
+
 ```tsx
 import { ThemeProvider } from '@mui/material/styles';
 import { lightTheme, darkTheme } from './theme';
 
 <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
   <App />
-</ThemeProvider>
+</ThemeProvider>;
 ```
 
 ### 4. `tokens.ts` (78 lines)
+
 **Purpose**: Re-export tokens for easy access
 
 Exports:
+
 - `colors` - { light, dark }
 - `typography` - Typography variants
 - `shape` - Border radius tokens
@@ -104,9 +116,11 @@ Exports:
 - `tokens` - Full object (backwards compatibility)
 
 ### 5. `index.ts`
+
 **Purpose**: Public API exports
 
 Exports:
+
 - `theme`, `lightTheme`, `darkTheme`
 - `MRSTheme` type
 - All tokens (`colors`, `typography`, `shape`, `spacing`, `components`)
@@ -116,6 +130,7 @@ Exports:
 ### Color System
 
 **Light Mode** (`lightTokens.colors`):
+
 - `primary` - Main brand color (#1976d2)
 - `secondary` - Secondary color
 - `error`, `warning`, `info`, `success` - Semantic colors
@@ -125,6 +140,7 @@ Exports:
 - `divider` - Divider color
 
 **Dark Mode** (`darkTokens.colors`):
+
 - Same structure as light mode with adjusted colors
 
 ### Typography
@@ -160,11 +176,13 @@ rounded: 9999px  // Pill shape, chips, avatars
 ### Spacing
 
 8px base grid system:
+
 ```typescript
-0, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96
+(0, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96);
 ```
 
 MUI multiplies by base unit:
+
 ```tsx
 <Box sx={{ m: 1 }} />  // 8px margin
 <Box sx={{ m: 2 }} />  // 16px margin
@@ -185,13 +203,21 @@ const getComponentOverrides = (mode: 'light' | 'dark') => {
 
   return {
     MuiComponent: {
-      defaultProps: { /* default props */ },
+      defaultProps: {
+        /* default props */
+      },
       styleOverrides: {
-        root: { /* root styles */ },
+        root: {
+          /* root styles */
+        },
         // variant overrides
-        outlined: { /* outlined styles */ },
+        outlined: {
+          /* outlined styles */
+        },
         // size overrides
-        small: { /* small size styles */ },
+        small: {
+          /* small size styles */
+        },
       },
     },
     // ... more components
@@ -208,6 +234,7 @@ const getComponentOverrides = (mode: 'light' | 'dark') => {
    - `darkTokens` - Dark mode values
 
 2. **Dynamic Selection**
+
    ```typescript
    const modeTokens = mode === 'light' ? lightTokens : darkTokens;
    ```
@@ -224,6 +251,7 @@ const getComponentOverrides = (mode: 'light' | 'dark') => {
 ### Steps
 
 1. **Define override in `theme.ts`**:
+
    ```typescript
    MuiNewComponent: {
      styleOverrides: {

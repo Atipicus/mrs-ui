@@ -62,7 +62,13 @@ export const SyncDialog: React.FC<SyncDialogProps> = ({
   return (
     <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
       <DialogTitle>
-        {isSuccess ? '✅ Sync Complete' : isError ? '❌ Sync Failed' : isSyncing ? '⏳ Syncing Theme' : 'Sync Theme'}
+        {isSuccess
+          ? '✅ Sync Complete'
+          : isError
+            ? '❌ Sync Failed'
+            : isSyncing
+              ? '⏳ Syncing Theme'
+              : 'Sync Theme'}
       </DialogTitle>
 
       <DialogContent>
@@ -72,7 +78,10 @@ export const SyncDialog: React.FC<SyncDialogProps> = ({
             {isSyncing && (
               <LinearProgress sx={{ position: 'absolute', bottom: 0, width: '100%' }} />
             )}
-            <Stepper activeStep={Math.min(activeStep, SYNC_STEPS.length - 1)} orientation="vertical">
+            <Stepper
+              activeStep={Math.min(activeStep, SYNC_STEPS.length - 1)}
+              orientation="vertical"
+            >
               {SYNC_STEPS.map((label, index) => (
                 <Step key={label} completed={index < activeStep}>
                   <StepLabel
@@ -137,7 +146,8 @@ export const SyncDialog: React.FC<SyncDialogProps> = ({
           {isSuccess && (
             <Alert severity="info">
               <Typography variant="caption">
-                <strong>Next:</strong> Your team can review the changes in a GitHub PR before merging
+                <strong>Next:</strong> Your team can review the changes in a GitHub PR before
+                merging
               </Typography>
             </Alert>
           )}

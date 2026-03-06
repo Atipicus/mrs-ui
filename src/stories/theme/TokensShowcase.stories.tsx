@@ -24,7 +24,8 @@ const meta: Meta = {
     layout: 'padded',
     docs: {
       description: {
-        component: 'Complete showcase of MRS Design System tokens including colors, typography, shapes, and spacing.',
+        component:
+          'Complete showcase of MRS Design System tokens including colors, typography, shapes, and spacing.',
       },
     },
   },
@@ -50,7 +51,9 @@ export const ColorTokens: StoryObj = {
         <Grid container spacing={3}>
           {/* Primary Colors */}
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="h6" mb={2}>Primary</Typography>
+            <Typography variant="h6" mb={2}>
+              Primary
+            </Typography>
             <Stack spacing={1}>
               {Object.entries(modeColors.primary || {}).map(([key, value]) => (
                 <Box key={key} display="flex" alignItems="center" gap={2}>
@@ -64,8 +67,12 @@ export const ColorTokens: StoryObj = {
                     }}
                   />
                   <Box>
-                    <Typography variant="body2" fontWeight="bold">{key}</Typography>
-                    <Typography variant="caption" color="text.secondary">{value}</Typography>
+                    <Typography variant="body2" fontWeight="bold">
+                      {key}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      {value}
+                    </Typography>
                   </Box>
                 </Box>
               ))}
@@ -74,7 +81,9 @@ export const ColorTokens: StoryObj = {
 
           {/* Secondary Colors */}
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="h6" mb={2}>Secondary</Typography>
+            <Typography variant="h6" mb={2}>
+              Secondary
+            </Typography>
             <Stack spacing={1}>
               {Object.entries(modeColors.secondary || {}).map(([key, value]) => (
                 <Box key={key} display="flex" alignItems="center" gap={2}>
@@ -88,8 +97,12 @@ export const ColorTokens: StoryObj = {
                     }}
                   />
                   <Box>
-                    <Typography variant="body2" fontWeight="bold">{key}</Typography>
-                    <Typography variant="caption" color="text.secondary">{value}</Typography>
+                    <Typography variant="body2" fontWeight="bold">
+                      {key}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      {value}
+                    </Typography>
                   </Box>
                 </Box>
               ))}
@@ -98,13 +111,16 @@ export const ColorTokens: StoryObj = {
 
           {/* Status Colors */}
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="h6" mb={2}>Status Colors</Typography>
+            <Typography variant="h6" mb={2}>
+              Status Colors
+            </Typography>
             <Stack spacing={1}>
               {['error', 'warning', 'info', 'success'].map((status) => {
                 const colorObj = modeColors[status as keyof typeof modeColors];
-                const main = (colorObj && typeof colorObj === 'object' && 'main' in colorObj)
-                  ? (colorObj as any).main
-                  : null;
+                const main =
+                  colorObj && typeof colorObj === 'object' && 'main' in colorObj
+                    ? (colorObj as any).main
+                    : null;
                 return main ? (
                   <Box key={status} display="flex" alignItems="center" gap={2}>
                     <Box
@@ -117,8 +133,12 @@ export const ColorTokens: StoryObj = {
                       }}
                     />
                     <Box>
-                      <Typography variant="body2" fontWeight="bold">{status}</Typography>
-                      <Typography variant="caption" color="text.secondary">{main}</Typography>
+                      <Typography variant="body2" fontWeight="bold">
+                        {status}
+                      </Typography>
+                      <Typography variant="caption" color="text.secondary">
+                        {main}
+                      </Typography>
                     </Box>
                   </Box>
                 ) : null;
@@ -128,7 +148,9 @@ export const ColorTokens: StoryObj = {
 
           {/* Background & Text */}
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="h6" mb={2}>Background</Typography>
+            <Typography variant="h6" mb={2}>
+              Background
+            </Typography>
             <Stack spacing={1}>
               {Object.entries(modeColors.background || {}).map(([key, value]) => (
                 <Box key={key} display="flex" alignItems="center" gap={2}>
@@ -142,8 +164,12 @@ export const ColorTokens: StoryObj = {
                     }}
                   />
                   <Box>
-                    <Typography variant="body2" fontWeight="bold">{key}</Typography>
-                    <Typography variant="caption" color="text.secondary">{value}</Typography>
+                    <Typography variant="body2" fontWeight="bold">
+                      {key}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      {value}
+                    </Typography>
                   </Box>
                 </Box>
               ))}
@@ -152,7 +178,9 @@ export const ColorTokens: StoryObj = {
 
           {/* Text Colors */}
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="h6" mb={2}>Text Colors</Typography>
+            <Typography variant="h6" mb={2}>
+              Text Colors
+            </Typography>
             <Stack spacing={1}>
               {Object.entries(modeColors.text || {}).map(([key, value]) => (
                 <Box key={key} display="flex" alignItems="center" gap={2}>
@@ -166,8 +194,12 @@ export const ColorTokens: StoryObj = {
                     }}
                   />
                   <Box>
-                    <Typography variant="body2" fontWeight="bold">{key}</Typography>
-                    <Typography variant="caption" color="text.secondary">{value}</Typography>
+                    <Typography variant="body2" fontWeight="bold">
+                      {key}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      {value}
+                    </Typography>
                   </Box>
                 </Box>
               ))}
@@ -176,7 +208,9 @@ export const ColorTokens: StoryObj = {
 
           {/* Action Colors */}
           <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="h6" mb={2}>Action Colors</Typography>
+            <Typography variant="h6" mb={2}>
+              Action Colors
+            </Typography>
             <Stack spacing={1}>
               {Object.entries(modeColors.action || {}).map(([key, value]) => (
                 <Box key={key} display="flex" alignItems="center" gap={2}>
@@ -190,8 +224,12 @@ export const ColorTokens: StoryObj = {
                     }}
                   />
                   <Box>
-                    <Typography variant="body2" fontWeight="bold">{key}</Typography>
-                    <Typography variant="caption" color="text.secondary">{value}</Typography>
+                    <Typography variant="body2" fontWeight="bold">
+                      {key}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      {value}
+                    </Typography>
                   </Box>
                 </Box>
               ))}
@@ -270,7 +308,9 @@ export const TypographyTokens: StoryObj = {
 
         <Grid item xs={12}>
           <Paper sx={{ p: 3 }}>
-            <Typography variant="body1">Body 1 - The quick brown fox jumps over the lazy dog</Typography>
+            <Typography variant="body1">
+              Body 1 - The quick brown fox jumps over the lazy dog
+            </Typography>
             <Typography variant="caption" color="text.secondary">
               Font Weight: {typography.body1?.fontWeight} | Size: {typography.body1?.fontSize}
             </Typography>
@@ -279,7 +319,9 @@ export const TypographyTokens: StoryObj = {
 
         <Grid item xs={12}>
           <Paper sx={{ p: 3 }}>
-            <Typography variant="body2">Body 2 - The quick brown fox jumps over the lazy dog</Typography>
+            <Typography variant="body2">
+              Body 2 - The quick brown fox jumps over the lazy dog
+            </Typography>
             <Typography variant="caption" color="text.secondary">
               Font Weight: {typography.body2?.fontWeight} | Size: {typography.body2?.fontSize}
             </Typography>

@@ -36,6 +36,10 @@ const preview: Preview = {
       context: '#storybook-root',
       config: {},
       options: {},
+    },
+  },
+  initialGlobals: {
+    a11y: {
       manual: false,
     },
   },

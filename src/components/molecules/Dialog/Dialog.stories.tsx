@@ -69,22 +69,22 @@ function DialogDemo({ children, ...props }: any) {
 export const Default: Story = {
   render: () => (
     <DialogDemo>
-      <DialogTitle>Dialog Title</DialogTitle>
-      <DialogContent>
-        <DialogContentText>
-          This is a simple dialog with a title, content, and actions.
-        </DialogContentText>
-      </DialogContent>
-      <DialogActions>
-        {(handleClose: () => void) => (
-          <>
+      {(handleClose: () => void) => (
+        <>
+          <DialogTitle>Dialog Title</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              This is a simple dialog with a title, content, and actions.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
             <Button onClick={handleClose}>Cancel</Button>
             <Button onClick={handleClose} variant="contained">
               OK
             </Button>
-          </>
-        )}
-      </DialogActions>
+          </DialogActions>
+        </>
+      )}
     </DialogDemo>
   ),
 };

@@ -110,70 +110,70 @@ export function useThemeSync() {
    * 2. Commit to git
    * 3. Provide feedback
    */
-  const sync = useCallback(async (
-    edits: Partial<ThemeParsed>,
-    mode: 'light' | 'dark',
-    _options: SyncOptions = {}
-  ): Promise<SyncResult> => {
-    setStatus('syncing');
+  const sync = useCallback(
+    async (
+      edits: Partial<ThemeParsed>,
+      mode: 'light' | 'dark',
+      _options: SyncOptions = {}
+    ): Promise<SyncResult> => {
+      setStatus('syncing');
 
-    try {
-      // Generate serialized code
-      const serialized = serializeThemeEdits(edits, mode);
+      try {
+        // Generate serialized code
+        const serialized = serializeThemeEdits(edits, mode);
 
-      // In development, just log what would be synced
-      console.log('=== Theme Sync Preview ===');
-      console.log(serialized);
-      console.log('==========================');
+        // In development, just log what would be synced
+        console.log('=== Theme Sync Preview ===');
+        console.log(serialized);
+        console.log('==========================');
 
-      // Simulate sync delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+        // Simulate sync delay
+        await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      const result: SyncResult = {
-        success: true,
-        message: `Theme synced successfully for ${mode} mode`,
-        timestamp: new Date(),
-      };
+        const result: SyncResult = {
+          success: true,
+          message: `Theme synced successfully for ${mode} mode`,
+          timestamp: new Date(),
+        };
 
-      setLastSync(result);
-      setStatus('success');
+        setLastSync(result);
+        setStatus('success');
 
-      // Reset status after 3 seconds
-      setTimeout(() => setStatus('idle'), 3000);
+        // Reset status after 3 seconds
+        setTimeout(() => setStatus('idle'), 3000);
 
-      return result;
-    } catch (error) {
-      const message = error instanceof Error ? error.message : 'Unknown error';
-      const result: SyncResult = {
-        success: false,
-        message: `Sync failed: ${message}`,
-        timestamp: new Date(),
-      };
+        return result;
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'Unknown error';
+        const result: SyncResult = {
+          success: false,
+          message: `Sync failed: ${message}`,
+          timestamp: new Date(),
+        };
 
-      setLastSync(result);
-      setStatus('error');
-      return result;
-    }
-  }, []);
+        setLastSync(result);
+        setStatus('error');
+        return result;
+      }
+    },
+    []
+  );
 
   /**
    * Get the code that would be needed to apply changes
    * Useful for copying to theme.ts manually
    */
-  const getSerializedEdits = useCallback((
-    edits: Partial<ThemeParsed>,
-    mode: 'light' | 'dark'
-  ): string => {
-    return serializeThemeEdits(edits, mode);
-  }, []);
+  const getSerializedEdits = useCallback(
+    (edits: Partial<ThemeParsed>, mode: 'light' | 'dark'): string => {
+      return serializeThemeEdits(edits, mode);
+    },
+    []
+  );
 
   /**
    * Get a diff view of changes
    */
-  const getDiff = useCallback((
-    before: ThemeParsed,
-    after: Partial<ThemeParsed>
-  ): string => {
+  const getDiff = useCallback((before: ThemeParsed, after: Partial<ThemeParsed>): string => {
     return generateDiff(before, after);
   }, []);
 

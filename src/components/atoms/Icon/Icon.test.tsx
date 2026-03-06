@@ -142,9 +142,7 @@ describe('Icon - Font', () => {
 
   describe('returns null for unknown type', () => {
     it('renders null when type is not svg or font', () => {
-      const { container } = renderWithTheme(
-        <Icon type={'unknown' as any} iconName="add" />
-      );
+      const { container } = renderWithTheme(<Icon type={'unknown' as any} iconName="add" />);
       // No icon element should be rendered
       expect(container.querySelector('.MuiIcon-root')).not.toBeInTheDocument();
       expect(container.querySelector('svg')).not.toBeInTheDocument();

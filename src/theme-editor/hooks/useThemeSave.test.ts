@@ -189,10 +189,7 @@ describe('useThemeSave', () => {
       let saveResult: any = null;
       let savePromise: Promise<any>;
       act(() => {
-        savePromise = result.current.save(
-          { spacing: [{ name: 'spacing-1', value: 8 }] },
-          'light'
-        );
+        savePromise = result.current.save({ spacing: [{ name: 'spacing-1', value: 8 }] }, 'light');
       });
       await act(async () => {
         jest.runAllTimers();
@@ -208,10 +205,7 @@ describe('useThemeSave', () => {
       let saveResult: any = null;
       let savePromise: Promise<any>;
       act(() => {
-        savePromise = result.current.save(
-          { shape: [{ name: 'sm', value: 4 }] },
-          'light'
-        );
+        savePromise = result.current.save({ shape: [{ name: 'sm', value: 4 }] }, 'light');
       });
       await act(async () => {
         jest.runAllTimers();

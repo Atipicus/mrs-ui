@@ -7,6 +7,7 @@ The Theme Editor is an interactive web application that allows developers and de
 ## Features
 
 ### 🎨 Color Editor
+
 - Edit semantic colors (primary, secondary, error, warning, info, success)
 - Separate light and dark mode color management
 - Interactive color picker with hex input
@@ -14,24 +15,28 @@ The Theme Editor is an interactive web application that allows developers and de
 - Organized by category (primary, secondary, background, text, action, divider)
 
 ### ✍️ Typography Editor
+
 - Edit typography variants (h1-h6, body1-2, subtitle1-2, button, caption, overline)
 - Adjust font sizes, font weights, line heights, and letter spacing
 - Live preview of text variants
 - Visual representation of typography changes
 
 ### 📏 Spacing & Shape Editor
+
 - Modify spacing scale (8px base unit multipliers)
 - Visual spacing indicators
 - Edit border radius values with live preview
 - Slider controls for precise adjustments
 
 ### 👁️ Live Preview
+
 - Real-time component preview with current theme
 - Shows buttons, inputs, chips, alerts, tabs, typography, and more
 - Switch between light and dark modes instantly
 - Split-screen view option
 
 ### 💾 Sync & Export
+
 - Generate TypeScript code for theme changes
 - Diff view of modifications
 - Copy to clipboard functionality
@@ -136,23 +141,23 @@ Parses and manages theme data with real-time editing.
 ```typescript
 const {
   // Data
-  parsedTheme,        // Current theme with edits applied
-  mode,               // 'light' | 'dark'
-  edits,              // Active edits
+  parsedTheme, // Current theme with edits applied
+  mode, // 'light' | 'dark'
+  edits, // Active edits
 
   // State management
-  setMode,            // Switch light/dark mode
-  updateColor,        // Update a color value
-  updateTypography,   // Update a typography property
-  updateSpacing,      // Update a spacing value
-  updateShape,        // Update a shape/border-radius value
+  setMode, // Switch light/dark mode
+  updateColor, // Update a color value
+  updateTypography, // Update a typography property
+  updateSpacing, // Update a spacing value
+  updateShape, // Update a shape/border-radius value
 
   // Getters
-  getColorValue,      // Get current color (edited or original)
+  getColorValue, // Get current color (edited or original)
   getTypographyValue, // Get current typography value
 
   // Utilities
-  resetEdits,         // Clear all changes
+  resetEdits, // Clear all changes
 } = useThemeParser();
 ```
 
@@ -163,18 +168,18 @@ Handles serialization and syncing of theme changes.
 ```typescript
 const {
   // Status
-  status,             // 'idle' | 'syncing' | 'success' | 'error'
-  lastSync,           // Last sync result
+  status, // 'idle' | 'syncing' | 'success' | 'error'
+  lastSync, // Last sync result
 
   // Actions
-  sync,               // Sync changes to files
+  sync, // Sync changes to files
 
   // Utilities
   getSerializedEdits, // Get code representation
-  getDiff,            // Get diff view
+  getDiff, // Get diff view
 
   // Reset
-  reset,              // Reset sync state
+  reset, // Reset sync state
 } = useThemeSync();
 ```
 
@@ -195,12 +200,14 @@ const {
 ### 3. Sync to theme.ts
 
 **Current (Manual Sync):**
+
 1. Click "Sync Changes" button
 2. Copy the generated code from the console
 3. Paste into `src/theme/theme.ts` or `src/theme/tokens-import.ts`
 4. The changes take effect after saving
 
 **Future (Automated Sync):**
+
 - Direct file write via API
 - Git commit integration
 - GitHub Actions CI/CD integration
@@ -259,6 +266,7 @@ For documentation and testing:
 3. **Living Documentation**: Document design tokens and usage
 
 View in Storybook:
+
 ```
 Tools > Theme Editor > Default
 ```
@@ -412,6 +420,7 @@ MIT - Part of MRS Design System
 ## Support
 
 For issues and questions:
+
 - Check Storybook documentation
 - Review examples in stories
 - Create an issue in the GitHub repo

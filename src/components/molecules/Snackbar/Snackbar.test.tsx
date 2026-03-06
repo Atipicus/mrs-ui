@@ -246,9 +246,7 @@ describe('Snackbar', () => {
   describe('handleClose — clickaway prevention', () => {
     it('does not call onClose when reason is clickaway (simple mode)', () => {
       const handleClose = jest.fn();
-      const { container } = renderWithTheme(
-        <Snackbar open message="Test" onClose={handleClose} />
-      );
+      const { container } = renderWithTheme(<Snackbar open message="Test" onClose={handleClose} />);
 
       // Simulate MUI internal clickaway by triggering onClose with 'clickaway' reason
       // We need to access the MUI Snackbar internals — simulate via ClickAwayListener

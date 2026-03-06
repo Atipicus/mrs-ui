@@ -131,9 +131,7 @@ export const SpacingEditor: React.FC<SpacingEditorProps> = ({ onSpacingChange, o
                       <Grid item xs={4}>
                         <Slider
                           value={numValue}
-                          onChange={(_e, value) =>
-                            handleSpacingChange(space.name, value as number)
-                          }
+                          onChange={(_e, value) => handleSpacingChange(space.name, value as number)}
                           min={0}
                           max={200}
                           step={4}
@@ -177,18 +175,14 @@ export const SpacingEditor: React.FC<SpacingEditorProps> = ({ onSpacingChange, o
                       label="Radius (px)"
                       type="number"
                       value={shape.value}
-                      onChange={(e) =>
-                        handleShapeChange(shape.name, parseInt(e.target.value) || 0)
-                      }
+                      onChange={(e) => handleShapeChange(shape.name, parseInt(e.target.value) || 0)}
                       size="small"
                       fullWidth
                     />
 
                     <Slider
                       value={shape.value}
-                      onChange={(_e, value) =>
-                        handleShapeChange(shape.name, value as number)
-                      }
+                      onChange={(_e, value) => handleShapeChange(shape.name, value as number)}
                       min={0}
                       max={100}
                       step={1}

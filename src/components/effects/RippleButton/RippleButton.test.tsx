@@ -167,9 +167,7 @@ describe('RippleButton', () => {
     });
 
     it('does not render RippleContainer when disableRipple is true', () => {
-      const { container } = renderWithTheme(
-        <RippleButton disableRipple>No Ripple</RippleButton>
-      );
+      const { container } = renderWithTheme(<RippleButton disableRipple>No Ripple</RippleButton>);
       // MUI button has spans inside, but no ripple container span
       const btn = container.querySelector('button')!;
       // The ripple container is a styled span with position:absolute — it won't be in the DOM

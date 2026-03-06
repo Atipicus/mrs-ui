@@ -226,11 +226,7 @@ export const ThemeEditorApp: React.FC<ThemeEditorAppProps> = ({
 
                 {hasEdits && (
                   <Stack direction="row" spacing={1}>
-                    <Button
-                      size="small"
-                      variant="outlined"
-                      onClick={resetEdits}
-                    >
+                    <Button size="small" variant="outlined" onClick={resetEdits}>
                       Reset Changes
                     </Button>
 
@@ -251,11 +247,7 @@ export const ThemeEditorApp: React.FC<ThemeEditorAppProps> = ({
 
             {/* Editor Tabs */}
             <Paper>
-              <Tabs
-                value={tabValue}
-                onChange={handleTabChange}
-                aria-label="theme editor tabs"
-              >
+              <Tabs value={tabValue} onChange={handleTabChange} aria-label="theme editor tabs">
                 <Tab label="Colors" id="editor-tab-0" />
                 <Tab label="Typography" id="editor-tab-1" />
                 <Tab label="Spacing & Shape" id="editor-tab-2" />
@@ -288,8 +280,7 @@ export const ThemeEditorApp: React.FC<ThemeEditorAppProps> = ({
             {/* Footer */}
             <Box sx={{ mt: 4, pt: 3, borderTop: '1px solid', borderColor: 'divider' }}>
               <Typography variant="caption" color="textSecondary">
-                Theme Editor v1.0 - Edits are live in preview but require manual sync to
-                theme.ts
+                Theme Editor v1.0 - Edits are live in preview but require manual sync to theme.ts
               </Typography>
             </Box>
           </Container>
@@ -307,10 +298,7 @@ export const ThemeEditorApp: React.FC<ThemeEditorAppProps> = ({
             }}
           >
             <Container maxWidth="md" sx={{ py: 4 }}>
-              <ComponentPreview
-                dialogOpen={false}
-                onDialogClose={() => {}}
-              />
+              <ComponentPreview dialogOpen={false} onDialogClose={() => {}} />
             </Container>
           </Box>
         )}

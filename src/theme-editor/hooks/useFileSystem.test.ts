@@ -37,9 +37,7 @@ describe('useFileSystem', () => {
         await result.current.validateFilePermissions('src/theme/tokens.ts');
       });
 
-      expect(consoleSpy).toHaveBeenCalledWith(
-        expect.stringContaining('src/theme/tokens.ts')
-      );
+      expect(consoleSpy).toHaveBeenCalledWith(expect.stringContaining('src/theme/tokens.ts'));
     });
   });
 
@@ -152,7 +150,10 @@ describe('useFileSystem', () => {
     it('includes shape count', () => {
       const { result } = renderHook(() => useFileSystem());
       const summary = result.current.generateChangesSummary({
-        shape: [{ name: 'sm', value: 4 }, { name: 'md', value: 8 }],
+        shape: [
+          { name: 'sm', value: 4 },
+          { name: 'md', value: 8 },
+        ],
       });
       expect(summary).toContain('shape (2 radius values)');
     });
@@ -241,18 +242,14 @@ describe('useFileSystem', () => {
 
     it('detects mismatched curly braces', () => {
       const { result } = renderHook(() => useFileSystem());
-      const { valid, errors } = result.current.validateTypeScriptSyntax(
-        'export const x = { a: 1;'
-      );
+      const { valid, errors } = result.current.validateTypeScriptSyntax('export const x = { a: 1;');
       expect(valid).toBe(false);
       expect(errors.some((e) => e.includes('{}'))).toBe(true);
     });
 
     it('detects mismatched square brackets', () => {
       const { result } = renderHook(() => useFileSystem());
-      const { valid, errors } = result.current.validateTypeScriptSyntax(
-        'const arr = [1, 2, 3;'
-      );
+      const { valid, errors } = result.current.validateTypeScriptSyntax('const arr = [1, 2, 3;');
       expect(valid).toBe(false);
       expect(errors.some((e) => e.includes('[]'))).toBe(true);
     });

@@ -1,0 +1,57 @@
+21:42:48.190 Chromatic CLI v15.2.0
+             https://www.chromatic.com/docs/cli 
+ 
+21:42:48.203 Authenticating with Chromatic 
+21:42:48.203     → Connecting to https://index.chromatic.com
+21:42:48.797 Authenticated with Chromatic
+                 → Using project token '****************4ac4'
+21:42:48.799 Retrieving git information
+21:42:51.034 Retrieved git information
+                 → Commit '445b239' on branch 'main'; found 1 parent build
+21:42:51.034 Collecting Storybook metadata
+21:42:51.056 No viewlayer package listed in dependencies. Checking transitive dependencies.
+21:42:51.059 Collected Storybook metadata
+                 → Storybook 10.2.15; no supported addons found
+21:42:51.059 Initializing build
+21:42:51.792 Initialized build
+                 → Build 4 initialized
+21:42:51.798 Building your Storybook
+21:42:51.798     → Running command: npm run build-storybook -- --output-dir=/var/folders/m1/3qxm17_93s52cfz3jpjyq5q40000gn/T/chromatic--94648-ComgiytmDx0D
+21:42:51.799     → [*                   ]
+21:43:01.799     → [ *                  ]
+21:43:11.802     → [  *                 ]
+21:43:14.978 Storybook built in 23 seconds
+                 → View build log at /Users/mader/Documents/Atipicus/02 __mrs-ui/storybook-build.txt
+21:43:14.978 Prepare your built Storybook
+21:43:14.978     → Validating Storybook files
+21:43:14.991 Prepare your built Storybook
+21:43:14.991     → Calculating file hashes
+21:43:15.026 Preparation complete
+                 → Storybook files validated and prepared for upload
+21:43:15.026 Publishing your built Storybook
+21:43:15.026     → Starting publish
+21:43:16.320     → [                    ] 1%
+21:43:26.402     → [=========           ] 44%
+21:43:34.183 Publishing your built Storybook
+21:43:34.183     → Finalizing upload
+21:43:34.950 Publish complete in 20 seconds
+                 → Uploaded 180 files (5.23 MB), skipped 491 files
+21:43:34.950 Verifying your Storybook
+21:43:34.950     → This may take a few minutes
+21:43:34.950     → [*                   ]
+21:43:35.961 Starting partial build
+21:43:35.961     → Snapshots will be limited to stories matching 'Molecules/Dialog/Default'
+21:43:42.190 ✔ Storybook published
+             We found 64 components with 732 stories.
+             ℹ View your Storybook at https://69aa1fc41806ebb73cd59325-jfnjffpwrn.chromatic.com/
+21:43:42.190 Started build 4
+                 → Continue setup at https://www.chromatic.com/setup?appId=69aa1fc41806ebb73cd59325
+21:43:42.192 Running 1 test for stories matching 'Molecules/Dialog/Default' (skipping 731 tests)
+21:43:42.192     → This may take a few minutes
+21:43:46.787     → [====================] 2/1
+21:43:47.357 ✔ Build passed. Welcome to Chromatic!
+             We found 64 components with 732 stories and took 1 snapshot.
+             ℹ Please continue setup at https://www.chromatic.com/setup?appId=69aa1fc41806ebb73cd59325
+21:43:47.357 Build 4 auto-accepted
+                 → Tested 732 stories across 64 components; captured 1 snapshot in 5 seconds
+21:43:47.375 ℹ Wrote Chromatic diagnostics report to chromatic-diagnostics.json

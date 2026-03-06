@@ -13,11 +13,7 @@ interface UndoButtonProps {
   timeRemaining: number; // in seconds
 }
 
-export const UndoButton: React.FC<UndoButtonProps> = ({
-  visible,
-  onUndo,
-  timeRemaining,
-}) => {
+export const UndoButton: React.FC<UndoButtonProps> = ({ visible, onUndo, timeRemaining }) => {
   const [isUndoing, setIsUndoing] = useState(false);
   const [displayTime, setDisplayTime] = useState(timeRemaining);
 

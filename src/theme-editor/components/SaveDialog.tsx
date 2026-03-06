@@ -84,7 +84,9 @@ export const SaveDialog: React.FC<SaveDialogProps> = ({
             {edits.colors && (
               <Box>
                 <Typography variant="caption" color="textSecondary">
-                  Colors: {Object.keys(edits.colors.light || {}).length + Object.keys(edits.colors.dark || {}).length}
+                  Colors:{' '}
+                  {Object.keys(edits.colors.light || {}).length +
+                    Object.keys(edits.colors.dark || {}).length}
                 </Typography>
               </Box>
             )}
@@ -125,7 +127,11 @@ export const SaveDialog: React.FC<SaveDialogProps> = ({
               <Typography variant="caption" display="block" sx={{ fontFamily: 'monospace' }}>
                 <strong>Target:</strong> src/theme/theme.ts
               </Typography>
-              <Typography variant="caption" display="block" sx={{ fontFamily: 'monospace', mt: 0.5 }}>
+              <Typography
+                variant="caption"
+                display="block"
+                sx={{ fontFamily: 'monospace', mt: 0.5 }}
+              >
                 <strong>Mode:</strong> {mode}
               </Typography>
             </Paper>
@@ -145,7 +151,12 @@ export const SaveDialog: React.FC<SaveDialogProps> = ({
 
           {/* Backup option */}
           <FormControlLabel
-            control={<Checkbox checked={createBackup} onChange={(e) => setCreateBackup(e.target.checked)} />}
+            control={
+              <Checkbox
+                checked={createBackup}
+                onChange={(e) => setCreateBackup(e.target.checked)}
+              />
+            }
             label="Create backup before saving (recommended)"
           />
         </Stack>

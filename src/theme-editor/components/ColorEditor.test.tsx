@@ -113,7 +113,9 @@ describe('ColorEditor', () => {
         fireEvent.click(colorSwatches[0] as HTMLElement);
         await waitFor(() => {
           // After click, a color input or text input should appear
-          const inputs = document.querySelectorAll('input[type="color"], input[placeholder="#000000"]');
+          const inputs = document.querySelectorAll(
+            'input[type="color"], input[placeholder="#000000"]'
+          );
           expect(inputs.length).toBeGreaterThan(0);
         });
       }

@@ -66,8 +66,7 @@ describe('useBounce', () => {
     expect(keyframes).toEqual(expect.arrayContaining([{ transform: 'scale(1)' }]));
     expect(
       keyframes.some(
-        (frame: any) =>
-          typeof frame.transform === 'string' && frame.transform.startsWith('scale(')
+        (frame: any) => typeof frame.transform === 'string' && frame.transform.startsWith('scale(')
       )
     ).toBe(true);
   });

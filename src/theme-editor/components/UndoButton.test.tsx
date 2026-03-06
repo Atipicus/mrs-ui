@@ -34,32 +34,24 @@ describe('UndoButton', () => {
     });
 
     it('renders the Undo button when visible is true', () => {
-      renderWithTheme(
-        <UndoButton visible onUndo={jest.fn()} timeRemaining={60} />
-      );
+      renderWithTheme(<UndoButton visible onUndo={jest.fn()} timeRemaining={60} />);
       expect(screen.getByRole('button', { name: /undo/i })).toBeInTheDocument();
     });
   });
 
   describe('Time display', () => {
     it('shows formatted time remaining', () => {
-      renderWithTheme(
-        <UndoButton visible onUndo={jest.fn()} timeRemaining={125} />
-      );
+      renderWithTheme(<UndoButton visible onUndo={jest.fn()} timeRemaining={125} />);
       expect(screen.getByText(/2:05 left/)).toBeInTheDocument();
     });
 
     it('shows expired when timeRemaining is 0', () => {
-      renderWithTheme(
-        <UndoButton visible onUndo={jest.fn()} timeRemaining={0} />
-      );
+      renderWithTheme(<UndoButton visible onUndo={jest.fn()} timeRemaining={0} />);
       expect(screen.getByText('(expired)')).toBeInTheDocument();
     });
 
     it('counts down over time', async () => {
-      renderWithTheme(
-        <UndoButton visible onUndo={jest.fn()} timeRemaining={5} />
-      );
+      renderWithTheme(<UndoButton visible onUndo={jest.fn()} timeRemaining={5} />);
 
       expect(screen.getByText(/0:05 left/)).toBeInTheDocument();
 
@@ -73,9 +65,7 @@ describe('UndoButton', () => {
     });
 
     it('stops countdown when reaches 0', async () => {
-      renderWithTheme(
-        <UndoButton visible onUndo={jest.fn()} timeRemaining={2} />
-      );
+      renderWithTheme(<UndoButton visible onUndo={jest.fn()} timeRemaining={2} />);
 
       act(() => {
         jest.advanceTimersByTime(3000);
@@ -89,16 +79,12 @@ describe('UndoButton', () => {
 
   describe('Button state', () => {
     it('button is enabled when time remaining > 0', () => {
-      renderWithTheme(
-        <UndoButton visible onUndo={jest.fn()} timeRemaining={30} />
-      );
+      renderWithTheme(<UndoButton visible onUndo={jest.fn()} timeRemaining={30} />);
       expect(screen.getByRole('button', { name: /undo/i })).not.toBeDisabled();
     });
 
     it('button is disabled when expired', () => {
-      renderWithTheme(
-        <UndoButton visible onUndo={jest.fn()} timeRemaining={0} />
-      );
+      renderWithTheme(<UndoButton visible onUndo={jest.fn()} timeRemaining={0} />);
       expect(screen.getByRole('button', { name: /undo/i })).toBeDisabled();
     });
   });
@@ -106,9 +92,7 @@ describe('UndoButton', () => {
   describe('Undo action', () => {
     it('calls onUndo when Undo button is clicked', async () => {
       const onUndo = jest.fn().mockResolvedValue(undefined);
-      renderWithTheme(
-        <UndoButton visible onUndo={onUndo} timeRemaining={60} />
-      );
+      renderWithTheme(<UndoButton visible onUndo={onUndo} timeRemaining={60} />);
 
       await act(async () => {
         fireEvent.click(screen.getByRole('button', { name: /undo/i }));
@@ -126,9 +110,7 @@ describe('UndoButton', () => {
           })
       );
 
-      renderWithTheme(
-        <UndoButton visible onUndo={onUndo} timeRemaining={60} />
-      );
+      renderWithTheme(<UndoButton visible onUndo={onUndo} timeRemaining={60} />);
 
       fireEvent.click(screen.getByRole('button', { name: /undo/i }));
 
@@ -147,9 +129,7 @@ describe('UndoButton', () => {
 
     it('resets isUndoing to false after onUndo resolves', async () => {
       const onUndo = jest.fn().mockResolvedValue(undefined);
-      renderWithTheme(
-        <UndoButton visible onUndo={onUndo} timeRemaining={60} />
-      );
+      renderWithTheme(<UndoButton visible onUndo={onUndo} timeRemaining={60} />);
 
       await act(async () => {
         fireEvent.click(screen.getByRole('button', { name: /undo/i }));

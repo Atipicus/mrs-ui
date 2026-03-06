@@ -100,25 +100,15 @@ describe('SaveDialog', () => {
         />
       );
       // 1 light color + 1 dark color + 1 typography = 3
-      expect(
-        screen.getByText((content) => content.includes('3'))
-      ).toBeInTheDocument();
+      expect(screen.getByText((content) => content.includes('3'))).toBeInTheDocument();
     });
 
     it('shows 0 changes when edits are empty', () => {
       renderWithTheme(
-        <SaveDialog
-          open
-          onConfirm={jest.fn()}
-          onCancel={jest.fn()}
-          edits={{}}
-          mode="light"
-        />
+        <SaveDialog open onConfirm={jest.fn()} onCancel={jest.fn()} edits={{}} mode="light" />
       );
       // The alert shows "Total changes: 0"
-      expect(
-        screen.getByText((content) => content.includes('0'))
-      ).toBeInTheDocument();
+      expect(screen.getByText((content) => content.includes('0'))).toBeInTheDocument();
     });
 
     it('shows backup checkbox checked by default', () => {
@@ -264,7 +254,9 @@ describe('SaveDialog', () => {
           open
           onConfirm={jest.fn()}
           onCancel={jest.fn()}
-          edits={{ colors: { light: { 'primary.main': '#ff0000', 'secondary.main': '#00ff00' }, dark: {} } }}
+          edits={{
+            colors: { light: { 'primary.main': '#ff0000', 'secondary.main': '#00ff00' }, dark: {} },
+          }}
           mode="light"
         />
       );
@@ -278,7 +270,12 @@ describe('SaveDialog', () => {
           open
           onConfirm={jest.fn()}
           onCancel={jest.fn()}
-          edits={{ spacing: [{ name: 'spacing-1', value: 8 }, { name: 'spacing-2', value: 16 }] }}
+          edits={{
+            spacing: [
+              { name: 'spacing-1', value: 8 },
+              { name: 'spacing-2', value: 16 },
+            ],
+          }}
           mode="light"
         />
       );

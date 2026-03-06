@@ -7,7 +7,11 @@ const config: StorybookConfig = {
     '@storybook/addon-docs',
     '@storybook/addon-themes',
     '@storybook/addon-vitest',
+    '@chromatic-com/storybook'
   ],
   framework: '@storybook/react-vite',
+  features: {
+    developmentModeForBuild: true,
+  },
 };
 export default config;

@@ -114,11 +114,7 @@ describe('TypographyEditor', () => {
       fireEvent.change(fontSizeInputs[0], { target: { value: '20' } });
 
       await waitFor(() => {
-        expect(mockUpdateTypography).toHaveBeenCalledWith(
-          expect.any(String),
-          'fontSize',
-          20
-        );
+        expect(mockUpdateTypography).toHaveBeenCalledWith(expect.any(String), 'fontSize', 20);
       });
     });
   });

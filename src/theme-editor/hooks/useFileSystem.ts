@@ -22,15 +22,12 @@ export function useFileSystem() {
    * Validate that we have write permissions to the file
    * In production, this would be checked via API
    */
-  const validateFilePermissions = useCallback(
-    async (filePath: string): Promise<boolean> => {
-      // In development, always return true
-      // In production, would check via API endpoint
-      console.log(`[Mock] Checking permissions for: ${filePath}`);
-      return true;
-    },
-    []
-  );
+  const validateFilePermissions = useCallback(async (filePath: string): Promise<boolean> => {
+    // In development, always return true
+    // In production, would check via API endpoint
+    console.log(`[Mock] Checking permissions for: ${filePath}`);
+    return true;
+  }, []);
 
   /**
    * Create a backup of a file
@@ -120,34 +117,37 @@ export function useFileSystem() {
   /**
    * Validate TypeScript syntax (basic check)
    */
-  const validateTypeScriptSyntax = useCallback((code: string): { valid: boolean; errors: string[] } => {
-    const errors: string[] = [];
+  const validateTypeScriptSyntax = useCallback(
+    (code: string): { valid: boolean; errors: string[] } => {
+      const errors: string[] = [];
 
-    // Basic checks
-    if (!code.trim()) {
-      errors.push('Code is empty');
-    }
-
-    // Check for common syntax issues
-    const bracketPairs = [
-      { open: '{', close: '}' },
-      { open: '[', close: ']' },
-      { open: '(', close: ')' },
-    ];
-
-    for (const pair of bracketPairs) {
-      const openCount = (code.match(new RegExp(`\\${pair.open}`, 'g')) || []).length;
-      const closeCount = (code.match(new RegExp(`\\${pair.close}`, 'g')) || []).length;
-      if (openCount !== closeCount) {
-        errors.push(`Mismatched ${pair.open}${pair.close} brackets`);
+      // Basic checks
+      if (!code.trim()) {
+        errors.push('Code is empty');
       }
-    }
 
-    return {
-      valid: errors.length === 0,
-      errors,
-    };
-  }, []);
+      // Check for common syntax issues
+      const bracketPairs = [
+        { open: '{', close: '}' },
+        { open: '[', close: ']' },
+        { open: '(', close: ')' },
+      ];
+
+      for (const pair of bracketPairs) {
+        const openCount = (code.match(new RegExp(`\\${pair.open}`, 'g')) || []).length;
+        const closeCount = (code.match(new RegExp(`\\${pair.close}`, 'g')) || []).length;
+        if (openCount !== closeCount) {
+          errors.push(`Mismatched ${pair.open}${pair.close} brackets`);
+        }
+      }
+
+      return {
+        valid: errors.length === 0,
+        errors,
+      };
+    },
+    []
+  );
 
   return {
     validateFilePermissions,

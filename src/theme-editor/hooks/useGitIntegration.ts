@@ -51,63 +51,60 @@ export function useGitIntegration() {
    * Commit changes to git
    * Returns commit hash and undo deadline
    */
-  const commit = useCallback(
-    async (options: GitCommitOptions): Promise<GitResult> => {
-      setStatus('committing');
+  const commit = useCallback(async (options: GitCommitOptions): Promise<GitResult> => {
+    setStatus('committing');
 
-      try {
-        // In development, simulate commit
-        // In production, this would call an API endpoint that executes git commands
-        const mockCommitHash = Math.random().toString(16).slice(2, 9);
-        const undoDeadline = new Date(Date.now() + 5 * 60 * 1000); // 5 minutes from now
+    try {
+      // In development, simulate commit
+      // In production, this would call an API endpoint that executes git commands
+      const mockCommitHash = Math.random().toString(16).slice(2, 9);
+      const undoDeadline = new Date(Date.now() + 5 * 60 * 1000); // 5 minutes from now
 
-        console.log('=== Git Commit Preview ===');
-        console.log(`git add .`);
-        console.log(`git commit -m "${options.message}"`);
-        console.log(`Commit hash: ${mockCommitHash}`);
-        console.log('========================');
+      console.log('=== Git Commit Preview ===');
+      console.log(`git add .`);
+      console.log(`git commit -m "${options.message}"`);
+      console.log(`Commit hash: ${mockCommitHash}`);
+      console.log('========================');
 
-        // Simulate commit delay
-        await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Simulate commit delay
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
-        const result: GitResult = {
-          success: true,
-          commitHash: mockCommitHash,
-          message: `Committed: ${options.message}`,
-          canUndo: true,
-          undoUntil: undoDeadline,
-          timestamp: new Date(),
-        };
+      const result: GitResult = {
+        success: true,
+        commitHash: mockCommitHash,
+        message: `Committed: ${options.message}`,
+        canUndo: true,
+        undoUntil: undoDeadline,
+        timestamp: new Date(),
+      };
 
-        setLastCommit(result);
-        setStatus('success');
+      setLastCommit(result);
+      setStatus('success');
 
-        // Reset status after 3 seconds
-        setTimeout(() => setStatus('idle'), 3000);
+      // Reset status after 3 seconds
+      setTimeout(() => setStatus('idle'), 3000);
 
-        return result;
-      } catch (error) {
-        const message = error instanceof Error ? error.message : 'Unknown error';
-        const result: GitResult = {
-          success: false,
-          commitHash: '',
-          message: `Commit failed: ${message}`,
-          canUndo: false,
-          undoUntil: new Date(),
-          timestamp: new Date(),
-        };
+      return result;
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Unknown error';
+      const result: GitResult = {
+        success: false,
+        commitHash: '',
+        message: `Commit failed: ${message}`,
+        canUndo: false,
+        undoUntil: new Date(),
+        timestamp: new Date(),
+      };
 
-        setLastCommit(result);
-        setStatus('error');
+      setLastCommit(result);
+      setStatus('error');
 
-        // Reset status after 3 seconds
-        setTimeout(() => setStatus('idle'), 3000);
+      // Reset status after 3 seconds
+      setTimeout(() => setStatus('idle'), 3000);
 
-        return result;
-      }
-    },
-    []
-  );
+      return result;
+    }
+  }, []);
 
   /**
    * Undo (revert) a commit
