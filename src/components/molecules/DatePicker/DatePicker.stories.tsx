@@ -29,7 +29,6 @@ const meta: Meta<typeof DatePicker> = {
       description: 'The current value of the date picker',
     },
     onChange: {
-      action: 'changed',
       description: 'Callback fired when the value changes',
     },
     label: {
@@ -48,6 +47,9 @@ const meta: Meta<typeof DatePicker> = {
       control: 'text',
       description: 'Format string for the date display',
     },
+  },
+  args: {
+    onChange: () => {},
   },
 };
 

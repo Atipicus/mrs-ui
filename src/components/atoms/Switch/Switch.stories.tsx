@@ -39,7 +39,6 @@ const meta: Meta<typeof Switch> = {
       description: 'If `true`, the input element is required.',
     },
     onChange: {
-      action: 'onChange',
       description: 'Callback fired when the state is changed.',
     },
     sx: {
@@ -50,6 +49,9 @@ const meta: Meta<typeof Switch> = {
   },
   parameters: {
     layout: 'centered',
+  },
+  args: {
+    onChange: () => {},
   },
 };
 

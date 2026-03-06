@@ -29,7 +29,6 @@ const meta: Meta<typeof TimePicker> = {
       description: 'The current value of the time picker',
     },
     onChange: {
-      action: 'changed',
       description: 'Callback fired when the value changes',
     },
     label: {
@@ -52,6 +51,9 @@ const meta: Meta<typeof TimePicker> = {
       control: 'text',
       description: 'Format string for the time display',
     },
+  },
+  args: {
+    onChange: () => {},
   },
 };
 

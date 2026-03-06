@@ -29,7 +29,6 @@ const meta: Meta<typeof DateTimePicker> = {
       description: 'The current value of the date time picker',
     },
     onChange: {
-      action: 'changed',
       description: 'Callback fired when the value changes',
     },
     label: {
@@ -52,6 +51,9 @@ const meta: Meta<typeof DateTimePicker> = {
       control: 'text',
       description: 'Format string for the date time display',
     },
+  },
+  args: {
+    onChange: () => {},
   },
 };
 

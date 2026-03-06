@@ -40,11 +40,9 @@ const meta: Meta<typeof Chip> = {
       description: 'If true, the chip will appear clickable',
     },
     onClick: {
-      action: 'clicked',
       description: 'Callback fired when the chip is clicked',
     },
     onDelete: {
-      action: 'deleted',
       description: 'Callback fired when the delete icon is clicked',
     },
   },
@@ -55,6 +53,8 @@ const meta: Meta<typeof Chip> = {
     variant: 'filled',
     disabled: false,
     clickable: false,
+    onClick: () => {},
+    onDelete: () => {},
   },
 };
 

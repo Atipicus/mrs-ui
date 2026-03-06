@@ -47,7 +47,6 @@ const meta: Meta<typeof Radio> = {
       description: 'If `true`, the component appears indeterminate.',
     },
     onChange: {
-      action: 'onChange',
       description: 'Callback fired when the state is changed.',
     },
     value: {
@@ -66,6 +65,9 @@ const meta: Meta<typeof Radio> = {
   },
   parameters: {
     layout: 'centered',
+  },
+  args: {
+    onChange: () => {},
   },
 };
 
