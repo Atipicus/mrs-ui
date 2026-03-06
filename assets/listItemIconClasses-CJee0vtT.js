@@ -1,0 +1,1 @@
+import{g as s}from"./iframe-m0FcCUbT.js";import{g as e}from"./memoTheme-C11nCEJ1.js";function a(t){return s("MuiListItemIcon",t)}const l=e("MuiListItemIcon",["root","alignItemsFlexStart"]);export{a as g,l};

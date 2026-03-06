@@ -1,0 +1,1 @@
+function T(i,t){const s=t?{...t.propTypes}:null;return n=>(e,r,l,p,o,...y)=>{const u=o||r,c=s?.[u];if(c){const f=c(e,r,l,p,o,...y);if(f)return f}return typeof e[r]<"u"&&!e[n]?new Error(`The prop \`${u}\` of \`${i}\` can only be used together with the \`${n}\` prop.`):null}}export{T as r};

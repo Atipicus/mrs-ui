@@ -1,4 +1,4 @@
-import { default as React } from 'react';
+import { default as React } from '../../../../node_modules/react';
 import { LinkProps } from './Link.types';
 /**
  * Link component - accessible hyperlink

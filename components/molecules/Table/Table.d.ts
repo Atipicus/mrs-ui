@@ -1,4 +1,4 @@
-import { default as React } from 'react';
+import { default as React } from '../../../../node_modules/react';
 import { TableProps, TableContainerProps, TableHeadProps, TableBodyProps, TableFooterProps, TableRowProps, TableCellProps } from './Table.types';
 export declare const Table: React.MemoExoticComponent<React.ForwardRefExoticComponent<Omit<TableProps, "ref"> & React.RefAttributes<HTMLTableElement>>>;
 /**

@@ -1,5 +1,5 @@
 import { ChipProps as MuiChipProps } from '@mui/material/Chip';
-import { ReactElement } from 'react';
+import { ReactElement } from '../../../../node_modules/react';
 /**
  * MRS Chip component props
  * Extends Material-UI ChipProps

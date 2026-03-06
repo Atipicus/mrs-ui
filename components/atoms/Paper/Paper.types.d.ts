@@ -1,5 +1,5 @@
 import { PaperProps as MuiPaperProps } from '@mui/material/Paper';
-import { ReactNode } from 'react';
+import { ReactNode } from '../../../../node_modules/react';
 /**
  * MRS Paper component props
  * Extends Material-UI PaperProps

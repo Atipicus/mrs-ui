@@ -1,0 +1,1 @@
+import{cc as o,cd as s,s as c,ce as a,cf as t}from"./iframe-m0FcCUbT.js";const e={light:s.colors,dark:o.colors},p=t,r=c,l=a;s.components,o.components;s.colors,s.components,o.colors,o.components;export{l as a,e as c,r as s,p as t};

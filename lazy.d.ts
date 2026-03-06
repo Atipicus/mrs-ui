@@ -42,7 +42,7 @@
  * </Suspense>
  * ```
  */
-export declare const LazyDatePicker: import('react').LazyExoticComponent<import('react').ForwardRefExoticComponent<import('./components').DatePickerProps & import('react').RefAttributes<HTMLDivElement>>>;
+export declare const LazyDatePicker: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<import('./components').DatePickerProps & import('../node_modules/react').RefAttributes<HTMLDivElement>>>;
 /**
  * Lazy-loaded TimePicker component
  *
@@ -58,7 +58,7 @@ export declare const LazyDatePicker: import('react').LazyExoticComponent<import(
  * </Suspense>
  * ```
  */
-export declare const LazyTimePicker: import('react').LazyExoticComponent<import('react').ForwardRefExoticComponent<import('./components').TimePickerProps & import('react').RefAttributes<HTMLDivElement>>>;
+export declare const LazyTimePicker: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<import('./components').TimePickerProps & import('../node_modules/react').RefAttributes<HTMLDivElement>>>;
 /**
  * Lazy-loaded DateTimePicker component
  *
@@ -74,7 +74,7 @@ export declare const LazyTimePicker: import('react').LazyExoticComponent<import(
  * </Suspense>
  * ```
  */
-export declare const LazyDateTimePicker: import('react').LazyExoticComponent<import('react').ForwardRefExoticComponent<import('./components').DateTimePickerProps & import('react').RefAttributes<HTMLDivElement>>>;
+export declare const LazyDateTimePicker: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<import('./components').DateTimePickerProps & import('../node_modules/react').RefAttributes<HTMLDivElement>>>;
 /**
  * Lazy-loaded Table component
  *
@@ -107,13 +107,13 @@ export declare const LazyDateTimePicker: import('react').LazyExoticComponent<imp
  * </Suspense>
  * ```
  */
-export declare const LazyTable: import('react').LazyExoticComponent<import('react').MemoExoticComponent<import('react').ForwardRefExoticComponent<Omit<import('./components').TableProps, "ref"> & import('react').RefAttributes<HTMLTableElement>>>>;
-export declare const LazyTableContainer: import('react').LazyExoticComponent<import('react').ForwardRefExoticComponent<Omit<import('./components').TableContainerProps, "ref"> & import('react').RefAttributes<HTMLDivElement>>>;
-export declare const LazyTableHead: import('react').LazyExoticComponent<import('react').ForwardRefExoticComponent<Omit<import('./components').TableHeadProps, "ref"> & import('react').RefAttributes<HTMLTableSectionElement>>>;
-export declare const LazyTableBody: import('react').LazyExoticComponent<import('react').ForwardRefExoticComponent<Omit<import('./components').TableBodyProps, "ref"> & import('react').RefAttributes<HTMLTableSectionElement>>>;
-export declare const LazyTableFooter: import('react').LazyExoticComponent<import('react').ForwardRefExoticComponent<Omit<import('./components').TableFooterProps, "ref"> & import('react').RefAttributes<HTMLTableSectionElement>>>;
-export declare const LazyTableRow: import('react').LazyExoticComponent<import('react').MemoExoticComponent<import('react').ForwardRefExoticComponent<Omit<import('./components').TableRowProps, "ref"> & import('react').RefAttributes<HTMLTableRowElement>>>>;
-export declare const LazyTableCell: import('react').LazyExoticComponent<import('react').MemoExoticComponent<import('react').ForwardRefExoticComponent<Omit<import('./components').TableCellProps, "ref"> & import('react').RefAttributes<HTMLTableCellElement>>>>;
+export declare const LazyTable: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').MemoExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TableProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLTableElement>>>>;
+export declare const LazyTableContainer: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TableContainerProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLDivElement>>>;
+export declare const LazyTableHead: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TableHeadProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLTableSectionElement>>>;
+export declare const LazyTableBody: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TableBodyProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLTableSectionElement>>>;
+export declare const LazyTableFooter: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TableFooterProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLTableSectionElement>>>;
+export declare const LazyTableRow: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').MemoExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TableRowProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLTableRowElement>>>>;
+export declare const LazyTableCell: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').MemoExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').TableCellProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLTableCellElement>>>>;
 /**
  * Lazy-loaded Drawer component
  *
@@ -144,7 +144,7 @@ export declare const LazyTableCell: import('react').LazyExoticComponent<import('
  * }
  * ```
  */
-export declare const LazyDrawer: import('react').LazyExoticComponent<import('react').ForwardRefExoticComponent<Omit<import('./components').DrawerProps, "ref"> & import('react').RefAttributes<HTMLDivElement>>>;
+export declare const LazyDrawer: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').DrawerProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLDivElement>>>;
 /**
  * Lazy-loaded Dialog component
  *
@@ -186,11 +186,11 @@ export declare const LazyDrawer: import('react').LazyExoticComponent<import('rea
  * }
  * ```
  */
-export declare const LazyDialog: import('react').LazyExoticComponent<import('react').ForwardRefExoticComponent<Omit<import('./components').DialogProps, "ref"> & import('react').RefAttributes<HTMLDivElement>>>;
-export declare const LazyDialogTitle: import('react').LazyExoticComponent<import('@mui/material/OverridableComponent').OverridableComponent<import('@mui/material').DialogTitleTypeMap<{}, "span">>>;
-export declare const LazyDialogContent: import('react').LazyExoticComponent<typeof import('@mui/material').DialogContent>;
-export declare const LazyDialogContentText: import('react').LazyExoticComponent<import('@mui/material/OverridableComponent').OverridableComponent<import('@mui/material').DialogContentTextTypeMap<{}, "span">>>;
-export declare const LazyDialogActions: import('react').LazyExoticComponent<typeof import('@mui/material').DialogActions>;
+export declare const LazyDialog: import('../node_modules/react').LazyExoticComponent<import('../node_modules/react').ForwardRefExoticComponent<Omit<import('./components').DialogProps, "ref"> & import('../node_modules/react').RefAttributes<HTMLDivElement>>>;
+export declare const LazyDialogTitle: import('../node_modules/react').LazyExoticComponent<import('@mui/material/OverridableComponent').OverridableComponent<import('@mui/material').DialogTitleTypeMap<{}, "span">>>;
+export declare const LazyDialogContent: import('../node_modules/react').LazyExoticComponent<typeof import('@mui/material').DialogContent>;
+export declare const LazyDialogContentText: import('../node_modules/react').LazyExoticComponent<import('@mui/material/OverridableComponent').OverridableComponent<import('@mui/material').DialogContentTextTypeMap<{}, "span">>>;
+export declare const LazyDialogActions: import('../node_modules/react').LazyExoticComponent<typeof import('@mui/material').DialogActions>;
 /**
  * Helper type for lazy-loaded components with proper typing
  *
@@ -218,5 +218,5 @@ export type LazyComponent<T extends React.ComponentType<any>> = React.LazyExotic
  * </LazySuspense>
  * ```
  */
-export { Suspense as LazySuspense } from 'react';
+export { Suspense as LazySuspense } from '../node_modules/react';
 //# sourceMappingURL=lazy.d.ts.map

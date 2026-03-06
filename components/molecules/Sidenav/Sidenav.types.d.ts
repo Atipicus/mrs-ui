@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode } from '../../../../node_modules/react';
 import { SxProps, Theme } from '@mui/material/styles';
 /**
  * Navigation item interface for sidenav items

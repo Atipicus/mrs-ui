@@ -1,5 +1,5 @@
 import { ButtonGroupProps as MuiButtonGroupProps } from '@mui/material/ButtonGroup';
-import { ReactNode } from 'react';
+import { ReactNode } from '../../../../node_modules/react';
 /**
  * MRS ButtonGroup component props
  * Extends Material-UI ButtonGroupProps

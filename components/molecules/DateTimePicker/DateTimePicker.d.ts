@@ -1,4 +1,4 @@
-import { default as React } from 'react';
+import { default as React } from '../../../../node_modules/react';
 import { DateTimePickerProps } from './DateTimePicker.types';
 /**
  * DateTimePicker component for selecting both date and time

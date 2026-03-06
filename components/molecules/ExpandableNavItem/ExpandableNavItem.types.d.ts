@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode } from '../../../../node_modules/react';
 import { ListItemButtonProps } from '@mui/material/ListItemButton';
 /**
  * Navigation item interface for child items

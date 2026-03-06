@@ -1,4 +1,4 @@
-import { default as React } from 'react';
+import { default as React } from '../../../node_modules/react';
 interface SpacingEditorProps {
     onSpacingChange?: (spacingName: string, newValue: number) => void;
     onShapeChange?: (shapeName: string, newValue: number) => void;
