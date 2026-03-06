@@ -57,7 +57,18 @@ declare module '@mui/material/styles' {
     };
     primitives: {
       brand: {
-        veronesMain: string;
+        verones: {
+          main: string;
+          50: string;
+          100: string;
+          200: string;
+          300: string;
+          400: string;
+          500: string;
+          600: string;
+          700: string;
+          800: string;
+        };
         lima: string;
       };
       neutral: {
@@ -251,7 +262,18 @@ declare module '@mui/material/styles' {
     };
     primitives?: {
       brand: {
-        veronesMain: string;
+        verones: {
+          main: string;
+          50: string;
+          100: string;
+          200: string;
+          300: string;
+          400: string;
+          500: string;
+          600: string;
+          700: string;
+          800: string;
+        };
         lima: string;
       };
       neutral: {
