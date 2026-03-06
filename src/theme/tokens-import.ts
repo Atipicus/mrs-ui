@@ -195,7 +195,18 @@ export const lightTokens = {
     divider: tokens.SemanticColorLightDivider,
     primitives: {
       brand: {
-        veronesMain: tokens.PrimitivesColorsBrandVerones,
+        verones: {
+          main: tokens.PrimitivesColorsBrandVerones,
+          50: '#E6F5F5',
+          100: '#B3E0E2',
+          200: '#82CCD0',
+          300: '#4EB8BB',
+          400: '#1AA3A3',
+          500: '#009999',
+          600: '#008C8B',
+          700: '#00686f',
+          800: '#004e53',
+        },
         lima: tokens.PrimitivesColorsBrandLima,
       },
       neutral: {
